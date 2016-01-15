@@ -405,7 +405,7 @@ a {
 
 #top {
   padding-top: 20px;
-  padding-bottom: 10px; }
+  padding-bottom: 7px; }
   #top > .max-width {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -454,7 +454,7 @@ a {
       align-items: flex-start; }
 
 #sitename-and-slogan {
-  margin: -7px 0 0 8px; }
+  margin: -10px 0 0 8px; }
 
 #sitename {
   font-size: 31px; }
