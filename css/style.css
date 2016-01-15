@@ -391,6 +391,14 @@ body {
   color: #000;
   line-height: 1.3; }
 
+input, select, textarea {
+  font-family: 'Segoe UI', 'Myriad Pro', Myriad, Arial, Helvetica, sans-serif; }
+
+a {
+  color: #058fc8; }
+  a:hover {
+    color: #47c0ff; }
+
 .max-width {
   max-width: 1024px;
   padding: 0 20px; }
@@ -417,34 +425,33 @@ body {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch; }
-    #top > .max-width > * {
-      -webkit-flex: 0 1 25%;
-      -ms-flex: 0 1 25%;
-      flex: 0 1 25%; }
-      #top > .max-width > * + * {
-        border-left: solid 1px rgba(4, 128, 180, 0.3); }
+    #top > .max-width > * + * {
+      border-left: solid 1px rgba(4, 128, 180, 0.3); }
 
 #logo {
-  text-decoration: none;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
   padding-right: 30px; }
+  #logo > a {
+    text-decoration: none;
+    display: block; }
+    #logo > a > div {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start; }
 
 #sitename-and-slogan {
   margin: -7px 0 0 8px; }
@@ -583,16 +590,222 @@ body {
   #menu-line ul {
     padding: 0;
     margin: 0;
-    list-style: none; }
-    #menu-line ul > li {
-      display: inline-block;
-      vertical-align: top; }
-      #menu-line ul > li a {
-        display: block;
-        padding: 0.6em 0.45em;
-        text-transform: uppercase;
-        font-size: 12px;
-        color: white;
-        text-decoration: none; }
+    list-style: none;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #menu-line ul > li a {
+      display: block;
+      padding: 0.7em 0.45em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: white;
+      text-decoration: none; }
+      #menu-line ul > li a:hover {
+        color: #aae324; }
+
+#top-search-form {
+  padding: 26px 0; }
+  #top-search-form form {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch; }
+    #top-search-form form input[type=text] {
+      border: solid 1px #0480b4;
+      border-radius: 2px;
+      padding: 0.65em;
+      width: 100%; }
+    #top-search-form form > * + * {
+      padding-left: 2px; }
+  #top-search-form #new-search {
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fcb00+0,7cb000+100 */
+    background: #8fcb00;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #8fcb00 0%, #7cb000 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #8fcb00 0%, #7cb000 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #8fcb00 0%, #7cb000 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fcb00', endColorstr='#7cb000',GradientType=0 );
+    /* IE6-9 */
+    border-radius: 3px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #top-search-form #new-search > div {
+      color: white;
+      line-height: 1;
+      text-align: center; }
+  #top-search-form #from-input {
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%; }
+    #top-search-form #from-input input {
+      background: url(../i/plane-up.png) 0.7em center no-repeat;
+      padding-left: 34px; }
+  #top-search-form #to-input {
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%; }
+    #top-search-form #to-input input {
+      background: url(../i/plane-down.png) 0.7em center no-repeat;
+      padding-left: 34px; }
+  #top-search-form #search-submit {
+    -webkit-flex: 0 0 75px;
+    -ms-flex: 0 0 75px;
+    flex: 0 0 75px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch; }
+    #top-search-form #search-submit > input {
+      width: 100%;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff6700+0,dd5900+100 */
+      background: #ff6700;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #ff6700 0%, #dd5900 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #ff6700 0%, #dd5900 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #ff6700 0%, #dd5900 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6700', endColorstr='#dd5900',GradientType=0 );
+      /* IE6-9 */
+      border-radius: 3px;
+      border: none;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold; }
+      #top-search-form #search-submit > input:hover {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fd8738+0,e67730+100 */
+        background: #fd8738;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #fd8738 0%, #e67730 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #fd8738 0%, #e67730 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #fd8738 0%, #e67730 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd8738', endColorstr='#e67730',GradientType=0 );
+        /* IE6-9 */ }
+  #top-search-form #date-input-1, #top-search-form #date-input-2, #top-search-form #passengers-input {
+    -webkit-flex: 0 0 15%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%; }
+  #top-search-form .close {
+    width: 19px;
+    height: 19px;
+    right: 5px;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 10;
+    position: absolute;
+    background: url(../i/cross.png) center center no-repeat; }
+  #top-search-form #date-input-1:after {
+    width: 19px;
+    height: 19px;
+    right: 5px;
+    top: 50%;
+    margin-top: -10px;
+    content: '';
+    background: url(../i/calendar.png) right center no-repeat;
+    z-index: 10;
+    position: absolute; }
+  #top-search-form #passengers-input .pass-border {
+    border: solid 1px #0480b4;
+    border-radius: 2px;
+    padding-right: 35px;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    bottom: 0;
+    right: 0; }
+    #top-search-form #passengers-input .pass-border > div {
+      padding: 0.65em;
+      overflow: hidden; }
+  #top-search-form #passengers-input .drop-down {
+    width: 19px;
+    height: 19px;
+    right: 5px;
+    top: 50%;
+    margin-top: -10px;
+    background: url(../i/arrow-down.png) right center no-repeat;
+    z-index: 10;
+    position: absolute; }
+
+#change-from-to {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  background: #0480b4 url(../i/tuda-suda.png) center center no-repeat;
+  top: 50%;
+  margin-top: -13px;
+  right: -14px;
+  z-index: 10; }
 
 /*# sourceMappingURL=style.css.map */
