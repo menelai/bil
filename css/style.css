@@ -852,6 +852,8 @@ a {
       color: white; }
 
 #passengers-popup {
+  background: #fff;
+  z-index: 100;
   position: absolute;
   top: 100%;
   right: 0;
