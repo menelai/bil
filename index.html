@@ -13,7 +13,7 @@
   <script src="js/script.js"></script>
 </head>
 <body>
-<div id="pixel"></div>
+<div id="pixel" ng-show="0"></div>
 <div id="top">
   <div class="max-width">
     <div id="logo">
@@ -195,7 +195,7 @@
             </li>
           </ul>
         </div>
-        <div class="block" ng-if="true">
+        <div class="block last" ng-if="true">
           <h2>Авиакомпания</h2>
           <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
             <li ng-repeat="el in ::ar">
@@ -208,9 +208,268 @@
               </label>
             </li>
           </ul>
+          <div class="show-all">
+            <span ng-click="allShown=true;">Показать все 16 <img src="i/arrow-down.png"></span>
+            <div class="all-items" ng-if="allShown">
+              <span ng-click="$parent.allShown=false;">Свернуть <img src="i/arrow-down.png" style="transform: rotate(180deg);"></span>
+              <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
+                <li ng-repeat="el in ::ar">
+                  <span><input type="radio" name="peres" id="r3{{$index}}"></span>
+                  <label for="r3{{$index}}" class="bysides">
+                    <span>
+                      {{::el.title}}
+                    </span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="col2"></div>
+      <div id="col2">
+        <div id="time-and-subscribe" ng-init="dayParts = [{title:'Ночь',time:'с 00:00 до 7:00'}, {title:'Утро',time:'с 7:00 до 11:00'}, {title:'День',time:'с 11:00 до 16:00'}, {title:'Ночь',time:'с 16:00 до 23:59'}]">
+          <div id="time-form">
+            <div class="drop-controller active{{show1}}" ng-click="show1=!show1">
+              <span>Время вылета/<br>прилета туда</span>
+              <div class="drop-down"></div>
+            </div>
+            <div class="popup-div" ng-show="show1">
+              <h2>Время вылета туда</h2>
+
+              <h3 class="plane-up">Вылет из Москвы</h3>
+              <ul class="ul times-of-day">
+                <li ng-repeat="part in ::dayParts">
+                  <label>
+                    <input type="radio" name="lol"> <span class="blue ttu">{{part.title}}</span><br>
+                    <span>{{part.time}}</span>
+                  </label>
+                </li>
+              </ul>
+              <hr>
+              <h3 class="plane-down">Прилёт в Санкт-Петербург</h3>
+              <ul class="ul times-of-day">
+                <li ng-repeat="part in ::dayParts">
+                  <label>
+                    <input type="radio" name="lol1"> <span class="blue ttu">{{part.title}}</span><br>
+                    <span>{{part.time}}</span>
+                  </label>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="button-grey">
+              </div>
+              <div class="close-popup" ng-click="show1=false;"></div>
+            </div>
+
+            <div class="drop-controller active{{show2}}" ng-click="show2=!show2">
+              <span>Время вылета/<br>прилета обратно</span>
+              <div class="drop-down"></div>
+            </div>
+            <div class="popup-div" ng-show="show2">
+              <h2>Время вылета обратно</h2>
+              <h3 class="plane-up">Вылет из Москвы</h3>
+              <ul class="ul times-of-day">
+                <li ng-repeat="part in ::dayParts">
+                  <label>
+                    <input type="radio" name="lol"> <span class="blue ttu">{{part.title}}</span><br>
+                    <span>{{part.time}}</span>
+                  </label>
+                </li>
+              </ul>
+              <hr>
+              <h3 class="plane-down">Прилёт в Санкт-Петербург</h3>
+              <ul class="ul times-of-day">
+                <li ng-repeat="part in ::dayParts">
+                  <label>
+                    <input type="radio" name="lol1"> <span class="blue ttu">{{part.title}}</span><br>
+                    <span>{{part.time}}</span>
+                  </label>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="button-grey">
+              </div>
+              <div class="close-popup" ng-click="show2=false;"></div>
+            </div>
+
+            <div class="drop-controller active{{show3}}" ng-click="show3=!show3">
+              <span>Вид<br>авиарейса</span>
+              <div class="drop-down"></div>
+            </div>
+            <div class="popup-div" ng-show="show3">
+              <h2>Вид авиарейса</h2>
+              <ul class="ul race-kind">
+                <li class="bysides" ng-repeat="type in [{title:'Регулярный авиарейс', moneyback:'Стандартный авиабилет'}, {title:'Регулярный авиарейс', moneyback:'Блочный авиабилет'}, {title:'Чартерный рейс. Маловероятное изменение времени вылета', moneyback:'Есть возврат билета'}]">
+                  <label class="radio-pad">
+                    <input type="radio" name="jop1">
+                    <span>
+                      <span class="larger">{{type.title}}</span><br>
+                      <span class="grey">{{type.moneyback}}</span>
+                    </span>
+                  </label>
+                  <span class="smaller pseudo blue">Подробнее</span>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="button-grey">
+              </div>
+              <div class="close-popup" ng-click="show3=false;"></div>
+            </div>
+          </div>
+          <div id="subscribe-form">
+            <form>
+              <h2>Цена на авиабилет может снизиться</h2>
+              <input type="email" placeholder="Ваш email"> <input type="submit" value="Следить за ценой" class="button-grey">
+            </form>
+          </div>
+        </div>
+        <div id="results">
+          <div class="result">
+            <div class="result-cols">
+              <div class="col-trip-info">
+                <div class="trip-grey-row trip-there-grey trip-row">
+                  <div class="trip-col1 flex-center">
+                    <div class="plane-model">Airbus 321</div>
+                  </div>
+                  <div class="trip-col2 flight-params">
+                    <div class="flex-center">
+                      <div class="luggage">Багаж 20 кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="bag">Ручная кладь 5 кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="chair">Класс: эконом</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="trip-there">
+
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div class="company-name-and-logo">
+                        <img src="i/nordstar.png"><br>
+                        Nord Star Airlines
+                      </div>
+                    </div>
+                    <div class="trip-col2 times-row">
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          2 ч 30 м<br>
+                          <span class="grey">прямой</span>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="trip-help">
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div></div>
+                    </div>
+                    <div class="trip-col2 blue-row">
+                      <div class="flex-center">
+                        <div class="smaller white-plane">Вылет</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="smaller clock">Время в пути</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="smaller white-plane down">Прилет</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="trip-back">
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div class="company-name-and-logo"><img src="i/nordstar.png"><br>
+                        Nord Star Airlines</div>
+                    </div>
+                    <div class="trip-col2 times-row">
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          2 ч 30 м<br>
+                          <span class="grey">прямой</span>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-price">
+                <div class="price-n">
+                  <span class="green xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                  <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
+                </div>
+                <div class="buy-n">
+                  <input type="button" value="Купить"><br>
+                  <span class="grey smaller2">дешевый авиабилет</span>
+                </div>
+              </div>
+            </div>
+            <div class="result-cols">
+              <div class="col-trip-info">
+                <div class="trip-grey-row trip-back-grey trip-row">
+                  <div class="trip-col1 flex-center">
+                    <div class="plane-model">Airbus 321</div>
+                  </div>
+                  <div class="trip-col2 flight-params">
+                    <div class="flex-center">
+                      <div class="luggage">Багаж 20 кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="bag">Ручная кладь 5 кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="chair">Класс: эконом</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-price">
+                j
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
