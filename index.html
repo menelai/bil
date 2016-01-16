@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <meta charset="UTF-8">
   <title>bil</title>
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <script src="js/script.js"></script>
 </head>
 <body>
 <div id="pixel"></div>
@@ -85,22 +92,126 @@
         <input type="text">
       </div>
       <div id="date-input-1">
-        <input type="text">
+        <input type="text" class="datepicker">
       </div>
       <div id="date-input-2">
-        <input type="text">
+        <input type="text" class="datepicker">
         <div class="close"></div>
       </div>
       <div id="passengers-input">
-        <div class="pass-border">
+        <div class="pass-border" ng-click="show=!show" ng-init="show=false;">
           <div>2 пассsdfg dsgfsdfg dsgsd</div>
         </div>
         <div class="drop-down"></div>
+        <div id="passengers-popup" ng-show="show">
+          <div class="adult">
+            <div class="bysides">
+              <span>Взрослые</span>
+              <span class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></span>
+            </div>
+          </div>
+          <div class="child" ng-if="true" ng-init="children=[13,14]; co=children.length;">
+            <div class="bysides">
+              <span>Дети до 14 лет</span>
+              <span class="number-with-spinners"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></span>
+            </div>
+            <ul>
+              <li ng-repeat="child in children track by $index">
+                Возраст <input ng-model="child" type="number" step="1">
+              </li>
+            </ul>
+          </div>
+          <div class="baby">
+            <div class="bysides">
+              <span>Дети до 2 лет<br>
+              <span class="grey">без места</span>
+              </span>
+              <span class="number-with-spinners"><span class="minus" ng-click="ba=ba-1;">−</span><input type="number" ng-model="ba" ng-init="ba=1;" step="1" min="1"><span class="plus" ng-click="ba=ba+1;">+</span></span>
+            </div>
+          </div>
+          <div class="business-class">
+            <input type="checkbox" id="busclass"> <label for="busclass">Бизнес-класс</label>
+          </div>
+        </div>
       </div>
       <div id="search-submit">
         <input type="submit" value="Найти">
       </div>
     </form>
+  </div>
+</div>
+<div id="alternate-price">
+  <div class="max-width">
+    <div class="bysides" id="alternate-header">
+      <span id="alt-title">цена авиабилетов на альтернативные даты - прибывание 7 дней</span>
+      <span>
+        <ul>
+          <li class="cheap">Дешевые рейсы</li>
+          <li class="recommended">Рекомендуемые рейсы</li>
+        </ul>
+      </span>
+    </div>
+    <div id="alternate-results">
+      <div class="month">
+        <div class="month-title"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="search-results">
+  <div id="results-header">
+    <div class="max-width">
+      <span id="src-dst">Москва     <span class="gt"></span>   Санкт-петербург    <span class="gt"></span>    Москва</span>
+      <span id="res-dates">25 ноября - 5 декабря</span>
+    </div>
+  </div>
+  <div id="two-cols">
+    <div class="max-width">
+      <div id="col1">
+        <div class="block" ng-if="true">
+          <h2>Пересадки</h2>
+          <ul class="ul radios" ng-init="ar = [{title:'Только прямые', price:'12&thinsp;338'}, {title:'1 пересадка', price:'12&thinsp;338'}, {title:'2 пересадки', price:'12&thinsp;338'}, {title:'Любое кол-вл', price:'12&thinsp;338'}]">
+            <li ng-repeat="el in ::ar">
+              <span><input type="radio" name="peres" id="r{{$index}}"></span>
+              <label for="r{{$index}}" class="bysides">
+                <span>{{::el.title}}</span>
+                <span>{{::el.price}} <span class="rub">Р</span></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="block" ng-if="true">
+          <h2>Аэропорт вылета</h2>
+          <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
+            <li ng-repeat="el in ::ar">
+              <span><input type="radio" name="peres" id="r1{{$index}}"></span>
+              <label for="r1{{$index}}" class="bysides">
+                <span>
+                  {{::el.title}}<br>
+                  <span class="grey">({{::el.code}})</span>
+                </span>
+                <span>{{::el.price}} <span class="rub">Р</span></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="block" ng-if="true">
+          <h2>Авиакомпания</h2>
+          <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
+            <li ng-repeat="el in ::ar">
+              <span><input type="radio" name="peres" id="r2{{$index}}"></span>
+              <label for="r2{{$index}}" class="bysides">
+                <span>
+                  {{::el.title}}
+                </span>
+                <span>{{::el.price}} <span class="rub">Р</span></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="col2"></div>
+    </div>
   </div>
 </div>
 </body>
