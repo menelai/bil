@@ -2,6 +2,7 @@
 <html ng-app>
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>bil</title>
   <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
@@ -11,13 +12,49 @@
 
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <script src="js/script.js"></script>
+  <style>
+    .max-width {
+      max-width: {{width}}px;
+    }
+  </style>
 </head>
 <body>
 <div id="pixel" ng-show="0"></div>
+<div id="statusbar">
+  <div class="max-width">
+    <div>
+      <div>
+        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME)   <a href="/">Шереметьево</a> (SVO)   <a href="/">Внуково</a> (VKO)
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <div id="links-block">
+        <div id="safety"><a href="/">Абсолютная<br>
+          безопасность платежей</a></div>
+        <div><a href="/">Публичная<br>
+          оферта</a></div>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <div id="smm">
+        <div>Акции, розыгрыши,<br>
+          новости, отзывы о нас</div>
+        <div>
+          <a href="/"><img src="i/vk.png"></a>
+          <a href="/"><img src="i/f.png"></a>
+          <a href="/"><img src="i/in.png"></a>
+          <a href="/"><img src="i/tw.png"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="top">
   <div class="max-width">
     <div id="logo">
-    <a href="/">
+    <a href="/" ng-init="width=1024" ng-click="width= (width==1024) ? 1400 : 1024">
       <div>
         <div><img src="/i/logo.png"></div>
         <div class="afut" id="sitename-and-slogan">
@@ -106,14 +143,14 @@
         <div id="passengers-popup" ng-show="show">
           <div class="adult">
             <div class="bysides">
-              <span>Взрослые</span>
-              <span class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></span>
+              <div>Взрослые</div>
+              <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
             </div>
           </div>
           <div class="child" ng-if="true" ng-init="children=[13,14]; co=children.length;">
             <div class="bysides">
-              <span>Дети до 14 лет</span>
-              <span class="number-with-spinners"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></span>
+              <div>Дети до 14 лет</div>
+              <div class="number-with-spinners"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></div>
             </div>
             <ul>
               <li ng-repeat="child in children track by $index">
@@ -123,10 +160,10 @@
           </div>
           <div class="baby">
             <div class="bysides">
-              <span>Дети до 2 лет<br>
+              <div>Дети до 2 лет<br>
               <span class="grey">без места</span>
-              </span>
-              <span class="number-with-spinners"><span class="minus" ng-click="ba=ba-1;">−</span><input type="number" ng-model="ba" ng-init="ba=1;" step="1" min="1"><span class="plus" ng-click="ba=ba+1;">+</span></span>
+              </div>
+              <div class="number-with-spinners"><span class="minus" ng-click="ba=ba-1;">−</span><input type="number" ng-model="ba" ng-init="ba=1;" step="1" min="1"><span class="plus" ng-click="ba=ba+1;">+</span></div>
             </div>
           </div>
           <div class="business-class">
@@ -143,13 +180,13 @@
 <div id="alternate-price">
   <div class="max-width">
     <div class="bysides" id="alternate-header">
-      <span id="alt-title">цена авиабилетов на альтернативные даты - прибывание 7 дней</span>
-      <span>
+      <div id="alt-title">цена авиабилетов на альтернативные даты - прибывание 7 дней</div>
+      <div>
         <ul>
           <li class="cheap">Дешевые рейсы</li>
           <li class="recommended">Рекомендуемые рейсы</li>
         </ul>
-      </span>
+      </div>
     </div>
     <div id="alternate-results">
       <div class="month">
@@ -174,8 +211,8 @@
             <li ng-repeat="el in ::ar">
               <span><input type="radio" name="peres" id="r{{$index}}"></span>
               <label for="r{{$index}}" class="bysides">
-                <span>{{::el.title}}</span>
-                <span>{{::el.price}} <span class="rub">Р</span></span>
+                <div>{{::el.title}}</div>
+                <div>{{::el.price}} <span class="rub">Р</span></div>
               </label>
             </li>
           </ul>
@@ -186,11 +223,11 @@
             <li ng-repeat="el in ::ar">
               <span><input type="radio" name="peres" id="r1{{$index}}"></span>
               <label for="r1{{$index}}" class="bysides">
-                <span>
+                <div>
                   {{::el.title}}<br>
                   <span class="grey">({{::el.code}})</span>
-                </span>
-                <span>{{::el.price}} <span class="rub">Р</span></span>
+                </div>
+                <div>{{::el.price}} <span class="rub">Р</span></div>
               </label>
             </li>
           </ul>
@@ -201,10 +238,10 @@
             <li ng-repeat="el in ::ar">
               <span><input type="radio" name="peres" id="r2{{$index}}"></span>
               <label for="r2{{$index}}" class="bysides">
-                <span>
+                <div>
                   {{::el.title}}
-                </span>
-                <span>{{::el.price}} <span class="rub">Р</span></span>
+                </div>
+                <div>{{::el.price}} <span class="rub">Р</span></div>
               </label>
             </li>
           </ul>
@@ -327,26 +364,74 @@
           </div>
         </div>
         <div id="results">
-          <div class="result">
+          <ng-include src="'result'"></ng-include>
+          <div class="promo-result">
+            <div class="promo-content">
+              <div class="promo-header bysides">
+                <div>
+                  <h2>
+                    <span class="afut"><span class="green">лучшие</span><span class="orange">туры.</span><span class="green">онлайн</span></span>
+                    <span class="ttu">Лучшее предложение</span>
+                  </h2>
+                </div>
+                <div>
+                  <a href="" class="green-button">Выбрать другой вариант тура</a>
+                </div>
+              </div>
+              <div class="hotel-and-trip">
+                <div class="hotel-info rounded">
+                  <div class="hotel-title">
+                    <h3>AMBASSADOR CITY<br>
+                      JOMTIEN HOTEL<br>
+                      ****</h3>
+                  </div>
+                  <div class="semi-white">
+                    <h4 class="blue ttu">В стоимость тура входит:</h4>
+                    Групповой трансфер
+                    Медицинская страховка
+                    Услуги гида
+                  </div>
+                </div>
+                <div class="promo-trip">
+                  <ng-include src="'result'" ng-if="true" ng-init="hideTopGrey=true;"></ng-include>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ng-include src="'result'" ng-if="true" ng-init="hideThere=true;"></ng-include>
+          <ng-include src="'result'" ng-if="true" ng-init="hideThere=true;"></ng-include>
+          <ng-include src="'result'" ng-if="true" ng-init="hideTopGrey=true;"></ng-include>
+          <ng-include src="'result'"></ng-include>
+          <ng-include src="'result'"></ng-include>
+          <ng-include src="'result'" ng-if="true" ng-init="hideThere=true;"></ng-include>
+          <ng-include src="'result'"></ng-include>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/ng-template" id="result">
+  <div class="result">
             <div class="result-cols">
-              <div class="col-trip-info">
-                <div class="trip-grey-row trip-there-grey trip-row">
+              <div class="col-trip-info rounded">
+                <div class="trip-grey-row trip-there-grey trip-row" ng-if="!(hideThere || hideTopGrey)">
                   <div class="trip-col1 flex-center">
                     <div class="plane-model">Airbus 321</div>
                   </div>
                   <div class="trip-col2 flight-params">
                     <div class="flex-center">
-                      <div class="luggage">Багаж 20 кг</div>
+                      <div class="luggage">Багаж 20&nbsp;кг</div>
                     </div>
                     <div class="flex-center">
-                      <div class="bag">Ручная кладь 5 кг</div>
+                      <div class="bag">Ручная кладь 5&nbsp;кг</div>
                     </div>
                     <div class="flex-center">
                       <div class="chair">Класс: эконом</div>
                     </div>
                   </div>
                 </div>
-                <div class="trip-there">
+                <div class="trip-there" ng-hide="hideThere">
 
                   <div class="trip-white-row trip-row">
                     <div class="trip-col1 flex-center">
@@ -385,7 +470,7 @@
                     <div class="trip-col1 flex-center">
                       <div></div>
                     </div>
-                    <div class="trip-col2 blue-row">
+                    <div class="trip-col2 blue-row {{hideThere ? 'only-back' : ''}}">
                       <div class="flex-center">
                         <div class="smaller white-plane">Вылет</div>
                       </div>
@@ -433,9 +518,9 @@
                 </div>
 
               </div>
-              <div class="col-price">
+              <div class="col-price rounded" ng-init="height='auto';" ng-attr-style="height:{{height}};" ng-click="height = (height=='400px') ? 'auto' : '400px';">
                 <div class="price-n">
-                  <span class="green xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                  <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
                   <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
                 </div>
                 <div class="buy-n">
@@ -444,18 +529,18 @@
                 </div>
               </div>
             </div>
-            <div class="result-cols">
+            <div class="result-cols grey-cols inner-top-shadow">
               <div class="col-trip-info">
-                <div class="trip-grey-row trip-back-grey trip-row">
+                <div class="trip-back-grey trip-row">
                   <div class="trip-col1 flex-center">
                     <div class="plane-model">Airbus 321</div>
                   </div>
                   <div class="trip-col2 flight-params">
                     <div class="flex-center">
-                      <div class="luggage">Багаж 20 кг</div>
+                      <div class="luggage">Багаж 20&nbsp;кг</div>
                     </div>
                     <div class="flex-center">
-                      <div class="bag">Ручная кладь 5 кг</div>
+                      <div class="bag">Ручная кладь 5&nbsp;кг</div>
                     </div>
                     <div class="flex-center">
                       <div class="chair">Класс: эконом</div>
@@ -463,15 +548,13 @@
                   </div>
                 </div>
               </div>
-              <div class="col-price">
-                j
+              <div class="col-row col-price">
+                <div class="flex-center">
+                  <a href="/" class="buy-credit smaller">Купить в кредит</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</script>
 </body>
 </html>

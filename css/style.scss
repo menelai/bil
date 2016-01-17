@@ -19,6 +19,15 @@ $lightgrey: #bdbdbd;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fcb00', endColorstr='#7cb000',GradientType=0 ); /* IE6-9 */
 }
 
+@mixin green-hover-gradient() {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b8e845+0,9fc93c+100 */
+  background: rgb(184,232,69); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(184,232,69,1) 0%, rgba(159,201,60,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(184,232,69,1) 0%,rgba(159,201,60,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(184,232,69,1) 0%,rgba(159,201,60,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e845', endColorstr='#9fc93c',GradientType=0 ); /* IE6-9 */
+}
+
 @mixin orange-gradient() {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff6700+0,dd5900+100 */
   background: #ff6700; /* Old browsers */
@@ -89,6 +98,10 @@ $lightgrey: #bdbdbd;
 
 .green {
   color: $green;
+}
+
+.orange {
+  color: $orange;
 }
 
 .blue {
@@ -895,8 +908,10 @@ a {
 }
 
 #two-cols {
+  padding-bottom:4em;
   >.max-width {
-    padding-top:0.5em;
+    padding-top:10px;
+    padding-bottom:10px;
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -926,6 +941,7 @@ a {
       -ms-flex: 0 1 100%;
       flex: 0 1 100%;
 
+      padding-left:30px;
       padding-left:30px;
     }
   }
@@ -1031,6 +1047,7 @@ a {
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
+  padding-bottom:10px;
 }
 
 #time-form {
@@ -1274,9 +1291,43 @@ a {
     }
   }
 }
-.result {
-  border:solid 1px #aeaeae;
-  border-radius:3px;
+#results {
+  >*:not(.promo-result) {
+    display: block;
+    position: relative;
+    + *:not(.promo-result) {
+      margin-top:10px;
+      &:before {
+        position: absolute;
+        left:2.1%;
+        right:2.1%;
+        bottom:100%;
+        height:14px;
+        margin-bottom:-4px;
+        background: #3e3e3e;
+        content: '';
+        display: block;
+      }
+    }
+  }
+  .promo-result {
+    margin:20px 0;
+    padding:10px 0;
+    border-radius: 4px;
+    background: $orange;
+    &:before {
+      position: absolute;
+      width:42px;
+      height:42px;
+      content: '';
+      background: url(../i/baloon.png) center center no-repeat;
+      position: absolute;
+      display: block;
+      left:-10px;
+      top:-5px;
+      z-index: 20;
+    }
+  }
 }
 .result-cols {
 
@@ -1323,12 +1374,17 @@ a {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+    &.rounded {
+      margin-right:-1px;
+    }
   }
 
   .col-price {
     -webkit-flex: 0 0 20.3%;
     -ms-flex: 0 0 20.3%;
     flex: 0 0 20.3%;
+
+
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1410,15 +1466,23 @@ a {
     align-items: stretch;
 
     >div {
-      width:33.3%;
+      min-width:33.3%;
     }
 
     &.times-row {
-      padding:1em 0;
+      padding: 1em 10px;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      >div {
+        &:nth-child(2) {
+          min-width:0;
+        }
+      }
     }
 
     &.flight-params {
-      padding:0.3em 0;
+      padding:0.4em 0;
     }
   }
 
@@ -1426,6 +1490,7 @@ a {
     -webkit-flex: 1 1 100%;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
+
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1447,6 +1512,7 @@ a {
     align-items: stretch;
 
     background: #fff;
+    border-radius: 4px 0 4px 4px;
     >div {
       -webkit-flex: 1 1 100%;
       -ms-flex: 1 1 100%;
@@ -1455,22 +1521,24 @@ a {
   }
 
   .trip-there {
-    border-top-left-radius: 3px;
-    margin-top:-3px;
+    border-top-right-radius: 4px;
+  }
+  .trip-there-grey + .trip-there {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    margin-top:-4px;
   }
 
   .trip-there-grey {
-    padding-bottom:3px;
+    padding-bottom:4px;
   }
 
   .trip-back {
-    border-bottom-left-radius: 3px;
-    margin-bottom:-3px;
     z-index: 1;
   }
 
   .trip-back-grey {
-    padding-top:3px;
+
   }
 }
 
@@ -1519,12 +1587,19 @@ a {
       margin-left:-12px;
     }
     &:before {
-      bottom:100%;
-      transform:rotate(180deg);
+      bottom: 100%;
+      transform: rotate(180deg);
     }
     &:after {
       top:100%;
 
+    }
+  }
+  &.only-back {
+    >div {
+      &:before {
+        display: none;
+      }
     }
   }
 }
@@ -1563,6 +1638,10 @@ a {
 .company-name-and-logo {
   text-align: center;
   font-size: 11px;
+  min-width: 0;
+  img {
+    max-width: 100%;
+  }
 }
 
 .tm {
@@ -1622,15 +1701,352 @@ a {
   text-align: center;
   padding-top:20px;
   padding-bottom:10px;
+  .price-number {
+    font-size: 24px;
+    font-weight: bold;
+    color:$green;
+  }
 }
 
 .buy-n {
   text-align: center;
   padding-top:10px;
   padding-bottom:20px;
+  input {
+    @include green-gradient();
+    border:none;
+    border-radius: 5px;
+    color:white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding:0.3em 1.5em;
+    &:hover {
+      @include green-hover-gradient();
+    }
+  }
 }
 
 .xlarge {
-  font-size: 24px;
-  font-weight: bold;
+
+}
+
+.rounded {
+  border-radius: 4px;
+  border:solid 1px #aeaeae;
+  z-index: 1;
+  background: #fff;
+}
+
+.grey-cols {
+  border-radius: 0 0 4px 4px;
+  background: #aeaeae;
+  color:white;
+  padding-top:4px;
+  margin-top:-4px;
+}
+
+.col-row {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  >.flex-center {
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    padding:3px;
+  }
+}
+
+.buy-credit {
+  color:white;
+  border:solid 1px white;
+  padding:0.1em 0.3em;
+  border-radius: 3px;
+  text-decoration: none;
+  display: block;
+  width:100%;
+  &:hover {
+
+  }
+}
+
+.inner-top-shadow {
+  &:before {
+    position: absolute;
+    top:1px;
+    left:0;
+    right:0;
+    height:5px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.37+0,0+100 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.37) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.37) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.37) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    content:'';
+    display: block;
+  }
+}
+
+.promo-header {
+  border-radius: 4px 4px 0 0;
+  padding:5px 5px 5px 40px;
+  h2 {
+    font-weight: normal;
+    font-size: 1em;
+    >.afut {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
+.promo-content {
+  background: #ededed;
+  border-radius: 4px;
+
+  .result-cols {
+    .trip-there, .trip-back {
+      background: #ededed;
+    }
+  }
+
+  .rounded {
+    background: #ededed;
+  }
+
+  .price-number {
+    font-size: 20px;
+    font-weight: bold;
+    color:$orange;
+  }
+
+  .buy-n {
+    input {
+      @include orange-gradient();
+
+      &:hover {
+        @include orange-hover-gradient();
+      }
+    }
+  }
+
+  .col-price {
+    /*-webkit-flex: 0 0 18.3%;
+    -ms-flex: 0 0 18.3%;
+    flex: 0 0 18.3%;*/
+  }
+}
+.green-button {
+  @include green-gradient();
+  border:none;
+  border-radius: 5px;
+  color:white;
+  text-decoration: none;
+  padding:0.3em 1.5em;
+  display: block;
+  &:hover {
+    color:white;
+    @include green-hover-gradient();
+  }
+}
+
+.hotel-and-trip {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  >.hotel-info {
+    -webkit-flex: 0 0 180px;
+    -ms-flex: 0 0 180px;
+    flex: 0 0 180px;
+    border:none;
+    background: url(../i/hotel-example.jpg) center top no-repeat;
+    margin-right:-4px;
+    z-index: 5;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+  >.promo-trip {
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+
+  }
+}
+
+.hotel-title {
+  color:white;
+  text-align: center;
+  padding:7px;
+}
+
+.semi-white {
+  border-radius: 0 0 4px 4px;
+  background: rgba(255, 255, 255, 0.9);
+  padding:7px;
+  font-size: 12px;
+  h4 {
+    font-weight: normal;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .result-cols {
+    .trip-there, .trip-back {
+      min-height: 6em\9;
+    }
+
+    .company-name-and-logo {
+      width:100%\9;
+    }
+  }
+}
+
+#statusbar {
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  border-top:solid 1px $dark-blue;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+  padding:10px 0;
+  font-size: 11px;
+  >.max-width {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    >div {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+  }
+}
+
+.separator {
+  width:1px;
+  background: #aeaeae;
+}
+
+#links-block {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  >div {
+    +div {
+      margin-left:3em;
+    }
+  }
+}
+
+#smm {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  >div {
+    +div {
+      margin-left:1em;
+    }
+  }
+
+  a+ a {
+    margin-left:1em;
+  }
+}
+
+#safety {
+  background: url(../i/card.png) left 0.2em no-repeat;
+  padding-left:45px;
 }
