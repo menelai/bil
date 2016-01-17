@@ -1221,7 +1221,8 @@ a {
     border: solid 1px #058fc7;
     border-radius: 3px;
     padding: 0.5em 10px;
-    width: 620px; }
+    width: 620px;
+    z-index: 100; }
     #time-form .popup-div h2 {
       font-weight: normal;
       text-transform: uppercase;
