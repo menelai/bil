@@ -119,7 +119,7 @@ $lightgrey: #bdbdbd;
 
 #pixel {
   position: absolute;
-  top:-1023px;
+  top:0px;
   left:50%;
   width:1024px;
   margin-left: -512px;
@@ -155,8 +155,8 @@ a {
 }
 
 #top {
-  padding-top:20px;
-  padding-bottom:7px;
+  padding-top:15px;
+  padding-bottom:15px;
   >.max-width {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -186,6 +186,9 @@ a {
 }
 
 #logo {
+  img {
+    display: block;
+  }
   >a {
     text-decoration: none;
     display: block;
@@ -216,7 +219,7 @@ a {
 }
 
 #sitename-and-slogan {
-  margin:-10px 0 0 8px;
+  margin:-6px 0 0 8px;
 }
 
 #sitename {
@@ -1929,6 +1932,16 @@ a {
 
     .company-name-and-logo {
       width:100%;
+    }
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  /* Safari only override */
+  ::i-block-chrome, .result-cols {
+    .trip-there, .trip-back {
+      min-height: 6em;
+      color:red;
     }
   }
 }
