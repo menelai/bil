@@ -67,23 +67,26 @@
       </div>
     </a>
     </div>
+    <div class="sep"></div>
     <div id="partners">
       <div>
         <h4>Наши партнеры:</h4>
-        <img src="i/sber.png"><br>
-        <img src="i/ingos.png">
+        <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
+        <div class="swap"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
       </div>
       <div>
         <h4>Нас рекомендуют:</h4>
-        <img src="i/rbc.png"><br>
-        <img src="i/national.png">
+        <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
+        <div class="swap"><img src="i/national.png"><img src="i/national-color.png"></div>
       </div>
     </div>
+    <div class="sep"></div>
     <div id="phones">
       <p class="blue">+7 (495) 210-5-99<br>
       8 800 234 5 99 5</p>
       <p class="grey">с 9:00 до 23:00</p>
     </div>
+    <div class="sep"></div>
     <div id="personal">
       <div id="call-variants">
         <div id="call-icons">
@@ -122,22 +125,22 @@
         <div>Новый поиск</div>
       </div>
       <div id="from-input">
-        <input type="text">
+        <input type="text" placeholder="Город вылета">
         <div id="change-from-to"></div>
       </div>
       <div id="to-input">
-        <input type="text">
+        <input type="text" placeholder="Город прилета">
       </div>
       <div id="date-input-1">
-        <input type="text" class="datepicker">
+        <input type="text" class="datepicker" placeholder="Туда">
       </div>
       <div id="date-input-2">
-        <input type="text" class="datepicker">
+        <input type="text" class="datepicker" placeholder="Обратно">
         <div class="close"></div>
       </div>
       <div id="passengers-input">
         <div class="pass-border" ng-click="show=!show" ng-init="show=false;">
-          <div>2 пассsdfg dsgfsdfg dsgsd</div>
+          <div>1 пасс., эконом</div>
         </div>
         <div class="drop-down"></div>
         <div id="passengers-popup" ng-show="show">
@@ -390,6 +393,16 @@
                     Групповой трансфер
                     Медицинская страховка
                     Услуги гида
+                    <div>
+                      <select>
+                        <option>Тип питания: все вкл.</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select>
+                        <option>Тип номера: стандарт</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
                 <div class="promo-trip">

@@ -434,7 +434,23 @@ a {
     -ms-flex-align: stretch;
     align-items: stretch; }
     #top > .max-width > * + * {
-      border-left: solid 1px rgba(4, 128, 180, 0.3); }
+      /*border-left:solid 1px rgba(4, 128, 180, 0.3);*/ }
+
+.sep {
+  width: 1px;
+  background: rgba(4, 128, 180, 0.3); }
+
+.swap {
+  overflow: hidden; }
+  .swap img:nth-child(2) {
+    position: absolute;
+    bottom: 110%; }
+  .swap:hover img:nth-child(1) {
+    position: absolute;
+    bottom: 110%; }
+  .swap:hover img:nth-child(2) {
+    position: relative;
+    bottom: auto; }
 
 #logo {
   padding-right: 30px; }
@@ -483,9 +499,9 @@ a {
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
@@ -493,9 +509,9 @@ a {
   -ms-flex-align: stretch;
   align-items: stretch; }
   #partners > div {
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
+    /*-webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;*/
     white-space: nowrap;
     text-align: center;
     padding: 0 15px; }
@@ -594,7 +610,7 @@ a {
     padding-left: 0.3em; }
 
 #menu-line {
-  font-family: 'SEGOEUIL';
+  /*font-family: 'SEGOEUIL';*/
   text-align: center;
   background: #0480b4; }
   #menu-line ul {
@@ -657,6 +673,12 @@ a {
       border-radius: 2px;
       padding: 0.65em;
       width: 100%; }
+      #top-search-form form input[type=text]::-moz-placeholder {
+        color: #adadad; }
+      #top-search-form form input[type=text]::-webkit-input-placeholder {
+        color: #adadad; }
+      #top-search-form form input[type=text]:-ms-input-placeholder {
+        color: #adadad; }
     #top-search-form form > * + * {
       padding-left: 2px; }
   #top-search-form #new-search {
@@ -798,7 +820,8 @@ a {
     right: 0; }
     #top-search-form #passengers-input .pass-border > div {
       padding: 0.65em;
-      overflow: hidden; }
+      overflow: hidden;
+      color: #adadad; }
   #top-search-form #passengers-input .drop-down {
     width: 19px;
     height: 19px;
@@ -1408,6 +1431,9 @@ a {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch; }
+  .result-cols:not(.grey-cols) {
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto; }
   .result-cols .col-trip-info {
     -webkit-flex: 1 1 100%;
     -ms-flex: 1 1 100%;
@@ -1720,7 +1746,7 @@ a {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 0.3em 1.5em; }
+    padding: 0.3em 1.5em 0.3em; }
     .buy-n input:hover {
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b8e845+0,9fc93c+100 */
       background: #b8e845;
@@ -1760,11 +1786,15 @@ a {
 .buy-credit {
   color: white;
   border: solid 1px white;
-  padding: 0.1em 0.3em;
+  padding: 0.0em 0.3em 0.2em;
   border-radius: 3px;
   text-decoration: none;
   display: block;
   width: 100%; }
+  .buy-credit:hover {
+    color: white;
+    background: #cccccc;
+    text-decoration: none; }
 
 .inner-top-shadow:before {
   position: absolute;
@@ -1850,7 +1880,7 @@ a {
   border-radius: 5px;
   color: white;
   text-decoration: none;
-  padding: 0.3em 1.5em;
+  padding: 0.2em 1.5em 0.4em;
   display: block; }
   .green-button:hover {
     color: white;
@@ -1893,6 +1923,7 @@ a {
     background: url(../i/hotel-example.jpg) center top no-repeat;
     margin-right: -4px;
     z-index: 5;
+    min-height: 300px;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1914,7 +1945,66 @@ a {
   .hotel-and-trip > .promo-trip {
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
-    flex: 0 1 100%; }
+    flex: 0 1 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch; }
+    .hotel-and-trip > .promo-trip > * {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      width: 100%; }
+
+.result {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%; }
 
 .hotel-title {
   color: white;
@@ -1928,6 +2018,9 @@ a {
   font-size: 12px; }
   .semi-white h4 {
     font-weight: normal; }
+  .semi-white select {
+    width: 100%;
+    margin-top: 0.5em; }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .result-cols .company-name-and-logo {
