@@ -46,11 +46,11 @@ $lightgrey: #bdbdbd;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd8738', endColorstr='#e67730',GradientType=0 ); /* IE6-9 */
 }
 
-@font-face {
+/*@font-face {
   font-family: 'SEGOEUIL';
   src: url('fonts/SEGOEUIL.eot');
   src: local('SEGOEUIL'), url('fonts/SEGOEUIL.woff') format('woff'), url('fonts/SEGOEUIL.ttf') format('truetype');
-}
+}*/
 
 @font-face {
   font-family: 'AFuturaRound';
@@ -128,6 +128,11 @@ $lightgrey: #bdbdbd;
   opacity: 0.1;
   pointer-events: none;
   z-index: 1000;
+}
+
+input[type=checkbox], input[type=radio] {
+  display: inline-block;
+  vertical-align: -0.1em;
 }
 
 body {
@@ -438,6 +443,7 @@ a {
         font-size: 12px;
         color:white;
         text-decoration: none;
+        font-weight: bold;
         &:hover {
           color:#aae324;
         }
@@ -475,7 +481,7 @@ a {
     input[type=text] {
       border:solid 1px $dark-blue;
       border-radius: 2px;
-      padding:0.65em;
+      padding:0.55em 0.65em 0.75em 0.65em;
       width:100%;
       &::-moz-placeholder {color:#adadad;}
       &::-webkit-input-placeholder {color:#adadad;}
@@ -496,7 +502,7 @@ a {
 
     @include green-gradient();
 
-    border-radius:3px;
+    border-radius:2px;
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -529,7 +535,7 @@ a {
     flex: 0 0 20%;
 
     input {
-      background: url(../i/plane-up.png) 0.7em center no-repeat;
+      background: url(../i/plane-up.png) 7px center no-repeat;
       padding-left:34px;
     }
   }
@@ -540,8 +546,8 @@ a {
     flex: 0 0 20%;
 
     input {
-      background: url(../i/plane-down.png) 0.7em center no-repeat;
-      padding-left:34px;
+      background: url(../i/plane-down.png) 18px center no-repeat;
+      padding-left:45px;
     }
   }
 
@@ -572,7 +578,7 @@ a {
       width:100%;
 
       @include orange-gradient();
-      border-radius:3px;
+      border-radius:2px;
       border:none;
       color:white;
       text-transform: uppercase;
@@ -593,9 +599,9 @@ a {
   .close {
     width:19px;
     height:19px;
-    right:5px;
+    right:8px;
     top:50%;
-    margin-top:-10px;
+    margin-top:-9px;
     z-index: 10;
     position: absolute;
     background: url(../i/cross.png) center center no-repeat;
@@ -605,7 +611,7 @@ a {
     &:after {
       width:19px;
       height:19px;
-      right:5px;
+      right:8px;
       top:50%;
       margin-top:-10px;
       content:'';
@@ -631,7 +637,7 @@ a {
       bottom:0;
       right:0;
       >div {
-        padding: 0.65em;
+        padding: 0.55em 0.65em 0.75em 0.65em;
         overflow: hidden;
         color:#adadad;
       }
@@ -640,9 +646,9 @@ a {
     .drop-down {
       width:19px;
       height:19px;
-      right:5px;
+      right:8px;
       top:50%;
-      margin-top:-10px;
+      margin-top:-9px;
       background: url(../i/arrow-down.png) right center no-repeat;
       z-index: 10;
       position: absolute;
@@ -733,13 +739,14 @@ a {
   right:0;
   margin-top:2px;
   border: solid 1px $dark-blue;
-  border-radius:3px;
+  border-radius:2px;
   width:21em;
   padding:1.5em 1em;
 
   input[type=number] {
     border:solid 1px $lightgrey;
     width:2em;
+    text-align: center;
     -moz-appearance: textfield;
     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
       -webkit-appearance: none;
@@ -1047,7 +1054,7 @@ a {
     text-align: center;
     border:solid 1px $blue;
     color:$blue;
-    border-radius: 3px;
+    border-radius: 2px;
     text-transform: uppercase;
     padding:0.2em 0;
   }
@@ -1059,7 +1066,7 @@ a {
     right:0;
     background: #fff;
     border:solid 1px $blue;
-    border-radius: 3px;
+    border-radius: 2px;
     padding:1em;
     >span {
       display: block;
@@ -1115,6 +1122,7 @@ a {
   padding-right:15px;
 
   .drop-controller {
+    line-height: 1.0;
     -webkit-flex: 0 1 33.3%;
     -ms-flex: 0 1 33.3%;
     flex: 0 1 33.3%;
@@ -1122,7 +1130,7 @@ a {
     margin-right:2px;
     border:solid 1px $blue;
     color:$blue;
-    border-radius: 3px;
+    border-radius: 2px;
 
     padding:0 10px;
 
@@ -1172,7 +1180,7 @@ a {
     left:0;
     margin-top:2px;
     border:solid 1px $blue;
-    border-radius: 3px;
+    border-radius: 2px;
     padding:0.5em 10px;
     width:620px;
     z-index: 100;
@@ -1291,7 +1299,7 @@ a {
 .button-grey {
   background: #aeaeae;
   border:none;
-  border-radius: 5px;
+  border-radius: 2px;
   text-transform: uppercase;
   color:white;
   padding:0.2em 0.4em;
@@ -1361,7 +1369,7 @@ a {
   .promo-result {
     margin:20px 0;
     padding:10px 0;
-    border-radius: 4px;
+    border-radius: 2px;
     background: $orange;
     &:before {
       position: absolute;
@@ -1568,7 +1576,7 @@ a {
     align-items: stretch;
 
     background: #fff;
-    border-radius: 4px 0 4px 4px;
+    border-radius: 2px 0 2px 2px;
     >div {
       -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
@@ -1724,7 +1732,7 @@ a {
 }
 
 .bag {
-  padding-left:19px;
+  padding-left:18px;
   &:before {
     vertical-align: middle;
     content:'';
@@ -1773,7 +1781,7 @@ a {
   input {
     @include green-gradient();
     border:none;
-    border-radius: 5px;
+    border-radius: 2px;
     color:white;
     text-transform: uppercase;
     font-weight: bold;
@@ -1789,14 +1797,14 @@ a {
 }
 
 .rounded {
-  border-radius: 4px;
+  border-radius: 2px;
   border:solid 1px #aeaeae;
   z-index: 1;
   background: #fff;
 }
 
 .grey-cols {
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 2px 2px;
   background: #aeaeae;
   color:white;
   padding-top:4px;
@@ -1818,8 +1826,8 @@ a {
 .buy-credit {
   color:white;
   border:solid 1px white;
-  padding:0.0em 0.3em 0.15em;
-  border-radius: 3px;
+  padding:0.0em 0.3em 0.1em;
+  border-radius: 2px;
   text-decoration: none;
   display: block;
   width:100%;
@@ -1848,7 +1856,7 @@ a {
 }
 
 .promo-header {
-  border-radius: 4px 4px 0 0;
+  border-radius: 2px 2px 0 0;
   padding:5px 5px 5px 40px;
   h2 {
     font-weight: normal;
@@ -1861,7 +1869,7 @@ a {
 }
 .promo-content {
   background: #ededed;
-  border-radius: 4px;
+  border-radius: 2px;
 
   .result-cols {
     .trip-there, .trip-back {
@@ -1898,13 +1906,14 @@ a {
 .green-button {
   @include green-gradient();
   border:none;
-  border-radius: 5px;
+  border-radius: 2px;
   color:white;
   text-decoration: none;
   padding:0.2em 1.5em 0.4em;
   display: block;
   &:hover {
     color:white;
+    text-decoration: none;
     @include green-hover-gradient();
   }
 }
@@ -2034,7 +2043,7 @@ a {
 }
 
 .semi-white {
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 2px 2px;
   background: rgba(255, 255, 255, 0.9);
   padding:7px;
   font-size: 12px;

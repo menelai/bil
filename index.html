@@ -235,6 +235,21 @@
             </li>
           </ul>
         </div>
+        <div class="block" ng-if="true">
+          <h2>Аэропорт |прилета</h2>
+          <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
+            <li ng-repeat="el in ::ar">
+              <span><input type="radio" name="peres" id="r1{{$index}}"></span>
+              <label for="r1{{$index}}" class="bysides">
+                <div>
+                  {{::el.title}}<br>
+                  <span class="grey">({{::el.code}})</span>
+                </div>
+                <div>{{::el.price}} <span class="rub">Р</span></div>
+              </label>
+            </li>
+          </ul>
+        </div>
         <div class="block last" ng-if="true">
           <h2>Авиакомпания</h2>
           <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
