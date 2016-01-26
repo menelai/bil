@@ -4,6 +4,9 @@
 
 (function($){
     $(function() {
+      if (navigator.appVersion.indexOf("Mac")!=-1) {
+        $("body").addClass('mac');
+      }
         $('head').append('<style type="text/css" id="datepickerstyle"></style>');
         $('.datepicker').datepicker({
             beforeShow: function(){
@@ -13,4 +16,5 @@
             }
         });
     });
+
 })(jQuery);

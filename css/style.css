@@ -395,6 +395,8 @@ ul.textm > li > * {
 input[type=checkbox], input[type=radio] {
   display: inline-block;
   vertical-align: -0.1em; }
+  .mac input[type=checkbox], .mac input[type=radio] {
+    vertical-align: 0.05em; }
 
 body {
   font-family: 'Segoe UI', 'Myriad Pro', Myriad, Arial, Helvetica, sans-serif;
