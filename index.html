@@ -42,14 +42,15 @@
         <div>Акции, розыгрыши,<br>
           новости, отзывы о нас</div>
         <div>
-          <a href="/"><img src="i/vk.png"></a>
-          <a href="/"><img src="i/f.png"></a>
-          <a href="/"><img src="i/in.png"></a>
-          <a href="/"><img src="i/tw.png"></a>
+          <a href="/"><div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div></a>
+          <a href="/"><div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div></a>
+          <a href="/"><div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div></a>
+          <a href="/"><div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div></a>
         </div>
       </div>
     </div>
   </div>
+  <div id="totop"><a href="#top"></a></div>
 </div>
 <div id="top">
   <div class="max-width">
@@ -155,9 +156,12 @@
               <div>Дети до 14 лет</div>
               <div class="number-with-spinners"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></div>
             </div>
-            <ul>
+            <ul ng-show="children.length>0">
               <li ng-repeat="child in children track by $index">
-                Возраст <input ng-model="child" type="number" step="1">
+                <div class="bysides">
+                  <div>Возраст {{$index+1}}-го ребенка</div>
+                  <div><div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div></div>
+                </div>
               </li>
             </ul>
           </div>
@@ -169,8 +173,13 @@
               <div class="number-with-spinners"><span class="minus" ng-click="ba=ba-1;">−</span><input type="number" ng-model="ba" ng-init="ba=1;" step="1" min="1"><span class="plus" ng-click="ba=ba+1;">+</span></div>
             </div>
           </div>
-          <div class="business-class">
-            <input type="checkbox" id="busclass"> <label for="busclass">Бизнес-класс</label>
+          <div class="bysides business-class">
+            <div class="">
+              <input type="checkbox" id="busclass"> <label for="busclass">Бизнес-класс</label>
+            </div>
+            <div>
+              <input type="button" value="Закрыть" class="blue-button" ng-click="show=false;">
+            </div>
           </div>
         </div>
       </div>
@@ -212,7 +221,7 @@
           <h2>Пересадки</h2>
           <ul class="ul radios" ng-init="ar = [{title:'Только прямые', price:'12&thinsp;338'}, {title:'1 пересадка', price:'12&thinsp;338'}, {title:'2 пересадки', price:'12&thinsp;338'}, {title:'Любое кол-вл', price:'12&thinsp;338'}]">
             <li ng-repeat="el in ::ar">
-              <span><input type="radio" name="peres" id="r{{$index}}"></span>
+              <input type="radio" name="peres" id="r{{$index}}">
               <label for="r{{$index}}" class="bysides">
                 <div>{{::el.title}}</div>
                 <div>{{::el.price}} <span class="rub">Р</span></div>
@@ -224,11 +233,11 @@
           <h2>Аэропорт вылета</h2>
           <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
             <li ng-repeat="el in ::ar">
-              <span><input type="radio" name="peres" id="r1{{$index}}"></span>
+              <input type="radio" name="peres" id="r1{{$index}}">
               <label for="r1{{$index}}" class="bysides">
                 <div>
-                  {{::el.title}}<br>
-                  <span class="grey">({{::el.code}})</span>
+                  {{::el.title}}<!--br>
+                  <span class="grey">({{::el.code}})</span-->
                 </div>
                 <div>{{::el.price}} <span class="rub">Р</span></div>
               </label>
@@ -236,14 +245,14 @@
           </ul>
         </div>
         <div class="block" ng-if="true">
-          <h2>Аэропорт |прилета</h2>
+          <h2>Аэропорт прилета</h2>
           <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
             <li ng-repeat="el in ::ar">
-              <span><input type="radio" name="peres" id="r1{{$index}}"></span>
+              <input type="radio" name="peres" id="r1{{$index}}">
               <label for="r1{{$index}}" class="bysides">
                 <div>
-                  {{::el.title}}<br>
-                  <span class="grey">({{::el.code}})</span>
+                  {{::el.title}}<!--br>
+                  <span class="grey">({{::el.code}})</span-->
                 </div>
                 <div>{{::el.price}} <span class="rub">Р</span></div>
               </label>
@@ -254,7 +263,7 @@
           <h2>Авиакомпания</h2>
           <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
             <li ng-repeat="el in ::ar">
-              <span><input type="radio" name="peres" id="r2{{$index}}"></span>
+              <input type="radio" name="peres" id="r2{{$index}}">
               <label for="r2{{$index}}" class="bysides">
                 <div>
                   {{::el.title}}
@@ -269,7 +278,7 @@
               <span ng-click="$parent.allShown=false;">Свернуть <img src="i/arrow-down.png" style="transform: rotate(180deg);"></span>
               <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
                 <li ng-repeat="el in ::ar">
-                  <span><input type="radio" name="peres" id="r3{{$index}}"></span>
+                  <input type="radio" name="peres" id="r3{{$index}}">
                   <label for="r3{{$index}}" class="bysides">
                     <span>
                       {{::el.title}}

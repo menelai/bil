@@ -377,6 +377,14 @@ ul.textm > li > * {
 .grey {
   color: #929292; }
 
+.blue-button {
+  border-radius: 2px;
+  background: #058fc7;
+  border: none;
+  color: white;
+  padding: 0.3em 1.5em 0.3em;
+  text-transform: uppercase; }
+
 .lightgrey {
   color: #bdbdbd; }
 
@@ -899,7 +907,8 @@ a {
   margin-top: 2px;
   border: solid 1px #0480b4;
   border-radius: 2px;
-  width: 21em;
+  width: -webkit-calc(200% - 2px);
+  width: calc(200% - 2px);
   padding: 1.5em 1em; }
   #passengers-popup input[type=number] {
     border: solid 1px #bdbdbd;
@@ -1110,7 +1119,8 @@ a {
 .block h2 {
   text-transform: uppercase;
   color: #0480b4;
-  font-weight: normal; }
+  font-weight: normal;
+  margin-bottom: 3px; }
 
 .radios > li {
   display: -ms-flexbox;
@@ -1131,9 +1141,16 @@ a {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start; }
-  .radios > li > span:first-child {
-    width: 40px; }
+  .radios > li > input[type=radio] {
+    position: absolute;
+    left: 0;
+    top: 0.2em; }
+    .radios > li > input[type=radio]:checked + label {
+      color: #0480b4; }
+      .radios > li > input[type=radio]:checked + label > *:first-child {
+        /*font-weight: bold;*/ }
   .radios > li > label {
+    padding-left: 40px;
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
@@ -2139,5 +2156,21 @@ a {
 #safety {
   background: url(../i/card.png) left 0.2em no-repeat;
   padding-left: 45px; }
+
+.ib {
+  display: inline-block; }
+
+#totop {
+  position: absolute;
+  bottom: 100%;
+  right: 5px;
+  display: none; }
+  #totop a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #cde9f4 url(../i/totop.png) center center no-repeat;
+    border-radius: 100%;
+    margin-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,6 +7,8 @@
       if (navigator.appVersion.indexOf("Mac")!=-1) {
         $("body").addClass('mac');
       }
+
+        $("#totop").hide();
         $('head').append('<style type="text/css" id="datepickerstyle"></style>');
         $('.datepicker').datepicker({
             beforeShow: function(){
@@ -14,6 +16,22 @@
                 $("#datepickerstyle").html('.ui-datepicker {width:'+($(this).outerWidth()*2+2)+'px}');
                 //console.log($(this).outerWidth()*2+'px');
             }
+        });
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#totop').fadeIn();
+            } else {
+                $('#totop').fadeOut();
+            }
+        });
+
+        // scroll body to 0px on click
+        $('#totop a').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
         });
     });
 
