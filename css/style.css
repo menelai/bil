@@ -383,7 +383,8 @@ ul.textm > li > * {
   border: none;
   color: white;
   padding: 0.3em 1.5em 0.3em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 0.9; }
 
 .lightgrey {
   color: #bdbdbd; }
@@ -909,7 +910,7 @@ a {
   border-radius: 2px;
   width: -webkit-calc(200% - 2px);
   width: calc(200% - 2px);
-  padding: 1.5em 1em; }
+  padding: 15px; }
   #passengers-popup input[type=number] {
     border: solid 1px #bdbdbd;
     width: 2em;
@@ -965,6 +966,8 @@ a {
       position: absolute;
       top: 15px;
       left: 3px; }
+  #passengers-popup .baby-title {
+    margin: -6px 0; }
   #passengers-popup .business-class {
     padding-top: 15px; }
 
@@ -2172,5 +2175,65 @@ a {
     background: #cde9f4 url(../i/totop.png) center center no-repeat;
     border-radius: 100%;
     margin-bottom: 5px; }
+
+#alternate-results {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+  #alternate-results > .month {
+    /*-webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;*/
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+    #alternate-results > .month > .month-title {
+      -webkit-flex: 0 1 100%;
+      -ms-flex: 0 1 100%;
+      flex: 0 1 100%; }
+    #alternate-results > .month > .month-day {
+      /*-webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+      flex: 1 0 auto;*/
+      border: solid 1px #acacac;
+      text-align: center;
+      padding: 0.5em;
+      margin: -1px 0 0 -1px; }
+      #alternate-results > .month > .month-day h2 {
+        font-weight: normal;
+        font-size: 18px;
+        color: #777777; }
+        #alternate-results > .month > .month-day h2 span {
+          font-size: 12px; }
 
 /*# sourceMappingURL=style.css.map */

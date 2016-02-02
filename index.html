@@ -167,8 +167,8 @@
           </div>
           <div class="baby">
             <div class="bysides">
-              <div>Дети до 2 лет<br>
-              <span class="grey">без места</span>
+              <div class="baby-title">Дети до 2 лет<br>
+                <span class="grey">без места</span>
               </div>
               <div class="number-with-spinners"><span class="minus" ng-click="ba=ba-1;">−</span><input type="number" ng-model="ba" ng-init="ba=1;" step="1" min="1"><span class="plus" ng-click="ba=ba+1;">+</span></div>
             </div>
@@ -202,7 +202,18 @@
     </div>
     <div id="alternate-results">
       <div class="month">
-        <div class="month-title"></div>
+        <div class="month-title">Январь 2016</div>
+        <div class="month-day" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'}]">
+          <h2>{{day.day}}<span> янв</span></h2>
+          <div class="price">{{day.price}} <span class="rub">Р</span></div>
+        </div>
+      </div>
+      <div class="month">
+        <div class="month-title">Февраль 2016</div>
+        <div class="month-day" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'}]">
+          <h2>{{day.day}}<span> фев</span></h2>
+          <div class="price">{{day.price}} <span class="rub">Р</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -219,7 +230,7 @@
       <div id="col1">
         <div class="block" ng-if="true">
           <h2>Пересадки</h2>
-          <ul class="ul radios" ng-init="ar = [{title:'Только прямые', price:'12&thinsp;338'}, {title:'1 пересадка', price:'12&thinsp;338'}, {title:'2 пересадки', price:'12&thinsp;338'}, {title:'Любое кол-вл', price:'12&thinsp;338'}]">
+          <ul class="ul radios" ng-init="ar = [{title:'Только прямые', price:'12&thinsp;338'}, {title:'1 пересадка', price:'12&thinsp;338'}]">
             <li ng-repeat="el in ::ar">
               <input type="radio" name="peres" id="r{{$index}}">
               <label for="r{{$index}}" class="bysides">
