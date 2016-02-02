@@ -2236,4 +2236,73 @@ a {
         #alternate-results > .month > .month-day h2 span {
           font-size: 12px; }
 
+#my-results {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+  #my-results > .month {
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%; }
+    #my-results > .month > .days {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch; }
+      #my-results > .month > .days.wed > .day:first-child {
+        margin-left: calc(2 * 14.28%); }
+      #my-results > .month > .days.thu > .day:first-child {
+        margin-left: calc(3 * 14.28%); }
+      #my-results > .month > .days.sat > .day:first-child {
+        margin-left: calc(5 * 14.28%); }
+      #my-results > .month > .days.sun > .day:first-child {
+        margin-left: calc(6 * 14.28%); }
+      #my-results > .month > .days > .day {
+        -webkit-flex: 0 0 14.28%;
+        -ms-flex: 0 0 14.28%;
+        flex: 0 0 14.28%;
+        text-align: center;
+        min-height: 2.3em; }
+  #my-results .scale {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1em;
+    width: 2px;
+    background: #8fcb00; }
+  #my-results .price {
+    font-size: 10px; }
+  #my-results .past, #my-results .future {
+    color: #bdbdbd; }
+    #my-results .past .scale, #my-results .past .price, #my-results .future .scale, #my-results .future .price {
+      display: none; }
+
 /*# sourceMappingURL=style.css.map */

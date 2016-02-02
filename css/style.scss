@@ -2297,3 +2297,98 @@ a {
     }
   }
 }
+
+#my-results {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  >.month {
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+
+    >.days {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+
+      &.wed {
+        > .day:first-child {
+          margin-left: calc(2 * 14.28%);
+        }
+      }
+      &.thu {
+        > .day:first-child {
+          margin-left: calc(3 * 14.28%);
+        }
+      }
+      &.sat {
+        > .day:first-child {
+          margin-left: calc(5 * 14.28%);
+        }
+      }
+      &.sun {
+        > .day:first-child {
+          margin-left: calc(6 * 14.28%);
+        }
+      }
+
+      > .day {
+        -webkit-flex: 0 0 14.28%;
+        -ms-flex: 0 0 14.28%;
+        flex: 0 0 14.28%;
+        text-align: center;
+        min-height: 2.3em;
+      }
+    }
+  }
+
+  .scale {
+    display: inline-block;
+    vertical-align: middle;
+    height:1em;
+    width:2px;
+    background: $green;
+  }
+
+  .price {
+    font-size: 10px;
+  }
+
+  .past, .future {
+    color:$lightgrey;
+    .scale, .price {
+      display: none;
+    }
+  }
+}
