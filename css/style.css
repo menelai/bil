@@ -2214,17 +2214,17 @@ a {
     -webkit-align-content: flex-start;
     -ms-flex-line-pack: start;
     align-content: flex-start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start; }
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch; }
     #alternate-results > .month > .month-title {
       -webkit-flex: 0 1 100%;
       -ms-flex: 0 1 100%;
       flex: 0 1 100%; }
     #alternate-results > .month > .month-day {
-      /*-webkit-flex: 1 0 auto;
+      -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
-      flex: 1 0 auto;*/
+      flex: 1 0 auto;
       border: solid 1px #acacac;
       text-align: center;
       padding: 0.2em;
