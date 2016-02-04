@@ -201,21 +201,22 @@
       </div>
     </div>
     <div id="alternate-results">
-      <div class="month" style="width:{{6/30*100}}%;">
+      <div class="month" ng-attr-style="width:{{6/30*100}}%;">
         <div class="month-title">Январь 2016</div>
-        <div class="month-day {{day.cheap ? 'cheap' : ''}} {{day.recommended ? 'recommended' : ''}}" style="width:{{100/6*2}}%;" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338', recommended:true}, {}]">
+        <div class="month-day {{day.cheap ? 'cheap' : ''}} {{day.recommended ? 'recommended' : ''}}" ng-attr-style="width:{{100/6*2}}%;" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338', recommended:true}, {}]">
           <h2 ng-show="day.day">{{day.day}}<span> янв</span></h2>
           <div class="price" ng-show="day.price">{{day.price}} <span class="rub">Р</span></div>
         </div>
       </div>
-      <div class="month" style="width:{{24/30*100}}%;">
+      <div class="month" ng-attr-style="width:{{24/30*100}}%;">
         <div class="month-title">Февраль 2016</div>
-        <div class="month-day {{day.cheap ? 'cheap' : ''}} {{day.recommended ? 'recommended' : ''}}"  style="width:{{100/24*2}}%;" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338', cheap:true},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'}]">
+        <div class="month-day {{day.cheap ? 'cheap' : ''}} {{day.recommended ? 'recommended' : ''}}"  ng-attr-style="width:{{100/24*2}}%;" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338', cheap:true},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'}]">
           <h2>{{day.day}}<span> фев</span></h2>
           <div class="price">{{day.price}} <span class="rub">Р</span></div>
         </div>
       </div>
     </div>
+  </div>
 </div>
 <div id="search-results">
   <div id="results-header">
