@@ -201,43 +201,21 @@
       </div>
     </div>
     <div id="alternate-results">
-      <div class="month">
+      <div class="month" style="width:calc(6/30*100%);">
         <div class="month-title">Январь 2016</div>
-        <div class="month-day" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'}]">
+        <div class="month-day" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'}]">
           <h2>{{day.day}}<span> янв</span></h2>
           <div class="price">{{day.price}} <span class="rub">Р</span></div>
         </div>
       </div>
-      <div class="month">
+      <div class="month" style="width:calc(24/30*100%);">
         <div class="month-title">Февраль 2016</div>
-        <div class="month-day" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'}]">
+        <div class="month-day" ng-repeat="day in [{day:'25', price:'12&thinsp;338'},{day:'26', price:'12&thinsp;338'},{day:'27', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'},{day:'28', price:'12&thinsp;338'}]">
           <h2>{{day.day}}<span> фев</span></h2>
           <div class="price">{{day.price}} <span class="rub">Р</span></div>
         </div>
       </div>
     </div>
-
-    <div id="my-results" ng-init="days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];">
-      <div class="month">
-        <h2>Январь</h2>
-        <div class="days wed">
-          <div class="day {{day<12 ? 'past' : ''}}" ng-repeat="day in days">
-            <h2>{{day}}</h2>
-            <div class="price">12&thinsp;338 <span class="rub">Р</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="month">
-        <h2>Февраль</h2>
-        <div class="days sat">
-          <div class="day {{day>12 ? 'future' : ''}}" ng-repeat="day in days">
-            <h2>{{day}}</h2>
-            <div class="price">12&thinsp;338 <span class="rub">Р</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 <div id="search-results">
   <div id="results-header">
