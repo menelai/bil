@@ -2249,6 +2249,7 @@ a {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
+  padding: 4px 0 40px 0;
   >.month {
     /*-webkit-flex: 1 0 auto;
     -ms-flex: 1 0 auto;
@@ -2273,9 +2274,14 @@ a {
     -ms-flex-align: stretch;
     align-items: stretch;
     >.month-title {
-      -webkit-flex: 0 1 100%;
-      -ms-flex: 0 1 100%;
-      flex: 0 1 100%;
+      -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
+      background: #aeaeae;
+      text-align: center;
+      color:white;
+      margin:0 0 3px -1px;
+      padding:2px;
     }
     >.month-day {
       -webkit-flex: 1 0 auto;
@@ -2283,7 +2289,7 @@ a {
       flex: 1 0 auto;
       border:solid 1px #acacac;
       text-align: center;
-      padding:0.2em;
+      padding:0.5em 0.2em;
       margin:-1px 0 0 -1px;
 
       h2 {
@@ -2294,7 +2300,47 @@ a {
           font-size: 12px;
         }
       }
+
+      &.recommended, &.cheap {
+        &:before {
+          position: absolute;
+          right:1px;
+          bottom:1px;
+        }
+        &:after {
+          position: absolute;
+          top:1px;
+          left:1px;
+        }
+      }
     }
+
+    &:not(:last-child) {
+      padding-right:1px;
+      >.month-title {
+        margin-right:-1px;
+      }
+    }
+    +.month {
+      padding-left:2px;
+      >.month-title {
+        margin-left:-2px;
+      }
+    }
+
+    &:first-child {
+      >.month-title {
+        border-radius: 2px 0 0 2px;
+      }
+    }
+    &:last-child {
+      >.month-title {
+        border-radius: 0 2px 2px 0;
+      }
+    }
+  }
+  .price {
+    font-size: 13px;
   }
 }
 
