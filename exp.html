@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>bil</title>
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <script src="js/script.js"></script>
+
+</head>
+<body>
+<div id="statusbar">
+  <div class="max-width">
+    <div>
+      <div>
+        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME)   <a href="/">Шереметьево</a> (SVO)   <a href="/">Внуково</a> (VKO)
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <div id="links-block">
+        <div id="safety"><a href="/">Абсолютная<br>
+          безопасность платежей</a></div>
+        <div><a href="/">Публичная<br>
+          оферта</a></div>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <div id="smm">
+        <div>Акции, розыгрыши,<br>
+          новости, отзывы о нас</div>
+        <div>
+          <a href="/"><div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div></a>
+          <a href="/"><div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div></a>
+          <a href="/"><div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div></a>
+          <a href="/"><div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="totop"><a href="#top"></a></div>
+</div>
+<div id="top">
+  <div class="max-width">
+    <div id="logo">
+    <a href="/">
+      <div>
+        <div><img src="/i/logo.png"></div>
+        <div class="afut" id="sitename-and-slogan">
+          <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
+          <div id="slogan" class="blue">
+            Лучшие цены на авиабилеты<br>
+            Европейское качество обслуживания
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
+    <div class="sep"></div>
+    <div id="partners">
+      <div>
+        <h4>Наши партнеры:</h4>
+        <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
+        <div class="swap"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
+      </div>
+      <div>
+        <h4>Нас рекомендуют:</h4>
+        <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
+        <div class="swap"><img src="i/national.png"><img src="i/national-color.png"></div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div id="phones">
+      <p class="blue">+7 (495) 210-5-99<br>
+      8 800 234 5 99 5</p>
+      <p class="grey">с 9:00 до 23:00</p>
+    </div>
+    <div class="sep"></div>
+    <div id="personal">
+      <div id="call-variants">
+        <div id="call-icons">
+          <img src="i/viber.png">
+          <img src="i/skype.png">
+          <img src="i/whatsapp.png">
+          <img src="i/email.png">
+        </div>
+        <div id="call-helpers">
+          <span>Позвонить онлайн</span>
+          <span>Email</span>
+        </div>
+      </div>
+      <div><a href="/" id="lk">Личный кабинет</a></div>
+    </div>
+  </div>
+</div>
+<div id="menu-line">
+  <div class="max-width">
+    <ul>
+      <li><a href="/">Авиабилеты</a></li>
+      <li><a href="/">Бронирование отелей</a></li>
+      <li><a href="/">Бронирование авто</a></li>
+      <li><a href="/">Ж\д билеты</a></li>
+      <li><a href="/">Билеты на автобус on-line</a></li>
+      <li><a href="/">О компании</a></li>
+      <li><a href="/">Контакты</a></li>
+      <li><a href="/">Отзывы о нас</a></li>
+    </ul>
+  </div>
+</div>
+<div id="top-search-form">
+  <div class="max-width">
+    <form>
+      <div id="new-search">
+        <div>Новый поиск</div>
+      </div>
+      <div id="from-input">
+        <input type="text" placeholder="Город вылета">
+        <div id="change-from-to"></div>
+      </div>
+      <div id="to-input">
+        <input type="text" placeholder="Город прилета">
+      </div>
+      <div id="date-input-1">
+        <input type="text" class="datepicker" placeholder="Туда">
+      </div>
+      <div id="date-input-2">
+        <input type="text" class="datepicker" placeholder="Обратно">
+        <div class="close"></div>
+      </div>
+      <div id="passengers-input">
+        <div class="pass-border">
+          <div>1 пасс., эконом</div>
+        </div>
+        <div class="drop-down"></div>
+        <div id="passengers-popup">
+          <div class="adult">
+            <div class="bysides">
+              <div>Взрослые</div>
+              <div class="number-with-spinners"><span class="minus">−</span><input type="number" step="1" min="1"><span class="plus">+</span></div>
+            </div>
+          </div>
+          <div class="child">
+            <div class="bysides">
+              <div>Дети до 14 лет</div>
+              <div class="number-with-spinners"><span class="minus">−</span><input type="number" step="1"><span class="plus">+</span></div>
+            </div>
+            <ul>
+              <li>
+                <div class="bysides">
+                  <div>Возраст 1-го ребенка</div>
+                  <div><div class="number-with-spinners"><span class="minus">−</span><input type="number" step="1" min="1"><span class="plus">+</span></div></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="baby">
+            <div class="bysides">
+              <div class="baby-title">Дети до 2 лет<br>
+                <span class="grey">без места</span>
+              </div>
+              <div class="number-with-spinners"><span class="minus">−</span><input type="number" step="1" min="1"><span class="plus">+</span></div>
+            </div>
+          </div>
+          <div class="bysides business-class">
+            <div class="">
+              <input type="checkbox" id="busclass"> <label for="busclass">Бизнес-класс</label>
+            </div>
+            <div>
+              <input type="button" value="Закрыть" class="blue-button">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="search-submit">
+        <input type="submit" value="Найти">
+      </div>
+    </form>
+  </div>
+</div>
+<div id="alternate-price">
+  <div class="max-width">
+    <div class="bysides" id="alternate-header">
+      <div id="alt-title">цена авиабилетов на альтернативные даты - прибывание 7 дней</div>
+      <div>
+        <ul>
+          <li class="cheap">Дешевые рейсы</li>
+          <li class="recommended">Рекомендуемые рейсы</li>
+        </ul>
+      </div>
+    </div>
+    <div id="alternate-results">
+      <div class="month" style="width:20%;">
+        <div class="month-title">Январь 2016</div>
+        <div class="month-day" style="width:33.33%;">
+          <h2>28<span> янв</span></h2>
+          <div class="price">1233 <span class="rub">Р</span></div>
+        </div>
+      </div>
+      <div class="month" style="width:80%;">
+        <div class="month-title">Февраль 2016</div>
+        <div class="month-day"  style="width:8.33%;">
+          <h2>22<span> фев</span></h2>
+          <div class="price">1222 <span class="rub">Р</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="search-results">
+  <div id="results-header">
+    <div class="max-width">
+      <span id="src-dst">Москва     <span class="gt"></span>   Санкт-петербург    <span class="gt"></span>    Москва</span>
+      <span id="res-dates">25 ноября - 5 декабря</span>
+    </div>
+  </div>
+  <div id="two-cols">
+    <div class="max-width">
+      <div id="col1">
+        <div class="block">
+          <h2>Пересадки</h2>
+          <ul class="ul radios">
+            <li>
+              <input type="radio" name="peres" id="r">
+              <label for="r" class="bysides">
+                <div>111</div>
+                <div>12222 <span class="rub">Р</span></div>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="block">
+          <h2>Аэропорт вылета</h2>
+          <ul class="ul radios">
+            <li>
+              <input type="radio" name="peres" id="r1">
+              <label for="r1" class="bysides">
+                <div>
+                  title
+                </div>
+                <div>12222 <span class="rub">Р</span></div>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="block">
+          <h2>Аэропорт прилета</h2>
+          <ul class="ul radios">
+            <li>
+              <input type="radio" name="peres" id="r2">
+              <label for="r2" class="bysides">
+                <div>
+                  title
+                </div>
+                <div>12222 <span class="rub">Р</span></div>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="block last">
+          <h2>Авиакомпания</h2>
+          <ul class="ul radios">
+            <li>
+              <input type="radio" name="peres" id="r3">
+              <label for="r3" class="bysides">
+                <div>
+                  title
+                </div>
+                <div>price <span class="rub">Р</span></div>
+              </label>
+            </li>
+          </ul>
+          <div class="show-all">
+            <span>Показать все 16 <img src="i/arrow-down.png"></span>
+            <div class="all-items">
+              <span>Свернуть <img src="i/arrow-down.png" style="transform: rotate(180deg);"></span>
+              <ul class="ul radios">
+                <li>
+                  <input type="radio" name="peres" id="r4">
+                  <label for="r4" class="bysides">
+                    <span>
+                      title
+                    </span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="col2">
+        <div id="time-and-subscribe">
+          <div id="time-form">
+            <div class="drop-controller activetrue">
+              <span>Время вылета/<br>прилета туда</span>
+              <div class="drop-down"></div>
+            </div>
+            <div class="popup-div">
+              <h2>Время вылета туда</h2>
+
+              <h3 class="plane-up">Вылет из Москвы</h3>
+              <ul class="ul times-of-day">
+                <li>
+                  <label>
+                    <input type="radio" name="lol"> <span class="blue ttu">part.title</span><br>
+                    <span>part.time</span>
+                  </label>
+                </li>
+              </ul>
+              <hr>
+              <h3 class="plane-down">Прилёт в Санкт-Петербург</h3>
+              <ul class="ul times-of-day">
+                <li>
+                  <label>
+                    <input type="radio" name="lol1"> <span class="blue ttu">part.title</span><br>
+                    <span>part.time</span>
+                  </label>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="button-grey">
+              </div>
+              <div class="close-popup"></div>
+            </div>
+
+            <div class="drop-controller">
+              <span>Время вылета/<br>прилета обратно</span>
+              <div class="drop-down"></div>
+            </div>
+            <div class="popup-div">
+              <h2>Время вылета обратно</h2>
+              <h3 class="plane-up">Вылет из Москвы</h3>
+              <ul class="ul times-of-day">
+                <li>
+                  <label>
+                    <input type="radio" name="lol"> <span class="blue ttu">part.title</span><br>
+                    <span>part.time</span>
+                  </label>
+                </li>
+              </ul>
+              <hr>
+              <h3 class="plane-down">Прилёт в Санкт-Петербург</h3>
+              <ul class="ul times-of-day">
+                <li>
+                  <label>
+                    <input type="radio" name="lol1"> <span class="blue ttu">part.title</span><br>
+                    <span>part.time</span>
+                  </label>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="button-grey">
+              </div>
+              <div class="close-popup"></div>
+            </div>
+
+            <div class="drop-controller">
+              <span>Вид<br>авиарейса</span>
+              <div class="drop-down"></div>
+            </div>
+            <div class="popup-div">
+              <h2>Вид авиарейса</h2>
+              <ul class="ul race-kind">
+                <li class="bysides" >
+                  <label class="radio-pad">
+                    <input type="radio" name="jop1">
+                    <span>
+                      <span class="larger">type.title</span><br>
+                      <span class="grey">type.moneyback</span>
+                    </span>
+                  </label>
+                  <span class="smaller pseudo blue">Подробнее</span>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="button-grey">
+              </div>
+              <div class="close-popup"></div>
+            </div>
+          </div>
+          <div id="subscribe-form">
+            <form>
+              <h2>Цена на авиабилет может снизиться</h2>
+              <input type="email" placeholder="Ваш email"> <input type="submit" value="Следить за ценой" class="button-grey">
+            </form>
+          </div>
+        </div>
+        <div id="results">
+          <div class="result">
+            <div class="result-cols">
+              <div class="col-trip-info rounded">
+                <div class="trip-grey-row trip-there-grey trip-row">
+                  <div class="trip-col1 flex-center">
+                    <div class="plane-model">Airbus 321</div>
+                  </div>
+                  <div class="trip-col2 flight-params">
+                    <div class="flex-center">
+                      <div class="luggage">Багаж 20&nbsp;кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="chair">Класс: эконом</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="trip-there">
+
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div class="company-name-and-logo">
+                        <img src="i/nordstar.png"><br>
+                        Nord Star Airlines
+                      </div>
+                    </div>
+                    <div class="trip-col2 times-row">
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          2 ч 30 м<br>
+                          <span class="grey">прямой</span>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="trip-help">
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div></div>
+                    </div>
+                    <div class="trip-col2 blue-row {{hideThere ? 'only-back' : ''}}">
+                      <div class="flex-center">
+                        <div class="smaller white-plane">Вылет</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="smaller clock">Время в пути</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="smaller white-plane down">Прилет</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="trip-back">
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div class="company-name-and-logo"><img src="i/nordstar.png"><br>
+                        Nord Star Airlines</div>
+                    </div>
+                    <div class="trip-col2 times-row">
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          2 ч 30 м<br>
+                          <span class="grey">прямой</span>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-price rounded">
+                <div class="price-n">
+                  <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                  <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
+                </div>
+                <div class="buy-n">
+                  <input type="button" value="Купить"><br>
+                  <span class="grey smaller2">дешевый авиабилет</span>
+                </div>
+              </div>
+            </div>
+            <div class="result-cols grey-cols inner-top-shadow">
+              <div class="col-trip-info">
+                <div class="trip-back-grey trip-row">
+                  <div class="trip-col1 flex-center">
+                    <div class="plane-model">Airbus 321</div>
+                  </div>
+                  <div class="trip-col2 flight-params">
+                    <div class="flex-center">
+                      <div class="luggage">Багаж 20&nbsp;кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="chair">Класс: эконом</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-row col-price">
+                <div class="flex-center">
+                  <a href="/" class="buy-credit smaller">Купить в кредит</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-result">
+            <div class="promo-content">
+              <div class="promo-header bysides">
+                <div>
+                  <h2>
+                    <span class="afut"><span class="green">лучшие</span><span class="orange">туры.</span><span class="green">онлайн</span></span>
+                    <span class="ttu">Лучшее предложение</span>
+                  </h2>
+                </div>
+                <div>
+                  <a href="" class="green-button">Выбрать другой вариант тура</a>
+                </div>
+              </div>
+              <div class="hotel-and-trip">
+                <div class="hotel-info rounded">
+                  <div class="hotel-title">
+                    <h3>AMBASSADOR CITY<br>
+                      JOMTIEN HOTEL<br>
+                      ****</h3>
+                  </div>
+                  <div class="semi-white">
+                    <h4 class="blue ttu">В стоимость тура входит:</h4>
+                    Групповой трансфер
+                    Медицинская страховка
+                    Услуги гида
+                    <div>
+                      <select>
+                        <option>Тип питания: все вкл.</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select>
+                        <option>Тип номера: стандарт</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="promo-trip">
+                  <div>
+                  <div class="result">
+                    <div class="result-cols">
+                      <div class="col-trip-info rounded">
+                        <div class="trip-grey-row trip-there-grey trip-row">
+                          <div class="trip-col1 flex-center">
+                            <div class="plane-model">Airbus 321</div>
+                          </div>
+                          <div class="trip-col2 flight-params">
+                            <div class="flex-center">
+                              <div class="luggage">Багаж 20&nbsp;кг</div>
+                            </div>
+                            <div class="flex-center">
+                              <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                            </div>
+                            <div class="flex-center">
+                              <div class="chair">Класс: эконом</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="trip-there">
+
+                          <div class="trip-white-row trip-row">
+                            <div class="trip-col1 flex-center">
+                              <div class="company-name-and-logo">
+                                <img src="i/nordstar.png"><br>
+                                Nord Star Airlines
+                              </div>
+                            </div>
+                            <div class="trip-col2 times-row">
+                              <div class="flex-center">
+                                <div>
+                                  <div class="tm">15:30</div>
+                                  <div class="dt blue">30 ноября 2015, пн</div>
+                                  <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                                </div>
+                              </div>
+                              <div class="flex-center">
+                                <div>
+                                  2 ч 30 м<br>
+                                  <span class="grey">прямой</span>
+                                </div>
+                              </div>
+                              <div class="flex-center">
+                                <div>
+                                  <div class="tm">15:30</div>
+                                  <div class="dt blue">30 ноября 2015, пн</div>
+                                  <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="trip-help">
+                          <div class="trip-white-row trip-row">
+                            <div class="trip-col1 flex-center">
+                              <div></div>
+                            </div>
+                            <div class="trip-col2 blue-row">
+                              <div class="flex-center">
+                                <div class="smaller white-plane">Вылет</div>
+                              </div>
+                              <div class="flex-center">
+                                <div class="smaller clock">Время в пути</div>
+                              </div>
+                              <div class="flex-center">
+                                <div class="smaller white-plane down">Прилет</div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="trip-back">
+                          <div class="trip-white-row trip-row">
+                            <div class="trip-col1 flex-center">
+                              <div class="company-name-and-logo"><img src="i/nordstar.png"><br>
+                                Nord Star Airlines</div>
+                            </div>
+                            <div class="trip-col2 times-row">
+                              <div class="flex-center">
+                                <div>
+                                  <div class="tm">15:30</div>
+                                  <div class="dt blue">30 ноября 2015, пн</div>
+                                  <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                                </div>
+                              </div>
+                              <div class="flex-center">
+                                <div>
+                                  2 ч 30 м<br>
+                                  <span class="grey">прямой</span>
+                                </div>
+                              </div>
+                              <div class="flex-center">
+                                <div>
+                                  <div class="tm">15:30</div>
+                                  <div class="dt blue">30 ноября 2015, пн</div>
+                                  <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col-price rounded">
+                        <div class="price-n">
+                          <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                          <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
+                        </div>
+                        <div class="buy-n">
+                          <input type="button" value="Купить"><br>
+                          <span class="grey smaller2">дешевый авиабилет</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="result-cols grey-cols inner-top-shadow">
+                      <div class="col-trip-info">
+                        <div class="trip-back-grey trip-row">
+                          <div class="trip-col1 flex-center">
+                            <div class="plane-model">Airbus 321</div>
+                          </div>
+                          <div class="trip-col2 flight-params">
+                            <div class="flex-center">
+                              <div class="luggage">Багаж 20&nbsp;кг</div>
+                            </div>
+                            <div class="flex-center">
+                              <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                            </div>
+                            <div class="flex-center">
+                              <div class="chair">Класс: эконом</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-row col-price">
+                        <div class="flex-center">
+                          <a href="/" class="buy-credit smaller">Купить в кредит</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-cols">
+              <div class="col-trip-info rounded">
+                <div class="trip-grey-row trip-there-grey trip-row">
+                  <div class="trip-col1 flex-center">
+                    <div class="plane-model">Airbus 321</div>
+                  </div>
+                  <div class="trip-col2 flight-params">
+                    <div class="flex-center">
+                      <div class="luggage">Багаж 20&nbsp;кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="chair">Класс: эконом</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="trip-there">
+
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div class="company-name-and-logo">
+                        <img src="i/nordstar.png"><br>
+                        Nord Star Airlines
+                      </div>
+                    </div>
+                    <div class="trip-col2 times-row">
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          2 ч 30 м<br>
+                          <span class="grey">прямой</span>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="trip-help">
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div></div>
+                    </div>
+                    <div class="trip-col2 blue-row {{hideThere ? 'only-back' : ''}}">
+                      <div class="flex-center">
+                        <div class="smaller white-plane">Вылет</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="smaller clock">Время в пути</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="smaller white-plane down">Прилет</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="trip-back">
+                  <div class="trip-white-row trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div class="company-name-and-logo"><img src="i/nordstar.png"><br>
+                        Nord Star Airlines</div>
+                    </div>
+                    <div class="trip-col2 times-row">
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          2 ч 30 м<br>
+                          <span class="grey">прямой</span>
+                        </div>
+                      </div>
+                      <div class="flex-center">
+                        <div>
+                          <div class="tm">15:30</div>
+                          <div class="dt blue">30 ноября 2015, пн</div>
+                          <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-price rounded">
+                <div class="price-n">
+                  <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                  <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
+                </div>
+                <div class="buy-n">
+                  <input type="button" value="Купить"><br>
+                  <span class="grey smaller2">дешевый авиабилет</span>
+                </div>
+              </div>
+            </div>
+            <div class="result-cols grey-cols inner-top-shadow">
+              <div class="col-trip-info">
+                <div class="trip-back-grey trip-row">
+                  <div class="trip-col1 flex-center">
+                    <div class="plane-model">Airbus 321</div>
+                  </div>
+                  <div class="trip-col2 flight-params">
+                    <div class="flex-center">
+                      <div class="luggage">Багаж 20&nbsp;кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                    </div>
+                    <div class="flex-center">
+                      <div class="chair">Класс: эконом</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-row col-price">
+                <div class="flex-center">
+                  <a href="/" class="buy-credit smaller">Купить в кредит</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
