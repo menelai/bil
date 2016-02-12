@@ -33,6 +33,10 @@
             }, 800);
             return false;
         });
+
+      $("#responses").flexslider({
+        animation: "slide"
+      });
     });
 
 })(jQuery);
