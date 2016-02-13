@@ -872,6 +872,7 @@ a, .pseudolink {
 }
 
 .number-with-spinners {
+  white-space: nowrap;
   >span {
     display: inline-block;
     vertical-align: middle;

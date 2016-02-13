@@ -1002,29 +1002,31 @@ a, .pseudolink {
   -ms-flex-align: center;
   align-items: center; }
 
-.number-with-spinners > span {
-  display: inline-block;
-  vertical-align: middle; }
-.number-with-spinners .minus, .number-with-spinners .plus {
-  height: 1.65em;
-  border: solid 1px #bdbdbd;
-  width: 1.65em;
-  text-indent: -9999px; }
-.number-with-spinners .minus {
-  background: url(../i/minus.png) center center no-repeat; }
-.number-with-spinners .plus {
-  background: url(../i/plus.png) center center no-repeat; }
-.number-with-spinners input {
-  height: 1.65em;
-  border: solid 1px #bdbdbd;
-  width: 2em;
-  text-align: center;
-  -moz-appearance: textfield; }
-  .number-with-spinners input::-webkit-inner-spin-button, .number-with-spinners input::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; }
+.number-with-spinners {
+  white-space: nowrap; }
+  .number-with-spinners > span {
+    display: inline-block;
+    vertical-align: middle; }
+  .number-with-spinners .minus, .number-with-spinners .plus {
+    height: 1.65em;
+    border: solid 1px #bdbdbd;
+    width: 1.65em;
+    text-indent: -9999px; }
+  .number-with-spinners .minus {
+    background: url(../i/minus.png) center center no-repeat; }
+  .number-with-spinners .plus {
+    background: url(../i/plus.png) center center no-repeat; }
+  .number-with-spinners input {
+    height: 1.65em;
+    border: solid 1px #bdbdbd;
+    width: 2em;
+    text-align: center;
+    -moz-appearance: textfield; }
+    .number-with-spinners input::-webkit-inner-spin-button, .number-with-spinners input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0; }
 
 #alternate-price .max-width {
   padding: 0 2.5em; }
