@@ -8,11 +8,13 @@
   <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
   <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
   <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.selectric.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 
-  <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
+  <link rel="stylesheet" type="text/css" href="css/selectric.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <script src="js/script.js"></script>
   <style>
     .max-width {
@@ -391,8 +393,463 @@
         </div>
       </div>
     </div>
-    <div id="ocr">
+
+    <div id="ocr" class="inputshadow">
       <div class="col-title">Бронирование рейса</div>
+
+      <div class="form-group">
+        <div class="bysides withmargin">
+          <div class="buyer blue ttu">Покупатель</div>
+          <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Ваше имя"></div>
+        </div>
+
+        <div class="bysides withmargin">
+          <div class="bysides w50">
+            <div class="flex1 enter-cellular">Введите номер мобильного телефона</div>
+            <div><a href="/" class="blue-button">OK</a></div>
+          </div>
+          <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Ваш email"></div>
+        </div>
+
+        <div class="bysides withmargin vtop">
+          <div>
+            <div class="inpamount adult bysides">
+              <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+            </div>
+            <div class="tma"><p class="blue">Взрослые</p> старше 12 лет</div>
+          </div>
+          <div>
+            <div class="inpamount child bysides">
+              <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+            </div>
+            <div class="tma"><p class="blue">Дети</p> 2-12 лет</div>
+          </div>
+          <div>
+            <div class="inpamount baby bysides">
+              <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+            </div>
+            <div class="tma"><p class="blue">Дети без места</p> до 2 лет</div>
+          </div>
+          <div>
+            <div class="bysides"><input type="text" class="flex1" placeholder="Промокод"></div>
+            <div class="tma"><span class="ttu pseudolink notebook"><span>Записная книжка</span></span></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group passenger">
+        <div class="bysides withmargin">
+          <div class="ttu">Взрослый</div>
+          <div class="bysides">
+            <span class="selectric-label">Документ:</span>
+            <select class="selectric doctype">
+              <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+              <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+              <option value="Passport is not Russia">Passport is not Russia</option>
+              <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bysides withmargin vtop">
+          <div class="gender-select adult">
+            <p>Пол</p>
+            <p><input class="gm" type="radio" name="gender1" value="1" id="genm1" checked><label for="genm1">М</label></p>
+            <p><input class="gf" type="radio" name="gender1" value="1" id="genf1"><label for="genf1">Ж</label></p>
+          </div>
+          <div class="flex1 form-group">
+            <div class="bysides withmargin">
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
+            </div>
+            <div class="bysides withmargin">
+              <div class="ttu"></div>
+              <div class="bysides">
+                <span class="selectric-label">Гражданство</span>
+                <select class="selectric citizenship">
+                  <option value="Georgia" data-flag="i/flag.png">Албания</option>
+                  <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+                  <option value="Georgia" data-flag="i/flag.png">Россия</option>
+                  <option value="Georgia" data-flag="i/greece.png">Украина</option>
+                  <option value="Georgia" data-flag="i/flag.png">США</option>
+                  <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bysides withmargin px2 vtop labels-on-top">
+          <div class="w135">
+            <p>Дата рождения</p>
+            <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+          </div>
+          <div class="flex1">
+            <p>Серия и номер паспорта</p>
+            <div class="bysides withmargin px2">
+              <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
+            </div>
+          </div>
+          <div class="w135">
+            <p>Срок действия</p>
+            <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group passenger">
+        <div class="bysides withmargin">
+          <div class="ttu">Ребенок</div>
+          <div class="bysides">
+            <span class="selectric-label">Документ:</span>
+            <select class="selectric doctype">
+              <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+              <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+              <option value="Passport is not Russia">Passport is not Russia</option>
+              <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bysides withmargin vtop">
+          <div class="gender-select child">
+            <p>Пол</p>
+            <p><input class="gm" type="radio" name="gender2" value="1" id="genm2" checked><label for="genm2">М</label></p>
+            <p><input class="gf" type="radio" name="gender2" value="1" id="genf2"><label for="genf2">Ж</label></p>
+          </div>
+          <div class="flex1 form-group">
+            <div class="bysides withmargin">
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
+            </div>
+            <div class="bysides withmargin">
+              <div class="ttu"></div>
+              <div class="bysides">
+                <span class="selectric-label">Гражданство</span>
+                <select class="selectric citizenship">
+                  <option value="Georgia" data-flag="i/flag.png">Албания</option>
+                  <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+                  <option value="Georgia" data-flag="i/flag.png">Россия</option>
+                  <option value="Georgia" data-flag="i/greece.png">Украина</option>
+                  <option value="Georgia" data-flag="i/flag.png">США</option>
+                  <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bysides withmargin px2 vtop labels-on-top">
+          <div class="w135">
+            <p>Дата рождения</p>
+            <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+          </div>
+          <div class="flex1">
+            <p>Серия и номер паспорта</p>
+            <div class="bysides withmargin px2">
+              <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
+            </div>
+          </div>
+          <div class="w135">
+            <p>Срок действия</p>
+            <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group passenger">
+        <div class="bysides withmargin">
+          <div class="ttu">Adult</div>
+          <div class="bysides">
+            <span class="selectric-label">Document:</span>
+            <select class="selectric doctype">
+              <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+              <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+              <option value="Passport is not Russia">Passport is not Russia</option>
+              <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bysides withmargin vtop">
+          <div class="gender-select adult">
+            <p>Пол</p>
+            <p><input class="gm" type="radio" name="gender3" value="1" id="genm3" checked><label for="genm3">M</label></p>
+            <p><input class="gf" type="radio" name="gender3" value="1" id="genf3"><label for="genf3">F</label></p>
+          </div>
+          <div class="flex1 form-group">
+            <div class="bysides withmargin">
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
+            </div>
+            <div class="bysides withmargin">
+              <div class="ttu"></div>
+              <div class="bysides">
+                <span class="selectric-label">Citizenship</span>
+                <select class="selectric citizenship">
+                  <option value="Georgia" data-flag="i/flag.png">Албания</option>
+                  <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+                  <option value="Georgia" data-flag="i/flag.png">Россия</option>
+                  <option value="Georgia" data-flag="i/greece.png">Украина</option>
+                  <option value="Georgia" data-flag="i/flag.png">США</option>
+                  <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bysides withmargin px2 vtop labels-on-top">
+          <div class="w135">
+            <p>Date of birth</p>
+            <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+          </div>
+          <div class="flex1">
+            <p>Passport series and number</p>
+            <div class="bysides withmargin px2">
+              <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
+            </div>
+          </div>
+          <div class="w135">
+            <p>Expire date</p>
+            <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+          </div>
+        </div>
+
+        <div class="bysides">
+          <div></div>
+          <div><span class="pseudolink qbubble ttu"><span>Как заполнить это поле на русском</span></span></div>
+        </div>
+      </div>
+
+      <div class="form-group passenger">
+        <div class="bysides withmargin">
+          <div class="ttu">Baby</div>
+          <div class="bysides">
+            <span class="selectric-label">Document:</span>
+            <select class="selectric doctype">
+              <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+              <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+              <option value="Passport is not Russia">Passport is not Russia</option>
+              <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bysides withmargin vtop">
+          <div class="gender-select baby">
+            <p>Sex</p>
+            <p><input class="gm" type="radio" name="gender5" value="1" id="genm5" checked><label for="genm5">M</label></p>
+            <p><input class="gf" type="radio" name="gender5" value="1" id="genf5"><label for="genf5">F</label></p>
+          </div>
+          <div class="flex1 form-group">
+            <div class="bysides withmargin">
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
+            </div>
+            <div class="bysides withmargin">
+              <div class="ttu"></div>
+              <div class="bysides">
+                <span class="selectric-label">Citizenship</span>
+                <select class="selectric citizenship">
+                  <option value="Georgia" data-flag="i/flag.png">Албания</option>
+                  <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+                  <option value="Georgia" data-flag="i/flag.png">Россия</option>
+                  <option value="Georgia" data-flag="i/greece.png">Украина</option>
+                  <option value="Georgia" data-flag="i/flag.png">США</option>
+                  <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bysides withmargin px2 vtop labels-on-top">
+          <div class="w135">
+            <p>Date of birth</p>
+            <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+          </div>
+          <div class="flex1">
+            <p>Passport series and number</p>
+            <div class="bysides withmargin px2">
+              <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
+              <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
+            </div>
+          </div>
+          <div class="w135">
+            <p>Expire date</p>
+            <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <h2 class="blue ttu serv-title">Услуги сервиса для вас, уважаемые клиенты</h2>
+        <div class="bysides services-input">
+          <div>
+            <input type="radio" id="serv1" name="serv" checked="true">
+            <label for="serv1">
+              <div class="blue tarp">0 <span class="rub">Р</span></div>
+              <div>
+                Комиссия агентства
+                за обмен или возврат
+                авиабилета:<br>
+                <span class="blue">890 <span class="rub">Р</span></span>
+              </div>
+              <div>
+                Срок обработки заявки
+                на обмен или возврат
+                авиабилета:<br>
+                <span class="blue">2 дня</span>
+              </div>
+              <div>СМС-уведомление
+                о изменениях полётной
+                информации</div>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="serv2" name="serv">
+            <label for="serv2">
+              <div class="blue tarp">490 <span class="rub">Р</span></div>
+              <div>
+                Комиссия агентства
+                за обмен или возврат
+                авиабилета:<br>
+                <span class="blue">890 <span class="rub">Р</span></span>
+              </div>
+              <div>
+                Срок обработки заявки
+                на обмен или возврат
+                авиабилета:<br>
+                <span class="blue">2 дня</span>
+              </div>
+              <div>Уведомление
+                об изменениях полётной
+                информации:
+                СМС и звонок менеджера</div>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="serv3" name="serv">
+            <label for="serv3">
+              <div class="blue tarp">290 <span class="rub">Р</span></div>
+              <div>
+                Комиссия агентства
+                за обмен или возврат
+                авиабилета:<br>
+                <span class="blue">890 <span class="rub">Р</span></span>
+              </div>
+              <div>
+                Срок обработки заявки
+                на обмен или возврат
+                авиабилета:<br>
+                <span class="blue">2 дня</span>
+              </div>
+              <div>Уведомление
+                об изменениях полётной
+                информации:
+                СМС и звонок менеджера
+                <br><br>
+                Персональный
+                менеджер</div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div>
+          <h2 class="blue tac fwn">Задайте вопрос менеджеру biletideshevo.ru</h2>
+          <p class="tac">или укажите дополнительную информацию,
+            которую нам стоит учесть при оформлении авиабилета</p>
+        </div>
+        <div class="bysides"><textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Введите текст сообщения</div></div>
+      </div>
+
+
+      <div class="form-group">
+        <div>
+          <h2 class="blue ttu fwn larger">Способ оплаты</h2>
+          <p>Комиссия 0%</p>
+        </div>
+        <div class="bysides payments vtop tac">
+          <div class="flex1">
+            <input type="radio" name="payment" id="p1">
+            <label for="p1">
+              <img src="i/visa-mastercard.png">
+            </label>
+          </div>
+          <div class="flex1">
+            <input type="radio" name="payment" id="p2">
+            <label for="p2">
+              <img src="i/euroset.png">
+            </label>
+          </div>
+          <div class="flex1">
+            <input type="radio" name="payment" id="p3">
+            <label for="p3">
+              <img src="i/svyaznoy.png">
+            </label>
+          </div>
+          <div class="flex1">
+            <input type="radio" name="payment" id="p4">
+            <label for="p4">
+              <img src="i/qiwi.png">
+            </label>
+          </div>
+          <div class="flex1">
+            <input type="radio" name="payment" id="p5">
+            <label for="p5">
+              <img src="i/alfa.png">
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="bysides">
+          <div class="w135 tac"><img src="i/euroset-l.png"></div>
+          <div class="flex1 tac">
+            <p>Ваш заказ сформирован и готов к оплате
+            в салоне связи Евросеть<br><br>Оплату заказа необходимо произвести:<br>
+            <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
+          </div>
+        </div>
+        <div class="grey smaller2 tac press-to-continue">Для продолжения бронирования нажмите: ОПЛАТИТЬ ДЕШЁВЫЙ АВИАБИЛЕТ</div>
+        <div class="bysides vtop withmargin px5">
+          <div><input type="checkbox" id="iknow"></div>
+          <div class="flex1">
+            <label for="iknow">Я ознакомлен и согласен с <a href="/">правилами публичной оферты</a>         и <a href="/">условиями применения тарифа</a></label>
+          </div>
+        </div>
+        <div class="bysides vtop withmargin px5">
+          <div><input type="checkbox" id="iagree"></div>
+          <div class="flex1">
+            <label for="iagree">Я согласен на <a href="/">обработку персональных данных</a></label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="bysides withmargin fp">
+          <div>Окончательная цена
+            с учётом всех сборов и налогов:</div>
+          <div class="finalprice"><b>12&thinsp;338</b> <span class="rub">Р</span></div>
+        </div>
+        <div class="tac">
+          <input type="submit" value="Оплатить дешевый авиабилет" class="green-button ttu larger ibm">
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

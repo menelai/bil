@@ -37,6 +37,17 @@
       $("#responses").flexslider({
         animation: "slide"
       });
+
+        $(".selectric").selectric();
+
+        $('.selectric.citizenship').selectric({
+            optionsItemBuilder: function(currItem) {
+                return '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span><span class="">'+currItem.text+'</span>';
+            },
+            labelBuilder: function(currItem) {
+                return '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span><span class="">'+currItem.text+'</span>';
+            }
+        });
     });
 
 })(jQuery);
