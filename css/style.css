@@ -1686,7 +1686,7 @@ a, .pseudolink {
   color: white;
   z-index: 11; }
   .blue-row > div {
-    padding: 3px 0; }
+    padding: 2px 0 4px; }
     .blue-row > div:before, .blue-row > div:after {
       display: block;
       position: absolute;
@@ -1709,8 +1709,8 @@ a, .pseudolink {
   display: inline-block;
   vertical-align: middle;
   content: '';
-  width: 20px;
-  height: 21px;
+  width: 14px;
+  height: 15px;
   background: url(../i/white-plane.png);
   margin-right: 0.4em; }
 .white-plane.down:before {
@@ -1721,8 +1721,8 @@ a, .pseudolink {
   display: inline-block;
   vertical-align: middle;
   content: '';
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   background: url(../i/clock.png);
   margin-right: 0.4em; }
 
@@ -2152,7 +2152,8 @@ a, .pseudolink {
 
 .separator {
   width: 1px;
-  background: #aeaeae; }
+  background: #aeaeae;
+  margin: 0 15px; }
 
 #links-block {
   display: -ms-flexbox;
@@ -2201,8 +2202,14 @@ a, .pseudolink {
     margin-left: 1em; }
 
 #safety {
-  background: url(../i/card.png) left 0.2em no-repeat;
   padding-left: 45px; }
+  #safety:before {
+    content: url(../i/card.png);
+    left: 0;
+    top: 50%;
+    margin-top: -12px;
+    position: absolute;
+    display: block; }
 
 .ib {
   display: inline-block; }
@@ -2458,6 +2465,8 @@ a, .pseudolink {
     flex: 0 1 auto; }
     #go-to-search > * + * {
       margin-left: 5px; }
+  #go-to-search input[type="email"] {
+    width: 13em; }
   #go-to-search #subscribe-form {
     font-size: 13px; }
     #go-to-search #subscribe-form h2 {
@@ -2531,9 +2540,9 @@ a, .pseudolink {
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
     -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
@@ -2657,9 +2666,9 @@ a, .pseudolink {
       -webkit-flex: 0 1 38%;
       -ms-flex: 0 1 38%;
       flex: 0 1 38%;
-      text-align: center; }
+      text-align: right; }
       #aeroexpress .aeroexpress-ticket .dobuy .green-button {
-        margin: 0 auto; }
+        margin: 0 0 0 auto; }
 
 .flex1 {
   -webkit-flex: 1;
@@ -2690,6 +2699,31 @@ a, .pseudolink {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start; }
+
+.stretch {
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
+
+.bybounds {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
 
 .w50 {
   width: 50%; }
@@ -2927,5 +2961,11 @@ a, .pseudolink {
   margin-top: -0.5em; }
 .plh:focus + .placeholder {
   display: none; }
+
+.wsn {
+  white-space: nowrap; }
+
+.tar {
+  text-align: right; }
 
 /*# sourceMappingURL=style.css.map */
