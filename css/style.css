@@ -1002,6 +1002,26 @@ a, .pseudolink {
   -ms-flex-align: center;
   align-items: center; }
 
+.toleft {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
 .number-with-spinners {
   white-space: nowrap; }
   .number-with-spinners > span {
@@ -1380,8 +1400,23 @@ a, .pseudolink {
     flex: 0 1 25%;
     text-align: center; }
 
+.grey777 {
+  color: #777777; }
+
+.fsi {
+  font-style: italic; }
+
+.dib {
+  display: inline-block; }
+
+.tdn {
+  text-decoration: none; }
+
 .ttu {
   text-transform: uppercase; }
+
+.fz18 {
+  font-size: 18px; }
 
 .larger {
   font-size: 16px; }
@@ -1391,6 +1426,9 @@ a, .pseudolink {
 
 .smaller2 {
   font-size: 12px; }
+
+.fz11 {
+  font-size: 11px; }
 
 .pseudo {
   border-bottom: dashed 1px;
@@ -2565,7 +2603,7 @@ a, .pseudolink {
       display: none; }
 
 #aeroexpress {
-  padding: 15px 0; }
+  padding: 0 0 15px 0; }
   #aeroexpress #aeroexpress-logo {
     background: url(../i/aeroexpress.png);
     width: 82px;
@@ -2930,6 +2968,9 @@ a, .pseudolink {
 .fwn {
   font-weight: normal; }
 
+.fwb {
+  font-weight: bold; }
+
 .payments {
   margin-top: 30px; }
   .payments input {
@@ -2967,5 +3008,122 @@ a, .pseudolink {
 
 .tar {
   text-align: right; }
+
+.f {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+.hcenter {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.viol {
+  color: #113483; }
+
+#ingos-logo-large {
+  margin: -6px 12px 0 0; }
+
+#insurance {
+  padding: 30px 0 0; }
+
+#ingos-advantages {
+  font-size: 12px;
+  margin: 20px 0; }
+  #ingos-advantages img {
+    margin-right: 8px; }
+  #ingos-advantages > div + div {
+    padding-left: 15px; }
+
+.rounded5 {
+  border-radius: 5px; }
+
+.ins-variant {
+  margin: 10px 0;
+  border: solid 1px #b7b7b7;
+  background: #ffffff;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1); }
+  .ins-variant .separator {
+    margin: 0 1px; }
+  .ins-variant .blue-button {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+.ins-var-top {
+  padding: 5px; }
+
+.ins-var-bottom {
+  padding: 5px;
+  background: #f0f0f0;
+  border-radius: 0 0 5px 5px; }
+
+.ins-options {
+  padding-left: 15px; }
+
+.ins-hint {
+  padding-right: 15px; }
+
+.payment-size {
+  padding-bottom: 5px; }
+
+.ins-by-passenger {
+  margin: 15px 0; }
+  .ins-by-passenger .separator {
+    margin: 0 10px; }
+  .ins-by-passenger input[type=checkbox] {
+    margin-top: 0; }
+  .ins-by-passenger input + .flex1 {
+    margin: -0.2em 0 5px 3px; }
+
+.color-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20px;
+  width: 7px; }
+
+.flat-ins {
+  padding: 20px 0;
+  margin: 20px 0;
+  border-top: solid 1px #a2a2a2;
+  border-bottom: solid 1px #a2a2a2; }
+  .flat-ins .rounded5 {
+    margin-top: 10px;
+    border: solid 1px #b7b7b7;
+    background: #ffffff;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1); }
+  .flat-ins .separator {
+    margin: 0 5px; }
+
+.sales-hit {
+  background: #ff6c00 url(../i/orang.png) center center no-repeat;
+  border-radius: 5px 0 0 5px;
+  color: white;
+  text-transform: uppercase;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 30px; }
+  .sales-hit > div {
+    transform: rotate(-90deg);
+    white-space: nowrap; }
+  .sales-hit + div, .sales-hit + div + div {
+    padding: 5px 5px 5px 15px; }
 
 /*# sourceMappingURL=style.css.map */
