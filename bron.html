@@ -330,7 +330,7 @@
           <div class="bysides stretch ins-var-top">
             <div class="bybounds">
               <div class="ttu">Медицинская<br>страховка</div>
-              <div><a href="/" class="blue-button ttu tdn dib">Подробнее</a></div>
+              <div><a href="" class="blue-button ttu tdn dib" ng-click="showMed=!showMed">Подробнее</a></div>
             </div>
             <div class="flex1 bybounds ins-options">
               <div class="tac grey777 fz11 payment-size">размер выплаты при страховом случае</div>
@@ -366,11 +366,29 @@
             <div><input type="submit" value="Добавить к покупке" class="green-button ttu"></div>
           </div>
         </div>
+        <div class="details-popup ness" ng-show="showMed">
+          <div class="close-dp"></div>
+          <div class="inner">
+            <label><input type="checkbox"> Амбулаторное лечение</label><br/>
+            <label><input type="checkbox"> Покупка медикаментов, подписанных врачём</label><br/>
+            <label><input type="checkbox"> Лечение в стационаре</label><br/>
+            <label><input type="checkbox"> Медико-транспортные и транспортные расходы</label><br/>
+            <label><input type="checkbox"> Посмертная репатриация</label><br/>
+            <label><input type="checkbox"> Возвращение детей домой, оставшихся без присмотра</label><br/>
+          </div>
+          <div class="tar"><input type="button" value="Применить" class="blue-button ttu ibm"></div>
+        </div>
+
         <div class="rounded5 ins-variant">
+          <div class="must-be-med rounded5">
+            <div class="tac">Договор страхования может быть заключен
+              только при наличии полиса медицинского страхования.
+              Сначала добавьте к покупке МЕДИЦИНСКУЮ СТРАХОВКУ</div>
+          </div>
           <div class="bysides stretch ins-var-top">
             <div class="bybounds">
               <div class="ttu">Потеря<br>багажа</div>
-              <div><a href="/" class="blue-button ttu tdn dib">Подробнее</a></div>
+              <div><a href="" class="blue-button ttu tdn dib"  ng-click="showLug=!showLug">Подробнее</a></div>
             </div>
             <div class="flex1 bybounds ins-options">
               <div class="tac grey777 fz11 payment-size">размер выплаты при страховом случае</div>
@@ -422,12 +440,27 @@
             <div><input type="submit" value="Добавить к покупке" class="green-button ttu"></div>
           </div>
         </div>
+        <div class="details-popup ness" ng-show="showLug">
+          <div class="close-dp"></div>
+          <div class="inner">
+            <label class="bysides vtop"><div><input type="checkbox">&nbsp;</div> <div class="flex1">
+              Пропажа или полная гибель багажа, сданного под
+              отвественность перевозчика*
+              <p class="grey777 fz11 fsi" style="margin-top:10px;">* Договор страхования может быть заключен только
+                при наличии полиса медицинского страхования </p>
+            </div></label>
+          </div>
+          <div class="tar"><input type="button" value="Применить" class="blue-button ttu ibm"></div>
+        </div>
+
         <div class="rounded5 ins-variant">
           <div class="bysides stretch ins-var-top">
             <div class="bybounds">
               <div class="ttu">несчастный
                 <br>случай</div>
-              <div><a href="/" class="blue-button ttu tdn dib">Подробнее</a></div>
+              <div>
+                <a href="" class="blue-button ttu tdn dib" ng-click="showNes=!showNes">Подробнее</a>
+              </div>
             </div>
             <div class="flex1 bybounds ins-options">
               <div class="tac grey777 fz11 payment-size">размер выплаты при страховом случае</div>
@@ -478,6 +511,20 @@
             <div class="flex1 fsi fz11 grey777 ins-hint">На случай потери багажа перевозчиком</div>
             <div><input type="submit" value="Добавить к покупке" class="green-button ttu"></div>
           </div>
+        </div>
+        <div class="details-popup ness" ng-show="showNes">
+          <div class="close-dp"></div>
+          <div class="inner">
+            <label><input type="checkbox"> Получение травмы</label><br/>
+            <label class="bysides vtop"><div><input type="checkbox">&nbsp;</div> <div class="flex1">
+              Несчастный случай, повлёкший за собой инвалидность
+              (даже если она наступила не сразу, а в течении года
+              со дня страхового случая)*
+              <p class="grey777 fz11 fsi" style="margin-top:10px;">* Договор страхования может быть заключен только
+                при наличии полиса медицинского страхования </p>
+            </div></label>
+          </div>
+          <div class="tar"><input type="button" value="Применить" class="blue-button ttu ibm"></div>
         </div>
 
         <div class="ins-by-passenger">
@@ -607,7 +654,18 @@
         <div class="flat-ins">
           <div class="bysides">
             <div class="flex1 blue ttu">СТРАХОВАНИЕ КВАРТИРЫ НА ВРЕМЯ ПУТЕШЕСТВИЯ</div>
-            <div><a href="/" class="blue-button dib tdn ttu">Подробнее</a></div>
+            <div><a href="" class="blue-button dib tdn ttu" ng-click="showFlat=!showFlat;">Подробнее</a></div>
+          </div>
+          <div class="details-popup" ng-show="showFlat">
+            <div class="close-dp"></div>
+            <div class="inner">
+              <label><input type="checkbox"> Пожар</label><br/>
+              <label><input type="checkbox"> Залив</label><br/>
+              <label><input type="checkbox"> Замыкание проводки</label><br/>
+              <label><input type="checkbox"> Медико-транспортные и транспортные расходы</label><br/>
+              <label><input type="checkbox"> Страхование ответственности перед третьими лицами</label><br/>
+            </div>
+            <div class="tar"><input type="button" value="Применить" class="blue-button ttu ibm"></div>
           </div>
           <div class="rounded5 bysides stretch">
             <div class="sales-hit"><div>Хит продаж</div></div>
@@ -809,11 +867,11 @@
         <div class="bysides withmargin vtop">
           <div class="gender-select adult">
             <p>Пол</p>
-            <p><input class="gm" type="radio" name="gender1" value="1" id="genm1" checked><label for="genm1">М</label></p>
-            <p><input class="gf" type="radio" name="gender1" value="1" id="genf1"><label for="genf1">Ж</label></p>
+            <p><input class="gm" autocomplete="off" type="radio" name="gender1" value="1" id="genm1" checked ng-click="genderColor='42bcdf';" ng-init="genderColor='42bcdf';"><label for="genm1">М</label></p>
+            <p><input class="gf" autocomplete="off" type="radio" name="gender1" value="1" id="genf1" ng-click="genderColor='f66b27';" ><label for="genf1">Ж</label></p>
           </div>
           <div class="flex1 form-group">
-            <div class="bysides withmargin">
+            <div class="bysides withmargin px2">
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
             </div>
@@ -841,16 +899,18 @@
           </div>
           <div class="flex1">
             <p>Серия и номер паспорта</p>
-            <div class="bysides withmargin px2">
+            <div class="bysides withmargin px2 vtop">
               <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
             </div>
           </div>
-          <div class="w135">
+          <!--div class="w135">
             <p>Срок действия</p>
             <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-          </div>
+          </div-->
         </div>
+        
+        <div class="sideline" style="background: #{{genderColor}};"></div>
       </div>
 
       <div class="form-group passenger">
@@ -874,7 +934,7 @@
             <p><input class="gf" type="radio" name="gender2" value="1" id="genf2"><label for="genf2">Ж</label></p>
           </div>
           <div class="flex1 form-group">
-            <div class="bysides withmargin">
+            <div class="bysides withmargin px2">
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
             </div>
@@ -902,7 +962,7 @@
           </div>
           <div class="flex1">
             <p>Серия и номер паспорта</p>
-            <div class="bysides withmargin px2">
+            <div class="bysides withmargin px2 vtop">
               <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
             </div>
@@ -912,6 +972,8 @@
             <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
           </div>
         </div>
+
+        <div class="sideline" style="background: yellow;"></div>
       </div>
 
 
@@ -936,7 +998,7 @@
             <p><input class="gf" type="radio" name="gender3" value="1" id="genf3"><label for="genf3">F</label></p>
           </div>
           <div class="flex1 form-group">
-            <div class="bysides withmargin">
+            <div class="bysides withmargin px2">
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
             </div>
@@ -964,7 +1026,7 @@
           </div>
           <div class="flex1">
             <p>Passport series and number</p>
-            <div class="bysides withmargin px2">
+            <div class="bysides withmargin px2 vtop">
               <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
             </div>
@@ -979,6 +1041,8 @@
           <div></div>
           <div><span class="pseudolink qbubble ttu"><span>Как заполнить это поле на русском</span></span></div>
         </div>
+
+        <div class="sideline" style="background: #42bcdf;"></div>
       </div>
 
       <div class="form-group passenger">
@@ -1002,7 +1066,7 @@
             <p><input class="gf" type="radio" name="gender5" value="1" id="genf5"><label for="genf5">F</label></p>
           </div>
           <div class="flex1 form-group">
-            <div class="bysides withmargin">
+            <div class="bysides withmargin px2">
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
             </div>
@@ -1030,7 +1094,7 @@
           </div>
           <div class="flex1">
             <p>Passport series and number</p>
-            <div class="bysides withmargin px2">
+            <div class="bysides withmargin px2 vtop">
               <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
             </div>
@@ -1040,6 +1104,8 @@
             <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
           </div>
         </div>
+
+        <div class="sideline" style="background: #42bcdf;"></div>
       </div>
 
 
