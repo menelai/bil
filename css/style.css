@@ -3134,7 +3134,7 @@ a, .pseudolink {
   position: absolute;
   border-radius: 2px;
   width: 100%;
-  z-index: 20;
+  z-index: 40;
   padding: 5px; }
   .details-popup .close-dp {
     width: 16px;
