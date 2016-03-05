@@ -125,9 +125,8 @@ $lightgrey: #bdbdbd;
     display: inline-block;
     font-size: 11px;
     text-decoration: none;
-    line-height: 1.2;
-    padding-left:0.5em;
-    padding-right:0.5em;
+    line-height: 15px;
+    padding:2px 4px 3px;
     text-align: center;
     &:hover {
       color:white;
@@ -1422,8 +1421,8 @@ a, .pseudolink {
   &.aib {
     text-decoration: none;
     font-size: 11px;
-    line-height: 1.2;
-    padding:0.25em 0.5em 0.35em;
+    line-height: 15px;
+    padding:2px 4px 3px;
     &:hover {
       color:white;
     }
@@ -2043,10 +2042,10 @@ a, .pseudolink {
 
   &.aib {
     font-size: 11px;
-    line-height: 1.2;
+    font-size: 11px;
+    line-height: 15px;
+    padding:2px 4px 3px;
     text-transform: uppercase;
-    padding-left:0.5em;
-    padding-right:0.5em;
     text-align: center;
   }
 }
@@ -2641,9 +2640,11 @@ a, .pseudolink {
   align-items: flex-end;
   width:100%;
   >* {
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
+    &:not(.flex1) {
+      -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+    }
     +* {
       margin-left:3px;
     }
@@ -2651,6 +2652,15 @@ a, .pseudolink {
 
   input[type="email"] {
     width:13em;
+    line-height: 15px;
+    padding:2px 4px 2px;
+    margin-right:3px;
+    height: 20px;
+  }
+
+  input[type=submit] {
+    line-height: 15px;
+    height: 20px;
   }
 
   #subscribe-form {
@@ -3195,11 +3205,19 @@ a, .pseudolink {
 
 .flag {
   margin-right:15px;
+  &.country-code-flag {
+    margin-right: 5px;
+  }
   img {
     border: solid 1px #cccccc;
     display: inline-block;
     vertical-align:-2px;
   }
+}
+
+.country-code-option {
+  margin-left:5px;
+  color:#666666;
 }
 
 .w135 {
@@ -3578,4 +3596,31 @@ a, .pseudolink {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.inputshadow input[type="text"].cellular {
+  padding-left:50px;
+}
+.selectric-countrycode {
+  position:absolute;
+  left:0;
+  top:50%;
+  margin-top:-0.9em;
+  .selectric {
+    border:none;
+    background: none;
+
+    .label {
+      margin-right:15px;
+      .flag {
+        margin:3px;
+      }
+    }
+    .button {
+      width:15px;
+      &:after {
+        border-width:4px;
+      }
+    }
+  }
 }

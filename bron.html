@@ -266,10 +266,13 @@
         </div>
       </div>
       <div id="go-to-search">
-        <div id="subscribe-form">
+        <div id="subscribe-form" class="flex1">
           <form>
             <h2>Цена на авиабилет может снизиться</h2>
-            <input type="email" placeholder="Ваш email"> <input type="submit" value="Следить за ценой" class="button-grey">
+            <div class="bysides">
+              <div class="flex1 bysides"><input type="email" placeholder="Ваш email" class="flex1"></div>
+              <div><input type="submit" value="Следить за ценой" class="button-grey"></div>
+            </div>
           </form>
         </div>
         <div>
@@ -817,8 +820,17 @@
 
         <div class="bysides withmargin">
           <div class="bysides w50">
-            <div class="flex1 enter-cellular">Введите номер мобильного телефона</div>
-            <div><a href="/" class="blue-button">OK</a></div>
+            <!--div class="flex1 enter-cellular">Введите номер мобильного телефона</div>
+            <div><a href="/" class="blue-button">OK</a></div-->
+            <input type="text" class="flex1 cellular" placeholder="Номер мобильного телефона" value="+7">
+            <select class="selectric countrycode">
+              <option value="+7" data-flag="i/flag.png">Россия</option>
+              <option value="+90" data-flag="i/greece.png">Грузия</option>
+              <option value="+383" data-flag="i/flag.png">Россия</option>
+              <option value="+900" data-flag="i/greece.png">Украина</option>
+              <option value="+1" data-flag="i/flag.png">США</option>
+              <option value="+800" data-flag="i/greece.png">Зимбабве</option>
+            </select>
           </div>
           <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Ваш email"></div>
         </div>

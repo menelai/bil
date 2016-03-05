@@ -389,9 +389,8 @@ ul.textm > li > * {
     display: inline-block;
     font-size: 11px;
     text-decoration: none;
-    line-height: 1.2;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    line-height: 15px;
+    padding: 2px 4px 3px;
     text-align: center; }
     .blue-button.aib:hover {
       color: white;
@@ -1448,8 +1447,8 @@ a, .pseudolink {
   .button-grey.aib {
     text-decoration: none;
     font-size: 11px;
-    line-height: 1.2;
-    padding: 0.25em 0.5em 0.35em; }
+    line-height: 15px;
+    padding: 2px 4px 3px; }
     .button-grey.aib:hover {
       color: white; }
 
@@ -2005,10 +2004,10 @@ a, .pseudolink {
     /* IE6-9 */ }
   .green-button.aib {
     font-size: 11px;
-    line-height: 1.2;
+    font-size: 11px;
+    line-height: 15px;
+    padding: 2px 4px 3px;
     text-transform: uppercase;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
     text-align: center; }
 
 .hotel-and-trip {
@@ -2499,14 +2498,21 @@ a, .pseudolink {
   -ms-flex-align: end;
   align-items: flex-end;
   width: 100%; }
-  #go-to-search > * {
+  #go-to-search > *:not(.flex1) {
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto; }
-    #go-to-search > * + * {
-      margin-left: 3px; }
+  #go-to-search > * + * {
+    margin-left: 3px; }
   #go-to-search input[type="email"] {
-    width: 13em; }
+    width: 13em;
+    line-height: 15px;
+    padding: 2px 4px 2px;
+    margin-right: 3px;
+    height: 20px; }
+  #go-to-search input[type=submit] {
+    line-height: 15px;
+    height: 20px; }
   #go-to-search #subscribe-form {
     font-size: 13px; }
     #go-to-search #subscribe-form h2 {
@@ -2878,10 +2884,16 @@ a, .pseudolink {
 
 .flag {
   margin-right: 15px; }
+  .flag.country-code-flag {
+    margin-right: 5px; }
   .flag img {
     border: solid 1px #cccccc;
     display: inline-block;
     vertical-align: -2px; }
+
+.country-code-option {
+  margin-left: 5px;
+  color: #666666; }
 
 .w135 {
   width: 135px; }
@@ -3176,5 +3188,25 @@ a, .pseudolink {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+
+.inputshadow input[type="text"].cellular {
+  padding-left: 50px; }
+
+.selectric-countrycode {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -0.9em; }
+  .selectric-countrycode .selectric {
+    border: none;
+    background: none; }
+    .selectric-countrycode .selectric .label {
+      margin-right: 15px; }
+      .selectric-countrycode .selectric .label .flag {
+        margin: 3px; }
+    .selectric-countrycode .selectric .button {
+      width: 15px; }
+      .selectric-countrycode .selectric .button:after {
+        border-width: 4px; }
 
 /*# sourceMappingURL=style.css.map */
