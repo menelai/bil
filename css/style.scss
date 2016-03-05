@@ -121,6 +121,10 @@ $lightgrey: #bdbdbd;
   padding:0.25em 1.5em 0.35em;
   text-transform: uppercase;
   line-height: 0.9;
+  &[type=button], &[type=submit] {
+    padding-top:2px;
+    padding-bottom:4px;
+  }
   &.aib {
     display: inline-block;
     font-size: 11px;
@@ -3547,7 +3551,7 @@ a, .pseudolink {
   border-radius:2px;
   width:100%;
   z-index: 40;
-  padding:5px;
+  padding:4px;
 
   .close-dp {
     width:16px;
@@ -3569,10 +3573,10 @@ a, .pseudolink {
 
 .must-be-med {
   position: absolute;
-  left:0;
-  top:0;
-  right:0;
-  bottom:0;
+  left:-1px;
+  top:-1px;
+  right:-1px;
+  bottom:-1px;
   background: rgba(255, 255, 255, 0.8);
   padding:5px;
   border:solid 2px #ff6c00;
