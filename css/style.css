@@ -2914,7 +2914,8 @@ a, .pseudolink {
   left: 100%;
   content: '';
   width: 7px;
-  margin-left: 13px; }
+  margin-left: 13px;
+  margin-top: 0; }
 
 .pseudolink.qbubble {
   color: #85b908;
@@ -3157,11 +3158,27 @@ a, .pseudolink {
     background: url(../i/close-details.png) center center no-repeat;
     position: absolute;
     right: 5px;
-    top: 5px; }
+    top: 5px;
+    cursor: pointer;
+    z-index: 2; }
   .details-popup .inner {
     padding: 20px; }
   .details-popup.ness {
     margin-top: -90px; }
+  .details-popup.notebook {
+    border-width: 4px;
+    border-radius: 5px;
+    padding: 10px; }
+    .details-popup.notebook .inner {
+      padding: 0px 0 20px 0; }
+    .details-popup.notebook .close-dp {
+      right: 10px;
+      top: 10px; }
+    .details-popup.notebook .gender-select {
+      padding-right: 5px; }
+  .details-popup .popup-title {
+    color: #058fc7;
+    padding-bottom: 10px; }
 
 .must-be-med {
   position: absolute;
@@ -3211,5 +3228,28 @@ a, .pseudolink {
       width: 15px; }
       .selectric-countrycode .selectric .button:after {
         border-width: 4px; }
+
+.passp-table {
+  margin-top: 10px;
+  font-size: 12px;
+  width: 100%; }
+  .passp-table thead th {
+    font-weight: normal;
+    color: #777777;
+    vertical-align: middle; }
+  .passp-table td {
+    text-align: center; }
+
+.passenger-edit-links {
+  width: 150px;
+  padding-left: 10px; }
+  .passenger-edit-links .button-grey {
+    display: block;
+    text-align: center;
+    font-size: 9px; }
+
+.cards-logos {
+  width: 300px;
+  margin: 20px auto 0; }
 
 /*# sourceMappingURL=style.css.map */

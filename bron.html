@@ -859,6 +859,122 @@
             <div class="tma tar"><span class="ttu pseudolink notebook"><span>Записная книжка</span></span></div>
           </div>
         </div>
+        <div class="details-popup notebook" ng-show="false">
+          <div class="close-dp"></div>
+          <div class="inner">
+            <div class="popup-title ttu">Записная книжка</div>
+            <p class="larger tac">Для покупателя с email: ceo@biletideshevo.ru данные пассажиров отсутствуют</p>
+            <p class="blue tac larger">Произведите бронирование авиабилетов,
+              введя данные пассажиров для.
+              Для следующего бронирования данные пассажиров
+              будут сохранены автоматически</p>
+          </div>
+        </div>
+        <div class="details-popup notebook" ng-show="false">
+          <div class="close-dp"></div>
+          <div class="inner">
+            <div class="popup-title ttu">Записная книжка</div>
+            <div class="form-group passenger">
+              <div class="bysides withmargin">
+                <div class="ttu">Взрослый</div>
+                <div class="bysides">
+                  <span class="selectric-label">Документ:</span>
+                  <select class="selectric doctype">
+                    <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+                    <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+                    <option value="Passport is not Russia">Passport is not Russia</option>
+                    <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="bysides withmargin vtop">
+                <div class="gender-select adult">
+                  <p>Пол</p>
+                  <p><input class="gm" autocomplete="off" type="radio" name="gender0" value="1" id="genm0" checked ><label for="genm0">М</label></p>
+                  <p><input class="gf" autocomplete="off" type="radio" name="gender0" value="1" id="genf0" ><label for="genf0">Ж</label></p>
+                </div>
+                <div class="flex1 form-group">
+                  <div class="bysides withmargin px2">
+                    <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
+                    <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
+                  </div>
+                  <div class="bysides withmargin">
+                    <div class="ttu"></div>
+                    <div class="bysides">
+                      <span class="selectric-label">Гражданство</span>
+                      <select class="selectric citizenship">
+                        <option value="Georgia" data-flag="i/flag.png">Албания</option>
+                        <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+                        <option value="Georgia" data-flag="i/flag.png">Россия</option>
+                        <option value="Georgia" data-flag="i/greece.png">Украина</option>
+                        <option value="Georgia" data-flag="i/flag.png">США</option>
+                        <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bysides withmargin px2 vtop labels-on-top">
+                <div class="w135">
+                  <p>Дата рождения</p>
+                  <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+                </div>
+                <div class="flex1">
+                  <p>Серия и номер паспорта</p>
+                  <div class="bysides withmargin px2 vtop">
+                    <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
+                    <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
+                  </div>
+                </div>
+                <div class="w135">
+                  <p>Срок действия</p>
+                  <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tar"><input type="button" value="Сохранить данные пассажира" class="blue-button ttu ibm"></div>
+        </div>
+        <div class="details-popup notebook" ng-show="true">
+          <div class="close-dp"></div>
+          <div class="inner">
+            <div class="popup-title ttu">Записная книжка</div>
+            <div class="bysides stretch">
+              <div class="flex1 bybounds">
+                <div class="ttu">Вениамин Константинопольский</div>
+                <div>
+                  <table class="passp-table">
+                    <thead>
+                    <tr>
+                      <th>Дата рождения</th>
+                      <th>Серия и номер
+                        загранпаспорта</th>
+                      <th>Срок действия</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="larger fwb">
+                      <td>21.12.1978</td>
+                      <td>77&nbsp;&nbsp;123456</td>
+                      <td>21.12.2017</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="passenger-edit-links bybounds">
+                <div>
+                  <a href="/" class="blue-button aib">Добавить данные пассажира</a>
+                </div>
+                <div>
+                  <a href="/" class="button-grey aib">редактировать данные</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
@@ -1211,21 +1327,21 @@
           <h2 class="blue ttu fwn larger">Способ оплаты</h2>
           <p>Комиссия 0%</p>
         </div>
-        <div class="bysides payments vtop tac">
+        <div class="bysides payments vtop tac" ng-init="payment='cards';">
           <div class="flex1">
-            <input type="radio" name="payment" id="p1">
+            <input type="radio" name="payment" id="p1" ng-click="payment='cards';">
             <label for="p1">
               <img src="i/visa-mastercard.png">
             </label>
           </div>
           <div class="flex1">
-            <input type="radio" name="payment" id="p2">
+            <input type="radio" name="payment" id="p2" ng-click="payment='euroset';">
             <label for="p2">
               <img src="i/euroset.png">
             </label>
           </div>
           <div class="flex1">
-            <input type="radio" name="payment" id="p3">
+            <input type="radio" name="payment" id="p3" ng-click="payment='svyaznoy';">
             <label for="p3">
               <img src="i/svyaznoy.png">
             </label>
@@ -1247,12 +1363,32 @@
 
 
       <div class="form-group">
-        <div class="bysides">
+        <div class="bysides" ng-show="payment=='euroset'">
           <div class="w135 tac"><img src="i/euroset-l.png"></div>
           <div class="flex1 tac">
             <p>Ваш заказ сформирован и готов к оплате
             в салоне связи Евросеть<br><br>Оплату заказа необходимо произвести:<br>
             <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
+          </div>
+        </div>
+        <div class="bysides" ng-show="payment=='svyaznoy'">
+          <div class="w135 tac"><img src="i/svyaznoy-big.png"></div>
+          <div class="flex1 tac">
+            <p>Ваш заказ сформирован и готов к оплате
+              в салоне связи Связной<br><br>Оплату заказа необходимо произвести:<br>
+              <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
+          </div>
+        </div>
+        <div ng-show="payment=='cards'">
+          <p class="tac">Абсолютная гарантия платежей. Оплата происходит через
+          авторизизационный сервер Процессингового цетра
+          ПАО&nbsp;«Сбербанк&nbsp;России».</p>
+          <p class="tac">К оплате принимаются банковские карты следующих платёжных систем</p>
+          <div class="bysides cards-logos">
+            <img src="i/visa-grey.png">
+            <img src="i/mastercard-grey.png">
+            <img src="i/visaelectron-grey.png">
+            <img src="i/maestro-grey.png">
           </div>
         </div>
         <div class="grey smaller2 tac press-to-continue">Для продолжения бронирования нажмите: ОПЛАТИТЬ ДЕШЁВЫЙ АВИАБИЛЕТ</div>

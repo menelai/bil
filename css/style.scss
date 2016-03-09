@@ -3247,6 +3247,7 @@ a, .pseudolink {
     content:'';
     width:7px;
     margin-left:13px;
+    margin-top:0;
   }
 }
 
@@ -3560,6 +3561,8 @@ a, .pseudolink {
     position: absolute;
     right:5px;
     top:5px;
+    cursor:pointer;
+    z-index: 2;
   }
 
   .inner {
@@ -3568,6 +3571,28 @@ a, .pseudolink {
 
   &.ness {
     margin-top:-90px;
+  }
+
+  &.notebook {
+    border-width:4px;
+    border-radius: 5px;
+    padding:10px;
+    .inner {
+      padding:0px 0 20px 0;
+    }
+    .close-dp {
+      right:10px;
+      top:10px;
+    }
+
+    .gender-select {
+      padding-right:5px;
+    }
+  }
+
+  .popup-title {
+    color:$blue;
+    padding-bottom:10px;
   }
 }
 
@@ -3627,4 +3652,35 @@ a, .pseudolink {
       }
     }
   }
+}
+
+.passp-table {
+  margin-top:10px;
+  font-size: 12px;
+  width:100%;
+  thead {
+    th {
+      font-weight: normal;
+      color:#777777;
+      vertical-align: middle;
+    }
+  }
+
+  td {
+    text-align: center;
+  }
+}
+.passenger-edit-links {
+  width:150px;
+  padding-left:10px;
+  .button-grey {
+    display: block;
+    text-align: center;
+    font-size: 9px;
+  }
+}
+
+.cards-logos {
+  width:300px;
+  margin:20px auto 0;
 }
