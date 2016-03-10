@@ -58,7 +58,7 @@
 <div id="top">
   <div class="max-width">
     <div id="logo">
-    <a ng-init="width=1024" ng-click="width= (width==1024) ? 1400 : 1024">
+    <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
       <div>
         <div><img src="/i/logo.png"></div>
         <div class="afut" id="sitename-and-slogan">
@@ -277,7 +277,7 @@
         </div>
         <div>
           <a href="/" class="blue-button aib">Цена авиабилетов на
-          альтернативные даты</a>
+          альтернативные&nbsp;даты</a>
         </div>
         <div>
           <a href="/" class="green-button aib">Новый поиск</a>
@@ -328,7 +328,8 @@
           </div>
         </div>
         <div class="viol smaller2">Наши офисы располагаются в 310 населённых пунктах. МЫ ВСЕГДА РЯДОМ С ВАМИ</div>
-
+        <div ng-include="'insurance.html'"></div>
+        <!--
         <div class="rounded5 ins-variant">
           <div class="bysides stretch ins-var-top">
             <div class="bybounds">
@@ -715,6 +716,7 @@
             </div>
           </div>
         </div>
+      -->
       </div>
 
       <div id="aeroexpress">
