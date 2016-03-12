@@ -9,7 +9,14 @@ $orange: #ff8400;
 $grey: #929292;
 $lightgrey: #bdbdbd;
 //$4,128,180
-
+@mixin blue-gradient() {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0480b4+0,036f9c+100 */
+  background: #0480b4; /* Old browsers */
+  background: -moz-linear-gradient(top, #0480b4 0%, #036f9c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0480b4 0%,#036f9c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #0480b4 0%,#036f9c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0480b4', endColorstr='#036f9c',GradientType=0 ); /* IE6-9 */
+}
 @mixin green-gradient() {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fcb00+0,7cb000+100 */
   background: #8fcb00; /* Old browsers */
@@ -51,6 +58,17 @@ $lightgrey: #bdbdbd;
   src: url('fonts/SEGOEUIL.eot');
   src: local('SEGOEUIL'), url('fonts/SEGOEUIL.woff') format('woff'), url('fonts/SEGOEUIL.ttf') format('truetype');
 }*/
+
+@font-face{
+  font-family: 'wf_SegoeUILight';
+  src:url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.eot');
+  src:url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.eot?#iefix') format('embedded-opentype'),
+  url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.woff') format('woff'),
+  url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.ttf') format('truetype'),
+  url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.svg#web') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'AFuturaRound';
@@ -160,6 +178,9 @@ $lightgrey: #bdbdbd;
 input[type=checkbox], input[type=radio] {
   display: inline-block;
   vertical-align: -0.1em;
+  &.no-display {
+    display: none;
+  }
   .mac & {
     vertical-align: 0.05em;
   }
@@ -493,6 +514,16 @@ a, .pseudolink {
   }
 }
 
+.from-input {
+  background: url(../i/plane-up.png) 7px center no-repeat;
+  padding-left:34px;
+}
+
+.to-input {
+  background: url(../i/plane-down.png) 7px center no-repeat;
+  padding-left:34px;
+}
+
 #top-search-form {
   padding:26px 0;
   form {
@@ -576,8 +607,7 @@ a, .pseudolink {
     flex: 0 0 20%;
 
     input {
-      background: url(../i/plane-up.png) 7px center no-repeat;
-      padding-left:34px;
+      @extend .from-input;
     }
   }
 
@@ -587,7 +617,8 @@ a, .pseudolink {
     flex: 0 0 20%;
 
     input {
-      background: url(../i/plane-down.png) 18px center no-repeat;
+      @extend .to-input;
+      background-position: 18px center;
       padding-left:45px;
     }
   }
@@ -3677,6 +3708,10 @@ a, .pseudolink {
   }
 }
 
+.no-display {
+  display: none;
+}
+
 .cards-logos {
   width:300px;
   margin:20px auto 0;
@@ -3684,6 +3719,14 @@ a, .pseudolink {
 
 .mt35 {
   margin-top:35px;
+}
+
+.mt30 {
+  margin-top:30px;
+}
+
+.mt25 {
+  margin-top:25px;
 }
 
 .mt20 {
@@ -3698,8 +3741,17 @@ a, .pseudolink {
   margin-top:10px;
 }
 
+.mt5 {
+  margin-top:5px;
+}
+
+.ml5 {
+  margin-left: 5px;
+}
+
 .f21 {
   font-size: 21px;
 }
 
 @import 'insurance';
+@import 'country';

@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>bron</title>
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.selectric.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
+  <link rel="stylesheet" type="text/css" href="css/selectric.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <script src="js/script.js"></script>
+  <style>
+    .max-width {
+      max-width: {{width}}px;
+    }
+  </style>
+</head>
+<body>
+<div id="statusbar">
+  <div class="max-width">
+    <div>
+      <div class="wsn">
+        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME) <a href="/">Шереметьево</a> (SVO) <a href="/">Внуково</a> (VKO)
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <div id="links-block">
+        <div id="safety"><a href="/">Абсолютная
+          безопасность платежей</a></div>
+        <div><a href="/">Публичная
+          оферта</a></div>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <div id="smm">
+        <div class="wsn">Акции, розыгрыши,<br>
+          новости, отзывы о нас
+        </div>
+        <div class="wsn">
+          <a href="/">
+            <div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="totop"><a href="#top"></a></div>
+</div>
+<div id="top">
+  <div class="max-width">
+    <div id="logo">
+      <a ng-init="width=1024" ng-click="width= (width==1024) ? 1400 : 1024">
+        <div>
+          <div><img src="/i/logo.png"></div>
+          <div class="afut" id="sitename-and-slogan">
+            <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
+            <div id="slogan" class="blue">
+              Лучшие цены на авиабилеты<br>
+              Европейское качество обслуживания
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="sep"></div>
+    <div id="partners">
+      <div>
+        <h4>Наши партнеры:</h4>
+
+        <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
+        <div class="swap"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
+      </div>
+      <div>
+        <h4>Нас рекомендуют:</h4>
+
+        <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
+        <div class="swap"><img src="i/national.png"><img src="i/national-color.png"></div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div id="phones">
+      <p class="blue">+7 (495) 210-5-99<br>
+        8 800 234 5 99 5</p>
+
+      <p class="grey">с 9:00 до 23:00</p>
+    </div>
+    <div class="sep"></div>
+    <div id="personal">
+      <div id="call-variants">
+        <div id="call-icons">
+          <img src="i/viber.png">
+          <img src="i/skype.png">
+          <img src="i/whatsapp.png">
+          <img src="i/email.png">
+        </div>
+        <div id="call-helpers">
+          <span>Позвонить онлайн</span>
+          <span>Email</span>
+        </div>
+      </div>
+      <div><a href="/" id="lk">Личный кабинет</a></div>
+    </div>
+  </div>
+</div>
+<div id="menu-line">
+  <div class="max-width">
+    <ul>
+      <li><a href="/">Авиабилеты</a></li>
+      <li><a href="/">Бронирование отелей</a></li>
+      <li><a href="/">Бронирование авто</a></li>
+      <li><a href="/">Ж\д билеты</a></li>
+      <li><a href="/">Билеты на автобус on-line</a></li>
+      <li><a href="/">О компании</a></li>
+      <li><a href="/">Контакты</a></li>
+      <li><a href="/">Отзывы о нас</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="top-search-form">
+  <div class="max-width">
+    <form>
+      <div id="new-search">
+        <div>Новый поиск</div>
+      </div>
+      <div id="from-input">
+        <input type="text" placeholder="Город вылета">
+
+        <div id="change-from-to"></div>
+      </div>
+      <div id="to-input">
+        <input type="text" placeholder="Город прилета">
+      </div>
+      <div id="date-input-1">
+        <input type="text" class="datepicker" placeholder="Туда">
+      </div>
+      <div id="date-input-2">
+        <input type="text" class="datepicker" placeholder="Обратно">
+
+        <div class="close"></div>
+      </div>
+      <div id="passengers-input">
+        <div class="pass-border" ng-click="show=!show" ng-init="show=false;">
+          <div>1 пасс., эконом</div>
+        </div>
+        <div class="drop-down"></div>
+        <div id="passengers-popup" ng-show="show">
+          <div class="adult">
+            <div class="bysides">
+              <div>Взрослые</div>
+              <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number"
+                                                                                                       ng-model="ad"
+                                                                                                       ng-init="ad=1;"
+                                                                                                       step="1" min="1"><span
+                class="plus" ng-click="ad=ad+1;">+</span></div>
+            </div>
+          </div>
+          <div class="child" ng-if="true" ng-init="children=[13,14]; co=children.length;">
+            <div class="bysides">
+              <div>Дети до 14 лет</div>
+              <div class="number-with-spinners"><span class="minus"
+                                                      ng-click="children.pop(); co=children.length;">−</span><input
+                type="number" ng-model="co" step="1"><span class="plus"
+                                                           ng-click="children.push(0); co=children.length;">+</span>
+              </div>
+            </div>
+            <ul ng-show="children.length>0">
+              <li ng-repeat="child in children track by $index">
+                <div class="bysides">
+                  <div>Возраст {{$index+1}}-го ребенка</div>
+                  <div>
+                    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input
+                      type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus"
+                                                                                         ng-click="ad=ad+1;">+</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="baby">
+            <div class="bysides">
+              <div class="baby-title">Дети до 2 лет<br>
+                <span class="grey">без места</span>
+              </div>
+              <div class="number-with-spinners"><span class="minus" ng-click="ba=ba-1;">−</span><input type="number"
+                                                                                                       ng-model="ba"
+                                                                                                       ng-init="ba=1;"
+                                                                                                       step="1" min="1"><span
+                class="plus" ng-click="ba=ba+1;">+</span></div>
+            </div>
+          </div>
+          <div class="bysides business-class">
+            <div class="">
+              <input type="checkbox" id="busclass"> <label for="busclass">Бизнес-класс</label>
+            </div>
+            <div>
+              <input type="button" value="Закрыть" class="blue-button" ng-click="show=false;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="search-submit">
+        <input type="submit" value="Найти">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="country">
+  <div class="max-width">
+    <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+      <div>
+        <div class="place-name ttu">Крит</div>
+        <div>Греция</div>
+        <div class="mt15">26 декабря — 5 января</div>
+        <div class="mt5">туда и обратно,<br> прямой рейс</div>
+      </div>
+      <div class="mt30">
+        <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+      </div>
+    </div>
+    <h1 class="ttu tac mt25">спецпредложеия на авиабилеты в грецию</h1>
+  </div>
+
+
+  <div id="specoffer-wrapper">
+    <div class="bysides stretch mt15 max-width" id="find-specoffer">
+      <div class="flex1">
+        <select class="selectric city">
+          <option value="">Все равно откуда</option>
+          <option value="Монастир" data-country="Тунис" data-airport="MIR">Монастир</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric city">
+          <option value="">Все равно куда</option>
+          <option value="Монастир" data-country="Тунис" data-airport="MIR">Монастир</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric">
+          <option value="">не важно когда</option>
+          <option value="Монастир">в январе</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric">
+          <option value="">на любое вермя</option>
+          <option value="Монастир">на 3 дня</option>
+        </select>
+      </div>
+      <div class="search-submit">
+        <input type="submit" value="Найти">
+      </div>
+    </div>
+  </div>
+
+
+  <div id="spec-results" class="mt10 max-width">
+    <div class="results-wrapper">
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="country-info" class="mt20">
+    <div id="country-cols" class="max-width bysides vtop">
+      <div id="nav-col">
+        <div class="blue ttu">Навигация по странице:</div>
+        <ul class="ul">
+          <li>
+            <a href="#common" style="background-image: url(i/nav-plane.png);">Общая информация о рейсах в Грецию из России</a>
+          </li>
+          <li>
+            <a href="#airports" style="background-image: url(i/nav-wind.png);">Крупнейшие аэропорты Греции</a>
+          </li>
+          <li>
+            <a href="#time" style="background-image: url(i/nav-cloud.png);">Время и погода в городах Греции</a>
+          </li>
+          <li>
+            <a href="#sight" style="background-image: url(i/nav-camera.png);">Экскурсии и достопримечательности в Греции</a>
+          </li>
+          <li>
+            <a href="#schedule" style="background-image: url(i/nav-calendar.png);">Расписание рейсов в Грецию</a>
+          </li>
+          <li>
+            <a href="#price" style="background-image: url(i/nav-ticket.png);">Цена авиабилетов в Грецию</a>
+          </li>
+          <li>
+            <a href="#why" style="background-image: url(i/nav-pig.png);">Почему на biletideshevo.ru билеты в Грецию дешёвые?</a>
+          </li>
+          <li>
+            <a href="#extra" style="background-image: url(i/nav-dish.png);">Дополнительные услуги нашей компании</a>
+          </li>
+          <li>
+            <a href="#when" style="background-image: url(i/nav-payment.png);">Когда можно купить и как оплатить билеты в Грецию</a>
+          </li>
+        </ul>
+      </div>
+      <div id="content-col" class="">
+        <div class="country-section" id="common">
+          <h2 class="ttu">Общая информация о рейсах в Грецию из России</h2>
+          <p>Уважаемые Клиенты, Мы благодарим Вас за выбор именно biletideshevo.ru для бронирования билетов в Грецию. Именно у Нас, благодаря сотрудничеству не только со всеми возможными глобальными системами бронирования, но и прямому сотрудничеству с головной компанией авиакомпании Ellinair + прямые контракты с основными консолидаторами чартерных рейсов в Грецию, представленны все возможные варианты рейсов в Грецию из Москвы, Санкт-Петербурга, Волгограда, Воронежа, Екатеринбурга, Казани, Калининграда, Краснодара, Нижн его Новгорода, Новосибирска, Самары, Саратова, Уфы. Расписание самолётов в Грецию из вышеуказанных городов подразумевает перелёты в Афины (IATA ATH) - регион Аттика, Салоники (IATA SKG) - регион Цетральная Макеония, на Керкира (Корфу) (IATA СFU) - регион Ионические острова, Ираклион (IATA HER) - регион Крит, Родос (IATA RHO) - регион Южные Эгейские острова, Закинф (IATA ZTH) - регион Ионические острова. Благодаря уникальной системе бронирования, которая скрещивает все возможные варианты рейсов чаще всего цена билета в Грециюу нас на 30-40% ниже, нежели при бронировании на сайте авиакомапнии.  </p>
+        </div>
+        <div class="country-section" id="airports">
+          <h2 class="ttu">Крупнейшие аэропорты Греции</h2>
+          <ul class="ul">
+            <li>
+              <div class="bysides">
+                <div class="circled">
+                  <img src="i/airport.png"/>
+                </div>
+                <div class="flex1 airport-summary">
+                  <p class="blue">Аэропорт города Афины (IATA ATH) носит имя «Элефтериос Венизелос» —</p>
+                  <p>самый большой аропорт Греции, более 16 миллионов пассажиров в среднем за год обслуживается в аэопорте, базирующимимся авиакомпаниями являются  Aegean Airlу...</p>
+                </div>
+              </div>
+              <div class="bysides">
+                <div class="flex1"></div>
+                <div class="tac">
+                  <a class="button-grey ttu tdn smaller">Прочесть полностью</a>
+                  <div class="smaller2 grey777 mt10">Откроется в новом окне</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="bysides">
+                <div class="circled">
+                  <img src="i/airport.png"/>
+                </div>
+                <div class="flex1 airport-summary">
+                  <p class="blue">Аэропорт города Афины (IATA ATH) носит имя «Элефтериос Венизелос» —</p>
+                  <p>самый большой аропорт Греции, более 16 миллионов пассажиров в среднем за год обслуживается в аэопорте, базирующимимся авиакомпаниями являются  Aegean Airlу...</p>
+                </div>
+              </div>
+              <div class="bysides">
+                <div class="flex1"></div>
+                <div class="tac">
+                  <a class="button-grey ttu tdn smaller">Прочесть полностью</a>
+                  <div class="smaller2 grey777 mt10">Откроется в новом окне</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="country-section" id="time">
+          <h2 class="ttu">Время и погода в городах Греции</h2>
+          <p>В Греции на всей терртиории страны часовой пояс зимой UTC +2, летом UTC +3 -
+            это означает, что когда в Москве зимой 16 часов, в Греции 14 часов, летом же, когда в Москве 16 часов, в Греции 15 часов.</p>
+          <div class="current-time tac mt25">
+            <h3 class="blue">Время в Греции сейчас</h3>
+            <div class="timeplate mt10">16 23</div>
+            <div class="mt5 grey777 smaller2">+3 часа&nbsp;&nbsp;&nbsp;17 января</div>
+          </div>
+          <div class="forecast mt20">
+            <h3 class="blue fwn tac">Погода в городах Греции <b>сегодня 9 января 2016 года</b></h3>
+            <div class="bysides vtop mt30">
+              <div class="tac">
+                город
+                <div class="ttu">Афины</div>
+                <div class="tempr">+19</div>
+                <div class="weater-icon sunny"></div>
+                <div class="smaller2 grey777">ясно</div>
+              </div>
+              <div class="tac">
+                город
+                <div class="ttu">Афины</div>
+                <div class="tempr">+19</div>
+                <div class="weater-icon sunny"></div>
+                <div class="smaller2 grey777">ясно</div>
+              </div>
+              <div class="tac">
+                город
+                <div class="ttu">Афины</div>
+                <div class="tempr">+19</div>
+                <div class="weater-icon sunny"></div>
+                <div class="smaller2 grey777">ясно</div>
+              </div>
+              <div class="tac">
+                город
+                <div class="ttu">Афины</div>
+                <div class="tempr">+19</div>
+                <div class="weater-icon partly-cloudy"></div>
+                <div class="smaller2 grey777">ясно</div>
+              </div>
+              <div class="tac">
+                город
+                <div class="ttu">Афины</div>
+                <div class="tempr">+19</div>
+                <div class="weater-icon sunny"></div>
+                <div class="smaller2 grey777">ясно</div>
+              </div>
+              <div class="tac">
+                город
+                <div class="ttu">Афины</div>
+                <div class="tempr">+19</div>
+                <div class="weater-icon sunny"></div>
+                <div class="smaller2 grey777">ясно</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="country-section" id="sight">
+          <h2 class="ttu">Экскурсии и достопримечательности в Греции</h2>
+          <div class="exslider">
+            <ul class="slides">
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="blue-button aib">Забронировать</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="button-grey aib">Подробнее</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="blue-button aib">Забронировать</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="button-grey aib">Подробнее</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="blue-button aib">Забронировать</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="button-grey aib">Подробнее</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="blue-button aib">Забронировать</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="button-grey aib">Подробнее</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="blue-button aib">Забронировать</a></div>
+              </li>
+              <li class="bybounds">
+                <div>
+                  <img src="i/exex.png">
+                  <div>Экскурсия на остров Skirathos</div>
+                </div>
+                <div class="mt10"><a href="/" class="button-grey aib">Подробнее</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="country-section" id="schedule">
+          <h2 class="ttu">Расписание рейсов в Грецию</h2>
+          <p>В зимнем расписании прямые рейсы в Грецию выполняются только в Афины и Салоники. Из Москвы авиарейсы выполняют авиакомпании Аэрофлот, Ellinair из Шереметьево; S7 Airlines, Aegean Airlines из Домодедово. Из Ростова-на-Дону и Минеральных вод рейсы в Салоники выполняет авикомпания Ellinair. В летнем расписании добавляются рейсы из Санкт-Петербурга, Волгограда, Воронежа, Екатеринбурга, Казани, Калининграда, Краснодара, Нижнего Новгорода, Новосибирска, Самары, Саратова, Уфы из Москвы и Санкт-Петербурга появляются рейсы на Корфу, Ираклион (Крит), Родос, Закинф. Ниже приведено расписание рейсов в Грецию на 2016 год.</p>
+
+          <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
+          <div class="bysides stretch mt10 flight-in-c">
+            <div class="flex1 rounded5 bysides">
+              <div><img src="i/nordstar.png"></div>
+              <div class="smaller2 tac">
+                A3 971<br>
+                Airbus A321
+              </div>
+              <div class="fcity">
+                <b>Москва</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="fdur">
+                <div>12 ч 30 м</div>
+                <div class="grey">прямой</div>
+              </div>
+              <div class="fcity">
+                <b>Москва</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="blue tac">
+                <div>пн, ср, сб</div>
+                <div>с 18.12 по 22.12</div>
+              </div>
+            </div>
+            <div class="rounded5 tac">
+              <div><span class="grey">От</span> <b class="fz18">12 338 <span class="rub">Р</span></b></div>
+              <a href="/" class="green-button ttu mt5 smaller">Найти</a>
+            </div>
+          </div>
+          <div class="bysides stretch mt10 flight-in-c">
+            <div class="flex1 rounded5 bysides">
+              <div><img src="i/nordstar.png"></div>
+              <div class="smaller2 tac">
+                A3 971<br>
+                Airbus A321
+              </div>
+              <div class="fcity">
+                <b>Санкт-Петербург</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="fdur">
+                <div>2 ч 30 м</div>
+                <div class="grey">прямой</div>
+              </div>
+              <div class="fcity">
+                <b>Санкт-Петербург</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="blue tac">
+                <div>пн, ср, сб</div>
+                <div>с 18.06 по 14.09</div>
+              </div>
+            </div>
+            <div class="rounded5 tac">
+              <div><span class="grey">От</span> <b class="fz18">12 338 <span class="rub">Р</span></b></div>
+              <a href="/" class="green-button ttu mt5 smaller">Найти</a>
+            </div>
+          </div>
+
+          <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
+          <div class="bysides stretch mt10 flight-in-c">
+            <div class="flex1 rounded5 bysides">
+              <div><img src="i/nordstar.png"></div>
+              <div class="smaller2 tac">
+                A3 971<br>
+                Airbus A321
+              </div>
+              <div class="fcity">
+                <b>Москва</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="fdur">
+                <div>12 ч 30 м</div>
+                <div class="grey">прямой</div>
+              </div>
+              <div class="fcity">
+                <b>Москва</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="blue tac">
+                <div>пн, ср, сб</div>
+                <div>с 18.12 по 22.12</div>
+              </div>
+            </div>
+            <div class="rounded5 tac">
+              <div><span class="grey">От</span> <b class="fz18">12 338 <span class="rub">Р</span></b></div>
+              <a href="/" class="green-button ttu mt5 smaller">Найти</a>
+            </div>
+          </div>
+          <div class="bysides stretch mt10 flight-in-c">
+            <div class="flex1 rounded5 bysides">
+              <div><img src="i/nordstar.png"></div>
+              <div class="smaller2 tac">
+                A3 971<br>
+                Airbus A321
+              </div>
+              <div class="fcity">
+                <b>Санкт-Петербург</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="fdur">
+                <div>2 ч 30 м</div>
+                <div class="grey">прямой</div>
+              </div>
+              <div class="fcity">
+                <b>Санкт-Петербург</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="blue tac">
+                <div>пн, ср, сб</div>
+                <div>с 18.06 по 14.09</div>
+              </div>
+            </div>
+            <div class="rounded5 tac">
+              <div><span class="grey">От</span> <b class="fz18">12 338 <span class="rub">Р</span></b></div>
+              <a href="/" class="green-button ttu mt5 smaller">Найти</a>
+            </div>
+          </div>
+
+          <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
+          <div class="bysides stretch mt10 flight-in-c">
+            <div class="flex1 rounded5 bysides">
+              <div><img src="i/nordstar.png"></div>
+              <div class="smaller2 tac">
+                A3 971<br>
+                Airbus A321
+              </div>
+              <div class="fcity">
+                <b>Москва</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="fdur">
+                <div>12 ч 30 м</div>
+                <div class="grey">прямой</div>
+              </div>
+              <div class="fcity">
+                <b>Москва</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="blue tac">
+                <div>пн, ср, сб</div>
+                <div>с 18.12 по 22.12</div>
+              </div>
+            </div>
+            <div class="rounded5 tac">
+              <div><span class="grey">От</span> <b class="fz18">12 338 <span class="rub">Р</span></b></div>
+              <a href="/" class="green-button ttu mt5 smaller">Найти</a>
+            </div>
+          </div>
+          <div class="bysides stretch mt10 flight-in-c">
+            <div class="flex1 rounded5 bysides">
+              <div><img src="i/nordstar.png"></div>
+              <div class="smaller2 tac">
+                A3 971<br>
+                Airbus A321
+              </div>
+              <div class="fcity">
+                <b>Санкт-Петербург</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="fdur">
+                <div>2 ч 30 м</div>
+                <div class="grey">прямой</div>
+              </div>
+              <div class="fcity">
+                <b>Санкт-Петербург</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="blue tac">
+                <div>пн, ср, сб</div>
+                <div>с 18.06 по 14.09</div>
+              </div>
+            </div>
+            <div class="rounded5 tac">
+              <div><span class="grey">От</span> <b class="fz18">12 338 <span class="rub">Р</span></b></div>
+              <a href="/" class="green-button ttu mt5 smaller">Найти</a>
+            </div>
+          </div>
+
+          <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
+          <div class="bysides stretch mt10 flight-in-c">
+            <div class="flex1 rounded5 bysides">
+              <div><img src="i/nordstar.png"></div>
+              <div class="smaller2 tac">
+                A3 971<br>
+                Airbus A321
+              </div>
+              <div class="fcity">
+                <b>Москва</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="fdur">
+                <div>12 ч 30 м</div>
+                <div class="grey">прямой</div>
+              </div>
+              <div class="fcity">
+                <b>Москва</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="blue tac">
+                <div>пн, ср, сб</div>
+                <div>с 18.12 по 22.12</div>
+              </div>
+            </div>
+            <div class="rounded5 tac">
+              <div><span class="grey">От</span> <b class="fz18">12 338 <span class="rub">Р</span></b></div>
+              <a href="/" class="green-button ttu mt5 smaller">Найти</a>
+            </div>
+          </div>
+          <div class="bysides stretch mt10 flight-in-c">
+            <div class="flex1 rounded5 bysides">
+              <div><img src="i/nordstar.png"></div>
+              <div class="smaller2 tac">
+                A3 971<br>
+                Airbus A321
+              </div>
+              <div class="fcity">
+                <b>Санкт-Петербург</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="fdur">
+                <div>2 ч 30 м</div>
+                <div class="grey">прямой</div>
+              </div>
+              <div class="fcity">
+                <b>Санкт-Петербург</b>
+                <div class="bysides">
+                  <div class="grey">DME</div>
+                  <div class="larger ml5"><b>11:50</b></div>
+                </div>
+              </div>
+              <div class="blue tac">
+                <div>пн, ср, сб</div>
+                <div>с 18.06 по 14.09</div>
+              </div>
+            </div>
+            <div class="rounded5 tac">
+              <div><span class="grey">От</span> <b class="fz18">12 338 <span class="rub">Р</span></b></div>
+              <a href="/" class="green-button ttu mt5 smaller">Найти</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-section" id="price">
+          <h2 class="ttu">Цена авиабилетов в Грецию</h2>
+          <p>Стоимость авиабилетов в Грецию зависит от двух основных параметров - это курс евро и количество оставшихся авиабилетов в розничной продаже, при этом при всём, есть авиакомпании, которые оценивают количество оставшихся билетов не только у них, но и в целом, на рынке. Оба параметра по сути предсказать невозможно, по этой причине никто, никогда Вам качественно не ответит на вопрос: когда купить авиабилеты в Грецию дёшево.</p>
+          <p>Рекомендуем Вам покупать билеты тогда, когда именно Вам нравится цена и сильно не затягивать, бывают, и не редко случаи, когда цена опускается до максимального минимума, особенно, если это чартерные рейсы, но будьте внимательны, чтобы билеты на нужные Вам даты не закончились. Ниже приведены цены на билеты на самолёт в Грецию по каждому возможному перевозчику, найденные нашими пользователями за последние 48 часов:</p>
+
+          <div id="results" class="mt15">
+            <div class="result">
+              <div class="result-cols">
+                <div class="col-trip-info rounded">
+                  <div class="trip-grey-row trip-there-grey trip-row" ng-if="!(hideThere || hideTopGrey)">
+                    <div class="trip-col1 flex-center">
+                      <div class="plane-model">Airbus 321</div>
+                    </div>
+                    <div class="trip-col2 flight-params">
+                      <div class="flex-center">
+                        <div class="luggage">Багаж 20&nbsp;кг</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="chair">Класс: эконом</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="trip-there" ng-hide="hideThere">
+
+                    <div class="trip-white-row trip-row">
+                      <div class="trip-col1 flex-center">
+                        <div class="company-name-and-logo">
+                          <img src="i/nordstar.png"><br>
+                          Nord Star Airlines
+                        </div>
+                      </div>
+                      <div class="trip-col2 times-row">
+                        <div class="flex-center">
+                          <div>
+                            <div class="tm">15:30</div>
+                            <div class="dt blue">30 ноября 2015, пн</div>
+                            <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                          </div>
+                        </div>
+                        <div class="flex-center">
+                          <div>
+                            2 ч 30 м<br>
+                            <span class="grey">прямой</span>
+                          </div>
+                        </div>
+                        <div class="flex-center">
+                          <div>
+                            <div class="tm">15:30</div>
+                            <div class="dt blue">30 ноября 2015, пн</div>
+                            <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="trip-help">
+                    <div class="trip-white-row trip-row">
+                      <div class="trip-col1 flex-center">
+                        <div></div>
+                      </div>
+                      <div class="trip-col2 blue-row {{hideThere ? 'only-back' : ''}}">
+                        <div class="flex-center">
+                          <div class="smaller white-plane">Вылет</div>
+                        </div>
+                        <div class="flex-center">
+                          <div class="smaller clock">Время в пути</div>
+                        </div>
+                        <div class="flex-center">
+                          <div class="smaller white-plane down">Прилет</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="trip-back">
+                    <div class="trip-white-row trip-row">
+                      <div class="trip-col1 flex-center">
+                        <div class="company-name-and-logo"><img src="i/nordstar.png"><br>
+                          Nord Star Airlines</div>
+                      </div>
+                      <div class="trip-col2 times-row">
+                        <div class="flex-center">
+                          <div>
+                            <div class="tm">15:30</div>
+                            <div class="dt blue">30 ноября 2015, пн</div>
+                            <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                          </div>
+                        </div>
+                        <div class="flex-center">
+                          <div>
+                            2 ч 30 м<br>
+                            <span class="grey">прямой</span>
+                          </div>
+                        </div>
+                        <div class="flex-center">
+                          <div>
+                            <div class="tm">15:30</div>
+                            <div class="dt blue">30 ноября 2015, пн</div>
+                            <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="col-price rounded" ng-init="height='auto';" ng-attr-style="height:{{height}};" ng-click="height = (height=='400px') ? 'auto' : '400px';">
+                  <div class="price-n">
+                    <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                    <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
+                  </div>
+                  <div class="buy-n">
+                    <input type="button" value="Купить"><br>
+                    <span class="grey smaller2">дешевый авиабилет</span>
+                  </div>
+                </div>
+              </div>
+              <div class="result-cols grey-cols inner-top-shadow">
+                <div class="col-trip-info">
+                  <div class="trip-back-grey trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div class="plane-model">Airbus 321</div>
+                    </div>
+                    <div class="trip-col2 flight-params">
+                      <div class="flex-center">
+                        <div class="luggage">Багаж 20&nbsp;кг</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="chair">Класс: эконом</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-row col-price">
+                  <div class="flex-center">
+                    <a href="/" class="buy-credit smaller">Купить в кредит</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="result">
+              <div class="result-cols">
+                <div class="col-trip-info rounded">
+                  <div class="trip-grey-row trip-there-grey trip-row" ng-if="!(hideThere || hideTopGrey)">
+                    <div class="trip-col1 flex-center">
+                      <div class="plane-model">Airbus 321</div>
+                    </div>
+                    <div class="trip-col2 flight-params">
+                      <div class="flex-center">
+                        <div class="luggage">Багаж 20&nbsp;кг</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="chair">Класс: эконом</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="trip-there" ng-hide="hideThere">
+
+                    <div class="trip-white-row trip-row">
+                      <div class="trip-col1 flex-center">
+                        <div class="company-name-and-logo">
+                          <img src="i/nordstar.png"><br>
+                          Nord Star Airlines
+                        </div>
+                      </div>
+                      <div class="trip-col2 times-row">
+                        <div class="flex-center">
+                          <div>
+                            <div class="tm">15:30</div>
+                            <div class="dt blue">30 ноября 2015, пн</div>
+                            <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                          </div>
+                        </div>
+                        <div class="flex-center">
+                          <div>
+                            2 ч 30 м<br>
+                            <span class="grey">прямой</span>
+                          </div>
+                        </div>
+                        <div class="flex-center">
+                          <div>
+                            <div class="tm">15:30</div>
+                            <div class="dt blue">30 ноября 2015, пн</div>
+                            <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="trip-help">
+                    <div class="trip-white-row trip-row">
+                      <div class="trip-col1 flex-center">
+                        <div></div>
+                      </div>
+                      <div class="trip-col2 blue-row {{hideThere ? 'only-back' : ''}}">
+                        <div class="flex-center">
+                          <div class="smaller white-plane">Вылет</div>
+                        </div>
+                        <div class="flex-center">
+                          <div class="smaller clock">Время в пути</div>
+                        </div>
+                        <div class="flex-center">
+                          <div class="smaller white-plane down">Прилет</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="trip-back">
+                    <div class="trip-white-row trip-row">
+                      <div class="trip-col1 flex-center">
+                        <div class="company-name-and-logo"><img src="i/nordstar.png"><br>
+                          Nord Star Airlines</div>
+                      </div>
+                      <div class="trip-col2 times-row">
+                        <div class="flex-center">
+                          <div>
+                            <div class="tm">15:30</div>
+                            <div class="dt blue">30 ноября 2015, пн</div>
+                            <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                          </div>
+                        </div>
+                        <div class="flex-center">
+                          <div>
+                            2 ч 30 м<br>
+                            <span class="grey">прямой</span>
+                          </div>
+                        </div>
+                        <div class="flex-center">
+                          <div>
+                            <div class="tm">15:30</div>
+                            <div class="dt blue">30 ноября 2015, пн</div>
+                            <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="col-price rounded" ng-init="height='auto';" ng-attr-style="height:{{height}};" ng-click="height = (height=='400px') ? 'auto' : '400px';">
+                  <div class="price-n">
+                    <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                    <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
+                  </div>
+                  <div class="buy-n">
+                    <input type="button" value="Купить"><br>
+                    <span class="grey smaller2">дешевый авиабилет</span>
+                  </div>
+                </div>
+              </div>
+              <div class="result-cols grey-cols inner-top-shadow">
+                <div class="col-trip-info">
+                  <div class="trip-back-grey trip-row">
+                    <div class="trip-col1 flex-center">
+                      <div class="plane-model">Airbus 321</div>
+                    </div>
+                    <div class="trip-col2 flight-params">
+                      <div class="flex-center">
+                        <div class="luggage">Багаж 20&nbsp;кг</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="bag">Ручная кладь 5&nbsp;кг</div>
+                      </div>
+                      <div class="flex-center">
+                        <div class="chair">Класс: эконом</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-row col-price">
+                  <div class="flex-center">
+                    <a href="/" class="buy-credit smaller">Купить в кредит</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt30">
+            <p>Как Мы видим из блока выдачи выше, самые дешёвые авиабилеты в Грецию на нашем сайте стоят 7880 рублей, если Вы желаете в реальном времени знать стоимость на авиабилеты, которые Вы хотите забронировать, рекомендуем Вам воспользоваться услугой email подписки, блок которой расположен справо.</p>
+
+            <div class="mt10">
+              <div class="bysides stretch smaller itemsmar4 radiobuttons">
+                <div class="flex1 tac">
+
+                    <input name="whatform" type="radio" class="no-display" id="certdate">
+
+                  <label for="certdate">
+                    Меня интересуют<br>
+                    <span class="ttu">точные даты вылета</span>
+                  </label>
+                </div>
+                <div class="flex1 tac">
+
+                    <input name="whatform" type="radio" class="no-display" id="mdate">
+
+                  <label for="mdate">
+                    Я выберу<br>
+                    <span class="ttu">возможные месяцы вылета</span>
+                  </label>
+                </div>
+                <div class="flex1 tac">
+
+                    <input name="whatform" type="radio" class="no-display" id="ydate">
+
+                  <label for="ydate">
+                    Я выберу<br>
+                    <span class="ttu">возможное время года</span>
+                  </label>
+                </div>
+              </div>
+              <div class="mt5 bysides itemsmar2 stretch plane-input">
+                <div class="flex1">
+                  <input type="text" class="from-input">
+                </div>
+                <div class="bysides radiobuttons itemsmar2 stretch">
+                  <div>
+                    <input type="radio" name="plane" id="cplane" class="no-display">
+                    <label for="cplane"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="plane" id="cplane2" class="no-display">
+                    <label for="cplane2"></label>
+                  </div>
+                </div>
+                <div class="flex1">
+                  <input type="text" class="to-input">
+                </div>
+              </div>
+
+              <div class="subscribeform mt5">
+                <div class="selectday"></div>
+                <div class="bysides radiobuttons tac smaller2 itemsmar2">
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo1">
+                    <label for="mo1">Январь</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo2">
+                    <label for="mo2">Февраль</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo3">
+                    <label for="mo3">Март</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo4">
+                    <label for="mo4">Апрель</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo5">
+                    <label for="mo5">Май</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo6">
+                    <label for="mo6">Июнь</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo7">
+                    <label for="mo7">Июль</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo8">
+                    <label for="mo8">Август</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo9">
+                    <label for="mo9">Сентябрь</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo10">
+                    <label for="mo10">Октябрь</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo11">
+                    <label for="mo11">Ноябрь</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="mo12">
+                    <label for="mo12">Декабрь</label>
+                  </div>
+                </div>
+
+                <div class="bysides radiobuttons tac smaller2 itemsmar2">
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="t1">
+                    <label for="t1">Зима</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="t2">
+                    <label for="t2">Весна</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="t3">
+                    <label for="t3">Лето</label>
+                  </div>
+                  <div class="flex1">
+                    <input type="checkbox" class="no-display" id="t4">
+                    <label for="t4">Осень</label>
+                  </div>
+                </div>
+                <div class="bysides stretch mt10 fromtodur">
+                  <div class="flex1">
+                    <div class="tac">Укажите нужный аэропорт вылета</div>
+                    <ul class="ul mt15">
+                      <li><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
+                      <li><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
+                      <li><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
+                      <li><label><input type="radio"> Любой</label></li>
+                    </ul>
+                  </div>
+                  <div class="flex1">
+                    <div class="tac">Укажите нужный аэропорт вылета</div>
+                    <ul class="ul mt15">
+                      <li><label><input type="radio"> Любой</label></li>
+                      <li><label><input type="radio"> Родос <span class="grey">RHO</span></label></li>
+                    </ul>
+                  </div>
+                  <div class="flex1">
+                    <div class="tac">Продолжительность отпуска</div>
+
+                    <div class="mt15 durslider">
+                      <div>
+                        <input type="text" id="amount" readonly>
+                      </div>
+
+                      <div id="slider-range" class="mt5"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bysides stretch mt10">
+                  <input type="text" class="flex1" placeholder="Ваш email" style="margin-right:20px;">
+                  <input type="submit" value="Оформить подписку" class="green-button ttu">
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="country-section" id="why">
+          <h2 class="ttu">Дешёвые авиабилеты в Грецию на biletideshevo.ru</h2>
+          <p>Купить авиабилеты в Грецию на biletideshevo.ru чаще дешевле, чем на сайтах авиакомпаний или в других агентствах по бронированияю авиабилетов, это возможно благодаря: </p>
+          <div class="flist">
+            <div class="flex05 bysides vtop">
+              <div><img src="i/hands.png"></div>
+              <div class="flex1">прямой контракт               с головной компанией                авикомпании Ellinair</div>
+            </div>
+            <div class="flex05 bysides vtop">
+              <div><img src="i/handplane.png"></div>
+              <div class="flex1">прямые контракты с эксклюзивными                условиями с крупнейшими                консолидаторами чартерных рейсов</div>
+            </div>
+            <div class="flex05 bysides vtop">
+              <div><img src="i/starcursor.png"></div>
+              <div class="flex1">уникальная система                бронирования</div>
+            </div>
+            <div class="flex05 bysides vtop">
+              <div><img src="i/notebook.png"></div>
+              <div class="flex1">выписка авиабилетов через все                возможные системы бронирования                регулярных рейсов</div>
+            </div>
+            <div class="flex05 bysides vtop">
+              <div><img src="i/magniplane.png"></div>
+              <div class="flex1">ежедневный мониторинг                рынка</div>
+            </div>
+            <div class="flex05 bysides vtop">
+              <div><img src="i/coins.png"></div>
+              <div class="flex1">минимальный                сервисный сбор</div>
+            </div>
+            <div class="flex1 bysides vtop">
+              <div><img src="i/sberbank.png"></div>
+              <div class="flex1">благодаря долгосрочному и продуктивному сотрудничеству
+                с ОАО "Сбербанк России" минимальные комиссии за проведение
+                интернет-эквайринга</div>
+            </div>
+          </div>
+        </div>
+        <div class="country-section" id="extra">
+          <h2 class="ttu">Дополнительные улуги нашей компании</h2>
+          <p>Мы не останавливаемся на достигнутом, нам это не интересно, Мы продолжим и далее делать работу, благодаря которой, цена на авиабилеты будет ещё ниже, более того Мы уже достаточно давно предлагаем Вам не только авиабилеты, уже есть сейчас или появятся в краткосрочной перспективе следующие виды услуг:</p>
+
+          <div class="extra-services mt15">
+            <div><a style="background-image: url(i/country-example.jpg);" href="/"><div>Уникальная система бронирования отелей</div></a></div>
+            <div><a style="background-image: url(i/country-example.jpg);" href="/"><div>Железнодорожные              билеты онлайн              лучшая цена при              покупке в агентствах</div></a></div>
+            <div><a style="background-image: url(i/country-example.jpg);" href="/"></a></div>
+            <div><a style="background-image: url(i/country-example.jpg);" href="/"><div>Билеты на автобусы              по России онлайн</div></a></div>
+
+            <div><a style="background-image: url(i/country-example.jpg);" href="/"><div>Билеты на              спортивные              мероприятия</div></a></div>
+            <div><a style="background-image: url(i/country-example.jpg);" href="/"><div>Бронирование              автомобиля              в любом городе Мира</div></a></div>
+            <div><a style="background-image: url(i/country-example.jpg);" href="/"><div>Билеты на концерты,              мюзиклы онлайн</div></a></div>
+            <div><a style="background-image: url(i/country-example.jpg);" href="/"><div>Билеты в театр              онлайн</div></a></div>
+          </div>
+        </div>
+        <div class="country-section" id="when">
+          <h2 class="ttu">Когда можно купить и как оплатить билеты на самолёт в Грецию</h2>
+          <img src="i/call.png">
+          <p class="mt10">Купить билеты на самолёт в Грецию дёшево Вы можете самостоятельно, круглосуточно онлайн. Оплатить авиабилеты Вы можете с помощью банковских карт VISA, MasterCard, VISA Electron, Maestro, оплата абсолютна безопасна, происходит через авторизированный сервер Процессингового центра ОАО "Сбербанк России", к оплате принимаются карты, открытые в банках следующих стран: Россия, Беларусь, Болгария, Греция, Кипр, Испания, Черногория, Франция, Армения, Молдавия, Таджикистан, Грузия, Грузия, Чехия, Латвия. Если же Вам требуется помощь квалифицированного специалиста нашей компании, Мы рады ответить на Ваши вопросы согласно графика работы колл-центра, с которым Вы можете ознакомиться в верхней части страницы или в разделе контакты. При желании Вы можете оплатить билеты на самолёт в Грецию наличными, данный способ платежа доступен на всей территории России в любом салоне связи Связной или Евросеть.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
