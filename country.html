@@ -416,7 +416,7 @@
               <div class="bysides">
                 <div class="flex1"></div>
                 <div class="tac">
-                  <a class="button-grey ttu tdn smaller">Прочесть полностью</a>
+                  <a class="button-grey ttu tdn aib">Прочесть полностью</a>
                   <div class="smaller2 grey777 mt10">Откроется в новом окне</div>
                 </div>
               </div>
@@ -434,7 +434,7 @@
               <div class="bysides">
                 <div class="flex1"></div>
                 <div class="tac">
-                  <a class="button-grey ttu tdn smaller">Прочесть полностью</a>
+                  <a class="button-grey ttu tdn aib">Прочесть полностью</a>
                   <div class="smaller2 grey777 mt10">Откроется в новом окне</div>
                 </div>
               </div>
@@ -1168,9 +1168,9 @@
 
             <div class="mt10">
               <div class="bysides stretch smaller itemsmar4 radiobuttons">
-                <div class="flex1 tac">
+                <div class="flex1 tac" ng-init="datechoose='day'">
 
-                    <input name="whatform" type="radio" class="no-display" id="certdate">
+                    <input name="whatform" type="radio" class="no-display" id="certdate" ng-model="datechoose" value="day">
 
                   <label for="certdate">
                     Меня интересуют<br>
@@ -1179,7 +1179,7 @@
                 </div>
                 <div class="flex1 tac">
 
-                    <input name="whatform" type="radio" class="no-display" id="mdate">
+                    <input name="whatform" type="radio" class="no-display" id="mdate" ng-model="datechoose" value="month">
 
                   <label for="mdate">
                     Я выберу<br>
@@ -1188,7 +1188,7 @@
                 </div>
                 <div class="flex1 tac">
 
-                    <input name="whatform" type="radio" class="no-display" id="ydate">
+                    <input name="whatform" type="radio" class="no-display" id="ydate" ng-model="datechoose" value="time">
 
                   <label for="ydate">
                     Я выберу<br>
@@ -1216,8 +1216,8 @@
               </div>
 
               <div class="subscribeform mt5">
-                <div class="selectday"></div>
-                <div class="bysides radiobuttons tac smaller2 itemsmar2">
+                <div class="selectday" ng-show="datechoose=='day'"></div>
+                <div class="bysides radiobuttons tac smaller2 itemsmar2" ng-show="datechoose=='month'">
                   <div class="flex1">
                     <input type="checkbox" class="no-display" id="mo1">
                     <label for="mo1">Январь</label>
@@ -1268,7 +1268,7 @@
                   </div>
                 </div>
 
-                <div class="bysides radiobuttons tac smaller2 itemsmar2">
+                <div class="bysides radiobuttons tac smaller2 itemsmar2" ng-show="datechoose=='time'">
                   <div class="flex1">
                     <input type="checkbox" class="no-display" id="t1">
                     <label for="t1">Зима</label>
@@ -1290,17 +1290,17 @@
                   <div class="flex1">
                     <div class="tac">Укажите нужный аэропорт вылета</div>
                     <ul class="ul mt15">
-                      <li><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
-                      <li><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
-                      <li><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
-                      <li><label><input type="radio"> Любой</label></li>
+                      <li class="mt5"><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
+                      <li class="mt5"><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
+                      <li class="mt5"><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
+                      <li class="mt5"><label><input type="radio"> Любой</label></li>
                     </ul>
                   </div>
                   <div class="flex1">
                     <div class="tac">Укажите нужный аэропорт вылета</div>
                     <ul class="ul mt15">
-                      <li><label><input type="radio"> Любой</label></li>
-                      <li><label><input type="radio"> Родос <span class="grey">RHO</span></label></li>
+                      <li class="mt5"><label><input type="radio"> Любой</label></li>
+                      <li class="mt5"><label><input type="radio"> Родос <span class="grey">RHO</span></label></li>
                     </ul>
                   </div>
                   <div class="flex1">
@@ -1316,8 +1316,8 @@
                   </div>
                 </div>
 
-                <div class="bysides stretch mt10">
-                  <input type="text" class="flex1" placeholder="Ваш email" style="margin-right:20px;">
+                <div class="bysides stretch mt10" style="max-width: 600px; margin-right:auto; margin-left:auto;">
+                  <input type="text" class="flex1" placeholder="Ваш email" style="margin-right:3px;">
                   <input type="submit" value="Оформить подписку" class="green-button ttu">
                 </div>
 
