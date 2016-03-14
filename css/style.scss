@@ -3753,5 +3753,9 @@ a, .pseudolink {
   font-size: 21px;
 }
 
+.h18.blue-button[type="button"] {
+  padding-bottom: 2px;
+}
+
 @import 'insurance';
 @import 'country';

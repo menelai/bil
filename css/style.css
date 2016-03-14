@@ -3293,6 +3293,9 @@ a, .pseudolink {
 .f21 {
   font-size: 21px; }
 
+.h18.blue-button[type="button"] {
+  padding-bottom: 2px; }
+
 #insurance {
   padding: 30px 0;
   margin-bottom: 20px;
@@ -3301,7 +3304,8 @@ a, .pseudolink {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    background: #ffffff; }
+    background: #ffffff;
+    border-color: #113483; }
 
 .blue-button.viol {
   background: #113483;
@@ -3501,33 +3505,35 @@ a, .pseudolink {
     -ms-flex: 0 0 245px;
     flex: 0 0 245px; }
   #country-info #nav-col {
-    width: 245px;
-    background: #f0f0f0; }
+    padding-bottom: 50px;
+    width: 245px; }
     #country-info #nav-col > .blue.ttu {
       padding: 10px; }
-    #country-info #nav-col > .ul > li {
-      padding: 0 20px 0 10px; }
-      #country-info #nav-col > .ul > li a {
-        padding: 10px 0px 10px 40px;
-        background-position: 0 center;
-        background-repeat: no-repeat;
-        display: block;
-        text-decoration: none;
-        color: black; }
-        #country-info #nav-col > .ul > li a:hover {
+    #country-info #nav-col #nav-col-bg {
+      background: #f0f0f0; }
+      #country-info #nav-col #nav-col-bg > .ul > li {
+        padding: 0 20px 0 10px; }
+        #country-info #nav-col #nav-col-bg > .ul > li a {
+          padding: 10px 0px 10px 40px;
+          background-position: 0 center;
+          background-repeat: no-repeat;
+          display: block;
+          text-decoration: none;
+          color: black; }
+          #country-info #nav-col #nav-col-bg > .ul > li a:hover {
+            color: #058fc7; }
+        #country-info #nav-col #nav-col-bg > .ul > li + li a {
+          border-top: dotted 1px #919191; }
+        #country-info #nav-col #nav-col-bg > .ul > li.active:after {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 5px;
+          background: #058fc7;
+          content: '';
+          right: 0; }
+        #country-info #nav-col #nav-col-bg > .ul > li.active a {
           color: #058fc7; }
-      #country-info #nav-col > .ul > li + li a {
-        border-top: dotted 1px #919191; }
-      #country-info #nav-col > .ul > li.active:after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 5px;
-        background: #058fc7;
-        content: '';
-        right: 0; }
-      #country-info #nav-col > .ul > li.active a {
-        color: #058fc7; }
   #country-info #content-col {
     min-width: 0;
     padding: 0 0 0 20px; }
@@ -3567,6 +3573,11 @@ a, .pseudolink {
   line-height: 1;
   display: inline-block;
   padding: 0 20px 5px; }
+
+.forecast {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 730px; }
 
 .tempr {
   font-size: 38px;
@@ -3826,5 +3837,13 @@ a, .pseudolink {
         text-align: center;
         width: 100%;
         padding: 15px; }
+
+#amount {
+  width: 100%;
+  text-align: center; }
+
+#when {
+  min-height: -webkit-calc(100vh - 40px);
+  min-height: calc(100vh - 40px); }
 
 /*# sourceMappingURL=style.css.map */
