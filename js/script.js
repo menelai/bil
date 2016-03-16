@@ -126,6 +126,16 @@
             .end().filter("[href='#"+id+"']").parent().addClass("active");
         }
       });
+
+      var availableTags = [
+        "Москва",
+        "Санкт-Петербург",
+        "Минск",
+        "Киев"
+      ];
+      $( ".autocomplete" ).autocomplete({
+        source: availableTags
+      });
     });
 
 })(jQuery);

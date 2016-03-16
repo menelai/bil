@@ -12,6 +12,16 @@
   padding:30px 0;
   margin-bottom:20px;
   border-bottom:solid 1px #a2a2a2;
+
+  .dobuy {
+    -webkit-flex: 0 1 132px;
+    -ms-flex: 0 1 132px;
+    flex: 0 1 132px;
+    text-align: right;
+    .green-button {
+      margin:0 0 0 auto;
+    }
+  }
 }
 
 .blue-button.viol {

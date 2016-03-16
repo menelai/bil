@@ -425,7 +425,7 @@
   }
   input:checked + label {
     background-color: #ebebeb;
-    box-shadow: inset 2px 5px 5px rgba(0,0,0, 0.2);
+    box-shadow: inset 0px 3px 4px rgba(0,0,0, 0.2);
     color:$blue;
   }
 }
@@ -467,7 +467,7 @@
   .radiobuttons {
     input:checked + label {
       background-color: #ffffff;
-      box-shadow: inset 0 0 0 1px #cccccc, inset 2px 5px 5px rgba(0,0,0, 0.2);
+      box-shadow: inset 0 0 0 1px #cccccc, inset 0px 3px 4px rgba(0,0,0, 0.2);
     }
   }
   border-radius: 2px;
@@ -478,6 +478,51 @@
     border: solid 1px #058fc7;
     border-radius: 2px;
   }
+
+  .selectday {
+    .ui-datepicker {
+      background: none;
+      border:none;
+      margin:0 0 0 -5px;
+      padding:0 25px;
+
+      display: -ms-flexbox !important;
+      display: -webkit-flex !important;
+      display: flex !important;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      .ui-datepicker-row-break {
+        display: none;
+      }
+    }
+
+    .ui-datepicker-group {
+      border:solid 1px #777777;
+      border-radius: 2px;
+      width:-webkit-calc(33.3% - 5px);
+      width:calc(33.3% - 5px);
+      margin-left:5px;
+    }
+
+    .ui-datepicker .ui-datepicker-prev {
+      top:5em;
+      left:-30px;
+    }
+    .ui-datepicker .ui-datepicker-next {
+      top:5em;
+      right:-30px;
+    }
+  }
 }
 
 .selectday {
@@ -487,6 +532,7 @@
 }
 
 .fromtodur {
+  padding:0 25px;
   >div {
     padding:0 30px;
     +div {
