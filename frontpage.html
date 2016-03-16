@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>front</title>
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.selectric.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
+  <link rel="stylesheet" type="text/css" href="css/selectric.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <script src="js/script.js"></script>
+  <style>
+    .max-width {
+      max-width: {{width}}px;
+    }
+  </style>
+</head>
+<body>
+<div id="statusbar">
+  <div class="max-width">
+    <div>
+      <div class="wsn">
+        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME) <a href="/">Шереметьево</a> (SVO) <a href="/">Внуково</a> (VKO)
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <div id="links-block">
+        <div id="safety"><a href="/">Абсолютная
+          безопасность платежей</a></div>
+        <div><a href="/">Публичная
+          оферта</a></div>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <div id="smm">
+        <div class="wsn">Акции, розыгрыши,<br>
+          новости, отзывы о нас
+        </div>
+        <div class="wsn">
+          <a href="/">
+            <div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="totop"><a href="#top"></a></div>
+</div>
+<div id="top">
+  <div class="max-width">
+    <div id="logo">
+      <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
+        <div>
+          <div><img src="/i/logo.png"></div>
+          <div class="afut" id="sitename-and-slogan">
+            <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
+            <div id="slogan" class="blue">
+              Лучшие цены на авиабилеты<br>
+              Европейское качество обслуживания
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="sep"></div>
+    <div id="partners">
+      <div>
+        <h4>Наши партнеры:</h4>
+
+        <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
+        <div class="swap"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
+      </div>
+      <div>
+        <h4>Нас рекомендуют:</h4>
+
+        <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
+        <div class="swap"><img src="i/national.png"><img src="i/national-color.png"></div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div id="phones">
+      <p class="blue">+7 (495) 210-5-99<br>
+        8 800 234 5 99 5</p>
+
+      <p class="grey">с 9:00 до 23:00</p>
+    </div>
+    <div class="sep"></div>
+    <div id="personal">
+      <div id="call-variants">
+        <div id="call-icons">
+          <img src="i/viber.png">
+          <img src="i/skype.png">
+          <img src="i/whatsapp.png">
+          <img src="i/email.png">
+        </div>
+        <div id="call-helpers">
+          <span>Позвонить онлайн</span>
+          <span>Email</span>
+        </div>
+      </div>
+      <div><a href="/" id="lk">Личный кабинет</a></div>
+    </div>
+  </div>
+</div>
+<div id="menu-line">
+  <div class="max-width">
+    <ul>
+      <li><a href="/">Авиабилеты</a></li>
+      <li><a href="/">Бронирование отелей</a></li>
+      <li><a href="/">Бронирование авто</a></li>
+      <li><a href="/">Ж\д билеты</a></li>
+      <li><a href="/">Билеты на автобус on-line</a></li>
+      <li><a href="/">О компании</a></li>
+      <li><a href="/">Контакты</a></li>
+      <li><a href="/">Отзывы о нас</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="top-search-form">
+  <div class="max-width">
+    <form>
+      <div id="new-search">
+        <div>Новый поиск</div>
+      </div>
+      <div id="from-input">
+        <input type="text" placeholder="Город вылета" class="autocomplete">
+
+        <div id="change-from-to"></div>
+      </div>
+      <div id="to-input">
+        <input type="text" placeholder="Город прилета" class="autocomplete">
+      </div>
+      <div id="date-input-1">
+        <input type="text" class="datepicker" placeholder="Туда">
+      </div>
+      <div id="date-input-2">
+        <input type="text" class="datepicker" placeholder="Обратно">
+
+        <div class="close"></div>
+      </div>
+      <div id="passengers-input">
+        <div class="pass-border" ng-click="show=!show" ng-init="show=false;">
+          <div>1 пасс., эконом</div>
+        </div>
+        <div class="drop-down"></div>
+        <div id="passengers-popup" ng-show="show">
+          <div class="adult">
+            <div class="bysides">
+              <div>Взрослые</div>
+              <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number"
+                                                                                                       ng-model="ad"
+                                                                                                       ng-init="ad=1;"
+                                                                                                       step="1" min="1"><span
+                class="plus" ng-click="ad=ad+1;">+</span></div>
+            </div>
+          </div>
+          <div class="child" ng-if="true" ng-init="children=[13,14]; co=children.length;">
+            <div class="bysides">
+              <div>Дети до 14 лет</div>
+              <div class="number-with-spinners"><span class="minus"
+                                                      ng-click="children.pop(); co=children.length;">−</span><input
+                type="number" ng-model="co" step="1"><span class="plus"
+                                                           ng-click="children.push(0); co=children.length;">+</span>
+              </div>
+            </div>
+            <ul ng-show="children.length>0">
+              <li ng-repeat="child in children track by $index">
+                <div class="bysides">
+                  <div>Возраст {{$index+1}}-го ребенка</div>
+                  <div>
+                    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input
+                      type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus"
+                                                                                         ng-click="ad=ad+1;">+</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="baby">
+            <div class="bysides">
+              <div class="baby-title">Дети до 2 лет<br>
+                <span class="grey">без места</span>
+              </div>
+              <div class="number-with-spinners"><span class="minus" ng-click="ba=ba-1;">−</span><input type="number"
+                                                                                                       ng-model="ba"
+                                                                                                       ng-init="ba=1;"
+                                                                                                       step="1" min="1"><span
+                class="plus" ng-click="ba=ba+1;">+</span></div>
+            </div>
+          </div>
+          <div class="bysides business-class">
+            <div class="">
+              <input type="checkbox" id="busclass"> <label for="busclass">Бизнес-класс</label>
+            </div>
+            <div>
+              <input type="button" value="Закрыть" class="blue-button" ng-click="show=false;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="search-submit">
+        <input type="submit" value="Найти">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="frontpage">
+  <div class="max-width">
+    <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+      <div>
+        <div class="place-name ttu">Крит</div>
+        <div>Греция</div>
+        <div class="mt15">26 декабря — 5 января</div>
+        <div class="mt5">туда и обратно,<br> прямой рейс</div>
+      </div>
+      <div class="mt30">
+        <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+      </div>
+    </div>
+    <h1 class="ttu tac mt15">ЛУЧШИЕ ПРЕДЛОЖЕНИЯ НА ЧАРТЕНЫЕ АВИАБИЛЕТЫ С МОМЕНТАЛЬНЫМ ПОДТВЕРЖДЕНИЕМ</h1>
+  </div>
+
+
+  <div id="specoffer-wrapper">
+    <div class="bysides stretch mt15 max-width" id="find-specoffer">
+      <div class="flex1">
+        <select class="selectric city">
+          <option value="">Все равно откуда</option>
+          <option value="Монастир" data-country="Тунис" data-airport="MIR">Монастир</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric city">
+          <option value="">Все равно куда</option>
+          <option value="Монастир" data-country="Тунис" data-airport="MIR">Монастир</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric">
+          <option value="">не важно когда</option>
+          <option value="Монастир">в январе</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric">
+          <option value="">на любое вермя</option>
+          <option value="Монастир">на 3 дня</option>
+        </select>
+      </div>
+      <div class="search-submit">
+        <input type="submit" value="Найти">
+      </div>
+    </div>
+  </div>
+
+
+  <div id="spec-results" class="mt10 max-width">
+    <div class="results-wrapper">
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="result-wrapper">
+        <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+          <div>
+            <div class="place-name ttu">Крит</div>
+            <div>Греция</div>
+            <div class="mt15">26 декабря — 5 января</div>
+            <div class="mt5">туда и обратно,<br> прямой рейс</div>
+          </div>
+          <div class="mt30">
+            <div class="price-arrow">12 338 <span class="rub">Р</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="front-content" class="mt20">
+    <div class="max-width">
+      <div class="tac ttu">о чартерных рейсах</div>
+
+      <div class="mt15 max-text-width fat-bottom">
+        <p class="blue ttu">Ищите авиабилеты на прямые рейсы из Москвы в Грецию?</p>
+        <p class="mt10">Вы правильно сделали, что посетили biletideshevo.ru, у нас Вы сможете найти все возможные варианты рейсов, а благодаря уникальной системе бронирования цены на билеты в Грецию из Москвы ниже на 25-30%, чем на сайте авиакомпаний.</p>
+
+        <p class="mt10">Прямые рейсы из Москвы в Грецию выполняют следующие авиакомпании: Аэрофлот в Афины, Салоники, на Ираклион (Крит) из Шереметьево (IATA SVO); S7 Airlines в Афины, Салоники; Aegean Air в Афины, Салоники, на Родос, Ираклион (Крит), Каламата, Ellinair  в Афины, Салоники, на Родос, Ираклион (Крит), Араксос, Закинф, Керкира (Корфу) из Домодедово (IATA DME). Самолёт Греция Москва находится в пути в среднем 3-3,5 часа. Также в летнем расписании добавляются чартерные авиарейсы Москва Греция, наименования и количество авиакомпаний меняется из года в год и зависит от ситуции на туристическом рынке России.</p>
+
+        <p class="mt10">Основные аэропорты в Греции: Афины “Элефтериос Венизелос” (IATA ATH), Закинф “Дионисиос Соломос” (IATA ZTH), Ираклион (Крит) “Никос Казандзакис” (IATA HER), Каламата “Капитан Василис Константакoпулос» (IATA KLX), Керкира (Корфу) “Иоаннис Каподистрия” (IATA CFU), Родос “Диагора” (IATA RHO), Салоники “Македония” (IATA SKG).</p>
+        <p>Билеты Москва Греция пользуются особым спросом, начиная с июня и длится это до начала сентября, Мы рекомендуем покупать авиабилеты за 45-30 дней до рейса.</p>
+
+        <p class="mt10">Греция является одним из самых любимых направлений у Россиян. В первую очередь страна привлекает средизимноморским климатом, недолгим временем перлёта, возможностью шоппинга, огромным количеством достопримечательностей.</p>
+
+        <p class="mt10">Купить авиабилеты Москва Греция на нашем сайте Вы можете круглосуточно самостоятельно онлайн. Если же Вам требуется помощь менеджеров, Вы можете обратиться к нам ежедневно с 8 до 23 часов, и мы с удовольствием подберём для Вас лучший вариант перелёта из Москвы в Грецию по одной из лучших цен на рынке.</p>
+      </div>
+      <div class="mt25 max-text-width">
+        <div class="tac ttu">популярные <span class="blue">страны</span> по чартерным направлениям</div>
+        <div class="bysides spacing10 mt10">
+          <div class="flex1">
+            <a class="blue-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="blue-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="blue-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="blue-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+        </div>
+        <div class="bysides spacing10 mt10">
+          <div class="flex1">
+            <a class="blue-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="blue-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="blue-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="blue-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt25 max-text-width">
+        <div class="tac ttu">популярные <span class="green">города</span> по чартерным направлениям</div>
+        <div class="bysides spacing10 mt10">
+          <div class="flex1">
+            <a class="green-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="green-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="green-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="green-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+        </div>
+        <div class="bysides spacing10 mt10">
+          <div class="flex1">
+            <a class="green-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="green-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="green-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+          <div class="flex1">
+            <a class="green-button b tdn tac ttd">Чартерные авиабилеты <br>в              БОЛГАРИЮ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

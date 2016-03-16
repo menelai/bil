@@ -143,6 +143,15 @@ $lightgrey: #bdbdbd;
     padding-top:2px;
     padding-bottom:4px;
   }
+  &.b {
+    display: block;
+    line-height: 1.3;
+    &:hover {
+      color:white;
+      background: $dark-blue;
+      text-decoration: none;
+    }
+  }
   &.aib {
     display: inline-block;
     font-size: 11px;
@@ -1421,6 +1430,10 @@ a, .pseudolink {
   text-transform: uppercase;
 }
 
+.ttd {
+  text-transform: none;
+}
+
 .fz18 {
   font-size: 18px;
 }
@@ -2066,6 +2079,9 @@ a, .pseudolink {
   color:white;
   text-decoration: none;
   padding:0.25em 1.5em 0.35em;
+  &.b {
+
+  }
   &:not(.ibm) {
     display: block;
   }
@@ -3780,3 +3796,4 @@ a, .pseudolink {
 
 @import 'insurance';
 @import 'country';
+@import 'front';

@@ -394,6 +394,13 @@ ul.textm > li > * {
   .blue-button[type=button], .blue-button[type=submit] {
     padding-top: 2px;
     padding-bottom: 4px; }
+  .blue-button.b {
+    display: block;
+    line-height: 1.3; }
+    .blue-button.b:hover {
+      color: white;
+      background: #0480b4;
+      text-decoration: none; }
   .blue-button.aib {
     display: inline-block;
     font-size: 11px;
@@ -1431,6 +1438,9 @@ a, .pseudolink {
 
 .ttu {
   text-transform: uppercase; }
+
+.ttd {
+  text-transform: none; }
 
 .fz18 {
   font-size: 18px; }
@@ -3902,5 +3912,24 @@ a, .pseudolink {
 #when {
   min-height: -webkit-calc(100vh - 40px);
   min-height: calc(100vh - 40px); }
+
+.max-text-width {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#front-content {
+  border-top: solid 3px #058fc7;
+  padding: 25px 0 75px; }
+
+.fat-bottom {
+  padding-bottom: 30px;
+  border-bottom: solid 9px #3e3e3e; }
+
+.spacing10 {
+  margin-right: -5px;
+  margin-left: -5px; }
+  .spacing10 > * {
+    padding: 0 5px; }
 
 /*# sourceMappingURL=style.css.map */
