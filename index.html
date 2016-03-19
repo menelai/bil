@@ -8,7 +8,10 @@
   <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
   <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.selectric.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <script src="js/script.js"></script>
@@ -19,6 +22,102 @@
   </style-->
 </head>
 <body>
+<div id="search-throbber">
+  <div id="sth-inner">
+    <h2 id="sth-title" class="blue ttu tac">поиск дешёвых авиабилетов займёт не более 25 секунд</h2>
+    <div class="bysides smaller2">
+      <div>
+        <div class="rounded5">
+          <div class="tac blue ttu">
+            За первые 2 года работы Мы реализовали<br>
+            <b>35 000 авиабилетов,</b><br>
+            получив 7 отрицательных честных отзывов
+          </div>
+        </div>
+        <div class="rounded5 mt5">
+          <div class="bysides">
+            <div class="ttu tar blue">страхование от</div>
+            <div><img src="i/ingols-large.png" height="70"></div>
+          </div>
+        </div>
+        <div class="rounded5 mt5">
+          <div class="tac blue ttu">
+            Мы работаем<br>
+            <b>без выходных</b>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="rounded5">
+          <div class="tac blue ttu">
+            <b>только у нас:</b><br>
+            самый большой ассортимент<br>
+            чартерных и блочных авиабмлетов —<br>
+            лучшие цены в россии
+          </div>
+        </div>
+        <div class="rounded5 mt5">
+          <div class="blue tac">
+            <div class="ttu">Способы оплаты</div>
+            <div class="bysides">
+              <div><img src="i/visa-mastercard.png" width="27"></div>
+              <div><img src="i/euroset-l.png" width="55"></div>
+              <div><img src="i/svyaznoy-big.png" width="55"></div>
+              <div><img src="i/qiwi.png" width="60"></div>
+              <div><img src="i/alfa-small.png"></div>
+            </div>
+            <div class="ttu fwb">комиссия 0%</div>
+          </div>
+        </div>
+        <div class="rounded5 mt5">
+          <div class="tac blue ttu">
+            <b>Ж/Д билеты</b><br>
+            по очень привлекательным ценам<br>
+            без очереди за несколько минут
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="magnif">
+      <div id="eye">
+
+      </div>
+      <div id="magnifscale">
+
+      </div>
+      <script type="text/javascript">
+        $(function() {
+          var svg = d3.select("#magnifscale")
+            .append("svg")
+            .attr("width", 180)
+            .attr("height", 180)
+            .append("g")
+            .attr("transform", "translate(90,90)");
+          console.log(svg);
+          var arc = d3.svg.arc()
+            .innerRadius(70)
+            .outerRadius(85)
+            .startAngle(0)
+            .endAngle(1 * Math.PI);
+
+          var path = svg.append("path")
+            .attr("class", "arc")
+            .attr("d", arc);
+
+          setTimeout(function() {
+            var arc = d3.svg.arc()
+              .innerRadius(70)
+              .outerRadius(85)
+              .startAngle(0)
+              .endAngle(1.5 * Math.PI);
+            path.attr("d", arc);
+          }, 2000);
+        });
+      </script>
+    </div>
+  </div>
+</div>
 <div id="statusbar">
   <div class="max-width">
     <div>
