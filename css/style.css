@@ -3855,9 +3855,10 @@ a, .pseudolink {
   align-items: stretch;
   margin: 0 -3px 0 -3px; }
   .extra-services > div {
-    height: 145px;
+    height: 183px;
     padding: 15px 3px 3px 0;
     width: 25%;
+    font-weight: bold;
     isplay: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -3877,6 +3878,7 @@ a, .pseudolink {
     -ms-flex-align: stretch;
     align-items: stretch; }
     .extra-services > div > a {
+      background-position: center center;
       width: 100%;
       display: block;
       border-radius: 4px;
