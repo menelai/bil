@@ -4015,8 +4015,8 @@ a, .pseudolink {
     width: 278px;
     height: 281px;
     position: absolute;
-    left: -31px;
-    top: 0; }
+    left: -30px;
+    top: 1px; }
 
 #eye {
   position: absolute;
@@ -4045,5 +4045,8 @@ a, .pseudolink {
     background-position: 0 0; } }
 .arc {
   fill: #08d0e8; }
+
+.arc1 {
+  fill: #058fc7; }
 
 /*# sourceMappingURL=style.css.map */

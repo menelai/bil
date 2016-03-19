@@ -58,7 +58,7 @@
           </div>
         </div>
         <div class="rounded5 mt5">
-          <div class="blue tac">
+          <div class="blue tac" style="width:100%;">
             <div class="ttu">Способы оплаты</div>
             <div class="bysides">
               <div><img src="i/visa-mastercard.png" width="27"></div>
@@ -94,7 +94,7 @@
             .attr("height", 180)
             .append("g")
             .attr("transform", "translate(90,90)");
-          console.log(svg);
+
           var arc = d3.svg.arc()
             .innerRadius(70)
             .outerRadius(85)
@@ -104,6 +104,26 @@
           var path = svg.append("path")
             .attr("class", "arc")
             .attr("d", arc);
+
+          var arc1 = d3.svg.arc()
+            .innerRadius(85)
+            .outerRadius(88)
+            .startAngle(0)
+            .endAngle(2 * Math.PI);
+
+          var path1 = svg.append("path")
+            .attr("class", "arc1")
+            .attr("d", arc1);
+
+          var arc2 = d3.svg.arc()
+            .innerRadius(67)
+            .outerRadius(70)
+            .startAngle(0)
+            .endAngle(2 * Math.PI);
+
+          var path2 = svg.append("path")
+            .attr("class", "arc1")
+            .attr("d", arc2);
 
           setTimeout(function() {
             var arc = d3.svg.arc()

@@ -90,8 +90,8 @@
     width:278px;
     height:281px;
     position: absolute;
-    left:-31px;
-    top:0;
+    left:-30px;
+    top:1px;
   }
 }
 
@@ -118,5 +118,9 @@
 }
 
 .arc {
-  fill: #08d0e8;
+   fill: #08d0e8;
+ }
+
+.arc1 {
+  fill: $blue;
 }
