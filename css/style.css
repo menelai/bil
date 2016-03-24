@@ -5689,6 +5689,12 @@ a:hover, .pseudolink:hover {
   /* line 214, phone.scss */
   #top-search-form {
     padding: 10px 0;
+    /*#from-input,#date-input-1 {
+      padding-right:1px;
+    }
+    #to-input,#date-input-2 {
+      padding-left:1px;
+    }*/
   }
   /* line 216, phone.scss */
   #top-search-form form {
@@ -5715,35 +5721,37 @@ a:hover, .pseudolink:hover {
   }
   /* line 236, phone.scss */
   #top-search-form #from-input, #top-search-form #to-input, #top-search-form #date-input-1, #top-search-form #date-input-2 {
-    -webkit-flex: 0 0 50% !important;
-    flex: 0 0 50% !important;
+    -webkit-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
   }
-  /* line 239, phone.scss */
-  #top-search-form #from-input, #top-search-form #date-input-1 {
-    padding-right: 1px;
+  /* line 247, phone.scss */
+  #top-search-form #to-input input {
+    padding-left: 34px;
+    background-position: 7px center;
   }
-  /* line 242, phone.scss */
-  #top-search-form #to-input, #top-search-form #date-input-2 {
-    padding-left: 1px;
+  /* line 253, phone.scss */
+  #top-search-form #change-from-to {
+    top: 100%;
+    right: 5px;
   }
-  /* line 246, phone.scss */
+  /* line 258, phone.scss */
   #top-search-form #passengers-input {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 248, phone.scss */
+  /* line 260, phone.scss */
   #top-search-form #passengers-input .pass-border {
     left: 0;
     top: 2px;
   }
-  /* line 253, phone.scss */
+  /* line 265, phone.scss */
   #top-search-form #new-search {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
     -webkit-order: 0;
     order: 0;
   }
-  /* line 257, phone.scss */
+  /* line 269, phone.scss */
   #top-search-form #search-submit {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
@@ -5751,60 +5759,70 @@ a:hover, .pseudolink:hover {
     order: 501;
   }
 
-  /* line 265, phone.scss */
+  /* line 277, phone.scss */
   #specoffer-wrapper > .bysides {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 267, phone.scss */
+  /* line 279, phone.scss */
   #specoffer-wrapper > .bysides select {
     width: 100%;
   }
-  /* line 270, phone.scss */
+  /* line 282, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 {
     -webkit-flex: 0 0 50%;
     flex: 0 0 50%;
     margin-right: 0;
     padding-bottom: 2px;
   }
-  /* line 274, phone.scss */
+  /* line 286, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n+1) {
     padding-right: 1px;
   }
-  /* line 277, phone.scss */
+  /* line 289, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n) {
     padding-left: 1px;
   }
-  /* line 281, phone.scss */
+  /* line 293, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 select {
     height: 30px;
     line-height: 30px;
   }
-  /* line 287, phone.scss */
+  /* line 299, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit {
     -webkit-flex: 0 0 100%;
     flex: 0 0 100%;
   }
-  /* line 289, phone.scss */
+  /* line 301, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit input {
     height: 30px;
     line-height: 30px;
     width: 100%;
   }
 
-  /* line 300, phone.scss */
+  /* line 312, phone.scss */
   #spec-results .results-wrapper > .result-wrapper {
     width: 100%;
   }
 
-  /* line 306, phone.scss */
+  /* line 318, phone.scss */
   .max-text-width {
     max-width: none;
   }
 
-  /* line 312, phone.scss */
+  /* line 324, phone.scss */
   #front-content .max-text-width .bysides {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+  }
+
+  /* line 330, phone.scss */
+  .ui-datepicker {
+    width: auto;
+  }
+
+  /* line 334, phone.scss */
+  #passengers-popup {
+    width: 100%;
   }
 }

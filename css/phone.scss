@@ -234,13 +234,25 @@ body {
   }
 
   #from-input, #to-input, #date-input-1, #date-input-2 {
-    @include flex(0 0 50% !important);
+    @include flex(0 0 100% !important);
   }
-  #from-input,#date-input-1 {
+  /*#from-input,#date-input-1 {
     padding-right:1px;
   }
   #to-input,#date-input-2 {
     padding-left:1px;
+  }*/
+
+  #to-input {
+    input {
+      padding-left: 34px;
+      background-position: 7px center;
+    }
+  }
+
+  #change-from-to {
+    top:100%;
+    right:5px;
   }
 
   #passengers-input {
@@ -313,4 +325,12 @@ body {
       @include flex-wrap(wrap);
     }
   }
+}
+
+.ui-datepicker {
+  width:auto;
+}
+
+#passengers-popup {
+  width:100%;
 }
