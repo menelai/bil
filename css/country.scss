@@ -105,12 +105,15 @@
       border:none;
       height:40px;
       line-height: 40px;
-      padding:0 15px;
+      padding:0 6px;
       text-transform: uppercase;
       color:white;
+      font-weight: bold;
       @include blue-gradient();
     }
   }
+
+
 }
 
 .country-photo {
@@ -195,6 +198,7 @@
     }
     width:245px;
     #nav-col-bg {
+      padding-top:10px;
       background: #f0f0f0;
       > .ul {
         > li {
@@ -575,24 +579,9 @@
 .flist {
   max-width: 660px;
   margin-top:50px;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  margin-left:auto;
+  margin-right:auto;
+  font-size: 18px;
   >div {
     margin-bottom:30px;
     >div:first-child {
@@ -611,6 +600,7 @@
 }
 
 .extra-services {
+  font-size: 15px;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -676,11 +666,12 @@
       -webkit-align-content: stretch;
       -ms-flex-line-pack: stretch;
       align-content: stretch;
-      -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-      align-items: flex-end;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
       text-decoration: none;
       color:white;
+      padding-top: 70px;
       >div {
         text-align: center;
         width:100%;
@@ -698,4 +689,13 @@
 #when {
   min-height: -webkit-calc(100vh - 40px);
   min-height: calc(100vh - 40px);
+}
+
+#schedule {
+  .green-button {
+    font-size: 14px;
+    line-height: 19px;
+    padding-top:4px;
+    padding-bottom: 4px;
+  }
 }

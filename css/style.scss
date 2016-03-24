@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "compass";
 @import "reset";
 
 $green: #8fcb00;
@@ -10,12 +11,12 @@ $grey: #929292;
 $lightgrey: #bdbdbd;
 //$4,128,180
 @mixin blue-gradient() {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0480b4+0,036f9c+100 */
-  background: #0480b4; /* Old browsers */
-  background: -moz-linear-gradient(top, #0480b4 0%, #036f9c 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0480b4 0%,#036f9c 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #0480b4 0%,#036f9c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0480b4', endColorstr='#036f9c',GradientType=0 ); /* IE6-9 */
+  // Needs latest Compass, add '@import "compass"' to your scss
+  // Permalink - use to edit and share this gradient:
+  // http://colorzilla.com/gradient-editor/#0480b4+0,036f9c+100
+  background-color: #0480b4; // Old browsers
+  @include filter-gradient(#0480b4, #036f9c, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #0480b4 0%,#036f9c 100%));
 }
 @mixin green-gradient() {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fcb00+0,7cb000+100 */
@@ -2078,7 +2079,8 @@ a, .pseudolink {
   border-radius: 2px;
   color:white;
   text-decoration: none;
-  padding:0.25em 1.5em 0.35em;
+  padding:3px 1.5em 5px;
+  font-weight: 600;
   &.b {
 
   }
@@ -3771,7 +3773,7 @@ a, .pseudolink {
 
 .h18.blue-button[type="button"] {
   padding-top: 4px;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 .ui-autocomplete {
@@ -3798,3 +3800,11 @@ a, .pseudolink {
 @import 'country';
 @import 'front';
 @import 'search-throbber';
+
+#buter {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  @import 'phone';
+}
