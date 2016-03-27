@@ -229,7 +229,7 @@
 
 <div id="frontpage">
   <div class="max-width">
-    <div class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
+    <div id="first-country-photo" class="country-photo bybounds" style="background-image: url(i/country-example.jpg);">
       <div>
         <div class="place-name ttu">Крит</div>
         <div>Греция</div>
@@ -362,9 +362,9 @@
 
   <div id="front-content" class="mt20">
     <div class="max-width">
-      <div class="tac ttu">о чартерных рейсах</div>
+      <div class="tac ttu" id="about-charters" ng-click="charter=!charter">о чартерных рейсах</div>
 
-      <div class="mt15 fat-bottom">
+      <div class="mt15 fat-bottom" id="about-charters-text" ng-show="charter">
         <p class="blue ttu">Ищите авиабилеты на прямые рейсы из Москвы в Грецию?</p>
         <p class="mt10">Вы правильно сделали, что посетили biletideshevo.ru, у нас Вы сможете найти все возможные варианты рейсов, а благодаря уникальной системе бронирования цены на билеты в Грецию из Москвы ниже на 25-30%, чем на сайте авиакомпаний.</p>
 

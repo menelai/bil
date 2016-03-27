@@ -40,21 +40,30 @@ body {
 }
 
 #statusbar {
+  @include order(500);
   box-shadow: none;
-  padding:0 10px 0 0;
+  padding:0 10px 10px;
   border:none;
-  position: absolute;
+  //position: absolute;
+  position: relative;
   bottom:auto;
   left:auto;
-  top:0;
+  top:auto;
+  right:auto;
   >.max-width {
     padding:0;
+    >div {
+      width:100%;
+    }
     >div:first-child, >.separator, >div:nth-child(3), #smm>.wsn:first-child {
       display: none;
     }
   }
 
-  #smm > div + div {
+  #smm {
+    width:100%;
+    > div + div {
+
     margin:0;
 
     display: -ms-flexbox;
@@ -76,7 +85,8 @@ body {
     -ms-flex-align: stretch;
     align-items: stretch;
 
-    width:54px;
+    width:100%;
+  }
   }
 
   a {
@@ -98,11 +108,11 @@ body {
 
 #logo {
   width:100%;
-  padding-bottom: 30px;
-  padding-left:30px;
+  padding-bottom: 8px;
+  padding-left:40px;
   img {
-    width:22px;
-    height:22px;
+    width:32px;
+    height:32px;
   }
 }
 
@@ -115,7 +125,7 @@ body {
 }
 
 #sitename {
-  font-size: 25px;
+  font-size: 32px;
 }
 
 #top {
@@ -132,12 +142,32 @@ body {
 
 #phones {
   padding-left:0;
+  padding-right:0;
+  width:100%;
 
-  position: absolute;
+  /*position: absolute;
   left:10px;
-  top:37px;
+  top:37px;*/
   .blue {
-    font-size: 14px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    font-size: 16px;
     br {
       display: none;
     }
@@ -148,9 +178,17 @@ body {
 
   .phon {
     color:white;
-    background: $blue;
+    background: $orange;
     border-radius: 2px;
-    padding:0 5px;
+    padding:4px 5px;
+    @include flex(1);
+    text-align: center;
+    &:first-child {
+      margin-right:4px;
+    }
+    &:last-child {
+      margin-left:4px;
+    }
   }
 }
 
@@ -190,29 +228,31 @@ body {
 #buter {
   display: block;
   position: absolute;
-  height:22px;
-  width:22px;
+  height:32px;
+  width:32px;
   left:0;
   top:-32px;
-  border-top:solid 4px $green;
-  border-bottom:solid 4px $green;
+  border-top:solid 8px $green;
+  border-bottom:solid 8px $green;
   +* {
     display: none;
   }
   &:before {
     content:'';
-    height:4px;
+    height:8px;
     position: absolute;
     top:50%;
     left:0;
     right:0;
     background: $green;
-    margin-top:-2px;
+    margin-top:-4px;
   }
 }
 
 #top-search-form {
   padding:10px 0;
+  margin:8px 0 18px;
+  background: $blue;
   form {
     @include flex-wrap(wrap);
     >* {
@@ -230,6 +270,8 @@ body {
       padding-top:0;
       padding-bottom:0;
       height:30px;
+      background: #FFFFFF;
+      box-shadow: inset 0px 3px 4px rgba(0,0,0, 0.2);
     }
   }
 
@@ -258,6 +300,8 @@ body {
   #passengers-input {
     @include flex(0 0 100% !important);
     .pass-border {
+      background: #FFFFFF;
+      box-shadow: inset 0px 3px 4px rgba(0,0,0, 0.2);
       left:0;
       top:2px;
     }
@@ -269,12 +313,41 @@ body {
   #search-submit {
     @include flex(0 0 100% !important);
     @include order(501);
+    margin-bottom: -20px;
+  }
+
+  #date-input-1, #date-input-2 {
+    &:after {
+      background: url(../i/calendar-grey.png) right center no-repeat;
+      left:8px;
+      right:auto;
+
+      width: 19px;
+      height: 19px;
+
+      top: 50%;
+      margin-top: -10px;
+      content: '';
+
+      z-index: 10;
+      position: absolute;
+    }
+    input {
+      padding-left:34px;
+    }
+    .close {
+      display: none;
+    }
   }
 }
 
 
 #specoffer-wrapper {
+  &:before {
+    display: none;
+  }
   >.bysides {
+    padding-right:100px;
     @include flex-wrap(wrap);
     select {
       width:100%;
@@ -297,9 +370,14 @@ body {
     }
 
     >.search-submit {
-      @include flex(0 0 100%);
+      position: absolute;
+      right:10px;
+      top:0;
+      bottom:0;
+      width:88px;
       input {
-        height:30px;
+        height:-webkit-calc(100% - 2px);
+        height:calc(100% - 2px);
         line-height: 30px;
         width: 100%;
       }
@@ -320,6 +398,7 @@ body {
 }
 
 #front-content {
+  padding-bottom: 10px;
   .max-text-width {
     .bysides {
       @include flex-wrap(wrap);
@@ -328,9 +407,51 @@ body {
 }
 
 .ui-datepicker {
-  width:auto;
+  width:auto !important;
+  z-index: 500 !important;
 }
 
 #passengers-popup {
   width:100%;
+}
+
+#first-country-photo {
+  display: none;
+}
+
+.country-photo {
+  padding:10px;
+
+  .mt15, .mt30 {
+    margin-top: 5px;
+  }
+}
+
+#about-charters {
+  border:solid 1px $blue;
+  color:$blue;
+  padding:4px 0;
+  font-weight: bold;
+}
+
+#about-charters-text {
+
+}
+
+.spacing10 {
+  &.mt10 {
+    margin-top: 4px;
+  }
+  margin-left:-2px;
+  margin-right:-2px;
+  >* {
+    padding:0 2px;
+    &:nth-child(n+3) {
+      margin-top:4px;
+    }
+  }
+}
+
+#totop {
+  display: none !important;
 }
