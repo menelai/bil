@@ -42,14 +42,14 @@ body {
 #statusbar {
   @include order(500);
   box-shadow: none;
-  padding:0 10px 10px;
+  padding:0 0 0 16px;
   border:none;
-  //position: absolute;
-  position: relative;
+  position: absolute;
+  //position: relative;
   bottom:auto;
-  left:auto;
-  top:auto;
-  right:auto;
+  left:50%;
+  top:46px;
+  right:10px;
   >.max-width {
     padding:0;
     >div {
@@ -178,16 +178,17 @@ body {
 
   .phon {
     color:white;
-    background: $orange;
+    background: #bbbbbb;
     border-radius: 2px;
     padding:4px 5px;
-    @include flex(1);
+    @include flex(0 0 50%);
     text-align: center;
     &:first-child {
       margin-right:4px;
     }
     &:last-child {
       margin-left:4px;
+      display: none;
     }
   }
 }
@@ -424,6 +425,9 @@ body {
 
   .mt15, .mt30 {
     margin-top: 5px;
+  }
+  br {
+    display: none;
   }
 }
 

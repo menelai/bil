@@ -5500,13 +5500,13 @@ a:hover, .pseudolink:hover {
     -webkit-order: 500;
     order: 500;
     box-shadow: none;
-    padding: 0 10px 10px;
+    padding: 0 0 0 16px;
     border: none;
-    position: relative;
+    position: absolute;
     bottom: auto;
-    left: auto;
-    top: auto;
-    right: auto;
+    left: 50%;
+    top: 46px;
+    right: 10px;
   }
   /* line 53, phone.scss */
   #statusbar > .max-width {
@@ -5649,11 +5649,11 @@ a:hover, .pseudolink:hover {
   /* line 179, phone.scss */
   #phones .phon {
     color: white;
-    background: #ff8400;
+    background: #bbbbbb;
     border-radius: 2px;
     padding: 4px 5px;
-    -webkit-flex: 1;
-    flex: 1;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
     text-align: center;
   }
   /* line 186, phone.scss */
@@ -5663,15 +5663,16 @@ a:hover, .pseudolink:hover {
   /* line 189, phone.scss */
   #phones .phon:last-child {
     margin-left: 4px;
+    display: none;
   }
 
-  /* line 195, phone.scss */
+  /* line 196, phone.scss */
   #personal {
     padding-left: 0;
     display: none;
   }
 
-  /* line 200, phone.scss */
+  /* line 201, phone.scss */
   #menu-line {
     position: absolute;
     top: 42px;
@@ -5679,7 +5680,7 @@ a:hover, .pseudolink:hover {
     margin-bottom: 10px;
     z-index: 200;
   }
-  /* line 206, phone.scss */
+  /* line 207, phone.scss */
   #menu-line ul {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -5701,7 +5702,7 @@ a:hover, .pseudolink:hover {
     align-items: flex-start;
   }
 
-  /* line 228, phone.scss */
+  /* line 229, phone.scss */
   #buter {
     display: block;
     position: absolute;
@@ -5712,11 +5713,11 @@ a:hover, .pseudolink:hover {
     border-top: solid 8px #8fcb00;
     border-bottom: solid 8px #8fcb00;
   }
-  /* line 237, phone.scss */
+  /* line 238, phone.scss */
   #buter + * {
     display: none;
   }
-  /* line 240, phone.scss */
+  /* line 241, phone.scss */
   #buter:before {
     content: '';
     height: 8px;
@@ -5728,7 +5729,7 @@ a:hover, .pseudolink:hover {
     margin-top: -4px;
   }
 
-  /* line 252, phone.scss */
+  /* line 253, phone.scss */
   #top-search-form {
     padding: 10px 0;
     margin: 8px 0 18px;
@@ -5740,23 +5741,23 @@ a:hover, .pseudolink:hover {
       padding-left:1px;
     }*/
   }
-  /* line 256, phone.scss */
+  /* line 257, phone.scss */
   #top-search-form form {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 258, phone.scss */
+  /* line 259, phone.scss */
   #top-search-form form > * {
     padding-top: 2px;
     min-height: 30px;
     -webkit-flex: 1 !important;
     flex: 1 !important;
   }
-  /* line 262, phone.scss */
+  /* line 263, phone.scss */
   #top-search-form form > * + * {
     padding-left: 0;
   }
-  /* line 268, phone.scss */
+  /* line 269, phone.scss */
   #top-search-form form input[type=text] {
     line-height: 30px;
     padding-top: 0;
@@ -5765,41 +5766,41 @@ a:hover, .pseudolink:hover {
     background: #FFFFFF;
     box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
   }
-  /* line 278, phone.scss */
+  /* line 279, phone.scss */
   #top-search-form #from-input, #top-search-form #to-input, #top-search-form #date-input-1, #top-search-form #date-input-2 {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 289, phone.scss */
+  /* line 290, phone.scss */
   #top-search-form #to-input input {
     padding-left: 34px;
     background-position: 7px center;
   }
-  /* line 295, phone.scss */
+  /* line 296, phone.scss */
   #top-search-form #change-from-to {
     top: 100%;
     right: 5px;
   }
-  /* line 300, phone.scss */
+  /* line 301, phone.scss */
   #top-search-form #passengers-input {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 302, phone.scss */
+  /* line 303, phone.scss */
   #top-search-form #passengers-input .pass-border {
     background: #FFFFFF;
     box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
     left: 0;
     top: 2px;
   }
-  /* line 309, phone.scss */
+  /* line 310, phone.scss */
   #top-search-form #new-search {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
     -webkit-order: 0;
     order: 0;
   }
-  /* line 313, phone.scss */
+  /* line 314, phone.scss */
   #top-search-form #search-submit {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
@@ -5807,7 +5808,7 @@ a:hover, .pseudolink:hover {
     order: 501;
     margin-bottom: -20px;
   }
-  /* line 320, phone.scss */
+  /* line 321, phone.scss */
   #top-search-form #date-input-1:after, #top-search-form #date-input-2:after {
     background: url(../i/calendar-grey.png) right center no-repeat;
     left: 8px;
@@ -5820,50 +5821,50 @@ a:hover, .pseudolink:hover {
     z-index: 10;
     position: absolute;
   }
-  /* line 335, phone.scss */
+  /* line 336, phone.scss */
   #top-search-form #date-input-1 input, #top-search-form #date-input-2 input {
     padding-left: 34px;
   }
-  /* line 338, phone.scss */
+  /* line 339, phone.scss */
   #top-search-form #date-input-1 .close, #top-search-form #date-input-2 .close {
     display: none;
   }
 
-  /* line 346, phone.scss */
+  /* line 347, phone.scss */
   #specoffer-wrapper:before {
     display: none;
   }
-  /* line 349, phone.scss */
+  /* line 350, phone.scss */
   #specoffer-wrapper > .bysides {
     padding-right: 100px;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 352, phone.scss */
+  /* line 353, phone.scss */
   #specoffer-wrapper > .bysides select {
     width: 100%;
   }
-  /* line 355, phone.scss */
+  /* line 356, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 {
     -webkit-flex: 0 0 50%;
     flex: 0 0 50%;
     margin-right: 0;
     padding-bottom: 2px;
   }
-  /* line 359, phone.scss */
+  /* line 360, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n+1) {
     padding-right: 1px;
   }
-  /* line 362, phone.scss */
+  /* line 363, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n) {
     padding-left: 1px;
   }
-  /* line 366, phone.scss */
+  /* line 367, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 select {
     height: 30px;
     line-height: 30px;
   }
-  /* line 372, phone.scss */
+  /* line 373, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit {
     position: absolute;
     right: 10px;
@@ -5871,7 +5872,7 @@ a:hover, .pseudolink:hover {
     bottom: 0;
     width: 88px;
   }
-  /* line 378, phone.scss */
+  /* line 379, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit input {
     height: -webkit-calc(100% - 2px);
     height: calc(100% - 2px);
@@ -5879,52 +5880,56 @@ a:hover, .pseudolink:hover {
     width: 100%;
   }
 
-  /* line 390, phone.scss */
+  /* line 391, phone.scss */
   #spec-results .results-wrapper > .result-wrapper {
     width: 100%;
   }
 
-  /* line 396, phone.scss */
+  /* line 397, phone.scss */
   .max-text-width {
     max-width: none;
   }
 
-  /* line 400, phone.scss */
+  /* line 401, phone.scss */
   #front-content {
     padding-bottom: 10px;
   }
-  /* line 403, phone.scss */
+  /* line 404, phone.scss */
   #front-content .max-text-width .bysides {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 
-  /* line 409, phone.scss */
+  /* line 410, phone.scss */
   .ui-datepicker {
     width: auto !important;
     z-index: 500 !important;
   }
 
-  /* line 414, phone.scss */
+  /* line 415, phone.scss */
   #passengers-popup {
     width: 100%;
   }
 
-  /* line 418, phone.scss */
+  /* line 419, phone.scss */
   #first-country-photo {
     display: none;
   }
 
-  /* line 422, phone.scss */
+  /* line 423, phone.scss */
   .country-photo {
     padding: 10px;
   }
-  /* line 425, phone.scss */
+  /* line 426, phone.scss */
   .country-photo .mt15, .country-photo .mt30 {
     margin-top: 5px;
   }
+  /* line 429, phone.scss */
+  .country-photo br {
+    display: none;
+  }
 
-  /* line 430, phone.scss */
+  /* line 434, phone.scss */
   #about-charters {
     border: solid 1px #058fc7;
     color: #058fc7;
@@ -5932,25 +5937,25 @@ a:hover, .pseudolink:hover {
     font-weight: bold;
   }
 
-  /* line 441, phone.scss */
+  /* line 445, phone.scss */
   .spacing10 {
     margin-left: -2px;
     margin-right: -2px;
   }
-  /* line 442, phone.scss */
+  /* line 446, phone.scss */
   .spacing10.mt10 {
     margin-top: 4px;
   }
-  /* line 447, phone.scss */
+  /* line 451, phone.scss */
   .spacing10 > * {
     padding: 0 2px;
   }
-  /* line 449, phone.scss */
+  /* line 453, phone.scss */
   .spacing10 > *:nth-child(n+3) {
     margin-top: 4px;
   }
 
-  /* line 455, phone.scss */
+  /* line 459, phone.scss */
   #totop {
     display: none !important;
   }
