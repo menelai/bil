@@ -9,6 +9,7 @@ $orange: #ff8400;
 
 $grey: #929292;
 $lightgrey: #bdbdbd;
+$cyan: #08d0e8;
 //$4,128,180
 @mixin blue-gradient() {
   // Needs latest Compass, add '@import "compass"' to your scss
@@ -129,7 +130,10 @@ $lightgrey: #bdbdbd;
 
 .grey {
   color:$grey;
+}
 
+.cyan {
+  color:$cyan;
 }
 
 .blue-button {

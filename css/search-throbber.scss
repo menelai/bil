@@ -5,7 +5,9 @@
   right:0;
   bottom:0;
   z-index: 100;
-  background: rgba(229, 241, 244, 0.9);
+  //background: rgba(229, 241, 244, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
 
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -35,6 +37,7 @@
     padding:5px 15px;
     height:80px;
     width:340px;
+    border:solid 2px $blue;
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -64,8 +67,8 @@
     height:530px;
     content: '';
     border-radius: 50%;
-    margin:-265px 0 0 -265px;
-    background: rgba(255, 255, 255, 0.5);
+    margin:-295px 0 0 -265px;
+    background: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -81,10 +84,10 @@
 #magnif {
   position: absolute;
   left:50%;
-  top:50%;
+  top:0;
   width:180px;
   height:180px;
-  margin:-90px 0 0 -90px;
+  margin:0 0 0 -90px;
   &:before {
     content:url(../i/magnif.png);
     width:278px;
