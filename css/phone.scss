@@ -251,6 +251,12 @@ body {
 }
 
 #top-search-form {
+  #passengers-input .pass-border > div {
+    height:45px;
+    line-height: 45px;
+    padding-top:0;
+    padding-bottom: 0;
+  }
   padding:10px 0;
   margin:8px 0 18px;
   background: $blue;
@@ -258,7 +264,7 @@ body {
     @include flex-wrap(wrap);
     >* {
       padding-top:2px;
-      min-height:30px;
+      min-height:45px;
       @include flex(1 !important);
       + * {
         padding-left:0;
@@ -267,10 +273,10 @@ body {
     }
 
     input[type=text] {
-      line-height: 30px;
+      line-height: 45px;
       padding-top:0;
       padding-bottom:0;
-      height:30px;
+      height:45px;
       background: #FFFFFF;
       box-shadow: inset 0px 3px 4px rgba(0,0,0, 0.2);
     }
@@ -310,6 +316,10 @@ body {
   #new-search {
     @include flex(0 0 100% !important);
     @include order(0);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.2;
   }
   #search-submit {
     @include flex(0 0 100% !important);
@@ -403,6 +413,9 @@ body {
   .max-text-width {
     .bysides {
       @include flex-wrap(wrap);
+      >.flex1 {
+        min-width: 50%;
+      }
     }
   }
 }
@@ -458,4 +471,8 @@ body {
 
 #totop {
   display: none !important;
+}
+
+select {
+  border-radius: 2px;
 }

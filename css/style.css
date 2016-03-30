@@ -3985,7 +3985,7 @@ a:hover, .pseudolink:hover {
   background: #dff6ff;
 }
 /* line 3368, style.scss */
-.services-input > div label {
+.services-input > div > label {
   border: solid 1px #058fc7;
   display: block;
   border-radius: 2px;
@@ -3993,7 +3993,7 @@ a:hover, .pseudolink:hover {
   padding: 10px 4px;
 }
 /* line 3376, style.scss */
-.services-input > div label > div + div {
+.services-input > div > label > div + div {
   margin-top: 20px;
 }
 
@@ -4480,32 +4480,36 @@ a:hover, .pseudolink:hover {
   border-bottom: solid 1px #a2a2a2;
 }
 /* line 3, insurance.scss */
-#insurance .services-input label {
+#insurance .services-input > div > label {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   background: #ffffff;
   border-color: #113483;
 }
-/* line 16, insurance.scss */
+/* line 11, insurance.scss */
+#insurance .services-input > div label > div + div {
+  margin-top: 5px;
+}
+/* line 20, insurance.scss */
 #insurance .dobuy {
   -webkit-flex: 0 1 180px;
   -ms-flex: 0 1 180px;
   flex: 0 1 180px;
   text-align: right;
 }
-/* line 21, insurance.scss */
+/* line 25, insurance.scss */
 #insurance .dobuy .green-button {
   margin: 0 0 0 auto;
 }
 
-/* line 27, insurance.scss */
+/* line 31, insurance.scss */
 .blue-button.viol {
   background: #113483;
   color: white;
 }
 
-/* line 32, insurance.scss */
+/* line 36, insurance.scss */
 .add-insurance {
   border-radius: 5px;
   border: solid 1px #b7b7b7;
@@ -4513,16 +4517,16 @@ a:hover, .pseudolink:hover {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.16);
   padding: 10px 10px 10px 15px;
 }
-/* line 38, insurance.scss */
+/* line 42, insurance.scss */
 .add-insurance .insurance-price {
   margin: 0 10px;
   font-size: 18px;
 }
-/* line 43, insurance.scss */
+/* line 47, insurance.scss */
 .add-insurance .name {
   line-height: 1;
 }
-/* line 47, insurance.scss */
+/* line 51, insurance.scss */
 .add-insurance .line {
   position: absolute;
   left: 0;
@@ -4531,6 +4535,37 @@ a:hover, .pseudolink:hover {
   width: 6px;
   background: #ffc000;
   border-radius: 5px 0 0 5px;
+}
+
+/* line 62, insurance.scss */
+.bgins {
+  background: #f4f4f4;
+  margin-left: -4px;
+  margin-right: -4px;
+  padding: 15px;
+  text-align: left;
+}
+
+/* line 70, insurance.scss */
+.vertcenter {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 /* line 1, country.scss */
@@ -4638,7 +4673,7 @@ a:hover, .pseudolink:hover {
   -ms-flex-line-pack: stretch;
   align-content: stretch;
 }
-/* line 103, country.scss */
+/* line 104, country.scss */
 #find-specoffer .search-submit input {
   border-radius: 2px;
   border: none;
@@ -4657,9 +4692,10 @@ a:hover, .pseudolink:hover {
   background-image: -moz-linear-gradient(top, #0480b4 0%, #036f9c 100%);
   background-image: -webkit-linear-gradient(top, #0480b4 0%, #036f9c 100%);
   background-image: linear-gradient(to bottom, #0480b4 0%, #036f9c 100%);
+  min-width: 73px;
 }
 
-/* line 119, country.scss */
+/* line 121, country.scss */
 .country-photo {
   background-color: #542609;
   background-position: 0 center;
@@ -4670,13 +4706,13 @@ a:hover, .pseudolink:hover {
   border-radius: 4px;
 }
 
-/* line 129, country.scss */
+/* line 131, country.scss */
 .place-name {
   font-size: 30px;
   margin-top: -0.3em;
 }
 
-/* line 134, country.scss */
+/* line 136, country.scss */
 .price-arrow {
   font-size: 24px;
   font-weight: bold;
@@ -4687,7 +4723,7 @@ a:hover, .pseudolink:hover {
   padding: 0 25px 2px;
   text-shadow: none;
 }
-/* line 143, country.scss */
+/* line 145, country.scss */
 .price-arrow:after {
   border-bottom: 0.65em solid rgba(4, 128, 180, 0);
   border-left: 0.3em solid #0480b4;
@@ -4700,7 +4736,7 @@ a:hover, .pseudolink:hover {
   top: 50%;
 }
 
-/* line 157, country.scss */
+/* line 159, country.scss */
 #spec-results .results-wrapper {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -4722,42 +4758,42 @@ a:hover, .pseudolink:hover {
   align-items: stretch;
   margin: -5px;
 }
-/* line 178, country.scss */
+/* line 180, country.scss */
 #spec-results .results-wrapper > .result-wrapper {
   width: 33.33%;
   padding: 5px;
 }
 
-/* line 185, country.scss */
+/* line 187, country.scss */
 #country-info {
   border-top: solid 3px #058fc7;
   padding: 25px 0;
 }
-/* line 189, country.scss */
+/* line 191, country.scss */
 #country-info #nav-col-sticky-wrapper {
   -webkit-flex: 0 0 245px;
   -ms-flex: 0 0 245px;
   flex: 0 0 245px;
 }
-/* line 194, country.scss */
+/* line 196, country.scss */
 #country-info #nav-col {
   padding-bottom: 50px;
   width: 245px;
 }
-/* line 196, country.scss */
+/* line 198, country.scss */
 #country-info #nav-col > .blue.ttu {
   padding: 10px;
 }
-/* line 200, country.scss */
+/* line 202, country.scss */
 #country-info #nav-col #nav-col-bg {
   padding-top: 10px;
   background: #f0f0f0;
 }
-/* line 204, country.scss */
+/* line 206, country.scss */
 #country-info #nav-col #nav-col-bg > .ul > li {
   padding: 0 20px 0 10px;
 }
-/* line 206, country.scss */
+/* line 208, country.scss */
 #country-info #nav-col #nav-col-bg > .ul > li a {
   padding: 10px 0px 10px 40px;
   background-position: 0 center;
@@ -4766,15 +4802,15 @@ a:hover, .pseudolink:hover {
   text-decoration: none;
   color: black;
 }
-/* line 213, country.scss */
+/* line 215, country.scss */
 #country-info #nav-col #nav-col-bg > .ul > li a:hover {
   color: #058fc7;
 }
-/* line 219, country.scss */
+/* line 221, country.scss */
 #country-info #nav-col #nav-col-bg > .ul > li + li a {
   border-top: dotted 1px #919191;
 }
-/* line 225, country.scss */
+/* line 227, country.scss */
 #country-info #nav-col #nav-col-bg > .ul > li.active:after {
   position: absolute;
   top: 0;
@@ -4784,64 +4820,64 @@ a:hover, .pseudolink:hover {
   content: '';
   right: 0;
 }
-/* line 234, country.scss */
+/* line 236, country.scss */
 #country-info #nav-col #nav-col-bg > .ul > li.active a {
   color: #058fc7;
 }
-/* line 243, country.scss */
+/* line 245, country.scss */
 #country-info #content-col {
   min-width: 0;
   padding: 0 0 0 20px;
 }
-/* line 245, country.scss */
+/* line 247, country.scss */
 #country-info #content-col img {
   max-width: 100%;
 }
-/* line 249, country.scss */
+/* line 251, country.scss */
 #country-info #content-col h2 {
   margin-top: -0.3em;
   font-size: 20px;
   margin-bottom: 25px;
 }
-/* line 255, country.scss */
+/* line 257, country.scss */
 #country-info #content-col .country-section {
   padding: 0 0 30px 0;
 }
-/* line 257, country.scss */
+/* line 259, country.scss */
 #country-info #content-col .country-section + .country-section {
   padding-top: 25px;
 }
-/* line 260, country.scss */
+/* line 262, country.scss */
 #country-info #content-col .country-section:not(:last-child) {
   border-bottom: solid 9px #058fc7;
 }
 
-/* line 267, country.scss */
+/* line 269, country.scss */
 .circled {
   border-radius: 50%;
 }
-/* line 269, country.scss */
+/* line 271, country.scss */
 .circled img {
   vertical-align: middle;
 }
 
-/* line 274, country.scss */
+/* line 276, country.scss */
 .airport-summary {
   padding: 0 0 0 25px;
 }
 
-/* line 279, country.scss */
+/* line 281, country.scss */
 .current-time h3 {
   font-size: 15px;
 }
-/* line 281, country.scss */
+/* line 283, country.scss */
 .current-time h3:before {
   content: url(../i/currenttime.png);
   vertical-align: -5px;
   margin-right: 5px;
 }
 
-/* line 289, country.scss */
+/* line 291, country.scss */
 .timeplate {
   border-radius: 5px;
   background: #058fc7 url(../i/fortimeplate.png) center center no-repeat;
@@ -4852,72 +4888,72 @@ a:hover, .pseudolink:hover {
   padding: 0 20px 5px;
 }
 
-/* line 300, country.scss */
+/* line 302, country.scss */
 .forecast {
   margin-left: auto;
   margin-right: auto;
   max-width: 730px;
 }
 
-/* line 306, country.scss */
+/* line 308, country.scss */
 .tempr {
   font-size: 38px;
   font-family: "wf_SegoeUILight";
 }
 
-/* line 310, country.scss */
+/* line 312, country.scss */
 .weater-icon {
   height: 50px;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 314, country.scss */
+/* line 316, country.scss */
 .weater-icon.sunny {
   background-image: url(../i/sunny.png);
 }
-/* line 317, country.scss */
+/* line 319, country.scss */
 .weater-icon.partly-cloudy {
   background-image: url(../i/partly-cloudy.png);
 }
-/* line 320, country.scss */
+/* line 322, country.scss */
 .weater-icon.cloudy {
   background-image: url(../i/cloudy.png);
 }
 
-/* line 325, country.scss */
+/* line 327, country.scss */
 .exslider {
   padding: 0 30px;
   width: 100%;
 }
-/* line 328, country.scss */
+/* line 330, country.scss */
 .exslider .flex-control-nav {
   display: none;
 }
-/* line 332, country.scss */
+/* line 334, country.scss */
 .exslider .flex-direction-nav a {
   opacity: 1;
   text-indent: -9999px;
   text-align: left;
 }
-/* line 337, country.scss */
+/* line 339, country.scss */
 .exslider .flex-direction-nav .flex-prev {
   left: 0;
   background: url(../i/slider-left.png) left center no-repeat;
 }
-/* line 340, country.scss */
+/* line 342, country.scss */
 .exslider .flex-direction-nav .flex-prev:before {
   display: none;
 }
-/* line 344, country.scss */
+/* line 346, country.scss */
 .exslider .flex-direction-nav .flex-next {
   right: 0;
   background: url(../i/slider-right.png) right center no-repeat;
 }
-/* line 347, country.scss */
+/* line 349, country.scss */
 .exslider .flex-direction-nav .flex-next:before {
   display: none;
 }
-/* line 352, country.scss */
+/* line 354, country.scss */
 .exslider .slides {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -4938,7 +4974,7 @@ a:hover, .pseudolink:hover {
   -ms-flex-align: stretch;
   align-items: stretch;
 }
-/* line 371, country.scss */
+/* line 373, country.scss */
 .exslider .slides > li {
   text-align: center;
   float: none !important;
@@ -4946,41 +4982,41 @@ a:hover, .pseudolink:hover {
   display: -webkit-flex !important;
   display: flex !important;
 }
-/* line 379, country.scss */
+/* line 381, country.scss */
 .exslider .slides .aib {
   display: inline-block;
   width: 100%;
 }
 
-/* line 387, country.scss */
+/* line 389, country.scss */
 .flight-in-c .rounded5 {
   border: solid 1px #b7b7b7;
   padding: 8px;
 }
-/* line 391, country.scss */
+/* line 393, country.scss */
 .flight-in-c .rounded5 > div + div {
   margin-left: 5px;
 }
-/* line 397, country.scss */
+/* line 399, country.scss */
 .flight-in-c .fdur {
   width: 5em;
 }
-/* line 401, country.scss */
+/* line 403, country.scss */
 .flight-in-c .fcity {
   width: 8.8em;
 }
 
-/* line 408, country.scss */
+/* line 410, country.scss */
 .itemsmar4 > * + * {
   margin-left: 4px;
 }
 
-/* line 416, country.scss */
+/* line 418, country.scss */
 .itemsmar2 > * + * {
   margin-left: 2px;
 }
 
-/* line 423, country.scss */
+/* line 425, country.scss */
 .radiobuttons label {
   border-radius: 2px;
   display: block;
@@ -4988,14 +5024,14 @@ a:hover, .pseudolink:hover {
   color: white;
   padding: 3px 0 5px 0;
 }
-/* line 430, country.scss */
+/* line 432, country.scss */
 .radiobuttons input:checked + label {
   background-color: #ebebeb;
   box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
   color: #058fc7;
 }
 
-/* line 438, country.scss */
+/* line 440, country.scss */
 .plane-input input[type=text] {
   height: 40px;
   line-height: 40px;
@@ -5003,47 +5039,47 @@ a:hover, .pseudolink:hover {
   border-radius: 2px;
   width: 100%;
 }
-/* line 446, country.scss */
+/* line 448, country.scss */
 .plane-input .radiobuttons label {
   width: 40px;
   height: 40px;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 451, country.scss */
+/* line 453, country.scss */
 .plane-input .radiobuttons label[for=cplane] {
   background-image: url(../i/1planew.png);
 }
-/* line 454, country.scss */
+/* line 456, country.scss */
 .plane-input .radiobuttons label[for=cplane2] {
   background-image: url(../i/2planesw.png);
 }
-/* line 460, country.scss */
+/* line 462, country.scss */
 .plane-input .radiobuttons input:checked + label[for=cplane] {
   background-image: url(../i/1plane.png);
 }
-/* line 463, country.scss */
+/* line 465, country.scss */
 .plane-input .radiobuttons input:checked + label[for=cplane2] {
   background-image: url(../i/2planes.png);
 }
 
-/* line 470, country.scss */
+/* line 472, country.scss */
 .subscribeform {
   border-radius: 2px;
   background: #f1f1f1;
   padding: 10px;
 }
-/* line 472, country.scss */
+/* line 474, country.scss */
 .subscribeform .radiobuttons input:checked + label {
   background-color: #ffffff;
   box-shadow: inset 0 0 0 1px #cccccc, inset 0px 3px 4px rgba(0, 0, 0, 0.2);
 }
-/* line 481, country.scss */
+/* line 483, country.scss */
 .subscribeform input[type=text] {
   border: solid 1px #058fc7;
   border-radius: 2px;
 }
-/* line 487, country.scss */
+/* line 489, country.scss */
 .subscribeform .selectday .ui-datepicker {
   background: none;
   border: none;
@@ -5065,11 +5101,11 @@ a:hover, .pseudolink:hover {
   -ms-flex-line-pack: stretch;
   align-content: stretch;
 }
-/* line 508, country.scss */
+/* line 510, country.scss */
 .subscribeform .selectday .ui-datepicker .ui-datepicker-row-break {
   display: none;
 }
-/* line 513, country.scss */
+/* line 515, country.scss */
 .subscribeform .selectday .ui-datepicker-group {
   border: solid 1px #777777;
   border-radius: 2px;
@@ -5077,41 +5113,41 @@ a:hover, .pseudolink:hover {
   width: calc(33.3% - 5px);
   margin-left: 5px;
 }
-/* line 521, country.scss */
+/* line 523, country.scss */
 .subscribeform .selectday .ui-datepicker .ui-datepicker-prev {
   top: 5em;
   left: -30px;
 }
-/* line 525, country.scss */
+/* line 527, country.scss */
 .subscribeform .selectday .ui-datepicker .ui-datepicker-next {
   top: 5em;
   right: -30px;
 }
 
-/* line 533, country.scss */
+/* line 535, country.scss */
 .selectday > .ui-datepicker-inline {
   width: auto !important;
 }
 
-/* line 538, country.scss */
+/* line 540, country.scss */
 .fromtodur {
   padding: 0 25px;
 }
-/* line 540, country.scss */
+/* line 542, country.scss */
 .fromtodur > div {
   padding: 0 30px;
 }
-/* line 542, country.scss */
+/* line 544, country.scss */
 .fromtodur > div + div {
   border-left: solid 1px #cccccc;
 }
 
-/* line 549, country.scss */
+/* line 551, country.scss */
 .durslider input[type=text] {
   border: none;
   background: none;
 }
-/* line 554, country.scss */
+/* line 556, country.scss */
 .durslider .ui-slider-horizontal {
   border: none;
   height: 9px;
@@ -5127,11 +5163,11 @@ a:hover, .pseudolink:hover {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939494', endColorstr='#c1c1c1',GradientType=0 );
   /* IE6-9 */
 }
-/* line 565, country.scss */
+/* line 567, country.scss */
 .durslider .ui-slider-range {
   background: #058fc7;
 }
-/* line 569, country.scss */
+/* line 571, country.scss */
 .durslider .ui-slider-handle {
   width: 22px;
   height: 28px;
@@ -5141,7 +5177,7 @@ a:hover, .pseudolink:hover {
   top: -8px;
 }
 
-/* line 579, country.scss */
+/* line 581, country.scss */
 .flist {
   max-width: 660px;
   margin-top: 50px;
@@ -5149,26 +5185,26 @@ a:hover, .pseudolink:hover {
   margin-right: auto;
   font-size: 18px;
 }
-/* line 585, country.scss */
+/* line 587, country.scss */
 .flist > div {
   margin-bottom: 30px;
 }
-/* line 587, country.scss */
+/* line 589, country.scss */
 .flist > div > div:first-child {
   width: 90px;
   text-align: center;
 }
-/* line 591, country.scss */
+/* line 593, country.scss */
 .flist > div > div:first-child + div {
   padding-right: 30px;
 }
 
-/* line 598, country.scss */
+/* line 600, country.scss */
 .flex05 {
   width: 50%;
 }
 
-/* line 602, country.scss */
+/* line 604, country.scss */
 .extra-services {
   font-size: 15px;
   display: -ms-flexbox;
@@ -5191,7 +5227,7 @@ a:hover, .pseudolink:hover {
   align-items: stretch;
   margin: 0 -3px 0 -3px;
 }
-/* line 623, country.scss */
+/* line 625, country.scss */
 .extra-services > div {
   height: 183px;
   padding: 15px 3px 3px 0;
@@ -5216,7 +5252,7 @@ a:hover, .pseudolink:hover {
   -ms-flex-align: stretch;
   align-items: stretch;
 }
-/* line 647, country.scss */
+/* line 649, country.scss */
 .extra-services > div > a {
   background-position: center center;
   width: 100%;
@@ -5244,26 +5280,26 @@ a:hover, .pseudolink:hover {
   color: white;
   padding-top: 70px;
 }
-/* line 675, country.scss */
+/* line 677, country.scss */
 .extra-services > div > a > div {
   text-align: center;
   width: 100%;
   padding: 15px;
 }
 
-/* line 684, country.scss */
+/* line 686, country.scss */
 #amount {
   width: 100%;
   text-align: center;
 }
 
-/* line 689, country.scss */
+/* line 691, country.scss */
 #when {
   min-height: -webkit-calc(100vh - 40px);
   min-height: calc(100vh - 40px);
 }
 
-/* line 695, country.scss */
+/* line 697, country.scss */
 #schedule .green-button {
   font-size: 14px;
   line-height: 19px;
@@ -5748,66 +5784,77 @@ a:hover, .pseudolink:hover {
       padding-left:1px;
     }*/
   }
-  /* line 257, phone.scss */
+  /* line 254, phone.scss */
+  #top-search-form #passengers-input .pass-border > div {
+    height: 45px;
+    line-height: 45px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* line 263, phone.scss */
   #top-search-form form {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 259, phone.scss */
+  /* line 265, phone.scss */
   #top-search-form form > * {
     padding-top: 2px;
-    min-height: 30px;
+    min-height: 45px;
     -webkit-flex: 1 !important;
     flex: 1 !important;
   }
-  /* line 263, phone.scss */
+  /* line 269, phone.scss */
   #top-search-form form > * + * {
     padding-left: 0;
   }
-  /* line 269, phone.scss */
+  /* line 275, phone.scss */
   #top-search-form form input[type=text] {
-    line-height: 30px;
+    line-height: 45px;
     padding-top: 0;
     padding-bottom: 0;
-    height: 30px;
+    height: 45px;
     background: #FFFFFF;
     box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
   }
-  /* line 279, phone.scss */
+  /* line 285, phone.scss */
   #top-search-form #from-input, #top-search-form #to-input, #top-search-form #date-input-1, #top-search-form #date-input-2 {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 290, phone.scss */
+  /* line 296, phone.scss */
   #top-search-form #to-input input {
     padding-left: 34px;
     background-position: 7px center;
   }
-  /* line 296, phone.scss */
+  /* line 302, phone.scss */
   #top-search-form #change-from-to {
     top: 100%;
     right: 5px;
   }
-  /* line 301, phone.scss */
+  /* line 307, phone.scss */
   #top-search-form #passengers-input {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 303, phone.scss */
+  /* line 309, phone.scss */
   #top-search-form #passengers-input .pass-border {
     background: #FFFFFF;
     box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
     left: 0;
     top: 2px;
   }
-  /* line 310, phone.scss */
+  /* line 316, phone.scss */
   #top-search-form #new-search {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
     -webkit-order: 0;
     order: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.2;
   }
-  /* line 314, phone.scss */
+  /* line 324, phone.scss */
   #top-search-form #search-submit {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
@@ -5815,7 +5862,7 @@ a:hover, .pseudolink:hover {
     order: 501;
     margin-bottom: -20px;
   }
-  /* line 321, phone.scss */
+  /* line 331, phone.scss */
   #top-search-form #date-input-1:after, #top-search-form #date-input-2:after {
     background: url(../i/calendar-grey.png) right center no-repeat;
     left: 8px;
@@ -5828,50 +5875,50 @@ a:hover, .pseudolink:hover {
     z-index: 10;
     position: absolute;
   }
-  /* line 336, phone.scss */
+  /* line 346, phone.scss */
   #top-search-form #date-input-1 input, #top-search-form #date-input-2 input {
     padding-left: 34px;
   }
-  /* line 339, phone.scss */
+  /* line 349, phone.scss */
   #top-search-form #date-input-1 .close, #top-search-form #date-input-2 .close {
     display: none;
   }
 
-  /* line 347, phone.scss */
+  /* line 357, phone.scss */
   #specoffer-wrapper:before {
     display: none;
   }
-  /* line 350, phone.scss */
+  /* line 360, phone.scss */
   #specoffer-wrapper > .bysides {
     padding-right: 100px;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 353, phone.scss */
+  /* line 363, phone.scss */
   #specoffer-wrapper > .bysides select {
     width: 100%;
   }
-  /* line 356, phone.scss */
+  /* line 366, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 {
     -webkit-flex: 0 0 50%;
     flex: 0 0 50%;
     margin-right: 0;
     padding-bottom: 2px;
   }
-  /* line 360, phone.scss */
+  /* line 370, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n+1) {
     padding-right: 1px;
   }
-  /* line 363, phone.scss */
+  /* line 373, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n) {
     padding-left: 1px;
   }
-  /* line 367, phone.scss */
+  /* line 377, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 select {
     height: 30px;
     line-height: 30px;
   }
-  /* line 373, phone.scss */
+  /* line 383, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit {
     position: absolute;
     right: 10px;
@@ -5879,7 +5926,7 @@ a:hover, .pseudolink:hover {
     bottom: 0;
     width: 88px;
   }
-  /* line 379, phone.scss */
+  /* line 389, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit input {
     height: -webkit-calc(100% - 2px);
     height: calc(100% - 2px);
@@ -5887,56 +5934,60 @@ a:hover, .pseudolink:hover {
     width: 100%;
   }
 
-  /* line 391, phone.scss */
+  /* line 401, phone.scss */
   #spec-results .results-wrapper > .result-wrapper {
     width: 100%;
   }
 
-  /* line 397, phone.scss */
+  /* line 407, phone.scss */
   .max-text-width {
     max-width: none;
   }
 
-  /* line 401, phone.scss */
+  /* line 411, phone.scss */
   #front-content {
     padding-bottom: 10px;
   }
-  /* line 404, phone.scss */
+  /* line 414, phone.scss */
   #front-content .max-text-width .bysides {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+  /* line 416, phone.scss */
+  #front-content .max-text-width .bysides > .flex1 {
+    min-width: 50%;
+  }
 
-  /* line 410, phone.scss */
+  /* line 423, phone.scss */
   .ui-datepicker {
     width: auto !important;
     z-index: 500 !important;
   }
 
-  /* line 415, phone.scss */
+  /* line 428, phone.scss */
   #passengers-popup {
     width: 100%;
   }
 
-  /* line 419, phone.scss */
+  /* line 432, phone.scss */
   #first-country-photo {
     display: none;
   }
 
-  /* line 423, phone.scss */
+  /* line 436, phone.scss */
   .country-photo {
     padding: 10px;
   }
-  /* line 426, phone.scss */
+  /* line 439, phone.scss */
   .country-photo .mt15, .country-photo .mt30 {
     margin-top: 5px;
   }
-  /* line 429, phone.scss */
+  /* line 442, phone.scss */
   .country-photo br {
     display: none;
   }
 
-  /* line 434, phone.scss */
+  /* line 447, phone.scss */
   #about-charters {
     border: solid 1px #058fc7;
     color: #058fc7;
@@ -5944,26 +5995,31 @@ a:hover, .pseudolink:hover {
     font-weight: bold;
   }
 
-  /* line 445, phone.scss */
+  /* line 458, phone.scss */
   .spacing10 {
     margin-left: -2px;
     margin-right: -2px;
   }
-  /* line 446, phone.scss */
+  /* line 459, phone.scss */
   .spacing10.mt10 {
     margin-top: 4px;
   }
-  /* line 451, phone.scss */
+  /* line 464, phone.scss */
   .spacing10 > * {
     padding: 0 2px;
   }
-  /* line 453, phone.scss */
+  /* line 466, phone.scss */
   .spacing10 > *:nth-child(n+3) {
     margin-top: 4px;
   }
 
-  /* line 459, phone.scss */
+  /* line 472, phone.scss */
   #totop {
     display: none !important;
+  }
+
+  /* line 476, phone.scss */
+  select {
+    border-radius: 2px;
   }
 }

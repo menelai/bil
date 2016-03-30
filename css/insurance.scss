@@ -1,11 +1,15 @@
 #insurance {
   .services-input {
-    label {
+    >div>label {
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
       background: #ffffff;
       border-color: #113483;
+    }
+
+    > div label > div + div {
+      margin-top: 5px;
     }
   }
 
@@ -53,4 +57,33 @@
     background: #ffc000;
     border-radius: 5px 0 0 5px;
   }
+}
+
+.bgins {
+  background: #f4f4f4;
+  margin-left:-4px;
+  margin-right: -4px;
+  padding:15px;
+  text-align: left;
+}
+
+.vertcenter {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }

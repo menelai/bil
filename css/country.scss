@@ -85,6 +85,7 @@
   }
 
   .search-submit {
+
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -110,6 +111,7 @@
       color:white;
       font-weight: bold;
       @include blue-gradient();
+      min-width: 73px;
     }
   }
 
