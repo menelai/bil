@@ -15,6 +15,7 @@
 
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <script src="js/script.js"></script>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <!--style>
     .max-width {
       max-width: {{width}}px;
@@ -22,7 +23,7 @@
   </style-->
 </head>
 <body>
-<div id="search-throbber">
+<div id="search-throbber" ng-hide="true">
   <div id="sth-inner">
     <h2 id="sth-title" class="blue ttu tac">поиск дешёвых авиабилетов займёт не более 25 секунд</h2>
     <div class="bysides smaller2">
@@ -141,29 +142,38 @@
 <div id="statusbar">
   <div class="max-width">
     <div>
-      <div>
-        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME)   <a href="/">Шереметьево</a> (SVO)   <a href="/">Внуково</a> (VKO)
+      <div class="wsn">
+        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME) <a href="/">Шереметьево</a> (SVO) <a href="/">Внуково</a> (VKO)
       </div>
     </div>
     <div class="separator"></div>
     <div>
       <div id="links-block">
-        <div id="safety"><a href="/">Абсолютная<br>
+        <div id="safety"><a href="/">Абсолютная
           безопасность платежей</a></div>
-        <div><a href="/">Публичная<br>
+        <div><a href="/">Публичная
           оферта</a></div>
       </div>
     </div>
     <div class="separator"></div>
     <div>
       <div id="smm">
-        <div>Акции, розыгрыши,<br>
-          новости, отзывы о нас</div>
-        <div>
-          <a href="/"><div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div></a>
-          <a href="/"><div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div></a>
-          <a href="/"><div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div></a>
-          <a href="/"><div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div></a>
+        <div class="wsn">Акции, розыгрыши,<br>
+          новости, отзывы о нас
+        </div>
+        <div class="wsn">
+          <a href="/">
+            <div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div>
+          </a>
         </div>
       </div>
     </div>
@@ -224,6 +234,7 @@
   </div>
 </div>
 <div id="menu-line">
+  <div id="buter"></div>
   <div class="max-width">
     <ul>
       <li><a href="/">Авиабилеты</a></li>

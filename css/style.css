@@ -6022,4 +6022,45 @@ a:hover, .pseudolink:hover {
   select {
     border-radius: 2px;
   }
+
+  /* line 1, phone-list.scss */
+  #col1 {
+    display: none;
+  }
+
+  /* line 5, phone-list.scss */
+  #alternate-price {
+    display: none;
+  }
+
+  /* line 10, phone-list.scss */
+  #time-and-subscribe {
+    display: none;
+  }
+
+  /* line 14, phone-list.scss */
+  #two-cols > .max-width #col2 {
+    padding-left: 0;
+  }
+
+  /* line 22, phone-list.scss */
+  .promo-result {
+    display: none;
+  }
+
+  /* line 26, phone-list.scss */
+  .result-cols {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  /* line 28, phone-list.scss */
+  .result-cols .trip-row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  /* line 33, phone-list.scss */
+  .flight-params, .times-row {
+    font-size: 11px;
+  }
 }

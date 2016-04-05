@@ -1,0 +1,35 @@
+#col1 {
+  display: none;
+}
+
+#alternate-price {
+  display: none;
+
+}
+
+#time-and-subscribe {
+  display: none;
+}
+
+#two-cols > .max-width #col2 {
+  padding-left:0;
+}
+
+.trip-help {
+  //display: none;
+}
+
+.promo-result {
+  display: none;
+}
+
+.result-cols {
+  @include flex-direction(column);
+  .trip-row {
+    @include flex-direction(column);
+  }
+}
+
+.flight-params, .times-row {
+  font-size: 11px;
+}
