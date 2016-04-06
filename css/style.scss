@@ -1997,6 +1997,10 @@ a, .pseudolink {
   }
 }
 
+.credit-wrapper {
+  padding:4px;
+}
+
 .buy-credit {
   color:white;
   border:solid 1px white;
@@ -2005,6 +2009,7 @@ a, .pseudolink {
   text-decoration: none;
   display: block;
   width:100%;
+  background: #aeaeae;
   &:hover {
     color:white;
     background: #cccccc;

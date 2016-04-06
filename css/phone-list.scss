@@ -18,9 +18,39 @@
 .trip-help {
   //display: none;
 }
+#results {
+  > *:not(.promo-result) + *:not(.promo-result) {
+    margin-top:20px;
+    &:before {
+      height: 24px;
+      background: #EEEEEE;
+    }
+  }
+  .promo-result {
+    margin: 20px -10px;
+    padding: 10px 10px;
+    //display: none;
+    .promo-header.bysides {
+      h2 {
+        >span {
+          display: block;
+        }
+      }
+      @include flex-direction(column);
+      >* {
+        width:100%;
+      }
+    }
 
-.promo-result {
-  display: none;
+    .hotel-and-trip {
+      @include flex-direction(column);
+      > .hotel-info {
+        margin-right: 0;
+        min-height: 200px;
+        background-position: center bottom;
+      }
+    }
+  }
 }
 
 .result-cols {
@@ -28,8 +58,101 @@
   .trip-row {
     @include flex-direction(column);
   }
+
+  .trip-col2 {
+    border-left: none;
+  }
+  .col-trip-info.rounded {
+    margin-right:0;
+  }
+
+  .col-price {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    >* {
+      //background: red;
+    }
+    .price-n, .buy-n {
+      @include flex(1);
+    }
+
+    .price-n {
+      line-height: 1;
+    }
+  }
 }
 
 .flight-params, .times-row {
   font-size: 11px;
+}
+
+.trip-back {
+  .trip-row {
+    @include flex-direction(column-reverse);
+  }
+  +.trip-row {
+    @include flex-direction(column-reverse);
+  }
+}
+
+#results-header {
+
+}
+
+#src-dst {
+  display: block;
+}
+
+#res-dates {
+  display: block;
+  margin-left:0;
+  margin-top:5px;
+}
+
+.col-trip-info {
+  z-index: 2;
+}
+
+.inner-top-shadow {
+  &:before {
+    top:100%;
+    z-index: 2;
+  }
+}
+
+.price-n {
+  padding-top:7px;
+  padding-bottom:6px;
+
+  .grey.smaller2 {
+    display: none;
+  }
+}
+
+.buy-n {
+  padding-top:10px;
+  padding-bottom:6px;
+  .grey.smaller2 {
+    display: none;
+  }
+}
+
+.credit-wrapper {
+  @include flex(0 0 100%);
 }
