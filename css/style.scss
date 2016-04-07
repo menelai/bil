@@ -1589,6 +1589,8 @@ a, .pseudolink {
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
 
+    @include flex(1);
+
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1993,8 +1995,13 @@ a, .pseudolink {
     -webkit-flex: 1 1 100%;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
+    @include flex(1);
     padding:3px;
   }
+}
+
+.credit-wrapper {
+  padding:4px;
 }
 
 .buy-credit {
@@ -2005,6 +2012,7 @@ a, .pseudolink {
   text-decoration: none;
   display: block;
   width:100%;
+  background: #aeaeae;
   &:hover {
     color:white;
     background: #cccccc;
@@ -2447,6 +2455,7 @@ a, .pseudolink {
       -webkit-flex: 1 1 100%;
       -ms-flex: 1 1 100%;
       flex: 1 1 100%;
+      @include flex(1);
       background: #aeaeae;
       text-align: center;
       color:white;
@@ -3809,7 +3818,7 @@ a, .pseudolink {
   display: none;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 800px) {
   @import 'phone';
   @import 'phone-list';
 }
