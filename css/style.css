@@ -6271,6 +6271,7 @@ a:hover, .pseudolink:hover {
     font-weight: bold;
     font-size: 18px;
     text-transform: uppercase;
+    padding: 0;
   }
 }
 @media screen and (min-width: 800px) {
