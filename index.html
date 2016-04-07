@@ -183,36 +183,39 @@
 <div id="top">
   <div class="max-width">
     <div id="logo">
-    <a href="/">
-      <div>
-        <div><img src="/i/logo.png"></div>
-        <div class="afut" id="sitename-and-slogan">
-          <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
-          <div id="slogan" class="blue">
-            Лучшие цены на авиабилеты<br>
-            Европейское качество обслуживания
+      <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
+        <div>
+          <div><img src="/i/logo.png"></div>
+          <div class="afut" id="sitename-and-slogan">
+            <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
+            <div id="slogan" class="blue">
+              Лучшие цены на авиабилеты<br>
+              Европейское качество обслуживания
+            </div>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
     </div>
     <div class="sep"></div>
     <div id="partners">
       <div>
         <h4>Наши партнеры:</h4>
+
         <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
         <div class="swap"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
       </div>
       <div>
         <h4>Нас рекомендуют:</h4>
+
         <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
         <div class="swap"><img src="i/national.png"><img src="i/national-color.png"></div>
       </div>
     </div>
     <div class="sep"></div>
     <div id="phones">
-      <p class="blue">+7 (495) 210-5-99<br>
-      8 800 234 5 99 5</p>
+      <p class="blue"><a class="phon tdn" href="tel:+7495210599">+7 (495) 210-5-99</a><br>
+        <span class="phon">8 800 234 5 99 5</span></p>
+
       <p class="grey">с 9:00 до 23:00</p>
     </div>
     <div class="sep"></div>

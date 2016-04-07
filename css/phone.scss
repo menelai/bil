@@ -22,6 +22,7 @@ body {
   min-width: 0;
   @include columns();
 
+
   #top {
     @include order(-2);
   }
@@ -42,6 +43,7 @@ body {
 #statusbar {
   @include order(500);
   box-shadow: none;
+  background: none;
   padding:0 0 0 16px;
   border:none;
   position: absolute;
@@ -87,6 +89,10 @@ body {
 
     width:100%;
   }
+    img {
+      width:32px;
+      height:32px;
+    }
   }
 
   a {
@@ -185,6 +191,9 @@ body {
     text-align: center;
     &:first-child {
       margin-right:4px;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px 5px;
     }
     &:last-child {
       margin-left:4px;
@@ -250,7 +259,14 @@ body {
   }
 }
 
+#change-from-to {
+  width:45px;
+  height:45px;
+  background-size: 60% auto;
+}
+
 #top-search-form {
+  font-size: 18px;
   #passengers-input .pass-border > div {
     height:45px;
     line-height: 45px;
@@ -263,8 +279,10 @@ body {
   form {
     @include flex-wrap(wrap);
     >* {
-      padding-top:2px;
-      min-height:45px;
+      &:nth-child(n+2) {
+        padding-top: 10px;
+      }
+      min-height:55px;
       @include flex(1 !important);
       + * {
         padding-left:0;
@@ -310,21 +328,31 @@ body {
       background: #FFFFFF;
       box-shadow: inset 0px 3px 4px rgba(0,0,0, 0.2);
       left:0;
-      top:2px;
+      top:10px;
+    }
+
+    .drop-down {
+      margin-top:-3px;
+    }
+
+    #passengers-popup {
+      font-size: 14px;
     }
   }
   #new-search {
     @include flex(0 0 100% !important);
     @include order(0);
-    font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
     line-height: 1.2;
+    height:45px;
+    min-height: 45px;
   }
   #search-submit {
     @include flex(0 0 100% !important);
     @include order(501);
-    margin-bottom: -20px;
+    margin-bottom: -30px;
+    font-size: 18px;
   }
 
   #date-input-1, #date-input-2 {
@@ -436,8 +464,9 @@ body {
 .country-photo {
   padding:10px;
 
-  .mt15, .mt30 {
+  .mt15, .mt30, .mt5 {
     margin-top: 5px;
+    font-size: 18px;
   }
   br {
     display: none;
@@ -449,6 +478,9 @@ body {
   color:$blue;
   padding:4px 0;
   font-weight: bold;
+  min-height:45px;
+  line-height: 45px;
+  font-size: 16px;
 }
 
 #about-charters-text {
@@ -475,4 +507,12 @@ body {
 
 select {
   border-radius: 2px;
+}
+
+#show-more-offers {
+  a {
+    min-height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+  }
 }
