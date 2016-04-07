@@ -31,6 +31,11 @@
     padding: 10px 10px;
     //display: none;
     .promo-header.bysides {
+      text-align: center;
+      padding:5px;
+      .afut {
+        font-size: 24px;
+      }
       h2 {
         >span {
           display: block;
@@ -46,8 +51,8 @@
       @include flex-direction(column);
       > .hotel-info {
         margin-right: 0;
-        min-height: 200px;
         background-position: center bottom;
+        background-size: cover;
       }
     }
   }
@@ -94,6 +99,10 @@
 
     .price-n {
       line-height: 1;
+    }
+
+    .buy-n {
+      font-size: 18px;
     }
   }
 }
@@ -155,4 +164,12 @@
 
 .credit-wrapper {
   @include flex(0 0 100%);
+}
+
+.buy-credit {
+  min-height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
 }

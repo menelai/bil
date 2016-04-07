@@ -1,3 +1,7 @@
+.desktop {
+  display: none;
+}
+
 @mixin columns {
   display: -ms-flexbox;
   display: -webkit-flex;

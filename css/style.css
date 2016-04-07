@@ -5506,7 +5506,12 @@ a:hover, .pseudolink:hover {
 }
 
 @media screen and (max-width: 800px) {
-  /* line 21, phone.scss */
+  /* line 1, phone.scss */
+  .desktop {
+    display: none;
+  }
+
+  /* line 25, phone.scss */
   body {
     min-width: 0;
     display: -ms-flexbox;
@@ -5528,29 +5533,29 @@ a:hover, .pseudolink:hover {
     -ms-flex-align: stretch;
     align-items: stretch;
   }
-  /* line 26, phone.scss */
+  /* line 30, phone.scss */
   body #top {
     -webkit-order: -2;
     order: -2;
   }
-  /* line 29, phone.scss */
+  /* line 33, phone.scss */
   body #top-search-form {
     -webkit-order: -1;
     order: -1;
   }
 
-  /* line 34, phone.scss */
+  /* line 38, phone.scss */
   .max-width {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  /* line 39, phone.scss */
+  /* line 43, phone.scss */
   #partners {
     display: none;
   }
 
-  /* line 43, phone.scss */
+  /* line 47, phone.scss */
   #statusbar {
     -webkit-order: 500;
     order: 500;
@@ -5564,23 +5569,23 @@ a:hover, .pseudolink:hover {
     top: 46px;
     right: 10px;
   }
-  /* line 55, phone.scss */
+  /* line 59, phone.scss */
   #statusbar > .max-width {
     padding: 0;
   }
-  /* line 57, phone.scss */
+  /* line 61, phone.scss */
   #statusbar > .max-width > div {
     width: 100%;
   }
-  /* line 60, phone.scss */
+  /* line 64, phone.scss */
   #statusbar > .max-width > div:first-child, #statusbar > .max-width > .separator, #statusbar > .max-width > div:nth-child(3), #statusbar > .max-width #smm > .wsn:first-child {
     display: none;
   }
-  /* line 65, phone.scss */
+  /* line 69, phone.scss */
   #statusbar #smm {
     width: 100%;
   }
-  /* line 67, phone.scss */
+  /* line 71, phone.scss */
   #statusbar #smm > div + div {
     margin: 0;
     display: -ms-flexbox;
@@ -5603,72 +5608,72 @@ a:hover, .pseudolink:hover {
     align-items: stretch;
     width: 100%;
   }
-  /* line 92, phone.scss */
+  /* line 96, phone.scss */
   #statusbar #smm img {
     width: 32px;
     height: 32px;
   }
-  /* line 98, phone.scss */
+  /* line 102, phone.scss */
   #statusbar a {
     display: block;
     padding-top: 10px;
   }
-  /* line 101, phone.scss */
+  /* line 105, phone.scss */
   #statusbar a .ib {
     display: block;
   }
-  /* line 105, phone.scss */
+  /* line 109, phone.scss */
   #statusbar a + a {
     margin: 0;
   }
-  /* line 110, phone.scss */
+  /* line 114, phone.scss */
   #statusbar img {
     vertical-align: middle;
   }
 
-  /* line 115, phone.scss */
+  /* line 119, phone.scss */
   #logo {
     width: 100%;
     padding-bottom: 8px;
     padding-left: 40px;
   }
-  /* line 119, phone.scss */
+  /* line 123, phone.scss */
   #logo img {
     width: 32px;
     height: 32px;
   }
 
-  /* line 125, phone.scss */
+  /* line 129, phone.scss */
   #sitename-and-slogan {
     margin-top: -4px;
   }
 
-  /* line 129, phone.scss */
+  /* line 133, phone.scss */
   #slogan {
     display: none;
   }
 
-  /* line 133, phone.scss */
+  /* line 137, phone.scss */
   #sitename {
     font-size: 32px;
   }
 
-  /* line 137, phone.scss */
+  /* line 141, phone.scss */
   #top {
     padding-top: 10px;
     padding-bottom: 0;
   }
-  /* line 140, phone.scss */
+  /* line 144, phone.scss */
   #top > .max-width {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 143, phone.scss */
+  /* line 147, phone.scss */
   #top > .max-width .sep {
     display: none;
   }
 
-  /* line 149, phone.scss */
+  /* line 153, phone.scss */
   #phones {
     padding-left: 0;
     padding-right: 0;
@@ -5677,7 +5682,7 @@ a:hover, .pseudolink:hover {
     left:10px;
     top:37px;*/
   }
-  /* line 157, phone.scss */
+  /* line 161, phone.scss */
   #phones .blue {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -5699,15 +5704,15 @@ a:hover, .pseudolink:hover {
     align-items: stretch;
     font-size: 16px;
   }
-  /* line 177, phone.scss */
+  /* line 181, phone.scss */
   #phones .blue br {
     display: none;
   }
-  /* line 181, phone.scss */
+  /* line 185, phone.scss */
   #phones .grey {
     display: none;
   }
-  /* line 185, phone.scss */
+  /* line 189, phone.scss */
   #phones .phon {
     color: white;
     background: #bbbbbb;
@@ -5717,26 +5722,26 @@ a:hover, .pseudolink:hover {
     flex: 0 0 50%;
     text-align: center;
   }
-  /* line 192, phone.scss */
+  /* line 196, phone.scss */
   #phones .phon:first-child {
     margin-right: 4px;
     font-size: 18px;
     font-weight: bold;
     padding: 7px 5px;
   }
-  /* line 198, phone.scss */
+  /* line 202, phone.scss */
   #phones .phon:last-child {
     margin-left: 4px;
     display: none;
   }
 
-  /* line 205, phone.scss */
+  /* line 209, phone.scss */
   #personal {
     padding-left: 0;
     display: none;
   }
 
-  /* line 210, phone.scss */
+  /* line 214, phone.scss */
   #menu-line {
     position: absolute;
     top: 42px;
@@ -5744,7 +5749,7 @@ a:hover, .pseudolink:hover {
     margin-bottom: 10px;
     z-index: 200;
   }
-  /* line 216, phone.scss */
+  /* line 220, phone.scss */
   #menu-line ul {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -5766,7 +5771,7 @@ a:hover, .pseudolink:hover {
     align-items: flex-start;
   }
 
-  /* line 238, phone.scss */
+  /* line 242, phone.scss */
   #buter {
     display: block;
     position: absolute;
@@ -5777,11 +5782,11 @@ a:hover, .pseudolink:hover {
     border-top: solid 8px #8fcb00;
     border-bottom: solid 8px #8fcb00;
   }
-  /* line 247, phone.scss */
+  /* line 251, phone.scss */
   #buter + * {
     display: none;
   }
-  /* line 250, phone.scss */
+  /* line 254, phone.scss */
   #buter:before {
     content: '';
     height: 8px;
@@ -5793,14 +5798,14 @@ a:hover, .pseudolink:hover {
     margin-top: -4px;
   }
 
-  /* line 262, phone.scss */
+  /* line 266, phone.scss */
   #change-from-to {
     width: 45px;
     height: 45px;
     background-size: 60% auto;
   }
 
-  /* line 268, phone.scss */
+  /* line 272, phone.scss */
   #top-search-form {
     font-size: 18px;
     padding: 10px 0;
@@ -5813,33 +5818,33 @@ a:hover, .pseudolink:hover {
       padding-left:1px;
     }*/
   }
-  /* line 270, phone.scss */
+  /* line 274, phone.scss */
   #top-search-form #passengers-input .pass-border > div {
     height: 45px;
     line-height: 45px;
     padding-top: 0;
     padding-bottom: 0;
   }
-  /* line 279, phone.scss */
+  /* line 283, phone.scss */
   #top-search-form form {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 281, phone.scss */
+  /* line 285, phone.scss */
   #top-search-form form > * {
     min-height: 55px;
     -webkit-flex: 1 !important;
     flex: 1 !important;
   }
-  /* line 282, phone.scss */
+  /* line 286, phone.scss */
   #top-search-form form > *:nth-child(n+2) {
     padding-top: 10px;
   }
-  /* line 287, phone.scss */
+  /* line 291, phone.scss */
   #top-search-form form > * + * {
     padding-left: 0;
   }
-  /* line 293, phone.scss */
+  /* line 297, phone.scss */
   #top-search-form form input[type=text] {
     line-height: 45px;
     padding-top: 0;
@@ -5848,42 +5853,42 @@ a:hover, .pseudolink:hover {
     background: #FFFFFF;
     box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
   }
-  /* line 303, phone.scss */
+  /* line 307, phone.scss */
   #top-search-form #from-input, #top-search-form #to-input, #top-search-form #date-input-1, #top-search-form #date-input-2 {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 314, phone.scss */
+  /* line 318, phone.scss */
   #top-search-form #to-input input {
     padding-left: 34px;
     background-position: 7px center;
   }
-  /* line 320, phone.scss */
+  /* line 324, phone.scss */
   #top-search-form #change-from-to {
     top: 100%;
     right: 5px;
   }
-  /* line 325, phone.scss */
+  /* line 329, phone.scss */
   #top-search-form #passengers-input {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 327, phone.scss */
+  /* line 331, phone.scss */
   #top-search-form #passengers-input .pass-border {
     background: #FFFFFF;
     box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
     left: 0;
     top: 10px;
   }
-  /* line 334, phone.scss */
+  /* line 338, phone.scss */
   #top-search-form #passengers-input .drop-down {
     margin-top: -3px;
   }
-  /* line 338, phone.scss */
+  /* line 342, phone.scss */
   #top-search-form #passengers-input #passengers-popup {
     font-size: 14px;
   }
-  /* line 342, phone.scss */
+  /* line 346, phone.scss */
   #top-search-form #new-search {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
@@ -5895,7 +5900,7 @@ a:hover, .pseudolink:hover {
     height: 45px;
     min-height: 45px;
   }
-  /* line 351, phone.scss */
+  /* line 355, phone.scss */
   #top-search-form #search-submit {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
@@ -5904,7 +5909,7 @@ a:hover, .pseudolink:hover {
     margin-bottom: -30px;
     font-size: 18px;
   }
-  /* line 359, phone.scss */
+  /* line 363, phone.scss */
   #top-search-form #date-input-1:after, #top-search-form #date-input-2:after {
     background: url(../i/calendar-grey.png) right center no-repeat;
     left: 8px;
@@ -5917,50 +5922,50 @@ a:hover, .pseudolink:hover {
     z-index: 10;
     position: absolute;
   }
-  /* line 374, phone.scss */
+  /* line 378, phone.scss */
   #top-search-form #date-input-1 input, #top-search-form #date-input-2 input {
     padding-left: 34px;
   }
-  /* line 377, phone.scss */
+  /* line 381, phone.scss */
   #top-search-form #date-input-1 .close, #top-search-form #date-input-2 .close {
     display: none;
   }
 
-  /* line 385, phone.scss */
+  /* line 389, phone.scss */
   #specoffer-wrapper:before {
     display: none;
   }
-  /* line 388, phone.scss */
+  /* line 392, phone.scss */
   #specoffer-wrapper > .bysides {
     padding-right: 100px;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 391, phone.scss */
+  /* line 395, phone.scss */
   #specoffer-wrapper > .bysides select {
     width: 100%;
   }
-  /* line 394, phone.scss */
+  /* line 398, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 {
     -webkit-flex: 0 0 50%;
     flex: 0 0 50%;
     margin-right: 0;
     padding-bottom: 2px;
   }
-  /* line 398, phone.scss */
+  /* line 402, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n+1) {
     padding-right: 1px;
   }
-  /* line 401, phone.scss */
+  /* line 405, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n) {
     padding-left: 1px;
   }
-  /* line 405, phone.scss */
+  /* line 409, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 select {
     height: 30px;
     line-height: 30px;
   }
-  /* line 411, phone.scss */
+  /* line 415, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit {
     position: absolute;
     right: 10px;
@@ -5968,7 +5973,7 @@ a:hover, .pseudolink:hover {
     bottom: 0;
     width: 88px;
   }
-  /* line 417, phone.scss */
+  /* line 421, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit input {
     height: -webkit-calc(100% - 2px);
     height: calc(100% - 2px);
@@ -5976,61 +5981,61 @@ a:hover, .pseudolink:hover {
     width: 100%;
   }
 
-  /* line 429, phone.scss */
+  /* line 433, phone.scss */
   #spec-results .results-wrapper > .result-wrapper {
     width: 100%;
   }
 
-  /* line 435, phone.scss */
+  /* line 439, phone.scss */
   .max-text-width {
     max-width: none;
   }
 
-  /* line 439, phone.scss */
+  /* line 443, phone.scss */
   #front-content {
     padding-bottom: 10px;
   }
-  /* line 442, phone.scss */
+  /* line 446, phone.scss */
   #front-content .max-text-width .bysides {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 444, phone.scss */
+  /* line 448, phone.scss */
   #front-content .max-text-width .bysides > .flex1 {
     min-width: 50%;
   }
 
-  /* line 451, phone.scss */
+  /* line 455, phone.scss */
   .ui-datepicker {
     width: auto !important;
     z-index: 500 !important;
   }
 
-  /* line 456, phone.scss */
+  /* line 460, phone.scss */
   #passengers-popup {
     width: 100%;
   }
 
-  /* line 460, phone.scss */
+  /* line 464, phone.scss */
   #first-country-photo {
     display: none;
   }
 
-  /* line 464, phone.scss */
+  /* line 468, phone.scss */
   .country-photo {
     padding: 10px;
   }
-  /* line 467, phone.scss */
+  /* line 471, phone.scss */
   .country-photo .mt15, .country-photo .mt30, .country-photo .mt5 {
     margin-top: 5px;
     font-size: 18px;
   }
-  /* line 471, phone.scss */
+  /* line 475, phone.scss */
   .country-photo br {
     display: none;
   }
 
-  /* line 476, phone.scss */
+  /* line 480, phone.scss */
   #about-charters {
     border: solid 1px #058fc7;
     color: #058fc7;
@@ -6041,35 +6046,35 @@ a:hover, .pseudolink:hover {
     font-size: 16px;
   }
 
-  /* line 490, phone.scss */
+  /* line 494, phone.scss */
   .spacing10 {
     margin-left: -2px;
     margin-right: -2px;
   }
-  /* line 491, phone.scss */
+  /* line 495, phone.scss */
   .spacing10.mt10 {
     margin-top: 4px;
   }
-  /* line 496, phone.scss */
+  /* line 500, phone.scss */
   .spacing10 > * {
     padding: 0 2px;
   }
-  /* line 498, phone.scss */
+  /* line 502, phone.scss */
   .spacing10 > *:nth-child(n+3) {
     margin-top: 4px;
   }
 
-  /* line 504, phone.scss */
+  /* line 508, phone.scss */
   #totop {
     display: none !important;
   }
 
-  /* line 508, phone.scss */
+  /* line 512, phone.scss */
   select {
     border-radius: 2px;
   }
 
-  /* line 513, phone.scss */
+  /* line 517, phone.scss */
   #show-more-offers a {
     min-height: 45px;
     line-height: 45px;
@@ -6112,48 +6117,54 @@ a:hover, .pseudolink:hover {
   }
   /* line 33, phone-list.scss */
   #results .promo-result .promo-header.bysides {
+    text-align: center;
+    padding: 5px;
     -webkit-flex-direction: column;
     flex-direction: column;
   }
-  /* line 35, phone-list.scss */
+  /* line 36, phone-list.scss */
+  #results .promo-result .promo-header.bysides .afut {
+    font-size: 24px;
+  }
+  /* line 40, phone-list.scss */
   #results .promo-result .promo-header.bysides h2 > span {
     display: block;
   }
-  /* line 40, phone-list.scss */
+  /* line 45, phone-list.scss */
   #results .promo-result .promo-header.bysides > * {
     width: 100%;
   }
-  /* line 45, phone-list.scss */
+  /* line 50, phone-list.scss */
   #results .promo-result .hotel-and-trip {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
-  /* line 47, phone-list.scss */
+  /* line 52, phone-list.scss */
   #results .promo-result .hotel-and-trip > .hotel-info {
     margin-right: 0;
-    min-height: 200px;
     background-position: center bottom;
+    background-size: cover;
   }
 
-  /* line 56, phone-list.scss */
+  /* line 61, phone-list.scss */
   .result-cols {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
-  /* line 58, phone-list.scss */
+  /* line 63, phone-list.scss */
   .result-cols .trip-row {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
-  /* line 62, phone-list.scss */
+  /* line 67, phone-list.scss */
   .result-cols .trip-col2 {
     border-left: none;
   }
-  /* line 65, phone-list.scss */
+  /* line 70, phone-list.scss */
   .result-cols .col-trip-info.rounded {
     margin-right: 0;
   }
-  /* line 69, phone-list.scss */
+  /* line 74, phone-list.scss */
   .result-cols .col-price {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -6174,78 +6185,97 @@ a:hover, .pseudolink:hover {
     -ms-flex-align: center;
     align-items: center;
   }
-  /* line 91, phone-list.scss */
+  /* line 96, phone-list.scss */
   .result-cols .col-price .price-n, .result-cols .col-price .buy-n {
     -webkit-flex: 1;
     flex: 1;
   }
-  /* line 95, phone-list.scss */
+  /* line 100, phone-list.scss */
   .result-cols .col-price .price-n {
     line-height: 1;
   }
+  /* line 104, phone-list.scss */
+  .result-cols .col-price .buy-n {
+    font-size: 18px;
+  }
 
-  /* line 101, phone-list.scss */
+  /* line 110, phone-list.scss */
   .flight-params, .times-row {
     font-size: 11px;
   }
 
-  /* line 106, phone-list.scss */
+  /* line 115, phone-list.scss */
   .trip-back .trip-row {
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
   }
-  /* line 109, phone-list.scss */
+  /* line 118, phone-list.scss */
   .trip-back + .trip-row {
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
   }
 
-  /* line 118, phone-list.scss */
+  /* line 127, phone-list.scss */
   #src-dst {
     display: block;
   }
 
-  /* line 122, phone-list.scss */
+  /* line 131, phone-list.scss */
   #res-dates {
     display: block;
     margin-left: 0;
     margin-top: 5px;
   }
 
-  /* line 128, phone-list.scss */
+  /* line 137, phone-list.scss */
   .col-trip-info {
     z-index: 2;
   }
 
-  /* line 133, phone-list.scss */
+  /* line 142, phone-list.scss */
   .inner-top-shadow:before {
     top: 100%;
     z-index: 2;
   }
 
-  /* line 139, phone-list.scss */
+  /* line 148, phone-list.scss */
   .price-n {
     padding-top: 7px;
     padding-bottom: 6px;
   }
-  /* line 143, phone-list.scss */
+  /* line 152, phone-list.scss */
   .price-n .grey.smaller2 {
     display: none;
   }
 
-  /* line 148, phone-list.scss */
+  /* line 157, phone-list.scss */
   .buy-n {
     padding-top: 10px;
     padding-bottom: 6px;
   }
-  /* line 151, phone-list.scss */
+  /* line 160, phone-list.scss */
   .buy-n .grey.smaller2 {
     display: none;
   }
 
-  /* line 156, phone-list.scss */
+  /* line 165, phone-list.scss */
   .credit-wrapper {
     -webkit-flex: 0 0 100%;
     flex: 0 0 100%;
+  }
+
+  /* line 169, phone-list.scss */
+  .buy-credit {
+    min-height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* line 3827, style.scss */
+  .mobile {
+    display: none;
   }
 }

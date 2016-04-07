@@ -3822,3 +3822,9 @@ a, .pseudolink {
   @import 'phone';
   @import 'phone-list';
 }
+
+@media screen and (min-width: 800px) {
+  .mobile {
+    display: none;
+  }
+}
