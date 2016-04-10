@@ -266,7 +266,8 @@ body {
 #change-from-to {
   width:45px;
   height:45px;
-  background-size: 60% auto;
+  margin-top: -18px;
+
 }
 
 #top-search-form {
@@ -278,7 +279,7 @@ body {
     padding-bottom: 0;
   }
   padding:10px 0;
-  margin:8px 0 18px;
+  margin:8px 0 33px;
   background: $blue;
   form {
     @include flex-wrap(wrap);
@@ -306,6 +307,11 @@ body {
 
   #from-input, #to-input, #date-input-1, #date-input-2 {
     @include flex(0 0 100% !important);
+    &:before {
+      margin-top:-5px;
+      left:8px;
+      right:auto;
+    }
   }
   /*#from-input,#date-input-1 {
     padding-right:1px;
@@ -360,7 +366,7 @@ body {
   }
 
   #date-input-1, #date-input-2 {
-    &:after {
+    /*&:after {
       background: url(../i/calendar-grey.png) right center no-repeat;
       left:8px;
       right:auto;
@@ -374,7 +380,7 @@ body {
 
       z-index: 10;
       position: absolute;
-    }
+    }*/
     input {
       padding-left:34px;
     }

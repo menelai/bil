@@ -529,12 +529,12 @@ a, .pseudolink {
 }
 
 .from-input {
-  background: #FFFFFF url(../i/plane-up.png) 7px center no-repeat;
+  //background: #FFFFFF url(../i/plane-up.png) 7px center no-repeat;
   padding-left:34px;
 }
 
 .to-input {
-  background: #FFFFFF url(../i/plane-down.png) 7px center no-repeat;
+  //background: #FFFFFF url(../i/plane-down.png) 7px center no-repeat;
   padding-left:34px;
 }
 
@@ -620,6 +620,19 @@ a, .pseudolink {
     -ms-flex: 0 0 20%;
     flex: 0 0 20%;
 
+    &:before {
+      width:21px;
+      height:21px;
+      position: absolute;
+      content:'';
+      background: url(../i/grey-plane.svg) center center no-repeat;
+      background-size: cover;
+      z-index: 10;
+      left:8px;
+      top:50%;
+      margin-top:-10px;
+    }
+
     input {
       @extend .from-input;
     }
@@ -629,6 +642,20 @@ a, .pseudolink {
     -webkit-flex: 0 0 20%;
     -ms-flex: 0 0 20%;
     flex: 0 0 20%;
+
+    &:before {
+      width:21px;
+      height:21px;
+      position: absolute;
+      content:'';
+      background: url(../i/grey-plane.svg) center center no-repeat;
+      background-size: cover;
+      z-index: 10;
+      left:18px;
+      top:50%;
+      margin-top:-10px;
+      transform: rotate(-180deg);
+    }
 
     input {
       @extend .to-input;
@@ -694,7 +721,20 @@ a, .pseudolink {
   }
 
   #date-input-1 {
-    &:after {
+    &:before {
+      width:22px;
+      height:21px;
+      position: absolute;
+      content:'';
+      background: url(../i/calendar1.svg) center center no-repeat;
+      background-size: cover;
+      z-index: 10;
+      right:8px;
+      top:50%;
+      margin-top:-10px;
+    }
+
+    /*&:after {
       width:19px;
       height:19px;
       right:8px;
@@ -704,9 +744,24 @@ a, .pseudolink {
       background: url(../i/calendar.png) right center no-repeat;
       z-index: 10;
       position: absolute;
-    }
+    }*/
     input {
 
+    }
+  }
+
+  #date-input-2 {
+    &:before {
+      width:22px;
+      height:21px;
+      position: absolute;
+      content:'';
+      background: url(../i/calendar2.svg) center center no-repeat;
+      background-size: cover;
+      z-index: 10;
+      right:8px;
+      top:50%;
+      margin-top:-10px;
     }
   }
 
@@ -746,8 +801,8 @@ a, .pseudolink {
   position: absolute;
   width:26px;
   height:26px;
-  border-radius: 100%;
-  background: $dark-blue url(../i/tuda-suda.png) center center no-repeat;
+  background: url(../i/thereback.svg) center center no-repeat;
+  background-size: cover;
   top:50%;
   margin-top:-13px;
   right:-14px;
@@ -1852,7 +1907,8 @@ a, .pseudolink {
     content:'';
     width:14px;
     height:15px;
-    background: url(../i/white-plane.png);
+    background: url(../i/white-plane.svg);
+    background-size: cover;
     margin-right:0.4em;
   }
   &.down:before {
@@ -1868,7 +1924,8 @@ a, .pseudolink {
     content:'';
     width:15px;
     height:15px;
-    background: url(../i/clock.png);
+    background: url(../i/white-clock.svg);
+    background-size: cover;
     margin-right:0.4em;
   }
 }
@@ -1898,7 +1955,8 @@ a, .pseudolink {
     content:'';
     width:12px;
     height:20px;
-    background: url(../i/luggage.png);
+    background: url(../i/Luggage.svg);
+    background-size: cover;
     position: absolute;
     display: block;
     left:0;
@@ -1914,7 +1972,8 @@ a, .pseudolink {
     content:'';
     width:14px;
     height:13px;
-    background: url(../i/bag.png);
+    background: url(../i/carryon.svg);
+    background-size: cover;
     position: absolute;
     display: block;
     left:0;
@@ -1930,7 +1989,8 @@ a, .pseudolink {
     content:'';
     width:20px;
     height:17px;
-    background: url(../i/chair.png);
+    background: url(../i/class.svg);
+    background-size: cover;
     position: absolute;
     display: block;
     left:0;
@@ -2455,7 +2515,7 @@ a, .pseudolink {
       -webkit-flex: 1 1 100%;
       -ms-flex: 1 1 100%;
       flex: 1 1 100%;
-      @include flex(1);
+
       background: #aeaeae;
       text-align: center;
       color:white;

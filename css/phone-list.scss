@@ -17,6 +17,9 @@
 
 .trip-help {
   //display: none;
+  .trip-col1 {
+    display: none;
+  }
 }
 #results {
   > *:not(.promo-result) + *:not(.promo-result) {
@@ -27,6 +30,7 @@
     }
   }
   .promo-result {
+    display: none;
     margin: 20px -10px;
     padding: 10px 10px;
     //display: none;
@@ -121,11 +125,16 @@
 }
 
 #results-header {
-
+  text-align: left;
 }
 
 #src-dst {
   display: block;
+  .helper {
+    font-weight: normal;
+    text-transform: none;
+    color:#d1d1d1;
+  }
 }
 
 #res-dates {
@@ -164,6 +173,7 @@
 
 .credit-wrapper {
   @include flex(0 0 100%);
+  display: none;
 }
 
 .buy-credit {
@@ -173,4 +183,17 @@
   font-size: 18px;
   text-transform: uppercase;
   padding:0;
+}
+
+.company-name-and-logo {
+  br {
+    display: none;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
+
+.blue-row > div {
+  padding:6px 4px;
 }
