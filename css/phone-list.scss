@@ -1,5 +1,8 @@
 #col1 {
-  display: none;
+  //display: none;
+
+  margin:-10px;
+  padding:10px;
 }
 
 #alternate-price {
@@ -8,11 +11,67 @@
 }
 
 #time-and-subscribe {
-  display: none;
+ //display: none;
+  @include flex-direction(column);
+  padding-bottom: 50px;
+
+  margin-top:-10px;
+  margin-left:-10px;
+  margin-right: -10px;
+  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
 }
 
-#two-cols > .max-width #col2 {
-  padding-left:0;
+#time-form {
+  @include flex(auto);
+  padding-right:0;
+  @include flex-direction(column);
+
+  .popup-div {
+    top:auto;
+
+
+    .popup-buttons input {
+      min-width: 0;
+    }
+  }
+
+  .drop-controller {
+    margin-top:2px;
+    @include flex(auto);
+    margin-right:0;
+    padding:5px 10px;
+  }
+}
+#subscribe-form {
+  @include flex(auto);
+  padding-top: 1em;
+  border-top: solid 1px #929292;
+  margin-top: 1em;
+}
+
+#two-cols {
+  padding-bottom: 10px;
+  > .max-width {
+    @include flex-direction(column);
+    #col1 {
+      @include flex(auto);
+    }
+    #col2 {
+      padding-left: 0;
+      @include flex(auto);
+
+      padding-top: 1em;
+      border-top: solid 1px #929292;
+      margin-top: 1em;
+    }
+  }
+}
+
+.popup-div {
+  width:auto;
+  right:0;
 }
 
 .trip-help {
@@ -63,6 +122,9 @@
 }
 
 .result-cols {
+  .trip-col1 {
+    @include flex(auto);
+  }
   @include flex-direction(column);
   .trip-row {
     @include flex-direction(column);

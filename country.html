@@ -22,6 +22,7 @@
       max-width: {{width}}px;
     }
   </style>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 </head>
 <body>
 <div id="statusbar">
@@ -48,16 +49,16 @@
         </div>
         <div class="wsn">
           <a href="/">
-            <div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div>
+            <div class="swap ib"><img src="i/Vk.svg"><img src="i/vk-color.png"></div>
           </a>
           <a href="/">
-            <div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div>
+            <div class="swap ib"><img src="i/Facebook.svg"><img src="i/f-color.png"></div>
           </a>
           <a href="/">
-            <div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div>
+            <div class="swap ib"><img src="i/Insta.svg"><img src="i/in-color.png"></div>
           </a>
           <a href="/">
-            <div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div>
+            <div class="swap ib"><img src="i/Twitter.svg"><img src="i/tw-color.png"></div>
           </a>
         </div>
       </div>
@@ -98,8 +99,8 @@
     </div>
     <div class="sep"></div>
     <div id="phones">
-      <p class="blue">+7 (495) 210-5-99<br>
-        8 800 234 5 99 5</p>
+      <p class="blue"><a class="phon tdn" href="tel:+7495210599">+7 (495) 210-5-99</a><br>
+        <span class="phon">8 800 234 5 99 5</span></p>
 
       <p class="grey">с 9:00 до 23:00</p>
     </div>
@@ -122,6 +123,7 @@
   </div>
 </div>
 <div id="menu-line">
+  <div id="buter"></div>
   <div class="max-width">
     <ul>
       <li><a href="/">Авиабилеты</a></li>
@@ -404,7 +406,7 @@
           <h2 class="ttu">Крупнейшие аэропорты Греции</h2>
           <ul class="ul">
             <li>
-              <div class="bysides">
+              <div class="bysides becomecol">
                 <div class="circled">
                   <img src="i/airport.png"/>
                 </div>
@@ -413,7 +415,7 @@
                   <p>самый большой аропорт Греции, более 16 миллионов пассажиров в среднем за год обслуживается в аэопорте, базирующимимся авиакомпаниями являются  Aegean Airlу...</p>
                 </div>
               </div>
-              <div class="bysides">
+              <div class="bysides becomecol">
                 <div class="flex1"></div>
                 <div class="tac">
                   <a class="button-grey ttu tdn aib">Прочесть полностью</a>
@@ -422,7 +424,7 @@
               </div>
             </li>
             <li>
-              <div class="bysides">
+              <div class="bysides becomecol">
                 <div class="circled">
                   <img src="i/airport.png"/>
                 </div>
@@ -431,7 +433,7 @@
                   <p>самый большой аропорт Греции, более 16 миллионов пассажиров в среднем за год обслуживается в аэопорте, базирующимимся авиакомпаниями являются  Aegean Airlу...</p>
                 </div>
               </div>
-              <div class="bysides">
+              <div class="bysides becomecol">
                 <div class="flex1"></div>
                 <div class="tac">
                   <a class="button-grey ttu tdn aib">Прочесть полностью</a>
@@ -580,8 +582,8 @@
           <p>В зимнем расписании прямые рейсы в Грецию выполняются только в Афины и Салоники. Из Москвы авиарейсы выполняют авиакомпании Аэрофлот, Ellinair из Шереметьево; S7 Airlines, Aegean Airlines из Домодедово. Из Ростова-на-Дону и Минеральных вод рейсы в Салоники выполняет авикомпания Ellinair. В летнем расписании добавляются рейсы из Санкт-Петербурга, Волгограда, Воронежа, Екатеринбурга, Казани, Калининграда, Краснодара, Нижнего Новгорода, Новосибирска, Самары, Саратова, Уфы из Москвы и Санкт-Петербурга появляются рейсы на Корфу, Ираклион (Крит), Родос, Закинф. Ниже приведено расписание рейсов в Грецию на 2016 год.</p>
 
           <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
-          <div class="bysides stretch mt10 flight-in-c">
-            <div class="flex1 rounded5 bysides">
+          <div class="bysides stretch mt10 flight-in-c  becomecol">
+            <div class="flex1 rounded5 bysides becomecol">
               <div><img src="i/nordstar.png"></div>
               <div class="smaller2 tac">
                 A3 971<br>
@@ -615,8 +617,8 @@
               <a href="/" class="green-button ttu mt5 smaller fwb">Найти</a>
             </div>
           </div>
-          <div class="bysides stretch mt10 flight-in-c">
-            <div class="flex1 rounded5 bysides">
+          <div class="bysides stretch mt10 flight-in-c  becomecol">
+            <div class="flex1 rounded5 bysides becomecol">
               <div><img src="i/nordstar.png"></div>
               <div class="smaller2 tac">
                 A3 971<br>
@@ -652,8 +654,8 @@
           </div>
 
           <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
-          <div class="bysides stretch mt10 flight-in-c">
-            <div class="flex1 rounded5 bysides">
+          <div class="bysides stretch mt10 flight-in-c  becomecol">
+            <div class="flex1 rounded5 bysides becomecol">
               <div><img src="i/nordstar.png"></div>
               <div class="smaller2 tac">
                 A3 971<br>
@@ -687,8 +689,8 @@
               <a href="/" class="green-button ttu mt5 smaller fwb">Найти</a>
             </div>
           </div>
-          <div class="bysides stretch mt10 flight-in-c">
-            <div class="flex1 rounded5 bysides">
+          <div class="bysides stretch mt10 flight-in-c  becomecol">
+            <div class="flex1 rounded5 bysides becomecol">
               <div><img src="i/nordstar.png"></div>
               <div class="smaller2 tac">
                 A3 971<br>
@@ -724,8 +726,8 @@
           </div>
 
           <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
-          <div class="bysides stretch mt10 flight-in-c">
-            <div class="flex1 rounded5 bysides">
+          <div class="bysides stretch mt10 flight-in-c becomecol">
+            <div class="flex1 rounded5 bysides becomecol">
               <div><img src="i/nordstar.png"></div>
               <div class="smaller2 tac">
                 A3 971<br>
@@ -759,8 +761,8 @@
               <a href="/" class="green-button ttu mt5 smaller fwb">Найти</a>
             </div>
           </div>
-          <div class="bysides stretch mt10 flight-in-c">
-            <div class="flex1 rounded5 bysides">
+          <div class="bysides stretch mt10 flight-in-c becomecol">
+            <div class="flex1 rounded5 bysides becomecol">
               <div><img src="i/nordstar.png"></div>
               <div class="smaller2 tac">
                 A3 971<br>
@@ -796,8 +798,8 @@
           </div>
 
           <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
-          <div class="bysides stretch mt10 flight-in-c">
-            <div class="flex1 rounded5 bysides">
+          <div class="bysides stretch mt10 flight-in-c becomecol">
+            <div class="flex1 rounded5 bysides becomecol">
               <div><img src="i/nordstar.png"></div>
               <div class="smaller2 tac">
                 A3 971<br>
@@ -831,8 +833,8 @@
               <a href="/" class="green-button ttu mt5 smaller fwb">Найти</a>
             </div>
           </div>
-          <div class="bysides stretch mt10 flight-in-c">
-            <div class="flex1 rounded5 bysides">
+          <div class="bysides stretch mt10 flight-in-c becomecol">
+            <div class="flex1 rounded5 bysides becomecol">
               <div><img src="i/nordstar.png"></div>
               <div class="smaller2 tac">
                 A3 971<br>
@@ -1167,7 +1169,7 @@
             <p>Как Мы видим из блока выдачи выше, самые дешёвые авиабилеты в Грецию на нашем сайте стоят 7880 рублей, если Вы желаете в реальном времени знать стоимость на авиабилеты, которые Вы хотите забронировать, рекомендуем Вам воспользоваться услугой email подписки, блок которой расположен справо.</p>
 
             <div class="mt10">
-              <div class="bysides stretch smaller itemsmar4 radiobuttons">
+              <div class="bysides stretch smaller itemsmar4 radiobuttons becomecol">
                 <div class="flex1 tac" ng-init="datechoose='day'">
 
                     <input name="whatform" type="radio" class="no-display" id="certdate" ng-model="datechoose" value="day">
@@ -1316,8 +1318,8 @@
                   </div>
                 </div>
 
-                <div class="bysides stretch mt10" style="max-width: 600px; margin-right:auto; margin-left:auto;">
-                  <input type="text" class="flex1" placeholder="Ваш email" style="margin-right:3px;">
+                <div class="bysides stretch mt10 becomecol" style="max-width: 600px; margin-right:auto; margin-left:auto;">
+                  <input type="text" class="flex1 youremail" placeholder="Ваш email">
                   <input type="submit" value="Оформить подписку" class="green-button ttu">
                 </div>
 
