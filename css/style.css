@@ -6451,6 +6451,11 @@ a:hover, .pseudolink:hover {
     padding: 6px 4px;
   }
 
+  /* line 264, phone-list.scss */
+  .searchfalse #from-input, .searchfalse #to-input, .searchfalse #date-input-1, .searchfalse #date-input-2, .searchfalse #passengers-input, .searchfalse#top-search-form #search-submit {
+    display: none;
+  }
+
   /* line 1, phone-country.scss */
   #nav-col-sticky-wrapper {
     display: none;

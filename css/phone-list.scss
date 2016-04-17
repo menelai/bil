@@ -259,3 +259,9 @@
 .blue-row > div {
   padding:6px 4px;
 }
+
+.searchfalse {
+  #from-input, #to-input, #date-input-1, #date-input-2, #passengers-input, &#top-search-form #search-submit {
+    display: none;
+  }
+}

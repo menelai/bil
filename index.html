@@ -251,10 +251,10 @@
     </ul>
   </div>
 </div>
-<div id="top-search-form">
+<div id="top-search-form" ng-init="class=false" class="search{{class}}">
   <div class="max-width">
     <form>
-      <div id="new-search">
+      <div id="new-search" ng-click="class = !class">
         <div>Новый поиск</div>
       </div>
       <div id="from-input">
