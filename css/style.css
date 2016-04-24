@@ -6484,7 +6484,7 @@ a:hover, .pseudolink:hover {
   }
 
   /* line 287, phone-list.scss */
-  #top-search-form:not(.srarchtrue) {
+  #top-search-form:not(.searchtrue) {
     margin-bottom: 8px;
   }
 
@@ -6501,7 +6501,7 @@ a:hover, .pseudolink:hover {
   }
   /* line 301, phone-list.scss */
   #mobile-filter .drop-controller.activetrue {
-    padding: 4px 14px 4px 1px;
+    padding: 7px 19px 7px 1px;
   }
   /* line 304, phone-list.scss */
   #mobile-filter .drop-controller .drop-down {
