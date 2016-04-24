@@ -11,7 +11,7 @@
 }
 
 #time-and-subscribe {
- //display: none;
+ display: none;
   @include flex-direction(column);
   padding-bottom: 50px;
 
@@ -116,6 +116,15 @@
         margin-right: 0;
         background-position: center bottom;
         background-size: cover;
+      }
+    }
+
+    +* {
+      margin-top:20px;
+      &:before {
+        @include between-results();
+        height: 24px;
+        background: #EEEEEE;
       }
     }
   }
@@ -271,6 +280,12 @@
 .searchfalse {
   #from-input, #to-input, #date-input-1, #date-input-2, #passengers-input, &#top-search-form #search-submit {
     display: none;
+  }
+}
+
+#top-search-form {
+  &:not(.srarchtrue) {
+    margin-bottom:8px;
   }
 }
 

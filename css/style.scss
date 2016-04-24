@@ -1578,6 +1578,19 @@ a, .pseudolink {
     }
   }
 }
+
+@mixin between-results() {
+  position: absolute;
+  left:2.1%;
+  right:2.1%;
+  bottom:100%;
+  height:14px;
+  margin-bottom:-4px;
+  background: #3e3e3e;
+  content: '';
+  display: block;
+}
+
 #results {
   >*:not(.promo-result) {
     display: block;
@@ -1585,15 +1598,7 @@ a, .pseudolink {
     + *:not(.promo-result) {
       margin-top:10px;
       &:before {
-        position: absolute;
-        left:2.1%;
-        right:2.1%;
-        bottom:100%;
-        height:14px;
-        margin-bottom:-4px;
-        background: #3e3e3e;
-        content: '';
-        display: block;
+        @include between-results();
       }
     }
   }
