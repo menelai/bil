@@ -6488,33 +6488,33 @@ a:hover, .pseudolink:hover {
     margin-bottom: 8px;
   }
 
-  /* line 294, phone-list.scss */
+  /* line 293, phone-list.scss */
   #mobile-filter .drop-controller {
-    padding: 5px 15px 5px 2px;
+    padding: 8px 20px 8px 2px;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
   }
-  /* line 299, phone-list.scss */
+  /* line 298, phone-list.scss */
   #mobile-filter .drop-controller:last-child {
     margin: 0;
   }
-  /* line 302, phone-list.scss */
+  /* line 301, phone-list.scss */
   #mobile-filter .drop-controller.activetrue {
     padding: 4px 14px 4px 1px;
   }
-  /* line 305, phone-list.scss */
+  /* line 304, phone-list.scss */
   #mobile-filter .drop-controller .drop-down {
     right: 2px;
   }
 
-  /* line 315, phone-list.scss */
+  /* line 314, phone-list.scss */
   .block {
     margin: 0;
     border-bottom: none;
   }
 
-  /* line 320, phone-list.scss */
+  /* line 319, phone-list.scss */
   #peresadki, #blockairports, #aviacompany {
     position: absolute;
     top: 2px;
@@ -6526,12 +6526,12 @@ a:hover, .pseudolink:hover {
     z-index: 100;
   }
 
-  /* line 332, phone-list.scss */
+  /* line 331, phone-list.scss */
   #new-search .drop-down {
     background-image: url(../i/arrow-down-white.png);
   }
 
-  /* line 337, phone-list.scss */
+  /* line 336, phone-list.scss */
   .mobilevis-, .mobilevis-false {
     display: none;
   }
@@ -6685,5 +6685,11 @@ a:hover, .pseudolink:hover {
   /* line 3899, style.scss */
   .mobile {
     display: none;
+  }
+}
+@media screen and (max-width: 320px) {
+  /* line 3905, style.scss */
+  .drop-controller {
+    font-size: 13px;
   }
 }

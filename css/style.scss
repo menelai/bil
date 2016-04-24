@@ -3900,3 +3900,9 @@ a, .pseudolink {
     display: none;
   }
 }
+
+@media screen  and (max-width: 320px) {
+  .drop-controller {
+    font-size: 13px;
+  }
+}
