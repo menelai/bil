@@ -187,7 +187,15 @@
 }
 
 #results-header {
-  text-align: left;
+
+}
+
+.gt {
+  margin:0 0.2em;
+}
+
+#subscribe-form {
+  display: none;
 }
 
 #src-dst {
@@ -264,4 +272,53 @@
   #from-input, #to-input, #date-input-1, #date-input-2, #passengers-input, &#top-search-form #search-submit {
     display: none;
   }
+}
+
+#mobile-filter {
+
+  .drop-controller {
+    padding:5px 15px 5px 2px;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    &:last-child {
+      margin:0;
+    }
+    &.activetrue {
+      padding:4px 14px 4px 1px;
+    }
+    .drop-down {
+      right:2px;
+    }
+  }
+}
+
+#blocks {
+
+}
+
+.block {
+  margin:0;
+  border-bottom: none;
+}
+
+#peresadki, #blockairports, #aviacompany {
+  position: absolute;
+  top:2px;
+  left:0;
+  right:0;
+  background: #FFFFFF;
+  border: solid 1px $blue;
+  padding:10px;
+  z-index: 100;
+}
+
+#new-search {
+  .drop-down {
+    background-image: url(../i/arrow-down-white.png);
+  }
+}
+
+.mobilevis-, .mobilevis-false {
+  display: none;
 }

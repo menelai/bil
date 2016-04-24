@@ -1278,6 +1278,58 @@ a, .pseudolink {
   padding-bottom:10px;
 }
 
+.drop-down {
+  width:19px;
+  height:19px;
+  right:10px;
+  top:50%;
+  margin-top:-10px;
+  background: url(../i/arrow-down.png) right center no-repeat;
+  z-index: 10;
+  position: absolute;
+}
+
+.drop-controller {
+  line-height: 1.0;
+  -webkit-flex: 0 1 33.3%;
+  -ms-flex: 0 1 33.3%;
+  flex: 0 1 33.3%;
+
+  margin-right:2px;
+  border:solid 1px $blue;
+  color:$blue;
+  border-radius: 2px;
+
+  padding:0 10px;
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  &.activetrue {
+    border-width: 2px;
+    padding-left:9px;
+    .drop-down {
+      right:9px;
+    }
+  }
+}
+
 #time-form {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
@@ -1300,58 +1352,6 @@ a, .pseudolink {
   align-content: stretch;
 
   padding-right:15px;
-
-  .drop-controller {
-    line-height: 1.0;
-    -webkit-flex: 0 1 33.3%;
-    -ms-flex: 0 1 33.3%;
-    flex: 0 1 33.3%;
-
-    margin-right:2px;
-    border:solid 1px $blue;
-    color:$blue;
-    border-radius: 2px;
-
-    padding:0 10px;
-
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-
-    .drop-down {
-      width:19px;
-      height:19px;
-      right:10px;
-      top:50%;
-      margin-top:-10px;
-      background: url(../i/arrow-down.png) right center no-repeat;
-      z-index: 10;
-      position: absolute;
-    }
-
-    &.activetrue {
-      border-width: 2px;
-      padding-left:9px;
-      .drop-down {
-        right:9px;
-      }
-    }
-  }
 
   .popup-div {
     background: #fff;
@@ -1401,18 +1401,20 @@ a, .pseudolink {
         min-width: 10em;
       }
     }
-    .close-popup {
-      width:19px;
-      height:19px;
-      right:5px;
-      top:5px;
-      z-index: 10;
-      position: absolute;
-      background: url(../i/cross.png) center center no-repeat;
-      cursor: pointer;
-    }
+
 
   }
+}
+
+.close-popup {
+  width:19px;
+  height:19px;
+  right:5px;
+  top:5px;
+  z-index: 10;
+  position: absolute;
+  background: url(../i/cross.png) center center no-repeat;
+  cursor: pointer;
 }
 
 @media all and (max-width: 1100px) {

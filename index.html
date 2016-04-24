@@ -256,6 +256,7 @@
     <form>
       <div id="new-search" ng-click="class = !class">
         <div>Новый поиск</div>
+        <div class="drop-down mobile"></div>
       </div>
       <div id="from-input">
         <input type="text" placeholder="Город вылета" class="autocomplete">
@@ -354,8 +355,8 @@
   <div id="results-header">
     <div class="max-width">
       <span id="src-dst">
-        <span class="mobile helper">Вылет: </span>Москва     <span class="gt"></span>   Санкт-петербург
-        <span class="mobile"><br><span class="mobile helper">Прилет: </span>Санкт-петербург</span>  <span class="gt"></span>    Москва
+        Москва     <span class="gt"></span>   Санкт-петербург
+        <span class="gt"></span>    Москва
       </span>
       <span id="res-dates">25 ноября - 5 декабря</span>
     </div>
@@ -363,75 +364,96 @@
   <div id="two-cols">
     <div class="max-width">
       <div id="col1">
-        <div class="block" ng-if="true">
-          <h2>Пересадки</h2>
-          <ul class="ul radios" ng-init="ar = [{title:'Только прямые', price:'12&thinsp;338'}, {title:'1 пересадка', price:'12&thinsp;338'}]">
-            <li ng-repeat="el in ::ar">
-              <input type="radio" name="peres" id="r{{$index}}">
-              <label for="r{{$index}}" class="bysides">
-                <div>{{::el.title}}</div>
-                <div>{{::el.price}} <span class="rub">Р</span></div>
-              </label>
-            </li>
-          </ul>
+        <div class="mobile bysides" id="mobile-filter">
+          <div class="drop-controller active{{showperesadki}}" ng-click="showperesadki=!showperesadki">
+            <span>Пересадки</span>
+            <div class="drop-down"></div>
+          </div>
+          <div class="drop-controller active{{showairports}}" ng-click="showairports=!showairports">
+            <span>Аэропорты</span>
+            <div class="drop-down"></div>
+          </div>
+          <div class="drop-controller active{{showavia}}" ng-click="showavia=!showavia">
+            <span>Авиакомпании</span>
+            <div class="drop-down"></div>
+          </div>
         </div>
-        <div class="block" ng-if="true">
-          <h2>Аэропорт вылета</h2>
-          <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
-            <li ng-repeat="el in ::ar">
-              <input type="radio" name="peres" id="r1{{$index}}">
-              <label for="r1{{$index}}" class="bysides">
-                <div>
-                  {{::el.title}}<!--br>
-                  <span class="grey">({{::el.code}})</span-->
-                </div>
-                <div>{{::el.price}} <span class="rub">Р</span></div>
-              </label>
-            </li>
-          </ul>
-        </div>
-        <div class="block" ng-if="true">
-          <h2>Аэропорт прилета</h2>
-          <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
-            <li ng-repeat="el in ::ar">
-              <input type="radio" name="peres" id="r1{{$index}}">
-              <label for="r1{{$index}}" class="bysides">
-                <div>
-                  {{::el.title}}<!--br>
-                  <span class="grey">({{::el.code}})</span-->
-                </div>
-                <div>{{::el.price}} <span class="rub">Р</span></div>
-              </label>
-            </li>
-          </ul>
-        </div>
-        <div class="block last" ng-if="true">
-          <h2>Авиакомпания</h2>
-          <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
-            <li ng-repeat="el in ::ar">
-              <input type="radio" name="peres" id="r2{{$index}}">
-              <label for="r2{{$index}}" class="bysides">
-                <div>
-                  {{::el.title}}
-                </div>
-                <div>{{::el.price}} <span class="rub">Р</span></div>
-              </label>
-            </li>
-          </ul>
-          <div class="show-all">
-            <span ng-click="allShown=true;">Показать все 16 <img src="i/arrow-down.png"></span>
-            <div class="all-items" ng-if="allShown">
-              <span ng-click="$parent.allShown=false;">Свернуть <img src="i/arrow-down.png" style="transform: rotate(180deg);"></span>
-              <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
+        <div id="blocks">
+          <div class="block mobilevis-{{showperesadki}}" ng-if="true" id="peresadki">
+            <div class="close-popup mobile" ng-click="$parent.showperesadki=false;"></div>
+            <h2>Пересадки</h2>
+            <ul class="ul radios" ng-init="ar = [{title:'Только прямые', price:'12&thinsp;338'}, {title:'1 пересадка', price:'12&thinsp;338'}]">
+              <li ng-repeat="el in ::ar">
+                <input type="radio" name="peres" id="r{{$index}}">
+                <label for="r{{$index}}" class="bysides">
+                  <div>{{::el.title}}</div>
+                  <div>{{::el.price}} <span class="rub">Р</span></div>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="block mobilevis-{{showairports}}" id="blockairports">
+            <div class="close-popup mobile" ng-click="$parent.showairports=false;"></div>
+            <div class="block" ng-if="true">
+              <h2>Аэропорт вылета</h2>
+              <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
                 <li ng-repeat="el in ::ar">
-                  <input type="radio" name="peres" id="r3{{$index}}">
-                  <label for="r3{{$index}}" class="bysides">
-                    <span>
-                      {{::el.title}}
-                    </span>
+                  <input type="radio" name="peres" id="r1{{$index}}">
+                  <label for="r1{{$index}}" class="bysides">
+                    <div>
+                      {{::el.title}}<!--br>
+                      <span class="grey">({{::el.code}})</span-->
+                    </div>
+                    <div>{{::el.price}} <span class="rub">Р</span></div>
                   </label>
                 </li>
               </ul>
+            </div>
+            <div class="block last" ng-if="true">
+              <h2>Аэропорт прилета</h2>
+              <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
+                <li ng-repeat="el in ::ar">
+                  <input type="radio" name="peres" id="r1{{$index}}">
+                  <label for="r1{{$index}}" class="bysides">
+                    <div>
+                      {{::el.title}}<!--br>
+                      <span class="grey">({{::el.code}})</span-->
+                    </div>
+                    <div>{{::el.price}} <span class="rub">Р</span></div>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="block last mobilevis-{{showavia}}" ng-if="true" id="aviacompany">
+            <div class="close-popup mobile" ng-click="$parent.showavia=false;"></div>
+            <h2>Авиакомпания</h2>
+            <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
+              <li ng-repeat="el in ::ar">
+                <input type="radio" name="peres" id="r2{{$index}}">
+                <label for="r2{{$index}}" class="bysides">
+                  <div>
+                    {{::el.title}}
+                  </div>
+                  <div>{{::el.price}} <span class="rub">Р</span></div>
+                </label>
+              </li>
+            </ul>
+            <div class="show-all">
+              <span ng-click="allShown=true;">Показать все 16 <img src="i/arrow-down.png"></span>
+              <div class="all-items" ng-if="allShown">
+                <span ng-click="$parent.allShown=false;">Свернуть <img src="i/arrow-down.png" style="transform: rotate(180deg);"></span>
+                <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
+                  <li ng-repeat="el in ::ar">
+                    <input type="radio" name="peres" id="r3{{$index}}">
+                    <label for="r3{{$index}}" class="bysides">
+                      <span>
+                        {{::el.title}}
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
