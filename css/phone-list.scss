@@ -85,7 +85,6 @@
     margin-top:20px;
     &:before {
       height: 24px;
-      background: #EEEEEE;
     }
   }
   .promo-result {
@@ -124,7 +123,6 @@
       &:before {
         @include between-results();
         height: 24px;
-        background: #EEEEEE;
       }
     }
   }
@@ -334,5 +332,9 @@
 }
 
 .mobilevis-, .mobilevis-false {
+  display: none;
+}
+
+.show-all {
   display: none;
 }

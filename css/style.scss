@@ -3204,10 +3204,14 @@ a, .pseudolink {
 .selectric-label {
   margin-right:5px;
 }
-.selectric {
+
+@mixin selectric() {
   border-radius: 2px;
   border:solid 1px $blue;
   background: #ffffff;
+}
+.selectric {
+  @include selectric();
   .selectric-hover & {
     border:solid 1px $blue;
   }
@@ -3231,6 +3235,14 @@ a, .pseudolink {
         border-top-color: $blue;
       }
     }
+  }
+}
+
+#specoffer-wrapper {
+  input[type=text] {
+    width:100%;
+    @include selectric();
+    padding:0 4px;
   }
 }
 

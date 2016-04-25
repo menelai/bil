@@ -21,3 +21,14 @@
     padding:0 5px;
   }
 }
+
+.frontpage {
+  #top-search-form {
+    #new-search {
+      display: none;
+    }
+    #from-input {
+      margin-top:-10px;
+    }
+  }
+}

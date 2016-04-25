@@ -396,10 +396,13 @@ body {
     display: none;
   }
   >.bysides {
-    padding-right:100px;
+    //padding-right:100px;
     @include flex-wrap(wrap);
     select {
       width:100%;
+    }
+    input[type=text] {
+      padding: 0 4px;
     }
     >.flex1 {
       @include flex(0 0 50%);
@@ -412,14 +415,14 @@ body {
         padding-left: 1px;
       }
 
-      select {
+      select, input[type=text] {
         height:30px;
         line-height: 30px;
       }
     }
 
     >.search-submit {
-      position: absolute;
+      /*position: absolute;
       right:10px;
       top:0;
       bottom:0;
@@ -429,7 +432,13 @@ body {
         height:calc(100% - 2px);
         line-height: 30px;
         width: 100%;
+      }*/
+      width:100%;
+      input {
+        width: 100%;
+        line-height: 30px;
       }
+
     }
   }
 }
@@ -459,7 +468,8 @@ body {
 }
 
 .ui-datepicker {
-  width:auto !important;
+  width:calc(100% - 20px) !important;
+  width:-webkit-calc(100% - 20px) !important;
   z-index: 500 !important;
 }
 
@@ -512,7 +522,9 @@ body {
 }
 
 #totop {
-  display: none !important;
+  //display: none !important;
+  position: fixed;
+  bottom:5px;
 }
 
 select {
