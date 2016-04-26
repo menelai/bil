@@ -145,6 +145,7 @@
   }
 
   .col-price {
+    @include flex(auto);
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -290,9 +291,7 @@
 #mobile-filter {
   .drop-controller {
     padding:8px 20px 8px 2px;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    @include flex(1 1 auto);
     &:last-child {
       margin:0;
     }

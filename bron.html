@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>bron</title>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
   <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -27,7 +28,7 @@
   <div class="max-width">
     <div>
       <div class="wsn">
-        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME)   <a href="/">Шереметьево</a> (SVO)   <a href="/">Внуково</a> (VKO)
+        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME) <a href="/">Шереметьево</a> (SVO) <a href="/">Внуково</a> (VKO)
       </div>
     </div>
     <div class="separator"></div>
@@ -43,12 +44,21 @@
     <div>
       <div id="smm">
         <div class="wsn">Акции, розыгрыши,<br>
-          новости, отзывы о нас</div>
+          новости, отзывы о нас
+        </div>
         <div class="wsn">
-          <a href="/"><div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div></a>
-          <a href="/"><div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div></a>
-          <a href="/"><div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div></a>
-          <a href="/"><div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div></a>
+          <a href="/">
+            <div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div>
+          </a>
+          <a href="/">
+            <div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div>
+          </a>
         </div>
       </div>
     </div>
@@ -58,36 +68,39 @@
 <div id="top">
   <div class="max-width">
     <div id="logo">
-    <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
-      <div>
-        <div><img src="/i/logo.png"></div>
-        <div class="afut" id="sitename-and-slogan">
-          <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
-          <div id="slogan" class="blue">
-            Лучшие цены на авиабилеты<br>
-            Европейское качество обслуживания
+      <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
+        <div>
+          <div><img src="/i/logo.png"></div>
+          <div class="afut" id="sitename-and-slogan">
+            <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
+            <div id="slogan" class="blue">
+              Лучшие цены на авиабилеты<br>
+              Европейское качество обслуживания
+            </div>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
     </div>
     <div class="sep"></div>
     <div id="partners">
       <div>
         <h4>Наши партнеры:</h4>
+
         <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
         <div class="swap"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
       </div>
       <div>
         <h4>Нас рекомендуют:</h4>
+
         <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
         <div class="swap"><img src="i/national.png"><img src="i/national-color.png"></div>
       </div>
     </div>
     <div class="sep"></div>
     <div id="phones">
-      <p class="blue">+7 (495) 210-5-99<br>
-      8 800 234 5 99 5</p>
+      <p class="blue"><span class="phon">+7 (495) 210-5-99</span><br>
+        <span class="phon">8 800 234 5 99 5</span></p>
+
       <p class="grey">с 9:00 до 23:00</p>
     </div>
     <div class="sep"></div>
@@ -109,6 +122,7 @@
   </div>
 </div>
 <div id="menu-line">
+  <div id="buter"></div>
   <div class="max-width">
     <ul>
       <li><a href="/">Авиабилеты</a></li>
@@ -122,6 +136,8 @@
     </ul>
   </div>
 </div>
+
+
 
 <div id="order-form">
   <div id="results-header">
@@ -306,14 +322,14 @@
       </div>
 
       <div id="insurance">
-        <div class="f hcenter vtop viol">
+        <div class="f hcenter vtop viol becomecol">
           <div class="tar"><img id="ingos-logo-large" src="i/ingols-large.png"></div>
           <div class="">Успешно работаем с 1947 года.<br>
             Собственные средства<br>
             Ингосстраха 34,11 млрд. рублей<br><br>
             <span style="font-size: 15px;">НАМ ЕСТЬ, ЧЕМ ПЛАТИТЬ</span></div>
         </div>
-        <div class="bysides viol" id="ingos-advantages">
+        <div class="bysides becomecol viol" id="ingos-advantages">
           <div class="bysides">
             <div><img src="i/24h.png"></div>
             <div class="flex1">Круглосуточная русскоговорящая служба поддержки</div>
@@ -820,7 +836,7 @@
           <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Ваше имя"></div>
         </div>
 
-        <div class="bysides withmargin">
+        <div class="bysides becomecol withmargin">
           <div class="bysides w50">
             <!--div class="flex1 enter-cellular">Введите номер мобильного телефона</div>
             <div><a href="/" class="blue-button">OK</a></div-->

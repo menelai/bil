@@ -6,7 +6,7 @@
   padding:0;
 }
 
-.bysides.becomecol {
+.bysides.becomecol, .becomecol {
   @include flex-direction(column);
 }
 

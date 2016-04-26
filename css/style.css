@@ -6365,6 +6365,8 @@ a:hover, .pseudolink:hover {
   }
   /* line 147, phone-list.scss */
   .result-cols .col-price {
+    -webkit-flex: auto;
+    flex: auto;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -6384,103 +6386,103 @@ a:hover, .pseudolink:hover {
     -ms-flex-align: center;
     align-items: center;
   }
-  /* line 169, phone-list.scss */
+  /* line 170, phone-list.scss */
   .result-cols .col-price .price-n, .result-cols .col-price .buy-n {
     -webkit-flex: 1;
     flex: 1;
   }
-  /* line 173, phone-list.scss */
+  /* line 174, phone-list.scss */
   .result-cols .col-price .price-n {
     line-height: 1;
   }
-  /* line 177, phone-list.scss */
+  /* line 178, phone-list.scss */
   .result-cols .col-price .buy-n {
     font-size: 18px;
   }
 
-  /* line 183, phone-list.scss */
+  /* line 184, phone-list.scss */
   .flight-params, .times-row {
     font-size: 11px;
   }
 
-  /* line 188, phone-list.scss */
+  /* line 189, phone-list.scss */
   .trip-back .trip-row {
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
   }
-  /* line 191, phone-list.scss */
+  /* line 192, phone-list.scss */
   .trip-back + .trip-row {
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
   }
 
-  /* line 200, phone-list.scss */
+  /* line 201, phone-list.scss */
   .gt {
     margin: 0 0.2em;
   }
 
-  /* line 204, phone-list.scss */
+  /* line 205, phone-list.scss */
   #subscribe-form {
     display: none;
   }
 
-  /* line 208, phone-list.scss */
+  /* line 209, phone-list.scss */
   #src-dst {
     display: block;
   }
-  /* line 210, phone-list.scss */
+  /* line 211, phone-list.scss */
   #src-dst .helper {
     font-weight: normal;
     text-transform: none;
     color: #d1d1d1;
   }
 
-  /* line 217, phone-list.scss */
+  /* line 218, phone-list.scss */
   #res-dates {
     display: block;
     margin-left: 0;
     margin-top: 5px;
   }
 
-  /* line 223, phone-list.scss */
+  /* line 224, phone-list.scss */
   .col-trip-info {
     z-index: 2;
   }
 
-  /* line 228, phone-list.scss */
+  /* line 229, phone-list.scss */
   .inner-top-shadow:before {
     top: 100%;
     z-index: 2;
   }
 
-  /* line 234, phone-list.scss */
+  /* line 235, phone-list.scss */
   .price-n {
     padding-top: 7px;
     padding-bottom: 6px;
   }
-  /* line 238, phone-list.scss */
+  /* line 239, phone-list.scss */
   .price-n .grey.smaller2 {
     display: none;
   }
 
-  /* line 243, phone-list.scss */
+  /* line 244, phone-list.scss */
   .buy-n {
     padding-top: 10px;
     padding-bottom: 6px;
   }
-  /* line 246, phone-list.scss */
+  /* line 247, phone-list.scss */
   .buy-n .grey.smaller2 {
     display: none;
   }
 
-  /* line 251, phone-list.scss */
+  /* line 252, phone-list.scss */
   .credit-wrapper {
     -webkit-flex: 0 0 100%;
     flex: 0 0 100%;
     display: none;
   }
 
-  /* line 256, phone-list.scss */
+  /* line 257, phone-list.scss */
   .buy-credit {
     min-height: 30px;
     line-height: 30px;
@@ -6490,57 +6492,56 @@ a:hover, .pseudolink:hover {
     padding: 0;
   }
 
-  /* line 266, phone-list.scss */
+  /* line 267, phone-list.scss */
   .company-name-and-logo br {
     display: none;
   }
-  /* line 269, phone-list.scss */
+  /* line 270, phone-list.scss */
   .company-name-and-logo img {
     vertical-align: middle;
   }
 
-  /* line 274, phone-list.scss */
+  /* line 275, phone-list.scss */
   .blue-row > div {
     padding: 6px 4px;
   }
 
-  /* line 279, phone-list.scss */
+  /* line 280, phone-list.scss */
   .searchfalse #from-input, .searchfalse #to-input, .searchfalse #date-input-1, .searchfalse #date-input-2, .searchfalse #passengers-input, .searchfalse#top-search-form #search-submit {
     display: none;
   }
 
-  /* line 285, phone-list.scss */
+  /* line 286, phone-list.scss */
   #top-search-form:not(.searchtrue) {
     margin-bottom: 8px;
   }
 
-  /* line 291, phone-list.scss */
+  /* line 292, phone-list.scss */
   #mobile-filter .drop-controller {
     padding: 8px 20px 8px 2px;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
   }
-  /* line 296, phone-list.scss */
+  /* line 295, phone-list.scss */
   #mobile-filter .drop-controller:last-child {
     margin: 0;
   }
-  /* line 299, phone-list.scss */
+  /* line 298, phone-list.scss */
   #mobile-filter .drop-controller.activetrue {
     padding: 7px 19px 7px 1px;
   }
-  /* line 302, phone-list.scss */
+  /* line 301, phone-list.scss */
   #mobile-filter .drop-controller .drop-down {
     right: 2px;
   }
 
-  /* line 312, phone-list.scss */
+  /* line 311, phone-list.scss */
   .block {
     margin: 0;
     border-bottom: none;
   }
 
-  /* line 317, phone-list.scss */
+  /* line 316, phone-list.scss */
   #peresadki, #blockairports, #aviacompany {
     position: absolute;
     top: 2px;
@@ -6552,17 +6553,17 @@ a:hover, .pseudolink:hover {
     z-index: 100;
   }
 
-  /* line 329, phone-list.scss */
+  /* line 328, phone-list.scss */
   #new-search .drop-down {
     background-image: url(../i/arrow-down-white.png);
   }
 
-  /* line 334, phone-list.scss */
+  /* line 333, phone-list.scss */
   .mobilevis-, .mobilevis-false {
     display: none;
   }
 
-  /* line 338, phone-list.scss */
+  /* line 337, phone-list.scss */
   .show-all {
     display: none;
   }
@@ -6578,7 +6579,7 @@ a:hover, .pseudolink:hover {
   }
 
   /* line 9, phone-country.scss */
-  .bysides.becomecol {
+  .bysides.becomecol, .becomecol {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
@@ -6711,15 +6712,116 @@ a:hover, .pseudolink:hover {
   .extra-services > div {
     width: 50%;
   }
+
+  /* line 1, phone-bron.scss */
+  #responses {
+    display: none;
+  }
+
+  /* line 5, phone-bron.scss */
+  #order-cols {
+    padding: 0;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  /* line 9, phone-bron.scss */
+  #order-cols #ocl, #order-cols #ocr {
+    width: auto;
+    padding: 10px;
+  }
+
+  /* line 20, phone-bron.scss */
+  #ingos-advantages > div {
+    width: 100%;
+  }
+  /* line 22, phone-bron.scss */
+  #ingos-advantages > div + div {
+    padding: 15px 0 0 0;
+  }
+
+  /* line 29, phone-bron.scss */
+  .add-insurance .name {
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+  /* line 32, phone-bron.scss */
+  .add-insurance .name br {
+    display: none;
+  }
+  /* line 36, phone-bron.scss */
+  .add-insurance .name + div + div {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  /* line 43, phone-bron.scss */
+  #insurance .dobuy {
+    margin-top: 10px;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  /* line 46, phone-bron.scss */
+  #insurance .dobuy input {
+    width: 100%;
+  }
+
+  /* line 52, phone-bron.scss */
+  .becomewrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  /* line 57, phone-bron.scss */
+  #aeroexpress .aeroexpress-ticket {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  /* line 60, phone-bron.scss */
+  #aeroexpress .aeroexpress-ticket .aeroexpress-price {
+    -webkit-flex: 0 1 25%;
+    flex: 0 1 25%;
+    text-align: right;
+  }
+  /* line 65, phone-bron.scss */
+  #aeroexpress .aeroexpress-ticket .dobuy {
+    margin-top: 10px;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  /* line 68, phone-bron.scss */
+  #aeroexpress .aeroexpress-ticket .dobuy input {
+    width: 100%;
+  }
+
+  /* line 76, phone-bron.scss */
+  .services-input > div {
+    -webkit-flex: auto;
+    flex: auto;
+  }
+  /* line 78, phone-bron.scss */
+  .services-input > div + div {
+    margin-top: 10px;
+  }
+
+  /* line 86, phone-bron.scss */
+  #go-to-search #subscribe-form + div {
+    margin: 10px 0 0 0;
+  }
+
+  /* line 92, phone-bron.scss */
+  .notebook {
+    display: none;
+  }
 }
 @media screen and (min-width: 800px) {
-  /* line 3911, style.scss */
+  /* line 3912, style.scss */
   .mobile {
     display: none;
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 3917, style.scss */
+  /* line 3918, style.scss */
   .drop-controller {
     font-size: 13px;
   }
