@@ -831,7 +831,7 @@
       <div class="col-title">Бронирование рейса</div>
 
       <div class="form-group">
-        <div class="bysides withmargin">
+        <div class="bysides becomecol withmargin">
           <div class="buyer blue ttu">Покупатель</div>
           <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Ваше имя"></div>
         </div>
@@ -853,7 +853,7 @@
           <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Ваш email"></div>
         </div>
 
-        <div class="bysides withmargin stretch">
+        <div class="bysides withmargin stretch becomewrap">
           <div>
             <div class="inpamount adult bysides">
               <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
@@ -993,7 +993,7 @@
 
 
       <div class="form-group passenger">
-        <div class="bysides withmargin">
+        <div class="bysides withmargin becomecol">
           <div class="ttu">Взрослый</div>
           <div class="bysides">
             <span class="selectric-label">Документ:</span>
@@ -1013,7 +1013,7 @@
             <p><input class="gf" autocomplete="off" type="radio" name="gender1" value="1" id="genf1" ng-click="genderColor='f66b27';" ><label for="genf1">Ж</label></p>
           </div>
           <div class="flex1 form-group">
-            <div class="bysides withmargin px2">
+            <div class="bysides withmargin px2 becomecol">
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
             </div>
@@ -1056,7 +1056,7 @@
       </div>
 
       <div class="form-group passenger">
-        <div class="bysides withmargin">
+        <div class="bysides withmargin becomecol">
           <div class="ttu">Ребенок</div>
           <div class="bysides">
             <span class="selectric-label">Документ:</span>
@@ -1076,7 +1076,7 @@
             <p><input class="gf" type="radio" name="gender2" value="1" id="genf2"><label for="genf2">Ж</label></p>
           </div>
           <div class="flex1 form-group">
-            <div class="bysides withmargin px2">
+            <div class="bysides withmargin px2 becomecol">
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
             </div>
@@ -1120,7 +1120,7 @@
 
 
       <div class="form-group passenger">
-        <div class="bysides withmargin">
+        <div class="bysides withmargin becomecol">
           <div class="ttu">Adult</div>
           <div class="bysides">
             <span class="selectric-label">Document:</span>
@@ -1140,7 +1140,7 @@
             <p><input class="gf" type="radio" name="gender3" value="1" id="genf3"><label for="genf3">F</label></p>
           </div>
           <div class="flex1 form-group">
-            <div class="bysides withmargin px2">
+            <div class="bysides withmargin px2 becomecol">
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
             </div>
@@ -1188,7 +1188,7 @@
       </div>
 
       <div class="form-group passenger">
-        <div class="bysides withmargin">
+        <div class="bysides withmargin becomecol">
           <div class="ttu">Baby</div>
           <div class="bysides">
             <span class="selectric-label">Document:</span>
@@ -1208,7 +1208,7 @@
             <p><input class="gf" type="radio" name="gender5" value="1" id="genf5"><label for="genf5">F</label></p>
           </div>
           <div class="flex1 form-group">
-            <div class="bysides withmargin px2">
+            <div class="bysides withmargin px2 becomecol">
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
               <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
             </div>
@@ -1253,7 +1253,7 @@
 
       <div class="form-group">
         <h2 class="blue ttu serv-title">Услуги сервиса для вас, уважаемые клиенты</h2>
-        <div class="bysides services-input">
+        <div class="bysides services-input becomecol">
           <div>
             <input type="checkbox" id="serv1" name="serv" checked="true">
             <label for="serv1">
@@ -1341,7 +1341,7 @@
           <h2 class="blue ttu fwn larger">Способ оплаты</h2>
           <p>Комиссия 0%</p>
         </div>
-        <div class="bysides payments vtop tac" ng-init="payment='cards';">
+        <div class="bysides payments vtop tac becomewrap" ng-init="payment='cards';">
           <div class="flex1">
             <input type="radio" name="payment" id="p1" ng-click="payment='cards';">
             <label for="p1">
@@ -1377,7 +1377,7 @@
 
 
       <div class="form-group">
-        <div class="bysides" ng-show="payment=='euroset'">
+        <div class="bysides becomecol" ng-show="payment=='euroset'">
           <div class="w135 tac"><img src="i/euroset-l.png"></div>
           <div class="flex1 tac">
             <p>Ваш заказ сформирован и готов к оплате
@@ -1385,7 +1385,7 @@
             <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
           </div>
         </div>
-        <div class="bysides" ng-show="payment=='svyaznoy'">
+        <div class="bysides becomecol" ng-show="payment=='svyaznoy'">
           <div class="w135 tac"><img src="i/svyaznoy-big.png"></div>
           <div class="flex1 tac">
             <p>Ваш заказ сформирован и готов к оплате

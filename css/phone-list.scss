@@ -145,7 +145,7 @@
   }
 
   .col-price {
-    @include flex(auto);
+    @include flex(none);
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;

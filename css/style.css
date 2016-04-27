@@ -6365,8 +6365,8 @@ a:hover, .pseudolink:hover {
   }
   /* line 147, phone-list.scss */
   .result-cols .col-price {
-    -webkit-flex: auto;
-    flex: auto;
+    -webkit-flex: none;
+    flex: none;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -6730,88 +6730,167 @@ a:hover, .pseudolink:hover {
     padding: 10px;
   }
 
-  /* line 20, phone-bron.scss */
+  /* line 18, phone-bron.scss */
+  #ocr .form-group .becomecol {
+    -webkit-align-items: stretch;
+    align-items: stretch;
+  }
+  /* line 21, phone-bron.scss */
+  #ocr .form-group .becomecol.withmargin > * + * {
+    margin: 15px 0 0 0;
+  }
+  /* line 28, phone-bron.scss */
+  #ocr .w50 {
+    width: auto;
+  }
+
+  /* line 33, phone-bron.scss */
+  .inputshadow input[type="text"].cellular {
+    padding-left: 0.5em;
+    -webkit-order: 1;
+    order: 1;
+  }
+  /* line 36, phone-bron.scss */
+  .inputshadow input[type="text"].cellular + select {
+    margin-right: 15px;
+  }
+
+  /* line 42, phone-bron.scss */
   #ingos-advantages > div {
     width: 100%;
   }
-  /* line 22, phone-bron.scss */
+  /* line 44, phone-bron.scss */
   #ingos-advantages > div + div {
     padding: 15px 0 0 0;
   }
 
-  /* line 29, phone-bron.scss */
+  /* line 51, phone-bron.scss */
   .add-insurance .name {
     -webkit-flex: 0 0 100%;
     flex: 0 0 100%;
     margin-bottom: 10px;
   }
-  /* line 32, phone-bron.scss */
+  /* line 54, phone-bron.scss */
   .add-insurance .name br {
     display: none;
   }
-  /* line 36, phone-bron.scss */
+  /* line 58, phone-bron.scss */
   .add-insurance .name + div + div {
     -webkit-flex: 1;
     flex: 1;
   }
 
-  /* line 43, phone-bron.scss */
+  /* line 65, phone-bron.scss */
   #insurance .dobuy {
     margin-top: 10px;
     -webkit-flex: 0 0 100%;
     flex: 0 0 100%;
   }
-  /* line 46, phone-bron.scss */
+  /* line 68, phone-bron.scss */
   #insurance .dobuy input {
     width: 100%;
   }
 
-  /* line 52, phone-bron.scss */
+  /* line 74, phone-bron.scss */
   .becomewrap {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 
-  /* line 57, phone-bron.scss */
+  /* line 79, phone-bron.scss */
   #aeroexpress .aeroexpress-ticket {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 60, phone-bron.scss */
+  /* line 82, phone-bron.scss */
   #aeroexpress .aeroexpress-ticket .aeroexpress-price {
     -webkit-flex: 0 1 25%;
     flex: 0 1 25%;
     text-align: right;
   }
-  /* line 65, phone-bron.scss */
+  /* line 87, phone-bron.scss */
   #aeroexpress .aeroexpress-ticket .dobuy {
     margin-top: 10px;
     -webkit-flex: 0 0 100%;
     flex: 0 0 100%;
   }
-  /* line 68, phone-bron.scss */
+  /* line 90, phone-bron.scss */
   #aeroexpress .aeroexpress-ticket .dobuy input {
     width: 100%;
   }
 
-  /* line 76, phone-bron.scss */
+  /* line 98, phone-bron.scss */
   .services-input > div {
     -webkit-flex: auto;
     flex: auto;
   }
-  /* line 78, phone-bron.scss */
+  /* line 100, phone-bron.scss */
   .services-input > div + div {
     margin-top: 10px;
   }
 
-  /* line 86, phone-bron.scss */
+  /* line 108, phone-bron.scss */
   #go-to-search #subscribe-form + div {
     margin: 10px 0 0 0;
   }
 
-  /* line 92, phone-bron.scss */
+  /* line 114, phone-bron.scss */
   .notebook {
     display: none;
+  }
+
+  /* line 118, phone-bron.scss */
+  .becomewrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  /* line 121, phone-bron.scss */
+  .becomewrap.withmargin > * {
+    margin-top: 15px;
+  }
+  /* line 123, phone-bron.scss */
+  .becomewrap.withmargin > * + * {
+    margin-left: 0;
+  }
+
+  /* line 131, phone-bron.scss */
+  .labels-on-top {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+  }
+
+  /* line 135, phone-bron.scss */
+  .passenger .sideline {
+    width: 4px;
+    margin-left: 6px;
+  }
+
+  /* line 140, phone-bron.scss */
+  .payments {
+    margin-top: -10px;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  /* line 143, phone-bron.scss */
+  .payments > .flex1 {
+    margin-top: 30px;
+    -webkit-flex: 0 1 100px;
+    flex: 0 1 100px;
+  }
+
+  /* line 149, phone-bron.scss */
+  .fp {
+    padding: 0;
+  }
+  /* line 152, phone-bron.scss */
+  .fp + * .green-button {
+    padding: 3px 5px;
+    width: 100%;
+  }
+
+  /* line 159, phone-bron.scss */
+  .w135 {
+    width: auto;
   }
 }
 @media screen and (min-width: 800px) {
