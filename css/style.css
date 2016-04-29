@@ -4654,7 +4654,6 @@ a:hover, .pseudolink:hover {
 }
 /* line 2, country.scss */
 #country h1 {
-  font-size: 20px;
   font-weight: bold;
 }
 
@@ -6605,7 +6604,7 @@ a:hover, .pseudolink:hover {
   }
   /* line 34, phone-country.scss */
   #time .bysides.vtop.mt30 > div {
-    min-width: 90px;
+    margin-bottom: 20px;
   }
 
   /* line 41, phone-country.scss */
@@ -6706,11 +6705,41 @@ a:hover, .pseudolink:hover {
   .youremail {
     margin-right: 0;
     margin-bottom: 3px;
+    height: 40px;
+    line-height: 40px;
   }
 
-  /* line 136, phone-country.scss */
+  /* line 138, phone-country.scss */
   .extra-services > div {
-    width: 50%;
+    width: 100%;
+  }
+
+  /* line 144, phone-country.scss */
+  #country-info #content-col h2 {
+    text-transform: none;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* line 152, phone-country.scss */
+  .months > div {
+    flex: 0 1 -webkit-calc(33.3% - 2px);
+    flex: 0 1 calc(33.3% - 2px);
+    margin: 0 0 2px 0;
+  }
+
+  /* line 160, phone-country.scss */
+  .timeofyear > div {
+    flex: 0 1 -webkit-calc(50% - 2px);
+    flex: 0 1 calc(50% - 2px);
+    margin: 0 0 2px 0;
+  }
+
+  /* line 168, phone-country.scss */
+  #schedule .green-button {
+    padding: 0.3em 1.5em 0.3em;
+    font-size: 18px;
+    line-height: normal;
   }
 
   /* line 1, phone-bron.scss */
@@ -6903,5 +6932,27 @@ a:hover, .pseudolink:hover {
   /* line 3918, style.scss */
   .drop-controller {
     font-size: 13px;
+  }
+}
+@media screen and (max-width: 400px) {
+  /* line 3925, style.scss */
+  #time .bysides.vtop.mt30 {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  /* line 3927, style.scss */
+  #time .bysides.vtop.mt30 > div {
+    min-width: 90px;
+  }
+}
+@media screen and (min-width: 401px) and (max-width: 500px) {
+  /* line 3936, style.scss */
+  #time .bysides.vtop.mt30 {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  /* line 3938, style.scss */
+  #time .bysides.vtop.mt30 > div {
+    min-width: 120px;
   }
 }

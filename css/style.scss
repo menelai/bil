@@ -3919,3 +3919,25 @@ a, .pseudolink {
     font-size: 13px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  #time {
+    .bysides.vtop.mt30 {
+      @include flex-wrap(wrap);
+      >div {
+        min-width: 90px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 500px) {
+  #time {
+    .bysides.vtop.mt30 {
+      @include flex-wrap(wrap);
+      >div {
+        min-width: 120px;
+      }
+    }
+  }
+}

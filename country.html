@@ -241,17 +241,14 @@
         <div class="price-arrow">12 338 <span class="rub">Р</span></div>
       </div>
     </div>
-    <h1 class="ttu tac mt25">спецпредложеия на авиабилеты в грецию</h1>
+    <h1 class="tac mt15">Спецпредложеия на авиабилеты в грецию</h1>
   </div>
 
 
   <div id="specoffer-wrapper">
     <div class="bysides stretch mt15 max-width" id="find-specoffer">
       <div class="flex1">
-        <select class="selectric city">
-          <option value="">Все равно откуда</option>
-          <option value="Монастир" data-country="Тунис" data-airport="MIR">Монастир</option>
-        </select>
+        <input type="text" placeholder="Все равно откуда" class="autocomplete">
       </div>
       <div class="flex1">
         <select class="selectric city">
@@ -896,7 +893,6 @@
                     </div>
                   </div>
                   <div class="trip-there" ng-hide="hideThere">
-
                     <div class="trip-white-row trip-row">
                       <div class="trip-col1 flex-center">
                         <div class="company-name-and-logo">
@@ -939,7 +935,7 @@
                           <div class="smaller white-plane">Вылет</div>
                         </div>
                         <div class="flex-center">
-                          <div class="smaller clock">Время в пути</div>
+                          <div class="smaller clock"><span class="desktop">Время </span>в пути</div>
                         </div>
                         <div class="flex-center">
                           <div class="smaller white-plane down">Прилет</div>
@@ -980,22 +976,7 @@
                     </div>
 
                   </div>
-
-                </div>
-                <div class="col-price rounded" ng-init="height='auto';" ng-attr-style="height:{{height}};" ng-click="height = (height=='400px') ? 'auto' : '400px';">
-                  <div class="price-n">
-                    <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
-                    <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
-                  </div>
-                  <div class="buy-n">
-                    <input type="button" value="Купить"><br>
-                    <span class="grey smaller2">дешевый авиабилет</span>
-                  </div>
-                </div>
-              </div>
-              <div class="result-cols grey-cols inner-top-shadow">
-                <div class="col-trip-info">
-                  <div class="trip-back-grey trip-row">
+                  <div class="trip-grey-row trip-row inner-top-shadow">
                     <div class="trip-col1 flex-center">
                       <div class="plane-model">Airbus 321</div>
                     </div>
@@ -1011,13 +992,23 @@
                       </div>
                     </div>
                   </div>
+
                 </div>
-                <div class="col-row col-price">
-                  <div class="flex-center">
+                <div class="col-price rounded">
+                  <div class="price-n flex1">
+                    <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                    <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
+                  </div>
+                  <div class="buy-n">
+                    <input type="button" value="Купить"><br>
+                    <span class="grey smaller2">дешевый авиабилет</span>
+                  </div>
+                  <div class="flex-center credit-wrapper">
                     <a href="/" class="buy-credit smaller">Купить в кредит</a>
                   </div>
                 </div>
               </div>
+
             </div>
             <div class="result">
               <div class="result-cols">
@@ -1039,7 +1030,6 @@
                     </div>
                   </div>
                   <div class="trip-there" ng-hide="hideThere">
-
                     <div class="trip-white-row trip-row">
                       <div class="trip-col1 flex-center">
                         <div class="company-name-and-logo">
@@ -1082,7 +1072,7 @@
                           <div class="smaller white-plane">Вылет</div>
                         </div>
                         <div class="flex-center">
-                          <div class="smaller clock">Время в пути</div>
+                          <div class="smaller clock"><span class="desktop">Время </span>в пути</div>
                         </div>
                         <div class="flex-center">
                           <div class="smaller white-plane down">Прилет</div>
@@ -1123,22 +1113,7 @@
                     </div>
 
                   </div>
-
-                </div>
-                <div class="col-price rounded" ng-init="height='auto';" ng-attr-style="height:{{height}};" ng-click="height = (height=='400px') ? 'auto' : '400px';">
-                  <div class="price-n">
-                    <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
-                    <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
-                  </div>
-                  <div class="buy-n">
-                    <input type="button" value="Купить"><br>
-                    <span class="grey smaller2">дешевый авиабилет</span>
-                  </div>
-                </div>
-              </div>
-              <div class="result-cols grey-cols inner-top-shadow">
-                <div class="col-trip-info">
-                  <div class="trip-back-grey trip-row">
+                  <div class="trip-grey-row trip-row inner-top-shadow">
                     <div class="trip-col1 flex-center">
                       <div class="plane-model">Airbus 321</div>
                     </div>
@@ -1154,13 +1129,23 @@
                       </div>
                     </div>
                   </div>
+
                 </div>
-                <div class="col-row col-price">
-                  <div class="flex-center">
+                <div class="col-price rounded">
+                  <div class="price-n flex1">
+                    <span class="price-number xlarge">12&thinsp;338&nbsp;<span class="rub">Р</span></span><br>
+                    <span class="grey smaller2">Цена указана с&nbsp;учётом<br>всех сборов и&nbsp;комиссий</span>
+                  </div>
+                  <div class="buy-n">
+                    <input type="button" value="Купить"><br>
+                    <span class="grey smaller2">дешевый авиабилет</span>
+                  </div>
+                  <div class="flex-center credit-wrapper">
                     <a href="/" class="buy-credit smaller">Купить в кредит</a>
                   </div>
                 </div>
               </div>
+
             </div>
 
           </div>
@@ -1219,7 +1204,7 @@
 
               <div class="subscribeform mt5">
                 <div class="selectday" ng-show="datechoose=='day'"></div>
-                <div class="bysides radiobuttons tac smaller2 itemsmar2" ng-show="datechoose=='month'">
+                <div class="bysides radiobuttons tac smaller2 itemsmar2 becomewrap months" ng-show="datechoose=='month'">
                   <div class="flex1">
                     <input type="checkbox" class="no-display" id="mo1">
                     <label for="mo1">Январь</label>
@@ -1270,7 +1255,7 @@
                   </div>
                 </div>
 
-                <div class="bysides radiobuttons tac smaller2 itemsmar2" ng-show="datechoose=='time'">
+                <div class="bysides radiobuttons tac smaller2 itemsmar2 becomewrap timeofyear" ng-show="datechoose=='time'">
                   <div class="flex1">
                     <input type="checkbox" class="no-display" id="t1">
                     <label for="t1">Зима</label>

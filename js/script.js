@@ -38,13 +38,28 @@
         animation: "slide"
       });
 
-      $(".exslider").flexslider({
-        animation: "slide",
-        animationLoop: false,
-        itemWidth: 120,
-        itemMargin: 15,
-        move: 1
+
+
+      $(window).resize(function() {
+        if($(window).width() <= 768) {
+          $(".exslider").flexslider({
+            animation: "slide",
+            animationLoop: false,
+
+            move: 1
+          });
+        } else {
+          $(".exslider").flexslider({
+            animation: "slide",
+            animationLoop: false,
+            itemWidth: 120,
+            itemMargin: 15,
+            move: 1
+          });
+        }
       });
+
+      $(window).resize();
 
         $(".selectric").selectric();
 
@@ -68,7 +83,7 @@
       });
 
       $(".selectday").datepicker({
-        numberOfMonths: 3
+        numberOfMonths: $(window).width() >= 800 ? 3 : 1
       });
 
       $( "#slider-range" ).slider({

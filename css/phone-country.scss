@@ -32,7 +32,7 @@
   .bysides.vtop.mt30 {
     @include flex-wrap(wrap);
     >div {
-      min-width: 90px;
+      margin-bottom:20px;
     }
   }
 }
@@ -130,10 +130,44 @@
 .youremail {
   margin-right:0;
   margin-bottom: 3px;
+  height:40px;
+  line-height: 40px;
 }
 
 .extra-services {
   >div {
-    width:50%;
+    width:100%;
+  }
+}
+
+#country-info #content-col {
+  h2 {
+    text-transform: none;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+.months {
+  >div {
+    flex:0 1 -webkit-calc(33.3% - 2px);
+    flex:0 1 calc(33.3% - 2px);
+    margin:0 0 2px 0;
+  }
+}
+
+.timeofyear {
+  >div {
+    flex:0 1 -webkit-calc(50% - 2px);
+    flex:0 1 calc(50% - 2px);
+    margin:0 0 2px 0;
+  }
+}
+
+#schedule {
+  .green-button {
+    padding: 0.3em 1.5em 0.3em;
+    font-size: 18px;
+    line-height: normal;
   }
 }
