@@ -2,6 +2,16 @@
   display: none;
 }
 
+@for $i from 5 to 20 {
+  .mfz#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+.mfw500 {
+  font-weight: 500;
+}
+
 @mixin columns {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -536,5 +546,15 @@ select {
     min-height: 45px;
     line-height: 45px;
     font-size: 16px;
+  }
+}
+
+.m-flex-start {
+  text-align: left;
+  span {
+    display: block;
+    +span {
+      font-weight: bold;
+    }
   }
 }

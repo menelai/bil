@@ -11,21 +11,28 @@ $grey: #929292;
 $lightgrey: #bdbdbd;
 $cyan: #08d0e8;
 //$4,128,180
+@mixin grey-gradient() {
+  // http://colorzilla.com/gradient-editor/#f4f4f4+0,f4f4f4+35,d8d8d8+65,d8d8d8+100
+  background-color: #f4f4f4; // Old browsers
+  @include filter-gradient(#f4f4f4, #d8d8d8, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #f4f4f4 0%,#f4f4f4 35%,#d8d8d8 65%,#d8d8d8 100%));
+}
+
 @mixin blue-gradient() {
   // Needs latest Compass, add '@import "compass"' to your scss
   // Permalink - use to edit and share this gradient:
   // http://colorzilla.com/gradient-editor/#0480b4+0,036f9c+100
-  background-color: #0480b4; // Old browsers
-  @include filter-gradient(#0480b4, #036f9c, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #0480b4 0%,#036f9c 100%));
+  background-color: #239dce; // Old browsers
+  @include filter-gradient(#239dce, #0781b2, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #239dce 0%,#239dce 35%,#0781b2 65%,#0781b2 100%));
 }
 @mixin green-gradient() {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fcb00+0,7cb000+100 */
-  background: #8fcb00; /* Old browsers */
-  background: -moz-linear-gradient(top,  #8fcb00 0%, #7cb000 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #8fcb00 0%,#7cb000 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #8fcb00 0%,#7cb000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fcb00', endColorstr='#7cb000',GradientType=0 ); /* IE6-9 */
+  // Needs latest Compass, add '@import "compass"' to your scss
+  // Permalink - use to edit and share this gradient:
+  // http://colorzilla.com/gradient-editor/#9dcb2f+0,9dcb2f+35,81af13+65,81af13+100
+  background-color: #9dcb2f; // Old browsers
+  @include filter-gradient(#9dcb2f, #81af13, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #9dcb2f 0%,#9dcb2f 35%,#81af13 65%,#81af13 100%));
 }
 
 @mixin green-hover-gradient() {
@@ -38,12 +45,9 @@ $cyan: #08d0e8;
 }
 
 @mixin orange-gradient() {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff6700+0,dd5900+100 */
-  background: #ff6700; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ff6700 0%, #dd5900 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #ff6700 0%,#dd5900 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #ff6700 0%,#dd5900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6700', endColorstr='#dd5900',GradientType=0 ); /* IE6-9 */
+  background-color: #ea711f; // Old browsers
+  @include filter-gradient(#ea711f, #ce5503, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #ea711f 0%,#ea711f 35%,#ce5503 65%,#ce5503 100%));
 }
 
 @mixin orange-hover-gradient() {
@@ -137,8 +141,8 @@ $cyan: #08d0e8;
 }
 
 .blue-button {
-  border-radius: 2px;
-  background: $blue;
+  border-radius: 5px;
+  @include blue-gradient();
   border: none;
   color:white;
   padding:0.25em 1.5em 0.35em;
@@ -588,7 +592,8 @@ a, .pseudolink {
 
     @include green-gradient();
 
-    border-radius:2px;
+    border-radius:5px;
+    font-weight: 600;
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -669,6 +674,7 @@ a, .pseudolink {
     -ms-flex: 0 0 75px;
     flex: 0 0 75px;
 
+
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -691,11 +697,11 @@ a, .pseudolink {
       width:100%;
 
       @include orange-gradient();
-      border-radius:2px;
+      border-radius:5px;
       border:none;
       color:white;
       text-transform: uppercase;
-      font-weight: bold;
+      font-weight: 600;
       &:hover {
         @include orange-hover-gradient();
       }
@@ -1519,12 +1525,13 @@ a, .pseudolink {
 }
 
 .button-grey {
-  background: #aeaeae;
+  @include grey-gradient();
   border:none;
-  border-radius: 2px;
-  text-transform: uppercase;
-  color:white;
+  border-radius: 5px;
+  font-weight: 600;
+  color:$blue;
   padding:2px 4px 3px;
+  box-shadow: inset 0 0 0 2px $blue;
   &:hover {
     background: #cccccc;
   }
@@ -2024,11 +2031,10 @@ a, .pseudolink {
   input {
     @include green-gradient();
     border:none;
-    border-radius: 2px;
+    border-radius: 5px;
     color:white;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding:0.3em 1.5em 0.3em;
+    font-weight: 600;
+    padding:3px 1.5em 5px;
     &:hover {
       @include green-hover-gradient();
     }
@@ -2155,11 +2161,12 @@ a, .pseudolink {
 .green-button {
   @include green-gradient();
   border:none;
-  border-radius: 2px;
+  border-radius: 5px;
   color:white;
   text-decoration: none;
   padding:3px 1.5em 5px;
   font-weight: 600;
+  text-shadow: 0px 1px 1px rgba(black, 0.26);
   &.b {
 
   }

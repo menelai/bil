@@ -2,6 +2,13 @@
   display: none;
 }
 
+#country {
+  margin-top: 20px;
+  h1 {
+    font-weight: 500;
+  }
+}
+
 #country-info #content-col {
   padding:0;
 }
@@ -144,7 +151,8 @@
   h2 {
     text-transform: none;
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 500;
   }
 }
 
