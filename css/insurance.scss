@@ -29,7 +29,12 @@
 }
 
 .blue-button.viol {
-  background:#113483;
+  // Needs latest Compass, add '@import "compass"' to your scss
+  // Permalink - use to edit and share this gradient:
+  // http://colorzilla.com/gradient-editor/#2e4d92+0,2e4d92+35,123176+65,123176+100
+  background-color: #2e4d92; // Old browsers
+  @include filter-gradient(#2e4d92, #123176, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #2e4d92 0%,#2e4d92 35%,#123176 65%,#123176 100%));
   color:white;
 }
 

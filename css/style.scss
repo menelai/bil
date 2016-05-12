@@ -145,16 +145,14 @@ $cyan: #08d0e8;
   @include blue-gradient();
   border: none;
   color:white;
-  padding:0.25em 1.5em 0.35em;
-  text-transform: uppercase;
-  line-height: 0.9;
+  padding:0 1.5em;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 600;
   &[type=button], &[type=submit] {
-    padding-top:2px;
-    padding-bottom:4px;
   }
   &.b {
     display: block;
-    line-height: 1.3;
     &:hover {
       color:white;
       background: $dark-blue;
@@ -163,15 +161,40 @@ $cyan: #08d0e8;
   }
   &.aib {
     display: inline-block;
-    font-size: 11px;
     text-decoration: none;
-    line-height: 15px;
-    padding:2px 4px 3px;
+    padding:0 4px;
     text-align: center;
     &:hover {
       color:white;
       background: $dark-blue;
       text-decoration: none;
+    }
+    &.multiline {
+      height: auto;
+      min-height: 30px;
+      line-height: 1.1;
+
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      >* {
+
+      }
     }
   }
 }
@@ -1448,6 +1471,8 @@ a, .pseudolink {
   }
   input[type=email] {
     width:10em;
+    height: 30px;
+    line-height: 30px;
   }
 }
 
@@ -1530,18 +1555,47 @@ a, .pseudolink {
   border-radius: 5px;
   font-weight: 600;
   color:$blue;
-  padding:2px 4px 3px;
+  padding:0 4px;
+  height: 30px;
+  line-height: 30px;
   box-shadow: inset 0 0 0 2px $blue;
   &:hover {
     background: #cccccc;
   }
   &.aib {
     text-decoration: none;
-    font-size: 11px;
-    line-height: 15px;
-    padding:2px 4px 3px;
+    padding:0 4px;
+    text-align: center;
     &:hover {
       color:white;
+    }
+
+    &.multiline {
+      height: auto;
+      min-height: 30px;
+      line-height: 1.1;
+
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      >* {
+
+      }
     }
   }
 }
@@ -2029,12 +2083,15 @@ a, .pseudolink {
   padding-top:10px;
   padding-bottom:20px;
   input {
+    text-transform: uppercase;
     @include green-gradient();
     border:none;
     border-radius: 5px;
     color:white;
     font-weight: 600;
-    padding:3px 1.5em 5px;
+    padding:0 1.5em 0;
+    height:30px;
+    line-height: 30px;
     &:hover {
       @include green-hover-gradient();
     }
@@ -2080,8 +2137,10 @@ a, .pseudolink {
 .buy-credit {
   color:white;
   border:solid 1px white;
-  padding:0.0em 0.3em 0.1em;
-  border-radius: 2px;
+  padding:0 0.3em;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
   text-decoration: none;
   display: block;
   width:100%;
@@ -2160,11 +2219,13 @@ a, .pseudolink {
 }
 .green-button {
   @include green-gradient();
+  line-height: 30px;
+  height:30px;
   border:none;
   border-radius: 5px;
   color:white;
   text-decoration: none;
-  padding:3px 1.5em 5px;
+  padding:0 1.5em 0;
   font-weight: 600;
   text-shadow: 0px 1px 1px rgba(black, 0.26);
   &.b {
@@ -2180,12 +2241,35 @@ a, .pseudolink {
   }
 
   &.aib {
-    font-size: 11px;
-    font-size: 11px;
-    line-height: 15px;
-    padding:2px 4px 3px;
-    text-transform: uppercase;
+    padding:0 4px;
     text-align: center;
+    &.multiline {
+      height: auto;
+      min-height: 30px;
+      line-height: 1.1;
+
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      >* {
+
+      }
+    }
   }
 }
 
@@ -2793,15 +2877,13 @@ a, .pseudolink {
 
   input[type="email"] {
     width:13em;
-    line-height: 15px;
-    padding:2px 4px 2px;
+    line-height: 30px;
+    padding:0 4px;
     margin-right:3px;
-    height: 20px;
+    height: 30px;
   }
 
   input[type=submit] {
-    line-height: 15px;
-    height: 20px;
   }
 
   #subscribe-form {
@@ -2810,7 +2892,7 @@ a, .pseudolink {
     }
     font-size: 13px;
     input {
-      font-size: 11px;
+
     }
   }
 }
@@ -3821,7 +3903,6 @@ a, .pseudolink {
   .button-grey {
     display: block;
     text-align: center;
-    font-size: 9px;
   }
 }
 
