@@ -61,6 +61,7 @@ $cyan: #08d0e8;
 
 @mixin common-button() {
   border-radius: 5px;
+  text-decoration: none;
   border: none;
   color:white;
   padding:0 1.5em;
@@ -72,7 +73,7 @@ $cyan: #08d0e8;
   font-weight: 600;
   text-shadow: 0px 1px 1px rgba(black, 0.26);
   &[type=button], &[type=submit] {
-    padding-bottom:1px;
+    padding-bottom:2px;
   }
   &.aib {
     display: inline-block;
@@ -1566,6 +1567,7 @@ a, .pseudolink {
   @include common-button();
   color:$blue;
   padding:0 4px;
+  text-shadow: none;
   box-shadow: inset 0 0 0 2px $blue;
   &:hover {
     background: #cccccc;
@@ -3919,6 +3921,7 @@ a, .pseudolink {
 
 .youremail {
   margin-right:3px;
+  padding:0 10px;
 }
 
 @media screen and (max-width: 800px) {
@@ -3960,4 +3963,8 @@ a, .pseudolink {
       }
     }
   }
+}
+
+.lh1_6 {
+  line-height: 1.6;
 }
