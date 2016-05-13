@@ -59,6 +59,57 @@ $cyan: #08d0e8;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd8738', endColorstr='#e67730',GradientType=0 ); /* IE6-9 */
 }
 
+@mixin common-button() {
+  border-radius: 5px;
+  border: none;
+  color:white;
+  padding:0 1.5em;
+  height: 30px;
+  line-height: 28px;
+  &.ttu {
+    line-height: 30px;
+  }
+  font-weight: 600;
+  text-shadow: 0px 1px 1px rgba(black, 0.26);
+  &[type=button], &[type=submit] {
+    padding-bottom:1px;
+  }
+  &.aib {
+    display: inline-block;
+    text-decoration: none;
+    padding:0 8px;
+    text-align: center;
+
+    &.multiline {
+      height: auto;
+      min-height: 30px;
+      line-height: 1.1;
+
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      >* {
+
+      }
+    }
+  }
+}
+
 /*@font-face {
   font-family: 'SEGOEUIL';
   src: url('fonts/SEGOEUIL.eot');
@@ -141,16 +192,8 @@ $cyan: #08d0e8;
 }
 
 .blue-button {
-  border-radius: 5px;
   @include blue-gradient();
-  border: none;
-  color:white;
-  padding:0 1.5em;
-  height: 30px;
-  line-height: 30px;
-  font-weight: 600;
-  &[type=button], &[type=submit] {
-  }
+  @include common-button();
   &.b {
     display: block;
     &:hover {
@@ -160,41 +203,10 @@ $cyan: #08d0e8;
     }
   }
   &.aib {
-    display: inline-block;
-    text-decoration: none;
-    padding:0 4px;
-    text-align: center;
     &:hover {
       color:white;
       background: $dark-blue;
       text-decoration: none;
-    }
-    &.multiline {
-      height: auto;
-      min-height: 30px;
-      line-height: 1.1;
-
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
-      align-content: stretch;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      >* {
-
-      }
     }
   }
 }
@@ -1472,7 +1484,7 @@ a, .pseudolink {
   input[type=email] {
     width:10em;
     height: 30px;
-    line-height: 30px;
+    line-height: 28px;
   }
 }
 
@@ -1551,52 +1563,12 @@ a, .pseudolink {
 
 .button-grey {
   @include grey-gradient();
-  border:none;
-  border-radius: 5px;
-  font-weight: 600;
+  @include common-button();
   color:$blue;
   padding:0 4px;
-  height: 30px;
-  line-height: 30px;
   box-shadow: inset 0 0 0 2px $blue;
   &:hover {
     background: #cccccc;
-  }
-  &.aib {
-    text-decoration: none;
-    padding:0 4px;
-    text-align: center;
-    &:hover {
-      color:white;
-    }
-
-    &.multiline {
-      height: auto;
-      min-height: 30px;
-      line-height: 1.1;
-
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
-      align-content: stretch;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      >* {
-
-      }
-    }
   }
 }
 
@@ -2091,7 +2063,7 @@ a, .pseudolink {
     font-weight: 600;
     padding:0 1.5em 0;
     height:30px;
-    line-height: 30px;
+    line-height: 28px;
     &:hover {
       @include green-hover-gradient();
     }
@@ -2139,7 +2111,7 @@ a, .pseudolink {
   border:solid 1px white;
   padding:0 0.3em;
   height: 30px;
-  line-height: 30px;
+  line-height: 28px;
   border-radius: 5px;
   text-decoration: none;
   display: block;
@@ -2219,15 +2191,7 @@ a, .pseudolink {
 }
 .green-button {
   @include green-gradient();
-  line-height: 30px;
-  height:30px;
-  border:none;
-  border-radius: 5px;
-  color:white;
-  text-decoration: none;
-  padding:0 1.5em 0;
-  font-weight: 600;
-  text-shadow: 0px 1px 1px rgba(black, 0.26);
+  @include common-button();
   &.b {
 
   }
@@ -2238,38 +2202,6 @@ a, .pseudolink {
     color:white;
     text-decoration: none;
     @include green-hover-gradient();
-  }
-
-  &.aib {
-    padding:0 4px;
-    text-align: center;
-    &.multiline {
-      height: auto;
-      min-height: 30px;
-      line-height: 1.1;
-
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
-      align-content: stretch;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      >* {
-
-      }
-    }
   }
 }
 
@@ -2877,7 +2809,7 @@ a, .pseudolink {
 
   input[type="email"] {
     width:13em;
-    line-height: 30px;
+    line-height: 28px;
     padding:0 4px;
     margin-right:3px;
     height: 30px;
