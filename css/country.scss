@@ -112,6 +112,7 @@
       font-weight: bold;
       @include blue-gradient();
       min-width: 73px;
+      border-radius: 5px;
     }
   }
 
@@ -425,13 +426,15 @@
   label {
     border-radius: 2px;
     display: block;
-    background: $blue;
+    @include blue-gradient();
     color:white;
     padding:3px 0 5px 0;
+    border-radius: 5px;
+
   }
   input:checked + label {
-    background-color: #ebebeb;
-    box-shadow: inset 0px 3px 4px rgba(0,0,0, 0.2);
+    @include grey-gradient();
+    box-shadow: inset 0 0 0 2px $blue, inset 0px 3px 4px rgba(0,0,0, 0.2);
     color:$blue;
   }
 }
@@ -448,22 +451,26 @@
     label {
       width:40px;
       height:40px;
-      background-position: center center;
-      background-repeat: no-repeat;
+      background-position: center center,center center;
+      background-repeat: no-repeat, no-repeat;
       &[for=cplane] {
-        background-image: url(../i/1planew.png);
+        @include background-image(url(../i/1planew.png), linear-gradient(top,  #239dce 0%,#239dce 35%,#0781b2 65%,#0781b2 100%));
+        background-size: auto, 100%;
       }
       &[for=cplane2] {
-        background-image: url(../i/2planesw.png);
+        @include background-image(url(../i/2planesw.png), linear-gradient(top,  #239dce 0%,#239dce 35%,#0781b2 65%,#0781b2 100%));
+        background-size: auto, 100%;
       }
     }
 
     input:checked +label{
     &[for=cplane] {
       background-image: url(../i/1plane.png);
+      background-size: auto;
     }
     &[for=cplane2] {
       background-image: url(../i/2planes.png);
+      background-size: auto;
     }
   }
   }
@@ -542,7 +549,7 @@
   >div {
     padding:0 30px;
     +div {
-      border-left:solid 1px #cccccc;
+      //border-left:solid 1px #cccccc;
     }
   }
 }
@@ -700,4 +707,10 @@
     padding-top:4px;
     padding-bottom: 4px;
   }
+}
+
+.make-subscription {
+  margin:10px -10px -10px -10px;
+  background: #DEDEDE;
+  padding:10px;
 }

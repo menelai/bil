@@ -625,6 +625,7 @@ a, .pseudolink {
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
+    text-transform: uppercase;
 
     @include green-gradient();
 
