@@ -274,8 +274,8 @@ body {
 }
 
 #change-from-to {
-  width:45px;
-  height:45px;
+  width:$standard-height;
+  height:$standard-height;
   margin-top: -18px;
 
 }
@@ -283,8 +283,8 @@ body {
 #top-search-form {
   font-size: 18px;
   #passengers-input .pass-border > div {
-    height:45px;
-    line-height: 45px;
+    height:$standard-height;
+    line-height: $standard-height;
     padding-top:0;
     padding-bottom: 0;
   }
@@ -306,10 +306,10 @@ body {
     }
 
     input[type=text] {
-      line-height: 45px;
+      line-height: $standard-height;
       padding-top:0;
       padding-bottom:0;
-      height:45px;
+      height:$standard-height;
       background: #FFFFFF;
       box-shadow: inset 0px 3px 4px rgba(0,0,0, 0.2);
     }
@@ -362,11 +362,12 @@ body {
   #new-search {
     @include flex(0 0 100% !important);
     @include order(0);
-    text-transform: uppercase;
-    font-weight: bold;
+    text-transform: none;
+    font-weight: normal;
     line-height: 1.2;
-    height:45px;
-    min-height: 45px;
+    height:$standard-height;
+    min-height: $standard-height;
+    font-size: $standard-fz;
   }
   #search-submit {
     @include flex(0 0 100% !important);
@@ -446,7 +447,8 @@ body {
       width:100%;
       input {
         width: 100%;
-        line-height: 30px;
+        line-height: $standard-height;
+        height: $standard-height;
       }
 
     }
@@ -508,8 +510,8 @@ body {
   color:$blue;
   padding:4px 0;
   font-weight: bold;
-  min-height:45px;
-  line-height: 45px;
+  min-height:$standard-height;
+  line-height: $standard-height;
   font-size: 16px;
 }
 
@@ -543,8 +545,8 @@ select {
 
 #show-more-offers {
   a {
-    min-height: 45px;
-    line-height: 45px;
+    min-height: $standard-height;
+    line-height: $standard-height;
     font-size: 16px;
   }
 }
@@ -566,6 +568,39 @@ select {
     }
     #from-input {
       margin-top:-10px;
+    }
+  }
+}
+
+.buy-n {
+  input {
+    height:$standard-height;
+    line-height: $standard-height;
+    min-width: 120px;
+    font-size: $standard-fz;
+    text-transform: none;
+    font-weight: normal;
+    padding-bottom: 4px;
+  }
+}
+
+#top-search-form #search-submit > input {
+  height:$standard-height;
+  //line-height: $standard-height -20;
+  font-size: $standard-fz;
+  text-transform: none;
+  font-weight: normal;
+  padding-bottom: 2px;
+}
+
+.blue-button, .green-button, .button-grey {
+  height: $standard-height;
+  line-height: $standard-height;
+  &.aib {
+    &.multiline {
+      height: auto;
+      min-height:$standard-height;
+      line-height: normal;
     }
   }
 }

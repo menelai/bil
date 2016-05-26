@@ -3926,6 +3926,8 @@ a, .pseudolink {
 }
 
 @media screen and (max-width: 800px) {
+  $standard-height: 50px;
+  $standard-fz: 22px;
   @import 'phone';
   @import 'phone-list';
   @import 'phone-country';
