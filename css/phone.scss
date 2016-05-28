@@ -363,7 +363,7 @@ body {
     @include flex(0 0 100% !important);
     @include order(0);
     text-transform: none;
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1.2;
     height:$standard-height;
     min-height: $standard-height;
@@ -449,6 +449,9 @@ body {
         width: 100%;
         line-height: $standard-height;
         height: $standard-height;
+        font-size: $standard-fz;
+        text-transform: none;
+        font-weight: 600;
       }
 
     }
@@ -579,7 +582,7 @@ select {
     min-width: 120px;
     font-size: $standard-fz;
     text-transform: none;
-    font-weight: normal;
+    font-weight: 600;
     padding-bottom: 4px;
   }
 }
@@ -589,18 +592,23 @@ select {
   //line-height: $standard-height -20;
   font-size: $standard-fz;
   text-transform: none;
-  font-weight: normal;
+  font-weight: 600;
   padding-bottom: 2px;
 }
 
 .blue-button, .green-button, .button-grey {
   height: $standard-height;
   line-height: $standard-height;
+  font-weight: 600 !important;
   &.aib {
     &.multiline {
       height: auto;
       min-height:$standard-height;
       line-height: normal;
     }
+  }
+
+  &[type=submit], &[type=button] {
+    font-size: $standard-fz;
   }
 }

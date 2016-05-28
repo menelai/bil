@@ -6197,7 +6197,7 @@ a:hover, .pseudolink:hover {
     -webkit-order: 0;
     order: 0;
     text-transform: none;
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1.2;
     height: 50px;
     min-height: 50px;
@@ -6296,64 +6296,67 @@ a:hover, .pseudolink:hover {
     width: 100%;
     line-height: 50px;
     height: 50px;
+    font-size: 22px;
+    text-transform: none;
+    font-weight: 600;
   }
 
-  /* line 460, phone.scss */
+  /* line 463, phone.scss */
   #spec-results .results-wrapper > .result-wrapper {
     width: 100%;
   }
 
-  /* line 466, phone.scss */
+  /* line 469, phone.scss */
   .max-text-width {
     max-width: none;
   }
 
-  /* line 470, phone.scss */
+  /* line 473, phone.scss */
   #front-content {
     padding-bottom: 10px;
   }
-  /* line 473, phone.scss */
+  /* line 476, phone.scss */
   #front-content .max-text-width .bysides {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 475, phone.scss */
+  /* line 478, phone.scss */
   #front-content .max-text-width .bysides > .flex1 {
     min-width: 50%;
   }
 
-  /* line 482, phone.scss */
+  /* line 485, phone.scss */
   .ui-datepicker {
     width: calc(100% - 20px) !important;
     width: -webkit-calc(100% - 20px) !important;
     z-index: 500 !important;
   }
 
-  /* line 488, phone.scss */
+  /* line 491, phone.scss */
   #passengers-popup {
     width: 100%;
   }
 
-  /* line 492, phone.scss */
+  /* line 495, phone.scss */
   #first-country-photo {
     display: none;
   }
 
-  /* line 496, phone.scss */
+  /* line 499, phone.scss */
   .country-photo {
     padding: 10px;
   }
-  /* line 499, phone.scss */
+  /* line 502, phone.scss */
   .country-photo .mt15, .country-photo .mt30, .country-photo .mt5 {
     margin-top: 5px;
     font-size: 18px;
   }
-  /* line 503, phone.scss */
+  /* line 506, phone.scss */
   .country-photo br {
     display: none;
   }
 
-  /* line 508, phone.scss */
+  /* line 511, phone.scss */
   #about-charters {
     border: solid 1px #058fc7;
     color: #058fc7;
@@ -6364,94 +6367,99 @@ a:hover, .pseudolink:hover {
     font-size: 16px;
   }
 
-  /* line 522, phone.scss */
+  /* line 525, phone.scss */
   .spacing10 {
     margin-left: -2px;
     margin-right: -2px;
   }
-  /* line 523, phone.scss */
+  /* line 526, phone.scss */
   .spacing10.mt10 {
     margin-top: 4px;
   }
-  /* line 528, phone.scss */
+  /* line 531, phone.scss */
   .spacing10 > * {
     padding: 0 2px;
   }
-  /* line 530, phone.scss */
+  /* line 533, phone.scss */
   .spacing10 > *:nth-child(n+3) {
     margin-top: 4px;
   }
 
-  /* line 536, phone.scss */
+  /* line 539, phone.scss */
   #totop {
     position: fixed;
     bottom: 5px;
   }
 
-  /* line 542, phone.scss */
+  /* line 545, phone.scss */
   select {
     border-radius: 2px;
   }
 
-  /* line 547, phone.scss */
+  /* line 550, phone.scss */
   #show-more-offers a {
     min-height: 50px;
     line-height: 50px;
     font-size: 16px;
   }
 
-  /* line 554, phone.scss */
+  /* line 557, phone.scss */
   .m-flex-start {
     text-align: left;
   }
-  /* line 556, phone.scss */
+  /* line 559, phone.scss */
   .m-flex-start span {
     display: block;
   }
-  /* line 558, phone.scss */
+  /* line 561, phone.scss */
   .m-flex-start span + span {
     font-weight: bold;
   }
 
-  /* line 566, phone.scss */
+  /* line 569, phone.scss */
   .frontpage #top-search-form #new-search {
     display: none;
   }
-  /* line 569, phone.scss */
+  /* line 572, phone.scss */
   .frontpage #top-search-form #from-input {
     margin-top: -10px;
   }
 
-  /* line 576, phone.scss */
+  /* line 579, phone.scss */
   .buy-n input {
     height: 50px;
     line-height: 50px;
     min-width: 120px;
     font-size: 22px;
     text-transform: none;
-    font-weight: normal;
+    font-weight: 600;
     padding-bottom: 4px;
   }
 
-  /* line 587, phone.scss */
+  /* line 590, phone.scss */
   #top-search-form #search-submit > input {
     height: 50px;
     font-size: 22px;
     text-transform: none;
-    font-weight: normal;
+    font-weight: 600;
     padding-bottom: 2px;
   }
 
-  /* line 596, phone.scss */
+  /* line 599, phone.scss */
   .blue-button, .green-button, .button-grey {
     height: 50px;
     line-height: 50px;
+    font-weight: 600 !important;
   }
-  /* line 600, phone.scss */
+  /* line 604, phone.scss */
   .blue-button.aib.multiline, .green-button.aib.multiline, .button-grey.aib.multiline {
     height: auto;
     min-height: 50px;
     line-height: normal;
+  }
+  /* line 611, phone.scss */
+  .blue-button[type=submit], .blue-button[type=button], .green-button[type=submit], .green-button[type=button], .button-grey[type=submit], .button-grey[type=button] {
+    font-size: 22px;
   }
 
   /* line 1, phone-list.scss */
@@ -7196,9 +7204,12 @@ a:hover, .pseudolink:hover {
   .fp + * .green-button {
     padding: 3px 5px;
     width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: none;
   }
 
-  /* line 159, phone-bron.scss */
+  /* line 162, phone-bron.scss */
   .w135 {
     width: auto;
   }
