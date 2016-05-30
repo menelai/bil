@@ -158,9 +158,16 @@
 
 .months {
   >div {
-    flex:0 1 -webkit-calc(33.3% - 2px);
-    flex:0 1 calc(33.3% - 2px);
+    flex:0 1 -webkit-calc(25% - 2px);
+    flex:0 1 calc(25% - 2px);
     margin:0 0 2px 0;
+    font-size: 13px;
+    line-height: 40px;
+    height:40px;
+    label {
+      padding:0;
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -169,6 +176,12 @@
     flex:0 1 -webkit-calc(50% - 2px);
     flex:0 1 calc(50% - 2px);
     margin:0 0 2px 0;
+    line-height: 40px;
+    height:40px;
+    label {
+      padding:0;
+      text-transform: uppercase;
+    }
   }
 }
 
