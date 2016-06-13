@@ -612,3 +612,13 @@ select {
     font-size: $standard-fz;
   }
 }
+
+.ui-autocomplete {
+  &.ui-widget-content {
+
+  }
+
+  &.ui-menu .ui-menu-item {
+    line-height: 50px;
+  }
+}

@@ -327,8 +327,19 @@
 #new-search {
   .drop-down {
     background-image: url(../i/arrow-down-white.png);
+    background-position: center center;
   }
 }
+
+.searchtrue {
+  #new-search {
+    .drop-down {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+
 
 .mobilevis-, .mobilevis-false {
   display: none;
