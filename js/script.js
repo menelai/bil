@@ -151,6 +151,17 @@
       $( ".autocomplete" ).autocomplete({
         source: availableTags
       });
+
+      var is_mobile = false;
+
+      if( $('.desktop').css('display')=='none') {
+        is_mobile = true;
+      }
+
+      if(is_mobile) {
+        $('.datepicker').attr('readonly', true);
+      }
+
     });
 
 })(jQuery);
