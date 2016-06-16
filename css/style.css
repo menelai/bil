@@ -4654,8 +4654,16 @@ a:hover, .pseudolink:hover {
   margin: 0;
 }
 /* line 3915, style.scss */
-.ui-autocomplete .ui-menu .ui-menu-item {
+.ui-autocomplete.ui-menu .ui-menu-item {
   padding: 8px;
+}
+/* line 3919, style.scss */
+.ui-autocomplete.ui-menu .ui-menu-item {
+  list-style: none;
+}
+/* line 3921, style.scss */
+.ui-autocomplete.ui-menu .ui-menu-item:nth-child(2n+1):not(.ui-state-focus) {
+  background: #f4f4f4;
 }
 
 /* line 1, insurance.scss */
@@ -5708,12 +5716,12 @@ a:hover, .pseudolink:hover {
   fill: #058fc7;
 }
 
-/* line 3925, style.scss */
+/* line 3932, style.scss */
 #buter {
   display: none;
 }
 
-/* line 3929, style.scss */
+/* line 3936, style.scss */
 .youremail {
   margin-right: 3px;
   padding: 0 10px;
@@ -7304,40 +7312,40 @@ a:hover, .pseudolink:hover {
   }
 }
 @media screen and (min-width: 800px) {
-  /* line 3944, style.scss */
+  /* line 3951, style.scss */
   .mobile {
     display: none;
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 3950, style.scss */
+  /* line 3957, style.scss */
   .drop-controller {
     font-size: 13px;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 3957, style.scss */
+  /* line 3964, style.scss */
   #time .bysides.vtop.mt30 {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 3959, style.scss */
+  /* line 3966, style.scss */
   #time .bysides.vtop.mt30 > div {
     min-width: 90px;
   }
 }
 @media screen and (min-width: 401px) and (max-width: 500px) {
-  /* line 3968, style.scss */
+  /* line 3975, style.scss */
   #time .bysides.vtop.mt30 {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 3970, style.scss */
+  /* line 3977, style.scss */
   #time .bysides.vtop.mt30 > div {
     min-width: 120px;
   }
 }
-/* line 3977, style.scss */
+/* line 3984, style.scss */
 .lh1_6 {
   line-height: 1.6;
 }

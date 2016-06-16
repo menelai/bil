@@ -143,14 +143,17 @@
       });
 
       var availableTags = [
-        "Москва",
-        "Санкт-Петербург",
-        "Минск",
-        "Киев"
+        {label: "Москва, Россия", code: 'SVO'},
+        {label: "Санкт-Петербург, Россия", code: 'SVO'},
+        {label: "Минск, Белоруссия", code: 'SVO'},
+        {label: "Киев, Украина", code: 'SVO'}
       ];
       $( ".autocomplete" ).autocomplete({
         source: availableTags
-      });
+      }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+        return $( "<li><span class='bysides'><div>" + item.label + "</div><div>" + item.code + "</div></span></li>" )
+          .appendTo( ul );
+      };;
 
       var is_mobile = false;
 
