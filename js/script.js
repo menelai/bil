@@ -143,7 +143,9 @@
       });
 
       var availableTags = [
-        {label: "Москва, Россия", code: 'SVO'},
+        {label: "Москва, Россия", code: 'MOW'},
+        {label: "Мостар, Босния и Герцеговина", code: 'OMO'},
+        {label: "Мосул, Ирак", code: 'OSM'},
         {label: "Санкт-Петербург, Россия", code: 'SVO'},
         {label: "Минск, Белоруссия", code: 'SVO'},
         {label: "Киев, Украина", code: 'SVO'}
