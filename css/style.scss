@@ -1279,7 +1279,7 @@ a, .pseudolink {
     color:$blue;
     border-radius: 2px;
     text-transform: uppercase;
-    padding:0.2em 0;
+    line-height: 32px;
   }
 
   .all-items {
@@ -1482,6 +1482,9 @@ a, .pseudolink {
   h2 {
     font-weight: normal;
     font-size: 13px;
+    margin-bottom: 5px;
+    color:black;
+    margin-top:-3px;
   }
   input[type=email] {
     width:10em;
@@ -1820,6 +1823,7 @@ a, .pseudolink {
 
     &.flight-params {
       padding:0.4em 0;
+      border-left:solid 1px transparent;
     }
   }
 
@@ -2563,6 +2567,7 @@ a, .pseudolink {
       text-align: center;
       padding:0.5em 0.2em;
       margin:-1px 0 0 -1px;
+      cursor:pointer;
 
       h2 {
         font-weight: normal;
@@ -2826,6 +2831,8 @@ a, .pseudolink {
     text-align: left;
     h2 {
       color:black;
+      text-align: center;
+      margin-bottom:5px;
     }
     font-size: 13px;
     input {
@@ -3936,6 +3943,36 @@ a, .pseudolink {
 .youremail {
   margin-right:3px;
   padding:0 10px;
+}
+
+#alternate-popup {
+  position: absolute;
+  border:solid 1px $dark-blue;
+  background: rgba(#ffffff, 0.95);
+  z-index: 1000;
+  border-radius: 2px;
+  >ul {
+    >li {
+      padding:10px 20px;
+      &:nth-child(2n+1) {
+
+      }
+      &:nth-child(2n) {
+        background: rgba(#aeaeae, 0.3);
+      }
+
+      >div {
+        &:not(:last-child) {
+          padding-right:20px;
+        }
+      }
+    }
+  }
+}
+
+.vylpril {
+  display: inline-block;
+  width:3.8em;
 }
 
 @media screen and (max-width: 800px) {

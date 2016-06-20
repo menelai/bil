@@ -351,6 +351,54 @@
     </div>
   </div>
 </div>
+
+<div id="alternate-popup">
+  <div class="close-popup" onclick="$('#alternate-popup').hide();"></div>
+  <ul class="ul">
+    <li class="bysides">
+      <div><img src="i/nordstar.png"></div>
+      <div class="flex1">
+        <b class="blue">Только туда:</b>
+        <p><span class="grey vylpril">Вылет:</span><span class="tm">11:50</span> Москва <span class="grey">DME</span></p>
+        <p><span class="grey vylpril">Прилет:</span><span class="tm">11:50</span> Москва <span class="grey">DME</span></p>
+        <p>2 ч 30 м в пути, прямой</p>
+      </div>
+      <div>
+        <a href="/" class="button-grey aib">Подробнее</a>
+      </div>
+    </li>
+    <li class="bysides">
+      <div><img src="i/nordstar.png"></div>
+      <div class="flex1">
+        <b class="blue">Туда:</b>
+        <p><span class="grey vylpril">Вылет:</span><span class="tm">11:50</span> Москва <span class="grey">DME</span></p>
+        <p><span class="grey vylpril">Прилет:</span><span class="tm">11:50</span> Москва <span class="grey">DME</span></p>
+        <p>2 ч 30 м в пути, прямой</p>
+
+        <p class="mt20"><b class="blue">Обратно:</b></p>
+        <p><span class="grey vylpril">Вылет:</span><span class="tm">11:50</span> Москва <span class="grey">DME</span></p>
+        <p><span class="grey vylpril">Прилет:</span><span class="tm">11:50</span> Москва <span class="grey">DME</span></p>
+        <p>2 ч 30 м в пути, прямой</p>
+      </div>
+      <div>
+        <a href="/" class="button-grey aib">Подробнее</a>
+      </div>
+    </li>
+    <li class="bysides">
+      <div><img src="i/nordstar.png"></div>
+      <div class="flex1">
+        <b class="blue">Только туда:</b>
+        <p><span class="grey vylpril">Вылет:</span><span class="tm">11:50</span> Москва <span class="grey">DME</span></p>
+        <p><span class="grey vylpril">Прилет:</span><span class="tm">11:50</span> Москва <span class="grey">DME</span></p>
+        <p>2 ч 30 м в пути, прямой</p>
+      </div>
+      <div>
+        <a href="/" class="button-grey aib">Подробнее</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
 <div id="search-results">
   <div id="results-header">
     <div class="max-width">
@@ -489,7 +537,7 @@
               </ul>
               <div class="bysides popup-buttons">
                 <input type="reset" value="Сбросить фильтры" class="button-grey">
-                <input type="button" value="Применить" class="button-grey">
+                <input type="button" value="Применить" class="blue-button">
               </div>
               <div class="close-popup" ng-click="show1=false;"></div>
             </div>
@@ -521,7 +569,7 @@
               </ul>
               <div class="bysides popup-buttons">
                 <input type="reset" value="Сбросить фильтры" class="button-grey">
-                <input type="button" value="Применить" class="button-grey">
+                <input type="button" value="Применить" class="blue-button">
               </div>
               <div class="close-popup" ng-click="show2=false;"></div>
             </div>
@@ -546,12 +594,12 @@
               </ul>
               <div class="bysides popup-buttons">
                 <input type="reset" value="Сбросить фильтры" class="button-grey">
-                <input type="button" value="Применить" class="button-grey">
+                <input type="button" value="Применить" class="blue-button">
               </div>
               <div class="close-popup" ng-click="show3=false;"></div>
             </div>
           </div>
-          <div id="subscribe-form">
+          <div id="subscribe-form" class="inputshadow">
             <form>
               <h2>Цена на авиабилет может снизиться</h2>
               <input type="email" placeholder="Ваш email"> <input type="submit" value="Следить за ценой" class="button-grey">

@@ -167,6 +167,25 @@
         $('.datepicker').attr('readonly', true);
       }
 
+      var d = $('#alternate-popup').hide();
+      $('body').append(d);
+
+      $(".month-day").click(function() {
+        var width = $(this).outerWidth();
+        var offset = $(this).offset();
+        var containerWidth = $("#alternate-results").outerWidth();
+        var containerOffset = $("#alternate-results").offset();
+        var match = offset.left + width*7 - 2 <= containerOffset.left + containerWidth;
+        d.show().css({
+          top: offset.top,
+          left: match ? offset.left : 'auto',
+          right: match ? 'auto' : containerOffset.left,
+          width: width*7 - 2
+        });
+
+
+      });
+
     });
 
 })(jQuery);
