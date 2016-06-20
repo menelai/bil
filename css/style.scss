@@ -104,6 +104,12 @@ $cyan: #08d0e8;
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
+
+      &.iflex {
+        display: -ms-flexbox;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+      }
       >* {
 
       }
@@ -3954,11 +3960,14 @@ a, .pseudolink {
   >ul {
     >li {
       padding:10px 20px;
-      &:nth-child(2n+1) {
 
-      }
-      &:nth-child(2n) {
-        background: rgba(#aeaeae, 0.3);
+      &.bysides {
+        &:nth-child(2n+1) {
+
+        }
+        &:nth-child(2n) {
+          background: rgba(#aeaeae, 0.3);
+        }
       }
 
       >div {
