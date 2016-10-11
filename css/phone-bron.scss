@@ -9,17 +9,24 @@
   #ocl, #ocr {
     width:auto;
     padding:10px;
+
+    &:before {
+      display: none;
+    }
   }
 }
 
-#ocr {
+#ocr, #passengers-data {
   //display: none;
   .form-group {
     .becomecol {
       @include align-items(stretch);
       &.withmargin {
         >*+* {
-          margin:15px 0 0 0;
+          margin:0 0 0 0;
+        }
+        >*:not(.gender-select):not(.ss-nd)+* {
+          margin:10px 0 0 0;
         }
       }
     }
@@ -27,6 +34,14 @@
 
   .w50 {
     width: auto;
+  }
+}
+
+.inputshadow {
+  input[type=text], input[type=email] {
+    line-height: 35px;
+    height:35px;
+    padding:0 0.5em;
   }
 }
 
@@ -104,6 +119,7 @@
 }
 
 #go-to-search {
+  display: none;
   #subscribe-form {
     +div {
       margin:10px 0 0 0;
@@ -119,7 +135,7 @@
   @include flex-wrap(wrap);
   &.withmargin {
     >* {
-      margin-top:15px;
+      margin-top:10px;
       + * {
         margin-left: 0;
       }
@@ -161,4 +177,59 @@
 
 .w135 {
   width: auto;
+}
+
+#order-cols #flight-info-title {
+  @include common-button();
+  @include grey-gradient();
+  color:$blue;
+  text-shadow: none;
+  box-shadow: inset 0 0 0 1px $blue;
+  height:35px;
+  line-height: 35px;
+  text-align: left;
+
+  &:after {
+    content: '';
+    background: url(../i/arrow-down.png);
+    width:12px;
+    height:8px;
+    position: absolute;
+    right:1.5em;
+    top:50%;
+    margin-top:-4px;
+  }
+
+  &.flight-visible {
+    &:after {
+      @include transform(rotate(180deg));
+    }
+  }
+
+  &:not(.flight-visible) {
+    & + .result {
+      display: none;
+    }
+  }
+}
+
+.gender-select {
+  position: absolute;
+  padding:0;
+  top:-96px;
+  right:0;
+  @include display-flex();
+  .gm, .gf {
+    &:checked + label:after {
+      display: none;
+    }
+  }
+
+  p + p {
+    margin:0 0 0 10px;
+  }
+
+  input[type=radio] {
+    margin-right:3px;
+  }
 }

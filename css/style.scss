@@ -816,33 +816,38 @@ a, .pseudolink {
 
   #passengers-input {
     .pass-border {
-      border: solid 1px $dark-blue;
-      border-radius: 2px;
-      padding-right:35px;
-      white-space: nowrap;
-
       position: absolute;
       top:0;
       left:2px;
       bottom:0;
       right:0;
-      >div {
-        padding: 0.55em 0.65em 0.75em 0.65em;
-        overflow: hidden;
-        color:#adadad;
-      }
     }
+  }
+}
 
-    .drop-down {
-      width:19px;
-      height:19px;
-      right:8px;
-      top:50%;
-      margin-top:-9px;
-      background: url(../i/arrow-down.png) right center no-repeat;
-      z-index: 10;
-      position: absolute;
+#passengers-input {
+  .pass-border {
+    border: solid 1px $dark-blue;
+    border-radius: 2px;
+    padding-right:35px;
+    white-space: nowrap;
+
+    >div {
+      padding: 0.55em 0.65em 0.75em 0.65em;
+      overflow: hidden;
+      color:#adadad;
     }
+  }
+
+  .drop-down {
+    width:19px;
+    height:19px;
+    right:8px;
+    top:50%;
+    margin-top:-9px;
+    background: url(../i/arrow-down.png) right center no-repeat;
+    z-index: 10;
+    position: absolute;
   }
 }
 
@@ -930,8 +935,12 @@ a, .pseudolink {
   margin-top:2px;
   border: solid 1px $dark-blue;
   border-radius:2px;
-  width:-webkit-calc(200% - 2px);
-  width:calc(200% - 2px);
+  width: -webkit-calc(100%);
+  width: calc(100%);
+  #top-search-form & {
+    width: -webkit-calc(200% - 2px);
+    width: calc(200% - 2px);
+  }
   padding:15px;
 
   input[type=number] {
@@ -2857,6 +2866,7 @@ a, .pseudolink {
     font-size: 14px;
   }
   padding:15px 30px;
+
   .flex-control-paging {
     display: none;
   }
@@ -3937,6 +3947,7 @@ a, .pseudolink {
   }
 }
 
+@import "common";
 @import 'insurance';
 @import 'country';
 @import 'front';

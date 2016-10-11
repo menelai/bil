@@ -4,6 +4,17 @@
 
 (function($){
     $(function() {
+
+      //Если мобильная версия, костыль для страницы брони
+      if($("#go-to-search").is(":hidden")) {
+        $("#flight-info").after($("#passengers-data"));
+
+        $("#flight-info-title").click(function() {
+          $(this).toggleClass('flight-visible');
+        });
+      }
+
+
       if (navigator.appVersion.indexOf("Mac")!=-1) {
         $("body").addClass('mac');
       }
@@ -98,7 +109,8 @@
       $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
       " — " + $( "#slider-range" ).slider( "values", 1 )  + ' дней');
 
-      $("#nav-col").sticky({topSpacing:0});
+      if($.sticky)
+        $("#nav-col").sticky({topSpacing:0});
 
       var lastId,
         topMenu = $("#nav-col"),
