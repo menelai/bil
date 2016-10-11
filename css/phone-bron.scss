@@ -235,3 +235,40 @@
     margin-right:3px;
   }
 }
+
+.reveal-ins {
+  &:after {
+    content: '';
+    background: url(../i/arrow-down-white.png);
+    width:12px;
+    height:8px;
+    position: absolute;
+    right:1.5em;
+    top:50%;
+    margin-top:-4px;
+  }
+  &.revealed {
+    &:after {
+      @include transform(rotate(180deg));
+    }
+  }
+}
+
+#insurance-form {
+  position: absolute;
+  left:0;
+  right:0;
+  z-index: 10;
+  padding:10px;
+  border:solid 1px $blue;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+
+
+  .dobuy {
+    input {
+      padding:0;
+    }
+  }
+}

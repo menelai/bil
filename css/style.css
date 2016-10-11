@@ -34218,6 +34218,42 @@ a:hover, .pseudolink:hover {
   .gender-select input[type=radio] {
     margin-right: 3px;
   }
+
+  /* line 240, phone-bron.scss */
+  .reveal-ins:after {
+    content: '';
+    background: url(../i/arrow-down-white.png);
+    width: 12px;
+    height: 8px;
+    position: absolute;
+    right: 1.5em;
+    top: 50%;
+    margin-top: -4px;
+  }
+  /* line 251, phone-bron.scss */
+  .reveal-ins.revealed:after {
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  /* line 257, phone-bron.scss */
+  #insurance-form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 10px;
+    border: solid 1px #058fc7;
+    border-radius: 4px;
+    background: #ffffff;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  /* line 270, phone-bron.scss */
+  #insurance-form .dobuy input {
+    padding: 0;
+  }
 }
 @media screen and (min-width: 800px) {
   /* line 4022, style.scss */

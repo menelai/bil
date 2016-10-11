@@ -330,29 +330,34 @@
       </div>
 
       <div id="insurance">
-        <div class="f hcenter vtop viol becomecol">
-          <div class="tar"><img id="ingos-logo-large" src="i/ingols-large.png"></div>
-          <div class="">Успешно работаем с 1947 года.<br>
-            Собственные средства<br>
-            Ингосстраха 34,11 млрд. рублей<br><br>
-            <span style="font-size: 15px;">НАМ ЕСТЬ, ЧЕМ ПЛАТИТЬ</span></div>
+        <div class="ws-nd">
+          <div class="green-button reveal-ins {{reveal ? 'revealed' : ''}}" ng-click="reveal=!reveal">Добавить страховку</div>
         </div>
-        <div class="bysides becomecol viol" id="ingos-advantages">
-          <div class="bysides">
-            <div><img src="i/24h.png"></div>
-            <div class="flex1">Круглосуточная русскоговорящая служба поддержки</div>
+        <div class="ss-nd">
+          <div class="f hcenter vtop viol becomecol">
+            <div class="tar"><img id="ingos-logo-large" src="i/ingols-large.png"></div>
+            <div class="">Успешно работаем с 1947 года.<br>
+              Собственные средства<br>
+              Ингосстраха 34,11 млрд. рублей<br><br>
+              <span style="font-size: 15px;">НАМ ЕСТЬ, ЧЕМ ПЛАТИТЬ</span></div>
           </div>
-          <div class="bysides">
-            <div><img src="i/docs.png"></div>
-            <div class="flex1">Доставка полиса на&nbsp;email</div>
+          <div class="bysides becomecol viol" id="ingos-advantages">
+            <div class="bysides">
+              <div><img src="i/24h.png"></div>
+              <div class="flex1">Круглосуточная русскоговорящая служба поддержки</div>
+            </div>
+            <div class="bysides">
+              <div><img src="i/docs.png"></div>
+              <div class="flex1">Доставка полиса на&nbsp;email</div>
+            </div>
+            <div class="bysides">
+              <div><img src="i/globe.png"></div>
+              <div class="flex1">Принимается посольствами всех стран (для оформления виз)</div>
+            </div>
           </div>
-          <div class="bysides">
-            <div><img src="i/globe.png"></div>
-            <div class="flex1">Принимается посольствами всех стран (для оформления виз)</div>
-          </div>
+          <div class="viol smaller2">Наши офисы располагаются в 310 населённых пунктах. МЫ ВСЕГДА РЯДОМ С ВАМИ</div>
         </div>
-        <div class="viol smaller2">Наши офисы располагаются в 310 населённых пунктах. МЫ ВСЕГДА РЯДОМ С ВАМИ</div>
-        <div ng-include="'insurance.html'"></div>
+        <div id="insurance-form" ng-show="reveal" ng-include="'insurance.html'"></div>
       </div>
 
       <div id="aeroexpress">
