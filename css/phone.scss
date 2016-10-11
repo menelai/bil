@@ -64,8 +64,9 @@ body {
   //position: relative;
   bottom:auto;
   left:50%;
-  top:46px;
+  top:55px;
   right:10px;
+  
   >.max-width {
     padding:0;
     >div {
@@ -110,12 +111,6 @@ body {
   }
 
   a {
-    display: block;
-    padding-top:10px;
-    .ib {
-      display: block;
-    }
-
     +a {
       margin:0;
     }
@@ -125,6 +120,13 @@ body {
     vertical-align: middle;
   }
 }
+
+.social {
+  width:32px;
+  height:32px;
+  font-size: 16px;
+}
+
 
 #logo {
   width:100%;

@@ -41,6 +41,7 @@
   input[type=text], input[type=email] {
     line-height: 35px;
     height:35px;
+
     padding:0 0.5em;
   }
 }
@@ -216,9 +217,10 @@
 .gender-select {
   position: absolute;
   padding:0;
-  top:-96px;
+  top:-98px;
   right:0;
   @include display-flex();
+  @include align-items(flex-end);
   .gm, .gf {
     &:checked + label:after {
       display: none;
