@@ -3078,7 +3078,7 @@ a, .pseudolink {
 }
 
 #aeroexpress-logo {
-  @include flex(0 0 82px);
+  @include flex(0 0 40px);
   img {
     width:100%;
   }
@@ -3164,57 +3164,13 @@ a, .pseudolink {
       }
     }
   }
+}
 
-  .aeroexpress-ticket {
-    margin-top:10px;
-    border-radius: 5px;
-    border: solid 1px #b7b7b7;
-    background: #ffffff;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.16);
-    padding:10px;
-
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-
-    .age {
-      -webkit-flex: 0 1 26%;
-      -ms-flex: 0 1 26%;
-      flex: 0 1 26%;
-    }
-    .aeroexpress-price {
-      -webkit-flex: 0 1 13%;
-      -ms-flex: 0 1 13%;
-      flex: 0 1 13%;
-      text-align: center;
-      font-size: 21px;
-      font-weight: bold;
-    }
-    .dobuy {
-      -webkit-flex: 0 1 38%;
-      -ms-flex: 0 1 38%;
-      flex: 0 1 38%;
-      text-align: right;
-      .green-button {
-        margin:0 0 0 auto;
-      }
-    }
-  }
+.aeroexpress-ticket {
+  border-radius: 5px;
+  border: solid 1px #b7b7b7;
+  background: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.16);
 }
 
 .flex1 {
@@ -4056,6 +4012,7 @@ a, .pseudolink {
 @import 'country';
 @import 'front';
 @import 'search-throbber';
+@import 'bron';
 
 #buter {
   display: none;
@@ -4158,3 +4115,4 @@ a, .pseudolink {
 .lh1_6 {
   line-height: 1.6;
 }
+

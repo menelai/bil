@@ -1,5 +1,5 @@
 <div>
-  <div class="ws-nd f d vcen space10 {{showMed ? '' : 'border-bottom-5'}}" ng-show="added">
+  <!--div class="ws-nd f d vcen space10 {{showMed ? '' : 'border-bottom-5'}}" ng-show="added">
     <div>
       <input type="checkbox" id="med-check" ng-model="added">
     </div>
@@ -7,70 +7,76 @@
     <div>
       <a href="" class="blue-button f" ng-click="showMed=!showMed">Изменить</a>
     </div>
-  </div>
-  <div class="ws-nd revealer {{showMed ? 'shown' : ''}}" ng-click="showMed=!showMed" ng-show="!added">
+  </div-->
+  <div class="ws-nd revealer {{showMed ? 'shown' : ''}}" ng-init="showMed=true;" ng-click="showMed=!showMed">
     <div class="blue fwb">Медицинское страхование</div>
   </div>
-  <div class="reveal-what insurance-block mt10">
-    <div class="tac blue ttu fwm fz15">Медицинское страхование</div>
-    <div class="tac mt5">Достаточно для получения визы</div>
-    <div class="fwb fz20 tac mt5">916 <span class="rub">Р</span></div>
-    <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
-    <form class="f d space10 mt10 vcen">
-      <div>
-        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-      </div>
-      <div class="flex1">дней</div>
-      <div>
-        <input type="submit" value="{{added ? 'Сохранить' : 'Добавить'}}" class="blue-button h35" ng-click="added=true; showMed=false;">
-      </div>
-    </form>
+  <div class="reveal-what ebebeb mt10">
+    <div class="p10">
+      <div class="tac blue ttu fwm fz15">Медицинское страхование</div>
+      <div class="tac mt5">Достаточно для получения визы</div>
+      <div class="fwb fz20 tac mt5">916 <span class="rub">Р</span></div>
+      <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+      <form class="f d space10 mt10 vcen">
+        <div>
+          <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+        </div>
+        <div class="flex1">дней</div>
+        <div>
+          <input type="submit" value="{{added ? 'Сохранить' : 'Добавить'}}" class="blue-button h35" ng-click="added=true; showMed=false;">
+        </div>
+      </form>
+    </div>
   </div>
 
-  <div class="mt10 ws-nd f d vcen space10 lh35 border-bottom-5" ng-show="addedFli">
+  <!--div class="mt10 ws-nd f d vcen space10 lh35 border-bottom-5" ng-show="addedFli">
     <div>
       <input type="checkbox" id="fli-check" ng-model="addedFli">
     </div>
     <div class="ttu blue lh1 flex1"><label for="fli-check">Страхование на время перелета</label></div>
-  </div>
-  <div class=" mt10 ws-nd revealer {{showF ? 'shown' : ''}}" ng-click="showF=!showF" ng-show="!addedFli">
+  </div-->
+  <div class=" mt10 ws-nd revealer {{showF ? 'shown' : ''}}" ng-click="showF=!showF">
     <div class="blue fwb">Страхование на время перелета</div>
   </div>
-  <div class="reveal-what insurance-block mt10">
-    <div class="tac blue ttu fwm fz15">Страхование на время перелета</div>
-    <div class="tac mt5">Страхование на случай потери багажа</div>
-    <div class="tac mt5">Страхование от несчастного случая</div>
-    <div class="fwb fz20 tac mt5">255 <span class="rub">Р</span></div>
-    <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
-    <form class="f d space10 vcen mt10">
-        <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedFli=true; showF=false;">
-    </form>
+  <div class="reveal-what ebebeb">
+    <div class="p10">
+      <div class="tac blue ttu fwm fz15">Страхование на время перелета</div>
+      <div class="tac mt5">Страхование на случай потери багажа</div>
+      <div class="tac mt5">Страхование от несчастного случая</div>
+      <div class="fwb fz20 tac mt5">255 <span class="rub">Р</span></div>
+      <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+      <form class="f d space10 vcen mt10">
+          <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedFli=true; showF=false;">
+      </form>
+    </div>
   </div>
 
-  <div class="mt10 ws-nd f d vcen space10 lh35" ng-show="addedTri">
+  <!--div class="mt10 ws-nd f d vcen space10 lh35" ng-show="addedTri">
     <div>
       <input type="checkbox" id="tri-check" ng-model="addedTri">
     </div>
     <div class="ttu blue lh1 flex1"><label for="tri-check">Страхование путешествия</label></div>
-  </div>
-  <div class="mt10 ws-nd revealer {{showT ? 'shown' : ''}}" ng-click="showT=!showT" ng-show="!addedTri">
+  </div-->
+  <div class="mt10 ws-nd revealer {{showT ? 'shown' : ''}}" ng-click="showT=!showT">
     <div class="blue fwb">Страхование путешествия</div>
   </div>
-  <div class="reveal-what insurance-block mt10">
-    <div class="tac blue ttu fwm fz15">Страхование путешествия</div>
-    <div class="tac mt5">Задержка рейса</div>
-    <div class="tac mt5">Задержка багажа</div>
-    <div class="tac mt5">Страхование от невылета</div>
-    <div class="fwb fz20 tac mt5">255 <span class="rub">Р</span></div>
-    <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
-    <form class="f d space10 vcen mt10">
-      <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedTri=true; showT=false;">
-    </form>
+  <div class="reveal-what ebebeb">
+    <div class="p10">
+      <div class="tac blue ttu fwm fz15">Страхование путешествия</div>
+      <div class="tac mt5">Задержка рейса</div>
+      <div class="tac mt5">Задержка багажа</div>
+      <div class="tac mt5">Страхование от невылета</div>
+      <div class="fwb fz20 tac mt5">255 <span class="rub">Р</span></div>
+      <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+      <form class="f d space10 vcen mt10">
+        <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedTri=true; showT=false;">
+      </form>
+    </div>
   </div>
 
-  <div class="mt15 tac">
+  <!--div class="mt15 tac">
     <label><input type="checkbox"> Согласен с <a href="df">условиями страхования</a></label>
-  </div>
+  </div-->
 </div>
 
   <div class="insurance-popup f vcen hcen p20" ng-if="showPopup">
@@ -89,126 +95,3 @@
     </div>
     </div>
   </div>
-<!--div class="bysides becomecol services-input ws-mt20">
-  <div class="bysides">
-    <input id="ins1" name="serv" checked="true" type="checkbox">
-    <label for="ins1" class="bybounds flex1">
-      <div>
-        <div class="viol larger ttu">Медицинская<br> страховка</div>
-      </div>
-      <div class="flex1 bgins vertcenter">
-        <p class="smaller tac fsi">Требуется для получения визы</p>
-      </div>
-      <div class="mt35">
-        <div>Страховая сумма</div>
-        <div class="viol f21">5000 €</div>
-        <div class="mt20">Цена на<br>
-        1 пассажира</div>
-        <div class="viol">8888 <span class="rub">Р</span></div>
-        <a class="mt10 blue-button viol ibm tdn" href="-">Подробнее</a>
-      </div>
-    </label>
-  </div>
-  <div class="bysides">
-    <input id="ins2" name="serv" checked="true" type="checkbox">
-    <label for="ins2" class="bybounds flex1">
-      <div>
-        <div class="viol larger ttu">На время<br>перелета</div>
-      </div>
-      <div class="flex1 bgins vertcenter">
-        <div class="smaller bysides vtop">
-          <input type="checkbox" id="ins11">
-          <label class="flex1 viol fwb" for="ins11">Страхование от несчастного случая</label>
-        </div>
-        <div class="smaller bysides vtop mt15">
-          <input type="checkbox" id="ins12">
-          <label class="flex1 viol fwb" for="ins12">Страхование багажа</label>
-        </div>
-      </div>
-      <div class="mt35">
-        <div>Страховая сумма</div>
-        <div class="viol f21">580 €</div>
-        <div class="mt20">Цена на<br>
-          1 пассажира</div>
-        <div class="viol">888 <span class="rub">Р</span></div>
-        <a class="mt10 blue-button viol ibm tdn" href="-">Подробнее</a>
-      </div>
-    </label>
-  </div>
-  <div class="bysides">
-    <input id="ins3" name="serv" type="checkbox">
-    <label for="ins3" class="bybounds flex1">
-      <div>
-        <div class="viol larger ttu">Страхование<br> путешествия</div>
-      </div>
-      <div class="flex1 bgins vertcenter">
-        <div class="smaller bysides vtop">
-          <input type="checkbox" id="ins13">
-          <label class="flex1 viol fwb" for="ins13">Задержка рейса</label>
-        </div>
-        <div class="smaller bysides vtop mt15">
-          <input type="checkbox" id="ins14">
-          <label class="flex1 viol fwb" for="ins14">Задержка багажа</label>
-        </div>
-      </div>
-      <div class="mt35">
-        <div>Страховая сумма</div>
-        <div class="viol f21">380 €</div>
-        <div class="mt20">Цена на<br>
-          1 пассажира</div>
-        <div class="viol">888 <span class="rub">Р</span></div>
-        <a class="mt10 blue-button viol ibm tdn" href="-">Подробнее</a>
-      </div>
-    </label>
-  </div>
-</div>
-
-<div class="add-insurance mt10 bysides becomewrap">
-  <div class="line"></div>
-  <div class="ttu smaller2 flex1 name">
-    <b>Konstantinopolsky</b><br>
-    Aleksandr
-  </div>
-  <div>
-    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-  </div>
-  <div>&nbsp;дней</div>
-  <div class="insurance-price viol">470 <span class="rub">Р</span></div>
-  <div class="dobuy">
-    <input type="button" value="Добавить к покупке" class="green-button">
-  </div>
-</div>
-<div class="add-insurance mt10 bysides becomewrap">
-  <div class="line"></div>
-  <div class="ttu smaller2 flex1 name">
-    <b>Konstantinopolsky</b><br>
-    Aleksandr
-  </div>
-  <div>
-    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-  </div>
-  <div>&nbsp;дней</div>
-  <div class="insurance-price viol">470 <span class="rub">Р</span></div>
-  <div class="dobuy">
-    <input type="button" value="Добавить к покупке" class="green-button">
-  </div>
-</div>
-<div class="add-insurance mt10 bysides becomewrap">
-  <div class="line"></div>
-  <div class="ttu smaller2 flex1 name">
-    <b>Konstantinopolsky</b><br>
-    Aleksandr
-  </div>
-  <div>
-    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-  </div>
-  <div>&nbsp;дней</div>
-  <div class="insurance-price viol">470 <span class="rub">Р</span></div>
-  <div class="dobuy ttu green">
-    Добавлено к покупке
-  </div>
-</div>
-
-<div class="mt15">
-  <label><input type="checkbox"> Согласен с <a href="df">условиями страхования</a></label>
-</div-->

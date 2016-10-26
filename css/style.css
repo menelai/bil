@@ -3891,8 +3891,8 @@ a:hover, .pseudolink:hover {
 
 /* line 3080, style.scss */
 #aeroexpress-logo {
-  -webkit-flex: 0 0 82px;
-  flex: 0 0 82px;
+  -webkit-flex: 0 0 40px;
+  flex: 0 0 40px;
 }
 /* line 3082, style.scss */
 #aeroexpress-logo img {
@@ -3983,68 +3983,23 @@ a:hover, .pseudolink:hover {
   vertical-align: -4px;
   margin-right: 7px;
 }
-/* line 3168, style.scss */
-#aeroexpress .aeroexpress-ticket {
-  margin-top: 10px;
+
+/* line 3169, style.scss */
+.aeroexpress-ticket {
   border-radius: 5px;
   border: solid 1px #b7b7b7;
   background: #ffffff;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.16);
-  padding: 10px;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-/* line 3195, style.scss */
-#aeroexpress .aeroexpress-ticket .age {
-  -webkit-flex: 0 1 26%;
-  -ms-flex: 0 1 26%;
-  flex: 0 1 26%;
-}
-/* line 3200, style.scss */
-#aeroexpress .aeroexpress-ticket .aeroexpress-price {
-  -webkit-flex: 0 1 13%;
-  -ms-flex: 0 1 13%;
-  flex: 0 1 13%;
-  text-align: center;
-  font-size: 21px;
-  font-weight: bold;
-}
-/* line 3208, style.scss */
-#aeroexpress .aeroexpress-ticket .dobuy {
-  -webkit-flex: 0 1 38%;
-  -ms-flex: 0 1 38%;
-  flex: 0 1 38%;
-  text-align: right;
-}
-/* line 3213, style.scss */
-#aeroexpress .aeroexpress-ticket .dobuy .green-button {
-  margin: 0 0 0 auto;
 }
 
-/* line 3220, style.scss */
+/* line 3176, style.scss */
 .flex1 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-/* line 3227, style.scss */
+/* line 3183, style.scss */
 .inputshadow input[type=text], .inputshadow input[type=email], .inputshadow textarea {
   border-radius: 2px;
   border: solid 1px #0480b4;
@@ -4053,7 +4008,7 @@ a:hover, .pseudolink:hover {
   outline: none !important;
 }
 
-/* line 3237, style.scss */
+/* line 3193, style.scss */
 .buyer:before {
   content: url(../i/buyer.png);
   vertical-align: -11px;
@@ -4061,34 +4016,34 @@ a:hover, .pseudolink:hover {
   margin-right: 13px;
 }
 
-/* line 3247, style.scss */
+/* line 3203, style.scss */
 .withmargin > * + * {
   margin-left: 15px;
 }
-/* line 3253, style.scss */
+/* line 3209, style.scss */
 .withmargin.px2 > * + * {
   margin-left: 2px;
 }
-/* line 3260, style.scss */
+/* line 3216, style.scss */
 .withmargin.px5 > * + * {
   margin-left: 5px;
 }
 
-/* line 3267, style.scss */
+/* line 3223, style.scss */
 .vtop {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
 }
 
-/* line 3273, style.scss */
+/* line 3229, style.scss */
 .stretch {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
 }
 
-/* line 3279, style.scss */
+/* line 3235, style.scss */
 .bybounds {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -4110,45 +4065,45 @@ a:hover, .pseudolink:hover {
   align-items: stretch;
 }
 
-/* line 3300, style.scss */
+/* line 3256, style.scss */
 .w50 {
   width: 50%;
 }
 
-/* line 3304, style.scss */
+/* line 3260, style.scss */
 .enter-cellular {
   font-size: 12px;
   line-height: 1.1;
   color: #fc0d1b;
 }
 
-/* line 3311, style.scss */
+/* line 3267, style.scss */
 .inpamount:before {
   display: inline-block;
   margin-right: 2px;
 }
-/* line 3316, style.scss */
+/* line 3272, style.scss */
 .inpamount.adult:before {
   content: url(../i/adult.png);
   margin-top: -3px;
 }
-/* line 3320, style.scss */
+/* line 3276, style.scss */
 .inpamount.child:before {
   content: url(../i/child.png);
   margin-top: 7px;
 }
-/* line 3324, style.scss */
+/* line 3280, style.scss */
 .inpamount.baby:before {
   content: url(../i/baby.png);
   margin-top: 7px;
 }
 
-/* line 3330, style.scss */
+/* line 3286, style.scss */
 .pseudolink.notebook {
   color: #85b908;
   margin-left: 20px;
 }
-/* line 3336, style.scss */
+/* line 3292, style.scss */
 .pseudolink.notebook:before {
   content: url(../i/greenpencil.png);
   position: absolute;
@@ -4157,63 +4112,63 @@ a:hover, .pseudolink:hover {
   left: -20px;
 }
 
-/* line 3345, style.scss */
+/* line 3301, style.scss */
 .tma {
   margin-top: 5px;
 }
 
-/* line 3350, style.scss */
+/* line 3306, style.scss */
 .form-group + .form-group {
   border-top: solid 1px #b7b7b7;
   padding-top: 15px;
   margin-top: 15px;
 }
-/* line 3356, style.scss */
+/* line 3312, style.scss */
 .form-group > * + * {
   margin-top: 10px;
 }
 
-/* line 3361, style.scss */
+/* line 3317, style.scss */
 .selectric-label {
   margin-right: 5px;
 }
 
-/* line 3370, style.scss */
+/* line 3326, style.scss */
 .selectric {
   border-radius: 2px;
   border: solid 1px #058fc7;
   background: #ffffff;
 }
-/* line 3372, style.scss */
+/* line 3328, style.scss */
 .selectric-hover .selectric {
   border: solid 1px #058fc7;
 }
-/* line 3375, style.scss */
+/* line 3331, style.scss */
 .selectric-open .selectric {
   border-color: #058fc7;
 }
-/* line 3379, style.scss */
+/* line 3335, style.scss */
 .selectric .label {
   color: #058fc7;
 }
-/* line 3383, style.scss */
+/* line 3339, style.scss */
 .selectric .button {
   color: #058fc7;
 }
-/* line 3385, style.scss */
+/* line 3341, style.scss */
 .selectric .button:after {
   border-top-color: #058fc7;
 }
-/* line 3389, style.scss */
+/* line 3345, style.scss */
 .selectric-hover .selectric .button {
   color: #058fc7;
 }
-/* line 3391, style.scss */
+/* line 3347, style.scss */
 .selectric-hover .selectric .button:after {
   border-top-color: #058fc7;
 }
 
-/* line 3399, style.scss */
+/* line 3355, style.scss */
 #specoffer-wrapper input[type=text] {
   width: 100%;
   border-radius: 2px;
@@ -4222,7 +4177,7 @@ a:hover, .pseudolink:hover {
   padding: 0 4px;
 }
 
-/* line 3406, style.scss */
+/* line 3362, style.scss */
 .selectric-items {
   margin-top: 2px;
   box-shadow: none;
@@ -4230,43 +4185,43 @@ a:hover, .pseudolink:hover {
   border: solid 1px #058fc7;
   border-radius: 2px;
 }
-/* line 3412, style.scss */
+/* line 3368, style.scss */
 .selectric-items li:hover {
   background: #dff6ff;
 }
-/* line 3415, style.scss */
+/* line 3371, style.scss */
 .selectric-items li {
   border: none;
 }
-/* line 3417, style.scss */
+/* line 3373, style.scss */
 .selectric-items li + li {
   border-top: solid 1px #e4e4e4;
 }
 
-/* line 3423, style.scss */
+/* line 3379, style.scss */
 .selectric-doctype {
   width: 230px;
 }
 
-/* line 3427, style.scss */
+/* line 3383, style.scss */
 .selectric-citizenship {
   width: 270px;
 }
 
-/* line 3431, style.scss */
+/* line 3387, style.scss */
 .gender-select {
   padding-left: 26px;
   padding-right: 15px;
 }
-/* line 3434, style.scss */
+/* line 3390, style.scss */
 .gender-select p + p {
   margin-top: 3px;
 }
-/* line 3438, style.scss */
+/* line 3394, style.scss */
 .gender-select input[type=radio] {
   margin-right: 6px;
 }
-/* line 3444, style.scss */
+/* line 3400, style.scss */
 .gender-select .gm:checked + label:after, .gender-select .gf:checked + label:after {
   position: absolute;
   width: 26px;
@@ -4277,68 +4232,68 @@ a:hover, .pseudolink:hover {
   background-position: left bottom;
   background-repeat: no-repeat;
 }
-/* line 3460, style.scss */
+/* line 3416, style.scss */
 .gender-select.adult .gm:checked + label:after {
   background-image: url(../i/male.png);
 }
-/* line 3467, style.scss */
+/* line 3423, style.scss */
 .gender-select.adult .gf:checked + label:after {
   background-image: url(../i/female.png);
 }
-/* line 3477, style.scss */
+/* line 3433, style.scss */
 .gender-select.child .gm:checked + label:after {
   background-image: url(../i/yellowchild.png);
 }
-/* line 3484, style.scss */
+/* line 3440, style.scss */
 .gender-select.child .gf:checked + label:after {
   background-image: url(../i/yellowchild.png);
 }
-/* line 3494, style.scss */
+/* line 3450, style.scss */
 .gender-select.baby .gm:checked + label:after {
   background-image: url(../i/viobaby.png);
 }
-/* line 3501, style.scss */
+/* line 3457, style.scss */
 .gender-select.baby .gf:checked + label:after {
   background-image: url(../i/viobaby.png);
 }
 
-/* line 3509, style.scss */
+/* line 3465, style.scss */
 .flag {
   margin-right: 15px;
 }
-/* line 3511, style.scss */
+/* line 3467, style.scss */
 .flag.country-code-flag {
   margin-right: 5px;
 }
-/* line 3514, style.scss */
+/* line 3470, style.scss */
 .flag img {
   border: solid 1px #cccccc;
   display: inline-block;
   vertical-align: -2px;
 }
 
-/* line 3521, style.scss */
+/* line 3477, style.scss */
 .country-code-option {
   margin-left: 5px;
   color: #666666;
 }
 
-/* line 3526, style.scss */
+/* line 3482, style.scss */
 .w135 {
   width: 135px;
 }
 
-/* line 3530, style.scss */
+/* line 3486, style.scss */
 .passport-series {
   width: 55px;
 }
 
-/* line 3535, style.scss */
+/* line 3491, style.scss */
 .labels-on-top p {
   margin-bottom: 5px;
 }
 
-/* line 3541, style.scss */
+/* line 3497, style.scss */
 .passenger .sideline {
   position: absolute;
   top: 15px;
@@ -4350,13 +4305,13 @@ a:hover, .pseudolink:hover {
   margin-top: 0;
 }
 
-/* line 3553, style.scss */
+/* line 3509, style.scss */
 .pseudolink.qbubble {
   color: #85b908;
   margin-top: 5px;
   margin-left: 24px;
 }
-/* line 3560, style.scss */
+/* line 3516, style.scss */
 .pseudolink.qbubble:before {
   content: url(../i/qbubble.png);
   position: absolute;
@@ -4364,21 +4319,21 @@ a:hover, .pseudolink:hover {
   left: -24px;
 }
 
-/* line 3568, style.scss */
+/* line 3524, style.scss */
 .serv-title {
   margin-bottom: 25px;
   font-weight: normal;
   text-align: center;
 }
 
-/* line 3574, style.scss */
+/* line 3530, style.scss */
 .services-input {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
   margin: 0 -2px;
 }
-/* line 3579, style.scss */
+/* line 3535, style.scss */
 .services-input > div {
   -webkit-flex: 0 1 33.3%;
   -ms-flex: 0 1 33.3%;
@@ -4403,18 +4358,18 @@ a:hover, .pseudolink:hover {
   -ms-flex-align: stretch;
   align-items: stretch;
 }
-/* line 3604, style.scss */
+/* line 3560, style.scss */
 .services-input > div > input {
   position: absolute;
   top: -0.5em;
   left: 50%;
   margin-left: -0.5em;
 }
-/* line 3609, style.scss */
+/* line 3565, style.scss */
 .services-input > div > input:checked + label {
   background: #dff6ff;
 }
-/* line 3613, style.scss */
+/* line 3569, style.scss */
 .services-input > div > label {
   border: solid 1px #058fc7;
   display: block;
@@ -4422,65 +4377,65 @@ a:hover, .pseudolink:hover {
   text-align: center;
   padding: 10px 4px;
 }
-/* line 3621, style.scss */
+/* line 3577, style.scss */
 .services-input > div > label > div + div {
   margin-top: 20px;
 }
 
-/* line 3629, style.scss */
+/* line 3585, style.scss */
 .tarp {
   font-size: 22px;
 }
 
-/* line 3633, style.scss */
+/* line 3589, style.scss */
 .tac {
   text-align: center;
 }
 
-/* line 3637, style.scss */
+/* line 3593, style.scss */
 .fwn {
   font-weight: normal;
 }
 
-/* line 3641, style.scss */
+/* line 3597, style.scss */
 .fwb {
   font-weight: bold;
 }
 
-/* line 3646, style.scss */
+/* line 3602, style.scss */
 .payments {
   margin-top: 30px;
 }
-/* line 3648, style.scss */
+/* line 3604, style.scss */
 .payments input {
   position: absolute;
   top: -0.5em;
   left: 50%;
   margin-left: -0.5em;
 }
-/* line 3654, style.scss */
+/* line 3610, style.scss */
 .payments label {
   margin-top: 30px;
   display: block;
 }
 
-/* line 3660, style.scss */
+/* line 3616, style.scss */
 .finalprice {
   font-size: 34px;
   white-space: nowrap;
 }
 
-/* line 3665, style.scss */
+/* line 3621, style.scss */
 .fp {
   padding: 0 50px;
 }
 
-/* line 3669, style.scss */
+/* line 3625, style.scss */
 .press-to-continue {
   margin: 20px 0;
 }
 
-/* line 3674, style.scss */
+/* line 3630, style.scss */
 .plh + .placeholder {
   pointer-events: none;
   position: absolute;
@@ -4490,126 +4445,126 @@ a:hover, .pseudolink:hover {
   top: 50%;
   margin-top: -0.5em;
 }
-/* line 3684, style.scss */
+/* line 3640, style.scss */
 .plh:focus + .placeholder {
   display: none;
 }
 
-/* line 3690, style.scss */
+/* line 3646, style.scss */
 .wsn {
   white-space: nowrap;
 }
 
-/* line 3694, style.scss */
+/* line 3650, style.scss */
 .tar {
   text-align: right;
 }
 
-/* line 3698, style.scss */
+/* line 3654, style.scss */
 .f {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
 
-/* line 3704, style.scss */
+/* line 3660, style.scss */
 .hcenter {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-/* line 3710, style.scss */
+/* line 3666, style.scss */
 .viol {
   color: #113483;
 }
 
-/* line 3714, style.scss */
+/* line 3670, style.scss */
 #ingos-logo-large {
   margin: -6px 12px 0 0;
 }
 
-/* line 3718, style.scss */
+/* line 3674, style.scss */
 #ingos-advantages {
   font-size: 12px;
   margin: 20px 0;
 }
-/* line 3721, style.scss */
+/* line 3677, style.scss */
 #ingos-advantages img {
   margin-right: 8px;
 }
-/* line 3725, style.scss */
+/* line 3681, style.scss */
 #ingos-advantages > div + div {
   padding-left: 15px;
 }
 
-/* line 3731, style.scss */
+/* line 3687, style.scss */
 .rounded5 {
   border-radius: 5px;
 }
 
-/* line 3735, style.scss */
+/* line 3691, style.scss */
 .ins-variant {
   margin: 10px 0;
   border: solid 1px #b7b7b7;
   background: #ffffff;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-/* line 3741, style.scss */
+/* line 3697, style.scss */
 .ins-variant .separator {
   margin: 0 1px;
 }
-/* line 3745, style.scss */
+/* line 3701, style.scss */
 .ins-variant .blue-button {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
-/* line 3750, style.scss */
+/* line 3706, style.scss */
 .ins-var-top {
   padding: 5px;
 }
 
-/* line 3753, style.scss */
+/* line 3709, style.scss */
 .ins-var-bottom {
   padding: 5px;
   background: #f0f0f0;
   border-radius: 0 0 5px 5px;
 }
 
-/* line 3759, style.scss */
+/* line 3715, style.scss */
 .ins-options {
   padding-left: 15px;
 }
 
-/* line 3763, style.scss */
+/* line 3719, style.scss */
 .ins-hint {
   padding-right: 15px;
 }
 
-/* line 3767, style.scss */
+/* line 3723, style.scss */
 .payment-size {
   padding-bottom: 5px;
 }
 
-/* line 3771, style.scss */
+/* line 3727, style.scss */
 .ins-by-passenger {
   margin: 15px 0;
 }
-/* line 3773, style.scss */
+/* line 3729, style.scss */
 .ins-by-passenger .separator {
   margin: 0 10px;
 }
-/* line 3776, style.scss */
+/* line 3732, style.scss */
 .ins-by-passenger input[type=checkbox] {
   margin-top: 0;
 }
-/* line 3779, style.scss */
+/* line 3735, style.scss */
 .ins-by-passenger input + .flex1 {
   margin: -0.2em 0 5px 3px;
 }
 
-/* line 3784, style.scss */
+/* line 3740, style.scss */
 .color-bar {
   position: absolute;
   top: 0;
@@ -4618,26 +4573,26 @@ a:hover, .pseudolink:hover {
   width: 7px;
 }
 
-/* line 3792, style.scss */
+/* line 3748, style.scss */
 .flat-ins {
   padding: 20px 0;
   margin: 20px 0;
   border-top: solid 1px #a2a2a2;
   border-bottom: solid 1px #a2a2a2;
 }
-/* line 3797, style.scss */
+/* line 3753, style.scss */
 .flat-ins .rounded5 {
   margin-top: 10px;
   border: solid 1px #b7b7b7;
   background: #ffffff;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-/* line 3804, style.scss */
+/* line 3760, style.scss */
 .flat-ins .separator {
   margin: 0 5px;
 }
 
-/* line 3809, style.scss */
+/* line 3765, style.scss */
 .sales-hit {
   background: #ff6c00 url(../i/orang.png) center center no-repeat;
   border-radius: 5px 0 0 5px;
@@ -4663,17 +4618,17 @@ a:hover, .pseudolink:hover {
   align-items: center;
   width: 30px;
 }
-/* line 3833, style.scss */
+/* line 3789, style.scss */
 .sales-hit > div {
   transform: rotate(-90deg);
   white-space: nowrap;
 }
-/* line 3837, style.scss */
+/* line 3793, style.scss */
 .sales-hit + div, .sales-hit + div + div {
   padding: 5px 5px 5px 15px;
 }
 
-/* line 3842, style.scss */
+/* line 3798, style.scss */
 .details-popup {
   margin-top: 5px;
   background: #fff;
@@ -4684,7 +4639,7 @@ a:hover, .pseudolink:hover {
   z-index: 40;
   padding: 4px;
 }
-/* line 3852, style.scss */
+/* line 3808, style.scss */
 .details-popup .close-dp {
   width: 16px;
   height: 16px;
@@ -4695,40 +4650,40 @@ a:hover, .pseudolink:hover {
   cursor: pointer;
   z-index: 2;
 }
-/* line 3863, style.scss */
+/* line 3819, style.scss */
 .details-popup .inner {
   padding: 20px;
 }
-/* line 3867, style.scss */
+/* line 3823, style.scss */
 .details-popup.ness {
   margin-top: -90px;
 }
-/* line 3871, style.scss */
+/* line 3827, style.scss */
 .details-popup.notebook {
   border-width: 4px;
   border-radius: 5px;
   padding: 10px;
 }
-/* line 3875, style.scss */
+/* line 3831, style.scss */
 .details-popup.notebook .inner {
   padding: 0px 0 20px 0;
 }
-/* line 3878, style.scss */
+/* line 3834, style.scss */
 .details-popup.notebook .close-dp {
   right: 10px;
   top: 10px;
 }
-/* line 3883, style.scss */
+/* line 3839, style.scss */
 .details-popup.notebook .gender-select {
   padding-right: 5px;
 }
-/* line 3888, style.scss */
+/* line 3844, style.scss */
 .details-popup .popup-title {
   color: #058fc7;
   padding-bottom: 10px;
 }
 
-/* line 3894, style.scss */
+/* line 3850, style.scss */
 .must-be-med {
   position: absolute;
   left: -1px;
@@ -4759,137 +4714,137 @@ a:hover, .pseudolink:hover {
   align-items: center;
 }
 
-/* line 3925, style.scss */
+/* line 3881, style.scss */
 .inputshadow input[type="text"].cellular {
   padding-left: 50px;
 }
 
-/* line 3928, style.scss */
+/* line 3884, style.scss */
 .selectric-countrycode {
   position: absolute;
   left: 0;
   top: 50%;
   margin-top: -0.9em;
 }
-/* line 3933, style.scss */
+/* line 3889, style.scss */
 .selectric-countrycode .selectric {
   border: none;
   background: none;
 }
-/* line 3937, style.scss */
+/* line 3893, style.scss */
 .selectric-countrycode .selectric .label {
   margin-right: 15px;
 }
-/* line 3939, style.scss */
+/* line 3895, style.scss */
 .selectric-countrycode .selectric .label .flag {
   margin: 3px;
 }
-/* line 3943, style.scss */
+/* line 3899, style.scss */
 .selectric-countrycode .selectric .button {
   width: 15px;
 }
-/* line 3945, style.scss */
+/* line 3901, style.scss */
 .selectric-countrycode .selectric .button:after {
   border-width: 4px;
 }
 
-/* line 3952, style.scss */
+/* line 3908, style.scss */
 .passp-table {
   margin-top: 10px;
   font-size: 12px;
   width: 100%;
 }
-/* line 3957, style.scss */
+/* line 3913, style.scss */
 .passp-table thead th {
   font-weight: normal;
   color: #777777;
   vertical-align: middle;
 }
-/* line 3964, style.scss */
+/* line 3920, style.scss */
 .passp-table td {
   text-align: center;
 }
 
-/* line 3968, style.scss */
+/* line 3924, style.scss */
 .passenger-edit-links {
   width: 150px;
   padding-left: 10px;
 }
-/* line 3971, style.scss */
+/* line 3927, style.scss */
 .passenger-edit-links .button-grey {
   display: block;
   text-align: center;
 }
 
-/* line 3977, style.scss */
+/* line 3933, style.scss */
 .no-display {
   display: none;
 }
 
-/* line 3981, style.scss */
+/* line 3937, style.scss */
 .cards-logos {
   width: 300px;
   margin: 20px auto 0;
 }
 
-/* line 3986, style.scss */
+/* line 3942, style.scss */
 .mt35 {
   margin-top: 35px;
 }
 
-/* line 3990, style.scss */
+/* line 3946, style.scss */
 .mt30 {
   margin-top: 30px;
 }
 
-/* line 3994, style.scss */
+/* line 3950, style.scss */
 .mt25 {
   margin-top: 25px;
 }
 
-/* line 3998, style.scss */
+/* line 3954, style.scss */
 .mt20 {
   margin-top: 20px;
 }
 
-/* line 4002, style.scss */
+/* line 3958, style.scss */
 .mt15 {
   margin-top: 15px;
 }
 
-/* line 4006, style.scss */
+/* line 3962, style.scss */
 .mt10 {
   margin-top: 10px;
 }
 
-/* line 4010, style.scss */
+/* line 3966, style.scss */
 .mt5 {
   margin-top: 5px;
 }
 
-/* line 4014, style.scss */
+/* line 3970, style.scss */
 .ml5 {
   margin-left: 5px;
 }
 
-/* line 4018, style.scss */
+/* line 3974, style.scss */
 .f21 {
   font-size: 21px;
 }
 
-/* line 4022, style.scss */
+/* line 3978, style.scss */
 .h18.blue-button[type="button"] {
   padding-top: 4px;
   padding-bottom: 6px;
 }
 
-/* line 4028, style.scss */
+/* line 3984, style.scss */
 .ui-autocomplete.ui-widget-content {
   border: solid 1px #058fc7;
   border-radius: 2px;
   background: #ffffff;
 }
-/* line 4033, style.scss */
+/* line 3989, style.scss */
 .ui-autocomplete.ui-widget-content .ui-state-focus {
   font-weight: normal;
   color: inherit;
@@ -4897,15 +4852,15 @@ a:hover, .pseudolink:hover {
   border: none;
   margin: 0;
 }
-/* line 4042, style.scss */
+/* line 3998, style.scss */
 .ui-autocomplete.ui-menu .ui-menu-item {
   padding: 8px;
 }
-/* line 4046, style.scss */
+/* line 4002, style.scss */
 .ui-autocomplete.ui-menu .ui-menu-item {
   list-style: none;
 }
-/* line 4048, style.scss */
+/* line 4004, style.scss */
 .ui-autocomplete.ui-menu .ui-menu-item:nth-child(2n+1):not(.ui-state-focus) {
   background: #f4f4f4;
 }
@@ -33628,18 +33583,121 @@ a:hover, .pseudolink:hover {
   fill: #058fc7;
 }
 
-/* line 4060, style.scss */
+/* line 1, bron.scss */
+.input-pholder {
+  position: relative;
+  height: 40px;
+  border: solid 1px #058fc7;
+  border-radius: 2px;
+  padding: 5px 5px 5px 5px;
+}
+/* line 9, bron.scss */
+.input-pholder input[type=text], .input-pholder input[type=number], .input-pholder select[type=text], .input-pholder select[type=number] {
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none !important;
+}
+/* line 16, bron.scss */
+.input-pholder input:focus + .pholder, .input-pholder select:focus + .pholder {
+  top: 20%;
+  font-size: 10px;
+  color: #929292;
+}
+/* line 24, bron.scss */
+.input-pholder select {
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none !important;
+  -webkit-appearance: none;
+  height: auto;
+  -webkit-flex: 1;
+  flex: 1;
+}
+/* line 34, bron.scss */
+.input-pholder.mobile-select {
+  padding-right: 30px;
+}
+/* line 37, bron.scss */
+.input-pholder.mobile-select:after {
+  right: 9px;
+}
+/* line 42, bron.scss */
+.input-pholder.not-empty .pholder {
+  top: 20%;
+  font-size: 10px;
+  color: #b4b4b4;
+}
+/* line 48, bron.scss */
+.input-pholder .pholder {
+  color: #707070;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -moz-transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out;
+  -o-transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out;
+  -webkit-transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out;
+  transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+/* line 59, bron.scss */
+.selectric.countrycode {
+  background: none;
+  border: none;
+  height: auto;
+  -webkit-appearance: none;
+  outline: none !important;
+}
+
+/* line 67, bron.scss */
+label:focus {
+  background: #ff0000;
+}
+
+/* line 72, bron.scss */
+.input-pholder:not(.not-empty) .mobile-select {
+  display: none;
+}
+
+/* line 78, bron.scss */
+.passenger-pic {
+  -webkit-flex: 0 0 16px;
+  flex: 0 0 16px;
+}
+
+/* line 84, bron.scss */
+.border-split > div + div {
+  border-top: solid 1px #c6c6c6;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+/* line 93, bron.scss */
+.border-split.bs15 > div + div {
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+/* line 103, bron.scss */
+.aeroexpress-timetable {
+  max-height: 150px;
+  overflow: auto;
+}
+
+/* line 4017, style.scss */
 #buter {
   display: none;
 }
 
-/* line 4064, style.scss */
+/* line 4021, style.scss */
 .youremail {
   margin-right: 3px;
   padding: 0 10px;
 }
 
-/* line 4069, style.scss */
+/* line 4026, style.scss */
 #alternate-popup {
   position: absolute;
   border: solid 1px #0480b4;
@@ -33647,26 +33705,26 @@ a:hover, .pseudolink:hover {
   z-index: 1000;
   border-radius: 2px;
 }
-/* line 4076, style.scss */
+/* line 4033, style.scss */
 #alternate-popup > ul > li {
   padding: 10px 20px;
 }
-/* line 4083, style.scss */
+/* line 4040, style.scss */
 #alternate-popup > ul > li.bysides:nth-child(2n) {
   background: rgba(174, 174, 174, 0.3);
 }
-/* line 4089, style.scss */
+/* line 4046, style.scss */
 #alternate-popup > ul > li > div:not(:last-child) {
   padding-right: 20px;
 }
 
-/* line 4097, style.scss */
+/* line 4054, style.scss */
 .vylpril {
   display: inline-block;
   width: 3.8em;
 }
 
-/* line 4102, style.scss */
+/* line 4059, style.scss */
 .social {
   width: 22px;
   height: 22px;
@@ -33674,7 +33732,7 @@ a:hover, .pseudolink:hover {
   background: #bdbdbd;
   border-radius: 50%;
 }
-/* line 4108, style.scss */
+/* line 4065, style.scss */
 .social:hover {
   color: white;
   background: #058fc7;
@@ -35483,19 +35541,12 @@ a:hover, .pseudolink:hover {
     z-index: 100;
   }
 
-  /* line 308, phone-bron.scss */
-  .border-split > div + div {
-    border-top: solid 1px #c6c6c6;
-    margin-top: 5px;
-    padding-top: 5px;
-  }
-
-  /* line 319, phone-bron.scss */
+  /* line 307, phone-bron.scss */
   .payment-image {
     height: 40px;
   }
 
-  /* line 323, phone-bron.scss */
+  /* line 311, phone-bron.scss */
   .ss-fixed-final-price {
     position: fixed;
     bottom: 0;
@@ -35506,55 +35557,73 @@ a:hover, .pseudolink:hover {
     z-index: 20;
   }
 
-  /* line 333, phone-bron.scss */
+  /* line 321, phone-bron.scss */
   body.bron {
     padding-bottom: 51px;
   }
-  /* line 334, phone-bron.scss */
+  /* line 322, phone-bron.scss */
   body.bron #totop {
     display: none !important;
   }
 
-  /* line 340, phone-bron.scss */
+  /* line 328, phone-bron.scss */
   #order-form {
     margin-top: 10px;
   }
+
+  /* line 332, phone-bron.scss */
+  .mobile-select {
+    padding-right: 20px;
+  }
+  /* line 334, phone-bron.scss */
+  .mobile-select:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: 4px;
+    background: url(../i/arrow-down.png);
+    width: 12px;
+    height: 8px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-top: 1px;
+  }
 }
 @media screen and (min-width: 800px) {
-  /* line 4125, style.scss */
+  /* line 4082, style.scss */
   .mobile {
     display: none;
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 4131, style.scss */
+  /* line 4088, style.scss */
   .drop-controller {
     font-size: 13px;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 4138, style.scss */
+  /* line 4095, style.scss */
   #time .bysides.vtop.mt30 {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 4140, style.scss */
+  /* line 4097, style.scss */
   #time .bysides.vtop.mt30 > div {
     min-width: 90px;
   }
 }
 @media screen and (min-width: 401px) and (max-width: 500px) {
-  /* line 4149, style.scss */
+  /* line 4106, style.scss */
   #time .bysides.vtop.mt30 {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 4151, style.scss */
+  /* line 4108, style.scss */
   #time .bysides.vtop.mt30 > div {
     min-width: 120px;
   }
 }
-/* line 4158, style.scss */
+/* line 4115, style.scss */
 .lh1_6 {
   line-height: 1.6;
 }

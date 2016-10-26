@@ -331,38 +331,9 @@
         </ul>
       </div>
 
-      <div id="insurance">
-        <!--div class="ws-nd">
-          <div class="green-button reveal-ins {{reveal ? 'revealed' : ''}}" ng-click="reveal=!reveal">Добавить страховку</div>
-        </div-->
-        <div class="ss-nd">
-          <div class="f hcenter vtop viol becomecol">
-            <div class="tar"><img id="ingos-logo-large" src="i/ingols-large.png"></div>
-            <div class="">Успешно работаем с 1947 года.<br>
-              Собственные средства<br>
-              Ингосстраха 34,11 млрд. рублей<br><br>
-              <span style="font-size: 15px;">НАМ ЕСТЬ, ЧЕМ ПЛАТИТЬ</span></div>
-          </div>
-          <div class="bysides becomecol viol" id="ingos-advantages">
-            <div class="bysides">
-              <div><img src="i/24h.png"></div>
-              <div class="flex1">Круглосуточная русскоговорящая служба поддержки</div>
-            </div>
-            <div class="bysides">
-              <div><img src="i/docs.png"></div>
-              <div class="flex1">Доставка полиса на&nbsp;email</div>
-            </div>
-            <div class="bysides">
-              <div><img src="i/globe.png"></div>
-              <div class="flex1">Принимается посольствами всех стран (для оформления виз)</div>
-            </div>
-          </div>
-          <div class="viol smaller2">Наши офисы располагаются в 310 населённых пунктах. МЫ ВСЕГДА РЯДОМ С ВАМИ</div>
-        </div>
-        <div id="insurance-form" ng-include="'insurance.html'"></div>
-      </div>
 
-      <div id="aeroexpress">
+
+      <div id="aeroexpress" class="mt20">
         <!--div class="bysides">
           <div id="aeroexpress-title">
             <h2>В аэропорт без пробок и очередей</h2>
@@ -374,7 +345,7 @@
           <div id="aeroexpress-logo"><img src="i/aeroexpress.png"></div>
         </div>
 
-        <div class="mt20 f hcen vcen space10">
+        <div class="mt10 f hcen vcen space10">
           <div class="f vcen space8">
             <img src="i/greytrain.png">
             <div class="fz16">Белорусский</div>
@@ -395,19 +366,20 @@
         <div class="mt10 revealer {{showAero ? 'shown' : ''}}" ng-click="showAero=!showAero">
           <div class="blue fwb">Расписание аэроэкспрессов</div>
         </div>
-        <div class="reveal-what mt10">
+        <div class="reveal-what ebebeb">
+          <div class="p10">
           <div class="f d tac blue">
             <div class="flex1">
               <div class="fz16">Белорусский</div>
               <div>отправление</div>
             </div>
-            <div class="fa fa-chevron-right white"></div>
+            <div class="fa fa-chevron-right" style="color:#ebebeb;"></div>
             <div class="flex1">
               <div class="fz16">Шереметьево</div>
               <div>прибытие</div>
             </div>
           </div>
-          <div class="insurance-block mt10 mb20">
+          <div class="mt10 mb20 aeroexpress-timetable">
             <div class="border-split">
               <div class="f d tac">
                 <div class="flex1">05:30</div>
@@ -429,507 +401,263 @@
                 <div class="fa fa-chevron-right lightgrey"></div>
                 <div class="flex1">05:30</div>
               </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="aeroexpress-ticket">
-          <div class="age">Пассажиры от&nbsp;5&nbsp;лет</div>
-          <div>
-            <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-          </div>
-          <div class="aeroexpress-price">470 <span class="rub">Р</span></div>
-          <div class="dobuy">
-            <input type="button" value="Добавить к покупке" class="green-button">
           </div>
         </div>
 
-        <div class="aeroexpress-ticket">
-          <div class="age">Дети до&nbsp;5&nbsp;лет</div>
-          <div>
-            <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+
+        <div class="aeroexpress-ticket mt10 p10">
+          <div class="tac">Пассажиры от&nbsp;5&nbsp;лет</div>
+          <div class="fwb fz20 tac mt10">470 <span class="rub">Р</span></div>
+          <div class="f d vcen mt10 space20">
+            <div>
+              <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+            </div>
+
+              <input type="button" value="Добавить к покупке" class="green-button aib flex1">
+
           </div>
-          <div class="aeroexpress-price">0 <span class="rub">Р</span></div>
-          <div class="dobuy">
-            <input type="button" value="Добавлено к покупке" class="white-button">
+        </div>
+
+        <div class="aeroexpress-ticket mt10 p10">
+          <div class="tac">Пассажиры до&nbsp;5&nbsp;лет</div>
+          <div class="fwb fz20 tac mt10">0 <span class="rub">Р</span></div>
+          <div class="f d vcen mt10 space20">
+            <div>
+              <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+            </div>
+              <input type="button" value="Добавлено к покупке" class="white-button aib flex1">
           </div>
         </div>
       </div>
     </div>
 
-    <div id="ocr" class="inputshadow">
-      <div id="passengers-data" class="inputshadow">
+    <div id="ocr">
+      <div id="passengers-data">
         <div class="col-title">Бронирование рейса</div>
+
         <div class="form-group">
-          <div class="bysides becomecol withmargin">
-            <div class="buyer blue ttu">Покупатель</div>
-            <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Ваше имя"></div>
-          </div>
+          <div class="ttu blue">Покупатель</div>
 
-          <div class="bysides becomecol withmargin">
-            <div class="bysides w50">
-              <!--div class="flex1 enter-cellular">Введите номер мобильного телефона</div>
-              <div><a href="/" class="blue-button">OK</a></div-->
-              <input type="text" class="flex1 cellular" placeholder="Номер мобильного телефона" value="+7">
-              <select class="selectric countrycode">
-                <option value="+7" data-flag="i/flag.png">Россия</option>
-                <option value="+90" data-flag="i/greece.png">Грузия</option>
-                <option value="+383" data-flag="i/flag.png">Россия</option>
-                <option value="+900" data-flag="i/greece.png">Украина</option>
-                <option value="+1" data-flag="i/flag.png">США</option>
-                <option value="+800" data-flag="i/greece.png">Зимбабве</option>
-              </select>
-            </div>
-            <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Ваш email"></div>
-          </div>
+          <label class="f vbot input-pholder mt10" ng-class="buyer ? 'not-empty' : ''">
+            <input type="text" name="fio" class="flex1 fz15" ng-model="buyer">
+            <span class="pholder">Ваше имя</span>
+          </label>
 
-          <div id="passengers-input">
-            <div class="pass-border" ng-click="show=!show" ng-init="show=false;">
-              <div>1 пасс., эконом</div>
+          <label class="f vbot input-pholder mt10 not-empty">
+            <div class="f ss-space10 d flex1 ss-rr ws-rr">
+              <input type="text" class="flex1" value="+7">
+              <div class="mobile-select">
+                <select class="selectric countrycode">
+                  <option value="+7" data-flag="i/flag.png">Россия</option>
+                  <option value="+90" data-flag="i/greece.png">Грузия</option>
+                  <option value="+383" data-flag="i/flag.png">Россия</option>
+                  <option value="+900" data-flag="i/greece.png">Украина</option>
+                  <option value="+1" data-flag="i/flag.png">США</option>
+                  <option value="+800" data-flag="i/greece.png">Зимбабве</option>
+                </select>
+              </div>
             </div>
-            <div class="drop-down"></div>
-            <div id="passengers-popup" ng-show="show">
-              <div class="adult">
-                <div class="bysides">
-                  <div>Взрослые</div>
-                  <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-                </div>
+            <span class="pholder">Мобильный телефон</span>
+          </label>
+
+          <label ng-if="true" class="f vbot input-pholder mt10" ng-class="m ? 'not-empty' : ''">
+            <input type="text" name="fio" class="flex1 fz15" ng-model="m">
+            <span class="pholder">Ваш email</span>
+          </label>
+
+          <div class="mt10 ws-nd revealer {{showPass ? 'shown' : ''}}" ng-click="showPass=!showPass">
+            <div class="f d vcen">
+              <div class="flex1 blue">
+                1 пасс., эконом
               </div>
-              <div class="child" ng-if="true" ng-init="children=[13,14]; co=children.length;">
-                <div class="bysides">
-                  <div>Дети до 14 лет</div>
-                  <div class="number-with-spinners"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></div>
-                </div>
-                <ul ng-show="children.length>0">
-                  <li ng-repeat="child in children track by $index">
-                    <div class="bysides">
-                      <div>Возраст {{$index+1}}-го ребенка</div>
-                      <div><div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=child;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div></div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="baby">
-                <div class="bysides">
-                  <div class="baby-title">Дети до 2 лет<br>
-                    <span class="grey">без места</span>
+            </div>
+          </div>
+          <div class="reveal-what ebebeb">
+            <div class="p10">
+              <div class="border-split bs15">
+                <div class="f d vcen space10">
+                  <div class="tac passenger-pic"><img src="i/adult.png"></div>
+                  <div class="flex1">Взрослые</div>
+                  <div>
+                    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                   </div>
-                  <div class="number-with-spinners"><span class="minus" ng-click="ba=ba-1;">−</span><input type="number" ng-model="ba" ng-init="ba=1;" step="1" min="1"><span class="plus" ng-click="ba=ba+1;">+</span></div>
-                </div>
-              </div>
-              <div class="bysides business-class">
-                <div class="">
-                  <input type="checkbox" id="busclass"> <label for="busclass">Бизнес-класс</label>
                 </div>
                 <div>
-                  <input type="button" value="Закрыть" class="blue-button" ng-click="show=false;">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!--div class="bysides withmargin stretch becomewrap">
-            <div>
-              <div class="inpamount adult bysides">
-                <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-              </div>
-              <div class="tma"><p class="blue">Взрослые</p> старше 12 лет</div>
-            </div>
-            <div>
-              <div class="inpamount child bysides">
-                <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-              </div>
-              <div class="tma"><p class="blue">Дети</p> 2-12 лет</div>
-            </div>
-            <div>
-              <div class="inpamount baby bysides">
-                <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-              </div>
-              <div class="tma"><p class="blue">Дети без места</p> до 2 лет</div>
-            </div>
-            <div class="bybounds flex1">
-              <div class="bysides"><input type="text" class="flex1" placeholder="Промокод" size="4"></div>
-              <div class="tma tar"><span class="ttu pseudolink notebook"><span>Записная книжка</span></span></div>
-            </div>
-          </div-->
-          <div class="details-popup notebook" ng-show="false">
-            <div class="close-dp"></div>
-            <div class="inner">
-              <div class="popup-title ttu">Записная книжка</div>
-              <p class="larger tac">Для покупателя с email: ceo@biletideshevo.ru данные пассажиров отсутствуют</p>
-              <p class="blue tac larger">Произведите бронирование авиабилетов,
-                введя данные пассажиров для.
-                Для следующего бронирования данные пассажиров
-                будут сохранены автоматически</p>
-            </div>
-
-            <div class="inner">
-              <div class="popup-title ttu">Записная книжка</div>
-              <div class="form-group passenger">
-                <div class="bysides withmargin">
-                  <div class="ttu">Взрослый</div>
-                  <div class="bysides">
-                    <span class="selectric-label">Документ:</span>
-                    <select class="selectric doctype">
-                      <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
-                      <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
-                      <option value="Passport is not Russia">Passport is not Russia</option>
-                      <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="bysides withmargin vtop">
-                  <div class="gender-select adult">
-                    <p>Пол</p>
-                    <p><input class="gm" autocomplete="off" type="radio" name="gender0" value="1" id="genm0" checked ><label for="genm0">М</label></p>
-                    <p><input class="gf" autocomplete="off" type="radio" name="gender0" value="1" id="genf0" ><label for="genf0">Ж</label></p>
-                  </div>
-                  <div class="flex1 form-group">
-                    <div class="bysides withmargin px2">
-                      <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
-                      <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
+                  <div class="f d vcen space10">
+                    <div class="tac passenger-pic"><img src="i/child.png"></div>
+                    <div class="flex1">Дети до 14 лет</div>
+                    <div>
+                      <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                     </div>
-                    <div class="bysides withmargin">
-                      <div class="ttu"></div>
-                      <div class="bysides">
-                        <span class="selectric-label">Гражданство</span>
-                        <select class="selectric citizenship">
-                          <option value="Georgia" data-flag="i/flag.png">Албания</option>
-                          <option value="Georgia" data-flag="i/greece.png">Грузия</option>
-                          <option value="Georgia" data-flag="i/flag.png">Россия</option>
-                          <option value="Georgia" data-flag="i/greece.png">Украина</option>
-                          <option value="Georgia" data-flag="i/flag.png">США</option>
-                          <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
-                        </select>
+                  </div>
+                  <div class="f d vcen space10 mt10">
+                    <div class="tac passenger-pic"></div>
+                      <div class="flex1">Возраст 1-го ребенка</div>
+                      <div>
+                        <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                       </div>
+                  </div>
+                  <div class="f d vcen space10 mt10">
+                    <div class="tac passenger-pic"></div>
+                    <div class="flex1">Возраст 2-го ребенка</div>
+                    <div>
+                      <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                     </div>
                   </div>
                 </div>
-
-                <div class="bysides withmargin px2 vtop labels-on-top">
-                  <div class="w135">
-                    <p>Дата рождения</p>
-                    <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-                  </div>
+                <div class="f d vcen space10">
+                  <div class="tac passenger-pic"><img src="i/baby.png"></div>
                   <div class="flex1">
-                    <p>Серия и номер паспорта</p>
-                    <div class="bysides withmargin px2 vtop">
-                      <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
-                      <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
-                    </div>
-                  </div>
-                  <div class="w135">
-                    <p>Срок действия</p>
-                    <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tar"><input type="button" value="Сохранить данные пассажира" class="blue-button ibm"></div>
-
-            <div class="inner">
-              <div class="popup-title ttu">Записная книжка</div>
-              <div class="bysides stretch">
-                <div class="flex1 bybounds">
-                  <div class="ttu">Вениамин Константинопольский</div>
-                  <div>
-                    <table class="passp-table">
-                      <thead>
-                      <tr>
-                        <th>Дата рождения</th>
-                        <th>Серия и номер
-                          загранпаспорта</th>
-                        <th>Срок действия</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr class="larger fwb">
-                        <td>21.12.1978</td>
-                        <td>77&nbsp;&nbsp;123456</td>
-                        <td>21.12.2017</td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="passenger-edit-links bybounds">
-                  <div>
-                    <a href="/" class="blue-button aib multiline wsn"><div class="">Добавить данные</div></a>
+                    Дети до 2 лет
+                    <div class="grey fz11">без места</div>
                   </div>
                   <div>
-                    <a href="/" class="button-grey aib multiline"><div class="">Редактировать</div></a>
+                    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="form-group passenger">
-          <div class="bysides withmargin becomecol">
-            <div class="ttu">Взрослый</div>
-            <div class="bysides becomecol">
-              <span class="selectric-label ss-mb5">Документ:</span>
-              <select class="selectric doctype">
-                <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
-                <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
-                <option value="Passport is not Russia">Passport is not Russia</option>
-                <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="bysides withmargin vtop becomecol">
-            <div class="gender-select adult">
-              <p>Пол</p>
-              <p><input class="gm" autocomplete="off" type="radio" name="gender1" value="1" id="genm1" checked ng-click="genderColor='42bcdf';" ng-init="genderColor='42bcdf';"><label for="genm1">М</label></p>
-              <p><input class="gf" autocomplete="off" type="radio" name="gender1" value="1" id="genf1" ng-click="genderColor='f66b27';" ><label for="genf1">Ж</label></p>
-            </div>
-            <div class="flex1 form-group">
-              <div class="bysides withmargin px2 becomecol">
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
-              </div>
-              <div class="bysides withmargin becomecol">
-                <div class="ttu ss-nd"></div>
-                <div class="bysides becomecol">
-                  <span class="selectric-label ss-mb5">Гражданство</span>
-                  <select class="selectric citizenship">
-                    <option value="Georgia" data-flag="i/flag.png">Албания</option>
-                    <option value="Georgia" data-flag="i/greece.png">Грузия</option>
-                    <option value="Georgia" data-flag="i/flag.png">Россия</option>
-                    <option value="Georgia" data-flag="i/greece.png">Украина</option>
-                    <option value="Georgia" data-flag="i/flag.png">США</option>
-                    <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
-                  </select>
+                <div>
+                  <label class="f d vcen space4">
+                    <input type="checkbox">
+                    <div class="flex1">Бизнес-класс</div>
+                  </label>
                 </div>
+
+              </div>
+              <div class="mt20 f">
+                <a class="cancel-button flex1 tac">Закрыть</a>
               </div>
             </div>
           </div>
 
-          <div class="bysides withmargin px2 vtop labels-on-top becomecol">
-            <div class="w135">
-              <p>Дата рождения</p>
-              <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-            </div>
-            <div class="flex1">
-              <p>Серия и номер паспорта</p>
-              <div class="bysides withmargin px2 vtop">
-                <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
-              </div>
-            </div>
-            <!--div class="w135">
-              <p>Срок действия</p>
-              <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-            </div-->
-          </div>
-
-          <div class="sideline" style="background: #{{genderColor}};"></div>
         </div>
 
-        <div class="form-group passenger">
-          <div class="bysides withmargin becomecol">
-            <div class="ttu blue">Ребенок</div>
-            <div class="bysides becomecol">
-              <span class="selectric-label ss-mb5">Документ:</span>
-              <select class="selectric doctype">
-                <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
-                <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
-                <option value="Passport is not Russia">Passport is not Russia</option>
-                <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
-              </select>
-            </div>
+        <div class="form-group">
+          <div class="f d vcen">
+            <div class="blue ttu">Пассажир 1</div>
+
           </div>
 
-          <div class="bysides withmargin vtop becomecol">
-            <div class="gender-select child">
-              <p>Пол</p>
-              <p><input class="gm" type="radio" name="gender2" value="1" id="genm2" checked><label for="genm2">М</label></p>
-              <p><input class="gf" type="radio" name="gender2" value="1" id="genf2"><label for="genf2">Ж</label></p>
-            </div>
-            <div class="flex1 form-group">
-              <div class="bysides withmargin px2 becomecol">
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
-              </div>
-              <div class="bysides withmargin becomecol">
-                <div class="ttu ss-nd"></div>
-                <div class="bysides becomecol">
-                  <span class="selectric-label ss-mb5">Гражданство</span>
-                  <select class="selectric citizenship">
-                    <option value="Georgia" data-flag="i/flag.png">Албания</option>
-                    <option value="Georgia" data-flag="i/greece.png">Грузия</option>
-                    <option value="Georgia" data-flag="i/flag.png">Россия</option>
-                    <option value="Georgia" data-flag="i/greece.png">Украина</option>
-                    <option value="Georgia" data-flag="i/flag.png">США</option>
-                    <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
-                  </select>
-                </div>
-              </div>
-            </div>
+          <div class="f d space2">
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+              <span class="pholder">Фамилия</span>
+            </label>
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+              <span class="pholder">Имя</span>
+            </label>
           </div>
 
-          <div class="bysides withmargin px2 vtop labels-on-top becomecol">
-            <div class="w135">
-              <p>Дата рождения</p>
-              <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-            </div>
-            <div class="flex1">
-              <p>Серия и номер паспорта</p>
-              <div class="bysides withmargin px2 vtop">
-                <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
+          <div class="f d space2">
+            <div ng-if="true" class="f vbot input-pholder not-empty">
+              <div class="f space8 vbot">
+                <label class="f space2"><input type="radio" ng-model="buyer" value="1"> <span>М</span></label>
+                <label class="f space2"><input type="radio" ng-model="buyer" value="2"> <span>Ж</span></label>
               </div>
+              <span class="pholder">Пол</span>
             </div>
-            <div class="w135">
-              <p>Срок действия</p>
-              <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-            </div>
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15 datepicker" readonly ng-model="buyer" size="5">
+              <span class="pholder">Дата рождения</span>
+            </label>
           </div>
 
-          <div class="sideline" style="background: yellow;"></div>
+          <label ng-if="true" class="f vbot input-pholder flex1 mt10 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+            <select class="selectric citizenship" ng-model="buyer">
+              <option></option>
+              <option value="Georgia" data-flag="i/flag.png">Албания</option>
+              <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+              <option value="Georgia" data-flag="i/flag.png">Россия</option>
+              <option value="Georgia" data-flag="i/greece.png">Украина</option>
+              <option value="Georgia" data-flag="i/flag.png">США</option>
+              <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+            </select>
+            <span class="pholder">Гражданство</span>
+          </label>
+
+          <label ng-if="true" class="f vbot input-pholder flex1 mt10 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+            <select class="selectric doctype" ng-model="buyer">
+              <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+              <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+              <option value="Passport is not Russia">Passport is not Russia</option>
+              <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+            </select>
+            <span class="pholder">Документ</span>
+          </label>
+
+          <div class="f d space2 mt10">
+            <label ng-if="true" class="f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+              <span class="pholder">Серия</span>
+            </label>
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+              <span class="pholder">Номер</span>
+            </label>
+          </div>
+
+          <label ng-if="true" class="f vbot input-pholder mt10" ng-class="buyer ? 'not-empty' : ''">
+            <input type="text" name="fio" class="flex1 fz15 datepicker" readonly ng-model="buyer" size="5">
+            <span class="pholder">Срок действия</span>
+          </label>
+
+
+          <div ng-include="'insurance.html'"></div>
         </div>
 
-
-        <div class="form-group passenger">
-          <div class="bysides withmargin becomecol">
-            <div class="ttu">Adult</div>
-            <div class="bysides becomecol">
-              <span class="selectric-label ss-mb5">Document:</span>
-              <select class="selectric doctype">
-                <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
-                <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
-                <option value="Passport is not Russia">Passport is not Russia</option>
-                <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="bysides withmargin vtop becomecol">
-            <div class="gender-select adult">
-              <p>Пол</p>
-              <p><input class="gm" type="radio" name="gender3" value="1" id="genm3" checked><label for="genm3">M</label></p>
-              <p><input class="gf" type="radio" name="gender3" value="1" id="genf3"><label for="genf3">F</label></p>
-            </div>
-            <div class="flex1 form-group">
-              <div class="bysides withmargin px2 becomecol">
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
-              </div>
-              <div class="bysides withmargin becomecol">
-                <div class="ttu ss-nd"></div>
-                <div class="bysides becomecol">
-                  <span class="selectric-label ss-mb5">Citizenship</span>
-                  <select class="selectric citizenship">
-                    <option value="Georgia" data-flag="i/flag.png">Албания</option>
-                    <option value="Georgia" data-flag="i/greece.png">Грузия</option>
-                    <option value="Georgia" data-flag="i/flag.png">Россия</option>
-                    <option value="Georgia" data-flag="i/greece.png">Украина</option>
-                    <option value="Georgia" data-flag="i/flag.png">США</option>
-                    <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bysides withmargin px2 vtop labels-on-top becomecol">
-            <div class="w135">
-              <p>Date of birth</p>
-              <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-            </div>
-            <div class="flex1">
-              <p>Passport series and number</p>
-              <div class="bysides withmargin px2 vtop">
-                <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
-              </div>
-            </div>
-            <div class="w135">
-              <p>Expire date</p>
-              <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-            </div>
-          </div>
-
-          <div class="bysides ss-nd">
-            <div></div>
-            <div><span class="pseudolink qbubble ttu"><span>Как заполнить это поле на русском</span></span></div>
-          </div>
-
-          <div class="sideline" style="background: #42bcdf;"></div>
-        </div>
-
-        <div class="form-group passenger">
-          <div class="bysides withmargin becomecol">
-            <div class="ttu">Baby</div>
-            <div class="bysides becomecol">
-              <span class="selectric-label ss-mb5">Document:</span>
-              <select class="selectric doctype">
-                <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
-                <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
-                <option value="Passport is not Russia">Passport is not Russia</option>
-                <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="bysides withmargin vtop becomecol">
-            <div class="gender-select baby">
-              <p>Sex</p>
-              <p><input class="gm" type="radio" name="gender5" value="1" id="genm5" checked><label for="genm5">M</label></p>
-              <p><input class="gf" type="radio" name="gender5" value="1" id="genf5"><label for="genf5">F</label></p>
-            </div>
-            <div class="flex1 form-group">
-              <div class="bysides withmargin px2 becomecol">
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Фамилия"></div>
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="Имя"></div>
-              </div>
-              <div class="bysides withmargin becomecol">
-                <div class="ttu ss-nd"></div>
-                <div class="bysides becomecol">
-                  <span class="selectric-label ss-mb5">Citizenship</span>
-                  <select class="selectric citizenship">
-                    <option value="Georgia" data-flag="i/flag.png">Албания</option>
-                    <option value="Georgia" data-flag="i/greece.png">Грузия</option>
-                    <option value="Georgia" data-flag="i/flag.png">Россия</option>
-                    <option value="Georgia" data-flag="i/greece.png">Украина</option>
-                    <option value="Georgia" data-flag="i/flag.png">США</option>
-                    <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bysides withmargin px2 vtop labels-on-top becomecol" >
-            <div class="w135">
-              <p>Date of birth</p>
-              <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-            </div>
-            <div class="flex1">
-              <p>Passport series and number</p>
-              <div class="bysides withmargin px2 vtop">
-                <div><input type="text" placeholder="00" class="passport-series" size="2"></div>
-                <div class="flex1 bysides"><input type="text" class="flex1" placeholder="000000" size="4"></div>
-              </div>
-            </div>
-            <div class="w135">
-              <p>Expire date</p>
-              <div class="flex1 bysides"><input type="text" class="flex1 datepicker" placeholder="ДД.ММ.ГГГГ" size="4"></div>
-            </div>
-          </div>
-
-          <div class="sideline" style="background: #42bcdf;"></div>
-        </div>
       </div>
 
       <div class="form-group">
         <div class="tac blue ttu">Услуги сервиса для вас, уважаемые&nbsp;клиенты</div>
 
-        <div class="mt10 ws-nd revealer {{showSta ? 'shown' : ''}}" ng-click="showSta=!showSta">
+        <div ng-init="showSta = true;" class="mt10 ws-nd revealer {{showSta ? 'shown' : ''}}" ng-click="showSta=!showSta">
           <div class="f d vcen">
             <div class="flex1 blue">
               Тариф Стандарт — <b>0 <span class="rub">Р</span></b>
@@ -999,7 +727,7 @@
               </div>
             </div>
             <div class="mt20 f">
-              <a class="blue-button flex1 tac">Добавить</a>
+              <a class="blue-button flex1 tac">Выбрать</a>
             </div>
           </div>
         </div>
@@ -1045,96 +773,18 @@
           </div>
         </div>
       </div>
-      <!--div class="form-group">
-        <h2 class="blue ttu serv-title">Услуги сервиса для вас, уважаемые клиенты</h2>
-        <div class="bysides services-input becomecol">
-          <div>
-            <input type="checkbox" id="serv1" name="serv" checked="true">
-            <label for="serv1">
-              <div class="blue tarp">0 <span class="rub">Р</span></div>
-              <div>
-                Комиссия агентства
-                за обмен или возврат
-                авиабилета:<br>
-                <span class="blue">890 <span class="rub">Р</span></span>
-              </div>
-              <div>
-                Срок обработки заявки
-                на обмен или возврат
-                авиабилета:<br>
-                <span class="blue">2 дня</span>
-              </div>
-              <div>СМС-уведомление
-                о изменениях полётной
-                информации</div>
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="serv2" name="serv">
-            <label for="serv2">
-              <div class="blue tarp">490 <span class="rub">Р</span></div>
-              <div>
-                Комиссия агентства
-                за обмен или возврат
-                авиабилета:<br>
-                <span class="blue">890 <span class="rub">Р</span></span>
-              </div>
-              <div>
-                Срок обработки заявки
-                на обмен или возврат
-                авиабилета:<br>
-                <span class="blue">2 дня</span>
-              </div>
-              <div>Уведомление
-                об изменениях полётной
-                информации:
-                СМС и звонок менеджера</div>
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="serv3" name="serv">
-            <label for="serv3">
-              <div class="blue tarp">290 <span class="rub">Р</span></div>
-              <div>
-                Комиссия агентства
-                за обмен или возврат
-                авиабилета:<br>
-                <span class="blue">890 <span class="rub">Р</span></span>
-              </div>
-              <div>
-                Срок обработки заявки
-                на обмен или возврат
-                авиабилета:<br>
-                <span class="blue">2 дня</span>
-              </div>
-              <div>Уведомление
-                об изменениях полётной
-                информации:
-                СМС и звонок менеджера
-                <br><br>
-                Персональный
-                менеджер</div>
-            </label>
-          </div>
-        </div>
-      </div-->
+
 
 
       <div class="form-group">
-        <!--div>
-          <h2 class="blue tac fwn">Задайте вопрос менеджеру biletideshevo.ru</h2>
-          <p class="tac">или укажите дополнительную информацию,
-            которую нам стоит учесть при оформлении авиабилета</p>
-        </div>
-        <div class="bysides"><textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Введите текст сообщения</div></div-->
         <div class="mt10 ws-nd revealer {{showQ ? 'shown' : ''}}" ng-click="showQ=!showQ">
           <div class="blue fwb">
-            Задайте вопрос менеджеру
+            Ваши комментарии и&nbsp;пожелания
           </div>
         </div>
         <div class="reveal-what ebebeb">
           <div class="p10 f">
-            <textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Введите текст сообщения</div>
+            <textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Ваши комментарии и&nbsp;пожелания</div>
           </div>
         </div>
       </div>
@@ -1236,18 +886,13 @@
           </div>
         </div>
         <div class="grey smaller2 tac press-to-continue">Для продолжения бронирования нажмите: ОПЛАТИТЬ ДЕШЁВЫЙ АВИАБИЛЕТ</div>
-        <div class="bysides vtop withmargin px5">
-          <div><input type="checkbox" id="iknow"></div>
-          <div class="flex1">
-            <label for="iknow">Я ознакомлен и согласен с <a href="/">правилами публичной оферты</a>         и <a href="/">условиями применения тарифа</a></label>
-          </div>
+
+        <div class="mt10">
+          <label class="f d vtop space8"><span><input type="checkbox" checked></span> <span class="flex1">Я ознакомлен и согласен с <a href="/">правилами публичной оферты</a>         и <a href="/">условиями применения тарифа</a></span></label>
         </div>
-        <!--div class="bysides vtop withmargin px5">
-          <div><input type="checkbox" id="iagree"></div>
-          <div class="flex1">
-            <label for="iagree">Я согласен на <a href="/">обработку персональных данных</a></label>
-          </div>
-        </div-->
+        <div class="mt10">
+          <label class="f d vtop space8"><span><input type="checkbox" checked></span> <span class="flex1">Согласен с <a href="df">условиями страхования</a></span></label>
+        </div>
       </div>
 
 

@@ -1,0 +1,106 @@
+.input-pholder {
+  position: relative;
+  height:40px;
+  border:solid 1px $blue;
+  border-radius: 2px;
+  padding:5px 5px 5px 5px;
+
+  input, select {
+    &[type=text], &[type=number] {
+      background: none;
+      border:none;
+      border-radius: 0;
+      outline:none !important;
+    }
+    &:focus {
+      +.pholder {
+        top:20%;
+        font-size: 10px;
+        color:$grey;
+      }
+    }
+  }
+
+  select {
+    background: none;
+    border:none;
+    border-radius: 0;
+    outline:none !important;
+    -webkit-appearance:none;
+    height:auto;
+    @include flex(1);
+  }
+
+  &.mobile-select {
+    padding-right:30px;
+
+    &:after {
+      right:9px;
+    }
+  }
+
+  &.not-empty .pholder {
+    top:20%;
+    font-size: 10px;
+    color: #b4b4b4;
+  }
+
+  .pholder {
+    color: #707070;
+    position: absolute;
+    top:50%;
+    left:5px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    @include transition(top 0.1s ease-in-out, font-size 0.1s ease-in-out);
+  }
+}
+
+.selectric.countrycode {
+  background: none;
+  border:none;
+  height:auto;
+  -webkit-appearance:none;
+  outline: none !important;
+}
+
+label:focus {
+  background: #ff0000;
+}
+
+.input-pholder:not(.not-empty) {
+  .mobile-select {
+    display: none;
+  }
+}
+
+
+.passenger-pic {
+  @include flex(0 0 16px);
+}
+
+.border-split {
+  >div {
+    +div {
+      border-top:solid 1px #c6c6c6;
+      margin-top:5px;
+      padding-top:5px;
+    }
+  }
+
+  &.bs15 {
+    >div {
+      +div {
+        margin-top:15px;
+        padding-top:15px;
+      }
+
+    }
+  }
+}
+
+
+.aeroexpress-timetable {
+  max-height: 150px;
+  overflow: auto;
+}
