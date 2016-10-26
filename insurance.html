@@ -1,4 +1,95 @@
-<div class="bysides becomecol services-input ws-mt20">
+<div>
+  <div class="ws-nd f d vcen space10 {{showMed ? '' : 'border-bottom-5'}}" ng-show="added">
+    <div>
+      <input type="checkbox" id="med-check" ng-model="added">
+    </div>
+    <div class="ttu blue lh1 flex1"><label for="med-check">Медицинское страхование</label></div>
+    <div>
+      <a href="" class="blue-button f" ng-click="showMed=!showMed">Изменить</a>
+    </div>
+  </div>
+  <div class="ws-nd revealer {{showMed ? 'shown' : ''}}" ng-click="showMed=!showMed" ng-show="!added">
+    <div class="blue fwb">Медицинское страхование</div>
+  </div>
+  <div class="reveal-what insurance-block mt10">
+    <div class="tac blue ttu fwm fz15">Медицинское страхование</div>
+    <div class="tac mt5">Достаточно для получения визы</div>
+    <div class="fwb fz20 tac mt5">916 <span class="rub">Р</span></div>
+    <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+    <form class="f d space10 mt10 vcen">
+      <div>
+        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+      </div>
+      <div class="flex1">дней</div>
+      <div>
+        <input type="submit" value="{{added ? 'Сохранить' : 'Добавить'}}" class="blue-button h35" ng-click="added=true; showMed=false;">
+      </div>
+    </form>
+  </div>
+
+  <div class="mt10 ws-nd f d vcen space10 lh35 border-bottom-5" ng-show="addedFli">
+    <div>
+      <input type="checkbox" id="fli-check" ng-model="addedFli">
+    </div>
+    <div class="ttu blue lh1 flex1"><label for="fli-check">Страхование на время перелета</label></div>
+  </div>
+  <div class=" mt10 ws-nd revealer {{showF ? 'shown' : ''}}" ng-click="showF=!showF" ng-show="!addedFli">
+    <div class="blue fwb">Страхование на время перелета</div>
+  </div>
+  <div class="reveal-what insurance-block mt10">
+    <div class="tac blue ttu fwm fz15">Страхование на время перелета</div>
+    <div class="tac mt5">Страхование на случай потери багажа</div>
+    <div class="tac mt5">Страхование от несчастного случая</div>
+    <div class="fwb fz20 tac mt5">255 <span class="rub">Р</span></div>
+    <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+    <form class="f d space10 vcen mt10">
+        <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedFli=true; showF=false;">
+    </form>
+  </div>
+
+  <div class="mt10 ws-nd f d vcen space10 lh35" ng-show="addedTri">
+    <div>
+      <input type="checkbox" id="tri-check" ng-model="addedTri">
+    </div>
+    <div class="ttu blue lh1 flex1"><label for="tri-check">Страхование путешествия</label></div>
+  </div>
+  <div class="mt10 ws-nd revealer {{showT ? 'shown' : ''}}" ng-click="showT=!showT" ng-show="!addedTri">
+    <div class="blue fwb">Страхование путешествия</div>
+  </div>
+  <div class="reveal-what insurance-block mt10">
+    <div class="tac blue ttu fwm fz15">Страхование путешествия</div>
+    <div class="tac mt5">Задержка рейса</div>
+    <div class="tac mt5">Задержка багажа</div>
+    <div class="tac mt5">Страхование от невылета</div>
+    <div class="fwb fz20 tac mt5">255 <span class="rub">Р</span></div>
+    <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+    <form class="f d space10 vcen mt10">
+      <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedTri=true; showT=false;">
+    </form>
+  </div>
+
+  <div class="mt15 tac">
+    <label><input type="checkbox"> Согласен с <a href="df">условиями страхования</a></label>
+  </div>
+</div>
+
+  <div class="insurance-popup f vcen hcen p20" ng-if="showPopup">
+    <div>
+    <p>ДокумЗадержка рейса – при задержке вылета более 6 часов выплачивается
+    500 руб/час, но не более страховой суммы.</p>
+
+    <p class="mt5">Задержка багажа – при задержке выдачи багажа более 6 часов выплачивается
+    500руб/час, но не более страховой суммы.</p>
+
+    <p class="mt5">Страхование от невылета – компенсация штрафов/удержаний при аннулировании проездных документов в случае отмены поездки или переносе сроков по объективным причинам подтверждённым документально.
+    Лимит возмещения – 10 000 руб.</p>
+
+    <div class="f mt20">
+      <input type="button" value="Закрыть" class="flex1 button-grey" ng-click="$parent.showPopup = false;">
+    </div>
+    </div>
+  </div>
+<!--div class="bysides becomecol services-input ws-mt20">
   <div class="bysides">
     <input id="ins1" name="serv" checked="true" type="checkbox">
     <label for="ins1" class="bybounds flex1">
@@ -120,8 +211,4 @@
 
 <div class="mt15">
   <label><input type="checkbox"> Согласен с <a href="df">условиями страхования</a></label>
-</div>
-
-        <div class="ws-nd f">
-          <a class="button-grey aib flex1 fz18 mt20">Закрыть</a>
-        </div>
+</div-->

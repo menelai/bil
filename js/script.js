@@ -109,8 +109,12 @@
       $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
       " — " + $( "#slider-range" ).slider( "values", 1 )  + ' дней');
 
-      if($.sticky)
-        $("#nav-col").sticky({topSpacing:0});
+      if($.fn.sticky) {
+        $("#nav-col").sticky({topSpacing: 0});
+        $("#results-header").sticky({topSpacing: 0});
+        $("#blocks").sticky({topSpacing: 28});
+        $("#time-and-subscribe").sticky({topSpacing: 28});
+      }
 
       var lastId,
         topMenu = $("#nav-col"),

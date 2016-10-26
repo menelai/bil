@@ -43,7 +43,7 @@ td, td img { vertical-align:top; }
 sub { vertical-align: sub; font-size: smaller; }
 sup { vertical-align: super; font-size: smaller; }
 pre { padding: 15px; white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
-input[type="radio"] { margin:0;}
+input[type="radio"], input[type="checkbox"] { margin:0;}
 input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
 .ie6 input { vertical-align: text-bottom; }
 ::-moz-selection{ background: #E6E6E6; color:#000; text-shadow: none; }

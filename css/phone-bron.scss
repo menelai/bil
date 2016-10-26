@@ -180,15 +180,17 @@
   width: auto;
 }
 
-#order-cols #flight-info-title {
+.revealer, #order-cols #flight-info-title {
   @include common-button();
   @include grey-gradient();
-  color:$blue;
+  color:black;
   text-shadow: none;
   box-shadow: inset 0 0 0 1px $blue;
   height:35px;
   line-height: 35px;
   text-align: left;
+  padding-left:10px;
+  padding-right: 30px;
 
   &:after {
     content: '';
@@ -196,22 +198,36 @@
     width:12px;
     height:8px;
     position: absolute;
-    right:1.5em;
+    right:10px;
     top:50%;
     margin-top:-4px;
   }
 
-  &.flight-visible {
+  &.flight-visible, &.shown {
     &:after {
       @include transform(rotate(180deg));
     }
   }
 
-  &:not(.flight-visible) {
-    & + .result {
+  &:not(.shown) {
+    & + .reveal-what {
       display: none;
     }
   }
+  z-index: 1;
+}
+
+#order-cols #flight-info-title {
+  color: $blue;
+}
+
+.ebebeb {
+  background: #ebebeb;
+  margin-top:-4px;
+  padding-top:4px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: inset 0 0 0 1px #e0e0e0;
 }
 
 .gender-select {
@@ -255,20 +271,72 @@
 }
 
 #insurance-form {
-  position: absolute;
+}
+
+.insurance-block {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 10px;
+  background: #ebebeb;
+
+}
+
+.border-bottom-5 {
+  &:after {
+    position: absolute;
+    bottom:-5px;
+    left:0;
+    right:0;
+    content: '';
+    height:1px;
+    background: #a2a2a2;
+  }
+}
+
+.insurance-popup {
+  position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  background: rgba(white, 0.9);
+  z-index: 100;
+}
+
+.border-split {
+  >div {
+    +div {
+      border-top:solid 1px #c6c6c6;
+      margin-top:5px;
+      padding-top:5px;
+    }
+
+  }
+}
+
+
+
+.payment-image {
+  height:40px;
+}
+
+.ss-fixed-final-price {
+  position: fixed;
+  bottom:0;
   left:0;
   right:0;
-  z-index: 10;
-  padding:10px;
-  border:solid 1px $blue;
-  border-radius: 4px;
-  background: #ffffff;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+  color:white;
+  background: #3e3e3e;
+  z-index: 20;
+}
 
-
-  .dobuy {
-    input {
-      padding:0;
-    }
+body.bron {
+  #totop {
+    display: none !important;
   }
+  padding-bottom: 51px;
+}
+
+#order-form {
+  margin-top:10px;
 }

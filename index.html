@@ -21,6 +21,7 @@
       max-width: {{width}}px;
     }
   </style-->
+
 </head>
 <body>
 <div id="search-throbber" ng-hide="true">
@@ -139,7 +140,7 @@
     </div>
   </div>
 </div>
-<div id="statusbar">
+<!--div id="statusbar">
   <div class="max-width">
     <div>
       <div class="wsn">
@@ -179,11 +180,11 @@
     </div>
   </div>
   <div id="totop"><a href="#top"></a></div>
-</div>
+</div-->
 <div id="top">
   <div class="max-width">
     <div id="logo">
-      <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
+      <a ng-init="width=1024" ng-click="width= (width==1024) ? 1400 : 1024">
         <div>
           <div><img src="/i/logo.png"></div>
           <div class="afut" id="sitename-and-slogan">
@@ -433,9 +434,9 @@
           <div class="block mobilevis-{{showperesadki}}" ng-if="true" id="peresadki">
             <div class="close-popup mobile" ng-click="$parent.showperesadki=false;"></div>
             <h2>Пересадки</h2>
-            <ul class="ul radios" ng-init="ar = [{title:'Только прямые', price:'12&thinsp;338'}, {title:'1 пересадка', price:'12&thinsp;338'}]">
+            <ul class="ul radios" ng-init="ar = [{title:'Все пересадки', price:'12&thinsp;338'}, {title:'Только прямые', price:'12&thinsp;338'}, {title:'1 пересадка', price:'12&thinsp;338'}]">
               <li ng-repeat="el in ::ar">
-                <input type="radio" name="peres" id="r{{$index}}">
+                <input type="checkbox" name="peres" id="r{{$index}}">
                 <label for="r{{$index}}" class="bysides">
                   <div>{{::el.title}}</div>
                   <div>{{::el.price}} <span class="rub">Р</span></div>
@@ -447,9 +448,9 @@
             <div class="close-popup mobile" ng-click="$parent.showairports=false;"></div>
             <div class="block" ng-if="true">
               <h2>Аэропорт вылета</h2>
-              <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
+              <ul class="ul radios" ng-init="ar = [{title:'Все аэропорты', price:'12&thinsp;338'}, {title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
                 <li ng-repeat="el in ::ar">
-                  <input type="radio" name="peres" id="r1{{$index}}">
+                  <input type="checkbox" name="peres" id="r1{{$index}}">
                   <label for="r1{{$index}}" class="bysides">
                     <div>
                       {{::el.title}}<!--br>
@@ -462,9 +463,9 @@
             </div>
             <div class="block last" ng-if="true">
               <h2>Аэропорт прилета</h2>
-              <ul class="ul radios" ng-init="ar = [{title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
+              <ul class="ul radios" ng-init="ar = [{title:'Все аэропорты', price:'12&thinsp;338'}, {title:'Домодедово', code:'DME', price:'12&thinsp;338'}, {title:'Шереметьево', code:'SVO', price:'12&thinsp;338'}, {title:'Внуково', code:'VKO', price:'12&thinsp;338'}]">
                 <li ng-repeat="el in ::ar">
-                  <input type="radio" name="peres" id="r1{{$index}}">
+                  <input type="checkbox" name="peres" id="r1{{$index}}">
                   <label for="r1{{$index}}" class="bysides">
                     <div>
                       {{::el.title}}<!--br>
@@ -479,9 +480,9 @@
           <div class="block last mobilevis-{{showavia}}" ng-if="true" id="aviacompany">
             <div class="close-popup mobile" ng-click="$parent.showavia=false;"></div>
             <h2>Авиакомпания</h2>
-            <ul class="ul radios" ng-init="ar = [{title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
+            <ul class="ul radios" ng-init="ar = [{title:'Все авиакомпании', code:'DME', price:'12&thinsp;338'}, {title:'Аэрофлот', code:'DME', price:'12&thinsp;338'}, {title:'Air France', code:'SVO', price:'12&thinsp;338'}, {title:'S7', code:'VKO', price:'12&thinsp;338'}]">
               <li ng-repeat="el in ::ar">
-                <input type="radio" name="peres" id="r2{{$index}}">
+                <input type="checkbox" name="peres" id="r2{{$index}}">
                 <label for="r2{{$index}}" class="bysides">
                   <div>
                     {{::el.title}}
@@ -510,8 +511,8 @@
         </div>
       </div>
       <div id="col2">
-        <div id="time-and-subscribe" ng-init="dayParts = [{title:'Ночь',time:'с 00:00 до 7:00'}, {title:'Утро',time:'с 7:00 до 11:00'}, {title:'День',time:'с 11:00 до 16:00'}, {title:'Ночь',time:'с 16:00 до 23:59'}]">
-          <div id="time-form">
+        <div id="time-and-subscribe" class="space16" ng-init="dayParts = [{title:'Ночь',time:'с 00:00 до 7:00'}, {title:'Утро',time:'с 7:00 до 11:00'}, {title:'День',time:'с 11:00 до 16:00'}, {title:'Ночь',time:'с 16:00 до 23:59'}]">
+          <!--div id="time-form">
             <div class="drop-controller active{{show1}}" ng-click="show1=!show1">
               <span>Время вылета/<br>прилета туда</span>
               <div class="drop-down"></div>
@@ -601,6 +602,112 @@
               </div>
               <div class="close-popup" ng-click="show3=false;"></div>
             </div>
+          </div-->
+          <div id="time-form" class="f d stretch space2 flex1">
+            <div class="flex1 bybounds">
+              <div class="mb5 fz13">Вылет/прилет туда</div>
+              <div>
+                <div class="drop-controller h30 active{{show1}}" ng-click="show1=!show1">
+                  <span>Вылет утром</span>
+                  <div class="drop-down"></div>
+                </div>
+              </div>
+            </div>
+            <div class="popup-div" ng-show="show1">
+              <h2>Время вылета туда</h2>
+
+              <h3 class="plane-up">Вылет из Москвы</h3>
+              <ul class="ul times-of-day">
+                <li ng-repeat="part in ::dayParts">
+                  <label>
+                    <input type="radio" name="lol"> <span class="blue ttu">{{part.title}}</span><br>
+                    <span>{{part.time}}</span>
+                  </label>
+                </li>
+              </ul>
+              <hr>
+              <h3 class="plane-down">Прилёт в Санкт-Петербург</h3>
+              <ul class="ul times-of-day">
+                <li ng-repeat="part in ::dayParts">
+                  <label>
+                    <input type="radio" name="lol1"> <span class="blue ttu">{{part.title}}</span><br>
+                    <span>{{part.time}}</span>
+                  </label>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="blue-button">
+              </div>
+              <div class="close-popup" ng-click="show1=false;"></div>
+            </div>
+
+            <div class="flex1 bybounds">
+              <div class="mb5 fz13">Вылет/прилет обратно</div>
+              <div>
+                <div class="drop-controller h30 active{{show2}}" ng-click="show2=!show2">
+                  <span>Прилет вечером</span>
+                  <div class="drop-down"></div>
+                </div>
+              </div>
+            </div>
+            <div class="popup-div" ng-show="show2">
+              <h2>Время вылета обратно</h2>
+              <h3 class="plane-up">Вылет из Москвы</h3>
+              <ul class="ul times-of-day">
+                <li ng-repeat="part in ::dayParts">
+                  <label>
+                    <input type="radio" name="lol"> <span class="blue ttu">{{part.title}}</span><br>
+                    <span>{{part.time}}</span>
+                  </label>
+                </li>
+              </ul>
+              <hr>
+              <h3 class="plane-down">Прилёт в Санкт-Петербург</h3>
+              <ul class="ul times-of-day">
+                <li ng-repeat="part in ::dayParts">
+                  <label>
+                    <input type="radio" name="lol1"> <span class="blue ttu">{{part.title}}</span><br>
+                    <span>{{part.time}}</span>
+                  </label>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="blue-button">
+              </div>
+              <div class="close-popup" ng-click="show2=false;"></div>
+            </div>
+
+            <div class="popup-div" ng-show="show3">
+              <h2>Вид авиарейса</h2>
+              <ul class="ul race-kind">
+                <li class="bysides" ng-repeat="type in [{title:'Регулярный авиарейс', moneyback:'Стандартный авиабилет'}, {title:'Регулярный авиарейс', moneyback:'Блочный авиабилет'}, {title:'Чартерный рейс. Маловероятное изменение времени вылета', moneyback:'Есть возврат билета'}]">
+                  <label class="radio-pad">
+                    <input type="radio" name="jop1">
+                    <span>
+                      <span class="larger">{{type.title}}</span><br>
+                      <span class="grey">{{type.moneyback}}</span>
+                    </span>
+                  </label>
+                  <span class="smaller pseudo blue">Подробнее</span>
+                </li>
+              </ul>
+              <div class="bysides popup-buttons">
+                <input type="reset" value="Сбросить фильтры" class="button-grey">
+                <input type="button" value="Применить" class="blue-button">
+              </div>
+              <div class="close-popup" ng-click="show3=false;"></div>
+            </div>
+            <div class="flex1 bybounds">
+              <div class="mb5 fz13">Вид авиарейса</div>
+              <div>
+                <div class="drop-controller h30 active{{show3}}" ng-click="show3=!show3">
+                  <span>Регулярный</span>
+                  <div class="drop-down"></div>
+                </div>
+              </div>
+            </div>
           </div>
           <div id="subscribe-form" class="inputshadow">
             <form>
@@ -611,7 +718,7 @@
         </div>
         <div id="results">
           <ng-include src="'result'"></ng-include>
-          <div class="promo-result">
+          <!--div class="promo-result">
             <div class="promo-content">
               <div class="promo-header bysides">
                 <div>
@@ -653,7 +760,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div-->
           <ng-include src="'result'" ng-if="true" ng-init="hideThere=true;"></ng-include>
           <ng-include src="'result'" ng-if="true" ng-init="hideThere=true;"></ng-include>
           <ng-include src="'result'" ng-if="true" ng-init="hideTopGrey=true;"></ng-include>
@@ -661,6 +768,38 @@
           <ng-include src="'result'"></ng-include>
           <ng-include src="'result'" ng-if="true" ng-init="hideThere=true;"></ng-include>
           <ng-include src="'result'"></ng-include>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer" class="ss-nd">
+  <div class="max-width">
+    <div class="f d ws-r ss-c ws-space20 vcen fz12">
+      <div class="f ws-r vcen space6">
+        <div>Забронировано <br>авиабилетов сегодня</div>
+        <div class="fz38 bigdig lh1">1557</div>
+      </div>
+      <div class="sep"></div>
+      <div class="f ws-r vcen space6">
+        <div>Забронировано <br>туров сегодня</div>
+        <div class="fz38 bigdig lh1">1557</div>
+      </div>
+      <div class="sep"></div>
+      <div class="f ws-r vcen space20">
+        <div><a href="/">Абсолютная <br>безопасность платежей</a></div>
+        <div><a href="/">Публичная <br>оферта</a></div>
+      </div>
+      <div class="sep"></div>
+      <div class="f ws-r vcen space10">
+        <div class="fz11">Акции, розыгрыши,<br>
+          новости, отзывы о нас</div>
+        <div class="wsn socials f ws-r vcen space4">
+          <a href="/"><i class="fa fa-vk"></i></a>
+          <a href="/"><i class="fa fa-facebook"></i></a>
+          <a href="/"><i class="fa fa-instagram"></i></a>
+          <a href="/"><i class="fa fa-twitter"></i></a>
         </div>
       </div>
     </div>

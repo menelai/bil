@@ -23,7 +23,7 @@
     }
   </style>
 </head>
-<body>
+<body class="bron">
 <div id="statusbar">
   <div class="max-width">
     <div>
@@ -154,9 +154,11 @@
   <div id="order-cols" class="max-width">
     <div id="ocl">
       <div id="flight-info">
-        <div id="flight-info-title" class="col-title">Информация о рейсе</div>
+        <div id="flight-info-title" class="col-title revealer {{showI ? 'shown' : ''}}" ng-click="showI=!showI">
+          Информация о рейсе
+        </div>
 
-        <div class="result without-price ss-mb20">
+        <div class="result without-price ss-mb20 reveal-what">
           <div class="result-cols">
             <div class="col-trip-info rounded">
               <div class="trip-grey-row trip-there-grey trip-row">
@@ -330,9 +332,9 @@
       </div>
 
       <div id="insurance">
-        <div class="ws-nd">
+        <!--div class="ws-nd">
           <div class="green-button reveal-ins {{reveal ? 'revealed' : ''}}" ng-click="reveal=!reveal">Добавить страховку</div>
-        </div>
+        </div-->
         <div class="ss-nd">
           <div class="f hcenter vtop viol becomecol">
             <div class="tar"><img id="ingos-logo-large" src="i/ingols-large.png"></div>
@@ -357,29 +359,82 @@
           </div>
           <div class="viol smaller2">Наши офисы располагаются в 310 населённых пунктах. МЫ ВСЕГДА РЯДОМ С ВАМИ</div>
         </div>
-        <div id="insurance-form" ng-show="reveal" ng-include="'insurance.html'"></div>
+        <div id="insurance-form" ng-include="'insurance.html'"></div>
       </div>
 
       <div id="aeroexpress">
-        <div class="bysides">
+        <!--div class="bysides">
           <div id="aeroexpress-title">
             <h2>В аэропорт без пробок и очередей</h2>
           </div>
           <div id="aeroexpress-logo"></div>
+        </div-->
+        <div class="f d vcen space40">
+          <div class="flex1 blue ttu">В&nbsp;аэропорт без&nbsp;пробок и&nbsp;очередей</div>
+          <div id="aeroexpress-logo"><img src="i/aeroexpress.png"></div>
         </div>
 
-        <div class="aeroexpress-way">
-          <div class="railway">Белорусский вокзал</div>
-          <div class="bluegt"></div>
-          <div class="airport">Аэропорт <b>Шереметьево</b></div>
+        <div class="mt20 f hcen vcen space10">
+          <div class="f vcen space8">
+            <img src="i/greytrain.png">
+            <div class="fz16">Белорусский</div>
+          </div>
+          <div class="fa fa-chevron-right blue"></div>
+          <div class="f vcen space8">
+            <img src="i/greyplane.png">
+            <div class="fz16">Шереметьево</div>
+          </div>
         </div>
-        <div class="aeroexpress-time">
+
+        <div class="mt10 f vcen hcen space12">
           <div>21января 2016</div>
-          <div class="blue time-of-work">с 05:30 по 00:30</div>
-          <div><span class="pseudolink"><span>По расписанию</span></span></div>
+          <div class="fa fa-clock-o grey"></div>
+          <div class="blue">с 05:30 по 00:30</div>
         </div>
+
+        <div class="mt10 revealer {{showAero ? 'shown' : ''}}" ng-click="showAero=!showAero">
+          <div class="blue fwb">Расписание аэроэкспрессов</div>
+        </div>
+        <div class="reveal-what mt10">
+          <div class="f d tac blue">
+            <div class="flex1">
+              <div class="fz16">Белорусский</div>
+              <div>отправление</div>
+            </div>
+            <div class="fa fa-chevron-right white"></div>
+            <div class="flex1">
+              <div class="fz16">Шереметьево</div>
+              <div>прибытие</div>
+            </div>
+          </div>
+          <div class="insurance-block mt10 mb20">
+            <div class="border-split">
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="aeroexpress-ticket">
-          <div class="age">Взрослые от 7 лет</div>
+          <div class="age">Пассажиры от&nbsp;5&nbsp;лет</div>
           <div>
             <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
           </div>
@@ -388,65 +443,15 @@
             <input type="button" value="Добавить к покупке" class="green-button">
           </div>
         </div>
-        <div class="aeroexpress-ticket">
-          <div class="age">Дети 5-7 лет</div>
-          <div>
-            <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-          </div>
-          <div class="aeroexpress-price">470 <span class="rub">Р</span></div>
-          <div class="dobuy">
-            Продается только в кассах
-          </div>
-        </div>
-        <div class="aeroexpress-ticket">
-          <div class="age">Дети до 5 лет</div>
-          <div>
-            <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-          </div>
-          <div class="aeroexpress-price">0 <span class="rub">Р</span></div>
-          <div class="dobuy green ttu">
-            Добавлено к покупке
-          </div>
-        </div>
 
-        <div class="aeroexpress-way">
-          <div class="airport">Аэропорт <b>Шереметьево</b></div>
-          <div class="bluegt"></div>
-          <div class="railway">Белорусский вокзал</div>
-        </div>
-        <div class="aeroexpress-time">
-          <div>21января 2016</div>
-          <div class="blue time-of-work">с 05:30 по 00:30</div>
-          <div><span class="pseudolink"><span>По расписанию</span></span></div>
-        </div>
         <div class="aeroexpress-ticket">
-          <div class="age">Взрослые от 7 лет</div>
-          <div>
-            <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-          </div>
-          <div class="aeroexpress-price">470 <span class="rub">Р</span></div>
-          <div class="dobuy">
-            <input type="button" value="Добавить к покупке" class="green-button">
-          </div>
-        </div>
-        <div class="aeroexpress-ticket">
-          <div class="age">Дети 5-7 лет</div>
-          <div>
-            <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-          </div>
-          <div class="aeroexpress-price">470 <span class="rub">Р</span></div>
-          <div class="dobuy">
-            Продается только в кассах
-          </div>
-        </div>
-        <div class="aeroexpress-ticket">
-          <div class="age">Дети до 5 лет</div>
+          <div class="age">Дети до&nbsp;5&nbsp;лет</div>
           <div>
             <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
           </div>
           <div class="aeroexpress-price">0 <span class="rub">Р</span></div>
-          <div class="dobuy green ttu">
-            Добавлено к покупке
+          <div class="dobuy">
+            <input type="button" value="Добавлено к покупке" class="white-button">
           </div>
         </div>
       </div>
@@ -922,6 +927,125 @@
       </div>
 
       <div class="form-group">
+        <div class="tac blue ttu">Услуги сервиса для вас, уважаемые&nbsp;клиенты</div>
+
+        <div class="mt10 ws-nd revealer {{showSta ? 'shown' : ''}}" ng-click="showSta=!showSta">
+          <div class="f d vcen">
+            <div class="flex1 blue">
+              Тариф Стандарт — <b>0 <span class="rub">Р</span></b>
+            </div>
+            <!--div class="fz12">Добавлено</div-->
+          </div>
+        </div>
+        <div class="reveal-what ebebeb">
+          <div class="p10">
+            <div class="border-split">
+              <div class="f d vtop space20">
+                <div>Оповещение в случае                  смены полётной информации</div>
+                <div class="blue tar">SMS, email</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Срок обработки заявки на возрат
+                  или обмен авиабилета</div>
+                <div class="blue tar">4 раб. дня</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Возврат чартерного или
+                  блочного авиабилета</div>
+                <div class="blue tar">Нет</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Комиссия агентства за возрат
+                  или обмен авиабилета</div>
+                <div class="blue tar">980&nbsp;<span class="rub">Р</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt10 ws-nd revealer {{showPre ? 'shown' : ''}}" ng-click="showPre=!showPre">
+          <div class="f d vcen">
+            <div class="flex1 blue">
+              Тариф Premium — <b>290&nbsp;<span class="rub">Р</span></b>
+            </div>
+            <!--div class="fz12">Добавлено</div-->
+          </div>
+        </div>
+        <div class="reveal-what ebebeb">
+          <div class="p10">
+            <div class="border-split">
+              <div class="f d vtop space20">
+                <div>Оповещение в случае                  смены полётной информации</div>
+                <div class="blue tar">SMS, email</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Срок обработки заявки на возрат
+                  или обмен авиабилета</div>
+                <div class="blue tar">2 раб. дня</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Возврат чартерного или
+                  блочного авиабилета</div>
+                <div class="blue tar">Да</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Комиссия агентства за возрат
+                  или обмен авиабилета</div>
+                <div class="blue tar">480&nbsp;<span class="rub">Р</span></div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Персональный менеджер</div>
+                <div class="blue tar">Нет</div>
+              </div>
+            </div>
+            <div class="mt20 f">
+              <a class="blue-button flex1 tac">Добавить</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt10 ws-nd revealer {{showExc ? 'shown' : ''}}" ng-click="showExc=!showExc">
+          <div class="f d vcen">
+            <div class="flex1 blue">
+              Тариф Exclusive — <b>790&nbsp;<span class="rub">Р</span></b>
+            </div>
+            <div class="fz12">Добавлено</div>
+          </div>
+        </div>
+        <div class="reveal-what ebebeb">
+          <div class="p10">
+            <div class="border-split">
+              <div class="f d vtop space20">
+                <div>Оповещение в случае                  смены полётной информации</div>
+                <div class="blue tar">SMS, email, звонок</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Срок обработки заявки на возрат
+                  или обмен авиабилета</div>
+                <div class="blue tar">1 раб. день</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Возврат чартерного или
+                  блочного авиабилета</div>
+                <div class="blue tar">Да</div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Комиссия агентства за возрат
+                  или обмен авиабилета</div>
+                <div class="blue tar">480&nbsp;<span class="rub">Р</span></div>
+              </div>
+              <div class="f d vtop space20">
+                <div>Персональный менеджер</div>
+                <div class="blue tar">Да</div>
+              </div>
+            </div>
+            <div class="mt20 f">
+              <a class="cancel-button flex1 tac">Отменить</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--div class="form-group">
         <h2 class="blue ttu serv-title">Услуги сервиса для вас, уважаемые клиенты</h2>
         <div class="bysides services-input becomecol">
           <div>
@@ -993,21 +1117,57 @@
             </label>
           </div>
         </div>
-      </div>
+      </div-->
 
 
       <div class="form-group">
-        <div>
+        <!--div>
           <h2 class="blue tac fwn">Задайте вопрос менеджеру biletideshevo.ru</h2>
           <p class="tac">или укажите дополнительную информацию,
             которую нам стоит учесть при оформлении авиабилета</p>
         </div>
-        <div class="bysides"><textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Введите текст сообщения</div></div>
+        <div class="bysides"><textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Введите текст сообщения</div></div-->
+        <div class="mt10 ws-nd revealer {{showQ ? 'shown' : ''}}" ng-click="showQ=!showQ">
+          <div class="blue fwb">
+            Задайте вопрос менеджеру
+          </div>
+        </div>
+        <div class="reveal-what ebebeb">
+          <div class="p10 f">
+            <textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Введите текст сообщения</div>
+          </div>
+        </div>
       </div>
 
 
       <div class="form-group">
-        <div>
+        <div class="tac">
+          <h2 class="blue ttu fwn fz16">Способ оплаты</h2>
+          <p>Комиссия 0%</p>
+        </div>
+        <div class="f d vtop space8 tac">
+          <label class="flex1">
+            <div><input type="radio" name="payment" ng-click="payment='cards';"></div>
+            <div><img src="i/payment-cards.png" class="payment-image"></div>
+            <div>Банковской картой</div>
+          </label>
+          <label class="flex1">
+            <div><input type="radio" name="payment" ng-click="payment='cash';"></div>
+            <div><img src="i/payment-cash.png" class="payment-image"></div>
+            <div>Наличными в&nbsp;офисе</div>
+          </label>
+          <label class="flex1">
+            <div><input type="radio" name="payment" ng-click="payment='svyaznoy';"></div>
+            <div><img src="i/payment-svyaznoy.png" class="payment-image"></div>
+            <div>Салон связи Связной</div>
+          </label>
+          <label class="flex1">
+            <div><input type="radio" name="payment" ng-click="payment='euroset';"></div>
+            <div><img src="i/payment-euroset.png" class="payment-image"></div>
+            <div>Салон связи Евросеть</div>
+          </label>
+        </div>
+        <!--div>
           <h2 class="blue ttu fwn larger">Способ оплаты</h2>
           <p>Комиссия 0%</p>
         </div>
@@ -1042,7 +1202,7 @@
               <img src="i/alfa.png">
             </label>
           </div>
-        </div>
+        </div-->
       </div>
 
 
@@ -1092,10 +1252,13 @@
 
 
       <div class="form-group">
-        <div class="bysides withmargin fp">
-          <div>Окончательная цена
-            с учётом всех сборов и налогов:</div>
-          <div class="finalprice"><b>12&thinsp;338</b> <span class="rub">Р</span></div>
+        <div class="ss-fixed-final-price f d stretch">
+          <div class="f hcen vcen space20 ss-space10 flex1 ss-p10">
+            <div class="ss-fz10 lh1">Окончательная цена
+              с учётом <br class="">всех сборов и налогов:</div>
+            <div class="finalprice ss-fz24 lh1"><b>212&thinsp;338</b> <span class="rub">Р</span></div>
+          </div>
+          <div class="ws-nd f hcen vcen ss-p10 lh1" style="border-left:solid 1px #959595;"><div class="fa fa-chevron-up fz20" style="color:#959595;"></div></div>
         </div>
         <div class="tac">
           <input type="submit" value="Оплатить дешевый авиабилет" class="green-button ibm ttu">

@@ -77,6 +77,15 @@
   .ss-nd {
     display: none;
   }
+
+  @for $i from 1 through 90 {
+    .ss-fz#{$i} {
+      font-size: #{$i}px;
+    }
+    .ss-rounded#{$i} {
+      border-radius: #{$i}px;
+    }
+  }
 }
 
 @for $i from 1 through 90 {
@@ -220,7 +229,7 @@
     }
   }
 
-  @for $i from 2 through 200 {
+  @for $i from 0 through 200 {
     .ss-split#{$i} {
       >*:not(:first-child) {
         padding-left:#{$i*1/2}px;

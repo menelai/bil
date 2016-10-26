@@ -609,7 +609,7 @@ select {
   padding-bottom: 2px;
 }
 
-.blue-button, .green-button, .button-grey {
+.blue-button, .green-button, .button-grey, .white-button, .cancel-button {
   height: $standard-height;
   line-height: $standard-height;
   font-weight: 600 !important;
@@ -622,7 +622,7 @@ select {
   }
 
   &[type=submit], &[type=button] {
-    font-size: $standard-fz;
+    //font-size: $standard-fz;
   }
 }
 
@@ -633,5 +633,19 @@ select {
 
   &.ui-menu .ui-menu-item {
     line-height: 50px;
+  }
+}
+
+.ss-h35 {
+  &.number-with-spinners {
+    .minus, .plus {
+      height:35px;
+      width:35px;
+    }
+    input {
+      height:35px;
+      line-height: 17px;
+      font-size: 16px;
+    }
   }
 }
