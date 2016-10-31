@@ -246,9 +246,9 @@
           var revealer = $(this);
           var what = $(revealer.attr('data-reveal'), revealer);
           if(!revealer.hasClass('shown')) {
-            what.hide('fast');
+            what.slideUp('fast');
           } else {
-            what.show('fast');
+            what.slideDown('fast');
           }
         });
       }, 50);

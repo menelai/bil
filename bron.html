@@ -530,26 +530,19 @@
                   </div>
                 </div>
                 <div>
-                  <div class="f d vcen space10">
+                  <div class="f d vcen space10" ng-init="children=[13,14]; co=children.length;">
                     <div class="tac passenger-pic"><img src="i/child.png"></div>
                     <div class="flex1">Дети до 14 лет</div>
                     <div>
-                      <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                      <div class="number-with-spinners ss-h35"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1" min="0"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></div>
                     </div>
                   </div>
-                  <div class="f d vcen space10 mt15">
+                  <div class="f d vcen space10 mt15" ng-repeat="child in children track by $index">
                     <div class="tac passenger-pic"></div>
-                      <div class="flex1">Возраст 1-го ребенка</div>
+                      <div class="flex1">Возраст {{$index+1}}-го ребенка</div>
                       <div>
-                        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=child;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                       </div>
-                  </div>
-                  <div class="f d vcen space10 mt15">
-                    <div class="tac passenger-pic"></div>
-                    <div class="flex1">Возраст 2-го ребенка</div>
-                    <div>
-                      <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-                    </div>
                   </div>
                 </div>
                 <div class="f d vcen space10">
