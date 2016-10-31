@@ -29,6 +29,8 @@
     -webkit-appearance:none;
     height:auto;
     @include flex(1);
+    color:$blue;
+    font-weight: bold;
   }
 
   &.mobile-select {

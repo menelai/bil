@@ -4,6 +4,21 @@
 
 (function($){
     $(function() {
+      //открывалки
+      /*$("body").on('click', '.revealer', function() {
+        var rev = $(this);
+        var what = $(rev.attr('data-reveal'), this);
+        if(what.is(':visible')) {
+          what.hide('fast');
+        } else {
+          what.show('fast');
+        }
+      });
+
+      setTimeout(function() {
+        $('.revealer.shown').click();
+      }, 100);*/
+
 
       //Если мобильная версия, костыль для страницы брони
       if($("#go-to-search").is(":hidden")) {
@@ -205,3 +220,38 @@
     });
 
 })(jQuery);
+
+(function() {
+  var app = angular.module('test', []);
+
+  app.controller('test', function($scope, $timeout) {
+    $scope.selector='';
+    //$(".shown").click();
+
+    /*$scope.Change = function($event, newVal) {
+      var revealer = $($event.currentTarget);
+      var what = $(revealer.attr('data-reveal'), revealer);
+      if(what.is(':visible')) {
+        revealer.removeClass('shown');
+        what.hide('fast');
+      } else {
+        revealer.addClass('shown');
+        what.show('fast');
+      }
+    };*/
+
+    $scope.$watch('insur', function(newVal) {
+      $timeout(function() {
+        $($scope.selector).find('.revealer').each(function() {
+          var revealer = $(this);
+          var what = $(revealer.attr('data-reveal'), revealer);
+          if(!revealer.hasClass('shown')) {
+            what.hide('fast');
+          } else {
+            what.show('fast');
+          }
+        });
+      }, 50);
+    });
+  });
+})();

@@ -191,6 +191,7 @@
   text-align: left;
   padding-left:10px;
   padding-right: 30px;
+  border-radius: 2px;
 
   &:after {
     content: '';
@@ -209,11 +210,11 @@
     }
   }
 
-  &:not(.shown) {
+  //&:not(.shown) {
     & + .reveal-what {
       display: none;
     }
-  }
+  //}
   z-index: 1;
 }
 
@@ -330,6 +331,9 @@ body.bron {
 }
 
 .mobile-select {
+  &.input-pholder {
+    @include grey-gradient();
+  }
   padding-right: 20px;
   &:after {
     position: absolute;
@@ -343,4 +347,8 @@ body.bron {
     transform: translateY(-50%);
     margin-top:1px;
   }
+}
+
+.flex60 {
+  @include flex(0 0 60%);
 }

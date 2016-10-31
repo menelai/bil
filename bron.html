@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="test">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -515,18 +515,18 @@
           <div class="mt10 ws-nd revealer {{showPass ? 'shown' : ''}}" ng-click="showPass=!showPass">
             <div class="f d vcen">
               <div class="flex1 blue">
-                1 пасс., эконом
+                1 пассажир, эконом-класс
               </div>
             </div>
           </div>
-          <div class="reveal-what ebebeb">
+          <div class="ebebeb" ng-show="showPass">
             <div class="p10">
               <div class="border-split bs15">
                 <div class="f d vcen space10">
                   <div class="tac passenger-pic"><img src="i/adult.png"></div>
                   <div class="flex1">Взрослые</div>
                   <div>
-                    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                    <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                   </div>
                 </div>
                 <div>
@@ -534,21 +534,21 @@
                     <div class="tac passenger-pic"><img src="i/child.png"></div>
                     <div class="flex1">Дети до 14 лет</div>
                     <div>
-                      <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                      <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                     </div>
                   </div>
-                  <div class="f d vcen space10 mt10">
+                  <div class="f d vcen space10 mt15">
                     <div class="tac passenger-pic"></div>
                       <div class="flex1">Возраст 1-го ребенка</div>
                       <div>
-                        <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                       </div>
                   </div>
-                  <div class="f d vcen space10 mt10">
+                  <div class="f d vcen space10 mt15">
                     <div class="tac passenger-pic"></div>
                     <div class="flex1">Возраст 2-го ребенка</div>
                     <div>
-                      <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                      <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                     </div>
                   </div>
                 </div>
@@ -559,7 +559,7 @@
                     <div class="grey fz11">без места</div>
                   </div>
                   <div>
-                    <div class="number-with-spinners"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                    <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                   </div>
                 </div>
                 <div>
@@ -570,9 +570,9 @@
                 </div>
 
               </div>
-              <div class="mt20 f">
+              <!--div class="mt20 f">
                 <a class="cancel-button flex1 tac">Закрыть</a>
-              </div>
+              </div-->
             </div>
           </div>
 
@@ -585,7 +585,7 @@
           </div>
 
           <div class="f d space2">
-            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+            <label ng-if="true" class="f vbot input-pholder flex60" ng-class="buyer ? 'not-empty' : ''">
               <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
               <span class="pholder">Фамилия</span>
             </label>
@@ -604,7 +604,7 @@
               <span class="pholder">Пол</span>
             </div>
             <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
-              <input type="text" name="fio" class="flex1 fz15 datepicker" readonly ng-model="buyer" size="5">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
               <span class="pholder">Дата рождения</span>
             </label>
           </div>
@@ -644,7 +644,7 @@
           </div>
 
           <label ng-if="true" class="f vbot input-pholder mt10" ng-class="buyer ? 'not-empty' : ''">
-            <input type="text" name="fio" class="flex1 fz15 datepicker" readonly ng-model="buyer" size="5">
+            <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
             <span class="pholder">Срок действия</span>
           </label>
 

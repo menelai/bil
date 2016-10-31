@@ -1,19 +1,15 @@
-<div>
-  <!--div class="ws-nd f d vcen space10 {{showMed ? '' : 'border-bottom-5'}}" ng-show="added">
-    <div>
-      <input type="checkbox" id="med-check" ng-model="added">
+<div ng-init="insur = 'med'; selector='#insurances';" ng-controller="test as t" id="insurances">
+  <div class="ws-nd revealer {{insur == 'med' ? 'shown' : ''}}" data-reveal="+.reveal-what" data-val="med" ng-click="insur = insur == 'med' ? '' : 'med'">
+    <div class="f d vcen">
+      <div class="blue fwb">
+        <span ng-show="chosen=='med'" class="fa fa-check green"></span> Медицинское страхование
+      </div>
+      <span ng-show="chosen=='med'">{{ad}} дней</span>
     </div>
-    <div class="ttu blue lh1 flex1"><label for="med-check">Медицинское страхование</label></div>
-    <div>
-      <a href="" class="blue-button f" ng-click="showMed=!showMed">Изменить</a>
-    </div>
-  </div-->
-  <div class="ws-nd revealer {{showMed ? 'shown' : ''}}" ng-init="showMed=true;" ng-click="showMed=!showMed">
-    <div class="blue fwb">Медицинское страхование</div>
   </div>
   <div class="reveal-what ebebeb mt10">
     <div class="p10">
-      <div class="tac blue ttu fwm fz15">Медицинское страхование</div>
+      <!--div class="tac blue ttu fwm fz15">Медицинское страхование</div-->
       <div class="tac mt5">Достаточно для получения визы</div>
       <div class="fwb fz20 tac mt5">916 <span class="rub">Р</span></div>
       <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
@@ -23,60 +19,53 @@
         </div>
         <div class="flex1">дней</div>
         <div>
-          <input type="submit" value="{{added ? 'Сохранить' : 'Добавить'}}" class="blue-button h35" ng-click="added=true; showMed=false;">
+          <input type="submit" value="{{chosen=='med' ? 'Изменить' : 'Добавить'}}" class="blue-button h35" ng-click="chosen='med'; insur = ''">
         </div>
       </form>
+      <div class="mt10 f" ng-show="chosen=='med'">
+        <a class="cancel-button flex1 tac" ng-click="chosen=''; insur = ''">Отменить</a>
+      </div>
     </div>
   </div>
 
-  <!--div class="mt10 ws-nd f d vcen space10 lh35 border-bottom-5" ng-show="addedFli">
-    <div>
-      <input type="checkbox" id="fli-check" ng-model="addedFli">
-    </div>
-    <div class="ttu blue lh1 flex1"><label for="fli-check">Страхование на время перелета</label></div>
-  </div-->
-  <div class=" mt10 ws-nd revealer {{showF ? 'shown' : ''}}" ng-click="showF=!showF">
-    <div class="blue fwb">Страхование на время перелета</div>
+  <div class="mt10 ws-nd revealer {{insur == 'fli' ? 'shown' : ''}}" data-reveal="+.reveal-what" data-val="fli" ng-click="insur = insur == 'fli' ? '' : 'fli'">
+    <div class="blue fwb"><span ng-show="addedFli" class="fa fa-check green"></span> Страхование на время перелета</div>
   </div>
   <div class="reveal-what ebebeb">
     <div class="p10">
-      <div class="tac blue ttu fwm fz15">Страхование на время перелета</div>
+      <!--div class="tac blue ttu fwm fz15">Страхование на время перелета</div-->
       <div class="tac mt5">Страхование на случай потери багажа</div>
       <div class="tac mt5">Страхование от несчастного случая</div>
       <div class="fwb fz20 tac mt5">255 <span class="rub">Р</span></div>
       <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
-      <form class="f d space10 vcen mt10">
-          <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedFli=true; showF=false;">
+      <form class="f d space10 vcen mt10" ng-hide="addedFli">
+          <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedFli=true; insur = '';">
       </form>
+      <div class="mt10 f" ng-show="addedFli">
+        <a class="cancel-button flex1 tac" ng-click="addedFli=false; insur = ''">Отменить</a>
+      </div>
     </div>
   </div>
 
-  <!--div class="mt10 ws-nd f d vcen space10 lh35" ng-show="addedTri">
-    <div>
-      <input type="checkbox" id="tri-check" ng-model="addedTri">
-    </div>
-    <div class="ttu blue lh1 flex1"><label for="tri-check">Страхование путешествия</label></div>
-  </div-->
-  <div class="mt10 ws-nd revealer {{showT ? 'shown' : ''}}" ng-click="showT=!showT">
-    <div class="blue fwb">Страхование путешествия</div>
+  <div class="mt10 ws-nd revealer {{insur == 'tri' ? 'shown' : ''}}" data-reveal="+.reveal-what" data-val="tri" ng-click="insur = insur == 'tri' ? '' : 'tri'">
+    <div class="blue fwb"><span ng-show="addedTri" class="fa fa-check green"></span> Страхование путешествия</div>
   </div>
   <div class="reveal-what ebebeb">
     <div class="p10">
-      <div class="tac blue ttu fwm fz15">Страхование путешествия</div>
+      <!--div class="tac blue ttu fwm fz15">Страхование путешествия</div-->
       <div class="tac mt5">Задержка рейса</div>
       <div class="tac mt5">Задержка багажа</div>
       <div class="tac mt5">Страхование от невылета</div>
       <div class="fwb fz20 tac mt5">255 <span class="rub">Р</span></div>
       <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
-      <form class="f d space10 vcen mt10">
-        <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedTri=true; showT=false;">
+      <form class="f d space10 vcen mt10" ng-hide="addedTri">
+        <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedTri=true; insur = '';">
       </form>
+      <div class="mt10 f" ng-show="addedTri">
+        <a class="cancel-button flex1 tac" ng-click="addedTri=false; insur = ''">Отменить</a>
+      </div>
     </div>
   </div>
-
-  <!--div class="mt15 tac">
-    <label><input type="checkbox"> Согласен с <a href="df">условиями страхования</a></label>
-  </div-->
 </div>
 
   <div class="insurance-popup f vcen hcen p20" ng-if="showPopup">

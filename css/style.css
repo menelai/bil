@@ -33614,22 +33614,24 @@ a:hover, .pseudolink:hover {
   height: auto;
   -webkit-flex: 1;
   flex: 1;
+  color: #058fc7;
+  font-weight: bold;
 }
-/* line 34, bron.scss */
+/* line 36, bron.scss */
 .input-pholder.mobile-select {
   padding-right: 30px;
 }
-/* line 37, bron.scss */
+/* line 39, bron.scss */
 .input-pholder.mobile-select:after {
   right: 9px;
 }
-/* line 42, bron.scss */
+/* line 44, bron.scss */
 .input-pholder.not-empty .pholder {
   top: 20%;
   font-size: 10px;
   color: #b4b4b4;
 }
-/* line 48, bron.scss */
+/* line 50, bron.scss */
 .input-pholder .pholder {
   color: #707070;
   position: absolute;
@@ -33643,7 +33645,7 @@ a:hover, .pseudolink:hover {
   transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out;
 }
 
-/* line 59, bron.scss */
+/* line 61, bron.scss */
 .selectric.countrycode {
   background: none;
   border: none;
@@ -33652,35 +33654,35 @@ a:hover, .pseudolink:hover {
   outline: none !important;
 }
 
-/* line 67, bron.scss */
+/* line 69, bron.scss */
 label:focus {
   background: #ff0000;
 }
 
-/* line 72, bron.scss */
+/* line 74, bron.scss */
 .input-pholder:not(.not-empty) .mobile-select {
   display: none;
 }
 
-/* line 78, bron.scss */
+/* line 80, bron.scss */
 .passenger-pic {
   -webkit-flex: 0 0 16px;
   flex: 0 0 16px;
 }
 
-/* line 84, bron.scss */
+/* line 86, bron.scss */
 .border-split > div + div {
   border-top: solid 1px #c6c6c6;
   margin-top: 5px;
   padding-top: 5px;
 }
-/* line 93, bron.scss */
+/* line 95, bron.scss */
 .border-split.bs15 > div + div {
   margin-top: 15px;
   padding-top: 15px;
 }
 
-/* line 103, bron.scss */
+/* line 105, bron.scss */
 .aeroexpress-timetable {
   max-height: 150px;
   overflow: auto;
@@ -35383,6 +35385,7 @@ label:focus {
     text-align: left;
     padding-left: 10px;
     padding-right: 30px;
+    border-radius: 2px;
     z-index: 1;
   }
   /* line 71, style.scss */
@@ -35430,7 +35433,7 @@ label:focus {
     display: -webkit-inline-flex;
     display: inline-flex;
   }
-  /* line 195, phone-bron.scss */
+  /* line 196, phone-bron.scss */
   .revealer:after, #order-cols #flight-info-title:after {
     content: '';
     background: url(../i/arrow-down.png);
@@ -35441,24 +35444,24 @@ label:focus {
     top: 50%;
     margin-top: -4px;
   }
-  /* line 207, phone-bron.scss */
+  /* line 208, phone-bron.scss */
   .revealer.flight-visible:after, .revealer.shown:after, #order-cols #flight-info-title.flight-visible:after, #order-cols #flight-info-title.shown:after {
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-  /* line 213, phone-bron.scss */
-  .revealer:not(.shown) + .reveal-what, #order-cols #flight-info-title:not(.shown) + .reveal-what {
+  /* line 214, phone-bron.scss */
+  .revealer + .reveal-what, #order-cols #flight-info-title + .reveal-what {
     display: none;
   }
 
-  /* line 220, phone-bron.scss */
+  /* line 221, phone-bron.scss */
   #order-cols #flight-info-title {
     color: #058fc7;
   }
 
-  /* line 224, phone-bron.scss */
+  /* line 225, phone-bron.scss */
   .ebebeb {
     background: #ebebeb;
     margin-top: -4px;
@@ -35468,7 +35471,7 @@ label:focus {
     box-shadow: inset 0 0 0 1px #e0e0e0;
   }
 
-  /* line 233, phone-bron.scss */
+  /* line 234, phone-bron.scss */
   .gender-select {
     position: absolute;
     padding: 0;
@@ -35479,20 +35482,20 @@ label:focus {
     -webkit-align-items: flex-end;
     align-items: flex-end;
   }
-  /* line 241, phone-bron.scss */
+  /* line 242, phone-bron.scss */
   .gender-select .gm:checked + label:after, .gender-select .gf:checked + label:after {
     display: none;
   }
-  /* line 246, phone-bron.scss */
+  /* line 247, phone-bron.scss */
   .gender-select p + p {
     margin: 0 0 0 10px;
   }
-  /* line 250, phone-bron.scss */
+  /* line 251, phone-bron.scss */
   .gender-select input[type=radio] {
     margin-right: 3px;
   }
 
-  /* line 256, phone-bron.scss */
+  /* line 257, phone-bron.scss */
   .reveal-ins:after {
     content: '';
     background: url(../i/arrow-down-white.png);
@@ -35503,7 +35506,7 @@ label:focus {
     top: 50%;
     margin-top: -4px;
   }
-  /* line 267, phone-bron.scss */
+  /* line 268, phone-bron.scss */
   .reveal-ins.revealed:after {
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -35511,7 +35514,7 @@ label:focus {
     transform: rotate(180deg);
   }
 
-  /* line 276, phone-bron.scss */
+  /* line 277, phone-bron.scss */
   .insurance-block {
     margin-left: -10px;
     margin-right: -10px;
@@ -35519,7 +35522,7 @@ label:focus {
     background: #ebebeb;
   }
 
-  /* line 285, phone-bron.scss */
+  /* line 286, phone-bron.scss */
   .border-bottom-5:after {
     position: absolute;
     bottom: -5px;
@@ -35530,7 +35533,7 @@ label:focus {
     background: #a2a2a2;
   }
 
-  /* line 296, phone-bron.scss */
+  /* line 297, phone-bron.scss */
   .insurance-popup {
     position: fixed;
     left: 0;
@@ -35541,12 +35544,12 @@ label:focus {
     z-index: 100;
   }
 
-  /* line 307, phone-bron.scss */
+  /* line 308, phone-bron.scss */
   .payment-image {
     height: 40px;
   }
 
-  /* line 311, phone-bron.scss */
+  /* line 312, phone-bron.scss */
   .ss-fixed-final-price {
     position: fixed;
     bottom: 0;
@@ -35557,25 +35560,37 @@ label:focus {
     z-index: 20;
   }
 
-  /* line 321, phone-bron.scss */
+  /* line 322, phone-bron.scss */
   body.bron {
     padding-bottom: 51px;
   }
-  /* line 322, phone-bron.scss */
+  /* line 323, phone-bron.scss */
   body.bron #totop {
     display: none !important;
   }
 
-  /* line 328, phone-bron.scss */
+  /* line 329, phone-bron.scss */
   #order-form {
     margin-top: 10px;
   }
 
-  /* line 332, phone-bron.scss */
+  /* line 333, phone-bron.scss */
   .mobile-select {
     padding-right: 20px;
   }
   /* line 334, phone-bron.scss */
+  .mobile-select.input-pholder {
+    background-color: #f4f4f4;
+    *zoom: 1;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF4F4F4', endColorstr='#FFD8D8D8');
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0ZjRmNCIvPjxzdG9wIG9mZnNldD0iMzUlIiBzdG9wLWNvbG9yPSIjZjRmNGY0Ii8+PHN0b3Agb2Zmc2V0PSI2NSUiIHN0b3AtY29sb3I9IiNkOGQ4ZDgiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkOGQ4ZDgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f4f4), color-stop(35%, #f4f4f4), color-stop(65%, #d8d8d8), color-stop(100%, #d8d8d8));
+    background-image: -moz-linear-gradient(top, #f4f4f4 0%, #f4f4f4 35%, #d8d8d8 65%, #d8d8d8 100%);
+    background-image: -webkit-linear-gradient(top, #f4f4f4 0%, #f4f4f4 35%, #d8d8d8 65%, #d8d8d8 100%);
+    background-image: linear-gradient(to bottom, #f4f4f4 0%, #f4f4f4 35%, #d8d8d8 65%, #d8d8d8 100%);
+  }
+  /* line 338, phone-bron.scss */
   .mobile-select:after {
     position: absolute;
     content: '';
@@ -35587,6 +35602,12 @@ label:focus {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     margin-top: 1px;
+  }
+
+  /* line 352, phone-bron.scss */
+  .flex60 {
+    -webkit-flex: 0 0 60%;
+    flex: 0 0 60%;
   }
 }
 @media screen and (min-width: 800px) {
