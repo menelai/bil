@@ -33737,7 +33737,64 @@ label:focus {
 /* line 114, bron.scss */
 .aeroexpress-timetable {
   max-height: 150px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: visible;
+}
+/* line 119, bron.scss */
+.aeroexpress-timetable::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+/* line 124, bron.scss */
+.aeroexpress-timetable::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #239dce;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF239DCE', endColorstr='#FF0781B2');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIzOWRjZSIvPjxzdG9wIG9mZnNldD0iMzUlIiBzdG9wLWNvbG9yPSIjMjM5ZGNlIi8+PHN0b3Agb2Zmc2V0PSI2NSUiIHN0b3AtY29sb3I9IiMwNzgxYjIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNzgxYjIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #239dce), color-stop(35%, #239dce), color-stop(65%, #0781b2), color-stop(100%, #0781b2));
+  background-image: -moz-linear-gradient(top, #239dce 0%, #239dce 35%, #0781b2 65%, #0781b2 100%);
+  background-image: -webkit-linear-gradient(top, #239dce 0%, #239dce 35%, #0781b2 65%, #0781b2 100%);
+  background-image: linear-gradient(to bottom, #239dce 0%, #239dce 35%, #0781b2 65%, #0781b2 100%);
+}
+
+/* line 130, bron.scss */
+.aeroexpress-timetable-wrapper:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  background: #bdbdbd;
+  right: 4px;
+}
+
+/* line 141, bron.scss */
+.gift:before {
+  position: absolute;
+  top: 50%;
+  left: -0.4em;
+  height: 4em;
+  width: 4em;
+  content: '';
+  background: yellow;
+  border-radius: 2em;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 152, bron.scss */
+.gift:after {
+  position: absolute;
+  left: 100%;
+  background: url(../i/q.png);
+  content: '';
+  background-size: 100% auto;
+  top: -0.5em;
+  width: 24px;
+  height: 30px;
 }
 
 /* line 4033, style.scss */

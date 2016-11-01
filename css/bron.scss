@@ -113,5 +113,50 @@ label:focus {
 
 .aeroexpress-timetable {
   max-height: 150px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: visible;
+
+  &::-webkit-scrollbar {
+    width:10px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius:10px;
+    @include blue-gradient();
+  }
+}
+
+.aeroexpress-timetable-wrapper:before {
+  content: '';
+  position: absolute;
+  width:2px;
+  top:0;
+  bottom:0;
+  background: #bdbdbd;
+  right:4px;
+}
+
+.gift {
+  &:before {
+    position: absolute;
+    top:50%;
+    left:-0.4em;
+    height:4em;
+    width:4em;
+    content:'';
+    background: yellow;
+    border-radius: 2em;
+    @include transform(translateY(-50%));
+  }
+  &:after {
+    position: absolute;
+    left:100%;
+    background:url(../i/q.png);
+    content:'';
+    background-size: 100% auto;
+    top:-0.5em;
+    width:24px;
+    height:30px;
+  }
 }
