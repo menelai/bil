@@ -654,9 +654,9 @@
         <div class="mt10 ws-nd revealer" ng-class="show=='sta' ? 'shown' : ''" ng-click="show = show=='sta' ? '' : 'sta'">
           <div class="f d vcen">
             <div class="flex1 blue">
-              <span class="fa fa-check green" ng-show="chosen=='sta'"></span> Тариф Стандарт — <b>0 <span class="rub">Р</span></b>
+              <span class="fa fa-check green" ng-show="chosen=='sta'"></span> Тариф Стандарт
             </div>
-            <!--div class="fz12">Добавлено</div-->
+            <div><b>0 <span class="rub">Р</span></b></div>
           </div>
         </div>
         <div class="ebebeb slide" ng-show="show=='sta'">
@@ -691,9 +691,9 @@
         <div class="mt10 ws-nd revealer" ng-class="show=='pre' ? 'shown' : ''" ng-click="show = show=='pre' ? '' : 'pre'">
           <div class="f d vcen">
             <div class="flex1 blue">
-              <span class="fa fa-check green" ng-show="chosen=='pre'"></span> Тариф Premium — <b>290&nbsp;<span class="rub">Р</span></b>
+              <span class="fa fa-check green" ng-show="chosen=='pre'"></span> Тариф Premium
             </div>
-            <!--div class="fz12">Добавлено</div-->
+            <div><b>290&nbsp;<span class="rub">Р</span></b></div>
           </div>
         </div>
         <div class="ebebeb slide" ng-show="show=='pre'">
@@ -726,15 +726,18 @@
             <div class="mt20 f" ng-hide="chosen=='pre'">
               <a class="blue-button flex1 tac" ng-click="show=''; chosen='pre';" >Выбрать</a>
             </div>
+            <div class="mt20 f" ng-show="chosen=='pre'">
+              <a class="cancel-button flex1 tac" ng-click="show=''; chosen='sta';" >Отменить</a>
+            </div>
           </div>
         </div>
 
         <div class="mt10 ws-nd revealer" ng-class="show=='exc' ? 'shown' : ''" ng-click="show = show=='exc' ? '' : 'exc'">
           <div class="f d vcen">
             <div class="flex1 blue">
-              <span class="fa fa-check green" ng-show="chosen=='exc'"></span> Тариф Exclusive — <b>790&nbsp;<span class="rub">Р</span></b>
+              <span class="fa fa-check green" ng-show="chosen=='exc'"></span> Тариф Exclusive
             </div>
-            <!--div class="fz12">Добавлено</div-->
+            <div><b>790&nbsp;<span class="rub">Р</span></b></div>
           </div>
         </div>
         <div class="ebebeb slide" ng-show="show=='exc'">
@@ -766,6 +769,9 @@
             </div>
             <div class="mt20 f" ng-hide="chosen=='exc'">
               <a class="blue-button flex1 tac" ng-click="show=''; chosen='exc';" >Выбрать</a>
+            </div>
+            <div class="mt20 f" ng-show="chosen=='exc'">
+              <a class="cancel-button flex1 tac" ng-click="show=''; chosen='sta';" >Отменить</a>
             </div>
           </div>
         </div>
