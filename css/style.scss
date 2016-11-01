@@ -1066,24 +1066,40 @@ a, .pseudolink {
   }
   .minus, .plus {
     height:23px;
-    border:solid 1px $lightgrey;
+    border:solid 1px $blue;
+    border-radius: 4px;
     width:23px;
     text-indent: -9999px;
+    @include grey-gradient();
+    position: relative;
+
+    &:after {
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      content:'';
+    }
   }
-  .minus {
-    background: #fff url(../i/minus.png) center center no-repeat;
+  .minus:after {
+    background: url(../i/minus.png) center center no-repeat;
   }
-  .plus {
-    background: #fff url(../i/plus.png) center center no-repeat;
+  .plus:after {
+    background: url(../i/plus.png) center center no-repeat;
   }
   input {
-    margin:0 -1px;
+    margin:0 2px;
     height:23px;
     line-height: 17px;
-    border:solid 1px $lightgrey;
-    width:2em;
+    border:solid 1px $blue;
+    width:23px;
     text-align: center;
     -moz-appearance: textfield;
+    padding:0;
+    line-height: 23px;
+    border-radius: 4px;
+    box-shadow: none;
     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
       -webkit-appearance: none;
       -moz-appearance: none;

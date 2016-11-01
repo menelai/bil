@@ -1,9 +1,9 @@
 .input-pholder {
   position: relative;
-  height:40px;
+  height:35px;
   border:solid 1px $blue;
   border-radius: 2px;
-  padding:5px 5px 5px 5px;
+  padding:5px 5px 2px 5px;
 
   input, select {
     &[type=text], &[type=number] {
@@ -11,12 +11,15 @@
       border:none;
       border-radius: 0;
       outline:none !important;
+      padding:0;
+      margin:0;
     }
     &:focus {
       +.pholder {
         top:20%;
         font-size: 10px;
         color:$grey;
+        font-weight: normal;
       }
     }
   }
@@ -31,6 +34,12 @@
     @include flex(1);
     color:$blue;
     font-weight: bold;
+    padding:0;
+    margin:0;
+    +.pholder {
+      color:$blue;
+      font-weight: bold;
+    }
   }
 
   &.mobile-select {
@@ -54,7 +63,7 @@
     left:5px;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    @include transition(top 0.1s ease-in-out, font-size 0.1s ease-in-out);
+    @include transition(top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in-out);
   }
 }
 

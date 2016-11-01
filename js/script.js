@@ -222,36 +222,21 @@
 })(jQuery);
 
 (function() {
-  var app = angular.module('test', []);
+  var app = angular.module('test', ['ngAnimate']);
 
-  app.controller('test', function($scope, $timeout) {
-    $scope.selector='';
-    //$(".shown").click();
-
-    /*$scope.Change = function($event, newVal) {
-      var revealer = $($event.currentTarget);
-      var what = $(revealer.attr('data-reveal'), revealer);
-      if(what.is(':visible')) {
-        revealer.removeClass('shown');
-        what.hide('fast');
-      } else {
-        revealer.addClass('shown');
-        what.show('fast');
+  app.animation('.slide', function() {
+    var NG_HIDE_CLASS = 'ng-hide';
+    return {
+      beforeAddClass: function(element, className, done) {
+        if(className === NG_HIDE_CLASS) {
+          element.slideUp('fast', done);
+        }
+      },
+      removeClass: function(element, className, done) {
+        if(className === NG_HIDE_CLASS) {
+          element.hide().slideDown('fast', done);
+        }
       }
-    };*/
-
-    $scope.$watch('insur', function(newVal) {
-      $timeout(function() {
-        $($scope.selector).find('.revealer').each(function() {
-          var revealer = $(this);
-          var what = $(revealer.attr('data-reveal'), revealer);
-          if(!revealer.hasClass('shown')) {
-            what.slideUp('fast');
-          } else {
-            what.slideDown('fast');
-          }
-        });
-      }, 50);
-    });
+    }
   });
 })();

@@ -323,3 +323,21 @@
     @include flex-wrap(wrap);
   }
 }
+
+.mac {
+  .flex00auto {
+    @include flex(0 0 auto);
+  }
+}
+
+@media all and (min-width: 800px) {
+  .iphone {
+    display: none;
+  }
+}
+
+@media all and (max-width: 800px) {
+  body:not(.mac) .iphone {
+    display: none;
+  }
+}

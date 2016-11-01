@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>bron</title>
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
   <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
   <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
   <script src="js/jquery.flexslider-min.js"></script>
   <script src="js/jquery.selectric.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
 
 
   <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
   <link rel="stylesheet" type="text/css" href="css/selectric.css"/>
-  <link rel="stylesheet" type="text/css" href="css/style.css?1"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css?2"/>
   <script src="js/script.js"></script>
   <style>
     .max-width {
@@ -154,11 +155,11 @@
   <div id="order-cols" class="max-width">
     <div id="ocl">
       <div id="flight-info">
-        <div id="flight-info-title" class="col-title revealer {{showI ? 'shown' : ''}}" ng-click="showI=!showI">
+        <div id="flight-info-title" class="col-title revealer" ng-class="showI ? 'shown' : ''" ng-click="showI=!showI">
           Информация о рейсе
         </div>
 
-        <div class="result without-price ss-mb20 reveal-what">
+        <div class="result without-price ss-mb20 slide" ng-show="showI">
           <div class="result-cols">
             <div class="col-trip-info rounded">
               <div class="trip-grey-row trip-there-grey trip-row">
@@ -512,14 +513,14 @@
             <span class="pholder">Ваш email</span>
           </label>
 
-          <div class="mt10 ws-nd revealer {{showPass ? 'shown' : ''}}" ng-click="showPass=!showPass">
+          <div class="mt10 ws-nd revealer" ng-class="showPass ? 'shown' : ''" ng-click="showPass=!showPass">
             <div class="f d vcen">
               <div class="flex1 blue">
                 1 пассажир, эконом-класс
               </div>
             </div>
           </div>
-          <div class="ebebeb" ng-show="showPass">
+          <div class="ebebeb slide" ng-show="showPass">
             <div class="p10">
               <div class="border-split bs15">
                 <div class="f d vcen space10">
@@ -647,121 +648,124 @@
 
       </div>
 
-      <div class="form-group">
+      <div class="form-group" ng-init="show='sta'; chosen='sta'" ng-if="true">
         <div class="tac blue ttu">Услуги сервиса для вас, уважаемые&nbsp;клиенты</div>
 
-        <div ng-init="showSta = true;" class="mt10 ws-nd revealer {{showSta ? 'shown' : ''}}" ng-click="showSta=!showSta">
+        <div class="mt10 ws-nd revealer" ng-class="show=='sta' ? 'shown' : ''" ng-click="show = show=='sta' ? '' : 'sta'">
           <div class="f d vcen">
             <div class="flex1 blue">
-              Тариф Стандарт — <b>0 <span class="rub">Р</span></b>
+              <span class="fa fa-check green" ng-show="chosen=='sta'"></span> Тариф Стандарт — <b>0 <span class="rub">Р</span></b>
             </div>
             <!--div class="fz12">Добавлено</div-->
           </div>
         </div>
-        <div class="reveal-what ebebeb">
+        <div class="ebebeb slide" ng-show="show=='sta'">
           <div class="p10">
             <div class="border-split">
               <div class="f d vtop space20">
                 <div>Оповещение в случае                  смены полётной информации</div>
-                <div class="blue tar">SMS, email</div>
+                <div class="blue tar flex00auto">SMS,<br class="iphone"> email</div>
               </div>
               <div class="f d vtop space20">
                 <div>Срок обработки заявки на возрат
                   или обмен авиабилета</div>
-                <div class="blue tar">4 раб. дня</div>
+                <div class="blue tar flex00auto">4 раб.<br class="iphone"> дня</div>
               </div>
               <div class="f d vtop space20">
                 <div>Возврат чартерного или
                   блочного авиабилета</div>
-                <div class="blue tar">Нет</div>
+                <div class="blue tar flex00auto">Нет</div>
               </div>
               <div class="f d vtop space20">
                 <div>Комиссия агентства за возрат
                   или обмен авиабилета</div>
-                <div class="blue tar">980&nbsp;<span class="rub">Р</span></div>
+                <div class="blue tar flex00auto">980&nbsp;<span class="rub">Р</span></div>
               </div>
+            </div>
+            <div class="mt20 f" ng-hide="chosen=='sta'">
+              <a class="blue-button flex1 tac" ng-click="show=''; chosen='sta';" >Выбрать</a>
             </div>
           </div>
         </div>
 
-        <div class="mt10 ws-nd revealer {{showPre ? 'shown' : ''}}" ng-click="showPre=!showPre">
+        <div class="mt10 ws-nd revealer" ng-class="show=='pre' ? 'shown' : ''" ng-click="show = show=='pre' ? '' : 'pre'">
           <div class="f d vcen">
             <div class="flex1 blue">
-              Тариф Premium — <b>290&nbsp;<span class="rub">Р</span></b>
+              <span class="fa fa-check green" ng-show="chosen=='pre'"></span> Тариф Premium — <b>290&nbsp;<span class="rub">Р</span></b>
             </div>
             <!--div class="fz12">Добавлено</div-->
           </div>
         </div>
-        <div class="reveal-what ebebeb">
+        <div class="ebebeb slide" ng-show="show=='pre'">
           <div class="p10">
             <div class="border-split">
               <div class="f d vtop space20">
                 <div>Оповещение в случае                  смены полётной информации</div>
-                <div class="blue tar">SMS, email</div>
+                <div class="blue tar flex00auto">SMS,<br class="iphone"> email</div>
               </div>
               <div class="f d vtop space20">
                 <div>Срок обработки заявки на возрат
                   или обмен авиабилета</div>
-                <div class="blue tar">2 раб. дня</div>
+                <div class="blue tar flex00auto">2 раб.<br class="iphone"> дня</div>
               </div>
               <div class="f d vtop space20">
                 <div>Возврат чартерного или
                   блочного авиабилета</div>
-                <div class="blue tar">Да</div>
+                <div class="blue tar flex00auto">Да</div>
               </div>
               <div class="f d vtop space20">
                 <div>Комиссия агентства за возрат
                   или обмен авиабилета</div>
-                <div class="blue tar">480&nbsp;<span class="rub">Р</span></div>
+                <div class="blue tar flex00auto">480&nbsp;<span class="rub">Р</span></div>
               </div>
               <div class="f d vtop space20">
                 <div>Персональный менеджер</div>
-                <div class="blue tar">Нет</div>
+                <div class="blue tar flex00auto">Нет</div>
               </div>
             </div>
-            <div class="mt20 f">
-              <a class="blue-button flex1 tac">Выбрать</a>
+            <div class="mt20 f" ng-hide="chosen=='pre'">
+              <a class="blue-button flex1 tac" ng-click="show=''; chosen='pre';" >Выбрать</a>
             </div>
           </div>
         </div>
 
-        <div class="mt10 ws-nd revealer {{showExc ? 'shown' : ''}}" ng-click="showExc=!showExc">
+        <div class="mt10 ws-nd revealer" ng-class="show=='exc' ? 'shown' : ''" ng-click="show = show=='exc' ? '' : 'exc'">
           <div class="f d vcen">
             <div class="flex1 blue">
-              Тариф Exclusive — <b>790&nbsp;<span class="rub">Р</span></b>
+              <span class="fa fa-check green" ng-show="chosen=='exc'"></span> Тариф Exclusive — <b>790&nbsp;<span class="rub">Р</span></b>
             </div>
-            <div class="fz12">Добавлено</div>
+            <!--div class="fz12">Добавлено</div-->
           </div>
         </div>
-        <div class="reveal-what ebebeb">
+        <div class="ebebeb slide" ng-show="show=='exc'">
           <div class="p10">
             <div class="border-split">
               <div class="f d vtop space20">
                 <div>Оповещение в случае                  смены полётной информации</div>
-                <div class="blue tar">SMS, email, звонок</div>
+                <div class="blue tar flex00auto">SMS, email,<br class="iphone"> звонок</div>
               </div>
               <div class="f d vtop space20">
                 <div>Срок обработки заявки на возрат
                   или обмен авиабилета</div>
-                <div class="blue tar">1 раб. день</div>
+                <div class="blue tar flex00auto">1 раб.<br class="iphone"> день</div>
               </div>
               <div class="f d vtop space20">
                 <div>Возврат чартерного или
                   блочного авиабилета</div>
-                <div class="blue tar">Да</div>
+                <div class="blue tar flex00auto">Да</div>
               </div>
               <div class="f d vtop space20">
                 <div>Комиссия агентства за возрат
                   или обмен авиабилета</div>
-                <div class="blue tar">480&nbsp;<span class="rub">Р</span></div>
+                <div class="blue tar flex00auto">480&nbsp;<span class="rub">Р</span></div>
               </div>
               <div class="f d vtop space20">
                 <div>Персональный менеджер</div>
-                <div class="blue tar">Да</div>
+                <div class="blue tar flex00auto">Да</div>
               </div>
             </div>
-            <div class="mt20 f">
-              <a class="cancel-button flex1 tac">Отменить</a>
+            <div class="mt20 f" ng-hide="chosen=='exc'">
+              <a class="blue-button flex1 tac" ng-click="show=''; chosen='exc';" >Выбрать</a>
             </div>
           </div>
         </div>
@@ -770,12 +774,12 @@
 
 
       <div class="form-group">
-        <div class="mt10 ws-nd revealer {{showQ ? 'shown' : ''}}" ng-click="showQ=!showQ">
+        <div class="ws-nd revealer {{showQ ? 'shown' : ''}}" ng-click="showQ=!showQ">
           <div class="blue fwb">
             Ваши комментарии и&nbsp;пожелания
           </div>
         </div>
-        <div class="reveal-what ebebeb">
+        <div class="ebebeb slide" ng-show="showQ">
           <div class="p10 f">
             <textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Ваши комментарии и&nbsp;пожелания</div>
           </div>

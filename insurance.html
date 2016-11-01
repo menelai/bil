@@ -1,5 +1,5 @@
-<div ng-init="insur = 'med'; selector='#insurances';" ng-controller="test as t" id="insurances">
-  <div class="ws-nd revealer {{insur == 'med' ? 'shown' : ''}}" data-reveal="+.reveal-what" data-val="med" ng-click="insur = insur == 'med' ? '' : 'med'">
+<div ng-init="insur = 'med';" ng-if="true">
+  <div class="ws-nd revealer" ng-class="insur == 'med' ? 'shown' : ''" ng-click="insur = insur == 'med' ? '' : 'med'">
     <div class="f d vcen">
       <div class="blue fwb">
         <span ng-show="chosen=='med'" class="fa fa-check green"></span> Медицинское страхование
@@ -7,9 +7,8 @@
       <span ng-show="chosen=='med'">{{ad}} дней</span>
     </div>
   </div>
-  <div class="reveal-what ebebeb mt10">
+  <div class="ebebeb slide" ng-show="insur == 'med'">
     <div class="p10">
-      <!--div class="tac blue ttu fwm fz15">Медицинское страхование</div-->
       <div class="tac mt5">Достаточно для получения визы</div>
       <div class="fwb fz20 tac mt5">916 <span class="rub">Р</span></div>
       <div class="f d mt10"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
@@ -28,10 +27,10 @@
     </div>
   </div>
 
-  <div class="mt10 ws-nd revealer {{insur == 'fli' ? 'shown' : ''}}" data-reveal="+.reveal-what" data-val="fli" ng-click="insur = insur == 'fli' ? '' : 'fli'">
+  <div class="mt10 ws-nd revealer" ng-class="insur == 'fli' ? 'shown' : ''" ng-click="insur = insur == 'fli' ? '' : 'fli'">
     <div class="blue fwb"><span ng-show="addedFli" class="fa fa-check green"></span> Страхование на время перелета</div>
   </div>
-  <div class="reveal-what ebebeb">
+  <div class="ebebeb slide" ng-show="insur == 'fli'">
     <div class="p10">
       <!--div class="tac blue ttu fwm fz15">Страхование на время перелета</div-->
       <div class="tac mt5">Страхование на случай потери багажа</div>
@@ -47,10 +46,10 @@
     </div>
   </div>
 
-  <div class="mt10 ws-nd revealer {{insur == 'tri' ? 'shown' : ''}}" data-reveal="+.reveal-what" data-val="tri" ng-click="insur = insur == 'tri' ? '' : 'tri'">
+  <div class="mt10 ws-nd revealer" ng-class="insur == 'tri' ? 'shown' : ''" ng-click="insur = insur == 'tri' ? '' : 'tri'">
     <div class="blue fwb"><span ng-show="addedTri" class="fa fa-check green"></span> Страхование путешествия</div>
   </div>
-  <div class="reveal-what ebebeb">
+  <div class="ebebeb slide" ng-show="insur == 'tri'">
     <div class="p10">
       <!--div class="tac blue ttu fwm fz15">Страхование путешествия</div-->
       <div class="tac mt5">Задержка рейса</div>
