@@ -127,7 +127,7 @@
   </div>
 </div>
 <div id="menu-line">
-  <div id="buter" class="vcen hcen"><i class="fa fa-bars"></i></div>
+  <div id="buter" class="vcen hcen"><i class="fa fa-bars fz20"></i></div>
   <div class="max-width">
     <ul>
       <li><a href="/">Авиабилеты</a></li>
@@ -147,7 +147,7 @@
 <div id="order-form">
   <div id="results-header">
     <div class="max-width">
-      <span id="src-dst">Москва     <span class="gt"></span>   Санкт-петербург    <span class="gt"></span>    Москва</span>
+      <span id="src-dst">Москва     <i class="fa fa-angle-right"></i>   Санкт-петербург    <i class="fa fa-angle-right"></i>    Москва</span>
       <span id="res-dates">25 ноября - 5 декабря</span>
     </div>
   </div>
@@ -506,7 +506,7 @@
             <span class="pholder">Ваше имя</span>
           </label>
 
-          <label class="f vbot input-pholder mt10 not-empty">
+          <div class="f vbot input-pholder mt10 not-empty">
             <div class="f ss-space10 d flex1 ss-rr ws-rr">
               <input type="text" class="flex1" value="+7">
               <div class="mobile-select">
@@ -521,7 +521,7 @@
               </div>
             </div>
             <span class="pholder">Мобильный телефон</span>
-          </label>
+          </div>
 
           <label ng-if="true" class="f vbot input-pholder mt10" ng-class="m ? 'not-empty' : ''">
             <input type="text" name="fio" class="flex1 fz15" ng-model="m">

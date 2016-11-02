@@ -322,7 +322,7 @@ body {
 #buter {
   @include display-flex();
   position: absolute;
-  right:0;
+  right:10px;
   top:10px;
   width:32px;
   height:32px;
