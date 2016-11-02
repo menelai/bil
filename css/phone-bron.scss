@@ -194,6 +194,16 @@
   padding-right: 30px;
   border-radius: 2px;
 
+  &.revealer-grey {
+    background: white;
+    box-shadow: inset 0 0 0 1px $grey;
+    color:$grey;
+    &:after {
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+    }
+  }
+
   &:after {
     content: '';
     background: url(../i/arrow-down.png);

@@ -3094,15 +3094,13 @@ a, .pseudolink {
 }
 
 #aeroexpress-logo {
-  @include flex(0 0 40px);
+  @include flex(0 0 34px);
   img {
     width:100%;
   }
 }
 
 #aeroexpress {
-  padding:0 0 15px 0;
-
   #aeroexpress-title {
     text-transform: uppercase;
     color:$blue;
@@ -4132,3 +4130,14 @@ a, .pseudolink {
   line-height: 1.6;
 }
 
+
+.bg-lightgrey {
+  background: #dbdbdb;
+}
+
+
+.white-direction {
+  width:30px;
+  background: url(../i/white-direction.png) right center no-repeat;
+  margin:0 -15px;
+}

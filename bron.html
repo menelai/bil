@@ -127,7 +127,7 @@
   </div>
 </div>
 <div id="menu-line">
-  <div id="buter"></div>
+  <div id="buter" class="vcen hcen"><i class="fa fa-bars"></i></div>
   <div class="max-width">
     <ul>
       <li><a href="/">Авиабилеты</a></li>
@@ -341,12 +341,12 @@
           </div>
           <div id="aeroexpress-logo"></div>
         </div-->
-        <div class="f d vcen space40">
-          <div class="flex1 blue ttu">В&nbsp;аэропорт без&nbsp;пробок и&nbsp;очередей</div>
+        <div class="f d vcen space4">
+          <div class="flex1 ttu">В&nbsp;аэропорт без&nbsp;пробок и&nbsp;очередей</div>
           <div id="aeroexpress-logo"><img src="i/aeroexpress.png"></div>
         </div>
 
-        <div class="mt10 f hcen vcen space10">
+        <!--div class="mt10 f hcen vcen space10">
           <div class="f vcen space8">
             <img src="i/greytrain.png">
             <div class="fz16">Белорусский</div>
@@ -356,16 +356,21 @@
             <img src="i/greyplane.png">
             <div class="fz16">Шереметьево</div>
           </div>
+        </div-->
+        <div class="bg-lightgrey d f tac lh1 stretch mt10">
+          <div class="flex1 p8">Белорусский вокзал</div>
+          <div class="white-direction"></div>
+          <div class="flex1 p8">Шереметьево</div>
         </div>
 
-        <div class="mt10 f vcen hcen space12">
-          <div>21января 2016</div>
-          <div class="fa fa-clock-o grey"></div>
-          <div class="blue">с 05:30 по 00:30</div>
+        <div class="mt10 f d space12">
+          <div class="flex1 tac">21января 2016</div>
+          <!--div class="fa fa-clock-o grey"></div-->
+          <div class="blue flex1 tac">с 05:30 по 00:30</div>
         </div>
 
-        <div class="mt10 revealer {{showAero ? 'shown' : ''}}" ng-click="showAero=!showAero">
-          <div class="blue fwb">Расписание аэроэкспрессов</div>
+        <div class="mt10 revealer revealer-grey {{showAero ? 'shown' : ''}}" ng-click="showAero=!showAero">
+          <div class="fwb">Расписание аэроэкспрессов</div>
         </div>
         <div class="ebebeb slide" ng-show="showAero">
           <div class="p10">
@@ -456,19 +461,27 @@
 
 
         <div class="aeroexpress-ticket mt10 p10">
-          <div class="tac">Пассажиры от&nbsp;5&nbsp;лет</div>
-          <div class="fwb fz20 tac mt10">470 <span class="rub">Р</span></div>
-          <div class="f d vcen mt10 space20">
+          <div class="">Пассажиры от&nbsp;5&nbsp;лет</div>
+          <div class="f d vtop mt5">
             <div>
               <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+              <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
             </div>
+            <div class="tac flex1">
+              <div class="fwb fz20">470 <span class="rub">Р</span></div>
+              <div class="grey fz11">Цена за билет</div>
+            </div>
+          </div>
+
+          <div class="f d vcen mt5 space20">
+
 
               <input type="button" value="Добавить к покупке" class="green-button aib flex1">
 
           </div>
         </div>
 
-        <div class="aeroexpress-ticket mt10 p10">
+        <!--div class="aeroexpress-ticket mt10 p10">
           <div class="tac">Пассажиры до&nbsp;5&nbsp;лет</div>
           <div class="fwb fz20 tac mt10">0 <span class="rub">Р</span></div>
           <div class="f d vcen mt10 space20">
@@ -477,7 +490,7 @@
             </div>
               <input type="button" value="Добавлено к покупке" class="white-button aib flex1">
           </div>
-        </div>
+        </div-->
       </div>
     </div>
 
@@ -592,12 +605,18 @@
           </div>
 
           <div class="f d space2">
-            <div ng-if="true" class="f vbot input-pholder not-empty">
+            <!--div ng-if="true" class="f vbot input-pholder not-empty">
               <div class="f space8 vbot">
                 <label class="f space2"><input type="radio" ng-model="buyer" value="1"> <span>М</span></label>
                 <label class="f space2"><input type="radio" ng-model="buyer" value="2"> <span>Ж</span></label>
               </div>
               <span class="pholder">Пол</span>
+            </div-->
+            <div class="f d stretch input-pholder p0 gender">
+              <input id="g1" type="radio" ng-model="gender" class="no-display" value="1">
+              <label for="g1" class="flex1 f vcen hcen"><div>М</div></label>
+              <input id="g2" type="radio" ng-model="gender" class="no-display" value="2">
+              <label for="g2" class="flex1 f vcen hcen"><div>Ж</div></label>
             </div>
             <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
               <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">

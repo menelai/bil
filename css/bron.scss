@@ -4,6 +4,9 @@
   border:solid 1px $blue;
   border-radius: 2px;
   padding:5px 5px 2px 5px;
+  &.p0 {
+    padding:0;
+  }
 
   input, select {
     &[type=text], &[type=number] {
@@ -64,6 +67,22 @@
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     @include transition(top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in-out);
+  }
+}
+
+.gender {
+  border-radius: 20px;
+  color:$blue;
+  font-size: 22px;
+  width:90px;
+  input[type=radio] {
+    &:checked {
+      +label {
+        @include blue-gradient();
+        color:white;
+        border-radius: 20px;
+      }
+    }
   }
 }
 
