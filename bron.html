@@ -12,6 +12,8 @@
   <script src="js/jquery.selectric.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+  <script src="https://rawgit.com/srfrnk/re-tree/master/re-tree.js" type="text/javascript"></script>
+  <script src="https://rawgit.com/srfrnk/ng-device-detector/master/ng-device-detector.js" type="text/javascript"></script>
 
 
   <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
@@ -24,7 +26,7 @@
     }
   </style>
 </head>
-<body class="bron">
+<body class="bron" ng-class="showMenu ? 'mobile-menu' : ''" device-detector>
 <div id="statusbar">
   <div class="max-width">
     <div>
@@ -70,7 +72,7 @@
   </div>
   <div id="totop"><a href="#top"></a></div>
 </div>
-<div id="top">
+<div id="top" ng-class="showMenu ? 'blur' : ''">
   <div class="max-width">
     <div id="logo">
       <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
@@ -126,8 +128,8 @@
     </div>
   </div>
 </div>
-<div id="menu-line">
-  <div id="buter" class="vcen hcen"><i class="fa fa-bars fz20"></i></div>
+<div id="buter" class="ws-nd vcen hcen" ng-click="showMenu=!showMenu" ng-init="showMenu=false"><i class="fa fa-bars fz20"></i></div>
+<div id="menu-line" ng-show="showMenu || (device!='iphone'&&device!='android'&&device!='windows-phone'&&device!='blackberry')">
   <div class="max-width">
     <ul>
       <li><a href="/">Авиабилеты</a></li>
@@ -139,12 +141,26 @@
       <li><a href="/">Контакты</a></li>
       <li><a href="/">Отзывы о нас</a></li>
     </ul>
+    <div class="ws-nd  mt20">
+      <div class="f around">
+        <a href="/" class="f hcen vcen lnk lnk-facebook"><i class="fa fa-facebook"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-vk"><i class="fa fa-vk"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-instagram"><i class="fa fa-instagram"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-twitter"><i class="fa fa-twitter"></i></a>
+      </div>
+      <div class="mt10 fz18">
+        <a href="mailto:info@biletideshevo.ru" class="tdn"><i class="fa fa-envelope-o grey"></i> info@biletideshevo.ru</a>
+      </div>
+      <div class="f vcen hcen mt20">
+        <a class="cancel-button" ng-click="showMenu=false">Закрыть</a>
+      </div>
+    </div>
   </div>
 </div>
 
 
 
-<div id="order-form">
+<div id="order-form" ng-class="showMenu ? 'blur' : ''">
   <div id="results-header">
     <div class="max-width">
       <span id="src-dst">Москва     <i class="fa fa-angle-right"></i>   Санкт-петербург    <i class="fa fa-angle-right"></i>    Москва</span>
@@ -612,7 +628,7 @@
               </div>
               <span class="pholder">Пол</span>
             </div-->
-            <div class="f d stretch input-pholder p0 gender">
+            <div class="f d stretch input-pholder p0 gender" ng-init="gender=1" ng-class="gender==2 ? 'gender-my' : ''">
               <input id="g1" type="radio" ng-model="gender" class="no-display" value="1">
               <label for="g1" class="flex1 f vcen hcen"><div>М</div></label>
               <input id="g2" type="radio" ng-model="gender" class="no-display" value="2">

@@ -222,7 +222,11 @@
 })(jQuery);
 
 (function() {
-  var app = angular.module('test', ['ngAnimate']);
+  var app = angular.module('test', ['ngAnimate', "ng.deviceDetector"]);
+
+  app.run(function($rootScope, deviceDetector) {
+    $rootScope.device = deviceDetector.device;
+  });
 
   app.animation('.slide', function() {
     var NG_HIDE_CLASS = 'ng-hide';

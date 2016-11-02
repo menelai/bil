@@ -73,7 +73,9 @@
 .gender {
   border-radius: 20px;
   color:$blue;
-  font-size: 22px;
+  &:not(.gender-my) {
+    font-size: 20px;
+  }
   width:90px;
   input[type=radio] {
     &:checked {
@@ -81,6 +83,18 @@
         @include blue-gradient();
         color:white;
         border-radius: 20px;
+      }
+    }
+  }
+
+  &.gender-my {
+    border-radius: 2px;
+    overflow: hidden;
+    input[type=radio] {
+      &:checked {
+        +label {
+          border-radius: 0px;
+        }
       }
     }
   }
