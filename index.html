@@ -24,7 +24,122 @@
 
 </head>
 <body>
-<div id="search-throbber" ng-hide="true">
+<div id="search-pending" class="f vcen hcen">
+  <div id="magnifscale">
+
+  </div>
+  <div id="throbber-slider">
+    <ul class="slides">
+      <li>
+        <div class="thpic f vcen hcen"><img src="i/thr1.png"></div>
+        <div class="thsign">
+          За первые два года работы<br>
+          мы реализовали<br>
+          <span class="blue ttu fz24"><b>35&thinsp;000</b> авиабилетов,</span><br>
+          получив 7 отрицательных честных отзывов
+        </div>
+      </li>
+      <li>
+        <div class="thpic f vcen hcen"><img src="i/thr2.png"></div>
+        <div class="thsign">
+          <span class="blue ttu fz24 fwl">ТОЛЬКО У НАС:</span><br>
+          самый большой ассортимент<br>
+          чартерных и блочных авиабилетов — <br>
+          ЛУЧШИЕ ЦЕНЫ В РОССИИ
+        </div>
+      </li>
+      <li>
+        <div class="thpic f vcen hcen"><img src="i/thr3.png"></div>
+        <div class="thsign">
+          Страхование от<br>
+          <img src="i/ingols-large.png">
+        </div>
+      </li>
+      <li>
+        <div class="thpic f vcen hcen"><img src="i/thr4.png"></div>
+        <div class="thsign">
+          Мы работаем<br>
+          <span class="blue ttu fz24">без выходных</span>
+        </div>
+      </li>
+      <li>
+        <div class="thpic f vcen hcen"><img src="i/thr5.png"></div>
+        <div class="thsign">
+          Способы оплаты<br>
+          <div class="f mt10 space10">
+            <div><img src="i/visa-mastercard.png" width="27"></div>
+            <div><img src="i/euroset-l.png" width="55"></div>
+            <div><img src="i/svyaznoy-big.png" width="55"></div>
+            <div><img src="i/alfa-small.png"></div>
+          </div>
+          <span class="blue ttu fz24">комиссия 0%</span>
+        </div>
+      </li>
+      <li>
+        <div class="thpic f vcen hcen"><img src="i/thr4.png"></div>
+        <div class="thsign">
+          <span class="blue ttu fz24">Ж/Д билеты</span><br>
+          По очень привлекательным ценам<br>
+          без очереди за несколько минут
+
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    $(function() {
+      $("#throbber-slider").flexslider({
+        //animation: "slide"
+      });
+      var svg = d3.select("#magnifscale")
+        .append("svg")
+        .attr("width", 216)
+        .attr("height", 216)
+        .append("g")
+        .attr("transform", "translate(108,108)");
+
+      var arc = d3.svg.arc()
+        .innerRadius(89)
+        .outerRadius(107)
+        .startAngle(0)
+        .endAngle(1 * Math.PI);
+
+      var path = svg.append("path")
+        .attr("class", "arc")
+        .attr("d", arc);
+
+      var arc1 = d3.svg.arc()
+        .innerRadius(106)
+        .outerRadius(108)
+        .startAngle(0)
+        .endAngle(2 * Math.PI);
+
+      var path1 = svg.append("path")
+        .attr("class", "arc1")
+        .attr("d", arc1);
+
+      var arc2 = d3.svg.arc()
+        .innerRadius(88)
+        .outerRadius(90)
+        .startAngle(0)
+        .endAngle(2 * Math.PI);
+
+      var path2 = svg.append("path")
+        .attr("class", "arc1")
+        .attr("d", arc2);
+
+      setTimeout(function() {
+        var arc = d3.svg.arc()
+          .innerRadius(89)
+          .outerRadius(107)
+          .startAngle(0)
+          .endAngle(1.5 * Math.PI);
+        path.attr("d", arc);
+      }, 2000);
+    });
+  </script>
+</div>
+<!--div id="search-throbber">
   <div id="sth-inner">
     <h2 id="sth-title" class="blue ttu tac">поиск дешёвых авиабилетов займёт не более 25 секунд</h2>
     <div class="bysides smaller2">
@@ -139,7 +254,7 @@
       </script>
     </div>
   </div>
-</div>
+</div-->
 <!--div id="statusbar">
   <div class="max-width">
     <div>

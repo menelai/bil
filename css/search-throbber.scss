@@ -84,18 +84,88 @@
 #magnif {
   position: absolute;
   left:50%;
-  top:0;
-  width:180px;
-  height:180px;
-  margin:0 0 0 -90px;
+  top:50%;
+  width:216px;
+  height:216px;
+  @include transform(translateX(-50%) translateY(-50%));
+  border:solid 2px $blue;
   &:before {
-    content:url(../i/magnif.png);
+    //content:url(../i/magnif.png);
     width:278px;
     height:281px;
     position: absolute;
     left: -24px;
     top: 0px;
   }
+}
+
+#throbber-slider {
+  width:180px;
+
+  .flex-control-paging {
+    display: none;
+  }
+
+  .flex-direction-nav {
+    list-style: none;
+    padding:0;
+    margin:0;
+
+    .flex-prev {
+      position: absolute;
+      top:50%;
+      text-indent: -9999px;
+      background: url(../i/throbber-prev.png) center center no-repeat;
+      width:48px;
+      height:49px;
+      @include transform(translateX(-45px) translateY(-50%));
+      right:100%;
+    }
+
+    .flex-next {
+      position: absolute;
+      top:50%;
+      text-indent: -9999px;
+      background: url(../i/throbber-next.png) center center no-repeat;
+      width:48px;
+      height:49px;
+      @include transform(translateX(45px) translateY(-50%));
+      left:100%;
+    }
+  }
+}
+
+.thpic {
+
+  height:180px;
+}
+
+#magnifscale {
+  position: absolute;
+  left:50%;
+  top:50%;
+  width:216px;
+  height:216px;
+  @include transform(translateX(-50%) translateY(-50%));
+  svg {
+    display: block;
+  }
+  &:before {
+    content:url(../i/magnifier2.png);
+    width:289px;
+    height:385px;
+    position: absolute;
+    left: -25px;
+    top: -33px;
+  }
+}
+
+.thsign {
+  position: absolute;
+  top:100%;
+  left:-130px;
+  min-width: 290px;
+  margin-top:60px;
 }
 
 #eye {
@@ -123,9 +193,22 @@
 }
 
 .arc {
-   fill: #08d0e8;
+   fill: $blue;
  }
 
 .arc1 {
   fill: $blue;
+}
+
+#search-pending {
+  position: fixed;
+
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 100;
+  //background: rgba(229, 241, 244, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
 }
