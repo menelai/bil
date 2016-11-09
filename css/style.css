@@ -33556,14 +33556,17 @@ a:hover, .pseudolink:hover {
 #magnif {
   position: absolute;
   left: 50%;
-  top: 0;
-  width: 180px;
-  height: 180px;
-  margin: 0 0 0 -90px;
+  top: 50%;
+  width: 216px;
+  height: 216px;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  border: solid 2px #058fc7;
 }
-/* line 91, search-throbber.scss */
+/* line 92, search-throbber.scss */
 #magnif:before {
-  content: url(../i/magnif.png);
   width: 278px;
   height: 281px;
   position: absolute;
@@ -33571,7 +33574,90 @@ a:hover, .pseudolink:hover {
   top: 0px;
 }
 
-/* line 101, search-throbber.scss */
+/* line 102, search-throbber.scss */
+#throbber-slider {
+  width: 180px;
+}
+/* line 105, search-throbber.scss */
+#throbber-slider .flex-control-paging {
+  display: none;
+}
+/* line 109, search-throbber.scss */
+#throbber-slider .flex-direction-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 114, search-throbber.scss */
+#throbber-slider .flex-direction-nav .flex-prev {
+  position: absolute;
+  top: 50%;
+  text-indent: -9999px;
+  background: url(../i/throbber-prev.png) center center no-repeat;
+  width: 48px;
+  height: 49px;
+  -moz-transform: translateX(-45px) translateY(-50%);
+  -ms-transform: translateX(-45px) translateY(-50%);
+  -webkit-transform: translateX(-45px) translateY(-50%);
+  transform: translateX(-45px) translateY(-50%);
+  right: 100%;
+}
+/* line 125, search-throbber.scss */
+#throbber-slider .flex-direction-nav .flex-next {
+  position: absolute;
+  top: 50%;
+  text-indent: -9999px;
+  background: url(../i/throbber-next.png) center center no-repeat;
+  width: 48px;
+  height: 49px;
+  -moz-transform: translateX(45px) translateY(-50%);
+  -ms-transform: translateX(45px) translateY(-50%);
+  -webkit-transform: translateX(45px) translateY(-50%);
+  transform: translateX(45px) translateY(-50%);
+  left: 100%;
+}
+
+/* line 138, search-throbber.scss */
+.thpic {
+  height: 180px;
+}
+
+/* line 143, search-throbber.scss */
+#magnifscale {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 216px;
+  height: 216px;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+/* line 150, search-throbber.scss */
+#magnifscale svg {
+  display: block;
+}
+/* line 153, search-throbber.scss */
+#magnifscale:before {
+  content: url(../i/magnifier2.png);
+  width: 289px;
+  height: 385px;
+  position: absolute;
+  left: -25px;
+  top: -33px;
+}
+
+/* line 163, search-throbber.scss */
+.thsign {
+  position: absolute;
+  top: 100%;
+  left: -130px;
+  min-width: 290px;
+  margin-top: 60px;
+}
+
+/* line 171, search-throbber.scss */
 #eye {
   position: absolute;
   top: 50%;
@@ -33611,14 +33697,26 @@ a:hover, .pseudolink:hover {
     background-position: 0 -75px;
   }
 }
-/* line 125, search-throbber.scss */
+/* line 195, search-throbber.scss */
 .arc {
-  fill: #08d0e8;
+  fill: #058fc7;
 }
 
-/* line 129, search-throbber.scss */
+/* line 199, search-throbber.scss */
 .arc1 {
   fill: #058fc7;
+}
+
+/* line 203, search-throbber.scss */
+#search-pending {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
 }
 
 /* line 1, bron.scss */
