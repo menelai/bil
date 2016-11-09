@@ -1,0 +1,47 @@
+#top {
+  >.max-width {
+    padding-right:32px;
+  }
+}
+
+#logo {
+  img {
+    width:32px;
+    height:32px;
+  }
+}
+
+#sitename {
+  font-size: 28px;
+}
+
+#phones {
+  height:32px;
+  .blue {
+    height:32px;
+    line-height: 32px;
+    font-size: 16px;
+    //margin-right:-16px;
+    width:32px;
+    border-radius: 16px;
+  }
+  &:after {
+    width:32px;
+    height:32px;
+    line-height: 32px;
+    border-radius: 16px;
+    font-size: 22px;
+  }
+
+  &.phoneshown {
+    .blue {
+      width: 150px;
+    }
+  }
+}
+
+#buter {
+  width:32px;
+  height:32px;
+  font-size: 20px;
+}

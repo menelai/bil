@@ -179,7 +179,7 @@ body {
   }
   .blue {
     position: absolute;
-    right:50%;
+    right:0;
     height:32px;
     line-height: 32px;
     top:0;
@@ -189,7 +189,7 @@ body {
     border-radius: 16px;
 
     font-size: 16px;
-    margin-right:-16px;
+    //margin-right:-16px;
     overflow: hidden;
     width:32px;
     text-align: center;
@@ -197,13 +197,19 @@ body {
     opacity:0;
     @include transition(width 0.3s ease-in-out);
   }
+  &:not(.phoneshown) {
+    .blue {
+      pointer-events: none;
+    }
+  }
   &:after {
     position: absolute;
     width:32px;
     height:32px;
     top:0;
-    left:50%;
-    @include transform(translateX(-50%));
+    right:0;
+    //left:50%;
+    //@include transform(translateX(-50%));
     //@include green-gradient();
     content:'\f095';
     line-height: 32px;
@@ -220,7 +226,7 @@ body {
 
   }
 
-  &:hover {
+  &.phoneshown {
     .blue {
       width: 150px;
       opacity:1;
@@ -330,7 +336,7 @@ body {
 #buter {
   @include display-flex();
   position: absolute;
-  right:10px;
+  right:0px;
   top:10px;
   width:32px;
   height:32px;

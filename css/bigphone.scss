@@ -1,0 +1,52 @@
+#top {
+  >.max-width {
+    padding-right:48px;
+  }
+}
+
+#sitename-and-slogan {
+  margin-top: 5px;
+}
+
+#logo {
+  img {
+    width:48px;
+    height:48px;
+  }
+}
+
+#sitename {
+  font-size: 29px;
+}
+
+
+#phones {
+  height:48px;
+  .blue {
+    height:48px;
+    line-height: 48px;
+    font-size: 20px;
+    //margin-right:-24px;
+    width:48px;
+    border-radius: 24px;
+  }
+  &:after {
+    width:48px;
+    height:48px;
+    line-height: 48px;
+    border-radius: 24px;
+    font-size: 28px;
+  }
+
+  &.phoneshown {
+    .blue {
+      width: 210px;
+    }
+  }
+}
+
+#buter {
+  width:48px;
+  height:48px;
+  font-size: 26px;
+}

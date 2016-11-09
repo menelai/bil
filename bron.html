@@ -77,7 +77,7 @@
     <div id="logo">
       <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
         <div>
-          <div><img src="/i/logo.png"></div>
+          <div><img src="/i/Loro.svg"></div>
           <div class="afut" id="sitename-and-slogan">
             <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
             <div id="slogan" class="blue">
@@ -104,8 +104,8 @@
       </div>
     </div>
     <div class="sep"></div>
-    <div id="phones">
-      <p class="blue"><a class="phon tdn" href="tel:+74951501182">+7 495 150-11-82</a><br>
+    <div id="phones" ng-click="phoneShown=!phoneShown" ng-class="phoneShown ? 'phoneshown' : ''">
+      <p class="blue"><a class="phon tdn" href="tel:+74951501182"><i class="ws-nd green fa fa-phone"></i> +7 495 150-11-82</a><br>
         <span class="phon desktop">8 800 234 5 99 5</span></p>
 
       <p class="grey">с 9:00 до 23:00</p>
@@ -128,7 +128,7 @@
     </div>
   </div>
 </div>
-<div id="buter" class="ws-nd vcen hcen" ng-click="showMenu=!showMenu" ng-init="showMenu=false"><i class="fa fa-bars fz20"></i></div>
+<div id="buter" class="ws-nd vcen hcen" ng-click="showMenu=!showMenu" ng-init="showMenu=false"><i class="fa fa-bars"></i></div>
 <div id="menu-line" ng-show="showMenu || (device!='iphone'&&device!='android'&&device!='windows-phone'&&device!='blackberry')">
   <div class="max-width">
     <ul>
@@ -484,7 +484,7 @@
               <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
             </div>
             <div class="tac flex1">
-              <div class="fwb fz20">470 <span class="rub">Р</span></div>
+              <div class="fz20">470 <span class="rub">Р</span></div>
               <div class="grey fz11">Цена за билет</div>
             </div>
           </div>
@@ -603,9 +603,9 @@
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-repeat="pass in [1, 2]">
           <div class="f d vcen">
-            <div class="blue ttu">Пассажир 1</div>
+            <div class="blue ttu">Пассажир {{pass}}</div>
 
           </div>
 
@@ -628,11 +628,11 @@
               </div>
               <span class="pholder">Пол</span>
             </div-->
-            <div class="f d stretch input-pholder p0 gender" ng-init="gender=1" ng-class="gender==2 ? 'gender-my' : ''">
-              <input id="g1" type="radio" ng-model="gender" class="no-display" value="1">
-              <label for="g1" class="flex1 f vcen hcen"><div>М</div></label>
-              <input id="g2" type="radio" ng-model="gender" class="no-display" value="2">
-              <label for="g2" class="flex1 f vcen hcen"><div>Ж</div></label>
+            <div class="f d stretch input-pholder p0 gender" ng-init="gender='1'" ng-class="gender=='2' ? 'gender-my' : ''">
+              <input id="g1{{pass}}" type="radio" ng-model="gender" class="no-display" value="1">
+              <label for="g1{{pass}}" class="flex1 f vcen hcen"><div>М</div></label>
+              <input id="g2{{pass}}" type="radio" ng-model="gender" class="no-display" value="2">
+              <label for="g2{{pass}}" class="flex1 f vcen hcen"><div>Ж</div></label>
             </div>
             <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
               <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
@@ -957,8 +957,9 @@
       <div class="form-group">
         <div class="ss-fixed-final-price f d stretch">
           <div class="f hcen vcen space20 ss-space10 flex1 ss-p10">
-            <div class="ss-fz10 lh1">Окончательная цена
-              с учётом <br class="">всех сборов и налогов:</div>
+            <div class="ss-fz10 lh1">
+              Окончательная цена с учётом<br>
+              всех сборов и налогов:</div>
             <div class="finalprice ss-fz24 lh1"><b>212&thinsp;338</b> <span class="rub">Р</span></div>
           </div>
           <div class="ws-nd f hcen vcen ss-p10 lh1" style="border-left:solid 1px #959595;"><div class="fa fa-chevron-up fz20" style="color:#959595;"></div></div>

@@ -33702,6 +33702,17 @@ a:hover, .pseudolink:hover {
   border-radius: 20px;
   color: #058fc7;
   width: 90px;
+  /*&.gender-my {
+    border-radius: 2px;
+    overflow: hidden;
+    input[type=radio] {
+      &:checked {
+        +label {
+          border-radius: 0px;
+        }
+      }
+    }
+  }*/
 }
 /* line 76, bron.scss */
 .gender:not(.gender-my) {
@@ -33720,15 +33731,6 @@ a:hover, .pseudolink:hover {
   background-image: linear-gradient(to bottom, #239dce 0%, #239dce 35%, #0781b2 65%, #0781b2 100%);
   color: white;
   border-radius: 20px;
-}
-/* line 90, bron.scss */
-.gender.gender-my {
-  border-radius: 2px;
-  overflow: hidden;
-}
-/* line 95, bron.scss */
-.gender.gender-my input[type=radio]:checked + label {
-  border-radius: 0px;
 }
 
 /* line 103, bron.scss */
@@ -34207,7 +34209,7 @@ label:focus {
   /* line 180, phone.scss */
   #phones .blue {
     position: absolute;
-    right: 50%;
+    right: 0;
     height: 32px;
     line-height: 32px;
     top: 0;
@@ -34224,7 +34226,6 @@ label:focus {
     box-shadow: inset 0 0 0 1px #058fc7;
     border-radius: 16px;
     font-size: 16px;
-    margin-right: -16px;
     overflow: hidden;
     width: 32px;
     text-align: center;
@@ -34234,17 +34235,17 @@ label:focus {
     -webkit-transition: width 0.3s ease-in-out;
     transition: width 0.3s ease-in-out;
   }
-  /* line 200, phone.scss */
+  /* line 201, phone.scss */
+  #phones:not(.phoneshown) .blue {
+    pointer-events: none;
+  }
+  /* line 205, phone.scss */
   #phones:after {
     position: absolute;
     width: 32px;
     height: 32px;
     top: 0;
-    left: 50%;
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
+    right: 0;
     content: '\f095';
     line-height: 32px;
     border-radius: 16px;
@@ -34264,24 +34265,24 @@ label:focus {
     box-shadow: inset 0 0 0 1px #058fc7;
     color: #058fc7;
   }
-  /* line 224, phone.scss */
-  #phones:hover .blue {
+  /* line 230, phone.scss */
+  #phones.phoneshown .blue {
     width: 150px;
     opacity: 1;
   }
-  /* line 227, phone.scss */
-  #phones:hover .blue a {
+  /* line 233, phone.scss */
+  #phones.phoneshown .blue a {
     text-decoration: none !important;
     color: #058fc7 !important;
   }
 
-  /* line 294, phone.scss */
+  /* line 300, phone.scss */
   #personal {
     padding-left: 0;
     display: none;
   }
 
-  /* line 299, phone.scss */
+  /* line 305, phone.scss */
   #menu-line {
     position: fixed;
     top: 0;
@@ -34293,20 +34294,20 @@ label:focus {
     background: rgba(255, 255, 255, 0.8);
     padding: 30px 0 10px;
   }
-  /* line 310, phone.scss */
+  /* line 316, phone.scss */
   #menu-line > .max-width {
     padding: 0 40px;
   }
-  /* line 314, phone.scss */
+  /* line 320, phone.scss */
   #menu-line ul {
     display: block;
     text-align: left;
   }
-  /* line 317, phone.scss */
+  /* line 323, phone.scss */
   #menu-line ul > li {
     border-bottom: solid 1px #bbbbbb;
   }
-  /* line 319, phone.scss */
+  /* line 325, phone.scss */
   #menu-line ul > li a {
     color: #000000;
     font-weight: normal;
@@ -34315,31 +34316,31 @@ label:focus {
     padding: 0.4em 0;
   }
 
-  /* line 330, phone.scss */
+  /* line 336, phone.scss */
   #buter {
     display: -webkit-flex;
     display: flex;
     position: absolute;
-    right: 10px;
+    right: 0px;
     top: 10px;
     width: 32px;
     height: 32px;
     color: #058fc7;
     z-index: 201;
   }
-  /* line 340, phone.scss */
+  /* line 346, phone.scss */
   .mobile-menu #buter {
     position: fixed;
   }
 
-  /* line 345, phone.scss */
+  /* line 351, phone.scss */
   #change-from-to {
     width: 35px;
     height: 35px;
     margin-top: -18px;
   }
 
-  /* line 352, phone.scss */
+  /* line 358, phone.scss */
   #top-search-form {
     font-size: 18px;
     padding: 10px 0;
@@ -34352,33 +34353,33 @@ label:focus {
       padding-left:1px;
     }*/
   }
-  /* line 354, phone.scss */
+  /* line 360, phone.scss */
   #top-search-form #passengers-input .pass-border > div {
     height: 35px;
     line-height: 35px;
     padding-top: 0;
     padding-bottom: 0;
   }
-  /* line 363, phone.scss */
+  /* line 369, phone.scss */
   #top-search-form form {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 365, phone.scss */
+  /* line 371, phone.scss */
   #top-search-form form > * {
     min-height: 55px;
     -webkit-flex: 1 !important;
     flex: 1 !important;
   }
-  /* line 366, phone.scss */
+  /* line 372, phone.scss */
   #top-search-form form > *:nth-child(n+2) {
     padding-top: 10px;
   }
-  /* line 371, phone.scss */
+  /* line 377, phone.scss */
   #top-search-form form > * + * {
     padding-left: 0;
   }
-  /* line 377, phone.scss */
+  /* line 383, phone.scss */
   #top-search-form form input[type=text] {
     line-height: 35px;
     padding-top: 0;
@@ -34387,48 +34388,48 @@ label:focus {
     background: #FFFFFF;
     box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
   }
-  /* line 387, phone.scss */
+  /* line 393, phone.scss */
   #top-search-form #from-input, #top-search-form #to-input, #top-search-form #date-input-1, #top-search-form #date-input-2 {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 389, phone.scss */
+  /* line 395, phone.scss */
   #top-search-form #from-input:before, #top-search-form #to-input:before, #top-search-form #date-input-1:before, #top-search-form #date-input-2:before {
     margin-top: -5px;
     left: 8px;
     right: auto;
   }
-  /* line 403, phone.scss */
+  /* line 409, phone.scss */
   #top-search-form #to-input input {
     padding-left: 34px;
     background-position: 7px center;
   }
-  /* line 409, phone.scss */
+  /* line 415, phone.scss */
   #top-search-form #change-from-to {
     top: 100%;
     right: 5px;
   }
-  /* line 414, phone.scss */
+  /* line 420, phone.scss */
   #top-search-form #passengers-input {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
   }
-  /* line 416, phone.scss */
+  /* line 422, phone.scss */
   #top-search-form #passengers-input .pass-border {
     background: #FFFFFF;
     box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.2);
     left: 0;
     top: 10px;
   }
-  /* line 423, phone.scss */
+  /* line 429, phone.scss */
   #top-search-form #passengers-input .drop-down {
     margin-top: -3px;
   }
-  /* line 427, phone.scss */
+  /* line 433, phone.scss */
   #top-search-form #passengers-input #passengers-popup {
     font-size: 14px;
   }
-  /* line 431, phone.scss */
+  /* line 437, phone.scss */
   #top-search-form #new-search {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
@@ -34441,7 +34442,7 @@ label:focus {
     min-height: 35px;
     font-size: 22px;
   }
-  /* line 441, phone.scss */
+  /* line 447, phone.scss */
   #top-search-form #search-submit {
     -webkit-flex: 0 0 100% !important;
     flex: 0 0 100% !important;
@@ -34450,7 +34451,7 @@ label:focus {
     margin-bottom: -30px;
     font-size: 18px;
   }
-  /* line 448, phone.scss */
+  /* line 454, phone.scss */
   #top-search-form #date-input-1, #top-search-form #date-input-2 {
     /*&:after {
       background: url(../i/calendar-grey.png) right center no-repeat;
@@ -34468,53 +34469,53 @@ label:focus {
       position: absolute;
     }*/
   }
-  /* line 464, phone.scss */
+  /* line 470, phone.scss */
   #top-search-form #date-input-1 input, #top-search-form #date-input-2 input {
     padding-left: 34px;
   }
-  /* line 467, phone.scss */
+  /* line 473, phone.scss */
   #top-search-form #date-input-1 .close, #top-search-form #date-input-2 .close {
     display: none;
   }
 
-  /* line 475, phone.scss */
+  /* line 481, phone.scss */
   #specoffer-wrapper:before {
     display: none;
   }
-  /* line 478, phone.scss */
+  /* line 484, phone.scss */
   #specoffer-wrapper > .bysides {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 481, phone.scss */
+  /* line 487, phone.scss */
   #specoffer-wrapper > .bysides select {
     width: 100%;
   }
-  /* line 484, phone.scss */
+  /* line 490, phone.scss */
   #specoffer-wrapper > .bysides input[type=text] {
     padding: 0 4px;
   }
-  /* line 487, phone.scss */
+  /* line 493, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 {
     -webkit-flex: 0 0 50%;
     flex: 0 0 50%;
     margin-right: 0;
     padding-bottom: 2px;
   }
-  /* line 491, phone.scss */
+  /* line 497, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n+1) {
     padding-right: 1px;
   }
-  /* line 494, phone.scss */
+  /* line 500, phone.scss */
   #specoffer-wrapper > .bysides > .flex1:nth-child(2n) {
     padding-left: 1px;
   }
-  /* line 498, phone.scss */
+  /* line 504, phone.scss */
   #specoffer-wrapper > .bysides > .flex1 select, #specoffer-wrapper > .bysides > .flex1 input[type=text] {
     height: 30px;
     line-height: 30px;
   }
-  /* line 504, phone.scss */
+  /* line 510, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit {
     /*position: absolute;
     right:10px;
@@ -34529,7 +34530,7 @@ label:focus {
     }*/
     width: 100%;
   }
-  /* line 517, phone.scss */
+  /* line 523, phone.scss */
   #specoffer-wrapper > .bysides > .search-submit input {
     width: 100%;
     line-height: 35px;
@@ -34539,62 +34540,62 @@ label:focus {
     font-weight: 600;
   }
 
-  /* line 532, phone.scss */
+  /* line 538, phone.scss */
   #spec-results .results-wrapper > .result-wrapper {
     width: 100%;
   }
 
-  /* line 538, phone.scss */
+  /* line 544, phone.scss */
   .max-text-width {
     max-width: none;
   }
 
-  /* line 542, phone.scss */
+  /* line 548, phone.scss */
   #front-content {
     padding-bottom: 10px;
   }
-  /* line 545, phone.scss */
+  /* line 551, phone.scss */
   #front-content .max-text-width .bysides {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 547, phone.scss */
+  /* line 553, phone.scss */
   #front-content .max-text-width .bysides > .flex1 {
     min-width: 50%;
   }
 
-  /* line 554, phone.scss */
+  /* line 560, phone.scss */
   .ui-datepicker {
     width: calc(100% - 20px) !important;
     width: -webkit-calc(100% - 20px) !important;
     z-index: 500 !important;
   }
 
-  /* line 560, phone.scss */
+  /* line 566, phone.scss */
   #passengers-popup {
     width: 100%;
   }
 
-  /* line 564, phone.scss */
+  /* line 570, phone.scss */
   #first-country-photo {
     display: none;
   }
 
-  /* line 568, phone.scss */
+  /* line 574, phone.scss */
   .country-photo {
     padding: 10px;
   }
-  /* line 571, phone.scss */
+  /* line 577, phone.scss */
   .country-photo .mt15, .country-photo .mt30, .country-photo .mt5 {
     margin-top: 5px;
     font-size: 18px;
   }
-  /* line 575, phone.scss */
+  /* line 581, phone.scss */
   .country-photo br {
     display: none;
   }
 
-  /* line 580, phone.scss */
+  /* line 586, phone.scss */
   #about-charters {
     border: solid 1px #058fc7;
     color: #058fc7;
@@ -34605,66 +34606,66 @@ label:focus {
     font-size: 16px;
   }
 
-  /* line 594, phone.scss */
+  /* line 600, phone.scss */
   .spacing10 {
     margin-left: -2px;
     margin-right: -2px;
   }
-  /* line 595, phone.scss */
+  /* line 601, phone.scss */
   .spacing10.mt10 {
     margin-top: 4px;
   }
-  /* line 600, phone.scss */
+  /* line 606, phone.scss */
   .spacing10 > * {
     padding: 0 2px;
   }
-  /* line 602, phone.scss */
+  /* line 608, phone.scss */
   .spacing10 > *:nth-child(n+3) {
     margin-top: 4px;
   }
 
-  /* line 608, phone.scss */
+  /* line 614, phone.scss */
   #totop {
     position: fixed;
     bottom: 5px;
   }
 
-  /* line 614, phone.scss */
+  /* line 620, phone.scss */
   select {
     border-radius: 2px;
     height: 35px;
   }
 
-  /* line 620, phone.scss */
+  /* line 626, phone.scss */
   #show-more-offers a {
     min-height: 35px;
     line-height: 35px;
     font-size: 16px;
   }
 
-  /* line 627, phone.scss */
+  /* line 633, phone.scss */
   .m-flex-start {
     text-align: left;
   }
-  /* line 629, phone.scss */
+  /* line 635, phone.scss */
   .m-flex-start span {
     display: block;
   }
-  /* line 631, phone.scss */
+  /* line 637, phone.scss */
   .m-flex-start span + span {
     font-weight: bold;
   }
 
-  /* line 639, phone.scss */
+  /* line 645, phone.scss */
   .frontpage #top-search-form #new-search {
     display: none;
   }
-  /* line 642, phone.scss */
+  /* line 648, phone.scss */
   .frontpage #top-search-form #from-input {
     margin-top: -10px;
   }
 
-  /* line 649, phone.scss */
+  /* line 655, phone.scss */
   .buy-n input {
     height: 35px;
     line-height: 35px;
@@ -34675,7 +34676,7 @@ label:focus {
     padding-bottom: 4px;
   }
 
-  /* line 660, phone.scss */
+  /* line 666, phone.scss */
   #top-search-form #search-submit > input {
     height: 35px;
     font-size: 22px;
@@ -34684,31 +34685,31 @@ label:focus {
     padding-bottom: 2px;
   }
 
-  /* line 669, phone.scss */
+  /* line 675, phone.scss */
   .blue-button, .green-button, .button-grey, .white-button, .cancel-button {
     height: 35px;
     line-height: 35px;
     font-weight: 600 !important;
   }
-  /* line 674, phone.scss */
+  /* line 680, phone.scss */
   .blue-button.aib.multiline, .green-button.aib.multiline, .button-grey.aib.multiline, .white-button.aib.multiline, .cancel-button.aib.multiline {
     height: auto;
     min-height: 35px;
     line-height: normal;
   }
 
-  /* line 691, phone.scss */
+  /* line 697, phone.scss */
   .ui-autocomplete.ui-menu .ui-menu-item {
     line-height: 50px;
   }
 
-  /* line 698, phone.scss */
+  /* line 704, phone.scss */
   .ss-h35.number-with-spinners .minus, .ss-h35.number-with-spinners .plus {
     height: 35px;
     width: 35px;
     line-height: 35px;
   }
-  /* line 703, phone.scss */
+  /* line 709, phone.scss */
   .ss-h35.number-with-spinners input {
     height: 35px;
     width: 35px;
@@ -34716,7 +34717,7 @@ label:focus {
     font-size: 16px;
   }
 
-  /* line 712, phone.scss */
+  /* line 718, phone.scss */
   .lnk {
     width: 32px;
     height: 32px;
@@ -34725,22 +34726,22 @@ label:focus {
     text-decoration: none;
   }
 
-  /* line 720, phone.scss */
+  /* line 726, phone.scss */
   .lnk-facebook {
     background: #3b5998;
   }
 
-  /* line 723, phone.scss */
+  /* line 729, phone.scss */
   .lnk-vk {
     background: #45668e;
   }
 
-  /* line 726, phone.scss */
+  /* line 732, phone.scss */
   .lnk-instagram {
     background: #bc2a8d;
   }
 
-  /* line 729, phone.scss */
+  /* line 735, phone.scss */
   .lnk-twitter {
     background: #00aced;
   }
@@ -35818,47 +35819,149 @@ label:focus {
   .drop-controller {
     font-size: 13px;
   }
+
+  /* line 2, smallphone.scss */
+  #top > .max-width {
+    padding-right: 32px;
+  }
+
+  /* line 8, smallphone.scss */
+  #logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* line 14, smallphone.scss */
+  #sitename {
+    font-size: 28px;
+  }
+
+  /* line 18, smallphone.scss */
+  #phones {
+    height: 32px;
+  }
+  /* line 20, smallphone.scss */
+  #phones .blue {
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+    width: 32px;
+    border-radius: 16px;
+  }
+  /* line 28, smallphone.scss */
+  #phones:after {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 16px;
+    font-size: 22px;
+  }
+  /* line 37, smallphone.scss */
+  #phones.phoneshown .blue {
+    width: 150px;
+  }
+
+  /* line 43, smallphone.scss */
+  #buter {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 321px) {
+  /* line 2, bigphone.scss */
+  #top > .max-width {
+    padding-right: 48px;
+  }
+
+  /* line 7, bigphone.scss */
+  #sitename-and-slogan {
+    margin-top: 5px;
+  }
+
+  /* line 12, bigphone.scss */
+  #logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* line 18, bigphone.scss */
+  #sitename {
+    font-size: 29px;
+  }
+
+  /* line 23, bigphone.scss */
+  #phones {
+    height: 48px;
+  }
+  /* line 25, bigphone.scss */
+  #phones .blue {
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+    width: 48px;
+    border-radius: 24px;
+  }
+  /* line 33, bigphone.scss */
+  #phones:after {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 24px;
+    font-size: 28px;
+  }
+  /* line 42, bigphone.scss */
+  #phones.phoneshown .blue {
+    width: 210px;
+  }
+
+  /* line 48, bigphone.scss */
+  #buter {
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+  }
 }
 @media screen and (max-width: 400px) {
-  /* line 4109, style.scss */
+  /* line 4114, style.scss */
   #time .bysides.vtop.mt30 {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 4111, style.scss */
+  /* line 4116, style.scss */
   #time .bysides.vtop.mt30 > div {
     min-width: 90px;
   }
 }
 @media screen and (min-width: 401px) and (max-width: 500px) {
-  /* line 4120, style.scss */
+  /* line 4125, style.scss */
   #time .bysides.vtop.mt30 {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  /* line 4122, style.scss */
+  /* line 4127, style.scss */
   #time .bysides.vtop.mt30 > div {
     min-width: 120px;
   }
 }
-/* line 4129, style.scss */
+/* line 4134, style.scss */
 .lh1_6 {
   line-height: 1.6;
 }
 
-/* line 4134, style.scss */
+/* line 4139, style.scss */
 .bg-lightgrey {
   background: #dbdbdb;
 }
 
-/* line 4139, style.scss */
+/* line 4144, style.scss */
 .white-direction {
   width: 30px;
   background: url(../i/white-direction.png) right center no-repeat;
   margin: 0 -15px;
 }
 
-/* line 4145, style.scss */
+/* line 4150, style.scss */
 .blur {
   -webkit-backface-visibility: hidden;
   filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="4" /></filter></svg>#blur');
