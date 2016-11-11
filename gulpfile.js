@@ -5,6 +5,7 @@
   var gulp = require('gulp');
 
   var dest = 'R:/bd.siteperfect.ru/www/';
+  var site = './../git/templates/tickets_new_site/';
 
   gulp.task('watch', function(){
 
@@ -16,6 +17,7 @@
     gulp.watch(['./css/style.css'], function(event, cb) {
       gulp.src('./css/style.css')
         .pipe(gulp.dest(dest+'css/'))
+        .pipe(gulp.dest(site+'css/'))
     });
   });
 

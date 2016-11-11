@@ -1,0 +1,73 @@
+.ticket {
+  box-shadow: inset 0 0 0 1px #777777;
+  border-radius: 2px;
+  background: #ffffff;
+  margin-left:9px;
+}
+
+.ticket-price {
+  @include flex(0 0 220px);
+  padding:10px 35px;
+}
+
+.ticket-aircompany {
+  @include flex(0 0 170px);
+}
+
+.ticket-luggage {
+  @include flex(0 0 130px);
+}
+
+.ticket-duration {
+  border-bottom:dashed 1px black;
+  height:1px;
+}
+
+.ticket-invis {
+  visibility: hidden;
+}
+
+.ticket-date {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  &.back {
+    right: 0;
+  }
+}
+
+.ticket-info {
+  padding-right:10px;
+}
+
+.ticket-row {
+  box-shadow: inset 0 0 0 1px #777777;
+
+  border-radius: 2px;
+  +.ticket-row {
+    margin-top:-1px;
+  }
+
+  &:before {
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:100%;
+    width:9px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    content: '';
+  }
+
+  &.waythere {
+    &:before {
+      background: $blue;
+    }
+  }
+
+  &.wayback {
+    &:before {
+      background: $orange;
+    }
+  }
+}

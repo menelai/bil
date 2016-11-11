@@ -53,6 +53,10 @@
   @include flex-direction(column);
 }
 
+.cr {
+  @include flex-direction(column-reverse);
+}
+
 @media all and (min-width: 800px) {
   .ws-r {
     @include flex-direction(row);
@@ -121,12 +125,21 @@
     }
   }
 
-  .space#{$i} {
+  .space#{$i}:not(.c) {
     >*:not(:first-child) {
       margin-left:#{$i*1/2}px;
     }
     >*:not(:last-child) {
       margin-right:#{$i*1/2}px;
+    }
+  }
+
+  .c.space#{$i} {
+    >*:not(:first-child) {
+      margin-top:#{$i*1/2}px;
+    }
+    >*:not(:last-child) {
+      margin-bottom:#{$i*1/2}px;
     }
   }
 
@@ -340,4 +353,8 @@
   body:not(.mac) .iphone {
     display: none;
   }
+}
+
+.fwl {
+  font-weight: lighter;
 }
