@@ -358,3 +358,26 @@
 .fwl {
   font-weight: lighter;
 }
+
+.b-1 {
+  border-width:1px;
+  border-style: solid;
+}
+
+.border-grey {
+  border-color:#c9c9c9;
+}
+
+.border-blue {
+  border-color:$blue;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ui-datepicker, .ui-autocomplete.ui-widget-content{
+  z-index: 999 !important
+};

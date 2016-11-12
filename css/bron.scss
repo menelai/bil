@@ -70,6 +70,65 @@
   }
 }
 
+.revealer, #order-cols #flight-info-title {
+  @include common-button();
+  @include grey-gradient();
+  text-transform: none;
+  color:black;
+  text-shadow: none;
+  box-shadow: inset 0 0 0 1px $blue;
+  height:35px;
+  line-height: 35px;
+  text-align: left;
+  padding-left:5px;
+  padding-right: 30px;
+  border-radius: 2px;
+
+  &.revealer-grey {
+    background: white;
+    box-shadow: inset 0 0 0 1px $grey;
+    color:$grey;
+    &:after {
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+    }
+  }
+
+  &:after {
+    content: '';
+    background: url(../i/arrow-down.png);
+    width:12px;
+    height:8px;
+    position: absolute;
+    right:10px;
+    top:50%;
+    margin-top:-4px;
+    @include transition(transform 0.3s ease-in-out);
+  }
+
+  &.flight-visible, &.shown {
+    &:after {
+      @include transform(rotate(180deg));
+    }
+  }
+
+  //&:not(.shown) {
+  & + .reveal-what {
+    display: none;
+  }
+  //}
+  z-index: 1;
+
+  &.ws-h30 {
+    height:30px;
+    line-height: 30px;
+  }
+}
+
+.revealer {
+  cursor:pointer;
+}
+
 .gender {
   border-radius: 20px;
   color:$blue;
