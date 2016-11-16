@@ -7,15 +7,18 @@
 
 .ticket-price {
   @include flex(0 0 220px);
-  padding:10px 35px;
+  padding:10px 15px;
 }
 
 .ticket-aircompany {
-  @include flex(0 0 170px);
+  @include flex(0 1 23%);
+  img {
+    max-width: 100%;
+  }
 }
 
 .ticket-luggage {
-  @include flex(0 0 130px);
+  @include flex(0 1 17%);
 }
 
 .ticket-duration {
