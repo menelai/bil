@@ -1,0 +1,70 @@
+.ws-h30 {
+  &.number-with-spinners {
+    .minus, .plus {
+      height:30px;
+      width:30px;
+      line-height: 30px;
+    }
+    input {
+      height:30px;
+      width:30px;
+      line-height: 17px;
+      font-size: 16px;
+    }
+  }
+}
+
+.ws-abs {
+  &.revealer {
+    &.shown {
+      z-index: 221;
+    }
+  }
+  &.ebebeb {
+    position: absolute;
+    z-index: 220;
+    width:100%;
+  }
+}
+
+.input-pholder {
+  &.mobile-select {
+    padding: 5px 0 2px 0;
+
+    .pholder {
+
+    }
+    .selectric-wrapper {
+      //margin:0 -5px -2px -5px;
+    }
+
+    .selectric {
+      padding-top:15px;
+      margin-top:-15px;
+      .label {
+        line-height: 20px;
+        height: 20px;
+        font-size: 15px;
+        font-weight: bold;
+        .flag {
+          margin-right: 8px;
+        }
+      }
+      .button {
+        display: none;
+      }
+    }
+    .selectric-items {
+      margin-top: 4px;
+      left: -1px;
+      right: -1px;
+      width:auto !important;
+    }
+  }
+}
+
+.client-service {
+  margin-top:20px;
+  border-top:solid 1px $grey;
+  padding-top:20px;
+}
