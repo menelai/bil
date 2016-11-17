@@ -6,19 +6,19 @@
 }
 
 .ticket-price {
-  @include flex(0 0 220px);
+  @include flex(0 0 225px);
   padding:10px 15px;
 }
 
 .ticket-aircompany {
-  @include flex(0 1 23%);
+  @include flex(0 1 130px);
   img {
     max-width: 100%;
   }
 }
 
 .ticket-luggage {
-  @include flex(0 1 17%);
+  @include flex(0 1 130px);
 }
 
 .ticket-data {
@@ -65,8 +65,8 @@
 }
 
 .padder20 {
-  min-width: 10px;
-  @include flex(0 1 15px);
+  min-width: 5px;
+  @include flex(0 1 10px);
 }
 
 .ticket-row {
