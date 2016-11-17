@@ -58,11 +58,71 @@
 }
 
 @media all and (min-width: 800px) {
+  .ws-f {
+    @include display-flex();
+  }
+  .ws-d {
+    @include justify-content(space-between);
+  }
   .ws-r {
     @include flex-direction(row);
   }
+  .ws-rr {
+    @include flex-direction(row-reverse);
+
+    @for $i from 2 through 200 {
+      &.ws-split#{$i} {
+        > *:not(:first-child) {
+          padding-right: #{$i*1/2}px;
+          padding-left: 0;
+        }
+        > *:not(:last-child) {
+          padding-left: #{$i*1/2}px;
+          padding-right: 0;
+        }
+      }
+
+      &.ws-space#{$i} {
+        > *:not(:first-child) {
+          margin-left: 0;
+          margin-right: #{$i*1/2}px;
+        }
+        > *:not(:last-child) {
+          margin-left: #{$i*1/2}px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
   .ws-c {
     @include flex-direction(column);
+  }
+  .ws-cr {
+    @include flex-direction(column-reverse);
+  }
+  .ws-flex1 {
+    @include flex(1);
+  }
+
+  .ws-bybounds {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
   }
 }
 
@@ -376,8 +436,28 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  &.flex1 {
+    width: 0;
+  }
 }
 
 .ui-datepicker, .ui-autocomplete.ui-widget-content{
   z-index: 999 !important
 };
+
+
+$input-shadow: inset 0 4px 6px rgba(0,0,0, 0.14);
+$input-shadow-hover: inset 0 4px 6px rgba(0,0,0, 0.14), inset 0 0 0 1px $green, 0px 0px 6px 2px rgba(black, .1);
+
+input[type=text], input[type=email], textarea {
+  box-shadow: $input-shadow;
+
+  &:focus {
+    box-shadow: $input-shadow-hover;
+    border-color:$green;
+  }
+}
+
+.flexa {
+  @include flex(auto);
+}

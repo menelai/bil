@@ -1,3 +1,7 @@
+.ss-revealer, #order-cols #flight-info-title {
+  @include revealer();
+}
+
 #responses {
   display: none;
 }
@@ -185,15 +189,6 @@
   color: $blue;
 }
 
-.ebebeb {
-  background: #ebebeb;
-  margin-top:-4px;
-  padding-top:4px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  box-shadow: inset 0 0 0 1px #e0e0e0;
-}
-
 .gender-select {
   position: absolute;
   padding:0;
@@ -295,21 +290,13 @@ body.bron {
 
 .mobile-select {
   &.input-pholder {
-    @include grey-gradient();
+    padding-right:30px;
+
+    &:after {
+      right:9px;
+    }
   }
   padding-right: 20px;
-  &:after {
-    position: absolute;
-    content: '';
-    top:50%;
-    right:4px;
-    background: url(../i/arrow-down.png);
-    width:12px;
-    height:8px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    margin-top:1px;
-  }
 }
 
 .flex60 {

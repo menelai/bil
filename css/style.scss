@@ -890,7 +890,10 @@ a, .pseudolink {
 }
 
 #from-input, #to-input {
-  @include flex(0 0 20%);
+  @include flex(0 1 20%);
+  input {
+    width:0;
+  }
 }
 
 #from-input {
@@ -933,7 +936,7 @@ a, .pseudolink {
 }
 
 #date-input-1, #date-input-2 {
-  @include flex(0 0 10em);
+  @include flex(1 0 10em);
   input {
     padding-left:33px;
     width: 0;
@@ -953,6 +956,7 @@ a, .pseudolink {
     left:8px;
     top:50%;
     margin-top:-12px;
+    pointer-events: none;
   }
 }
 
@@ -968,6 +972,7 @@ a, .pseudolink {
     left:8px;
     top:50%;
     margin-top:-12px;
+    pointer-events: none;
   }
 
   .close {
@@ -984,7 +989,7 @@ a, .pseudolink {
 }
 
 #new-search {
-  @include flex(0 1 135px);
+  @include flex(0 0 75px);
   cursor: pointer;
   .green-button {
     height: 40px;
@@ -997,7 +1002,7 @@ a, .pseudolink {
   .revealer {
     height:40px;
     line-height: 40px;
-    background: #ffffff;
+    //background: #ffffff;
   }
 }
 
@@ -1092,6 +1097,18 @@ a, .pseudolink {
     }
   }
 
+  .ui-datepicker-prev-hover {
+    left:2px;
+    top:2px;
+    cursor:pointer;
+  }
+
+  .ui-datepicker-next-hover {
+    right:2px;
+    top:2px;
+    cursor:pointer;
+  }
+
   .ui-datepicker-calendar {
     td {
       text-align: center;
@@ -1104,16 +1121,22 @@ a, .pseudolink {
     color:black;
     font-weight: normal;
     text-align: center;
-    border-radius:100%;
+    border-radius: 3px;
     width:2em;
     padding:0.3em 0;
     margin:-0.2em 0;
     display: inline-block;
     &.ui-state-highlight {
-      background: $lightgrey;
+      /*background: $orange;
+      color:white;*/
+      background: #e7e7e7;
+    }
+    @include transition(box-shadow 0.1s ease-out);
+    &.ui-state-hover {
+      box-shadow: inset 0 0 0 1px $orange, 0 0 2px 6px rgba(#bfbfbf, 0.1);
     }
     &.ui-state-active {
-      background: $dark-blue;
+      background: $orange;
       color:white;
     }
   }
@@ -1218,7 +1241,7 @@ a, .pseudolink {
 }
 #alternate-price {
   .max-width {
-    padding:0 2.5em;
+    //padding:0 2.5em;
   }
 }
 #alternate-header {
@@ -1389,9 +1412,11 @@ a, .pseudolink {
   @include flex(0 1 auto);
 
   >li {
-    @include display-flex();
-    @include flex-direction(row);
-    @include flex(0 2 1.5em);
+    &:not(.a) {
+      @include display-flex();
+      @include flex-direction(row);
+      @include flex(0 2 1.5em);
+    }
     >input[type=radio], >input[type=checkbox] {
       position: absolute;
       left:0;
@@ -1452,7 +1477,8 @@ a, .pseudolink {
 
 #blocks {
   padding-top:10px;
-  max-height:400px;
+  //max-height:400px;
+  @include experimental-value(height, calc(100vh - 28px - 50px));
 
 }
 
@@ -1465,6 +1491,24 @@ a, .pseudolink {
 .is-sticky {
   #time-and-subscribe {
     background: #FFFFFF;
+    &:before {
+      position: absolute;
+      bottom:0;
+      left:0px;
+      right:0px;
+      content:'';
+      height: 10px;
+      background: #FFFFFF;
+      z-index: 1;
+    }
+    &:after {
+      position: absolute;
+      bottom: 4px;
+      left: 10px;
+      right: 10px;
+      box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
+      content: '';
+    }
   }
 }
 
@@ -1654,6 +1698,36 @@ a, .pseudolink {
 
 #subscribe-form {
   @include flex(0 0 225px);
+  z-index: 221;
+}
+
+.subscribe-popup {
+  position: absolute;
+  left:0;
+  right:0;
+  /*top:100%;
+  margin-top:-8px;*/
+  @include experimental-value(top, calc(100% - 8px));
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background: white;
+  z-index: 221;
+}
+
+.subscribe-popup-bg {
+  &.ng-hide {
+    opacity:0;
+  }
+  position: fixed;
+  background: rgba(white, 0.95);
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 220;
+  opacity:1;
+  margin: 0 !important;
+  @include transition(opacity 0.2s ease-out);
 }
 
 .times-of-day {
@@ -3493,11 +3567,13 @@ input[type=text], input[type=email], textarea {
 }
 
 .selectric-doctype {
-  width:230px;
+  //width:230px;
+  width:100%;
 }
 
 .selectric-citizenship {
-  width:270px;
+  //width:270px;
+  width:100%;
 }
 
 .gender-select {
@@ -3998,10 +4074,10 @@ input[type=text], input[type=email], textarea {
   padding-left:50px;
 }
 .selectric-countrycode {
-  position:absolute;
+  /*position:absolute;
   left:0;
   top:50%;
-  margin-top:-0.9em;
+  margin-top:-0.9em;*/
   .selectric {
     border:none;
     background: none;
@@ -4101,6 +4177,7 @@ input[type=text], input[type=email], textarea {
     border:solid 1px $blue;
     border-radius: 2px;
     background: #ffffff;
+    @include transform(translateY(2px));
 
     .ui-state-focus {
       font-weight: normal;
@@ -4196,6 +4273,10 @@ input[type=text], input[type=email], textarea {
 }
 
 @media screen and (min-width: 800px) {
+  @import 'desktop';
+}
+
+@media screen and (min-width: 800px) {
   .mobile {
     display: none;
   }
@@ -4241,6 +4322,10 @@ input[type=text], input[type=email], textarea {
 
 .bg-lightgrey {
   background: #dbdbdb;
+}
+
+.bg-blue {
+  background: $blue;
 }
 
 
@@ -4297,5 +4382,33 @@ input[type=text], input[type=email], textarea {
   min-width: 80px;
   img {
     max-width: 100%;
+  }
+}
+
+.peresadspacer {
+  @include flex(0 7 10px);
+}
+
+.all-items {
+  position: absolute;
+  bottom:100%;
+  margin-bottom:2px;
+  border:solid 1px $blue;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background: #ffffff;
+  left:0;
+  right:0;
+}
+
+.aiit {
+  label {
+    padding: 10px 10px;
+  }
+  &:hover {
+    background: #dff6ff;
+  }
+  +.aiit {
+    border-top:solid 1px #777777;
   }
 }

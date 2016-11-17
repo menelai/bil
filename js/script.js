@@ -4,6 +4,15 @@
 
 (function($){
     $(function() {
+
+      $('body').on('focus', '.input-pholder input', function() {
+        $(this).parents('.input-pholder:first').addClass('focus');
+      });
+
+      $('body').on('blur', '.input-pholder input', function() {
+        $(this).parents('.input-pholder:first').removeClass('focus');
+      });
+
       //открывалки
       /*$("body").on('click', '.revealer', function() {
         var rev = $(this);
@@ -91,10 +100,10 @@
 
         $('.selectric.citizenship').selectric({
             optionsItemBuilder: function(currItem) {
-                return '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span><span class="">'+currItem.text+'</span>';
+                return (currItem.element.attr('data-flag') ? '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span>' : '')+'<span class="">'+currItem.text+'</span>';
             },
             labelBuilder: function(currItem) {
-                return '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span><span class="">'+currItem.text+'</span>';
+                return (currItem.element.attr('data-flag') ? '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span>' : '')+'<span class="">'+currItem.text+'</span>';
             }
         });
 
@@ -222,10 +231,13 @@
 })(jQuery);
 
 (function() {
+
   var app = angular.module('test', ['ngAnimate', "ng.deviceDetector"]);
 
   app.run(function($rootScope, deviceDetector) {
+
     $rootScope.device = deviceDetector.device;
+    $rootScope.isDesktop = deviceDetector.isDesktop();
   });
 
   app.animation('.slide', function() {

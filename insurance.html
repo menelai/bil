@@ -1,5 +1,5 @@
 <div ng-init="insur = 'med';" ng-if="true">
-  <div class="ws-nd revealer" ng-class="insur == 'med' ? 'shown' : ''" ng-click="insur = insur == 'med' ? '' : 'med'">
+  <div class="revealer" ng-class="insur == 'med' ? 'shown' : ''" ng-click="insur = insur == 'med' ? '' : 'med'">
     <div class="f d vcen">
       <div class="blue fwb">
         <span ng-show="chosen=='med'" class="fa fa-check green"></span> Медицинское страхование
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="mt10 ws-nd revealer" ng-class="insur == 'fli' ? 'shown' : ''" ng-click="insur = insur == 'fli' ? '' : 'fli'">
+  <div class="mt10 revealer" ng-class="insur == 'fli' ? 'shown' : ''" ng-click="insur = insur == 'fli' ? '' : 'fli'">
     <div class="blue fwb"><span ng-show="addedFli" class="fa fa-check green"></span> Страхование на время перелета</div>
   </div>
   <div class="ebebeb slide" ng-show="insur == 'fli'">
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div class="mt10 ws-nd revealer" ng-class="insur == 'tri' ? 'shown' : ''" ng-click="insur = insur == 'tri' ? '' : 'tri'">
+  <div class="mt10 revealer" ng-class="insur == 'tri' ? 'shown' : ''" ng-click="insur = insur == 'tri' ? '' : 'tri'">
     <div class="blue fwb"><span ng-show="addedTri" class="fa fa-check green"></span> Страхование путешествия</div>
   </div>
   <div class="ebebeb slide" ng-show="insur == 'tri'">
