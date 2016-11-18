@@ -3,8 +3,8 @@
 @import "compass";
 @import "reset";
 
-$green: #8fcb00;
-$blue: #058fc7;
+$green: #90c926;
+$blue: #068fc3;
 $dark-blue: #0480b4;
 $orange: #ff6700;
 
@@ -14,9 +14,9 @@ $cyan: #08d0e8;
 //$4,128,180
 @mixin grey-gradient() {
   // http://colorzilla.com/gradient-editor/#f4f4f4+0,f4f4f4+35,d8d8d8+65,d8d8d8+100
-  background-color: #f4f4f4; // Old browsers
-  @include filter-gradient(#f4f4f4, #d8d8d8, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #f4f4f4 0%,#f4f4f4 35%,#d8d8d8 65%,#d8d8d8 100%));
+  background-color: #ffffff; // Old browsers
+  @include filter-gradient(#ffffff, #e3e3e3, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #ffffff 0%,#ffffff 35%,#e3e3e3 65%,#e3e3e3 100%));
 }
 
 @mixin blue-gradient() {
@@ -31,9 +31,9 @@ $cyan: #08d0e8;
   // Needs latest Compass, add '@import "compass"' to your scss
   // Permalink - use to edit and share this gradient:
   // http://colorzilla.com/gradient-editor/#9dcb2f+0,9dcb2f+35,81af13+65,81af13+100
-  background-color: #9dcb2f; // Old browsers
-  @include filter-gradient(#9dcb2f, #81af13, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #9dcb2f 0%,#9dcb2f 35%,#81af13 65%,#81af13 100%));
+  background-color: #a8dc38; // Old browsers
+  @include filter-gradient(#a8dc38, #8cc01c, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #a8dc38 0%,#a8dc38 35%,#8cc01c 65%,#8cc01c 100%));
 }
 
 @mixin green-hover-gradient() {
@@ -46,9 +46,12 @@ $cyan: #08d0e8;
 }
 
 @mixin orange-gradient() {
-  background-color: #ea711f; // Old browsers
-  @include filter-gradient(#ea711f, #ce5503, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #ea711f 0%,#ea711f 35%,#ce5503 65%,#ce5503 100%));
+  // Needs latest Compass, add '@import "compass"' to your scss
+  // Permalink - use to edit and share this gradient:
+  // http://colorzilla.com/gradient-editor/#fc793c+0,fc793c+35,e05d20+65,e05d20+100
+  background-color: #fc793c; // Old browsers
+  @include filter-gradient(#fc793c, #e05d20, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #fc793c 0%,#fc793c 35%,#e05d20 65%,#e05d20 100%));
 }
 
 @mixin orange-hover-gradient() {
@@ -72,7 +75,7 @@ $cyan: #08d0e8;
     line-height: 30px;
   }
   font-weight: 600;
-  text-shadow: 0px 1px 1px rgba(black, 0.26);
+  /*text-shadow: 0px 1px 1px rgba(black, 0.26);*/
   &[type=button], &[type=submit] {
     padding-bottom:2px;
   }
@@ -359,32 +362,6 @@ a, .pseudolink {
 #top {
   padding-top:15px;
   padding-bottom:15px;
-  >.max-width {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    >* {
-
-      +* {
-        /*border-left:solid 1px rgba(4, 128, 180, 0.3);*/
-      }
-    }
-  }
 }
 
 .sep {
@@ -446,7 +423,7 @@ a, .pseudolink {
       align-items: flex-start;
     }
   }
-  padding-right:30px;
+  //padding-right:30px;
 
 }
 
@@ -463,7 +440,7 @@ a, .pseudolink {
 }
 
 #partners {
-  padding:0 15px;
+  /*padding:0 15px;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -481,7 +458,7 @@ a, .pseudolink {
   align-content: stretch;
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
-  align-items: stretch;
+  align-items: stretch;*/
 
   >div {
     /*-webkit-flex: 0 1 50%;
@@ -503,7 +480,6 @@ a, .pseudolink {
 
 #phones {
   text-align: right;
-  padding:0 30px;
   white-space: nowrap;
   line-height: 1.1;
   .blue {
@@ -515,8 +491,11 @@ a, .pseudolink {
 }
 
 #personal {
-  padding-left:30px;
-  text-align: right;
+
+}
+
+.yourdate {
+  box-shadow: inset 0 0 0 3px $blue;
 }
 
 #call-variants {
@@ -890,7 +869,7 @@ a, .pseudolink {
 }
 
 #from-input, #to-input {
-  @include flex(0 1 20%);
+  @include flex(1 0 10em);
   input {
     width:0;
   }
@@ -1008,12 +987,12 @@ a, .pseudolink {
 
 .passinp-popup {
   position: absolute;
-  top:100%;
-  margin-top:2px;
+  @include experimental-value(top, calc(100% + 2px));
   right:0;
   background: #ffffff;
   z-index: 400;
-  @include experimental-value(width, calc(100% + 10em + 2px));
+  width:100%;
+  min-width:240px;
 }
 
 #search-submit {
@@ -2835,6 +2814,7 @@ a, .pseudolink {
     /*-webkit-flex: 1 0 auto;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;*/
+    padding:1px;
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -2865,38 +2845,6 @@ a, .pseudolink {
       margin:0 0 3px -1px;
       padding:2px;
     }
-    >.month-day {
-      -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-      flex: 1 0 auto;
-      border:solid 1px #acacac;
-      text-align: center;
-      padding:0.5em 0.2em;
-      margin:-1px 0 0 -1px;
-      cursor:pointer;
-
-      h2 {
-        font-weight: normal;
-        font-size: 18px;
-        color:#777777;
-        span {
-          font-size: 12px;
-        }
-      }
-
-      &.recommended, &.cheap {
-        &:before {
-          position: absolute;
-          right:1px;
-          bottom:1px;
-        }
-        &:after {
-          position: absolute;
-          top:1px;
-          left:1px;
-        }
-      }
-    }
 
     &:not(:last-child) {
       padding-right:1px;
@@ -2926,6 +2874,48 @@ a, .pseudolink {
     font-size: 13px;
   }
 }
+
+.month-day {
+  //margin:-1px 0 0 -1px;
+  >div {
+    margin:-1px;
+  }
+  @include flex(0 0 6.666666666%);
+
+  &.recommended, &.cheap {
+    &:before {
+      position: absolute;
+      right:1px;
+      bottom:1px;
+    }
+    &:after {
+      position: absolute;
+      top:1px;
+      left:1px;
+    }
+  }
+
+  &.first-day:not(:first-child) {
+    padding-left:2px;
+  }
+  &.last-day:not(:last-child) {
+    padding-right:2px;
+  }
+}
+
+.monthЯнварь { background: #b6dcf1;}
+.monthФевраль { background: #b9e4f2;}
+.monthМарт { background: #b7e1d4;}
+.monthАпрель { background: #dae9c8;}
+.monthМай { background: #ecf1bf;}
+.monthИюнь { background: #feedbf;}
+.monthИюль { background: #fadac2;}
+.monthАвгуст { background: #fbcbc2;}
+.monthСентябрь { background: #f6c4ce;}
+.monthОктябрь { background: #f0cbe1;}
+.monthНоябрь { background: #d8c7e6;}
+.monthДекабрь { background: #becde4;}
+
 
 #my-results {
   display: -ms-flexbox;
@@ -4386,7 +4376,7 @@ input[type=text], input[type=email], textarea {
 }
 
 .peresadspacer {
-  @include flex(0 7 10px);
+  @include flex(0 3 5px);
 }
 
 .all-items {
