@@ -27,57 +27,12 @@
   </style>
 </head>
 <body class="bron" ng-class="showMenu ? 'mobile-menu' : ''" device-detector>
-<div id="statusbar">
-  <div class="max-width">
-    <div>
-      <div class="wsn">
-        ОНЛАЙН-ТАБЛО: <a href="/">Домодедово</a> (DME) <a href="/">Шереметьево</a> (SVO) <a href="/">Внуково</a> (VKO)
-      </div>
-    </div>
-    <div class="separator"></div>
-    <div>
-      <div id="links-block">
-        <div id="safety"><a href="/">Абсолютная
-          безопасность платежей</a></div>
-        <div><a href="/">Публичная
-          оферта</a></div>
-      </div>
-    </div>
-    <div class="separator"></div>
-    <div>
-      <div id="smm">
-        <div class="wsn">Акции, розыгрыши,<br>
-          новости, отзывы о нас
-        </div>
-        <div class="f d space4">
-          <a href="/" class="f vcen hcen tdn social">
-            <i class="fa fa-vk"></i>
-            <!--div class="swap ib"><img src="i/vk.png"><img src="i/vk-color.png"></div-->
-          </a>
-          <a href="/" class="f vcen hcen tdn social">
-            <i class="fa fa-facebook"></i>
-            <!--div class="swap ib"><img src="i/f.png"><img src="i/f-color.png"></div-->
-          </a>
-          <a href="/" class="f vcen hcen tdn social">
-            <i class="fa fa-instagram"></i>
-            <!--div class="swap ib"><img src="i/in.png"><img src="i/in-color.png"></div-->
-          </a>
-          <a href="/" class="f vcen hcen tdn social">
-            <i class="fa fa-twitter"></i>
-            <!--div class="swap ib"><img src="i/tw.png"><img src="i/tw-color.png"></div-->
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="totop"><a href="#top"></a></div>
-</div>
-<div id="top" ng-class="showMenu ? 'blur' : ''">
-  <div class="max-width">
-    <div id="logo">
-      <a ng-init="width=1400" ng-click="width= (width==1024) ? 1400 : 1024">
+<div id="top">
+  <div class="max-width d f space20">
+    <div id="logo" class="flex1">
+      <a href="/">
         <div>
-          <div><img src="/i/Loro.svg"></div>
+          <div><img src="i/Loro.svg"></div>
           <div class="afut" id="sitename-and-slogan">
             <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
             <div id="slogan" class="blue">
@@ -89,42 +44,43 @@
       </a>
     </div>
     <div class="sep"></div>
-    <div id="partners">
+    <div id="partners" class="flex1 f hcen">
       <div>
         <h4>Наши партнеры:</h4>
-
         <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
         <div class="swap"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
       </div>
       <div>
         <h4>Нас рекомендуют:</h4>
-
         <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
         <div class="swap"><img src="i/national.png"><img src="i/national-color.png"></div>
       </div>
     </div>
     <div class="sep"></div>
-    <div id="phones" ng-click="phoneShown=!phoneShown" ng-class="phoneShown ? 'phoneshown' : ''">
-      <p class="blue"><a class="phon tdn" href="tel:+74951501182"><i class="ws-nd green fa fa-phone"></i> +7 495 150-11-82</a><br>
-        <span class="phon desktop">8 800 234 5 99 5</span></p>
-
-      <p class="grey">с 9:00 до 23:00</p>
+    <div id="phones" class="flex1 f hcen">
+      <div>
+        <p class="blue">+7 (495) 210-5-99<br>
+          8 800 234 5 99 5</p>
+        <p class="grey">с 9:00 до 23:00</p>
+      </div>
     </div>
     <div class="sep"></div>
-    <div id="personal">
-      <div id="call-variants">
-        <div id="call-icons">
-          <img src="i/viber.png">
-          <img src="i/skype.png">
-          <img src="i/whatsapp.png">
-          <img src="i/email.png">
+    <div id="personal" class="flex1 f hcen">
+      <div>
+        <div id="call-variants">
+          <div id="call-icons">
+            <img src="i/viber.png">
+            <img src="i/skype.png">
+            <img src="i/whatsapp.png">
+            <img src="i/email.png">
+          </div>
+          <div id="call-helpers">
+            <span>Позвонить онлайн</span>
+            <span>Email</span>
+          </div>
         </div>
-        <div id="call-helpers">
-          <span>Позвонить онлайн</span>
-          <span>Email</span>
-        </div>
+        <div class="tar"><a href="/" id="lk">Личный кабинет</a></div>
       </div>
-      <div><a href="/" id="lk">Личный кабинет</a></div>
     </div>
   </div>
 </div>
@@ -174,154 +130,25 @@
         <div id="flight-info-title" class="col-title ss-revealer" ng-class="showI ? 'shown' : ''" ng-click="showI=!showI">
           Информация о рейсе
         </div>
+        <div ng-include="'ticket.html'" ng-show="showI || isDesktop"></div>
+      </div>
 
-        <div class="result without-price mb20 slide bron-ticket" ng-show="showI || isDesktop">
-          <div class="result-cols">
-            <div class="col-trip-info rounded">
-              <div class="trip-grey-row trip-there-grey trip-row">
-                <div class="trip-col1 flex-center">
-                  <div class="plane-model">Airbus 321</div>
-                </div>
-                <div class="trip-col2 flight-params">
-                  <div class="flex-center">
-                    <div class="luggage">Багаж 20&nbsp;кг</div>
-                  </div>
-                  <div class="flex-center">
-                    <div class="bag">Ручная кладь 5&nbsp;кг</div>
-                  </div>
-                  <div class="flex-center">
-                    <div class="chair">Класс: эконом</div>
-                  </div>
-                </div>
-              </div>
-              <div class="trip-there" ng-hide="hideThere">
-
-                <div class="trip-white-row trip-row">
-                  <div class="trip-col1 flex-center">
-                    <div class="company-name-and-logo">
-                      <img src="i/nordstar.png"><br>
-                      Nord Star Airlines
-                    </div>
-                  </div>
-                  <div class="trip-col2 times-row">
-                    <div class="flex-center">
-                      <div>
-                        <div class="tm">15:30</div>
-                        <div class="dt blue">30 ноября 2015, пн</div>
-                        <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
-                      </div>
-                    </div>
-                    <div class="flex-center">
-                      <div>
-                        2 ч 30 м<br>
-                        <span class="grey">прямой</span>
-                      </div>
-                    </div>
-                    <div class="flex-center">
-                      <div>
-                        <div class="tm">15:30</div>
-                        <div class="dt blue">30 ноября 2015, пн</div>
-                        <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="trip-help">
-                <div class="trip-white-row trip-row">
-                  <div class="trip-col1 flex-center">
-                    <div></div>
-                  </div>
-                  <div class="trip-col2 blue-row {{hideThere ? 'only-back' : ''}}">
-                    <div class="flex-center">
-                      <div class="smaller white-plane">Вылет</div>
-                    </div>
-                    <div class="flex-center">
-                      <div class="smaller clock">Время в пути</div>
-                    </div>
-                    <div class="flex-center">
-                      <div class="smaller white-plane down">Прилет</div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="trip-back">
-                <div class="trip-white-row trip-row">
-                  <div class="trip-col1 flex-center">
-                    <div class="company-name-and-logo"><img src="i/nordstar.png"><br>
-                      Nord Star Airlines</div>
-                  </div>
-                  <div class="trip-col2 times-row">
-                    <div class="flex-center">
-                      <div>
-                        <div class="tm">15:30</div>
-                        <div class="dt blue">30 ноября 2015, пн</div>
-                        <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
-                      </div>
-                    </div>
-                    <div class="flex-center">
-                      <div>
-                        2 ч 30 м<br>
-                        <span class="grey">прямой</span>
-                      </div>
-                    </div>
-                    <div class="flex-center">
-                      <div>
-                        <div class="tm">15:30</div>
-                        <div class="dt blue">30 ноября 2015, пн</div>
-                        <div class="pls">Санкт-Петербург <span class="grey">LED</span></div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-          <div class="result-cols grey-cols inner-top-shadow">
-            <div class="col-trip-info">
-              <div class="trip-back-grey trip-row">
-                <div class="trip-col1 flex-center">
-                  <div class="plane-model">Airbus 321</div>
-                </div>
-                <div class="trip-col2 flight-params">
-                  <div class="flex-center">
-                    <div class="luggage">Багаж 20&nbsp;кг</div>
-                  </div>
-                  <div class="flex-center">
-                    <div class="bag">Ручная кладь 5&nbsp;кг</div>
-                  </div>
-                  <div class="flex-center">
-                    <div class="chair">Класс: эконом</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+      <div class="mb10 ss-nd">
+        <div class="revealer revealer-grey">
+          <div class="fwn">Подпишитесь на рассылку, чтобы узнать о снижении стоимости авиабилета</div>
         </div>
       </div>
-      <div id="go-to-search">
-        <div id="subscribe-form" class="flex1">
-          <form>
-            <h2>Цена на авиабилет может снизиться</h2>
-            <div class="bysides inputshadow">
-              <div class="flex1 bysides"><input type="email" placeholder="Ваш email" class="flex1"></div>
-              <div><input type="submit" value="Следить за ценой" class="button-grey"></div>
-            </div>
-          </form>
+
+      <div class="subscribe-popup-bg" ng-show="showAlt"></div>
+      <div class="popup-what mb10 ss-nd" tw-click-outside="showAlt=false" ignore-if="showAlt==false">
+        <div class="revealer" ng-class="showAlt ? 'shown' : ''" ng-init="showAlt = false;" ng-click="showAlt = !showAlt;">
+          <div class="fwn blue">Цена билетов на альтернативные даты</div>
         </div>
-        <div>
-          <a href="/" class="blue-button aib multiline"><div class="fz11">Цена авиабилетов на
-          альтернативные&nbsp;даты</div></a>
-        </div>
-        <div>
-          <a href="/" class="green-button aib multiline"><div class="fz11">Новый поиск</div></a>
+        <div id="bron-alternate" class="slide" ng-show="showAlt">
+          <div ng-include="'alternate.html'"></div>
+          <div class="f vcen hcen">
+            <a class="button-grey aib" href="#" ng-click="showAlt = false;">Закрыть</a>
+          </div>
         </div>
       </div>
 
@@ -525,89 +352,104 @@
         <div class="form-group">
           <div class="ttu blue">Покупатель</div>
 
-          <label class="f vbot input-pholder mt10" ng-class="buyer ? 'not-empty' : ''">
-            <input type="text" name="fio" class="flex1 fz15" ng-model="buyer">
-            <span class="pholder">Ваше имя</span>
-          </label>
+          <div class="f ws-r ss-c space10 mt10">
+            <label class="flex1 f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer">
+              <span class="pholder">Ваше имя</span>
+            </label>
 
-          <div class="f vbot input-pholder mt10 not-empty">
-            <div class="f ss-space10 d flex1 ss-rr ws-rr">
-              <input type="text" class="flex1" value="+7">
-              <div class="mobile-select">
-                <select class="selectric countrycode">
-                  <option value="+7" data-flag="i/flag.png">Россия</option>
-                  <option value="+90" data-flag="i/greece.png">Грузия</option>
-                  <option value="+383" data-flag="i/flag.png">Россия</option>
-                  <option value="+900" data-flag="i/greece.png">Украина</option>
-                  <option value="+1" data-flag="i/flag.png">США</option>
-                  <option value="+800" data-flag="i/greece.png">Зимбабве</option>
-                </select>
+            <div class="flex1 f vbot input-pholder not-empty">
+              <div class="f ss-space10 d flex1 ss-rr ws-rr">
+                <input type="text" class="flex1 fz15" value="+7">
+                <div class="mobile-select">
+                  <select class="selectric countrycode">
+                    <option value="+7" data-flag="i/flag.png">Россия</option>
+                    <option value="+90" data-flag="i/greece.png">Грузия</option>
+                    <option value="+383" data-flag="i/flag.png">Россия</option>
+                    <option value="+900" data-flag="i/greece.png">Украина</option>
+                    <option value="+1" data-flag="i/flag.png">США</option>
+                    <option value="+800" data-flag="i/greece.png">Зимбабве</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <span class="pholder">Мобильный телефон</span>
-          </div>
-
-          <label ng-if="true" class="f vbot input-pholder mt10" ng-class="m ? 'not-empty' : ''">
-            <input type="text" name="fio" class="flex1 fz15" ng-model="m">
-            <span class="pholder">Ваш email</span>
-          </label>
-
-          <div class="mt10 revealer ws-abs" ng-class="showPass ? 'shown' : ''" ng-click="showPass=!showPass">
-            <div class="f d vcen">
-              <div class="flex1 blue">
-                1 пассажир, эконом-класс
-              </div>
+              <span class="pholder">Мобильный телефон</span>
             </div>
           </div>
-          <div class="ebebeb slide ws-abs" ng-show="showPass">
-            <div class="p10">
-              <div class="border-split bs15">
-                <div class="f d vcen space10">
-                  <div class="tac passenger-pic"><img src="i/adult.png"></div>
-                  <div class="flex1">Взрослые</div>
-                  <div>
-                    <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+
+          <div class="f ws-r ss-c space10 mt10">
+            <div class="flex1">
+              <label ng-if="true" class="f vbot input-pholder" ng-class="m ? 'not-empty' : ''">
+                <input type="text" name="fio" class="flex1 fz15" ng-model="m">
+                <span class="pholder">Ваш email</span>
+              </label>
+            </div>
+
+            <div class="flex1">
+              <div class="revealer ws-abs ws-h40" ng-class="showPass ? 'shown' : ''" ng-click="showPass=!showPass">
+                <div class="f d vcen">
+                  <div class="flex1 blue">
+                    1 пассажир, эконом-класс
                   </div>
                 </div>
-                <div>
-                  <div class="f d vcen space10" ng-init="children=[13,14]; co=children.length;">
-                    <div class="tac passenger-pic"><img src="i/child.png"></div>
-                    <div class="flex1">Дети до 14 лет</div>
-                    <div>
-                      <div class="number-with-spinners ss-h35"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1" min="0"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></div>
-                    </div>
-                  </div>
-                  <div class="f d vcen space10 mt15" ng-repeat="child in children track by $index">
-                    <div class="tac passenger-pic"></div>
-                      <div class="flex1">Возраст {{$index+1}}-го ребенка</div>
+              </div>
+              <div class="ebebeb slide ws-abs" ng-show="showPass">
+                <div class="p10">
+                  <div class="border-split bs15">
+                    <div class="f d vcen space10">
+                      <div class="tac passenger-pic"><img src="i/adult.png"></div>
+                      <div class="flex1">Взрослые</div>
                       <div>
-                        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=child;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
                       </div>
-                  </div>
-                </div>
-                <div class="f d vcen space10">
-                  <div class="tac passenger-pic"><img src="i/baby.png"></div>
-                  <div class="flex1">
-                    Дети до 2 лет
-                    <div class="grey fz11">без места</div>
-                  </div>
-                  <div>
-                    <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-                  </div>
-                </div>
-                <div>
-                  <label class="f d vcen space4">
-                    <input type="checkbox">
-                    <div class="flex1">Бизнес-класс</div>
-                  </label>
-                </div>
+                    </div>
+                    <div>
+                      <div class="f d vcen space10" ng-init="children=[13,14]; co=children.length;">
+                        <div class="tac passenger-pic"><img src="i/child.png"></div>
+                        <div class="flex1">Дети до 14 лет</div>
+                        <div>
+                          <div class="number-with-spinners ss-h35"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1" min="0"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></div>
+                        </div>
+                      </div>
+                      <div class="f d vcen space10 mt15" ng-repeat="child in children track by $index">
+                        <div class="tac passenger-pic"></div>
+                        <div class="flex1">Возраст {{$index+1}}-го ребенка</div>
+                        <div>
+                          <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=child;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="f d vcen space10">
+                      <div class="tac passenger-pic"><img src="i/baby.png"></div>
+                      <div class="flex1">
+                        Дети до 2 лет
+                        <div class="grey fz11">без места</div>
+                      </div>
+                      <div>
+                        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                      </div>
+                    </div>
+                    <div>
+                      <label class="f d vcen space4">
+                        <input type="checkbox">
+                        <div class="flex1">Бизнес-класс</div>
+                      </label>
+                    </div>
 
+                  </div>
+                  <!--div class="mt20 f">
+                    <a class="cancel-button flex1 tac">Закрыть</a>
+                  </div-->
+                </div>
               </div>
-              <!--div class="mt20 f">
-                <a class="cancel-button flex1 tac">Закрыть</a>
-              </div-->
             </div>
           </div>
+
+
+
+
+
+
+
 
         </div>
 
@@ -977,6 +819,38 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<div id="footer" class="ss-nd">
+  <div class="max-width">
+    <div class="f d ws-r ss-c vcen fz12">
+      <div class="f ws-r vcen space6 hcen flex1">
+        <div>Забронировано <br>авиабилетов сегодня</div>
+        <div class="fz38 bigdig lh1">1557</div>
+      </div>
+      <div class="sep"></div>
+      <div class="f ws-r vcen space6 hcen flex1">
+        <div>Забронировано <br>туров сегодня</div>
+        <div class="fz38 bigdig lh1">1557</div>
+      </div>
+      <div class="sep"></div>
+      <div class="f ws-r vcen space20 hcen flex1">
+        <div><a href="/">Абсолютная <br>безопасность платежей</a></div>
+        <div><a href="/">Публичная <br>оферта</a></div>
+      </div>
+      <div class="sep"></div>
+      <div class="f ws-r vcen space10 hcen flex1">
+        <div class="fz11">Акции, розыгрыши,<br>
+          новости, отзывы о нас</div>
+        <div class="wsn socials f ws-r vcen space4">
+          <a href="/"><i class="fa fa-vk"></i></a>
+          <a href="/"><i class="fa fa-facebook"></i></a>
+          <a href="/"><i class="fa fa-instagram"></i></a>
+          <a href="/"><i class="fa fa-twitter"></i></a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

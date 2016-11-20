@@ -3,64 +3,78 @@
 @import "compass";
 @import "reset";
 
-$green: #90c926;
-$blue: #068fc3;
+$green: #9cd71d;
+$green-text: #86b419;
+$blue: #058fc7;
 $dark-blue: #0480b4;
 $orange: #ff6700;
 
-$grey: #929292;
+$grey: #777777;
 $lightgrey: #bdbdbd;
-$cyan: #08d0e8;
+$cyan: #e7f8ff;
 //$4,128,180
 @mixin grey-gradient() {
-  // http://colorzilla.com/gradient-editor/#f4f4f4+0,f4f4f4+35,d8d8d8+65,d8d8d8+100
-  background-color: #ffffff; // Old browsers
-  @include filter-gradient(#ffffff, #e3e3e3, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #ffffff 0%,#ffffff 35%,#e3e3e3 65%,#e3e3e3 100%));
+  background-color: #f1f1f1; // Old browsers
+  @include filter-gradient(#f1f1f1, #d5d5d5, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #f1f1f1 0%,#f1f1f1 35%,#d5d5d5 65%,#d5d5d5 100%));
+}
+@mixin grey-hover-gradient() {
+  background-color: #cfcfcf; // Old browsers
+  @include filter-gradient(#cfcfcf, #efefef, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #cfcfcf 0%,#efefef 20%,#efefef 80%,#efefef 100%));
+}
+@mixin grey-active-gradient() {
+  background-color: #dddddd; // Old browsers
+  @include filter-gradient(#dddddd, #ffffff, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #dddddd 0%,#ffffff 20%,#ffffff 80%,#ffffff 100%));
 }
 
 @mixin blue-gradient() {
-  // Needs latest Compass, add '@import "compass"' to your scss
-  // Permalink - use to edit and share this gradient:
-  // http://colorzilla.com/gradient-editor/#0480b4+0,036f9c+100u
-  background-color: #239dce; // Old browsers
-  @include filter-gradient(#239dce, #0781b2, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #239dce 0%,#239dce 35%,#0781b2 65%,#0781b2 100%));
+  background-color: #058fc7; // Old browsers
+  @include filter-gradient(#058fc7, #047cac, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #058fc7 0%,#058fc7 35%,#047cac 65%,#047cac 100%));
 }
-@mixin green-gradient() {
-  // Needs latest Compass, add '@import "compass"' to your scss
-  // Permalink - use to edit and share this gradient:
-  // http://colorzilla.com/gradient-editor/#9dcb2f+0,9dcb2f+35,81af13+65,81af13+100
-  background-color: #a8dc38; // Old browsers
-  @include filter-gradient(#a8dc38, #8cc01c, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #a8dc38 0%,#a8dc38 35%,#8cc01c 65%,#8cc01c 100%));
+@mixin blue-hover-gradient() {
+  background-color: #058fc7; // Old browsers
+  @include filter-gradient(#047cac, #058fc7, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #047cac 0%,#058fc7 35%,#058fc7 65%,#058fc7 100%));
+}
+@mixin blue-active-gradient() {
+  background-color: #299bca; // Old browsers
+  @include filter-gradient(#299bca, #2fb3e9, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #299bca 0%,#2fb3e9 35%,#2fb3e9 65%,#2fb3e9 100%));
 }
 
+@mixin green-gradient() {
+  background-color: #90c926; // Old browsers
+  @include filter-gradient(#90c926, #7dae21, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #90c926 0%,#90c926 20%,#7dae21 80%,#7dae21 100%));
+}
 @mixin green-hover-gradient() {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b8e845+0,9fc93c+100 */
-  background: rgb(184,232,69); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(184,232,69,1) 0%, rgba(159,201,60,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(184,232,69,1) 0%,rgba(159,201,60,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(184,232,69,1) 0%,rgba(159,201,60,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e845', endColorstr='#9fc93c',GradientType=0 ); /* IE6-9 */
+  background-color: #90c926; // Old browsers
+  @include filter-gradient(#90c926, #7dae21, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #7dae21 0%,#90c926 20%,#90c926 80%,#90c926 100%));
+}
+@mixin green-active-gradient() {
+  background-color: #9ec84f; // Old browsers
+  @include filter-gradient(#9ec84f, #b6e75b, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #9ec84f 0%,#b6e75b 20%,#b6e75b 80%,#b6e75b 100%));
 }
 
 @mixin orange-gradient() {
-  // Needs latest Compass, add '@import "compass"' to your scss
-  // Permalink - use to edit and share this gradient:
-  // http://colorzilla.com/gradient-editor/#fc793c+0,fc793c+35,e05d20+65,e05d20+100
-  background-color: #fc793c; // Old browsers
-  @include filter-gradient(#fc793c, #e05d20, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #fc793c 0%,#fc793c 35%,#e05d20 65%,#e05d20 100%));
+  background-color: #ff6700; // Old browsers
+  @include filter-gradient(#ff6700, #e05d20, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #ff6700 0%,#ff6700 20%,#dd5900 80%,#dd5900 100%));
 }
-
 @mixin orange-hover-gradient() {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fd8738+0,e67730+100 */
-  background: #fd8738; /* Old browsers */
-  background: -moz-linear-gradient(top,  #fd8738 0%, #e67730 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #fd8738 0%,#e67730 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #fd8738 0%,#e67730 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd8738', endColorstr='#e67730',GradientType=0 ); /* IE6-9 */
+  background-color: #ff6700; // Old browsers
+  @include filter-gradient(#dd5900, #ff6700, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #dd5900 0%,#ff6700 20%,#ff6700 80%,#ff6700 100%));
+}
+@mixin orange-active-gradient() {
+  background-color: #dd7a37; // Old browsers
+  @include filter-gradient(#dd7a37, #ff8d3f, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #dd7a37 0%,#ff8d3f 20%,#ff8d3f 80%,#ff8d3f 100%));
 }
 
 @mixin common-button() {
@@ -70,7 +84,7 @@ $cyan: #08d0e8;
   color:white;
   padding:0 1.5em;
   height: 30px;
-  line-height: 28px;
+  line-height: 30px;
   &.ttu {
     line-height: 30px;
   }
@@ -239,6 +253,10 @@ $cyan: #08d0e8;
   color: $green;
 }
 
+.green-text {
+  color: $green-text;
+}
+
 .orange {
   color: $orange;
 }
@@ -255,9 +273,18 @@ $cyan: #08d0e8;
   color:$cyan;
 }
 
+$input-shadow: inset 0 4px 6px rgba(0,0,0, 0.14);
+$input-shadow-hover: inset 0 4px 6px rgba(0,0,0, 0.14), inset 0 0 0 1px $green, 0px 0px 6px 2px rgba(black, .1);
+
 .blue-button {
   @include blue-gradient();
   @include common-button();
+  &:hover {
+    @include blue-hover-gradient();
+  }
+  &:active {
+    @include blue-active-gradient();
+  }
   &.b {
     display: block;
     &:hover {
@@ -278,18 +305,23 @@ $cyan: #08d0e8;
 .orange-button {
   @include orange-gradient();
   @include common-button();
+  &:hover {
+    @include orange-hover-gradient();
+  }
+  &:active {
+    @include orange-active-gradient();
+  }
   &.b {
     display: block;
     &:hover {
       color:white;
-      @include orange-hover-gradient();
+
       text-decoration: none;
     }
   }
   &.aib {
     &:hover {
       color:white;
-      @include orange-hover-gradient();
       text-decoration: none;
     }
   }
@@ -641,237 +673,13 @@ a, .pseudolink {
 
 #top-search-form {
   padding:26px 0;
-  /*form {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-
-    input {
-      margin:0;
-    }
-
-    input[type=text] {
-      border:solid 1px $dark-blue;
-      border-radius: 2px;
-      padding:0.55em 0.65em 0.75em 0.65em;
-      width:100%;
-      &::-moz-placeholder {color:#adadad;}
-      &::-webkit-input-placeholder {color:#adadad;}
-      &:-ms-input-placeholder {color:#adadad;}
-    }
-
-    >* {
-      +* {
-        padding-left:2px;
-      }
-    }
-  }
-
-  #new-search {
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    text-transform: uppercase;
-
-    @include green-gradient();
-
-    border-radius:5px;
-    font-weight: 600;
-
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    >div {
-      color:white;
-      line-height: 1;
-      text-align: center;
-    }
-  }
-
-  #from-input {
-    -webkit-flex: 0 0 20%;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-
-    &:before {
-      width:21px;
-      height:21px;
-      position: absolute;
-      content:'';
-      background: url(../i/grey-plane.svg) center center no-repeat;
-      background-size: cover;
-      z-index: 10;
-      left:8px;
-      top:50%;
-      margin-top:-10px;
-    }
-
-    input {
-      @extend .from-input;
-    }
-  }
-
-  #to-input {
-    -webkit-flex: 0 0 20%;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-
-    &:before {
-      width:21px;
-      height:21px;
-      position: absolute;
-      content:'';
-      background: url(../i/grey-plane.svg) center center no-repeat;
-      background-size: cover;
-      z-index: 10;
-      left:18px;
-      top:50%;
-      margin-top:-10px;
-      transform: rotate(-180deg);
-    }
-
-    input {
-      @extend .to-input;
-      background-position: 18px center;
-      padding-left:45px;
-    }
-  }
-
-  #search-submit {
-    -webkit-flex: 0 0 75px;
-    -ms-flex: 0 0 75px;
-    flex: 0 0 75px;
-
-
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    >input {
-      width:100%;
-
-      @include orange-gradient();
-      border-radius:5px;
-      border:none;
-      color:white;
-      text-transform: uppercase;
-      font-weight: 600;
-      &:hover {
-        @include orange-hover-gradient();
-      }
-
-    }
-  }
-
-  #date-input-1, #date-input-2, #passengers-input {
-    -webkit-flex: 0 0 15%;
-    -ms-flex: 0 0 15%;
-    flex: 0 0 15%;
-  }
-
-  .close {
-    width:19px;
-    height:19px;
-    right:8px;
-    top:50%;
-    margin-top:-9px;
-    z-index: 10;
-    position: absolute;
-    background: url(../i/cross.png) center center no-repeat;
-  }
-
-  #date-input-1 {
-    &:before {
-      width:22px;
-      height:21px;
-      position: absolute;
-      content:'';
-      background: url(../i/calendar1.svg) center center no-repeat;
-      background-size: cover;
-      z-index: 10;
-      right:8px;
-      top:50%;
-      margin-top:-10px;
-    }
-    input {
-
-    }
-  }
-
-  #date-input-2 {
-    &:before {
-      width:22px;
-      height:21px;
-      position: absolute;
-      content:'';
-      background: url(../i/calendar2.svg) center center no-repeat;
-      background-size: cover;
-      z-index: 10;
-      right:8px;
-      top:50%;
-      margin-top:-10px;
-    }
-  }
-
-  #passengers-input {
-    .pass-border {
-      position: absolute;
-      top:0;
-      left:2px;
-      bottom:0;
-      right:0;
-    }
-  }*/
 }
 
 #from-input, #to-input {
   @include flex(1 0 10em);
   input {
     width:0;
+    border-radius: 3px;
   }
 }
 
@@ -920,6 +728,7 @@ a, .pseudolink {
     padding-left:33px;
     width: 0;
     min-width: 0;
+    border-radius: 3px;
   }
 }
 
@@ -929,7 +738,7 @@ a, .pseudolink {
     height:21px;
     position: absolute;
     content:'';
-    background: url(../i/calendar1.svg) center center no-repeat;
+    background: url(../i/icons/Calendar-1.svg) center center no-repeat;
     background-size: cover;
     z-index: 10;
     left:8px;
@@ -945,7 +754,7 @@ a, .pseudolink {
     height:21px;
     position: absolute;
     content:'';
-    background: url(../i/calendar2.svg) center center no-repeat;
+    background: url(../i/icons/Calendar-2.svg) center center no-repeat;
     background-size: cover;
     z-index: 10;
     left:8px;
@@ -979,9 +788,15 @@ a, .pseudolink {
   @include flex(1 0 170px);
   min-width: 170px;
   .revealer {
+    padding-left:10px;
     height:40px;
     line-height: 40px;
-    //background: #ffffff;
+    border-radius: 3px;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 1px $blue, $input-shadow;
+    &.shown {
+      box-shadow: $input-shadow-hover;
+    }
   }
 }
 
@@ -1177,11 +992,15 @@ a, .pseudolink {
   .minus, .plus {
     height:23px;
     border:solid 1px $blue;
-    border-radius: 4px;
+    border-radius: 5px;
     width:23px;
     text-indent: -9999px;
     @include grey-gradient();
     position: relative;
+    cursor:pointer;
+    &:hover {
+      @include grey-hover-gradient();
+    }
 
     &:after {
       position: absolute;
@@ -1208,8 +1027,8 @@ a, .pseudolink {
     -moz-appearance: textfield;
     padding:0;
     line-height: 23px;
-    border-radius: 4px;
-    box-shadow: none;
+    border-radius: 5px;
+    @include grey-active-gradient();
     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -1258,6 +1077,9 @@ a, .pseudolink {
     content:'';
     display: inline-block;
   }
+  &.last-day:not(:last-child):before {
+    right:2px;
+  }
   &:after {
     width: 0;
     height: 0;
@@ -1266,6 +1088,9 @@ a, .pseudolink {
     border-color: $orange transparent transparent transparent;
     content:'';
     display: inline-block;
+  }
+  &.first-day:not(:first-child):after {
+    left:2px;
   }
 }
 .recommended {
@@ -1676,8 +1501,11 @@ a, .pseudolink {
 }
 
 #subscribe-form {
-  @include flex(0 0 225px);
-  z-index: 221;
+  min-width: 170px;
+  @include flex(0 0 20%);
+  &.revealed {
+    z-index: 221;
+  }
 }
 
 .subscribe-popup {
@@ -1707,6 +1535,10 @@ a, .pseudolink {
   opacity:1;
   margin: 0 !important;
   @include transition(opacity 0.2s ease-out);
+
+  &:not(.ng-hide) + .popup-what {
+    z-index: 221;
+  }
 }
 
 .times-of-day {
@@ -1790,7 +1622,10 @@ a, .pseudolink {
   text-shadow: none;
   box-shadow: inset 0 0 0 1px $blue;
   &:hover {
-    background: #cccccc;
+    @include grey-hover-gradient();
+  }
+  &:active {
+    @include grey-active-gradient();
   }
 }
 
@@ -2420,6 +2255,9 @@ a, .pseudolink {
     text-decoration: none;
     @include green-hover-gradient();
   }
+  &:active {
+    @include green-active-gradient();
+  }
 }
 
 .white-button {
@@ -2791,61 +2629,8 @@ a, .pseudolink {
 }
 
 #alternate-results {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  padding: 4px 0 30px 0;
   >.month {
-    /*-webkit-flex: 1 0 auto;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;*/
-    padding:1px;
-
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    >.month-title {
-      -webkit-flex: 1 1 100%;
-      -ms-flex: 1 1 100%;
-      flex: 1 1 100%;
-
-      background: #aeaeae;
-      text-align: center;
-      color:white;
-      margin:0 0 3px -1px;
-      padding:2px;
-    }
-
+    padding:1px 1px 0 0;
     &:not(:last-child) {
       padding-right:1px;
       >.month-title {
@@ -2875,22 +2660,30 @@ a, .pseudolink {
   }
 }
 
+.month-title {
+  +.month-title {
+    &:before {
+      content:'\00a0—';
+    }
+  }
+}
+
 .month-day {
   //margin:-1px 0 0 -1px;
   >div {
-    margin:-1px;
+    margin:-1px -1px 0 0;
   }
-  @include flex(0 0 6.666666666%);
+  width:6.666666666%;
 
   &.recommended, &.cheap {
     &:before {
       position: absolute;
-      right:1px;
+      right:0px;
       bottom:1px;
     }
     &:after {
       position: absolute;
-      top:1px;
+      top:0px;
       left:1px;
     }
   }
@@ -2903,6 +2696,7 @@ a, .pseudolink {
   }
 }
 
+/*
 .monthЯнварь { background: #b6dcf1;}
 .monthФевраль { background: #b9e4f2;}
 .monthМарт { background: #b7e1d4;}
@@ -2915,7 +2709,7 @@ a, .pseudolink {
 .monthОктябрь { background: #f0cbe1;}
 .monthНоябрь { background: #d8c7e6;}
 .monthДекабрь { background: #becde4;}
-
+*/
 
 #my-results {
   display: -ms-flexbox;
@@ -3365,7 +3159,7 @@ a, .pseudolink {
   }
 }
 
-input[type=text], input[type=email], textarea {
+input, textarea {
   outline: none !important;
 }
 
@@ -3517,9 +3311,22 @@ input[type=text], input[type=email], textarea {
   }
 
   .button {
-    color:$blue;
     &:after {
-      border-top-color:$blue;
+      border:none;
+      content: '';
+      background: url(../i/arrow-down.png);
+      width:12px;
+      height:8px;
+      position: absolute;
+
+      top:50%;
+      left:50%;
+      margin-top:-4px;
+      margin-left:-6px;
+      @include transition(transform 0.3s ease-in-out);
+      .selectric-open & {
+        @include transform(rotate(180deg));
+      }
     }
 
     .selectric-hover & {
@@ -3528,6 +3335,40 @@ input[type=text], input[type=email], textarea {
         border-top-color: $blue;
       }
     }
+  }
+}
+
+.selectric-grey {
+  &:not(.selectric-open) {
+    .selectric {
+      border-radius: 5px;
+      @include grey-gradient();
+      &:hover {
+        @include grey-hover-gradient();
+      }
+    }
+  }
+  &.selectric-open {
+    .selectric {
+      @include grey-active-gradient();
+    }
+  }
+}
+
+.selectric-flex1 {
+  width:0;
+  @include flex(1);
+}
+
+.selectric-h30 {
+  .label {
+    height:28px;
+    line-height: 28px;
+    margin-right:28px;
+  }
+  .button {
+    width:28px;
+    height:28px;
   }
 }
 
@@ -4064,18 +3905,15 @@ input[type=text], input[type=email], textarea {
   padding-left:50px;
 }
 .selectric-countrycode {
-  /*position:absolute;
-  left:0;
-  top:50%;
-  margin-top:-0.9em;*/
   .selectric {
     border:none;
     background: none;
 
     .label {
       margin-right:15px;
+      margin-left:0;
       .flag {
-        margin:3px;
+        margin:3px 3px 3px 0;
       }
     }
     .button {
@@ -4260,6 +4098,7 @@ input[type=text], input[type=email], textarea {
   @import 'phone-list';
   @import 'phone-country';
   @import 'phone-bron';
+  @import 'phone-tickets';
 }
 
 @media screen and (min-width: 800px) {
@@ -4318,6 +4157,13 @@ input[type=text], input[type=email], textarea {
   background: $blue;
 }
 
+.bg-grey {
+  background: $grey;
+}
+
+.bg-green {
+  background: $green;
+}
 
 .white-direction {
   width:30px;
@@ -4400,5 +4246,31 @@ input[type=text], input[type=email], textarea {
   }
   +.aiit {
     border-top:solid 1px #777777;
+  }
+}
+
+.common-plane {
+  width:21px;
+  height:1em;
+  position: relative;
+  vertical-align: -2px;
+  @include transform-origin(60%, 68%);
+
+  &:after {
+    background:url(../i/common-plane.svg);
+    position: absolute;
+    left:0;
+    top:50%;
+    @include transform(translateY(-50%));
+    width:20px;
+    height: 21px;
+    content:'';
+  }
+
+  &.takeoff {
+    @include transform(rotate(55deg) scale(0.8));
+  }
+  &.landing {
+    @include transform(rotate(115deg) scale(0.8));
   }
 }

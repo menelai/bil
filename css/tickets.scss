@@ -6,23 +6,44 @@
 }
 
 .ticket-price {
-  @include flex(0 0 225px);
+  min-width: 170px;
+  @include flex(0 0 20%);
   padding:10px 15px;
+
 }
 
 .ticket-aircompany {
-  @include flex(0 1 130px);
+  @include flex-direction(column);
+  @include flex(0 1 100px);
+  .wayback & {
+    @include flex-direction(column-reverse);
+  }
   img {
     max-width: 100%;
+    line-height: 1;
+    display: block;
+    margin:0 auto;
   }
 }
 
 .ticket-luggage {
-  @include flex(0 1 130px);
+  @include justify-content(space-around);
+  @include flex-direction(column);
+  @include flex(1 1 80px);
+  max-width: 110px;
+
+  >* {
+    &:not(:last-child) {
+      margin-bottom:5px;
+    }
+    &:not(:first-child) {
+      margin-top:5px;
+    }
+  }
 }
 
 .ticket-data {
-  @include flex(1 0 300px);
+  @include flex(1 0 130px);
 }
 
 .ticket-duration {
@@ -61,7 +82,7 @@
 }
 
 .ticket-info {
-  //padding-right:10px;
+
 }
 
 .padder20 {
@@ -70,8 +91,18 @@
 }
 
 .ticket-row {
+  @include justify-content(space-between);
   padding:20px 0;
   box-shadow: inset 0 0 0 1px #777777;
+
+  >* {
+    &:not(:last-child) {
+      margin-right:5px;
+    }
+    &:not(:first-child) {
+      margin-left:5px;
+    }
+  }
 
   border-radius: 2px;
   +.ticket-row {
@@ -104,9 +135,11 @@
 
 .comfort-icon {
   width:20px;
-  height:20px;
   img {
     max-width: 100%;
+    margin:0 auto;
+    display: block;
+    line-height: 1;
   }
 }
 
@@ -155,4 +188,110 @@ body .ui-tooltip {
 .arrow.top:after {
   bottom: -20px;
   top: auto;
+}
+
+.ticket-hint {
+  z-index: 1;
+  padding:4px 10px;
+  +.ticket {
+    margin-top:-1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.ticket-ac-and-comfort {
+  @include flex(0 1 240px);
+
+  >* {
+    &:not(:last-child) {
+      margin-right:5px;
+    }
+    &:not(:first-child) {
+      margin-left:5px;
+    }
+  }
+}
+
+@mixin mobile-ticket() {
+  .ticket-ac-and-comfort {
+    >* {
+      &:not(:last-child) {
+        margin-right:10px;
+        margin-left:0;
+      }
+      &:not(:first-child) {
+        margin-left:0;
+
+      }
+    }
+    @include flex(none);
+    @include align-items(center);
+  }
+  .ticket-aircompany {
+    @include flex(none);
+    @include flex-direction(row);
+    >* {
+      &:not(:last-child) {
+        margin-right:5px;
+        margin-bottom:inherit;
+      }
+      &:not(:first-child) {
+        margin-left:5px;
+        margin-top:inherit;
+      }
+    }
+  }
+  .ticket-row {
+    @include flex-direction(column-reverse);
+    padding:10px;
+    @include flex(none);
+
+    >* {
+      &:not(:last-child) {
+        margin-right:inherit;
+
+      }
+      &:not(:first-child) {
+        margin-left:inherit;
+
+      }
+    }
+  }
+
+  .ticket-luggage {
+    @include justify-content(flex-end);
+    @include flex-direction(row);
+    @include flex(1);
+    max-width: none;
+    >* {
+      &:not(:last-child) {
+        margin-right:5px;
+        margin-bottom:inherit;
+      }
+      &:not(:first-child) {
+        margin-top:inherit;
+        margin-left:5px;
+      }
+    }
+  }
+
+  .padder20 {
+    display: none;
+  }
+
+  .ticket-data {
+    @include flex(none);
+    margin-bottom: 15px;
+  }
+
+  .ticket-info {
+    @include flex(none);
+  }
+}
+
+.ticket {
+  &.like-mobile {
+    @include mobile-ticket();
+  }
 }

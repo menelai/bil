@@ -2,6 +2,8 @@
   @include revealer();
 }
 
+
+
 #responses {
   display: none;
 }
@@ -301,4 +303,9 @@ body.bron {
 
 .flex60 {
   @include flex(0 0 60%);
+}
+
+.input-pholder {
+  height:35px;
+  padding-bottom:2px;
 }

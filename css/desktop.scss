@@ -68,3 +68,10 @@
   border-top:solid 1px $grey;
   padding-top:20px;
 }
+
+.revealer {
+  &.ws-h40 {
+    height:40px;
+    line-height: 40px;
+  }
+}

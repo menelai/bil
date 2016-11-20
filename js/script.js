@@ -240,6 +240,71 @@
     $rootScope.isDesktop = deviceDetector.isDesktop();
   });
 
+  app.factory('clickOutsideService', function($window) {
+    var objs = {};
+    var index = 0;
+
+    $window.addEventListener('click', function(event) {
+      if (!event.outsideClickListeners) {
+        event.outsideClickListeners = [];
+      }
+      Object.keys(objs).forEach(function(index) {
+        index = parseInt(index);
+        if (!~event.outsideClickListeners.indexOf(index)) {
+          objs[index].callback();
+        }
+      });
+    });
+
+    return {
+      registerElement: function($el, callback) {
+        objs[index] = {
+          element: $el,
+          callback: callback
+        };
+        return index++;
+      },
+      removeElement: function(index) {
+        delete objs[index];
+      }
+    }
+  });
+
+  app.directive('twClickOutside', twClickOutside);
+
+  twClickOutside.$inject = ['$window', '$parse'];
+  function twClickOutside ($window, $parse) {
+    return {
+      link: function(scope, el, attr) {
+        if (!attr.twClickOutside) {
+          return;
+        }
+
+        var ignore;
+        if (attr.ignoreIf) {
+          ignore = $parse(attr.ignoreIf);
+        }
+
+        var nakedEl = el[0];
+        var fn = $parse(attr.twClickOutside);
+
+        var handler = function(e) {
+          if (nakedEl === e.target || nakedEl.contains(e.target) || (ignore && ignore(scope))) {
+            return;
+          }
+
+          scope.$apply(fn);
+        };
+
+        $window.addEventListener('click', handler, true);
+
+        scope.$on('$destroy', function(e) {
+          $window.removeEventListener('click', handler);
+        });
+      }
+    };
+  }
+
   app.animation('.slide', function() {
     var NG_HIDE_CLASS = 'ng-hide';
     return {

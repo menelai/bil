@@ -1,0 +1,20 @@
+.ticket {
+  &.like-mobile, &:not(.like-mobile) {
+    @include mobile-ticket();
+
+    .ticket-ac-and-comfort {
+      @include flex-direction(column);
+      > * {
+        &:not(:last-child) {
+          margin-right: inherit;
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+        &:not(:first-child) {
+          margin-left: 0;
+
+        }
+      }
+    }
+  }
+}
