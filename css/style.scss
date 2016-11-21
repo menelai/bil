@@ -514,12 +514,6 @@ a, .pseudolink {
   text-align: right;
   white-space: nowrap;
   line-height: 1.1;
-  .blue {
-    font-size: 20px;
-  }
-  .grey {
-    font-size: 13px;
-  }
 }
 
 #personal {
@@ -1220,22 +1214,27 @@ a, .pseudolink {
       @include display-flex();
       @include flex-direction(row);
       @include flex(0 2 1.5em);
-    }
-    >input[type=radio], >input[type=checkbox] {
-      position: absolute;
-      left:0;
-      top:0.2em;
-    }
-    >label {
-      padding-left:18px;
-      -webkit-flex: 1;
-      -ms-flex: 1;
-      flex: 1;
-      width:100%;
+      @include align-items(center);
 
-      -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-      align-items: flex-start;
+      &:hover {
+        margin-left:-5px;
+        margin-right:-5px;
+        color:$blue;
+        >label {
+          background: $cyan;
+          padding: 5px;
+          margin:-5px 0;
+        }
+        .only {
+          >div:first-child {
+            margin-top:-1.3em;
+          }
+        }
+      }
+    }
+
+    >label {
+      width:100%;
     }
     +li {
       margin-top:0.15em;
@@ -4272,5 +4271,119 @@ input, textarea {
   }
   &.landing {
     @include transform(rotate(115deg) scale(0.8));
+  }
+}
+
+.luggage-popup {
+  position: absolute;
+  @include experimental-value(top, calc(100% + 2px));
+  right:0;
+  min-width: 100%;
+  border: solid 1px $blue;
+  z-index: 100;
+  background: #ffffff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+  .aiit {
+    padding:10px 5px;
+    cursor:auto;
+  }
+}
+
+
+.icon-luggage {
+  height:1em;
+  width:11px;
+  position: relative;
+  vertical-align: -2px;
+  &:after {
+    background:url(../i/test-lug.png);
+    position: absolute;
+    left:0;
+    top:50%;
+    @include transform(translateY(-50%));
+    width:11px;
+    height: 18px;
+    content:'';
+  }
+  &.black:after {
+    background:url(../i/test-black-lug.png);
+  }
+}
+
+.icon-carryon {
+  height:1em;
+  width:13px;
+  position: relative;
+  vertical-align: -2px;
+  &:after {
+    background:url(../i/test-car.png);
+    position: absolute;
+    left:0;
+    top:50%;
+    @include transform(translateY(-50%));
+    width:13px;
+    height: 12px;
+    content:'';
+  }
+  &.black:after {
+    background:url(../i/test-black-car.png);
+  }
+}
+
+.only {
+  height:1em;
+  overflow: hidden;
+  >div:first-child {
+    @include transition(margin-top 0.1s ease-in-out);
+  }
+}
+
+@media all and (min-width:1201px) {
+  .working-time {
+    margin-left:20px;
+    @include flex-direction(column);
+    >div {
+      +div {
+        margin-top:5px;
+      }
+    }
+  }
+
+  .working-days {
+    margin-right:10px;
+    @include flex-direction(column);
+    >div {
+      height:4px;
+      width:25px;
+      +div {
+        margin-top:1px;
+      }
+    }
+  }
+}
+@media all and (max-width:1200px) {
+  .working-time {
+    width:160px;
+    font-size: 13px;
+    @include flex-direction(row);
+    @include justify-content(flex-end);
+    > div {
+      + div {
+        margin-left: 10px;
+      }
+    }
+  }
+  .working-days {
+    margin-right:4px;
+    @include flex-direction(row);
+    > div {
+      height: 4px;
+      width: 4px;
+      + div {
+        margin-left: 1px;
+      }
+    }
   }
 }

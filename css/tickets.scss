@@ -6,7 +6,7 @@
 }
 
 .ticket-price {
-  min-width: 170px;
+  min-width: 190px;
   @include flex(0 0 20%);
   padding:10px 15px;
 
@@ -43,7 +43,7 @@
 }
 
 .ticket-data {
-  @include flex(1 0 130px);
+  @include flex(1 0 290px);
 }
 
 .ticket-duration {
@@ -201,7 +201,8 @@ body .ui-tooltip {
 }
 
 .ticket-ac-and-comfort {
-  @include flex(0 1 240px);
+  @include flex(1 0 220px);
+  max-width: 240px;
 
   >* {
     &:not(:last-child) {
@@ -215,6 +216,7 @@ body .ui-tooltip {
 
 @mixin mobile-ticket() {
   .ticket-ac-and-comfort {
+    max-width: none;
     >* {
       &:not(:last-child) {
         margin-right:10px;

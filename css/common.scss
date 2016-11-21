@@ -192,8 +192,8 @@
   }
 }
 
-@for $i from 2 through 200 {
-  .split#{$i} {
+@for $i from 1 through 200 {
+  .split#{$i}:not(.c):not(.ws-c):not(.ss-c) {
     >*:not(:first-child) {
       padding-left:#{$i*1/2}px;
     }
@@ -202,7 +202,7 @@
     }
   }
 
-  .space#{$i}:not(.c) {
+  .space#{$i}:not(.c):not(.ws-c):not(.ss-c) {
     >*:not(:first-child) {
       margin-left:#{$i*1/2}px;
     }
@@ -211,12 +211,23 @@
     }
   }
 
-  .c.space#{$i} {
-    >*:not(:first-child) {
-      margin-top:#{$i*1/2}px;
+  .c, .ws-c, .ss-c {
+    &.split#{$i} {
+      >*:not(:first-child) {
+        padding-top:#{$i*1/2}px;
+      }
+      >*:not(:last-child) {
+        padding-bottom:#{$i*1/2}px;
+      }
     }
-    >*:not(:last-child) {
-      margin-bottom:#{$i*1/2}px;
+
+    &.space#{$i} {
+      >*:not(:first-child) {
+        margin-top:#{$i*1/2}px;
+      }
+      >*:not(:last-child) {
+        margin-bottom:#{$i*1/2}px;
+      }
     }
   }
 
@@ -320,7 +331,7 @@
   }
 
   @for $i from 0 through 200 {
-    .ss-split#{$i} {
+    .ss-split#{$i}:not(.c) {
       >*:not(:first-child) {
         padding-left:#{$i*1/2}px;
       }
