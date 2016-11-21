@@ -1423,6 +1423,7 @@ a, .pseudolink {
     border:solid 1px $blue;
     border-radius: 2px;
     z-index: 100;
+    min-width: 700px;
 
     h2 {
       font-weight: normal;
