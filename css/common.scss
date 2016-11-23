@@ -490,3 +490,9 @@ input[type=text], input[type=email], textarea {
 .static {
   position: static;
 }
+
+
+.lena2px {
+  @include transform(translateY(-1px));
+  display: inline-block;
+}
