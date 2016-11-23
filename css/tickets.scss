@@ -14,9 +14,10 @@
 
 .ticket-aircompany {
   @include flex-direction(column);
-  @include flex(0 1 100px);
+  @include flex(1 1 100px);
+  padding:0 10px 0 20px;
   .wayback & {
-    @include flex-direction(column-reverse);
+    //@include flex-direction(column-reverse);
   }
   img {
     max-width: 100%;
@@ -202,7 +203,7 @@ body .ui-tooltip {
 
 .ticket-ac-and-comfort {
   @include flex(1 0 220px);
-  max-width: 240px;
+  max-width: 300px;
 
   >* {
     &:not(:last-child) {
@@ -213,6 +214,7 @@ body .ui-tooltip {
     }
   }
 }
+
 
 @mixin mobile-ticket() {
   .ticket-ac-and-comfort {
@@ -295,5 +297,12 @@ body .ui-tooltip {
 .ticket {
   &.like-mobile {
     @include mobile-ticket();
+  }
+}
+
+.price-icon {
+  width:10px;
+  img {
+    @include transform(translateY(-1px));
   }
 }

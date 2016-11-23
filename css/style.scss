@@ -4221,7 +4221,7 @@ input, textarea, button {
 }
 
 .crossing-cities {
-  @include flex(0 0 200px);
+  @include flex(0 1 200px);
 }
 
 .crossing-times {
@@ -4230,7 +4230,7 @@ input, textarea, button {
 
 .cross-item {
   box-shadow: inset 0 0 0 1px $blue/*, 0 0 10px rgba(black, 0.4)*/;
-  background: rgba(white, 0.9);
+  background: white;
 
   &.cross-wayback {
     box-shadow: inset 0 0 0 1px $orange/*, 0 0 10px rgba(black, 0.4)*/;
@@ -4241,6 +4241,17 @@ input, textarea, button {
   min-width: 80px;
   img {
     max-width: 100%;
+  }
+}
+
+.cross-info-icon {
+  width:20px;
+  height:20px;
+  background: url(../i/i.png) $green;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: $blue;
   }
 }
 
@@ -4288,6 +4299,11 @@ input, textarea, button {
     width:20px;
     height: 21px;
     content:'';
+  }
+  &.black {
+    &:after {
+      background:url(../i/common-plane-black.svg);
+    }
   }
 
   &.takeoff {
@@ -4357,7 +4373,7 @@ input, textarea, button {
 }
 
 .only {
-  height:1em;
+  height:1.3em;
   overflow: hidden;
   >div:first-child {
     @include transition(margin-top 0.1s ease-in-out);

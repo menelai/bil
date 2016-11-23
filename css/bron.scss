@@ -146,6 +146,19 @@ div.input-pholder {
       @include transform(rotate(180deg));
     }
   }
+
+  &.arrow-top {
+    &:after {
+      @include transform(rotate(180deg));
+    }
+
+    &.flight-visible, &.shown {
+      &:after {
+        @include transform(rotate(0));
+      }
+    }
+  }
+
   z-index: 1;
 
   &.ws-h30 {
