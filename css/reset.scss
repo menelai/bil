@@ -31,7 +31,7 @@ body { *font-size:small; *font:x-small; line-height:1.22; min-height:100%;}
 table { font-size:inherit; font:100%; }
 select, input, textarea { font:100% sans-serif; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
-body, select, input, textarea { color:#444; }
+body, select, input, textarea { color:#444; text-rendering: optimizeLegibility;}
 h1,h2,h3,h4,h5,h6 { font-weight: bold; text-rendering: optimizeLegibility; }
 html { -webkit-font-smoothing: antialiased; }
 a, a:hover, a:active, a:visited {text-decoration:underline;outline: none;}

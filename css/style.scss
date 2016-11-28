@@ -46,9 +46,9 @@ $cyan: #e7f8ff;
 }
 
 @mixin green-gradient() {
-  background-color: #90c926; // Old browsers
-  @include filter-gradient(#90c926, #7dae21, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #90c926 0%,#90c926 20%,#7dae21 80%,#7dae21 100%));
+  background-color: #9cd71d; // Old browsers
+  @include filter-gradient(#abde38, #9cd71d, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #abde38 0%, #abde38 35%,#9cd71d 65%,#9cd71d 100%));
 }
 @mixin green-hover-gradient() {
   background-color: #90c926; // Old browsers
@@ -90,8 +90,9 @@ $cyan: #e7f8ff;
   }
   font-weight: 600;
   /*text-shadow: 0px 1px 1px rgba(black, 0.26);*/
+
   &[type=button], &[type=submit] {
-    padding-bottom:2px;
+    //padding-bottom:2px;
   }
   &.aib {
     display: inline-block;
@@ -524,14 +525,19 @@ a, .pseudolink {
 }
 
 .yourdate {
-  box-shadow: inset 0 0 0 3px $blue;
+  &:after {
+    content:'';
+    left:3px;
+    top:6px;
+    right:3px;
+    bottom:3px;
+    box-shadow: inset 0 0 0 1px $blue;
+    position: absolute;
+  }
 }
 
 #call-variants {
-  //display: inline-block;
-  //width:130px;
   table {
-
   }
   td {
     text-align: center;
@@ -676,6 +682,7 @@ a, .pseudolink {
   @include flex(1 0 10em);
   input {
     width:0;
+    min-width: 0;
     border-radius: 3px;
   }
 }
@@ -731,7 +738,7 @@ a, .pseudolink {
 
 #date-input-1 {
   &:before {
-    width:22px;
+    width:24px;
     height:21px;
     position: absolute;
     content:'';
@@ -747,14 +754,14 @@ a, .pseudolink {
 
 #date-input-2 {
   &:before {
-    width:22px;
+    width:24px;
     height:21px;
     position: absolute;
     content:'';
     background: url(../i/icons/Calendar-2.svg) center center no-repeat;
     background-size: cover;
     z-index: 10;
-    left:8px;
+    left:4px;
     top:50%;
     margin-top:-12px;
     pointer-events: none;
@@ -1207,6 +1214,20 @@ a, .pseudolink {
   }
 }
 
+.only {
+  a {
+    text-decoration: none !important;
+  }
+}
+
+@mixin only-hover() {
+  .only {
+    >div:first-child {
+      margin-top:-1.3em;
+    }
+  }
+}
+
 .radios {
   @include display-flex();
   @include flex-direction(column);
@@ -1228,11 +1249,7 @@ a, .pseudolink {
           padding: 5px;
           margin:-5px 0;
         }
-        .only {
-          >div:first-child {
-            margin-top:-1.3em;
-          }
-        }
+        @include only-hover();
       }
     }
 
@@ -2693,20 +2710,36 @@ a, .pseudolink {
   //margin:-1px 0 0 -1px;
   >div {
     margin:-1px -1px 0 0;
+    &:before {
+      position: absolute;
+      top:0px;
+      left:0;
+      right:0;
+      height:3px;
+      background: #777777;
+      content:'';
+    }
+  }
+  &.topdate1 {
+    >div {
+      &:before {
+        background: $blue;
+      }
+    }
   }
   width:6.666666666%;
 
   &.recommended, &.cheap {
     &:before {
       position: absolute;
-      right:0px;
-      bottom:1px;
+      right:1px;
+      bottom:2px;
       z-index: 1;
     }
     &:after {
       position: absolute;
-      top:0px;
-      left:1px;
+      top:4px;
+      left:2px;
       z-index: 1;
     }
   }
@@ -4277,6 +4310,8 @@ input, textarea, button {
   }
   &:hover {
     background: #dff6ff;
+
+    @include only-hover();
   }
   +.aiit {
     border-top:solid 1px #777777;
@@ -4338,7 +4373,7 @@ input, textarea, button {
   position: relative;
   vertical-align: -2px;
   &:after {
-    background:url(../i/test-lug.png);
+    background:url(../i/icons/Luggage-blue.svg);
     position: absolute;
     left:0;
     top:50%;
@@ -4348,7 +4383,7 @@ input, textarea, button {
     content:'';
   }
   &.black:after {
-    background:url(../i/test-black-lug.png);
+    background:url(../i/icons/Luggage-black.svg);
   }
 }
 
@@ -4358,7 +4393,7 @@ input, textarea, button {
   position: relative;
   vertical-align: -2px;
   &:after {
-    background:url(../i/test-car.png);
+    background:url(../i/icons/Carryon-blue.svg);
     position: absolute;
     left:0;
     top:50%;
@@ -4368,7 +4403,7 @@ input, textarea, button {
     content:'';
   }
   &.black:after {
-    background:url(../i/test-black-car.png);
+    background:url(../i/icons/Carryon-black.svg);
   }
 }
 
@@ -4433,3 +4468,9 @@ input, textarea, button {
     }
   }
 }
+
+.db {
+  display: block;
+}
+
+@import "firefox";
