@@ -2299,7 +2299,7 @@ a, .pseudolink {
 
 .cancel-button {
   @include common-button();
-
+  font-weight: normal;
   color: $grey;
   text-shadow: none;
   @include grey-gradient();
