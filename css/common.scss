@@ -76,6 +76,16 @@
   .ws-r {
     @include flex-direction(row);
   }
+  .ws-hcen {
+    @include justify-content(center);
+  }
+  .ws-hrig {
+    @include justify-content(flex-end);
+  }
+
+  .ws-vcen {
+    @include align-items(center);
+  }
   .ws-rr {
     @include flex-direction(row-reverse);
 
@@ -211,7 +221,7 @@
     }
   }
 
-  .c, .ws-c, .ss-c {
+  .c {
     &.split#{$i} {
       >*:not(:first-child) {
         padding-top:#{$i*1/2}px;
@@ -272,6 +282,46 @@
 
     .ws-nd {
       display: none;
+    }
+
+    .ws-r {
+      &.split#{$i} {
+        >*:not(:first-child) {
+          padding-left:#{$i*1/2}px;
+        }
+        >*:not(:last-child) {
+          padding-right:#{$i*1/2}px;
+        }
+      }
+
+      &.space#{$i} {
+        >*:not(:first-child) {
+          margin-left:#{$i*1/2}px;
+        }
+        >*:not(:last-child) {
+          margin-right:#{$i*1/2}px;
+        }
+      }
+    }
+
+    .ws-c {
+      &.split#{$i} {
+        >*:not(:first-child) {
+          padding-top:#{$i*1/2}px;
+        }
+        >*:not(:last-child) {
+          padding-bottom:#{$i*1/2}px;
+        }
+      }
+
+      &.space#{$i} {
+        >*:not(:first-child) {
+          margin-top:#{$i*1/2}px;
+        }
+        >*:not(:last-child) {
+          margin-bottom:#{$i*1/2}px;
+        }
+      }
     }
   }
 }

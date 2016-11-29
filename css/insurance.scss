@@ -92,3 +92,17 @@
   -ms-flex-align: stretch;
   align-items: stretch;
 }
+
+@media screen and (min-width: 800px) {
+  .med-podrob, .med-add {
+    width:160px;
+  }
+
+  .med-price, .med-days {
+    width:160px;
+  }
+  .med-price>div {
+    text-align: center;
+    width:94px;
+  }
+}
