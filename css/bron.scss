@@ -321,3 +321,34 @@ label:focus {
     padding:0;
   }
 }
+
+.payment-image {
+  height:60px;
+}
+
+.gift-circle {
+  width:51px;
+  height:51px;
+  background: url(../i/1000.png);
+}
+
+.gift-question {
+  width:33px;
+  height:33px;
+  border-radius: 52px;
+  border:solid 1px black;
+  background: #ebebeb;
+  color:black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.bigdig {
+  min-width:2.2em;
+  margin-left:-0.1em;
+  letter-spacing: -0.03em;
+}
+.bigdigflex {
+  @include flex(0 1 130px);
+}

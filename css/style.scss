@@ -3027,9 +3027,7 @@ a, .pseudolink {
       -ms-flex-line-pack: stretch;
       align-content: stretch;
       .photo-and-date {
-        -webkit-flex:0 0 160px;
-        -ms-flex:0 0 160px;
-        flex:0 0 160px;
+        @include flex(0 0 130px);
         text-align: center;
         padding:0 5px;
       }

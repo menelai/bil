@@ -233,6 +233,7 @@ body .ui-tooltip {
     @include align-items(center);
   }
   .ticket-aircompany {
+    padding:0;
     @include flex(none);
     @include flex-direction(row);
     >* {

@@ -158,7 +158,7 @@
           <li ng-repeat="l in [1,1,1,1,1,1,1] track by $index">
             <div class="photo-and-date">
               <img src="i/default.png">
-              <div>28 сентября 2014 года в 18:17</div>
+              <div>28 сентября 2014<br>18:17</div>
             </div>
             <div class="response-body">
               <div>
@@ -168,7 +168,7 @@
                 <div>
                   <a href="/" class=""><div class="">Проверить отзыв</div></a>
                 </div>
-                <a href="/" class="blue-button aib multiline"><div class="">Прочесть полностью</div></a>
+                <a href="/" class="cancel-button aib multiline"><div class="">Прочесть полностью</div></a>
               </div>
             </div>
           </li>
@@ -549,7 +549,7 @@
           </div>
         </div>
         <div class="ebebeb slide" ng-show="show=='sta'">
-          <div class="p10">
+          <div class="ss-p10 ws-p20">
             <div class="border-split">
               <div class="f d vtop space20">
                 <div>Оповещение в случае                  смены полётной информации</div>
@@ -572,9 +572,24 @@
               </div>
             </div>
             <div class="mt20 f vcen hcen p10">
-              <div class="gift lh1 ">
+              <!--div class="gift lh1 ">
                 <div><b>1000&nbsp;₽</b></div>
                 <div style="margin-left:1em;">в подарок</div>
+              </div-->
+              <div class="f r space10 vcen">
+                <div class="gift-circle f vcen hcen">
+                  <div class="fwb fz18 mozfix">1000</div>
+                </div>
+                <div>
+                  <div class="fz12 ttu">рублей</div>
+                  <div class="fz16 ttu">в подарок</div>
+                </div>
+                <div>
+                  <img class="db" src="i/gift-right.png">
+                </div>
+                <a class="gift-question f hcen vcen tdn">
+                  <div class="mozfix fwb fz20">?</div>
+                </a>
               </div>
             </div>
             <div class="mt20 f" ng-hide="chosen=='sta'">
@@ -592,7 +607,7 @@
           </div>
         </div>
         <div class="ebebeb slide" ng-show="show=='pre'">
-          <div class="p10">
+          <div class="ss-p10 ws-p20">
             <div class="border-split">
               <div class="f d vtop space20">
                 <div>Оповещение в случае                  смены полётной информации</div>
@@ -642,7 +657,7 @@
           </div>
         </div>
         <div class="ebebeb slide" ng-show="show=='exc'">
-          <div class="p10">
+          <div class="ss-p10 ws-p20">
             <div class="border-split">
               <div class="f d vtop space20">
                 <div>Оповещение в случае                  смены полётной информации</div>
@@ -692,7 +707,7 @@
             Ваши комментарии и&nbsp;пожелания
           </div>
         </div>
-        <div class="ebebeb slide" ng-show="showQ">
+        <div class="ebebeb slide" ng-show="showQ || isDesktop">
           <div class="p10 f">
             <textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Ваши комментарии и&nbsp;пожелания</div>
           </div>
@@ -708,22 +723,27 @@
         <div class="f d vtop space8 tac">
           <label class="flex1">
             <div><input type="radio" name="payment" ng-click="payment='cards';"></div>
-            <div><img src="i/payment-cards.png" class="payment-image"></div>
+            <div class="f vbot hcen payment-image"><img src="i/payment/card.png" class=""></div>
             <div>Банковской картой</div>
           </label>
           <label class="flex1">
             <div><input type="radio" name="payment" ng-click="payment='cash';"></div>
-            <div><img src="i/payment-cash.png" class="payment-image"></div>
+            <div class="f vbot hcen payment-image"><img src="i/payment/cash.png" class=""></div>
             <div>Наличными в&nbsp;офисе</div>
+          </label>
+          <label class="flex1 ss-nd">
+            <div><input type="radio" name="payment" ng-click="payment='cards';"></div>
+            <div class="f vbot hcen payment-image"><img src="i/payment/touch.png" class=""></div>
+            <div>Apple Touch&nbsp;ID</div>
           </label>
           <label class="flex1">
             <div><input type="radio" name="payment" ng-click="payment='svyaznoy';"></div>
-            <div><img src="i/payment-svyaznoy.png" class="payment-image"></div>
+            <div class="f vbot hcen payment-image"><img src="i/payment-svyaznoy.png" class=""></div>
             <div>Салон связи Связной</div>
           </label>
           <label class="flex1">
             <div><input type="radio" name="payment" ng-click="payment='euroset';"></div>
-            <div><img src="i/payment-euroset.png" class="payment-image"></div>
+            <div class="f vbot hcen payment-image"><img src="i/payment-euroset.png" class=""></div>
             <div>Салон связи Евросеть</div>
           </label>
         </div>
@@ -807,7 +827,7 @@
 
 
       <div class="form-group">
-        <div class="ss-fixed-final-price f d stretch">
+        <div class="ss-fixed-final-price f d stretch ws-nd">
           <div class="f hcen vcen space20 ss-space10 flex1 ss-p10">
             <div class="ss-fz10 lh1">
               Окончательная цена с учётом<br>
@@ -828,7 +848,41 @@
 <div id="footer" class="ss-nd">
   <div class="max-width">
     <div class="f d ws-r ss-c vcen fz12">
-      <div class="f ws-r vcen space6 hcen flex1">
+      <div class="flex1 f d space6">
+        <div class="flex1 f space6">
+          <div class="bigdigflex f vcen">
+            <div>
+              <div>Сегодня</div>
+              <div class="mt2">забронировано</div>
+            </div>
+          </div>
+          <div class="bigdigflex">
+            <div class="fz38 bigdig lh31">{{tickets}}</div>
+            <div class="lh12"><span ng-bind="tickets | rusPlural:'авиабилет':'авиабилета':'авиабилетов':'авиабилетов'"></span></div>
+          </div>
+          <div class="bigdigflex">
+            <div class="fz38 bigdig lh31">{{tours}}</div>
+            <div class="lh12"><span ng-bind="tours | rusPlural:'тур':'тура':'туров':'туров'"></span></div>
+          </div>
+        </div>
+        <div class="sep"></div>
+        <div class="flex1 f vcen hcen">
+          <div>
+            <div><a href="/">Абсолютная безопасность платежей</a></div>
+            <div class="mt2"><a href="/">Публичная оферта</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <div class="flex1">
+        <div class="f hcen vcen space20 ss-space10 flex1 ss-p10">
+          <div class="ss-fz10 lh1">
+            Окончательная цена с учётом<br>
+            всех сборов и налогов:</div>
+          <div class="finalprice ss-fz24 lh1 green-text"><b>212&thinsp;338</b> ₽</div>
+        </div>
+      </div>
+      <!--div class="f ws-r vcen space6 hcen flex1">
         <div>Забронировано <br>авиабилетов сегодня</div>
         <div class="fz38 bigdig lh1">1557</div>
       </div>
@@ -852,7 +906,7 @@
           <a href="/"><i class="fa fa-instagram"></i></a>
           <a href="/"><i class="fa fa-twitter"></i></a>
         </div>
-      </div>
+      </div-->
     </div>
   </div>
 </div>

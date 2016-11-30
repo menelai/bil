@@ -234,10 +234,24 @@
 
   var app = angular.module('test', ['ngAnimate', "ng.deviceDetector"]);
 
-  app.run(function($rootScope, deviceDetector) {
+  app.run(function($timeout, $interval, $rootScope, deviceDetector) {
 
     $rootScope.device = deviceDetector.device;
     $rootScope.isDesktop = deviceDetector.isDesktop();
+
+    $rootScope.tickets = 1550;
+    $rootScope.tours = 1550;
+
+    $interval(function() {
+      $rootScope.tickets++;
+    }, 2000);
+
+    $timeout(function() {
+      $interval(function() {
+        $rootScope.tours++;
+      }, 2000);
+    }, 500);
+
   });
 
   app.factory('clickOutsideService', function($window) {
@@ -304,6 +318,32 @@
       }
     };
   }
+
+  app.filter('rusPlural', function() {
+    return function(number, one, two, five, none) {
+      var ret = five;
+      var n = number;
+      number = Math.abs(number);
+
+      if(number == 0)
+        return none;
+
+      number %= 100;
+      if (number >= 5 && number <= 20) {
+        ret = five;
+      } else {
+        number %= 10;
+        if (number == 1) {
+          ret = one;
+        } else {
+          if (number >= 2 && number <= 4) {
+            ret = two;
+          }
+        }
+      }
+      return ret;
+    }
+  });
 
   app.animation('.slide', function() {
     var NG_HIDE_CLASS = 'ng-hide';
