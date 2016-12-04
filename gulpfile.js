@@ -20,7 +20,7 @@
       + currentdate.getMinutes() + ":"
       + currentdate.getSeconds());
       gulp.src('./css/style.css')
-        //.pipe(gulp.dest(dest+'css/'))
+        .pipe(gulp.dest(dest+'css/'))
         .pipe(gulp.dest(site+'css/'))
     });
   });

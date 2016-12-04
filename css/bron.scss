@@ -1,9 +1,10 @@
 .input-pholder {
   position: relative;
-  height:40px;
+  height:35px;
   border:solid 1px $blue;
-  border-radius: 2px;
-  padding:5px 5px 5px 5px;
+  border-radius: 3px;
+  padding:5px 5px 2px 10px;
+
   &:not(.mobile-select) {
     box-shadow: $input-shadow;
   }
@@ -44,17 +45,21 @@
     height:auto;
     @include flex(1);
     color:$blue;
-    font-weight: bold;
+    //font-weight: bold;
     padding:0;
     margin:0;
     +.pholder {
-      color:$blue;
-      font-weight: bold;
+      //color:$blue;
+      //font-weight: bold;
     }
   }
 
   &.mobile-select {
-    @include grey-gradient();
+    box-shadow: $input-shadow;
+
+    &.focus {
+      box-shadow: inset 0 0 0 1px $green, $input-shadow-hover;
+    }
     &:after {
       position: absolute;
       content: '';
@@ -84,7 +89,7 @@
     color: #707070;
     position: absolute;
     top:50%;
-    left:5px;
+    left:10px;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     @include transition(top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in-out);
@@ -105,7 +110,7 @@ div.input-pholder {
   height:35px;
   line-height: 35px;
   text-align: left;
-  padding-left:5px;
+  padding-left:10px;
   padding-right: 30px;
   border-radius: 5px;
 
@@ -119,6 +124,7 @@ div.input-pholder {
     }
   }
 
+
   &:not(.shown) {
     @include grey-gradient();
     &:hover {
@@ -127,6 +133,17 @@ div.input-pholder {
   }
   &.shown {
     @include grey-active-gradient();
+  }
+
+  &.revealer-white {
+    &:not(.shown) {
+      border-radius: 3px;
+      background: #ffffff;
+      box-shadow: inset 0 0 0 1px $blue, $input-shadow;
+    }
+    &.shown {
+      box-shadow: inset 0 0 0 2px $green, $input-shadow-hover;
+    }
   }
 
   &:after {
@@ -224,6 +241,15 @@ label:focus {
 }
 
 
+.mobile-select {
+  .selectric {
+    .label {
+      height:20px;
+      line-height: 20px;
+    }
+  }
+}
+
 .passenger-pic {
   @include flex(0 0 16px);
 }
@@ -299,13 +325,17 @@ label:focus {
   }
 }
 
-.ebebeb {
+@mixin ebebeb() {
   background: #ebebeb;
   margin-top:-4px;
   padding-top:4px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   box-shadow: inset 0 0 0 1px #e0e0e0;
+}
+
+.ebebeb {
+  @include ebebeb();
 }
 
 #bron-alternate {
@@ -351,4 +381,44 @@ label:focus {
 }
 .bigdigflex {
   @include flex(0 1 130px);
+}
+
+.bron {
+  #top-search-form {
+    z-index: 100;
+  }
+}
+
+.aeroexpress-train {
+  width:21px;
+  margin-right:3px;
+  position: relative;
+  display: inline-block;
+  &:after {
+    position: absolute;
+    top:50%;
+    left:0;
+    width:21px;
+    height:21px;
+    @include transform(translateY(-50%));
+    content:'';
+    background: url(../i/aeroexpress-train.png) center center no-repeat;
+  }
+}
+
+.aeroexpress-plane {
+  margin-right:7px;
+  width:34px;
+  position: relative;
+  display: inline-block;
+  &:after {
+    position: absolute;
+    top:50%;
+    left:0;
+    width:34px;
+    height:23px;
+    @include transform(translateY(-50%));
+    content:'';
+    background: url(../i/aeroexpress-plane.png) center center no-repeat;
+  }
 }

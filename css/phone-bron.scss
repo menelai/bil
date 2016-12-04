@@ -309,3 +309,7 @@ body.bron {
   height:35px;
   padding-bottom:2px;
 }
+
+.ss-ebebeb {
+  @include ebebeb();
+}

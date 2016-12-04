@@ -67,6 +67,12 @@
 }
 
 @media all and (min-width: 800px) {
+  .ws-tac {
+    text-align: center;
+  }
+  .ws-ttu {
+    text-transform: uppercase;
+  }
   .ws-f {
     @include display-flex();
   }

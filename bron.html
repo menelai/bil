@@ -57,11 +57,29 @@
       </div>
     </div>
     <div class="sep"></div>
-    <div id="phones" class="flex1 f hcen">
-      <div>
-        <p class="blue">+7 (495) 210-5-99<br>
-          8 800 234 5 99 5</p>
-        <p class="grey">с 9:00 до 23:00</p>
+    <div id="phones" class="flex1 f hcen vcen w">
+      <div class="tar fz20 wsn">
+        <div class="blue">+7 495 150-11-82</div>
+        <div class="blue ss-nd">8 800 234 5 99 5</div>
+      </div>
+      <div class="ss-nd f working-time">
+        <div class="f vcen">
+          <div class="working-days f">
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+          </div>
+          <div class="blue">08-22</div>
+        </div>
+        <div class="f vcen">
+          <div class="working-days f">
+            <div class="bg-green"></div>
+            <div class="bg-green"></div>
+          </div>
+          <div class="green-text">08-21</div>
+        </div>
       </div>
     </div>
     <div class="sep"></div>
@@ -79,7 +97,7 @@
             <span>Email</span>
           </div>
         </div>
-        <div class="tar"><a href="/" id="lk">Личный кабинет</a></div>
+        <div class="tac mt9"><a href="/" id="lk">Личный кабинет</a></div>
       </div>
     </div>
   </div>
@@ -114,15 +132,113 @@
   </div>
 </div>
 
+<div id="top-search-form" ng-if="true">
+  <div class="max-width">
+    <form class="f d space3">
+      <div id="new-search" class="flex1 f">
+        <div class="green-button aib tac flex1 fi hcen vcen ttu multiline"><div class="fwl fz13"><span class="mozfix">Новый поиск</span></div></div>
+      </div>
+      <div id="from-input" class="f">
+        <input type="text" name="from" placeholder="Город вылета" class="autocomplete city-input flex1 b-1 border-blue rounded2" autocomplete="off" value="{$_SESSION['searchdata']['from']}">
+        <div id="change-from-to"></div>
+      </div>
+      <div id="to-input" class="f">
+        <input type="text" name="to" placeholder="Город прилета" class="autocomplete city-input flex1 b-1 border-blue rounded2" autocomplete="off" value="{$_SESSION['searchdata']['to']}">
+      </div>
+      <div id="date-input-1" class="f">
+        <input type="text" name="date-from" class="datepicker date-from flex1 b-1 border-blue rounded2" placeholder="Туда" autocomplete="off" value="{$_SESSION['searchdata']['outDate']}">
+      </div>
+      <div id="date-input-2" class="f">
+        <input type="text" name="date-to" id="date-to" class="datepicker date-to flex1 b-1 border-blue rounded2" placeholder="Обратно" autocomplete="off" value="{$_SESSION['searchdata']['dateReturn']}">
+        <div id="ticket-ne-nujen" class="no-display">
+          <div class="f hcen p10">
+            <a id="clear-back-date" class="button-grey aib" href="/" style="padding-left:20px; padding-right:20px;"><span class="blue fwn">Обратный билет не нужен</span></a>
+          </div>
+        </div>
+        <div class="close"></div>
+      </div>
+      <div id="passengers-input" tw-click-outside="showPass=false" ignore-if="showPass==false">
+        <div class="revealer revealer-white" ng-class="showPass ? 'shown' : ''" ng-click="showPass=!showPass">
+          <div class="f d vcen space8 flex1 blue fwn">
+            <div id="numberofpass" class="f vcen space8">
+              <div class="f vcen space">
+                <img src="i/icons/Adult.svg">
+                <div><span class="mozfix">×1</span></div>
+              </div>
 
+              <div class="f vcen space2">
+                <img src="i/icons/Child.svg">
+                <div><span class="mozfix">×0</span></div>
+              </div>
+
+              <div class="f vcen space2">
+                <img src="i/icons/Infant.svg">
+                <div><span class="mozfix">×0</span></div>
+              </div>
+            </div>
+
+            <div class=" ellipsis"><span class="mozfix">эконом</span></div>
+          </div>
+        </div>
+        <div class="slide passinp-popup b-1 rounded2 border-blue" ng-show="showPass" id="passengers-popup">
+          <div class="p10">
+            <div class="border-split bs15">
+              <div class="f d vcen space10">
+                <div class="tac passenger-pic"><img src="i/adult.png"></div>
+                <div class="flex1">Взрослые</div>
+                <div>
+                  <div class="number-with-spinners ss-h35"><span class="minus">−</span><input type="number" name="adults" step="1" value="1"><span class="plus">+</span></div>
+                </div>
+              </div>
+              <div>
+                <div class="f d vcen space10">
+                  <div class="tac passenger-pic"><img src="i/child.png"></div>
+                  <div class="flex1">Дети до 14 лет</div>
+                  <div>
+                    <div class="number-with-spinners ss-h35"><span class="removechild minus">−</span><input type="number" name="childs" step="1" value="0"><span class="addchild plus">+</span></div>
+                  </div>
+                </div>
+                <div class="listofchilds">
+                </div>
+              </div>
+              <div class="f d vcen space10">
+                <div class="tac passenger-pic"><img src="i/baby.png"></div>
+                <div class="flex1">
+                  Дети до 2 лет
+                  <div class="grey fz11">без места</div>
+                </div>
+                <div>
+                  <div class="number-with-spinners ss-h35"><span class="minus">−</span><input type="number" name="infants" step="1" value="0"><span class="plus">+</span></div>
+                </div>
+              </div>
+              <div>
+                <label class="f d vcen space4">
+                  <input type="checkbox">
+                  <div class="flex1">Бизнес-класс</div>
+                </label>
+              </div>
+
+            </div>
+            <div class="mt20 f">
+              <input type="button" id="close-pass" class="cancel-button flex1 tac" value="Закрыть">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="search-submit">
+        <input type="submit" value="Найти" class="orange-button aib ttu">
+      </div>
+    </form>
+  </div>
+</div>
 
 <div id="order-form" ng-class="showMenu ? 'blur' : ''">
-  <div id="results-header">
+  <!--div id="results-header">
     <div class="max-width">
       <span id="src-dst">Москва     <i class="fa fa-angle-right"></i>   Санкт-петербург    <i class="fa fa-angle-right"></i>    Москва</span>
       <span id="res-dates">25 ноября - 5 декабря</span>
     </div>
-  </div>
+  </div-->
 
   <div id="order-cols" class="max-width">
     <div id="ocl">
@@ -133,16 +249,20 @@
         <div ng-include="'ticket.html'" ng-show="showI || isDesktop"></div>
       </div>
 
-      <div class="mb10 ss-nd">
-        <div class="revealer revealer-grey">
-          <div class="fwn">Подпишитесь на рассылку, чтобы узнать о снижении стоимости авиабилета</div>
+      <div class="mb5 ss-nd">
+        <div class="f">
+          <a class="cancel-button aib flex1 fz13" ng-init="showAlt = false;" ng-click="showAlt = !showAlt;">
+            Подпишитесь на рассылку, чтобы узнать о снижении стоимости авиабилета
+          </a>
         </div>
       </div>
 
       <div class="subscribe-popup-bg" ng-show="showAlt"></div>
       <div class="popup-what mb10 ss-nd" tw-click-outside="showAlt=false" ignore-if="showAlt==false">
-        <div class="revealer" ng-class="showAlt ? 'shown' : ''" ng-init="showAlt = false;" ng-click="showAlt = !showAlt;">
-          <div class="fwn blue">Цена билетов на альтернативные даты</div>
+        <div class="f">
+          <a class="button-grey aib flex1" ng-init="showAlt = false;" ng-click="showAlt = !showAlt;">
+            Цена билетов на альтернативные даты
+          </a>
         </div>
         <div id="bron-alternate" class="slide" ng-show="showAlt">
           <div ng-include="'alternate.html'"></div>
@@ -178,42 +298,25 @@
 
 
       <div id="aeroexpress" class="mt20">
-        <!--div class="bysides">
-          <div id="aeroexpress-title">
-            <h2>В аэропорт без пробок и очередей</h2>
-          </div>
-          <div id="aeroexpress-logo"></div>
-        </div-->
         <div class="f d vcen space4">
           <div class="flex1 ttu">В&nbsp;аэропорт без&nbsp;пробок и&nbsp;очередей</div>
-          <div id="aeroexpress-logo"><img src="i/aeroexpress.png"></div>
+          <div id="aeroexpress-logo" class="ws-nd"><img src="i/aeroexpress.png"></div>
+          <div class="ss-nd"><img style="margin-top: -15px;" src="i/aeroexpress-full.png"></div>
         </div>
 
-        <!--div class="mt10 f hcen vcen space10">
-          <div class="f vcen space8">
-            <img src="i/greytrain.png">
-            <div class="fz16">Белорусский</div>
-          </div>
-          <div class="fa fa-chevron-right blue"></div>
-          <div class="f vcen space8">
-            <img src="i/greyplane.png">
-            <div class="fz16">Шереметьево</div>
-          </div>
-        </div-->
         <div class="bg-lightgrey d f tac lh1 stretch mt10">
-          <div class="flex1 p8">Белорусский вокзал</div>
+          <div class="flex1 p8"><span class="aeroexpress-train ss-nd">&nbsp;</span> Белорусский вокзал</div>
           <div class="white-direction"></div>
-          <div class="flex1 p8">Шереметьево</div>
+          <div class="flex1 p8"><span class="aeroexpress-plane ss-nd">&nbsp;</span> Шереметьево</div>
         </div>
 
         <div class="mt10 f d space12">
           <div class="flex1 tac">21января 2016</div>
-          <!--div class="fa fa-clock-o grey"></div-->
           <div class="blue flex1 tac">с 05:30 по 00:30</div>
         </div>
 
         <div class="mt10 revealer revealer-grey {{showAero ? 'shown' : ''}}" ng-click="showAero=!showAero">
-          <div class="fwb">Расписание аэроэкспрессов</div>
+          <div class="">Расписание аэроэкспрессов</div>
         </div>
         <div class="ebebeb slide" ng-show="showAero">
           <div class="p10">
@@ -304,14 +407,14 @@
 
 
         <div class="aeroexpress-ticket mt10 ss-p10 f ss-c ws-r ws-d ws-split16 ws-p16">
-          <div class="">Пассажиры от&nbsp;5&nbsp;лет</div>
+          <div class="ws-flex1">Пассажиры от&nbsp;5&nbsp;лет</div>
 
-          <div class="f d ss-mt5 ws-rr ws-split10 ws-flex1 wsn">
+          <div class="f d ss-mt5 ws-rr ws-split16 wsn">
             <div>
               <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
               <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
             </div>
-            <div class="tac flex1 ws-f ws-d ws-c">
+            <div class="tac ss-flex1 ws-f ws-d ws-c">
               <div class="fz20">470 ₽</div>
               <div class="grey fz11">Цена за билет</div>
             </div>
@@ -323,14 +426,14 @@
         </div>
 
         <div class="aeroexpress-ticket mt10 ss-p10 f ss-c ws-r ws-d ws-split16 ws-p16 ss-nd">
-          <div class="">Пассажиры до&nbsp;5&nbsp;лет</div>
+          <div class="ws-flex1">Пассажиры до&nbsp;5&nbsp;лет</div>
 
-          <div class="f d ss-mt5 ws-rr ws-split10 ws-flex1 wsn">
+          <div class="f d ss-mt5 ws-rr ws-split16 wsn">
             <div>
               <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
               <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
             </div>
-            <div class="tac flex1 ws-f ws-d ws-c">
+            <div class="tac ss-flex1 ws-f ws-d ws-c">
               <div class="fz20">0 ₽</div>
               <div class="grey fz11">Цена за билет</div>
             </div>
@@ -384,38 +487,48 @@
               </label>
             </div>
 
-            <div class="flex1">
-              <div class="revealer ws-abs ws-h40" ng-class="showPass ? 'shown' : ''" ng-click="showPass=!showPass">
-                <div class="f d vcen">
-                  <div class="flex1 blue">
-                    1 пассажир, эконом-класс
+            <div class="flex1" id="" tw-click-outside="showPass=false" ignore-if="showPass==false">
+              <div class="revealer revealer-white" ng-class="showPass ? 'shown' : ''" ng-click="showPass=!showPass">
+                <div class="f d vcen space8 flex1 blue fwn">
+                  <div id="numberofpass" class="f vcen space8">
+                    <div class="f vcen space">
+                      <img src="i/icons/Adult.svg">
+                      <div><span class="mozfix">×1</span></div>
+                    </div>
+
+                    <div class="f vcen space2">
+                      <img src="i/icons/Child.svg">
+                      <div><span class="mozfix">×0</span></div>
+                    </div>
+
+                    <div class="f vcen space2">
+                      <img src="i/icons/Infant.svg">
+                      <div><span class="mozfix">×0</span></div>
+                    </div>
                   </div>
+
+                  <div class=" ellipsis"><span class="mozfix">эконом</span></div>
                 </div>
               </div>
-              <div class="ebebeb slide ws-abs" ng-show="showPass">
+              <div class="slide passinp-popup b-1 rounded2 border-blue" ng-show="showPass" id="passengers-popup">
                 <div class="p10">
                   <div class="border-split bs15">
                     <div class="f d vcen space10">
                       <div class="tac passenger-pic"><img src="i/adult.png"></div>
                       <div class="flex1">Взрослые</div>
                       <div>
-                        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                        <div class="number-with-spinners ss-h35"><span class="minus">−</span><input type="number" name="adults" step="1" value="1"><span class="plus">+</span></div>
                       </div>
                     </div>
                     <div>
-                      <div class="f d vcen space10" ng-init="children=[13,14]; co=children.length;">
+                      <div class="f d vcen space10">
                         <div class="tac passenger-pic"><img src="i/child.png"></div>
                         <div class="flex1">Дети до 14 лет</div>
                         <div>
-                          <div class="number-with-spinners ss-h35"><span class="minus" ng-click="children.pop(); co=children.length;">−</span><input type="number" ng-model="co" step="1" min="0"><span class="plus" ng-click="children.push(0); co=children.length;">+</span></div>
+                          <div class="number-with-spinners ss-h35"><span class="removechild minus">−</span><input type="number" name="childs" step="1" value="0"><span class="addchild plus">+</span></div>
                         </div>
                       </div>
-                      <div class="f d vcen space10 mt15" ng-repeat="child in children track by $index">
-                        <div class="tac passenger-pic"></div>
-                        <div class="flex1">Возраст {{$index+1}}-го ребенка</div>
-                        <div>
-                          <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=child;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-                        </div>
+                      <div class="listofchilds">
                       </div>
                     </div>
                     <div class="f d vcen space10">
@@ -425,7 +538,7 @@
                         <div class="grey fz11">без места</div>
                       </div>
                       <div>
-                        <div class="number-with-spinners ss-h35"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+                        <div class="number-with-spinners ss-h35"><span class="minus">−</span><input type="number" name="infants" step="1" value="0"><span class="plus">+</span></div>
                       </div>
                     </div>
                     <div>
@@ -436,9 +549,9 @@
                     </div>
 
                   </div>
-                  <!--div class="mt20 f">
-                    <a class="cancel-button flex1 tac">Закрыть</a>
-                  </div-->
+                  <div class="mt20 f">
+                    <input type="button" id="close-pass" class="cancel-button flex1 tac" value="Закрыть">
+                  </div>
                 </div>
               </div>
             </div>
@@ -470,48 +583,46 @@
             </label>
           </div>
 
-          <div class="f d ss-space2 ws-space30">
-            <!--div ng-if="true" class="f vbot input-pholder not-empty">
-              <div class="f space8 vbot">
-                <label class="f space2"><input type="radio" ng-model="buyer" value="1"> <span>М</span></label>
-                <label class="f space2"><input type="radio" ng-model="buyer" value="2"> <span>Ж</span></label>
+          <div class="f d ss-space10 ws-space40">
+            <div class="f ws-space6 vcen">
+              <div class="mozfix ss-nd">Пол</div>
+              <div class="f d stretch input-pholder p0 gender gender-my" ng-init="gender='1'">
+                <input id="g1{{pass}}" type="radio" ng-model="gender" class="no-display" value="1">
+                <label for="g1{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">М</div></label>
+                <input id="g2{{pass}}" type="radio" ng-model="gender" class="no-display" value="2">
+                <label for="g2{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">Ж</div></label>
               </div>
-              <span class="pholder">Пол</span>
-            </div-->
-            <div class="f d stretch input-pholder p0 gender" ng-init="gender='1'" ng-class="gender=='2' ? 'gender-my' : ''">
-              <input id="g1{{pass}}" type="radio" ng-model="gender" class="no-display" value="1">
-              <label for="g1{{pass}}" class="flex1 f vcen hcen"><div>М</div></label>
-              <input id="g2{{pass}}" type="radio" ng-model="gender" class="no-display" value="2">
-              <label for="g2{{pass}}" class="flex1 f vcen hcen"><div>Ж</div></label>
             </div>
-            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+            <label ng-if="true" class="f vbot input-pholder ss-flex1 flex0050" ng-class="buyer ? 'not-empty' : ''">
               <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
               <span class="pholder">Дата рождения</span>
             </label>
           </div>
 
-          <label ng-if="true" class="f vbot input-pholder flex1 mt10 mobile-select" ng-class="buyer ? 'not-empty' : ''">
-            <select class="selectric citizenship" ng-model="buyer">
-              <option></option>
-              <option value="Georgia" data-flag="i/flag.png">Албания</option>
-              <option value="Georgia" data-flag="i/greece.png">Грузия</option>
-              <option value="Georgia" data-flag="i/flag.png">Россия</option>
-              <option value="Georgia" data-flag="i/greece.png">Украина</option>
-              <option value="Georgia" data-flag="i/flag.png">США</option>
-              <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
-            </select>
-            <span class="pholder">Гражданство</span>
-          </label>
+          <div class="f ws-r ss-c ws-space2 ss-space10">
+            <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+              <select class="selectric citizenship" ng-model="buyer">
+                <option></option>
+                <option value="Georgia" data-flag="i/flag.png">Албания</option>
+                <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+                <option value="Georgia" data-flag="i/flag.png">Россия</option>
+                <option value="Georgia" data-flag="i/greece.png">Украина</option>
+                <option value="Georgia" data-flag="i/flag.png">США</option>
+                <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+              </select>
+              <span class="pholder">Гражданство</span>
+            </label>
 
-          <label ng-if="true" class="f vbot input-pholder flex1 mt10 mobile-select" ng-class="buyer ? 'not-empty' : ''">
-            <select class="selectric doctype" ng-model="buyer">
-              <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
-              <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
-              <option value="Passport is not Russia">Passport is not Russia</option>
-              <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
-            </select>
-            <span class="pholder">Документ</span>
-          </label>
+            <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+              <select class="selectric doctype" ng-model="buyer">
+                <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+                <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+                <option value="Passport is not Russia">Passport is not Russia</option>
+                <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+              </select>
+              <span class="pholder">Документ</span>
+            </label>
+          </div>
 
           <div class="mt10 f ss-c ss-space10 ws-r ws-space2">
             <div class="f d space2 ws-flex1">
@@ -525,7 +636,7 @@
               </label>
             </div>
 
-            <label ng-if="true" class="f vbot input-pholder ws-flex1" ng-class="buyer ? 'not-empty' : ''">
+            <label ng-if="true" class="f vbot input-pholder flex0050" ng-class="buyer ? 'not-empty' : ''">
               <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
               <span class="pholder">Срок действия</span>
             </label>
@@ -702,13 +813,13 @@
 
 
       <div class="form-group">
-        <div class="ws-nd revealer {{showQ ? 'shown' : ''}}" ng-click="showQ=!showQ">
-          <div class="blue fwb">
+        <div class="ss-revealer {{showQ ? 'shown' : ''}}" ng-click="showQ=!showQ">
+          <div class="blue ws-tac ws-ttu">
             Ваши комментарии и&nbsp;пожелания
           </div>
         </div>
-        <div class="ebebeb slide" ng-show="showQ || isDesktop">
-          <div class="p10 f">
+        <div class="ss-ebebeb slide" ng-show="showQ || isDesktop">
+          <div class="ss-p10 f">
             <textarea rows="5" class="flex1 plh"></textarea><div class="placeholder grey larger">Ваши комментарии и&nbsp;пожелания</div>
           </div>
         </div>
@@ -747,42 +858,6 @@
             <div>Салон связи Евросеть</div>
           </label>
         </div>
-        <!--div>
-          <h2 class="blue ttu fwn larger">Способ оплаты</h2>
-          <p>Комиссия 0%</p>
-        </div>
-        <div class="bysides payments vtop tac becomewrap" ng-init="payment='cards';">
-          <div class="flex1">
-            <input type="radio" name="payment" id="p1" ng-click="payment='cards';">
-            <label for="p1">
-              <img src="i/visa-mastercard.png">
-            </label>
-          </div>
-          <div class="flex1">
-            <input type="radio" name="payment" id="p2" ng-click="payment='euroset';">
-            <label for="p2">
-              <img src="i/euroset.png">
-            </label>
-          </div>
-          <div class="flex1">
-            <input type="radio" name="payment" id="p3" ng-click="payment='svyaznoy';">
-            <label for="p3">
-              <img src="i/svyaznoy.png">
-            </label>
-          </div>
-          <div class="flex1">
-            <input type="radio" name="payment" id="p4">
-            <label for="p4">
-              <img src="i/qiwi.png">
-            </label>
-          </div>
-          <div class="flex1">
-            <input type="radio" name="payment" id="p5">
-            <label for="p5">
-              <img src="i/alfa.png">
-            </label>
-          </div>
-        </div-->
       </div>
 
 

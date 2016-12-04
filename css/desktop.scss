@@ -45,7 +45,8 @@
         line-height: 20px;
         height: 20px;
         font-size: 15px;
-        font-weight: bold;
+        //font-weight: bold;
+        margin-left: 10px;
         .flag {
           margin-right: 8px;
         }
@@ -64,9 +65,9 @@
 }
 
 .client-service {
-  margin-top:20px;
+  margin-top:15px;
   border-top:solid 1px $grey;
-  padding-top:20px;
+  padding-top:15px;
 }
 
 .revealer {
@@ -74,4 +75,12 @@
     height:40px;
     line-height: 40px;
   }
+}
+
+.flex0050 {
+  @include flex(0 0 50%);
+}
+
+.ws-ebebeb {
+  @include ebebeb();
 }

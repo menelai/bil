@@ -794,15 +794,8 @@ a, .pseudolink {
   @include flex(1 0 170px);
   min-width: 170px;
   .revealer {
-    padding-left:10px;
     height:40px;
     line-height: 40px;
-    border-radius: 3px;
-    background: #ffffff;
-    box-shadow: inset 0 0 0 1px $blue, $input-shadow;
-    &.shown {
-      box-shadow: inset 0 0 0 2px $green, $input-shadow-hover;
-    }
   }
 }
 
@@ -2869,7 +2862,7 @@ a, .pseudolink {
 }
 
 #order-form {
-  margin-top:30px;
+
 }
 
 #order-cols {
@@ -2896,7 +2889,7 @@ a, .pseudolink {
     -ms-flex: 0 1 50%;
     flex: 0 1 50%;*/
     width:50%;
-    padding:5px 0 80px;
+    padding:0px 0 80px;
   }
 
   #ocl {
@@ -2905,7 +2898,7 @@ a, .pseudolink {
       position: absolute;
       width:3000px;
       right:0;
-      top:0;
+      top:-70px;
       bottom:0;
       background: #f3f3f3;
       content:'';

@@ -93,6 +93,27 @@
   align-items: stretch;
 }
 
+@media screen and (max-width: 800px) {
+  .medstrah {
+    >* {
+      margin-top:10px;
+      &:nth-child(1) {
+        @include flex(0 0 100%);
+      }
+      &:nth-child(2) {
+        @include flex(0 0 100%);
+      }
+      &:nth-child(3) {
+        @include flex(1);
+      }
+      &:nth-child(4) {
+
+       // @include flex(0 0 100%);
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 800px) {
   .med-podrob, .med-add {
     width:160px;
@@ -104,5 +125,26 @@
   .med-price>div {
     text-align: center;
     width:94px;
+  }
+
+  .medstrah {
+    >* {
+      @include flex(0 0 50%);
+      margin-top:10px;
+      &:nth-child(3) {
+        @include order(1);
+      }
+      &:nth-child(1) {
+        @include order(2);
+      }
+      &:nth-child(2) {
+        @include order(3);
+        padding-right:1px;
+      }
+      &:nth-child(4) {
+        @include order(4);
+        padding-left:1px;
+      }
+    }
   }
 }
