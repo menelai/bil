@@ -1,9 +1,9 @@
 .input-pholder {
   position: relative;
-  height:35px;
+  height:37px;
   border:solid 1px $blue;
   border-radius: 3px;
-  padding:5px 5px 2px 10px;
+  padding:5px 5px 4px 10px;
 
   &:not(.mobile-select) {
     box-shadow: $input-shadow;
