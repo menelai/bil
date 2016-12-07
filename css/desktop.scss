@@ -84,3 +84,31 @@
 .ws-ebebeb {
   @include ebebeb();
 }
+
+.selectric-countrycode {
+  @include flex(1);
+  .selectric {
+    .label {
+      line-height: 20px;
+      height: 20px;
+    }
+    .button {
+      right:3px;
+      top:-6px;
+    }
+  }
+
+  .selectric-items {
+    width: auto !important;
+    left:-11px;
+    right:-6px;
+    margin-top:6px;
+  }
+}
+
+.phone-input {
+  position: absolute;
+  bottom:0;
+  left:25px;
+  right:25px;
+}

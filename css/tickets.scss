@@ -1,6 +1,7 @@
+$ticket-radius: 5px;
 .ticket {
-  box-shadow: inset 0 0 0 1px #777777;
-  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px #b6b6b6;
+  border-radius: $ticket-radius;
   background: #ffffff;
   margin-left:9px;
 }
@@ -92,9 +93,10 @@
 }
 
 .ticket-row {
+  background: white;
   @include justify-content(space-between);
   padding:20px 0;
-  box-shadow: inset 0 0 0 1px #777777;
+  box-shadow: inset 0 0 0 1px #b6b6b6;
 
   >* {
     &:not(:last-child) {
@@ -105,32 +107,45 @@
     }
   }
 
-  border-radius: 2px;
-  +.ticket-row {
+  border-radius: $ticket-radius;
+}
+
+.ticket-row-wrapper {
+  +.ticket-row-wrapper {
     margin-top:-1px;
   }
+}
 
-  &:before {
-    position: absolute;
-    top:0;
-    bottom:0;
-    right:100%;
-    width:9px;
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
-    content: '';
-  }
-
-  &.waythere {
+.wayback {
+  .ticket-row {
+    border-top-right-radius: 0;
     &:before {
-      background: $blue;
+      content: '';
+      position: absolute;
+      top:-3px;
+      right:1px;
+      width:3px;
+      height:3px;
+      background: white;
     }
   }
+}
 
-  &.wayback {
-    &:before {
-      background: $orange;
-    }
+.ticket-row-before {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:-9px;
+  width:15px;
+  border-bottom-left-radius: $ticket-radius;
+  border-top-left-radius: $ticket-radius;
+
+  .waythere & {
+    background: $blue;
+  }
+
+  .wayback & {
+    background: $orange;
   }
 }
 
@@ -142,6 +157,10 @@
     display: block;
     line-height: 1;
   }
+}
+
+.ticket-cities {
+  font-size: 15px;
 }
 
 body .ui-tooltip {
@@ -217,6 +236,14 @@ body .ui-tooltip {
 
 
 @mixin mobile-ticket() {
+  .ticket-cities {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  .aircompany-name {
+    display: none;
+  }
   .ticket-ac-and-comfort {
     max-width: none;
     >* {
@@ -229,7 +256,7 @@ body .ui-tooltip {
 
       }
     }
-    @include flex(none);
+    @include flex(1 0 auto);
     @include align-items(center);
   }
   .ticket-aircompany {
@@ -287,10 +314,11 @@ body .ui-tooltip {
 
   .ticket-data {
     @include flex(none);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .ticket-info {
+    margin-top:-5px;
     @include flex(none);
   }
 }

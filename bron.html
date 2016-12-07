@@ -249,7 +249,7 @@
         <div ng-include="'ticket.html'" ng-show="showI || isDesktop"></div>
       </div>
 
-      <div class="mb5 ss-nd">
+      <div class="mb5 ss-nd mt10">
         <div class="f">
           <a class="cancel-button aib flex1 fz13" ng-init="showAlt = false;" ng-click="showAlt = !showAlt;">
             Подпишитесь на рассылку, чтобы узнать о снижении стоимости авиабилета
@@ -258,7 +258,7 @@
       </div>
 
       <div class="subscribe-popup-bg" ng-show="showAlt"></div>
-      <div class="popup-what mb10 ss-nd" tw-click-outside="showAlt=false" ignore-if="showAlt==false">
+      <div class="popup-what mb20 ss-nd" tw-click-outside="showAlt=false" ignore-if="showAlt==false">
         <div class="f">
           <a class="button-grey aib flex1" ng-init="showAlt = false;" ng-click="showAlt = !showAlt;">
             Цена билетов на альтернативные даты
@@ -273,18 +273,18 @@
       </div>
 
       <div id="responses">
-        <h2 id="resp-title">Отзывы покупателей</h2>
+        <div class="ttu mb10 responses-title">Отзывы покупателей</div>
         <ul class="slides">
           <li ng-repeat="l in [1,1,1,1,1,1,1] track by $index">
             <div class="photo-and-date">
-              <img src="i/default.png">
-              <div>28 сентября 2014<br>18:17</div>
+              <div class="response-photo" style="background-image: url(i/durov.jpg);"></div>
+              <div><a href="/">Константин К.</a><br>28.09.2014</div>
             </div>
             <div class="response-body">
               <div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
               </div>
-              <div class="show-full-and-check-response">
+              <div class="mt15 f hrig space20 vcen">
                 <div>
                   <a href="/" class=""><div class="">Проверить отзыв</div></a>
                 </div>
@@ -305,9 +305,9 @@
         </div>
 
         <div class="bg-lightgrey d f tac lh1 stretch mt10">
-          <div class="flex1 p8"><span class="aeroexpress-train ss-nd">&nbsp;</span> Белорусский вокзал</div>
+          <div class="flex1 p8"><span class="aeroexpress-train ws-ib ss-nd">&nbsp;</span> Белорусский вокзал</div>
           <div class="white-direction"></div>
-          <div class="flex1 p8"><span class="aeroexpress-plane ss-nd">&nbsp;</span> Шереметьево</div>
+          <div class="flex1 p8"><span class="aeroexpress-plane ws-ib ss-nd">&nbsp;</span> Шереметьево</div>
         </div>
 
         <div class="mt10 f d space12">
@@ -407,7 +407,7 @@
 
 
         <div class="aeroexpress-ticket mt10 ss-p10 f ss-c ws-r ws-d ws-split16 ws-p16">
-          <div class="ws-flex1">Пассажиры от&nbsp;5&nbsp;лет</div>
+          <div class="ws-flex1"><div class="mt6 mozfix">Пассажиры от&nbsp;5&nbsp;лет</div></div>
 
           <div class="f d ss-mt5 ws-rr ws-split16 wsn">
             <div>
@@ -415,7 +415,7 @@
               <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
             </div>
             <div class="tac ss-flex1 ws-f ws-d ws-c">
-              <div class="fz20">470 ₽</div>
+              <div class="fz22">470 ₽</div>
               <div class="grey fz11">Цена за билет</div>
             </div>
           </div>
@@ -426,7 +426,7 @@
         </div>
 
         <div class="aeroexpress-ticket mt10 ss-p10 f ss-c ws-r ws-d ws-split16 ws-p16 ss-nd">
-          <div class="ws-flex1">Пассажиры до&nbsp;5&nbsp;лет</div>
+          <div class="ws-flex1"><div class="mt6 mozfix">Пассажиры до&nbsp;5&nbsp;лет</div></div>
 
           <div class="f d ss-mt5 ws-rr ws-split16 wsn">
             <div>
@@ -434,7 +434,7 @@
               <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
             </div>
             <div class="tac ss-flex1 ws-f ws-d ws-c">
-              <div class="fz20">0 ₽</div>
+              <div class="fz22">0 ₽</div>
               <div class="grey fz11">Цена за билет</div>
             </div>
           </div>
@@ -462,9 +462,9 @@
             </label>
 
             <div class="flex1 f vbot input-pholder not-empty">
-              <div class="f ss-space10 d flex1 ss-rr ws-rr">
-                <input type="text" class="flex1 fz15" value="+7">
-                <div class="mobile-select">
+              <div class="f ss-space10 d flex1">
+
+                <!--div class="mobile-select"-->
                   <select class="selectric countrycode">
                     <option value="+7" data-flag="i/flag.png">Россия</option>
                     <option value="+90" data-flag="i/greece.png">Грузия</option>
@@ -473,7 +473,8 @@
                     <option value="+1" data-flag="i/flag.png">США</option>
                     <option value="+800" data-flag="i/greece.png">Зимбабве</option>
                   </select>
-                </div>
+                <!--/div-->
+                <input type="text" class="flex1 fz15 phone-input" value="+7">
               </div>
               <span class="pholder">Мобильный телефон</span>
             </div>
@@ -566,9 +567,22 @@
 
         </div>
 
-        <div class="form-group" ng-repeat="pass in [1, 2]">
+        <div class="form-group passenger-data" id="passeng{{$index}}" ng-repeat="pass in [{name: 'Взрослый 1', color: '#aadf11', tpl: 'i/icons/Adult.svg'}, {name: 'Взрослый 2', color: '#ff6801', tpl: 'i/icons/Adult.svg'}, {name: 'Ребенок 1', color: '#764ca2', tpl: 'i/icons/Child.svg'}, {name: 'Ребенок младше 2 лет 1', color: '#f2b101', tpl: 'i/icons/Infant.svg'}]">
+          <style>
+            #id{{$index}} .mainpath {
+              fill: {{pass.color}};
+            }
+            #passeng{{$index}}:after {
+              background-color: {{pass.color}};
+            }
+          </style>
           <div class="f d vcen">
-            <div class="blue ttu">Пассажир {{pass}}</div>
+            <div class="ttu f vcen space6" ng-init="id='id'+$index">
+              <div class="passenger-pic">
+                <div id="id{{$index}}" ng-include="pass.tpl" class="f vcen"></div>
+              </div>
+              <div class="mozfix" style="color:{{pass.color}};">{{pass.name}}</div>
+            </div>
 
           </div>
 
@@ -593,7 +607,7 @@
                 <label for="g2{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">Ж</div></label>
               </div>
             </div>
-            <label ng-if="true" class="f vbot input-pholder ss-flex1 flex0050" ng-class="buyer ? 'not-empty' : ''">
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
               <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
               <span class="pholder">Дата рождения</span>
             </label>

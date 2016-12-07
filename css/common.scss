@@ -89,6 +89,10 @@
     @include justify-content(flex-end);
   }
 
+  .ws-ib {
+    display: inline-block;
+  }
+
   .ws-vcen {
     @include align-items(center);
   }

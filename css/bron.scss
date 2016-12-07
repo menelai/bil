@@ -97,7 +97,7 @@
 }
 
 div.input-pholder {
-  padding-bottom: 2px;
+  //padding-bottom: 2px;
 }
 
 @mixin revealer {
@@ -132,10 +132,12 @@ div.input-pholder {
     }
   }
   &.shown {
-    @include grey-active-gradient();
+    @include grey-gradient();
   }
 
   &.revealer-white {
+    height: 37px;
+    line-height: 37px;
     &:not(.shown) {
       border-radius: 3px;
       background: #ffffff;
@@ -251,7 +253,27 @@ label:focus {
 }
 
 .passenger-pic {
-  @include flex(0 0 16px);
+  width:16px;
+  >div {
+    position: absolute;
+    left:50%;
+    top:50%;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+}
+
+.passenger-data {
+  &.form-group {
+    padding-top: 0;
+  }
+  &:after {
+    position: absolute;
+    top:10px;
+    bottom:0;
+    width:9px;
+    right:-20px;
+    content: '';
+  }
 }
 
 .border-split {
@@ -326,7 +348,7 @@ label:focus {
 }
 
 @mixin ebebeb() {
-  background: #ebebeb;
+  background: #f3f3f3;
   margin-top:-4px;
   padding-top:4px;
   border-bottom-right-radius: 5px;
@@ -393,7 +415,6 @@ label:focus {
   width:21px;
   margin-right:3px;
   position: relative;
-  display: inline-block;
   &:after {
     position: absolute;
     top:50%;
@@ -410,7 +431,6 @@ label:focus {
   margin-right:7px;
   width:34px;
   position: relative;
-  display: inline-block;
   &:after {
     position: absolute;
     top:50%;
@@ -421,4 +441,14 @@ label:focus {
     content:'';
     background: url(../i/aeroexpress-plane.png) center center no-repeat;
   }
+}
+
+.response-photo {
+  width:76px;
+  height:76px;
+  overflow: hidden;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center center;
+  margin:0 auto;
 }

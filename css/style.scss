@@ -14,14 +14,14 @@ $lightgrey: #bdbdbd;
 $cyan: #e7f8ff;
 //$4,128,180
 @mixin grey-gradient() {
-  background-color: #f1f1f1; // Old browsers
-  @include filter-gradient(#f1f1f1, #d5d5d5, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #f1f1f1 0%,#f1f1f1 35%,#d5d5d5 65%,#d5d5d5 100%));
+  background-color: #dedede; // Old browsers
+  @include filter-gradient(#ffffff, #dedede, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #ffffff 0%,#ffffff 40%,#dedede 70%,#dedede 100%));
 }
 @mixin grey-hover-gradient() {
   background-color: #cfcfcf; // Old browsers
   @include filter-gradient(#cfcfcf, #efefef, vertical); // IE6-9
-  @include background-image(linear-gradient(top,  #cfcfcf 0%,#efefef 20%,#efefef 80%,#efefef 100%));
+  @include background-image(linear-gradient(top,  #bababa 0%,#ececec 22%,#ececec 100%));
 }
 @mixin grey-active-gradient() {
   background-color: #dddddd; // Old browsers
@@ -89,7 +89,7 @@ $cyan: #e7f8ff;
   &.ttu {
     line-height: 30px;
   }
-  font-weight: 600;
+  //font-weight: 600;
   /*text-shadow: 0px 1px 1px rgba(black, 0.26);*/
 
   &[type=button], &[type=submit] {
@@ -1644,7 +1644,7 @@ a, .pseudolink {
     @include grey-hover-gradient();
   }
   &:active {
-    @include grey-active-gradient();
+    @include grey-gradient();
   }
 }
 
@@ -2898,7 +2898,7 @@ a, .pseudolink {
       position: absolute;
       width:3000px;
       right:0;
-      top:-70px;
+      top:-8px;
       bottom:0;
       background: #f3f3f3;
       content:'';
@@ -2986,16 +2986,29 @@ a, .pseudolink {
   }
 }
 
+.responses-title {
+  margin-left:-15px;
+}
 #responses {
-  border-top:solid 1px #a2a2a2;
-  border-bottom:solid 1px #a2a2a2;
+  &:before {
+    position: absolute;
+    width:3000px;
+    right:-10px;
+    top:0;
+    bottom:0;
+    background: #ffffff;
+    content:'';
+    display: block;
+  }
+  /*border-top:solid 1px #a2a2a2;
+  border-bottom:solid 1px #a2a2a2;*/
   #resp-title {
     padding-bottom:5px;
     text-transform: uppercase;
     font-weight: normal;
     font-size: 14px;
   }
-  padding:15px 30px;
+  padding:20px 15px;
 
   .flex-control-paging {
     display: none;
@@ -3020,7 +3033,7 @@ a, .pseudolink {
       -ms-flex-line-pack: stretch;
       align-content: stretch;
       .photo-and-date {
-        @include flex(0 0 130px);
+        @include flex(0 0 105px);
         text-align: center;
         padding:0 5px;
       }
