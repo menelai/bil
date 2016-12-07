@@ -1,8 +1,8 @@
 <div ng-init="insur = 'med';" ng-if="true">
   <div class="revealer" ng-class="insur == 'med' ? 'shown' : ''" ng-click="insur = insur == 'med' ? '' : 'med'">
-    <div class="f d vcen">
+    <div class="f d vcen mozfix">
       <div class="blue">
-        <span ng-show="chosen=='med'" class="fa fa-check green-text"></span> Медицинское страхование
+        <span ng-show="chosen=='med'" class="fa fa-check green fz20 ibm lh9"></span> Медицинское страхование
       </div>
       <span ng-show="chosen=='med'">{{ad}} <span ng-bind="ad | rusPlural:'день':'дня':'дней':'дней'"></span></span>
     </div>
@@ -12,8 +12,8 @@
       <div class="tac">Достаточно для получения визы</div>
 
       <div class="f w medstrah vcen ws-hrig">
-        <div class="fwb fz20 ss-tac">916 ₽</div>
-        <div class="f"><a class="button-grey flex1 tac aib ws-flex1" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+        <div class="fw600 fz22 ss-tac">916 ₽</div>
+        <div class="f"><a class="button-grey flex1 tac aib ws-flex1" ng-click="showPopup = true;"><span class="mozfix">Подробнее о тарифе</span></a></div>
         <div class="f vcen space10">
           <div>
             <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
@@ -25,23 +25,6 @@
         </div>
       </div>
 
-      <!--div class="f ss-c ss-space10 ws-r ws-hcen mt5">
-        <div class="fwb fz20 ss-tac med-price"><div>916 ₽</div></div>
-        <div class="f d"><a class="button-grey flex1 tac med-podrob" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
-      </div>
-
-      <form class="f ss-d ss-space10 mt10 vcen ws-hcen">
-        <div class="ss-flex1 f space10 vcen med-days">
-          <div>
-            <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-          </div>
-          <div>дней</div>
-        </div>
-        <div>
-          <input type="submit" value="{{chosen=='med' ? 'Изменить' : 'Добавить'}}" class="blue-button h35 med-add" ng-click="chosen='med'; insur = ''">
-        </div>
-      </form-->
-
 
       <div class="mt10 f" ng-show="chosen=='med'">
         <a class="cancel-button flex1 tac" ng-click="chosen=''; insur = ''">Отменить</a>
@@ -50,17 +33,17 @@
   </div>
 
   <div class="mt10 revealer" ng-class="insur == 'fli' ? 'shown' : ''" ng-click="insur = insur == 'fli' ? '' : 'fli'">
-    <div class="blue"><span ng-show="addedFli" class="fa fa-check  green-text"></span> Страхование на время перелета</div>
+    <div class="blue mozfix"><span ng-show="addedFli" class="fa fa-check  green fz20 ibm lh9"></span> Страхование на время перелета</div>
   </div>
   <div class="ebebeb slide" ng-show="insur == 'fli'">
     <div class="p10">
       <!--div class="tac blue ttu fwm fz15">Страхование на время перелета</div-->
       <div class="tac">Страхование на случай потери багажа</div>
       <div class="tac mt5">Страхование от несчастного случая</div>
-      <div class="fwb fz20 tac mt5">255 ₽</div>
+      <div class="fw600 fz22 tac mt5">255 ₽</div>
 
       <div class="mt10 f ss-c ss-space10 ws-r ws-space2">
-        <div class="f d ws-flex1"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+        <div class="f d ws-flex1"><a class="button-grey flex1 tac" ng-click="showPopup = true;"><span class="mozfix">Подробнее о тарифе</span></a></div>
         <form class="f d space10 vcen ws-flex1" ng-hide="addedFli">
             <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedFli=true; insur = '';">
         </form>
@@ -72,7 +55,7 @@
   </div>
 
   <div class="mt10 revealer" ng-class="insur == 'tri' ? 'shown' : ''" ng-click="insur = insur == 'tri' ? '' : 'tri'">
-    <div class="blue"><span ng-show="addedTri" class="fa fa-check  green-text"></span> Страхование путешествия</div>
+    <div class="blue mozfix"><span ng-show="addedTri" class="fa fa-check  green fz20 ibm lh9"></span> Страхование путешествия</div>
   </div>
   <div class="ebebeb slide" ng-show="insur == 'tri'">
     <div class="p10">
@@ -80,10 +63,10 @@
       <div class="tac">Задержка рейса</div>
       <div class="tac mt5">Задержка багажа</div>
       <div class="tac mt5">Страхование от невылета</div>
-      <div class="fwb fz20 tac mt5">255 ₽</div>
+      <div class="fw600 fz22 tac mt5">255 ₽</div>
 
       <div class="mt10 f ss-c ss-space10 ws-r ws-space2">
-        <div class="f d ws-flex1"><a class="button-grey flex1 tac" ng-click="showPopup = true;">Подробнее о тарифе</a></div>
+        <div class="f d ws-flex1"><a class="button-grey flex1 tac" ng-click="showPopup = true;"><span class="mozfix">Подробнее о тарифе</span></a></div>
         <form class="f d space10 vcen ws-flex1" ng-hide="addedTri">
           <input type="submit" value="Добавить" class="blue-button h35 flex1" ng-click="addedTri=true; insur = '';">
         </form>

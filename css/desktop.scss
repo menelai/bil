@@ -112,3 +112,38 @@
   left:25px;
   right:25px;
 }
+
+.border-split {
+  &.bs10 {
+    >div {
+      +div {
+        margin-top:10px;
+        padding-top:10px;
+      }
+
+    }
+  }
+}
+
+.green-button {
+  &.ws-h40 {
+    height:40px;
+    line-height: 40px;
+  }
+  &.ws-payticket {
+    padding-left:5%;
+    padding-right: 5%;
+  }
+}
+
+.finalprice {
+  line-height: 26px;
+  top:-1px;
+}
+
+#aeroexpress {
+  >div:first-child {
+    padding-left:30px;
+    padding-right:30px;
+  }
+}

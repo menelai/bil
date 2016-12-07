@@ -158,6 +158,7 @@ div.input-pholder {
     top:50%;
     margin-top:-4px;
     @include transition(transform 0.3s ease-in-out);
+    @include backface-visibility(hidden);
   }
 
   &.flight-visible, &.shown {
@@ -401,6 +402,9 @@ label:focus {
   margin-left:-0.1em;
   letter-spacing: -0.03em;
 }
+.bigdigflexb {
+  @include flex(0 1 160px);
+}
 .bigdigflex {
   @include flex(0 1 130px);
 }
@@ -408,6 +412,10 @@ label:focus {
 .bron {
   #top-search-form {
     z-index: 100;
+  }
+
+  #footer {
+    padding:7px 0;
   }
 }
 
@@ -451,4 +459,81 @@ label:focus {
   background-size: cover;
   background-position: center center;
   margin:0 auto;
+}
+
+.bigradio {
+  height:17px;
+  input[type=radio] {
+    display: none;
+
+    +span {
+      width:16px;
+      height:16px;
+      margin:0 auto;
+      @include grey-gradient();
+      border-radius: 20px;
+      display: block;
+      border:solid 1px #777777;
+      &:after {
+        position: absolute;
+        top:50%;
+        left:50%;
+        content: '';
+        display: block;
+        width:0px;
+        height:0px;
+        @include transform(translateX(-50%) translateY(-50%));
+        border-radius: 10px;
+        background: black;
+        @include transition(width 0.2s, height 0.2s);
+      }
+    }
+
+    &:checked {
+      +span {
+        &:after {
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+  }
+}
+
+.bigcheckbox {
+  height:20px;
+  position: relative;
+  input[type=checkbox] {
+    display: none;
+
+    +span {
+      width:20px;
+      height:20px;
+      margin:0 auto;
+      @include grey-active-gradient();
+      border-radius: 3px;
+      display: block;
+      border:solid 1px #777777;
+      font: normal normal normal 14px/1 FontAwesome;
+      &:after {
+        position: absolute;
+        top:50%;
+        left:50%;
+        @include transform(translateX(-50%) translateY(-50%));
+        color:$green;
+        opacity:0;
+        @include transition(opacity 0.2s);
+        content: "\f00c";
+      }
+    }
+
+    &:checked {
+      +span {
+        &:after {
+
+          opacity:1;
+        }
+      }
+    }
+  }
 }

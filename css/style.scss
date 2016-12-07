@@ -83,6 +83,9 @@ $cyan: #e7f8ff;
   text-decoration: none;
   border: none;
   color:white;
+  &:hover {
+    text-decoration: none;
+  }
   padding:0 1.5em;
   height: 30px;
   line-height: 30px;
@@ -283,6 +286,7 @@ $input-shadow-hover: inset 0 4px 6px rgba(0,0,0, 0.14), inset 0 0 0 1px $green, 
   @include common-button();
   &:hover {
     @include blue-hover-gradient();
+    color:white;
   }
   &:active {
     @include blue-active-gradient();
@@ -1642,6 +1646,7 @@ a, .pseudolink {
   box-shadow: inset 0 0 0 1px $blue;
   &:hover {
     @include grey-hover-gradient();
+    color:$blue;
   }
   &:active {
     @include grey-gradient();
@@ -2311,6 +2316,7 @@ a, .pseudolink {
   }
   &:hover {
     text-decoration: none;
+    color: $grey;
     @include grey-hover-gradient();
   }
   &:ctive {
@@ -2900,7 +2906,7 @@ a, .pseudolink {
       right:0;
       top:-8px;
       bottom:0;
-      background: #f3f3f3;
+      background: #f3f3f3 url(../i/Bacground_Foto.jpg) right bottom no-repeat;
       content:'';
       display: block;
     }
@@ -3348,7 +3354,7 @@ input, textarea, button {
     padding-top:15px;
     margin-top:15px;
   }
-  >* {
+  >*:not(.ng-hide) {
     +* {
       margin-top:10px;
     }
@@ -3722,8 +3728,7 @@ input, textarea, button {
     left:0;
     right:0;
     text-align: center;
-    top:50%;
-    margin-top:-0.5em;
+    top:5px;
   }
   &:focus {
     +.placeholder {

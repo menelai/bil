@@ -8,6 +8,14 @@
   input[type=text] {
   }
 
+  .revealer {
+    .fa-check {
+      &:before {
+        position: relative;
+        top:-2px;
+      }
+    }
+  }
 }
 
 @media screen and (-moz-windows-theme) {

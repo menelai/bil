@@ -1,3 +1,7 @@
+a {
+  cursor: pointer;
+}
+
 .f {
   @include display-flex();
 }
@@ -505,6 +509,10 @@
 
 .fwl {
   font-weight: lighter;
+}
+
+.fw600 {
+  font-weight: 600;
 }
 
 .b-1 {
