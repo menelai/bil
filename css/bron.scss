@@ -537,3 +537,9 @@ label:focus {
     }
   }
 }
+
+.is-sticky {
+  .col-title {
+    z-index: 300;
+  }
+}

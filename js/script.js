@@ -5,6 +5,21 @@
 (function($){
     $(function() {
 
+      $(window).scroll(function(){
+        $('.scrollingcontent').each(function(){
+
+          var t = $(this).offset().top - 100,
+            tit = $(this).attr('data-title'),
+            h = $(this).height(),
+            ws = $(window).scrollTop();
+
+
+          if (t < ws && ws < (h+t)) {
+            $(".scrollingtitle[data-rel='"+$(this).attr('data-rel')+"']").html(tit);
+          }
+        })
+      });
+
       $('body').on('focus', '.input-pholder input', function() {
         $(this).parents('.input-pholder:first').addClass('focus');
       });
@@ -134,6 +149,7 @@
       " — " + $( "#slider-range" ).slider( "values", 1 )  + ' дней');
 
       if($.fn.sticky) {
+        $(".ws-sticky").each(function() {$(this).sticky({topSpacing: 0});});
         $("#nav-col").sticky({topSpacing: 0});
         $("#results-header").sticky({topSpacing: 0});
         $("#blocks").sticky({topSpacing: 28});
