@@ -3380,6 +3380,7 @@ input, textarea, button {
 
   .label {
     color:$blue;
+    margin-left:10px;
   }
 
   .button {
@@ -3396,6 +3397,7 @@ input, textarea, button {
       margin-top:-4px;
       margin-left:-6px;
       @include transition(transform 0.3s ease-in-out);
+      @include backface-visibility(hidden);
       .selectric-open & {
         @include transform(rotate(180deg));
       }

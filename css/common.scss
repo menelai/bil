@@ -1,5 +1,11 @@
 a {
   cursor: pointer;
+  &.tdn {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .f {
@@ -34,6 +40,10 @@ a {
 
 .flex1 {
   @include flex(1);
+}
+
+.flex2 {
+  @include flex(2);
 }
 
 .w {

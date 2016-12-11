@@ -201,11 +201,16 @@ div.input-pholder {
   &:not(.gender-my) {
     font-size: 20px;
   }
+
+  label {
+    @include transition(color 0.1s ease-in-out);
+  }
+
   width:90px;
   input[type=radio] {
     &:checked {
       +label {
-        @include blue-gradient();
+        //@include blue-gradient();
         color:white;
         border-radius: 20px;
       }
@@ -223,6 +228,29 @@ div.input-pholder {
       }
     }
   }*/
+
+  .gender-slider {
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:50%;
+    @include blue-gradient();
+    border-radius: 20px;
+    @include transition(transform 0.2s ease-in-out);
+  }
+
+  &.gender1 {
+    .gender-slider {
+      @include transform(translateX(0));
+    }
+  }
+
+  &.gender2 {
+    .gender-slider {
+      @include transform(translateX(44px));
+    }
+  }
 }
 
 .selectric.countrycode {
@@ -363,15 +391,16 @@ label:focus {
 
 #bron-alternate {
   background: #ffffff;
-  position: absolute;
+  //position: absolute;
+  //position: fixed;
   z-index: 200;
-  padding:10px;
+  padding:20px 0;
   border:solid 1px $blue;
   border-radius: 5px;
-  @include experimental-value(top, calc(100% + 2px));
-  @include experimental-value(width, calc(200% + 20px));
+  //@include experimental-value(top, calc(100% + 2px));
+  //@include experimental-value(width, calc(200% + 20px));
   .max-width {
-    padding:0;
+    //padding:0;
   }
 }
 
@@ -540,6 +569,6 @@ label:focus {
 
 .is-sticky {
   .col-title {
-    z-index: 300;
+    z-index: 199;
   }
 }

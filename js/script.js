@@ -5,6 +5,11 @@
 (function($){
     $(function() {
 
+      $("[name=payment]").click(function() {
+        $("#paymenttitle").attr('data-title', $(this).attr('data-title'));
+        $(window).scroll();
+      });
+
       $(window).scroll(function(){
         $('.scrollingcontent').each(function(){
 

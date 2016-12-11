@@ -252,20 +252,22 @@
           </div>
         </div>
 
-        <div class="subscribe-popup-bg" ng-show="showAlt"></div>
-        <div class="popup-what mb20 ss-nd" tw-click-outside="showAlt=false" ignore-if="showAlt==false">
-          <div class="f">
-            <a class="button-grey aib flex1" ng-init="showAlt = false;" ng-click="showAlt = !showAlt;">
-              <span class="mozfix">Цена билетов на альтернативные даты</span>
-            </a>
-          </div>
-          <div id="bron-alternate" class="slide" ng-show="showAlt">
-            <div ng-include="'alternate.html'"></div>
-            <div class="f vcen hcen">
-              <a class="button-grey aib" href="#" ng-click="showAlt = false;">Закрыть</a>
+        <div class="f">
+          <a class="button-grey aib flex1" ng-init="showAlt = false;" ng-click="showAlt = !showAlt;">
+            <span class="mozfix">Цена билетов на альтернативные даты</span>
+          </a>
+        </div>
+        <div class="subscribe-popup-bg f vcen hcen" ng-show="showAlt">
+          <div class="popup-what f vcen hcen ss-nd" tw-click-outside="showAlt=false" ignore-if="showAlt==false">
+            <div id="bron-alternate" class="" ng-show="showAlt">
+              <div ng-include="'alternate.html'"></div>
+              <div class="f vcen hcen">
+                <a class="button-grey aib" href="#" ng-click="showAlt = false;">Закрыть</a>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
 
       <div id="responses" data-title="Ознакомьтесь с отзывами о нас" class="scrollingcontent" data-rel="leftcol">
@@ -590,7 +592,8 @@
           <div class="f d ss-space10 ws-space40">
             <div class="f ws-space6 vcen">
               <div class="mozfix ss-nd">Пол</div>
-              <div class="f d stretch input-pholder p0 gender gender-my" ng-init="gender='1'">
+              <div class="f d stretch input-pholder p0 gender gender-my gender{{gender}}" ng-init="gender='1'">
+                <div class="gender-slider"></div>
                 <input id="g1{{pass}}" type="radio" ng-model="gender" class="no-display" value="1">
                 <label for="g1{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">М</div></label>
                 <input id="g2{{pass}}" type="radio" ng-model="gender" class="no-display" value="2">
@@ -631,11 +634,11 @@
           <div class="mt10 f ss-c ss-space10 ws-r ws-space2">
             <div class="f d space2 ws-flex1">
               <label ng-if="true" class="f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
-                <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+                <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholders='00'" ng-blur="placeholders=''" placeholder="{{placeholders}}">
                 <span class="pholder">Серия</span>
               </label>
               <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
-                <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+                <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholdern='0000000'" ng-blur="placeholdern=''" placeholder="{{placeholdern}}">
                 <span class="pholder">Номер</span>
               </label>
             </div>
@@ -805,7 +808,7 @@
           </div>
         </div>
         <div class="ss-ebebeb slide" ng-show="showQ || isDesktop">
-          <div class="ss-p10 f">
+          <div class="ss-p10 f scrollingcontent" data-rel="rightcol" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ" id="paymenttitle">
             <textarea rows="6" class="flex1 plh border-blue b-1 rounded3 p5"></textarea><div class="placeholder grey larger">Текст комментария</div>
           </div>
         </div>
@@ -819,27 +822,27 @@
         </div>
         <div class="f d vtop space8 tac">
           <label class="flex1">
-            <div class="bigradio"><input type="radio" name="payment" ng-click="payment='cards';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Банковской картой" ng-click="payment='cards';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment/cards-icon.png" class=""></div>
             <div>Банковской картой</div>
           </label>
           <label class="flex1">
-            <div class="bigradio"><input type="radio" name="payment" ng-click="payment='cash';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Наличными в&nbsp;офисе" ng-click="payment='cash';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment/wallet%20icon.png" class=""></div>
             <div>Наличными в&nbsp;офисе</div>
           </label>
           <label class="flex1 ss-nd">
-            <div class="bigradio"><input type="radio" name="payment" ng-click="payment='cards';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Apple Touch&nbsp;ID" ng-click="payment='cards';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment/touch.png" class=""></div>
             <div>Apple Touch&nbsp;ID</div>
           </label>
           <label class="flex1">
-            <div class="bigradio"><input type="radio" name="payment" ng-click="payment='svyaznoy';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ в Связном" ng-click="payment='svyaznoy';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment-svyaznoy.png" class=""></div>
             <div>Салон связи Связной</div>
           </label>
           <label class="flex1">
-            <div class="bigradio"><input type="radio" name="payment" ng-click="payment='euroset';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ в Евросети" ng-click="payment='euroset';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment-euroset.png" class=""></div>
             <div>Салон связи Евросеть</div>
           </label>
@@ -848,7 +851,7 @@
 
 
       <div class="form-group1">
-        <div class="bysides becomecol" ng-show="payment=='euroset'">
+        <div class="bysides becomecol slide" ng-show="payment=='euroset'">
           <div class="w135 tac"><img src="i/euroset-l.png"></div>
           <div class="flex1 tac">
             <p>Ваш заказ сформирован и готов к оплате
@@ -856,7 +859,7 @@
             <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
           </div>
         </div>
-        <div class="bysides becomecol" ng-show="payment=='svyaznoy'">
+        <div class="bysides becomecol slide" ng-show="payment=='svyaznoy'">
           <div class="w135 tac"><img src="i/svyaznoy-big.png"></div>
           <div class="flex1 tac">
             <p>Ваш заказ сформирован и готов к оплате
@@ -864,7 +867,7 @@
               <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
           </div>
         </div>
-        <div ng-show="payment=='cards'">
+        <div ng-show="payment=='cards'" class="slide">
           <p class="tac">Абсолютная гарантия платежей. Оплата происходит через
           авторизизационный сервер Процессингового цетра
           ПАО&nbsp;«Сбербанк&nbsp;России».</p>
@@ -887,7 +890,7 @@
       </div>
 
 
-      <div class="form-group1 mt20 scrollingcontent" data-rel="rightcol" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ">
+      <div class="form-group1 mt20">
         <div class="ss-fixed-final-price f d stretch ws-nd">
           <div class="f hcen vcen space20 ss-space10 flex1 ss-p10">
             <div class="ss-fz10 lh1">
