@@ -241,7 +241,7 @@
           <div id="flight-info-title" class="col-title ss-revealer ws-sticky scrollingtitle" data-rel="leftcol" ng-class="showI ? 'shown' : ''" ng-click="showI=!showI">
             Информация о рейсе
           </div>
-          <div ng-include="'ticket.html'" ng-show="showI || isDesktop"></div>
+          <div ng-include="'ticket.html'" ng-show="showI || isDesktop" ng-init="likeMobile=true;"></div>
         </div>
 
         <div class="mb5 ss-nd mt10">
