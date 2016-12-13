@@ -1,0 +1,65 @@
+<div class="subscribe">
+  <div class="f d space4 fz16" ng-init="datechoose=1">
+    <div class="flex1 tac chooser" ng-class="{'chosen': datechoose==1}" ng-click="datechoose=1"><div class="fontfix">Точные даты вылета</div></div>
+    <div class="flex1 tac chooser" ng-class="{'chosen': datechoose==2}" ng-click="datechoose=2"><div class="fontfix">Возможные месяцы вылета</div></div>
+    <div class="flex1 tac chooser" ng-class="{'chosen': datechoose==3}" ng-click="datechoose=3"><div class="fontfix">Возможное время года</div></div>
+  </div>
+  <div class="mt15 f d space4">
+    <div class="flex1 f direction there"><input type="text" class="b-1 border-blue rounded3 flex1 h40"></div>
+    <div class="tac chooser routeoneway" ng-class="{'chosen': route==1}" ng-click="route=1" ng-init="route=1"></div>
+    <div class="tac chooser route2ways" ng-class="{'chosen': route==2}" ng-click="route=2"></div>
+    <div class="flex1 f direction back"><input type="text" class="b-1 border-blue rounded3 flex1 h40"></div>
+  </div>
+  <div class="mt10">
+    <div class="slide selectday" ng-show="datechoose==1"></div>
+
+    <div class="slide f space4 d" ng-show="datechoose==2">
+      <div class="flex1" ng-repeat="row in ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']">
+        <input type="checkbox" class="no-display" id="mo{{$index}}">
+        <label class="bluelabel" for="mo{{$index}}"><span class="fontfix" ng-bind="row"></span></label>
+      </div>
+    </div>
+
+    <div class="slide f space4 d" ng-show="datechoose==3">
+      <div class="flex1" ng-repeat="row in ['Зима', 'Весна', 'Лето', 'Осень']">
+        <input type="checkbox" class="no-display" id="tt{{$index}}">
+        <label class="bluelabel" for="tt{{$index}}"><span class="fontfix" ng-bind="row"></span></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="bysides stretch mt10 fromtodur">
+    <div class="flex1">
+      <div class="blue ttu">Аэропорт вылета</div>
+      <ul class="ul mt15">
+        <li class="mt10"><label><input type="checkbox"> Домодедово <span class="grey">DME</span></label></li>
+        <li class="mt10"><label><input type="checkbox"> Домодедово <span class="grey">DME</span></label></li>
+        <li class="mt10"><label><input type="checkbox"> Домодедово <span class="grey">DME</span></label></li>
+        <li class="mt10"><label><input type="checkbox"> Любой</label></li>
+      </ul>
+    </div>
+    <div class="flex1">
+      <div class="blue ttu">Аэропорт вылета</div>
+      <ul class="ul mt15">
+        <li class="mt10"><label><input type="checkbox"> Любой</label></li>
+        <li class="mt10"><label><input type="checkbox"> Родос <span class="grey">RHO</span></label></li>
+      </ul>
+    </div>
+    <div class="flex1">
+      <div class="blue ttu">Продолжительность отпуска</div>
+
+      <div class="mt15 durslider">
+        <div>
+          <input type="text" id="amount" readonly>
+        </div>
+
+        <div id="slider-range" class="mt5"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f d space4 mt20" style="max-width: 600px; margin-right:auto; margin-left:auto;">
+    <input type="text" class="flex1 b-1 border-blue rounded3" placeholder="Ваш email">
+    <input type="submit" value="Оформить подписку" class="green-button">
+  </div>
+</div>

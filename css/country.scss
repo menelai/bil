@@ -232,16 +232,15 @@
   padding:0 0 25px 0;
 
   #nav-col-sticky-wrapper {
-    -webkit-flex: 0 0 245px;
-    -ms-flex: 0 0 245px;
-    flex: 0 0 245px;
+    @include flex(0 1 400px);
+    min-width: 200px;
   }
   #nav-col {
     padding-bottom:50px;
     >.blue.ttu {
       padding:10px;
     }
-    width:245px;
+
     #nav-col-bg {
       background: #f0f0f0;
       > .ul {
@@ -285,7 +284,7 @@
   }
 
   #content-col {
-    min-width: 0;
+    min-width: 760px;
     img {
       max-width: 100%;
     }
@@ -294,14 +293,26 @@
       margin-top:-0.3em;
       font-size: 20px;
       margin-bottom: 25px;
+      font-weight: 600;
     }
 
     .country-section {
-      padding:20px 0 30px 0;
+      //padding:20px 0 20px 0;
+      margin-top:30px;
+      margin-bottom: 30px;
       +.country-section {
       }
       &:not(:last-child) {
-        border-bottom:solid 9px $blue;
+        //border-bottom:solid 9px $blue;
+      }
+
+      &.section-blue {
+        margin-left:-20px;
+        margin-right:-20px;
+        padding:20px;
+        background: $blue url(../i/country-blue.jpg) right center;
+        -webkit-background-size: cover; background-size: cover;
+        color:white;
       }
     }
   }
@@ -905,4 +916,125 @@
       height:38px;
     }
   }
+}
+
+.bordered {
+  >li {
+    +li {
+      border-top:solid 1px;
+      padding-top:15px;
+      margin-top:15px;
+    }
+  }
+}
+
+.show-all {
+  height: 40px;
+  cursor:pointer;
+
+  >div {
+    &:after {
+      border:none;
+      content: '';
+      background: url(../i/arrow-down.png);
+      width:12px;
+      height:8px;
+      position: absolute;
+
+      top:50%;
+      left:100%;
+      margin-top:-4px;
+      margin-left:6px;
+      @include transition(transform 0.3s ease-in-out);
+      @include backface-visibility(hidden);
+    }
+  }
+
+  &.shown {
+    >div {
+      &:after {
+        @include transform(rotate(180deg));
+      }
+    }
+  }
+}
+
+.show-all-airports {
+  background: rgba(white, 0.2);
+  margin:20px -20px -20px;
+  &:hover {
+    background: rgba(white, 0.1);
+  }
+
+  >div {
+    &:after {
+      background-image: url(../i/white-arrow-down.png);
+    }
+  }
+}
+
+.show-all-tickets {
+  background: #f3f3f3;
+  color:$blue;
+  &:hover {
+    background: rgba(#f3f3f3, 0.6);
+  }
+}
+
+.airport-info:not(.frst) {
+  margin-top:15px;
+  padding-top:15px;
+  border-top:solid 1px;
+}
+
+.clock-digit {
+  @include blue-gradient();
+  padding:5px;
+  border-radius: 3px;
+  color:white;
+  text-shadow: 1px 1px 0px rgba(#191a1a, 0.7);
+  &:before {
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    height:1px;
+    content: '';
+    background: #00597c;
+  }
+}
+.clock-colon {
+  text-shadow: 1px 1px 0px rgba(#191a1a, 0.7);
+  color:white;
+  position: absolute;
+  left:50%;
+  z-index: 1;
+  margin-left: -0.11em !important;
+  margin-top: -0.05em;
+}
+
+.place-t {
+  width:43px;
+  height:43px;
+  line-height: 43px;
+  text-align: center;
+  color:white;
+  background: $blue;
+  border-radius: 43px;
+  font-size: 20px;
+  @include order(2);
+  @include transform(translateY(10px) translateX(-10px));
+}
+
+.place-weather {
+  width:34px;
+  height:34px;
+  line-height: 34px;
+  font-size: 16px;
+  color:$blue;
+  border-radius: 43px;
+  border:solid 1px $blue;
+  background: white;
+  text-align: center;
+  @include transform(translateY(-10px) translateX(10px));
 }

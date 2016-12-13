@@ -1,0 +1,92 @@
+.subscribe {
+  background: #f3f3f3;
+  padding:30px 40px;
+}
+
+.chooser {
+  height:40px;
+  line-height: 40px;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:not(.chosen) {
+    @include blue-gradient();
+    color:white;
+    &:hover {
+      @include blue-hover-gradient();
+    }
+  }
+
+  &.chosen {
+    color:$blue;
+    @include grey-hover-gradient();
+    box-shadow: inset 0 0 0 1px $blue;
+  }
+}
+
+.routeoneway, .route2ways {
+  width:40px;
+  &:after {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    content:'';
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+.routeoneway {
+  &:after {
+    background-image: url(../i/1planew.png);
+  }
+  &.chosen {
+    &:after {
+      background-image: url(../i/1plane.png);
+    }
+  }
+}
+
+.route2ways {
+  &:after {
+    background-image: url(../i/2planesw.png);
+  }
+  &.chosen {
+    &:after {
+      background-image: url(../i/2planes.png);
+    }
+  }
+}
+
+.direction {
+  @include from-input();
+
+  &.back {
+    &:before {
+      @include transform(rotate(-180deg));
+    }
+  }
+}
+
+.bluelabel {
+  height:30px;
+  line-height: 30px;
+  display: block;
+  @include blue-gradient();
+  color:white;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+  padding:0 3px;
+  &:hover {
+    @include blue-hover-gradient();
+  }
+
+  input:checked + & {
+    @include grey-hover-gradient();
+    box-shadow: inset 0 0 0 1px $blue;
+    color:$blue;
+  }
+}

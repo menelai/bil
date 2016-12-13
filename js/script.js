@@ -141,17 +141,7 @@
         numberOfMonths: $(window).width() >= 800 ? 3 : 1
       });
 
-      $( "#slider-range" ).slider({
-        range: true,
-        min: 1,
-        max: 60,
-        values: [ 7, 14 ],
-        slide: function( event, ui ) {
-          $( "#amount" ).val( "" + ui.values[ 0 ] + " — " + ui.values[ 1 ] + ' дней');
-        }
-      });
-      $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
-      " — " + $( "#slider-range" ).slider( "values", 1 )  + ' дней');
+
 
       if($.fn.sticky) {
         $(".ws-sticky").each(function() {$(this).sticky({topSpacing: 0});});
@@ -257,6 +247,24 @@
 
   app.run(function($timeout, $interval, $rootScope, deviceDetector) {
 
+    $rootScope.$on('$includeContentLoaded', function() {
+      $(".selectday").datepicker({
+        numberOfMonths: $(window).width() >= 800 ? 3 : 1
+      });
+
+      $( "#slider-range" ).slider({
+        range: true,
+        min: 1,
+        max: 60,
+        values: [ 7, 14 ],
+        slide: function( event, ui ) {
+          $( "#amount" ).val( "" + ui.values[ 0 ] + " — " + ui.values[ 1 ] + ' дней');
+        }
+      });
+      $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
+        " — " + $( "#slider-range" ).slider( "values", 1 )  + ' дней');
+    });
+
     $rootScope.device = deviceDetector.device;
     $rootScope.isDesktop = deviceDetector.isDesktop();
 
@@ -272,6 +280,17 @@
         $rootScope.tours++;
       }, 2000);
     }, 500);
+
+    $interval(function() {
+      $rootScope.now = Date.now();
+    }, 1000);
+
+    $rootScope.Math = Math;
+    $rootScope.showColon = true;
+
+    $interval(function() {
+      $rootScope.showColon = !$rootScope.showColon;
+    }, 1000);
 
   });
 

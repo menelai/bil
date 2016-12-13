@@ -693,7 +693,7 @@ a, .pseudolink {
   }
 }
 
-#from-input {
+@mixin from-input() {
   &:before {
     width:21px;
     height:21px;
@@ -705,11 +705,16 @@ a, .pseudolink {
     left:8px;
     top:50%;
     margin-top:-10px;
+    @include backface-visibility(hidden);
   }
 
   input {
     padding-left:34px;
   }
+}
+
+#from-input {
+ @include from-input();
 }
 
 #to-input {
@@ -4108,6 +4113,7 @@ input, textarea, button {
 @import 'search-throbber';
 @import 'bron';
 @import 'tickets';
+@import 'subscribe';
 
 #buter {
   display: none;

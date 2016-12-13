@@ -87,6 +87,11 @@ $ticket-radius: 5px;
 
 }
 
+.ticket-days {
+  @include flex(1 0 80px);
+  max-width: 120px;
+}
+
 .padder20 {
   min-width: 5px;
   @include flex(0 1 10px);
@@ -223,6 +228,11 @@ body .ui-tooltip {
 .ticket-ac-and-comfort {
   @include flex(1 0 220px);
   max-width: 300px;
+
+  .ticket-promo & {
+    @include flex(1 0 120px);
+    max-width: 150px;
+  }
 
   >* {
     &:not(:last-child) {
