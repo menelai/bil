@@ -265,8 +265,12 @@
       </div>
       <div class="slide tab-contents" ng-show="tab==1">
         <div class="f d space3 country-form">
-          <div class="flex1 f">
-            <input type="text" placeholder="Все равно откуда" class="autocomplete border-blue b-1 rounded3 flex1">
+          <div class="flex1">
+            <!--input type="text" placeholder="Все равно откуда" class="autocomplete border-blue b-1 rounded3 flex1"-->
+            <select class="selectric grey h40">
+              <option value="">не важно откуда</option>
+              <option value="Монастир">в январе</option>
+            </select>
           </div>
           <div class="flex1">
             <select class="selectric grey h40">
@@ -394,7 +398,7 @@
 
           <div class="f d space20">
             <div>
-              <div class="blue fz15 fw600"><i class="fa fa-clock-o"></i> Сейчас в Греции</div>
+              <div class="blue fz15 fw600 tac"><i class="fa fa-clock-o"></i> Сейчас в Греции</div>
               <div class="fz58 f space1 lh50 mt10 mb10">
                 <div class="clock-digit"><div class="fontfix" ng-bind="Math.floor((now|date:'HH')/10)"></div></div>
                 <div class="clock-digit"><div class="fontfix" ng-bind="Math.floor((now|date:'HH')%10)"></div></div>
@@ -405,11 +409,11 @@
               <div class="grey777 tac">+3 часа   17 января</div>
             </div>
             <div class="flex1 f d r space10">
-              <div class="b-1 flex1 rounded10 border-grey p10 f c" ng-repeat="row in [{place: 'г. Афины', t: '+16', weather: ''},{place: 'г. Херсонисос', t: '+16', weather: ''},{place: 'г. Афины', t: '+16', weather: ''},{place: 'г. Афины', t: '+16', weather: ''},{place: 'г. Афины', t: '+16', weather: ''}]">
+              <div class="b-1 flex1 rounded10 border-grey p10 f c" ng-repeat="row in [{place: 'г. Афины', t: '+16', weather: '', bg: 'orange'},{place: 'г. Херсонисос', t: '+16', weather: '', bg: 'blue'},{place: 'г. Афины', t: '+16', weather: '', bg: 'grey'},{place: 'г. Афины', t: '+16', weather: '', bg: 'orange'},{place: 'г. Афины', t: '+16', weather: '', bg: 'blue'}]">
                 <div class="tac" ng-bind="row.place"></div>
                 <div class="flex1 f vcen hcen">
                   <div class="place-t"><div class="fontfix" ng-bind="row.t"></div></div>
-                  <div class="wi place-weather"><div class="" ng-bind="row.weather"></div></div>
+                  <div class="wi place-weather" ng-class="row.bg+'-gradient'"><div class="" ng-bind="row.weather"></div></div>
                 </div>
               </div>
             </div>
@@ -499,9 +503,9 @@
 
           <h3 class="ttu fwn mt30"><span class="blue"><b>Регулярные</b> рейсы в Грецию</span> из Москвы</h3>
 
-          <div class="mt10" ng-repeat="row in [1,2,3]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=true; promoTicket=true;"></div>
+          <div class="mt10" ng-repeat="row in [1,2,3]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=true; promoTicket=true; ticketGrey=($index%2 == 1);"></div>
           <div class="slide" ng-show="showAllTickets">
-            <div class="mt10" ng-repeat="row in [1,2,3,4,5]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=true; promoTicket=true;"></div>
+            <div class="mt10" ng-repeat="row in [1,2,3,4,5]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=true; promoTicket=true; ticketGrey=($index%2 == 0);"></div>
           </div>
           <div class="show-all-tickets show-all f hcen vcen" ng-class="{'shown' : showAllTickets}" ng-click="showAllTickets=!showAllTickets">
             <div class="ttu" ng-bind="showAllTickets ? 'Свернуть' : 'Показать все'">Показать все</div>
@@ -524,12 +528,20 @@
           <p class="lh1_6">Стоимость авиабилетов в Грецию зависит от двух основных параметров - это курс евро и количество оставшихся авиабилетов в розничной продаже, при этом при всём, есть авиакомпании, которые оценивают количество оставшихся билетов не только у них, но и в целом, на рынке. Оба параметра по сути предсказать невозможно, по этой причине никто, никогда Вам качественно не ответит на вопрос: когда купить авиабилеты в Грецию дёшево.</p>
           <p class="lh1_6">Рекомендуем Вам покупать билеты тогда, когда именно Вам нравится цена и сильно не затягивать, бывают, и не редко случаи, когда цена опускается до максимального минимума, особенно, если это чартерные рейсы, но будьте внимательны, чтобы билеты на нужные Вам даты не закончились. Ниже приведены цены на билеты на самолёт в Грецию по каждому возможному перевозчику, найденные нашими пользователями за последние 48 часов:</p>
 
-          <div class="mt10" ng-repeat="row in [1,2,3,4,5]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=false; promoTicket=false;"></div>
+          <div class="mt10" ng-repeat="row in [1,2,3,4,5]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=false; promoTicket=false; showTicketInfo=true;"></div>
           <div class="slide" ng-show="showAllTickets1">
-            <div class="mt10" ng-repeat="row in [1,2,3,4,5]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=true; promoTicket=true;"></div>
+            <div class="mt10" ng-repeat="row in [1,2,3,4,5]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=false; promoTicket=false; showTicketInfo=true;"></div>
           </div>
-          <div class="show-all-tickets show-all f hcen vcen" ng-class="{'shown' : showAllTickets1}" ng-click="showAllTickets1=!showAllTickets1">
-            <div class="ttu" ng-bind="showAllTickets1 ? 'Свернуть' : 'Показать все'">Показать все</div>
+          <div>
+            <div class="show-all-tickets show-all f hcen vcen" ng-class="{'shown' : showAllTickets1}" ng-click="showAllTickets1=!showAllTickets1">
+              <div class="ttu" ng-bind="showAllTickets1 ? 'Свернуть' : 'Показать все'">Показать все</div>
+            </div>
+            <div class="pager f" ng-show="showAllTickets1">
+              <a href="/" class="f vcen hcen"><i class="fa fa-angle-left fontfix"></i></a>
+              <a href="/" class="f vcen hcen"><i class="fontfix">1</i></a>
+              <a href="/" class="f vcen hcen"><i class="fontfix">2</i></a>
+              <a href="/" class="f vcen hcen"><i class="fa fa-angle-right fontfix"></i></a>
+            </div>
           </div>
 
           <div class="mt30">

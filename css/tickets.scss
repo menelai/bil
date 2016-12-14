@@ -345,3 +345,9 @@ body .ui-tooltip {
     @include transform(translateY(-1px));
   }
 }
+
+.ticket-grey {
+  .ticket-row, & {
+    background: #F5F5F5;
+  }
+}

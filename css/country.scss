@@ -232,16 +232,18 @@
   padding:0 0 25px 0;
 
   #nav-col-sticky-wrapper {
-    @include flex(0 1 400px);
+    @include flex(0 1 260px);
     min-width: 200px;
   }
   #nav-col {
-    padding-bottom:50px;
+
     >.blue.ttu {
       padding:10px;
     }
 
     #nav-col-bg {
+      height:100vh;
+      padding-bottom:50px;
       background: #f0f0f0;
       > .ul {
         > li {
@@ -1031,10 +1033,42 @@
   height:34px;
   line-height: 34px;
   font-size: 16px;
-  color:$blue;
+  color:white;
   border-radius: 43px;
-  border:solid 1px $blue;
+  //border:solid 1px $blue;
   background: white;
   text-align: center;
   @include transform(translateY(-10px) translateX(10px));
+}
+
+.orange-gradient {
+  @include orange-gradient();
+}
+.blue-gradient {
+  @include blue-gradient();
+}
+.grey-gradient {
+  background-color: #a5a5a5; // Old browsers
+  @include filter-gradient(#a5a5a5, #898989, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #a5a5a5 0%,#a5a5a5 40%,#898989 60%,#898989 100%));
+
+}
+
+.pager {
+  position: absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  > a {
+    width:40px;
+    text-decoration: none;
+    border-left:solid 1px white;
+    i {
+      font-style: normal;
+    }
+    +a {
+
+    }
+  }
+
 }
