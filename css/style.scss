@@ -405,6 +405,7 @@ a, .pseudolink {
 
 .sep {
   width:1px;
+  min-width: 1px;
   background: rgba(4, 128, 180, 0.3);
 }
 
@@ -505,7 +506,6 @@ a, .pseudolink {
     flex: 0 1 50%;*/
     white-space: nowrap;
     text-align: center;
-    padding:0 15px;
     
   }
 
@@ -4438,7 +4438,7 @@ input, textarea, button {
   }
 }
 
-@media all and (min-width:1201px) {
+@media all and (min-width:1101px) {
   .working-time {
 
     margin-left:20px;
@@ -4467,9 +4467,12 @@ input, textarea, button {
     }
   }
 }
-@media all and (max-width:1200px) {
+@media all and (max-width:1100px) {
+  #phones {
+    @include flex-direction(column);
+  }
   .working-time {
-    width:160px;
+    width:145px;
     font-size: 13px;
     @include flex-direction(row);
     @include justify-content(flex-end);
