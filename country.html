@@ -548,203 +548,51 @@
             <p class="lh1_6">Как Мы видим из блока выдачи выше, самые дешёвые авиабилеты в Грецию на нашем сайте стоят 7880 рублей, если Вы желаете в реальном времени знать стоимость на авиабилеты, которые Вы хотите забронировать, рекомендуем Вам воспользоваться услугой email подписки, блок которой расположен справо.</p>
 
             <div class="mt10" ng-include="'subscribe.html'"></div>
-
-            <!--div class="mt10">
-              <div class="bysides stretch smaller itemsmar4 radiobuttons becomecol">
-                <div class="flex1 tac" ng-init="datechoose='day'">
-
-                    <input name="whatform" type="radio" class="no-display" id="certdate" ng-model="datechoose" value="day">
-
-                  <label for="certdate">
-                    Меня интересуют<br>
-                    <span class="ttu">точные даты вылета</span>
-                  </label>
-                </div>
-                <div class="flex1 tac">
-
-                    <input name="whatform" type="radio" class="no-display" id="mdate" ng-model="datechoose" value="month">
-
-                  <label for="mdate">
-                    Я выберу<br>
-                    <span class="ttu">возможные месяцы вылета</span>
-                  </label>
-                </div>
-                <div class="flex1 tac">
-
-                    <input name="whatform" type="radio" class="no-display" id="ydate" ng-model="datechoose" value="time">
-
-                  <label for="ydate">
-                    Я выберу<br>
-                    <span class="ttu">возможное время года</span>
-                  </label>
-                </div>
-              </div>
-              <div class="mt5 bysides itemsmar2 stretch plane-input">
-                <div class="flex1">
-                  <input type="text" class="from-input">
-                </div>
-                <div class="bysides radiobuttons itemsmar2 stretch">
-                  <div>
-                    <input type="radio" name="plane" id="cplane" class="no-display">
-                    <label for="cplane"></label>
-                  </div>
-                  <div>
-                    <input type="radio" name="plane" id="cplane2" class="no-display">
-                    <label for="cplane2"></label>
-                  </div>
-                </div>
-                <div class="flex1">
-                  <input type="text" class="to-input">
-                </div>
-              </div>
-
-              <div class="subscribeform mt5">
-                <div class="selectday" ng-show="datechoose=='day'"></div>
-                <div class="bysides radiobuttons tac smaller2 itemsmar2 becomewrap months" ng-show="datechoose=='month'">
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo1">
-                    <label for="mo1">Январь</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo2">
-                    <label for="mo2">Февраль</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo3">
-                    <label for="mo3">Март</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo4">
-                    <label for="mo4">Апрель</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo5">
-                    <label for="mo5">Май</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo6">
-                    <label for="mo6">Июнь</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo7">
-                    <label for="mo7">Июль</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo8">
-                    <label for="mo8">Август</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo9">
-                    <label for="mo9">Сентябрь</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo10">
-                    <label for="mo10">Октябрь</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo11">
-                    <label for="mo11">Ноябрь</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="mo12">
-                    <label for="mo12">Декабрь</label>
-                  </div>
-                </div>
-
-                <div class="bysides radiobuttons tac smaller2 itemsmar2 becomewrap timeofyear" ng-show="datechoose=='time'">
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="t1">
-                    <label for="t1">Зима</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="t2">
-                    <label for="t2">Весна</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="t3">
-                    <label for="t3">Лето</label>
-                  </div>
-                  <div class="flex1">
-                    <input type="checkbox" class="no-display" id="t4">
-                    <label for="t4">Осень</label>
-                  </div>
-                </div>
-                <div class="bysides stretch mt10 fromtodur">
-                  <div class="flex1">
-                    <div class="tac">Укажите нужный аэропорт вылета</div>
-                    <ul class="ul mt15">
-                      <li class="mt10"><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
-                      <li class="mt10"><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
-                      <li class="mt10"><label><input type="radio"> Домодедово <span class="grey">DME</span></label></li>
-                      <li class="mt10"><label><input type="radio"> Любой</label></li>
-                    </ul>
-                  </div>
-                  <div class="flex1">
-                    <div class="tac">Укажите нужный аэропорт вылета</div>
-                    <ul class="ul mt15">
-                      <li class="mt10"><label><input type="radio"> Любой</label></li>
-                      <li class="mt10"><label><input type="radio"> Родос <span class="grey">RHO</span></label></li>
-                    </ul>
-                  </div>
-                  <div class="flex1">
-                    <div class="tac">Продолжительность отпуска</div>
-
-                    <div class="mt15 durslider">
-                      <div>
-                        <input type="text" id="amount" readonly>
-                      </div>
-
-                      <div id="slider-range" class="mt5"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="make-subscription mt10">
-                  <div class="bysides stretch becomecol" style="max-width: 600px; margin-right:auto; margin-left:auto;">
-                    <input type="text" class="flex1 youremail" placeholder="Ваш email">
-                    <input type="submit" value="Оформить подписку" class="green-button">
-                  </div>
-                </div>
-
-              </div>
-
-            </div-->
           </div>
 
         </div>
-        <div class="country-section" id="why">
+        <div class="country-section section-blue" id="why">
           <h2 class="ttu">Дешёвые авиабилеты в Грецию на biletideshevo.ru</h2>
           <p class="lh1_6">Купить авиабилеты в Грецию на biletideshevo.ru чаще дешевле, чем на сайтах авиакомпаний или в других агентствах по бронированияю авиабилетов, это возможно благодаря: </p>
-          <div class="flist">
-            <div class="bysides vtop">
-              <div><img src="i/hands.png"></div>
-              <div class="flex1" style="color:#02CBBF;">прямой контракт               с головной компанией                авикомпании Ellinair</div>
+
+          <div class="fz16 fwl">
+            <div class="f d advs mt20">
+              <div class="flex1 f vcen space6">
+                <div class="adv-img"><img src="i/hands.png"></div>
+                <div>прямой контракт               с головной компанией                авикомпании Ellinair</div>
+              </div>
+              <div class="flex1 f vcen space6">
+                <div class="adv-img"><img src="i/handplane.png"></div>
+                <div>прямые контракты с эксклюзивными                условиями с крупнейшими                консолидаторами чартерных рейсов</div>
+              </div>
             </div>
-            <div class="bysides vtop">
-              <div><img src="i/handplane.png"></div>
-              <div class="flex1" style="color:#F13030;">прямые контракты с эксклюзивными                условиями с крупнейшими                консолидаторами чартерных рейсов</div>
+            <div class="f d advs mt20">
+              <div class="flex1 f vcen space6">
+                <div class="adv-img"><img src="i/starcursor.png"></div>
+                <div>уникальная система                бронирования</div>
+              </div>
+              <div class="flex1 f vcen space6">
+                <div class="adv-img"><img src="i/notebook.png"></div>
+                <div>выписка авиабилетов через все                возможные системы бронирования                регулярных рейсов</div>
+              </div>
             </div>
-            <div class="bysides vtop">
-              <div><img src="i/starcursor.png"></div>
-              <div class="flex1" style="color:#058FC8;">уникальная система                бронирования</div>
+            <div class="f d advs mt20">
+              <div class="flex1 f vcen space6">
+                <div class="adv-img"><img src="i/magniplane.png"></div>
+                <div>ежедневный мониторинг                рынка</div>
+              </div>
+              <div class="flex1 f vcen space6">
+                <div class="adv-img"><img src="i/coins.png"></div>
+                <div>минимальный                сервисный сбор</div>
+              </div>
             </div>
-            <div class="bysides vtop">
-              <div><img src="i/notebook.png"></div>
-              <div class="flex1" style="color:#058FC8;">выписка авиабилетов через все                возможные системы бронирования                регулярных рейсов</div>
-            </div>
-            <div class="bysides vtop">
-              <div><img src="i/magniplane.png"></div>
-              <div class="flex1" style="color:#C487E1;">ежедневный мониторинг                рынка</div>
-            </div>
-            <div class="bysides vtop">
-              <div><img src="i/coins.png"></div>
-              <div class="flex1" style="color:#DEAB0E;">минимальный                сервисный сбор</div>
-            </div>
-            <div class="bysides vtop">
-              <div><img src="i/sberbank.png"></div>
-              <div class="flex1" style="color:#8ECA00;">благодаря долгосрочному и продуктивному сотрудничеству
-                с ОАО "Сбербанк России" минимальные комиссии за проведение
-                интернет-эквайринга</div>
+            <div class="f d advs mt20">
+              <div class="flex1 f vcen space6">
+                <div class="adv-img"><img src="i/sberbank.png"></div>
+                <div>благодаря долгосрочному и продуктивному сотрудничеству
+                  с ОАО «Сбербанк России» минимальные комиссии за проведение
+                  интернет-эквайринга</div>
+              </div>
             </div>
           </div>
         </div>
@@ -752,22 +600,25 @@
           <h2 class="ttu">Дополнительные улуги нашей компании</h2>
           <p class="lh1_6">Мы не останавливаемся на достигнутом, нам это не интересно, Мы продолжим и далее делать работу, благодаря которой, цена на авиабилеты будет ещё ниже, более того Мы уже достаточно давно предлагаем Вам не только авиабилеты, уже есть сейчас или появятся в краткосрочной перспективе следующие виды услуг:</p>
 
-          <div class="extra-services mt15">
-            <div><a style="background-image: url(i/pic1.jpg);" href="/"><div>Уникальная система<br>бронирования отелей</div></a></div>
-            <div><a style="background-image: url(i/pic2.jpg);" href="/"><div>Железнодорожные      <br>        билеты онлайн    <br>          лучшая цена при        <br>      покупке в агентствах</div></a></div>
-            <div><a style="background-image: url(i/pic3.jpg);" href="/"></a></div>
-            <div><a style="background-image: url(i/pic4.jpg);" href="/"><div>Билеты на автобусы     <br>         по России онлайн</div></a></div>
+          <div class="extra-services mt30 fwl f w">
+            <div><a style="background-image: url(i/pic1.jpg);" href="/"><div><div class="ttu">Бронирование отелей</div>уникальная система</div></a></div>
+            <div><a style="background-image: url(i/pic2.jpg);" href="/"><div><div class="ttu">Ж/Д БИЛЕТЫ ОнЛАЙН</div>по лучшим ценам в России</div></a></div>
+            <div><a style="background-image: url(i/pic3.jpg);" href="/">
+              <img src="i/tl-baloon.png" style="position: absolute; top:-20px; left:30px;">
+              <div><img src="i/lt.png"></div>
+            </a></div>
+            <div><a style="background-image: url(i/pic4.jpg);" href="/"><div><div class="ttu">БИЛЕТЫ НА АВТОБУСЫ</div>по России оналйн</div></a></div>
 
-            <div><a style="background-image: url(i/pic5.jpg);" href="/"><div>Билеты на       <br>       спортивные          <br>    мероприятия</div></a></div>
-            <div><a style="background-image: url(i/pic6.jpg);" href="/"><div>Бронирование    <br>          автомобиля         <br>     в любом городе Мира</div></a></div>
-            <div><a style="background-image: url(i/pic7.jpg);" href="/"><div>Билеты в театр, <br>на концерты, <br>мюзиклы онлайн</div></a></div>
-            <div><a style="background-image: url(i/pic9.jpg);" href="/"><div>Страхование</div></a></div>
+            <div><a style="background-image: url(i/pic5.jpg);" href="/"><div><div class="ttu">СПОРТИВНЫЕ МЕРОПРИЯТИЯ</div>билеты на лучшие места</div></a></div>
+            <div><a style="background-image: url(i/pic6.jpg);" href="/"><div><div class="ttu">прокат авто</div>в любом городе мира</div></a></div>
+            <div><a style="background-image: url(i/pic7.jpg);" href="/"><div>билеты: <div class="ttu">театры, концерты,              мьюзиклы</div></div></a></div>
+            <div><a style="background-image: url(i/pic8.jpg);" href="/"><div><div class="ttu">СТРАХОВАНИЕ</div>путешественников</div></a></div>
           </div>
         </div>
         <div class="country-section" id="when">
           <h2 class="ttu">Когда можно купить и как оплатить билеты на самолёт в Грецию</h2>
-          <img src="i/call.png">
           <p class="mt10 lh1_6">Купить билеты на самолёт в Грецию дёшево Вы можете самостоятельно, круглосуточно онлайн. Оплатить авиабилеты Вы можете с помощью банковских карт VISA, MasterCard, VISA Electron, Maestro, оплата абсолютна безопасна, происходит через авторизированный сервер Процессингового центра ОАО "Сбербанк России", к оплате принимаются карты, открытые в банках следующих стран: Россия, Беларусь, Болгария, Греция, Кипр, Испания, Черногория, Франция, Армения, Молдавия, Таджикистан, Грузия, Грузия, Чехия, Латвия. Если же Вам требуется помощь квалифицированного специалиста нашей компании, Мы рады ответить на Ваши вопросы согласно графика работы колл-центра, с которым Вы можете ознакомиться в верхней части страницы или в разделе контакты. При желании Вы можете оплатить билеты на самолёт в Грецию наличными, данный способ платежа доступен на всей территории России в любом салоне связи Связной или Евросеть.</p>
+          <img src="i/call.png">
         </div>
       </div>
     </div>

@@ -252,17 +252,16 @@
         numberOfMonths: $(window).width() >= 800 ? 3 : 1
       });
 
-      $( "#slider-range" ).slider({
+      $( ".slider-range" ).slider({
         range: true,
         min: 1,
         max: 60,
         values: [ 7, 14 ],
         slide: function( event, ui ) {
-          $( "#amount" ).val( "" + ui.values[ 0 ] + " — " + ui.values[ 1 ] + ' дней');
+
         }
       });
-      $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
-        " — " + $( "#slider-range" ).slider( "values", 1 )  + ' дней');
+
     });
 
     $rootScope.device = deviceDetector.device;
