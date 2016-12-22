@@ -30,7 +30,7 @@
 <body class="bron" ng-class="showMenu ? 'mobile-menu' : ''" device-detector>
 <div id="top">
   <div class="max-width d f space20">
-    <div id="logo" class="flex1">
+    <div id="logo" class="">
       <a href="/">
         <div>
           <div><img src="i/Loro.svg"></div>
@@ -45,22 +45,26 @@
       </a>
     </div>
     <div class="sep"></div>
-    <div id="partners" class="flex1 f hcen">
-      <div>
+    <div id="partners" class="f hcen space30">
+      <div class="f d c">
         <h4>Наши партнеры:</h4>
-        <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
-        <div class="swap"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
+        <div class="f c vcen">
+          <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
+          <div class="swap mt5"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
+        </div>
       </div>
-      <div>
+      <div class="f d c">
         <h4>Нас рекомендуют:</h4>
-        <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
-        <div class="swap"><img src="i/national.png"><img src="i/national-color.png"></div>
+        <div class="f c vcen">
+          <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
+          <div class="swap mt5"><img src="i/national.png"><img src="i/national-color.png"></div>
+        </div>
       </div>
     </div>
     <div class="sep"></div>
-    <div id="phones" class="flex1 f hcen vcen w">
+    <div id="phones" class="f hcen vcen">
       <div class="tar fz20 wsn">
-        <div class="blue">+7 495 150-11-82</div>
+        <div class="blue" style="margin-left: -1em;">+7 495 150-11-82</div>
         <div class="blue ss-nd">8 800 234 5 99 5</div>
       </div>
       <div class="ss-nd f working-time">
@@ -84,21 +88,24 @@
       </div>
     </div>
     <div class="sep"></div>
-    <div id="personal" class="flex1 f hcen">
+    <div id="personal" class="f">
       <div>
         <div id="call-variants">
           <div id="call-icons">
             <img src="i/viber.png">
             <img src="i/skype.png">
             <img src="i/whatsapp.png">
-            <img src="i/email.png">
+            <img src="i/envelope.svg">
           </div>
           <div id="call-helpers">
             <span>Позвонить онлайн</span>
             <span>Email</span>
           </div>
         </div>
-        <div class="tac mt9"><a href="/" id="lk">Личный кабинет</a></div>
+        <div class="mt9 f d">
+          <div><a href="/" id="lk">Личный кабинет</a></div>
+          <div class="blue top-selector"><img src="i/flag.png" class="b-1 border-grey ibm" style="vertical-align: -2px;"> / ₽ <i class="fa fa-angle-down grey ml3"></i></div>
+        </div>
       </div>
     </div>
   </div>
@@ -236,7 +243,7 @@
 <div id="order-form" ng-class="showMenu ? 'blur' : ''">
   <div id="order-cols" class="max-width">
     <div id="ocl">
-      <div data-rel="leftcol" data-title="Информация о рейсе" class="scrollingcontent">
+      <div data-rel="leftcol" data-title="Информация о рейсе" data-color="#000000" class="scrollingcontent">
         <div id="flight-info">
           <div id="flight-info-title" class="col-title ss-revealer ws-sticky scrollingtitle" data-rel="leftcol" ng-class="showI ? 'shown' : ''" ng-click="showI=!showI">
             Информация о рейсе
@@ -270,7 +277,7 @@
 
       </div>
 
-      <div id="responses" data-title="Ознакомьтесь с отзывами о нас" class="scrollingcontent" data-rel="leftcol">
+      <div id="responses" data-title="Ознакомьтесь с отзывами о нас" data-color="#ff6700" class="scrollingcontent" data-rel="leftcol">
         <div class="ttu mb10 responses-title">Отзывы покупателей</div>
         <ul class="slides">
           <li ng-repeat="l in [1,1,1,1,1,1,1] track by $index">
@@ -295,7 +302,7 @@
 
 
 
-      <div id="aeroexpress" class="mt20 scrollingcontent" data-title="Добавьте к покупке билеты на Аэроэкспресс" data-rel="leftcol">
+      <div id="aeroexpress" class="mt20 scrollingcontent" data-title="Добавьте к покупке билеты на Аэроэкспресс" data-color="#000000" data-rel="leftcol">
         <div class="f d vcen space4">
           <div class="flex1 ttu">В&nbsp;аэропорт без&nbsp;пробок и&nbsp;очередей</div>
           <div id="aeroexpress-logo" class="ws-nd"><img src="i/aeroexpress.png"></div>
@@ -445,14 +452,14 @@
 
       </div>
 
-      <div data-title="НАМ МОЖНО ДОВЕРЯТЬ — БОЛЕЕ 60&thinsp;000 КЛИЕНТОВ ЗА 3 ГОДА" data-rel="leftcol" class="scrollingcontent">&nbsp;</div>
+      <div data-title="НАМ МОЖНО ДОВЕРЯТЬ — БОЛЕЕ 60&thinsp;000 КЛИЕНТОВ ЗА 3 ГОДА" data-rel="leftcol" data-color="#ff6700" class="scrollingcontent">&nbsp;</div>
     </div>
 
     <div id="ocr">
       <div id="passengers-data">
-        <div class="col-title ws-sticky scrollingtitle scrollingcontent" data-rel="rightcol" data-title="Бронирование рейса">Бронирование рейса</div>
+        <div class="col-title ws-sticky scrollingtitle scrollingcontent" data-rel="rightcol" data-title="Бронирование рейса" data-color="#000000">Бронирование рейса</div>
 
-        <div class="form-group ws-mt10 scrollingcontent" data-rel="rightcol" data-title="ДЛЯ БРОНИРОВАНИЯ ВВЕДИТЕ ДАННЫЕ ПОКУПАТЕЛЯ">
+        <div class="form-group ws-mt10 scrollingcontent" data-rel="rightcol" data-title="ДЛЯ БРОНИРОВАНИЯ ВВЕДИТЕ ДАННЫЕ ПОКУПАТЕЛЯ" data-color="#ff6700">
           <div class="ttu blue">Покупатель</div>
 
           <div class="f ws-r ss-c ss-space10 ws-space2 mt10">
@@ -559,7 +566,7 @@
           </div>
         </div>
 
-        <div class="form-group passenger-data scrollingcontent" data-rel="rightcol" data-title="ВВЕДИТЕ ДАННЫЕ ПАССАЖИРА: {{pass.name}}" id="passeng{{$index}}" ng-repeat="pass in [{name: 'Взрослый 1', color: '#aadf11', tpl: 'i/icons/Adult.svg'}, {name: 'Взрослый 2', color: '#ff6801', tpl: 'i/icons/Adult.svg'}, {name: 'Ребенок 1', color: '#764ca2', tpl: 'i/icons/Child.svg'}, {name: 'Ребенок младше 2 лет 1', color: '#f2b101', tpl: 'i/icons/Infant.svg'}]">
+        <div class="form-group passenger-data scrollingcontent" data-rel="rightcol" data-title="ВВЕДИТЕ ДАННЫЕ ПАССАЖИРА: {{pass.name}}" data-color="{{pass.color}}" id="passeng{{$index}}" ng-repeat="pass in [{name: 'Взрослый 1', color: '#aadf11', tpl: 'i/icons/Adult.svg'}, {name: 'Взрослый 2', color: '#ff6801', tpl: 'i/icons/Adult.svg'}, {name: 'Ребенок 1', color: '#764ca2', tpl: 'i/icons/Child.svg'}, {name: 'Ребенок младше 2 лет 1', color: '#f2b101', tpl: 'i/icons/Infant.svg'}]">
           <style>
             #id{{$index}} .mainpath {
               fill: {{pass.color}};
@@ -655,7 +662,7 @@
 
       </div>
 
-      <div class="form-group client-service scrollingcontent" ng-init="show='sta'; chosen='sta'" ng-if="true" data-rel="rightcol" data-title="ОБРАТИТЕ ВНИМАНИЕ НА УСЛУГИ СЕРВИСА">
+      <div class="form-group client-service scrollingcontent" ng-init="show='sta'; chosen='sta'" ng-if="true" data-rel="rightcol" data-title="ОБРАТИТЕ ВНИМАНИЕ НА УСЛУГИ СЕРВИСА" data-color="#ff6700">
         <div class="tac blue ttu">Услуги сервиса для вас, уважаемые&nbsp;клиенты</div>
 
         <div>
@@ -801,48 +808,48 @@
 
 
 
-      <div class="form-group scrollingcontent" data-rel="rightcol" data-title="НАПИШИТЕ ВАШ КОММЕНТАРИЙ ИЛИ ПОЖЕЛАНИЕ">
+      <div class="form-group scrollingcontent" data-rel="rightcol" data-title="НАПИШИТЕ ВАШ КОММЕНТАРИЙ ИЛИ ПОЖЕЛАНИЕ" data-color="#000000">
         <div class="ss-revealer {{showQ ? 'shown' : ''}}" ng-click="showQ=!showQ">
           <div class="blue ws-tac ws-ttu">
             Ваши комментарии и&nbsp;пожелания
           </div>
         </div>
         <div class="ss-ebebeb slide" ng-show="showQ || isDesktop">
-          <div class="ss-p10 f scrollingcontent" data-rel="rightcol" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ" id="paymenttitle">
+          <div class="ss-p10 f scrollingcontent" data-rel="rightcol" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ" id="paymenttitle" data-color="#ff6700">
             <textarea rows="6" class="flex1 plh border-blue b-1 rounded3 p5"></textarea><div class="placeholder grey larger">Текст комментария</div>
           </div>
         </div>
       </div>
 
 
-      <div class="form-group ws-mb15 scrollingcontent" data-rel="rightcol" data-title="ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ">
+      <div class="form-group ws-mb15 scrollingcontent" data-rel="rightcol" data-title="ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ" data-color="#000000">
         <div class="tac">
           <h2 class="blue ttu fwn fz16">Способ оплаты</h2>
           <p>Комиссия 0%</p>
         </div>
         <div class="f d vtop space8 tac">
           <label class="flex1">
-            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Банковской картой" ng-click="payment='cards';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Банковской картой" data-color="#ff6700" ng-click="payment='cards';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment/cards-icon.png" class=""></div>
             <div>Банковской картой</div>
           </label>
           <label class="flex1">
-            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Наличными в&nbsp;офисе" ng-click="payment='cash';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Наличными в&nbsp;офисе" data-color="#000000" ng-click="payment='cash';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment/wallet%20icon.png" class=""></div>
             <div>Наличными в&nbsp;офисе</div>
           </label>
           <label class="flex1 ss-nd">
-            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Apple Touch&nbsp;ID" ng-click="payment='cards';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Apple Touch&nbsp;ID" data-color="#ff6700" ng-click="payment='cards';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment/touch.png" class=""></div>
             <div>Apple Touch&nbsp;ID</div>
           </label>
           <label class="flex1">
-            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ в Связном" ng-click="payment='svyaznoy';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ в Связном" data-color="#000000" ng-click="payment='svyaznoy';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment-svyaznoy.png" class=""></div>
             <div>Салон связи Связной</div>
           </label>
           <label class="flex1">
-            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ в Евросети" ng-click="payment='euroset';"><span></span></div>
+            <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ в Евросети" data-color="#ff6700" ng-click="payment='euroset';"><span></span></div>
             <div class="f vbot hcen payment-image"><img src="i/payment-euroset.png" class=""></div>
             <div>Салон связи Евросеть</div>
           </label>

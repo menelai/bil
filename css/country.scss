@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 #country {
   h1 {
     //font-size: 20px;
@@ -160,6 +162,12 @@
     border-top-right-radius: 4px;
   }
 
+  &.whywe {
+    &:before {
+      display: none;
+    }
+  }
+
   &.cp-green {
     @include cp-color(#48840C, #86b419);
   }
@@ -232,7 +240,7 @@
   padding:0 0 25px 0;
 
   #nav-col-sticky-wrapper {
-    @include flex(0 1 260px);
+    @include flex(0 1 360px);
     min-width: 200px;
   }
   #nav-col {
@@ -242,11 +250,69 @@
     }
 
     #nav-col-bg {
+      padding-top:30px;
       height:100vh;
       padding-bottom:50px;
-      background: #f0f0f0;
+      //background: #f0f0f0;
       > .ul {
-        > li {
+        position: absolute;
+        top:30px;
+        bottom:50px;
+        left:0;
+        right:0;
+        @include display-flex();
+        @include flex-direction(column);
+        >li {
+          @include flex(0 1 80px);
+          @include display-flex();
+          @include align-items(center);
+          +li {
+            margin-top:5px;
+          }
+
+          a {
+            border-radius: 5px;
+            background: #f0f0f0;
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            padding: 10px 10px 10px 60px;
+            background-position: 10px center;
+            background-repeat: no-repeat;
+            display: block;
+            text-decoration: none;
+            color: black;
+
+            @include display-flex();
+            @include align-items(center);
+            span {
+              width:100%;
+            }
+
+            &:hover {
+              box-shadow: inset 0 4px 6px rgba(0,0,0, 0.14), inset 0 0 0 1px $blue;
+            }
+          }
+
+          &.active {
+            a {
+              &:after {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 5px;
+                background: $blue;
+                content: '';
+                right: 0;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+              }
+            }
+          }
+        }
+        /*> li {
           padding: 0 20px 0 10px;
           a {
             padding: 10px 0px 10px 40px;
@@ -262,7 +328,7 @@
           + li {
             //padding-top:20px;
             a {
-              border-top: dotted 1px #919191;
+              //border-top: dotted 1px #919191;
             }
           }
 
@@ -280,7 +346,7 @@
               color: $blue;
             }
           }
-        }
+        }*/
       }
     }
   }
@@ -309,8 +375,8 @@
       }
 
       &.section-blue {
-        margin-left:-20px;
-        margin-right:-20px;
+        //margin-left:-20px;
+        //margin-right:-20px;
         padding:20px;
         background: $blue url(../i/country-blue.jpg) right center;
         -webkit-background-size: cover; background-size: cover;
@@ -619,43 +685,43 @@
   .ui-slider-horizontal {
     border:none;
     height:5px;
-
-    /*background: #939494;
-    background: -moz-linear-gradient(top, #939494 0%, #c1c1c1 100%);
-    background: -webkit-linear-gradient(top, #939494 0%,#c1c1c1 100%);
-    background: linear-gradient(to bottom, #939494 0%,#c1c1c1 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939494', endColorstr='#c1c1c1',GradientType=0 );*/
     background: #e1e4eb;
   }
   
   .ui-slider-range {
     background: $blue;
     border-radius: 0;
+
+    +.ui-slider-handle {
+      margin-left:-9px;
+      &:after {
+        @include backface-visibility(hidden);
+        @include transform(rotate(180deg));
+      }
+    }
+  }
+
+  .slider-cross {
+    margin: 0 6px;
+    transform: translateY(1px);
   }
 
   .ui-slider-handle {
-    /*width:22px;
-    height:28px;
-    border: none;
-    background: url(../i/slider.png) center center no-repeat;
-    margin-left:-11px;
-    top:-8px;*/
-    width:14px;
-    top: -3px;
-    height: 12px;
+
+    width:9px;
+    top: -4px;
+    height: 13px;
     border: none;
     background: none;
-    margin-left: -7px;
+    margin-left: 0px;
 
     &:after {
-      width: 2px;
-      background: #044761;
-      margin-left: -1px;
-      height: 12px;
-      content:'';
-      border: none;
+      width:9px;
+      height:13px;
+      content: '';
+      background: url(../i/marker.png);
+      display: block;
       position: absolute;
-      left:50%;
     }
   }
 
@@ -845,19 +911,64 @@
   margin-left:-20px;
   margin-right:-20px;
 }
+
+.tab-end {
+  position: absolute;
+  bottom:0;
+  width:20px;
+  height:20px;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    position: absolute;
+    box-sizing: content-box;
+    width: 40px;
+    height: 40px;
+    content: '';
+    left: -20px;
+    top: -40px;
+    border: solid 20px #f3f3f3;
+    border-radius: 100%;
+  }
+
+  &.right {
+    left:100%;
+  }
+  &.left {
+    right:100%;
+    &:after {
+      left: -40px;
+    }
+  }
+}
+
 .tabs-switchers {
   >div {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding:15px 20px;
     cursor: pointer;
-    background-color: #dfdfdf; // Old browsers
-    @include filter-gradient(#dfdfdf, #f3f3f3, vertical); // IE6-9
-    @include background-image(linear-gradient(top,  #dfdfdf 0%,#f3f3f3 25%,#f3f3f3 100%));
+    @include background-image(linear-gradient(top,  #f3f3f3 0%, #dedede 80%, #dedede 100%));
     color: $blue;
     &.active {
-      @include blue-gradient();
-      color:white;
+      //@include blue-gradient();
+      @include background-image(linear-gradient(top,  #f3f3f3 0%, #f3f3f3 100%));
+    }
+
+    &:not(.active):hover {
+      @include background-image(linear-gradient(top,  #f3f3f3 0%, #CBCBCB 80%, #CBCBCB 100%));
+    }
+
+    &:first-child {
+      .tab-end.left {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      .tab-end.right {
+        display: none;
+      }
     }
   }
 }
@@ -1055,5 +1166,17 @@
   }
   >div:nth-child(2n) {
     padding-left:15px;
+  }
+}
+
+.rect {
+  margin-left: 0.9em;
+  >li {
+    position: relative;
+    &:before {
+      position: absolute;
+      right:100%;
+      content: '◾\a0';
+    }
   }
 }

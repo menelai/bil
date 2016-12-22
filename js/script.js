@@ -20,7 +20,7 @@
 
 
           if (t < ws && ws < (h+t)) {
-            $(".scrollingtitle[data-rel='"+$(this).attr('data-rel')+"']").html(tit);
+            $(".scrollingtitle[data-rel='"+$(this).attr('data-rel')+"']").css({backgroundColor: $(this).attr('data-color')}).html(tit);
           }
         })
       });

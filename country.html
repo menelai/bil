@@ -259,11 +259,11 @@
     </a>
 
     <div class="mytabs mt20">
-      <div class="tabs-switchers fz16 ttu f " ng-init="tab=1">
-        <div class="flex2 tac wsn" ng-class="{'active' : tab==1}" ng-click="tab=1">спецпредложения НА ЧАРТЕНЫЕ АВИАБИЛЕТЫ С МОМЕНТАЛЬНЫМ ПОДТВЕРЖДЕНИЕМ</div>
-        <div class="flex1 tac wsn" ng-class="{'active' : tab==2}" ng-click="tab=2">Почему именно мы?</div>
+      <div class="tabs-switchers fz16 ttu f space2" ng-init="tab=2">
+        <div class="flex2 tac wsn" ng-class="{'active' : tab==1}" ng-click="tab=1"><div class="tab-end left"></div>спецпредложения НА ЧАРТЕНЫЕ АВИАБИЛЕТЫ С МОМЕНТАЛЬНЫМ ПОДТВЕРЖДЕНИЕМ<div class="tab-end right"></div></div>
+        <div class="flex1 tac wsn" ng-class="{'active' : tab==2}" ng-click="tab=2"><div class="tab-end left"></div>Почему именно мы?<div class="tab-end right"></div></div>
       </div>
-      <div class="slide tab-contents" ng-show="tab==1">
+      <div class="tab-contents" ng-show="tab==1">
         <div class="f d space3 country-form">
           <div class="flex1">
             <!--input type="text" placeholder="Все равно откуда" class="autocomplete border-blue b-1 rounded3 flex1"-->
@@ -295,26 +295,120 @@
           </div>
         </div>
         <div class="mt20">
-        <div class="results-wrapper">
-          <div class="result-wrapper f c" ng-repeat="row in ::[{num: 1, color: 'green'}, {num: 2, color: 'blue'}, {num: 3, color: 'orange'}, {num: 4, color: 'green'}, {num: 5, color: 'blue'}, {num: 6, color: 'orange'}]">
-            <div class="country-photo f d c flex1" ng-class="'cp-'+row.color" style="background-image: url(i/country/{{::row.num}}.jpg);">
-              <div>
-                <div class="place-name ttu">Крит</div>
-                <div>Греция</div>
-                <div class="mt15">26 декабря — 5 января</div>
-                <div class="mt5">туда и обратно,<br> прямой рейс</div>
-              </div>
-              <div class="f mt20">
-                <div class="orange-arrow">
-                  <div class="fontfix fz24 lh1 fw600">62&thinsp;338 ₽</div>
-                  <div class="arrow-top"></div>
-                  <div class="arrow-bottom"></div>
+          <div class="results-wrapper">
+            <div class="result-wrapper f c" ng-repeat="row in ::[{num: 1, color: 'green'}, {num: 2, color: 'blue'}, {num: 3, color: 'orange'}, {num: 4, color: 'green'}, {num: 5, color: 'blue'}, {num: 6, color: 'orange'}]">
+              <div class="country-photo f d c flex1" ng-class="'cp-'+row.color" style="background-image: url(i/country/{{::row.num}}.jpg);">
+                <div>
+                  <div class="place-name ttu">Крит</div>
+                  <div>Греция</div>
+                  <div class="mt15">26 декабря — 5 января</div>
+                  <div class="mt5">туда и обратно,<br> прямой рейс</div>
+                </div>
+                <div class="f mt20">
+                  <div class="orange-arrow">
+                    <div class="fontfix fz24 lh1 fw600">62&thinsp;338 ₽</div>
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          </div>
+            </div>
+        </div>
       </div>
+      <div class="tab-contents" ng-show="tab==2">
+        <div class="orange ttu tac fz20">За <span class="fw600">три года</span> присутствия на рынке россии клиенатми  biletideshevo стали <span class="fw600">более 60&thinsp;000 человек</span></div>
+
+        <div class="mt20">
+          <div class="results-wrapper">
+            <div class="result-wrapper f c">
+              <div class="country-photo whywe flex1 cp-green f d c" style="background-image: url(i/country/b1.jpg);">
+                <div><img src="i/country/sber.png"></div>
+                <div class="fz16">Благодаря долгосрочному
+                  и продуктивному сотрудничеству
+                  с ОАО "Сбербанк России"
+                  минмимальные комиссии
+                  за проведение интенет-эквайринга</div>
+              </div>
+            </div>
+            <div class="result-wrapper f c fz16">
+              <div class="country-photo whywe flex1 cp-blue f d c space20" style="background-image: url(i/country/b2.jpg);">
+                <div class="f vcen space10">
+                  <div><img src="i/country/glaz.png" style="width:42px;"></div>
+                  <div>Уникальная система поиска                авиабилетов</div>
+                </div>
+
+                <div class="f vcen space10">
+                  <div><img src="i/country/globus.png" style="width:42px;"></div>
+                  <div>Выписка регулярных авиабилетов
+                через все&nbsp;возможные GDS</div>
+                </div>
+
+                <div class="f vcen space10">
+                  <div><img src="i/country/plane.png" style="width:42px;"></div>
+                  <div>Прямые контракты и&nbsp;эксклюзивные
+                условия с&nbsp;крупнейшими
+                консолидаторами чартерных рейсов.</div></div>
+
+              </div>
+            </div>
+            <div class="result-wrapper f c fz16">
+              <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b3.jpg);">
+                Мы уполномоченное
+                туристическое агентство
+                международного туроператора
+
+                <div class="mt20"><img src="i/country/mouz.png"></div>
+              </div>
+            </div>
+
+            <div class="result-wrapper f c">
+              <div class="country-photo whywe flex1 cp-green f space10" style="background-image: url(i/country/b4.jpg);">
+                <div><img src="i/country/metro.png"></div>
+                <div class="fz16">
+                  <div>Офис в центре Москвы</div>
+                  <div class="fw600">Китай-город</div>
+
+                  <div class="mt20">Мы работаем без выходных<br>
+                  с 8:00 до 22:00 часов</div>
+
+                  <div class="mt20">Клиентоориетированный
+                  квалифицированный
+                  персонал</div>
+                </div>
+              </div>
+            </div>
+            <div class="result-wrapper f c fz16">
+              <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b5.jpg);">
+                <div class="ttu">Бронируйте всё в одном месте,<br>
+                гарантия лучших цен!</div>
+
+                <ul class="mt20 ul rect">
+                  <li>Туры от всех туроперторов со скидкой до 30%
+                  Авиабилеты в любую точку мира
+                  со скидкой до 40%</li>
+
+                  <li>Ж/Д билеты по России и странам Европы</li>
+
+                  <li>Гостиницы в любом городе мира —
+                  уникальное предложение</li>
+
+                  <li>Трансферы из 500 аэропортов мира</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="result-wrapper f c fz16">
+              <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b6.jpg);">
+                <div class="ttu">уникальная система<br>
+                  бронирования отелей </div>
+                <div class="mt20">Эсклюзивные прдложения с лучшими
+                  ценами на туристических направлениях</div>
+                <div class="mt20 ttu">Это есть только у нас!</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -326,31 +420,31 @@
         <div id="nav-col-bg">
           <ul class="ul">
             <li>
-              <a href="#common" style="background-image: url(i/nav-plane.png);">Общая информация о&nbsp;рейсах в&nbsp;Грецию из&nbsp;России</a>
+              <a href="#common" style="background-image: url(i/nav-plane.png);"><span class="mozfix">Общая информация о&nbsp;рейсах в&nbsp;Грецию из&nbsp;России</span></a>
             </li>
             <li>
-              <a href="#airports" style="background-image: url(i/nav-wind.png);">Крупнейшие аэропорты Греции</a>
+              <a href="#airports" style="background-image: url(i/nav-wind.png); background-position-x:15px;"><span class="mozfix">Крупнейшие аэропорты Греции</span></a>
             </li>
             <li>
-              <a href="#time" style="background-image: url(i/nav-cloud.png);">Время и&nbsp;погода в&nbsp;городах Греции</a>
+              <a href="#time" style="background-image: url(i/nav-cloud.png);"><span class="mozfix">Время и&nbsp;погода в&nbsp;городах Греции</span></a>
             </li>
             <li>
-              <a href="#sight" style="background-image: url(i/nav-camera.png);">Экскурсии и&nbsp;дос&shy;то&shy;при&shy;ме&shy;ча&shy;тель&shy;нос&shy;ти в Греции</a>
+              <a href="#sight" style="background-image: url(i/nav-camera.png);"><span class="mozfix">Экскурсии и&nbsp;дос&shy;то&shy;при&shy;ме&shy;ча&shy;тель&shy;нос&shy;ти в&nbsp;Греции</span></a>
             </li>
             <li>
-              <a href="#schedule" style="background-image: url(i/nav-calendar.png);">Расписание рейсов в&nbsp;Грецию</a>
+              <a href="#schedule" style="background-image: url(i/nav-calendar.png);"><span class="mozfix">Расписание рейсов в&nbsp;Грецию</span></a>
             </li>
             <li>
-              <a href="#price" style="background-image: url(i/nav-ticket.png);">Цена авиабилетов в&nbsp;Грецию</a>
+              <a href="#price" style="background-image: url(i/nav-ticket.png);"><span class="mozfix">Цена авиабилетов в&nbsp;Грецию</span></a>
             </li>
             <li>
-              <a href="#why" style="background-image: url(i/nav-pig.png);">Почему на&nbsp;biletideshevo.ru билеты в&nbsp;Грецию дешёвые?</a>
+              <a href="#why" style="background-image: url(i/nav-pig.png);"><span class="mozfix">Почему на&nbsp;biletideshevo.ru билеты в&nbsp;Грецию дешёвые?</span></a>
             </li>
             <li>
-              <a href="#extra" style="background-image: url(i/nav-dish.png);">Дополнительные услуги нашей компании</a>
+              <a href="#extra" style="background-image: url(i/nav-dish.png);"><span class="mozfix">Дополнительные услуги нашей компании</span></a>
             </li>
             <li>
-              <a href="#when" style="background-image: url(i/nav-payment.png);">Когда можно купить и&nbsp;как оплатить билеты в&nbsp;Грецию</a>
+              <a href="#when" style="background-image: url(i/nav-payment.png);"><span class="mozfix">Когда можно купить и&nbsp;как оплатить билеты в&nbsp;Грецию</span></a>
             </li>
           </ul>
         </div>

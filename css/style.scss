@@ -8,6 +8,7 @@ $green-text: #86b419;
 $blue: #058fc7;
 $dark-blue: #0480b4;
 $orange: #ff6700;
+$red: #f2142b;
 
 $grey: #777777;
 $lightgrey: #bdbdbd;
@@ -393,6 +394,10 @@ a, .pseudolink {
   }
 }
 
+.curp {
+  cursor:pointer;
+}
+
 .max-width {
   max-width: 1400px;
   padding:0 20px;
@@ -412,12 +417,12 @@ a, .pseudolink {
 .swap {
   overflow: hidden;
   img {
+    display: block;
     &:nth-child(2) {
       position: absolute;
       bottom:110%;
     }
   }
-
   &:hover {
     img {
       &:nth-child(1) {
@@ -526,9 +531,20 @@ a, .pseudolink {
 #personal {
   >div {
     @include flex(0 1 60%);
-    min-width: 130px;
+    min-width: 190px;
   }
 }
+
+.top-selector {
+  cursor: pointer;
+  &:hover {
+    padding:4px;
+    margin:-4px;
+    box-shadow: inset 0 0 0 1px #b6b6b6;
+    border-radius: 5px;
+  }
+}
+
 
 .yourdate {
   &:after {
@@ -824,7 +840,7 @@ a, .pseudolink {
     padding-left:10px;
     padding-right:10px;
 
-    &:focus {
+    &:focus, &.focus {
       box-shadow: 0 0 10px 1px rgba($orange, 0.7);
     }
   }
@@ -4385,7 +4401,7 @@ input, textarea, button {
 
   .aiit {
     padding:10px 5px;
-    cursor:auto;
+    cursor:default;
   }
 }
 
