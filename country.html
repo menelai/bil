@@ -238,7 +238,8 @@
 <div id="country">
   <div class="max-width">
     <div class="ttu fz20 tac mb10">Дешевые авиабилеты в Грецию</div>
-    <a href="/" class="tdn f toptour" style="background-image: url(i/country/mainb.jpg);">
+
+    <a href="/" class="tdn f toptour" style="background-image: url(i/country/mainb.jpg);" ng-show="tab==1">
       <div class="bg-black70 p20 white">
         <div class="ttu fz30">Пальма-Де-Мальорка</div>
         <div>Испания</div>
@@ -254,6 +255,31 @@
             <div class="arrow-top"></div>
             <div class="arrow-bottom"></div>
           </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="/" class="tdn topwhy db" style="background-image: url(i/country/mainwhy.jpg);" ng-show="tab==2">
+      <div class="ttu fz20">Вы выбрали нас, потому что мы выбрали для вас лучшее</div>
+      <div class="f space20 mt10">
+        <div class="lh1">
+          <div class="fz42">БРОНИРУЙТЕ ВСЁ<br>
+          в одном месте</div>
+          <div class="mt20 mb10 fz30 bestpriceguarantee ibm fwl"><div><div class="fontfix">Гарантия лучших цен</div></div></div>
+        </div>
+        <div class="fz17">
+          <ul class="rect ul">
+            <li>Туры от всех туроперторов со скидкой до 30%</li>
+
+            <li class="mt10">Авиабилеты в любую точку мира со скидкой до 40%</li>
+
+            <li class="mt10">Ж/Д билеты по России и странам Европы</li>
+
+            <li class="mt10">Гостиницы в любом городе мира —
+            уникальное предложение</li>
+
+            <li class="mt10">Трансферы из 500 аэропортов мира</li>
+          </ul>
         </div>
       </div>
     </a>
@@ -323,39 +349,31 @@
           <div class="results-wrapper">
             <div class="result-wrapper f c">
               <div class="country-photo whywe flex1 cp-green f d c" style="background-image: url(i/country/b1.jpg);">
-                <div><img src="i/country/sber.png"></div>
-                <div class="fz16">Благодаря долгосрочному
-                  и продуктивному сотрудничеству
-                  с ОАО "Сбербанк России"
-                  минмимальные комиссии
-                  за проведение интенет-эквайринга</div>
+                <div style="background-image: url(i/country/p1.png);" class="bst"></div>
+                <div><img src="i/country/sber.png" style="margin-left: -55px;"></div>
+                <div class="fz17">
+                  <div class="ttu">Минимальные комиссии</div>
+                  за&nbsp;проведение интенет-эквайринга
+                  благодаря долгосрочному
+                  и&nbsp;продуктивному сотрудничеству
+                  с&nbsp;ПАО&nbsp;«Сбербанк России»
+                  </div>
               </div>
             </div>
-            <div class="result-wrapper f c fz16">
-              <div class="country-photo whywe flex1 cp-blue f d c space20" style="background-image: url(i/country/b2.jpg);">
-                <div class="f vcen space10">
-                  <div><img src="i/country/glaz.png" style="width:42px;"></div>
-                  <div>Уникальная система поиска                авиабилетов</div>
-                </div>
-
-                <div class="f vcen space10">
-                  <div><img src="i/country/globus.png" style="width:42px;"></div>
-                  <div>Выписка регулярных авиабилетов
-                через все&nbsp;возможные GDS</div>
-                </div>
-
-                <div class="f vcen space10">
-                  <div><img src="i/country/plane.png" style="width:42px;"></div>
-                  <div>Прямые контракты и&nbsp;эксклюзивные
-                условия с&nbsp;крупнейшими
-                консолидаторами чартерных рейсов.</div></div>
-
+            <div class="result-wrapper f c fz17">
+              <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b2.jpg);">
+                <div style="background-image: url(i/country/p2.png);" class="bst"></div>
+                <div class="ttu fw600">За три года</div>
+                присутствия на рынке россии
+                клиенатми biletideshevo стали более<br>
+                <span class="fz42">60&thinsp;000</span> человек
               </div>
             </div>
-            <div class="result-wrapper f c fz16">
+            <div class="result-wrapper f c fz17">
               <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b3.jpg);">
-                Мы уполномоченное
-                туристическое агентство
+                <div style="background-image: url(i/country/p3.png);" class="bst"></div>
+                Мы уполномоченное<br>
+                туристическое агентство<br>
                 международного туроператора
 
                 <div class="mt20"><img src="i/country/mouz.png"></div>
@@ -363,9 +381,9 @@
             </div>
 
             <div class="result-wrapper f c">
-              <div class="country-photo whywe flex1 cp-green f space10" style="background-image: url(i/country/b4.jpg);">
-                <div><img src="i/country/metro.png"></div>
-                <div class="fz16">
+              <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b4.jpg);">
+                <div style="background-image: url(i/country/p4.png);" class="bst"></div>
+                <div class="fz17">
                   <div>Офис в центре Москвы</div>
                   <div class="fw600">Китай-город</div>
 
@@ -378,28 +396,24 @@
                 </div>
               </div>
             </div>
-            <div class="result-wrapper f c fz16">
+            <div class="result-wrapper f c fz17">
               <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b5.jpg);">
-                <div class="ttu">Бронируйте всё в одном месте,<br>
-                гарантия лучших цен!</div>
+                <div style="background-image: url(i/country/p5.png);" class="bst"></div>
+                <div>Уникальная система поиска
+                авиабилетов</div>
 
-                <ul class="mt20 ul rect">
-                  <li>Туры от всех туроперторов со скидкой до 30%
-                  Авиабилеты в любую точку мира
-                  со скидкой до 40%</li>
+                <div class="mt20">Выписка регулярных авиабилетов
+                через все возможные GDS</div>
 
-                  <li>Ж/Д билеты по России и странам Европы</li>
-
-                  <li>Гостиницы в любом городе мира —
-                  уникальное предложение</li>
-
-                  <li>Трансферы из 500 аэропортов мира</li>
-                </ul>
+                <div class="mt20">Прямые контракты и эксклюзивные
+                условия с крупнейшими
+                консолидаторами чартерных рейсов</div>
 
               </div>
             </div>
-            <div class="result-wrapper f c fz16">
+            <div class="result-wrapper f c fz17">
               <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b6.jpg);">
+                <div style="background-image: url(i/country/p6.png);" class="bst"></div>
                 <div class="ttu">уникальная система<br>
                   бронирования отелей </div>
                 <div class="mt20">Эсклюзивные прдложения с лучшими

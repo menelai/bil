@@ -163,6 +163,8 @@
   }
 
   &.whywe {
+    padding-left:85px;
+    min-height: 220px;
     &:before {
       display: none;
     }
@@ -240,7 +242,7 @@
   padding:0 0 25px 0;
 
   #nav-col-sticky-wrapper {
-    @include flex(0 1 360px);
+    @include flex(0 1 290px);
     min-width: 200px;
   }
   #nav-col {
@@ -384,6 +386,16 @@
       }
     }
   }
+}
+
+.bst {
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-position: left bottom;
+  background-repeat: no-repeat;
 }
 
 .circled {
@@ -907,6 +919,31 @@
   background-size: cover;
 }
 
+.topwhy {
+  background-position: right center;
+  background-size: cover;
+  color:white;
+  padding:10px 30px;
+  height:220px;
+}
+
+.bestpriceguarantee {
+  >div {
+    border: dashed 1px;
+    padding: .2em 1em;
+  }
+  &:before {
+    content:'';
+    position: absolute;
+    top:50%;
+    left:50%;
+    background: url(../i/country/mazok.png) center center no-repeat;
+    @include transform(translateX(-50%) translateY(-50%));
+    width:339px;
+    height:85px;
+  }
+}
+
 .mytabs {
   margin-left:-20px;
   margin-right:-20px;
@@ -948,7 +985,7 @@
     border-top-right-radius: 10px;
     padding:15px 20px;
     cursor: pointer;
-    @include background-image(linear-gradient(top,  #f3f3f3 0%, #dedede 80%, #dedede 100%));
+    //@include background-image(linear-gradient(top,  #f3f3f3 0%, #dedede 80%, #dedede 100%));
     color: $blue;
     &.active {
       //@include blue-gradient();
@@ -1177,6 +1214,9 @@
       position: absolute;
       right:100%;
       content: '◾\a0';
+      //@include backface-visibility(hidden);
+      //@include transform(rotate(180deg));
+      color:$orange;
     }
   }
 }
