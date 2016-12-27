@@ -259,19 +259,21 @@
       </div>
     </a>
 
-    <a href="/" class="tdn topwhy db" style="background-image: url(i/country/mainwhy.jpg);" ng-show="tab==2">
-      <div class="ttu fz20">Вы выбрали нас, потому что мы выбрали для вас лучшее</div>
+    <div href="/" class="tdn topwhy db" style="background-image: url(i/country/mainwhy.jpg);" ng-show="tab==2">
+
       <div class="f space20 mt10">
-        <div class="lh1">
-          <div class="fz42">БРОНИРУЙТЕ ВСЁ<br>
+        <div class="lh1 wsn">
+          <div class="fz44 fwl">БРОНИРУЙТЕ ВСЁ<br>
           в одном месте</div>
-          <div class="mt20 mb10 fz30 bestpriceguarantee ibm fwl"><div><div class="fontfix">Гарантия лучших цен</div></div></div>
+          <div class="mt30 mb10 fz31 bestpriceguarantee ibm fwl"><div><div style="top:-3px;">гарантия лучших цен</div></div></div>
         </div>
         <div class="fz17">
-          <ul class="rect ul">
-            <li>Туры от всех туроперторов со скидкой до 30%</li>
+          <div class="ttu fz20 mb10">Вы выбрали нас, потому что мы выбрали для вас лучшее</div>
 
-            <li class="mt10">Авиабилеты в любую точку мира со скидкой до 40%</li>
+          <ul class="rect ul">
+
+            <li>Авиабилеты в любую точку мира со скидкой до 40%</li>
+            <li class="mt10">Туры от всех туроперторов со скидкой до 30%</li>
 
             <li class="mt10">Ж/Д билеты по России и странам Европы</li>
 
@@ -282,7 +284,7 @@
           </ul>
         </div>
       </div>
-    </a>
+    </div>
 
     <div class="mytabs mt20">
       <div class="tabs-switchers fz16 ttu f space2" ng-init="tab=2">
@@ -343,16 +345,15 @@
         </div>
       </div>
       <div class="tab-contents" ng-show="tab==2">
-        <div class="orange ttu tac fz20">За <span class="fw600">три года</span> присутствия на рынке россии клиенатми  biletideshevo стали <span class="fw600">более 60&thinsp;000 человек</span></div>
 
         <div class="mt20">
           <div class="results-wrapper">
             <div class="result-wrapper f c">
-              <div class="country-photo whywe flex1 cp-green f d c" style="background-image: url(i/country/b1.jpg);">
+              <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b1.jpg);">
                 <div style="background-image: url(i/country/p1.png);" class="bst"></div>
                 <div><img src="i/country/sber.png" style="margin-left: -55px;"></div>
-                <div class="fz17">
-                  <div class="ttu">Минимальные комиссии</div>
+                <div class="fz17 mt10">
+                  <div class="ttu fw600">Минимальные комиссии</div>
                   за&nbsp;проведение интенет-эквайринга
                   благодаря долгосрочному
                   и&nbsp;продуктивному сотрудничеству
@@ -365,7 +366,7 @@
                 <div style="background-image: url(i/country/p2.png);" class="bst"></div>
                 <div class="ttu fw600">За три года</div>
                 присутствия на рынке россии
-                клиенатми biletideshevo стали более<br>
+                клиенатми biletideshevo.ru стали более<br>
                 <span class="fz42">60&thinsp;000</span> человек
               </div>
             </div>
@@ -383,14 +384,15 @@
             <div class="result-wrapper f c">
               <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b4.jpg);">
                 <div style="background-image: url(i/country/p4.png);" class="bst"></div>
+                <div style="position: absolute; left: 20px; top: 20px;"><img src="i/country/metro.png"></div>
                 <div class="fz17">
-                  <div>Офис в центре Москвы</div>
+                  <div class="ttu fw600">Офис в центре Москвы</div>
                   <div class="fw600">Китай-город</div>
 
-                  <div class="mt20">Мы работаем без выходных<br>
+                  <div class="mt5">Мы работаем без выходных<br>
                   с 8:00 до 22:00 часов</div>
 
-                  <div class="mt20">Клиентоориетированный
+                  <div class="mt5">Клиентоориетированный
                   квалифицированный
                   персонал</div>
                 </div>
@@ -402,10 +404,10 @@
                 <div>Уникальная система поиска
                 авиабилетов</div>
 
-                <div class="mt20">Выписка регулярных авиабилетов
+                <div class="mt5">Выписка регулярных авиабилетов
                 через все возможные GDS</div>
 
-                <div class="mt20">Прямые контракты и эксклюзивные
+                <div class="mt5">Прямые контракты и эксклюзивные
                 условия с крупнейшими
                 консолидаторами чартерных рейсов</div>
 
@@ -414,11 +416,11 @@
             <div class="result-wrapper f c fz17">
               <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b6.jpg);">
                 <div style="background-image: url(i/country/p6.png);" class="bst"></div>
-                <div class="ttu">уникальная система<br>
+                <div class="ttu fw600">уникальная система<br>
                   бронирования отелей </div>
-                <div class="mt20">Эсклюзивные прдложения с лучшими
+                <div class="mt5">Эсклюзивные прдложения с лучшими
                   ценами на туристических направлениях</div>
-                <div class="mt20 ttu">Это есть только у нас!</div>
+                <div class="mt5 ttu">Это есть только у нас!</div>
               </div>
             </div>
           </div>
@@ -472,7 +474,7 @@
           <h2 class="ttu">Крупнейшие аэропорты Греции</h2>
           <script id="airport" type="text/ng-template">
             <div class="airport-info" ng-class="{'frst': frst}">
-              <div class="bysides becomecol">
+              <div class="f d vcen">
                 <div class="circled">
                   <img src="i/airport.png"/>
                 </div>
@@ -481,11 +483,11 @@
                   <p class="lh1_6">самый большой аропорт Греции, более 16 миллионов пассажиров в среднем за год обслуживается в аэопорте, базирующимимся авиакомпаниями являются  Aegean Airlу...</p>
                 </div>
               </div>
-              <div class="bysides becomecol">
+              <div class="f d vcen">
                 <div class="flex1"></div>
                 <div class="tac">
                   <a class="button-grey tdn aib ibm">Прочесть полностью</a>
-                  <div class="smaller2 mt10">Откроется в новом окне</div>
+                  <div class="fz11 mt10">Откроется в новом окне</div>
                 </div>
               </div>
             </div>
@@ -502,7 +504,7 @@
           </div>
         </div>
         <div class="country-section" id="time">
-          <h2 class="ttu">Время и погода (˚C) в городах Греции, <span class="blue">сегодня, 19 января</span></h2>
+          <h2 class="ttu">Время и погода (t ˚C) в городах Греции, <span class="blue">сегодня, 19 января</span></h2>
 
           <div class="f d space20">
             <div>
@@ -534,70 +536,70 @@
             <ul class="slides">
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e1.jpg">
                   <div>Экскурсия на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e2.jpg">
                   <div>Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
-                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                  <img src="i/country/e3.jpg">
+                  <div>Экскурсия на остров Skirathos Skirathos на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e4.jpg">
                   <div>Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e5.jpg">
                   <div>Экскурсия на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e1.jpg">
                   <div>Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e2.jpg">
                   <div>Экскурсия на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e3.jpg">
                   <div>Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e4.jpg">
                   <div>Экскурсия на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
-                  <img src="i/exex.png">
+                  <img src="i/country/e5.jpg">
                   <div>Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
@@ -615,7 +617,7 @@
           <div class="slide" ng-show="showAllTickets">
             <div class="mt10" ng-repeat="row in [1,2,3,4,5]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=true; promoTicket=true; ticketGrey=($index%2 == 0);"></div>
           </div>
-          <div class="show-all-tickets show-all f hcen vcen" ng-class="{'shown' : showAllTickets}" ng-click="showAllTickets=!showAllTickets">
+          <div class="show-all-tickets show-all f hcen vcen rounded5" ng-class="{'shown' : showAllTickets}" ng-click="showAllTickets=!showAllTickets">
             <div class="ttu" ng-bind="showAllTickets ? 'Свернуть' : 'Показать все'">Показать все</div>
           </div>
 
@@ -641,7 +643,7 @@
             <div class="mt10" ng-repeat="row in [1,2,3,4,5]" ng-include="'ticket.html'" ng-init="hideBack=true; hideLuggage=false; promoTicket=false; showTicketInfo=true;"></div>
           </div>
           <div>
-            <div class="show-all-tickets show-all f hcen vcen" ng-class="{'shown' : showAllTickets1}" ng-click="showAllTickets1=!showAllTickets1">
+            <div class="show-all-tickets show-all f hcen vcen rounded5" ng-class="{'shown' : showAllTickets1}" ng-click="showAllTickets1=!showAllTickets1">
               <div class="ttu" ng-bind="showAllTickets1 ? 'Свернуть' : 'Показать все'">Показать все</div>
             </div>
             <div class="pager f" ng-show="showAllTickets1">
@@ -708,7 +710,7 @@
           <h2 class="ttu">Дополнительные улуги нашей компании</h2>
           <p class="lh1_6">Мы не останавливаемся на достигнутом, нам это не интересно, Мы продолжим и далее делать работу, благодаря которой, цена на авиабилеты будет ещё ниже, более того Мы уже достаточно давно предлагаем Вам не только авиабилеты, уже есть сейчас или появятся в краткосрочной перспективе следующие виды услуг:</p>
 
-          <div class="extra-services mt30 fwl f w">
+          <!--div class="extra-services mt30 fwl f w">
             <div><a style="background-image: url(i/pic1.jpg);" href="/"><div><div class="ttu">Бронирование отелей</div>уникальная система</div></a></div>
             <div><a style="background-image: url(i/pic2.jpg);" href="/"><div><div class="ttu">Ж/Д БИЛЕТЫ ОнЛАЙН</div>по лучшим ценам в России</div></a></div>
             <div><a style="background-image: url(i/pic3.jpg);" href="/">
@@ -721,12 +723,99 @@
             <div><a style="background-image: url(i/pic6.jpg);" href="/"><div><div class="ttu">прокат авто</div>в любом городе мира</div></a></div>
             <div><a style="background-image: url(i/pic7.jpg);" href="/"><div>билеты: <div class="ttu">театры, концерты,              мьюзиклы</div></div></a></div>
             <div><a style="background-image: url(i/pic8.jpg);" href="/"><div><div class="ttu">СТРАХОВАНИЕ</div>путешественников</div></a></div>
+          </div-->
+
+          <div class="extra-services mt30 f w d">
+            <a class="s-blue f c tdn white" href="/" style="background-image: url(i/country/s1.jpg);">
+              <div class="flex1 f hcen vcen tac detail">
+                <div>
+                  РОССИЯ, ЕВРОПА, СНГ
+                  Бронируйте онлайн,
+                  экономьте время и деньги
+                </div>
+              </div>
+              <div class="ttu tac lh40 alw fz16">Железнодорожные билеты</div>
+            </a>
+
+            <a class="s-green f c tdn white" href="/" style="background-image: url(i/country/s2.jpg);">
+              <div class="flex1 f hcen vcen tac detail">
+                <div>
+                  РОССИЯ, ЕВРОПА, СНГ
+                  Бронируйте онлайн,
+                  экономьте время и деньги
+                </div>
+              </div>
+              <div class="ttu tac lh40 alw fz16">бронирование отелей</div>
+            </a>
+
+            <a class="s-orange f c tdn white" href="/" style="background-image: url(i/country/s3.jpg);">
+              <img src="i/country/bal.png" style="position: absolute; top:20px; left:10px;">
+              <div class="flex1 f hcen vcen tac detail">
+                <div>
+                  РОССИЯ, ЕВРОПА, СНГ
+                  Бронируйте онлайн,
+                  экономьте время и деньги
+                </div>
+              </div>
+              <div class="ttu tac lh40 alw"><img src="i/country/lt.png" class="ibm"></div>
+            </a>
+          </div>
+
+          <div class="extra-services mt30 f w d">
+            <a class="s-blue f c tdn white bkw" href="/" style="background-image: url(i/country/s4.jpg);">
+              <div class="ttu tac lh40 alw fz16">трансфер из аэропорта</div>
+              <div class="flex1 f hcen vcen tac detail">
+                <div>
+                  РОССИЯ, ЕВРОПА, СНГ
+                  Бронируйте онлайн,
+                  экономьте время и деньги
+                </div>
+              </div>
+            </a>
+
+            <a class="s-green f c tdn white bkw" href="/" style="background-image: url(i/country/s5.jpg);">
+              <div class="ttu tac lh40 alw fz16">бронирование автомобиля</div>
+              <div class="flex1 f hcen vcen tac detail">
+                <div>
+                  РОССИЯ, ЕВРОПА, СНГ
+                  Бронируйте онлайн,
+                  экономьте время и деньги
+                </div>
+              </div>
+            </a>
+
+            <a class="s-orange f c tdn white bkw" href="/" style="background-image: url(i/country/s6.jpg);">
+              <div class="ttu tac lh40 alw fz16">Билеты на автобусы онлайн</div>
+              <div class="flex1 f hcen vcen tac detail">
+                <div>
+                  РОССИЯ, ЕВРОПА, СНГ
+                  Бронируйте онлайн,
+                  экономьте время и деньги
+                </div>
+              </div>
+            </a>
+
           </div>
         </div>
         <div class="country-section" id="when">
           <h2 class="ttu">Когда можно купить и как оплатить билеты на самолёт в Грецию</h2>
-          <p class="mt10 lh1_6">Купить билеты на самолёт в Грецию дёшево Вы можете самостоятельно, круглосуточно онлайн. Оплатить авиабилеты Вы можете с помощью банковских карт VISA, MasterCard, VISA Electron, Maestro, оплата абсолютна безопасна, происходит через авторизированный сервер Процессингового центра ОАО "Сбербанк России", к оплате принимаются карты, открытые в банках следующих стран: Россия, Беларусь, Болгария, Греция, Кипр, Испания, Черногория, Франция, Армения, Молдавия, Таджикистан, Грузия, Грузия, Чехия, Латвия. Если же Вам требуется помощь квалифицированного специалиста нашей компании, Мы рады ответить на Ваши вопросы согласно графика работы колл-центра, с которым Вы можете ознакомиться в верхней части страницы или в разделе контакты. При желании Вы можете оплатить билеты на самолёт в Грецию наличными, данный способ платежа доступен на всей территории России в любом салоне связи Связной или Евросеть.</p>
-          <img src="i/call.png">
+          <p class="mt10 lh1_6">Купить авиабилеты в Бургас дёшево вы можете самостоятельно круглосуточно онлайн.</p>
+
+            <p class="mt20 tac">Оплатить авиабилеты вы можете с помощью банковских карт:</p>
+
+          <p class="tac mt10">
+            <img src="i/country/visa.png" class="ibm">
+            <img src="i/country/mastercard.png" class="ibm ml20">
+            <img src="i/country/visaelectron.png" class="ibm ml20">
+            <img src="i/country/maestro.png" class="ibm ml20">,
+            а также
+            <img src="i/country/paypal.png" class="ibm ml20">
+          </p>
+
+          <p class="mt10 lh1_6">Оплата абсолютно безопасна, происходит через авторизованный сервер Процессингового центра ОАО “Сбербанк России”, к оплате принимаются карты, открытые в банках следующих стран: Италия Турция Белоруссия Литва Эстония Нидерланды Казахстан  Болгария, Греция, Кипр, Испания, Черногория, Франция, Армения, Молдавия, Таджикистан, Грузия, Австрия, Чехия, Латвия. Если же вам требуется помощь квалифицированного специалиста нашей компании, Мы рады ответить на ваши вопросы согласно графика работы колл-центра, с которым вы можете ознакомиться в разделе контакты.
+
+            При желании вы можете оплатить авиабилеты наличным. Данный способ оплаты доступен в офисе нашей компании в центре Москвы (подробнее в разделе контакты) или в любом для вас удобном салоне связи Евросеть или Связной на всей территории России.</p>
+          <p class="mt10"><img src="i/country/keyboard.png"></p>
         </div>
       </div>
     </div>

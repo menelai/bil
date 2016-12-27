@@ -107,8 +107,10 @@
           $(".exslider").flexslider({
             animation: "slide",
             animationLoop: false,
-            itemWidth: 120,
-            itemMargin: 15,
+            itemWidth: 143,
+            itemMargin: 35,
+            minItems: 4,
+            maxItems: 5,
             move: 1
           });
         }

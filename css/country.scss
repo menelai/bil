@@ -300,6 +300,7 @@
 
           &.active {
             a {
+              color:$blue;
               &:after {
                 position: absolute;
                 top: 0;
@@ -469,15 +470,17 @@
       text-align: left;
     }
     .flex-prev {
+      top:60px;
       left:0;
-      background: url(../i/slider-left.png) left center no-repeat;
+      background: url(../i/country/slider-left.png) left center no-repeat;
       &:before {
         display: none;
       }
     }
     .flex-next {
+      top:60px;
       right:0;
-      background: url(../i/slider-right.png) right center no-repeat;
+      background: url(../i/country/slider-right.png) right center no-repeat;
       &:before {
         display: none;
       }
@@ -613,78 +616,9 @@
   }
 }
 
-.subscribeform {
-  .radiobuttons {
-    input:checked + label {
-
-    }
-  }
-  border-radius: 2px;
-  background: #f1f1f1;
-  padding:10px;
-
-  input[type=text] {
-    border: solid 1px #058fc7;
-    border-radius: 2px;
-  }
-
-  .selectday {
-    .ui-datepicker {
-      background: none;
-      border:none;
-      margin:0 0 0 -5px;
-      padding:0 25px;
-
-      display: -ms-flexbox !important;
-      display: -webkit-flex !important;
-      display: flex !important;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
-      align-content: stretch;
-      .ui-datepicker-row-break {
-        display: none;
-      }
-    }
-
-    .ui-datepicker-group {
-      border:solid 1px #777777;
-      border-radius: 2px;
-      width:-webkit-calc(33.3% - 5px);
-      width:calc(33.3% - 5px);
-      margin-left:5px;
-    }
-
-    .ui-datepicker .ui-datepicker-prev {
-      top:5em;
-      left:-30px;
-    }
-    .ui-datepicker .ui-datepicker-next {
-      top:5em;
-      right:-30px;
-    }
-  }
-}
-
 .selectday {
   >.ui-datepicker-inline {
     width:auto !important;
-  }
-}
-
-.fromtodur {
-  >div {
-    +div {
-      //border-left:solid 1px #cccccc;
-    }
   }
 }
 
@@ -784,7 +718,7 @@
   width:50%;
 }
 
-.extra-services {
+/*.extra-services {
   >div {
     height:220px;
     @include flex(0 0 25%);
@@ -809,6 +743,104 @@
         background: rgba(black, 0.8);
       }
     }
+  }
+}*/
+
+.extra-services {
+  >* {
+    @include flex(1);
+    max-width:280px;
+    min-height: 200px;
+    position: relative;
+    border-radius: 5px;
+    &:hover {
+      color:white;
+    }
+    &:before {
+      position: absolute;
+      height:9px;
+      content:'';
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      top:0;
+      left:0;
+      right:0;
+    }
+
+    .alw {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .detail {
+      opacity:0;
+      margin-top:9px;
+    }
+
+    &:hover {
+      .detail {
+        opacity:1;
+      }
+    }
+
+    &.bkw {
+      .alw {
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+
+      &:before {
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+        bottom:0;
+        top:auto;
+      }
+
+      .detail {
+        margin-top:0px;
+        margin-bottom: 9px;
+      }
+    }
+  }
+}
+
+.s-blue {
+  &:before {
+    background: $blue;
+  }
+  .alw {
+    background: rgba($blue, 0.9);
+  }
+  .detail {
+    background: rgba($blue, 0.75);
+  }
+}
+
+.s-green {
+  &:before {
+    background: $green;
+  }
+  .alw {
+    background: rgba($green, 0.9);
+  }
+  .detail {
+    background: rgba($green, 0.75);
+  }
+}
+
+.s-orange {
+  &:before {
+    background: $orange;
+  }
+  .alw {
+    background: rgba(#ab5215, 0.9);
+  }
+  .detail {
+    background: rgba($orange, 0.75);
   }
 }
 
@@ -924,7 +956,7 @@
   background-size: cover;
   color:white;
   padding:10px 30px;
-  height:220px;
+  min-height:220px;
 }
 
 .bestpriceguarantee {
@@ -1208,6 +1240,7 @@
 
 .rect {
   margin-left: 0.9em;
+  text-shadow: 0 1px 0 #000000;
   >li {
     position: relative;
     &:before {
