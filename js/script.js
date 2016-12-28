@@ -251,6 +251,7 @@
 
     $rootScope.$on('$includeContentLoaded', function() {
       $(".selectday").datepicker({
+        range: 'period',
         numberOfMonths: $(window).width() >= 800 ? 3 : 1
       });
 

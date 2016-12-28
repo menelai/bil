@@ -80,6 +80,7 @@ $cyan: #e7f8ff;
 }
 
 @mixin common-button() {
+  cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
   border: none;
@@ -99,6 +100,11 @@ $cyan: #e7f8ff;
   &[type=button], &[type=submit] {
     //padding-bottom:2px;
   }
+
+  &:disabled {
+    opacity:0.7;
+  }
+
   &.aib {
     display: inline-block;
     text-decoration: none;
@@ -1200,8 +1206,8 @@ a, .pseudolink {
         color:$blue;
         >label {
           background: $cyan;
-          padding: 5px;
-          margin:-5px 0;
+          padding: 2px 5px;
+          margin:-2px 0;
         }
         @include only-hover();
       }
@@ -1257,6 +1263,10 @@ a, .pseudolink {
   //max-height:400px;
   @include experimental-value(height, calc(100vh - 28px - 50px));
 
+}
+
+#time-and-subscribe {
+  padding:10px 0;
 }
 
 #time-and-subscribe-sticky-wrapper, #blocks-sticky-wrapper, #results-header-sticky-wrapper {

@@ -7,6 +7,7 @@
   <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
   <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="js/jquery.datepicker.extension.range.min.js"></script>
   <script src="js/jquery.flexslider-min.js"></script>
   <script src="js/jquery.selectric.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
@@ -239,7 +240,7 @@
   <div class="max-width">
     <div class="ttu fz20 tac mb10">Дешевые авиабилеты в Грецию</div>
 
-    <a href="/" class="tdn f toptour" style="background-image: url(i/country/mainb.jpg);" ng-show="tab==1">
+    <a href="/" class="tdn f toptour rounded5 oh" style="background-image: url(i/country/mainb.jpg);" ng-show="tab==1">
       <div class="bg-black70 p20 white">
         <div class="ttu fz30">Пальма-Де-Мальорка</div>
         <div>Испания</div>
@@ -389,10 +390,10 @@
                   <div class="ttu fw600">Офис в центре Москвы</div>
                   <div class="fw600">Китай-город</div>
 
-                  <div class="mt5">Мы работаем без выходных<br>
+                  <div class="mt10">Мы работаем без выходных<br>
                   с 8:00 до 22:00 часов</div>
 
-                  <div class="mt5">Клиентоориетированный
+                  <div class="mt10">Клиентоориетированный
                   квалифицированный
                   персонал</div>
                 </div>
@@ -404,10 +405,10 @@
                 <div>Уникальная система поиска
                 авиабилетов</div>
 
-                <div class="mt5">Выписка регулярных авиабилетов
+                <div class="mt10">Выписка регулярных авиабилетов
                 через все возможные GDS</div>
 
-                <div class="mt5">Прямые контракты и эксклюзивные
+                <div class="mt10">Прямые контракты и эксклюзивные
                 условия с крупнейшими
                 консолидаторами чартерных рейсов</div>
 
@@ -418,9 +419,9 @@
                 <div style="background-image: url(i/country/p6.png);" class="bst"></div>
                 <div class="ttu fw600">уникальная система<br>
                   бронирования отелей </div>
-                <div class="mt5">Эсклюзивные прдложения с лучшими
+                <div class="mt10">Эсклюзивные прдложения с лучшими
                   ценами на туристических направлениях</div>
-                <div class="mt5 ttu">Это есть только у нас!</div>
+                <div class="mt10 ttu">Это есть только у нас!</div>
               </div>
             </div>
           </div>
@@ -481,25 +482,28 @@
                 <div class="flex1 airport-summary">
                   <p class="">Аэропорт города Афины (IATA ATH) носит имя «Элефтериос Венизелос» —</p>
                   <p class="lh1_6">самый большой аропорт Греции, более 16 миллионов пассажиров в среднем за год обслуживается в аэопорте, базирующимимся авиакомпаниями являются  Aegean Airlу...</p>
+                  <div class="slide" ng-show="full">
+                    <p class="lh1_6">самый большой аропорт Греции, более 16 миллионов пассажиров в среднем за год обслуживается в аэопорте, базирующимимся авиакомпаниями являются  Aegean Airlу...</p>
+                    <p class="lh1_6">самый большой аропорт Греции, более 16 миллионов пассажиров в среднем за год обслуживается в аэопорте, базирующимимся авиакомпаниями являются  Aegean Airlу...</p>
+                  </div>
                 </div>
               </div>
               <div class="f d vcen">
                 <div class="flex1"></div>
                 <div class="tac">
-                  <a class="button-grey tdn aib ibm">Прочесть полностью</a>
-                  <div class="fz11 mt10">Откроется в новом окне</div>
+                  <a class="button-grey tdn aib ibm" ng-click="full=!full" ng-bind="full ? 'Свернуть' : 'Прочесть полностью'">Прочесть полностью</a>
                 </div>
               </div>
             </div>
           </script>
 
           <div class="default-airports">
-            <div ng-repeat="row in [1,2,3]" ng-include="'airport'" ng-init="frst=($index==0);"></div>
+            <div ng-repeat="row in [1]" ng-include="'airport'" ng-init="frst=($index==0);"></div>
           </div>
           <div ng-show="allairports" class="slide">
             <div ng-repeat="row in [1,2,3]" ng-include="'airport'"></div>
           </div>
-          <div class="show-all show-all-airports f vcen hcen" ng-class="{'shown' : allairports}" ng-click="allairports=!allairports">
+          <div ng-show="false" class="show-all show-all-airports f vcen hcen" ng-class="{'shown' : allairports}" ng-click="allairports=!allairports">
             <div class="ttu">Показать все</div>
           </div>
         </div>
@@ -537,7 +541,7 @@
               <li class="bybounds">
                 <div>
                   <img src="i/country/e1.jpg">
-                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
@@ -551,56 +555,56 @@
               <li class="bybounds">
                 <div>
                   <img src="i/country/e3.jpg">
-                  <div>Экскурсия на остров Skirathos Skirathos на остров Skirathos Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos Skirathos на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
                   <img src="i/country/e4.jpg">
-                  <div>Экскурсия на остров Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
                   <img src="i/country/e5.jpg">
-                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
                   <img src="i/country/e1.jpg">
-                  <div>Экскурсия на остров Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
                   <img src="i/country/e2.jpg">
-                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
                   <img src="i/country/e3.jpg">
-                  <div>Экскурсия на остров Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
                   <img src="i/country/e4.jpg">
-                  <div>Экскурсия на остров Skirathos Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="button-grey aib"><span class="mozfix">Забронировать</span></a></div>
               </li>
               <li class="bybounds">
                 <div>
                   <img src="i/country/e5.jpg">
-                  <div>Экскурсия на остров Skirathos</div>
+                  <div class="excmaxh">Экскурсия на остров Skirathos</div>
                 </div>
                 <div class="mt10"><a href="/" class="lh30 white"><span class="mozfix">Подробнее</span></a></div>
               </li>
