@@ -165,6 +165,7 @@
   &.whywe {
     padding-left:85px;
     min-height: 220px;
+    line-height: 1.1;
     &:before {
       display: none;
     }
@@ -382,7 +383,7 @@
         //margin-right:-20px;
         padding:20px;
         background: $blue url(../i/country-blue.jpg) right center;
-        -webkit-background-size: cover; background-size: cover;
+        background-size: 100% 100%;
         color:white;
       }
     }
@@ -518,6 +519,11 @@
       width:100%;
     }
   }
+}
+
+.excmaxh {
+  max-height: 4em;
+  overflow: hidden;
 }
 
 .flight-in-c {
@@ -775,6 +781,7 @@
     .detail {
       opacity:0;
       margin-top:9px;
+      @include transition(opacity 0.1s ease-in-out);
     }
 
     &:hover {
@@ -852,15 +859,6 @@
 #when {
   min-height: -webkit-calc(100vh - 40px);
   min-height: calc(100vh - 40px);
-}
-
-#schedule {
-  .green-button {
-    font-size: 14px;
-    line-height: 19px;
-    padding-top:4px;
-    padding-bottom: 4px;
-  }
 }
 
 .make-subscription {
@@ -1123,6 +1121,7 @@
 }
 
 .show-all-tickets {
+  margin-top:10px;
   background: #f3f3f3;
   color:$blue;
   &:hover {
@@ -1246,10 +1245,25 @@
     &:before {
       position: absolute;
       right:100%;
-      content: '◾\a0';
-      //@include backface-visibility(hidden);
-      //@include transform(rotate(180deg));
+      content: '■\a0';
       color:$orange;
+    }
+  }
+}
+
+.dateperiod {
+  .ui-datepicker .ui-state-default.ui-state-active {
+    background: none;
+    color:black;
+  }
+
+  .selected {
+    background: rgba($orange, 0.1);
+    &.selected-start, &.selected-end {
+      background: $orange;
+      .ui-state-active {
+        color: white;
+      }
     }
   }
 }
