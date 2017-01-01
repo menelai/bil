@@ -955,6 +955,17 @@
   color:white;
   padding:10px 30px;
   min-height:220px;
+  z-index: -1;
+
+  &:before {
+    position: absolute;
+    top:-110px;
+    left:-2000px;
+    right:-2000px;
+    content: '';
+    height:540px;
+    background: url(../i/country/island.jpg) center center no-repeat;
+  }
 }
 
 .bestpriceguarantee {
@@ -1016,8 +1027,9 @@
     padding:15px 20px;
     cursor: pointer;
     //@include background-image(linear-gradient(top,  #f3f3f3 0%, #dedede 80%, #dedede 100%));
-    color: $blue;
+    color: white;
     &.active {
+      color: $blue;
       //@include blue-gradient();
       @include background-image(linear-gradient(top,  #f3f3f3 0%, #f3f3f3 100%));
     }

@@ -9,7 +9,7 @@
   height:40px;
   line-height: 40px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 3px;
 
   &:not(.chosen) {
     @include blue-gradient();
@@ -78,7 +78,7 @@
   display: block;
   @include blue-gradient();
   color:white;
-  border-radius: 5px;
+  border-radius: 3px;
   text-align: center;
   cursor: pointer;
   padding:0 3px;
@@ -99,6 +99,72 @@
     line-height: 40px;
     &[type=text] {
       padding-left:10px;
+    }
+  }
+}
+
+.subscribefilters {
+  padding:0 30px;
+}
+
+.ques {
+  margin-left:0.4em;
+  margin-right:0.4em;
+  cursor:pointer;
+  position: relative;
+  color:white;
+  >span {
+    position: relative;
+    z-index: 1;
+  }
+  &:after {
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:1.2em;
+    height:1.2em;
+    margin:-0.6em 0 0 -0.6em;
+    content: '';
+    background: $green;
+    border-radius: 50%;
+  }
+
+  .ttip {
+    position: absolute;
+    width:180px;
+    bottom:100%;
+    left:50%;
+    margin:0 0 0px -90px;
+
+    border-radius: 3px;
+    padding:4px;
+    background: $blue;
+    color:white;
+    text-align: center;
+
+    pointer-events: none;
+    opacity:0;
+    @include transition(opacity 0.2s, transform 0.1s);
+    box-shadow: 0px 3px 6px 0px rgba(black, 0.2);
+
+    &:after {
+      position: absolute;
+      top:100%;
+      left:50%;
+      margin-left:-10px;
+      width:20px;
+      height:5px;
+      content: '';
+      background: url(../i/tail-blue.svg);
+    }
+  }
+
+  &:hover {
+    z-index: 1000;
+    .ttip {
+      z-index: 1000;
+      opacity:1;
+      @include transform(translateY(-10px));
     }
   }
 }
