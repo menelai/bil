@@ -1,0 +1,189 @@
+<a href="/" class="tdn f toptour rounded5 oh" ng-show="tab==1">
+  <div class="bg-black70 p20 white">
+    <div class="ttu fz30">Пальма-Де-Мальорка</div>
+    <div>Испания</div>
+    <div class="fz18 f space10 mt30">
+      <div><span class="bigplaneicon there">&nbsp;</span> 24 сентября 2017</div>
+      <div>|</div>
+      <div><span class="bigplaneicon back">&nbsp;</span> 30 сентября 2017</div>
+    </div>
+    <div class="f space30 d vcen mt30" style="margin-right:-30px;">
+      <div>Прямой рейс туда и обратно</div>
+      <div class="orange-arrow">
+        <div class="fontfix fz30 lh1 fw600">62&thinsp;338 ₽</div>
+        <div class="arrow-top"></div>
+        <div class="arrow-bottom"></div>
+      </div>
+    </div>
+  </div>
+  <div style="background-image: url(i/country/sea.jpg);" class="bnrbg"></div>
+</a>
+
+<div class="tdn topwhy db" ng-show="tab==2">
+
+  <div class="f space20 mt10">
+    <div class="lh1 wsn">
+      <div class="fz44 fwl">БРОНИРУЙТЕ ВСЁ<br>
+        в одном месте</div>
+      <div class="mt30 mb10 fz31 bestpriceguarantee ibm fwl"><div><div style="top:-3px;">гарантия лучших цен</div></div></div>
+    </div>
+    <div class="fz17">
+      <div class="ttu fz20 mb10">Вы выбрали нас, потому что мы выбрали для вас лучшее</div>
+
+      <ul class="rect ul">
+
+        <li>Авиабилеты в любую точку мира со скидкой до 40%</li>
+        <li class="mt10">Туры от всех туроперторов со скидкой до 30%</li>
+
+        <li class="mt10">Ж/Д билеты по России и странам Европы</li>
+
+        <li class="mt10">Гостиницы в любом городе мира —
+          уникальное предложение</li>
+
+        <li class="mt10">Трансферы из 500 аэропортов мира</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="mytabs mt20">
+  <div class="tabs-switchers fz16 ttu f space2" ng-init="tab=1">
+    <div class="flex2 tac wsn" ng-class="{'active' : tab==1}" ng-click="tab=1"><div class="tab-end left"></div>спецпредложения НА ЧАРТЕНЫЕ АВИАБИЛЕТЫ С МОМЕНТАЛЬНЫМ ПОДТВЕРЖДЕНИЕМ<div class="tab-end right"></div></div>
+    <div class="flex1 tac wsn" ng-class="{'active' : tab==2}" ng-click="tab=2"><div class="tab-end left"></div>Почему именно мы?<div class="tab-end right"></div></div>
+  </div>
+  <div class="tab-contents" ng-show="tab==1">
+    <div class="f d space3 country-form">
+      <div class="flex1">
+        <!--input type="text" placeholder="Все равно откуда" class="autocomplete border-blue b-1 rounded3 flex1"-->
+        <select class="selectric grey h40">
+          <option value="">не важно откуда</option>
+          <option value="Монастир">в январе</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric grey h40">
+          <option value="">не важно когда</option>
+          <option value="Монастир">в январе</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric grey h40">
+          <option value="">не важно когда</option>
+          <option value="Монастир">в январе</option>
+        </select>
+      </div>
+      <div class="flex1">
+        <select class="selectric grey h40">
+          <option value="">на любое вермя</option>
+          <option value="Монастир">на 3 дня</option>
+        </select>
+      </div>
+      <div>
+        <input type="submit" class="green-button ttu" value="Подобрать">
+      </div>
+    </div>
+    <div class="mt20">
+      <div class="results-wrapper">
+        <div class="result-wrapper f c" ng-repeat="row in ::[{num: 1, color: 'green'}, {num: 2, color: 'blue'}, {num: 3, color: 'orange'}, {num: 4, color: 'green'}, {num: 5, color: 'blue'}, {num: 6, color: 'orange'}]">
+          <div class="country-photo f d c flex1" ng-class="'cp-'+row.color" style="background-image: url(i/country/{{::row.num}}.jpg);">
+            <div>
+              <div class="place-name ttu">Крит</div>
+              <div>Греция</div>
+              <div class="mt15">26 декабря — 5 января</div>
+              <div class="mt5">туда и обратно,<br> прямой рейс</div>
+            </div>
+            <div class="f mt20">
+              <div class="orange-arrow">
+                <div class="fontfix fz24 lh1 fw600">62&thinsp;338 ₽</div>
+                <div class="arrow-top"></div>
+                <div class="arrow-bottom"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-contents" ng-show="tab==2">
+
+    <div class="mt20">
+      <div class="results-wrapper">
+        <div class="result-wrapper f c">
+          <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b1.jpg);">
+            <div style="background-image: url(i/country/p1.png);" class="bst"></div>
+            <div><img src="i/country/sber.png" style="margin-left: -55px;"></div>
+            <div class="fz17 mt10">
+              <div class="ttu fw600">Минимальные комиссии</div>
+              за&nbsp;проведение интенет-эквайринга
+              благодаря долгосрочному
+              и&nbsp;продуктивному сотрудничеству
+              с&nbsp;ПАО&nbsp;«Сбербанк России»
+            </div>
+          </div>
+        </div>
+        <div class="result-wrapper f c fz17">
+          <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b2.jpg);">
+            <div style="background-image: url(i/country/p2.png);" class="bst"></div>
+            <div class="ttu fw600">За три года</div>
+            присутствия на рынке россии
+            клиенатми biletideshevo.ru стали более<br>
+            <span class="fz42">60&thinsp;000</span> человек
+          </div>
+        </div>
+        <div class="result-wrapper f c fz17">
+          <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b3.jpg);">
+            <div style="background-image: url(i/country/p3.png);" class="bst"></div>
+            Мы уполномоченное<br>
+            туристическое агентство<br>
+            международного туроператора
+
+            <div class="mt20"><img src="i/country/mouz.png"></div>
+          </div>
+        </div>
+
+        <div class="result-wrapper f c">
+          <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b4.jpg);">
+            <div style="background-image: url(i/country/p4.png);" class="bst"></div>
+            <div style="position: absolute; left: 20px; top: 20px;"><img src="i/country/metro.png"></div>
+            <div class="fz17">
+              <div class="ttu fw600">Офис в центре Москвы</div>
+              <div class="fw600">Китай-город</div>
+
+              <div class="mt10">Мы работаем без выходных<br>
+                с 8:00 до 22:00 часов</div>
+
+              <div class="mt10">Клиентоориетированный
+                квалифицированный
+                персонал</div>
+            </div>
+          </div>
+        </div>
+        <div class="result-wrapper f c fz17">
+          <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b5.jpg);">
+            <div style="background-image: url(i/country/p5.png);" class="bst"></div>
+            <div>Уникальная система поиска
+              авиабилетов</div>
+
+            <div class="mt10">Выписка регулярных авиабилетов
+              через все возможные GDS</div>
+
+            <div class="mt10">Прямые контракты и эксклюзивные
+              условия с крупнейшими
+              консолидаторами чартерных рейсов</div>
+
+          </div>
+        </div>
+        <div class="result-wrapper f c fz17">
+          <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b6.jpg);">
+            <div style="background-image: url(i/country/p6.png);" class="bst"></div>
+            <div class="ttu fw600">уникальная система<br>
+              бронирования отелей </div>
+            <div class="mt10">Эсклюзивные прдложения с лучшими
+              ценами на туристических направлениях</div>
+            <div class="mt10 ttu">Это есть только у нас!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

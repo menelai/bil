@@ -1,0 +1,42 @@
+.login-block {
+  position: absolute;
+  border:solid 1px $blue;
+  box-shadow: 0 0 5px 0px rgba(black, 0.2);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: white;
+  z-index: 999;
+  top:-5px;
+  left:50%;
+  margin-left:-142px;
+  padding:20px;
+  @include experimental-value(padding-top, calc(5px + 1em));
+  min-width: 284px;
+
+  input[type=text], input[type=password] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .ulogin-buttons-container {
+    //margin-right:-10px !important;
+  }
+
+  .black {
+    &:link, &:visited {
+      color:#3e3e3e;
+    }
+    &:hover {
+      color:black;
+    }
+  }
+}
+
+#lk.revealed {
+  z-index: 1000;
+  position: relative;
+}
+
+#uLogin {
+  margin-right:-10px;
+}

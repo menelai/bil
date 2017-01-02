@@ -1,23 +1,73 @@
-.max-text-width {
-  max-width: 75%;
-  margin-left:auto;
-  margin-right:auto;
+.section-blue-bg {
+  background: $blue url(../i/country-blue.jpg) center center no-repeat;
+  background-size: 100% 100%;
+  color:white;
+  padding:30px 0 40px;
 }
 
-#front-content {
-  border-top:solid 3px $blue;
-  padding:25px 0 75px;
-}
-
-.fat-bottom {
-  padding-bottom:30px;
-  border-bottom:solid 9px #3e3e3e;
-}
-
-.spacing10 {
-  margin-right:-5px;
-  margin-left:-5px;
+.usefullist {
   >* {
-    padding:0 5px;
+    max-width: 900px;
+    margin:0 auto;
+    padding-bottom: 20px;
+    &:before {
+      content: '';
+      position: absolute;
+      top:57px;
+      left:0;
+      right:0;
+      height:1px;
+      border-top:dashed 1px white;
+    }
+
+    &:after {
+      position: absolute;
+      left:0;
+      right:0;
+      border-left:dashed 1px white;
+      border-right:dashed 1px white;
+      pointer-events: none;
+    }
+
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        top:57px;
+        bottom:-57px;
+      }
+    }
+  }
+  a {
+    @include flex(0 1 260px);
+  }
+
+  .sign {
+
+  }
+}
+
+.uimg {
+  width:115px;
+  height:115px;
+  border-radius: 50%;
+  border:solid 4px white;
+  background: #025ab3;
+}
+
+.bb-list {
+  +.bb-list {
+    border-top:solid 1px $grey;
+    margin-top:30px;
+    padding-top:30px;
+  }
+}
+
+.for-front {
+  .country-section {
+    +.country-section {
+      margin-top:30px;
+      padding-top:30px;
+      border-top:solid 10px $blue;
+    }
   }
 }

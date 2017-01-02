@@ -413,6 +413,7 @@ a, .pseudolink {
 #top {
   padding-top:15px;
   padding-bottom:15px;
+  background: #ffffff;
 }
 
 .sep {
@@ -2982,6 +2983,7 @@ input, textarea, button {
 }
 
 @import "common";
+@import 'login';
 @import 'insurance';
 @import 'country';
 @import 'front';

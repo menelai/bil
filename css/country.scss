@@ -968,6 +968,17 @@
   }
 }
 
+.bnrbg {
+  position: absolute;
+  top:-110px;
+  left:-2000px;
+  right:-2000px;
+  height:540px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
 .bestpriceguarantee {
   >div {
     border: dashed 1px;

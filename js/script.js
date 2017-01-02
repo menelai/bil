@@ -250,6 +250,7 @@
   app.run(function($timeout, $interval, $rootScope, deviceDetector) {
 
     $rootScope.$on('$includeContentLoaded', function() {
+      $(".selectric").selectric();
       $(".selectday").datepicker({
         range: 'period',
         numberOfMonths: $(window).width() >= 800 ? 3 : 1
