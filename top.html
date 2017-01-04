@@ -79,16 +79,16 @@
           <div class="flex1 ellipsis">konstantin@konstantinov.ru</div> <div><a class="fa fa-sign-out tdn" aria-hidden="true" ng-click="login=false"></a></div>
         </div>
         <div ng-show="!login">
-          <a href="/" id="lk" ng-click="lk=!lk" ng-init="lk=true;" ng-class="{'revealed': lk}">Личный кабинет</a>
+          <a href="/" id="lk" ng-click="lk=!lk" ng-init="lk=false;" ng-class="{'revealed': lk}">Личный кабинет</a>
           <div class="login-block slide" ng-show="lk">
-            <div class="blue mb5 tac mt20">Вход через соцсеть</div>
+            <div class="blue mb5 tac mt20">Войти с помощью:</div>
             <div>
               <script src="//ulogin.ru/js/ulogin.js"></script>
               <div id="uLogin" data-ulogin="display=panel;theme=flat;fields=first_name,last_name;providers=google,yandex,mailru,vkontakte,odnoklassniki,facebook;hidden=;redirect_uri=http%3A%2F%2F;mobilebuttons=0;"></div>
             </div>
 
             <div class="mt30">
-              <div class="mb5 blue tac">Вход с паролем</div>
+              <div class="mb5 blue tac">Войти, используя email</div>
               <form ng-submit="login=true">
                 <div class="f"><input type="text" name="login" class="flex1 rounded3 b-1 border-blue lh26" placeholder="Email"></div>
                 <div class="f mt10"><input type="password" name="pass" class="flex1 rounded3 b-1 border-blue lh26" placeholder="Пароль"></div>
@@ -157,7 +157,7 @@
   </div>
 </div>
 
-<div id="top-search-form" ng-if="true">
+<div id="top-search-form" ng-if="!hideSeach">
   <div class="max-width">
     <form class="f d space3">
       <!--div id="new-search" class="flex1 f">
