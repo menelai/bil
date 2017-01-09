@@ -1,9 +1,9 @@
-<div>
-  <div style="background-color:#2084ab; background-image: url(i/country/sea.jpg);" class="bnrbg" ng-show="tab==1"></div>
-  <div style="background-color:#2084ab; background-image: url(i/country/island.jpg);" class="bnrbg" ng-show="tab==2"></div>
+<div class="b-container">
+  <div style="background-color:#aca592; background-image: url(i/country/sea.jpg);" class="bnrbg" ng-show="$root.tab==1"></div>
+  <div style="background-color:#2084ab; background-image: url(i/country/island.jpg);" class="bnrbg" ng-show="$root.tab==2"></div>
 
   <div class="max-width">
-    <a href="/" class="tdn f toptour rounded5 oh" ng-show="tab==1">
+    <a href="/" class="tdn f toptour rounded5 oh" ng-show="$root.tab==1">
       <div>
         <div class="bg-black70 p20 white">
           <div class="ttu fz30">Пальма-Де-Мальорка</div>
@@ -25,7 +25,7 @@
       </div>
     </a>
 
-    <div class="tdn topwhy db" ng-show="tab==2">
+    <div class="tdn topwhy db" ng-show="$root.tab==2">
 
       <div class="f space20 mt10">
         <div class="lh1 wsn">
@@ -53,11 +53,11 @@
     </div>
 
     <div class="mytabs mt20">
-      <div class="tabs-switchers cntr fz16 ttu f space2" ng-init="tab=2">
-        <div class="flex2 tac wsn" ng-class="{'active' : tab==1}" ng-click="tab=1"><div class="tab-end left"></div>спецпредложения НА ЧАРТЕНЫЕ АВИАБИЛЕТЫ С МОМЕНТАЛЬНЫМ ПОДТВЕРЖДЕНИЕМ<div class="tab-end right"></div></div>
-        <div class="flex1 tac wsn" ng-class="{'active' : tab==2}" ng-click="tab=2"><div class="tab-end left"></div>Почему именно мы?<div class="tab-end right"></div></div>
+      <div class="tabs-switchers cntr fz16 ttu f space2" ng-init="$root.tab=2">
+        <div class="flex2 tac wsn" ng-class="{'active' : $root.tab==1}" ng-click="$root.tab=1"><div class="tab-end left"></div>спецпредложения НА ЧАРТЕНЫЕ АВИАБИЛЕТЫ С МОМЕНТАЛЬНЫМ ПОДТВЕРЖДЕНИЕМ<div class="tab-end right"></div></div>
+        <div class="flex1 tac wsn" ng-class="{'active' : $root.tab==2}" ng-click="$root.tab=2"><div class="tab-end left"></div>Почему именно мы?<div class="tab-end right"></div></div>
       </div>
-      <div class="tab-contents" ng-show="tab==1">
+      <div class="tab-contents" ng-show="$root.tab==1">
         <div class="f d space3 country-form">
           <div class="flex1">
             <!--input type="text" placeholder="Все равно откуда" class="autocomplete border-blue b-1 rounded3 flex1"-->
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-contents" ng-show="tab==2">
+      <div class="tab-contents" ng-show="$root.tab==2">
 
         <div class="mt20">
           <div class="results-wrapper">

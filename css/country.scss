@@ -235,7 +235,7 @@
 
 
 #country-info {
-  border-top:solid 3px $blue;
+  //border-top:solid 3px $blue;
   padding:0 0 25px 0;
 
   #nav-col-sticky-wrapper {
@@ -377,11 +377,18 @@
         //border-bottom:solid 9px $blue;
       }
 
+      &.top5px {
+        border-top:solid 9px $blue;
+        padding-top:30px;
+      }
+
       &.section-blue {
-        //margin-left:-20px;
-        //margin-right:-20px;
-        padding:20px 0;
-        &:before {
+        margin-left:-20px;
+        margin-right:-20px;
+        padding:20px;
+        background: $blue url(../i/country-blue.jpg) right center;
+        background-size: 100% 100%;
+        /*&:before {
           background: $blue url(../i/country-blue.jpg) right center;
           background-size: 100% 100%;
           content: '';
@@ -391,11 +398,15 @@
           bottom:0;
           z-index: -1;
           position: absolute;
-        }
+        }*/
         color:white;
       }
     }
   }
+}
+
+.b-container {
+  padding-bottom: 15px;
 }
 
 .bst {
@@ -985,10 +996,10 @@
   background-position: center center;
   background-repeat: no-repeat;
   z-index: -1;*/
-  top:-110px;
+  top:-115px;
   left:0;
   right:0;
-  bottom:-20px;
+  bottom:0px;
   background-position: center top;
   background-repeat: no-repeat;
   z-index: -1;
