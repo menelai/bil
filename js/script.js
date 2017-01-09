@@ -268,6 +268,31 @@
 
     });
 
+    $rootScope.fix = function() {
+      $timeout(function() {
+        $(".selectric").selectric();
+        $('.selectric.citizenship').selectric({
+          optionsItemBuilder: function(currItem) {
+            return (currItem.element.attr('data-flag') ? '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span>' : '')+'<span class="">'+currItem.text+'</span>';
+          },
+          labelBuilder: function(currItem) {
+            return (currItem.element.attr('data-flag') ? '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span>' : '')+'<span class="">'+currItem.text+'</span>';
+          }
+        });
+
+        $('.selectric.countrycode').selectric({
+          optionsItemBuilder: function(currItem) {
+            return '<span class="flag country-code-flag"><img src="'+currItem.element.attr('data-flag')+'"></span><span class="">'+currItem.text+'</span><span class="country-code-option">'+currItem.element.attr('value')+'</span>';
+          },
+          labelBuilder: function(currItem) {
+            return '<span class="flag"><img src="'+currItem.element.attr('data-flag')+'"></span>';
+          },
+          expandToItemText: true
+        });
+      }, 50);
+
+    };
+
     $rootScope.device = deviceDetector.device;
     $rootScope.isDesktop = deviceDetector.isDesktop();
 

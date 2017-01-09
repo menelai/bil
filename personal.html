@@ -76,7 +76,7 @@
       </div>
 
       <div class="mt40">
-        <div class="tac blue fz20">Ваши банковские карты <a class="blue fa fa-plus-square tdn"></a></div>
+        <div class="tac fz20"><a class="tdn">Ваши банковские карты <i class="fa fa-plus-square"></i></a></div>
 
         <div class="mt20 fz16 tac">У вас нет привязанных карт.</div>
 
@@ -97,6 +97,12 @@
 
 
     <div class="tab-contents" ng-show="currentTab=='orders'">
+      <div class="f d space4 mb20">
+        <div class="flex1" ng-repeat="row in ['Все заказы', 'Неоплаченные', 'Оплаченные', 'Архивные']">
+          <input type="radio" class="no-display" id="mo{{$index}}" name="or">
+          <label class="bluelabel" for="mo{{$index}}"><span class="mozfix" ng-bind="row"></span></label>
+        </div>
+      </div>
       <table class="white-table">
         <thead>
         <tr>
@@ -217,11 +223,11 @@
             <span class="grey">Документы:</span>
 
             <span class="tooltip ml10">
-              <i class="fa fa-print"></i>
+              <i class="fa fa-print blue"></i>
               <div class="ttip">Распечатать документы</div>
             </span>
-            <span class="tooltip ml10">
-              <i class="fa fa-envelope-o"></i>
+            <span class="tooltip ml10 ">
+              <i class="fa fa-envelope-o blue"></i>
               <div class="ttip">Отправить документы на&nbsp;почту</div>
             </span>
           </td>
@@ -267,10 +273,12 @@
     </div>
 
     <div class="tab-contents" ng-show="currentTab=='notebook'">
-      <div class="tac blue fz20">Мои пассажиры <a class="blue fa fa-plus-square tdn"></a></div>
+      <div class="tac fz20"><a class="tdn" ng-click="enableEditPassenger=true">Мои пассажиры <i class="fa fa-plus-square"></i></a></div>
 
       <table class="white-table vam">
         <colgroup>
+          <col style="width:240px;">
+          <col style="width:120px;">
           <col>
           <col style="width:150px;">
           <col style="width:200px;">
@@ -278,6 +286,8 @@
         <thead>
         <tr>
           <th align="left">ФИО</th>
+          <th>Дата рождения</th>
+          <td></td>
           <th>Документ</th>
           <th>Действия</th>
         </tr>
@@ -285,31 +295,42 @@
         <tbody>
         <tr>
           <td>Терехов Александр Сергеевич</td>
+          <td align="center">10.04.1889</td>
+          <td></td>
           <td align="center">Паспорт РФ</td>
           <td align="right">
             <div class="f space2 hrig">
-              <a class="button-grey aib flex1 tac"><span class="mozfix">Редактировать <i class="fa fa-pencil"></i></span></a>
+              <a class="button-grey aib flex1 tac" ng-click="enableEditPassenger=true"><span class="mozfix">Редактировать <i class="fa fa-pencil"></i></span></a>
               <a class="cancel-button aib"><span class="mozfix"><i class="fa fa-times"></i></span></a>
             </div>
           </td>
         </tr>
         <tr>
-          <td>Терехов Александр Сергеевич</td>
+          <td>Aleksander Terekhov</td>
+          <td align="center">22.04.1870</td>
+          <td></td>
           <td align="center">Загранпаспорт</td>
           <td align="right">
             <div class="f space2 hrig">
-              <a class="button-grey aib flex1 tac"><span class="mozfix">Нет данных <i class="fa fa-pencil"></i></span></a>
+              <a class="button-grey aib flex1 tac" ng-click="enableEditPassenger=true"><span class="mozfix">Нет данных <i class="fa fa-pencil"></i></span></a>
               <a class="cancel-button aib"><span class="mozfix"><i class="fa fa-times"></i></span></a>
             </div>
           </td>
         </tr>
         </tbody>
       </table>
+
+      <div ng-include="'modalWindow'" ng-if="enableEditPassenger" ng-init="tpl='editPassenger'; what='enableEditPassenger';"></div>
     </div>
   </div>
 </div>
 
 <script id="modalWindow" type="text/ng-template">
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
   <div class="modalwin f hcen vcen">
     <div class="modal">
       <div class="modalheader f">
@@ -326,7 +347,7 @@
 </script>
 
 <script id="editMyProfile" type="text/ng-template">
-  <div>
+  <div ng-init="$root.fix();">
     <div class="f ws-r ss-c ss-space10 ws-space2 mt10">
       <label class="flex1 f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
         <input type="text" name="fio" class="flex1 fz15" ng-model="buyer">
@@ -389,6 +410,168 @@
     <div class="mt10 f hcen">
       <input type="submit" value="Сохранить" class="blue-button">
     </div>
+  </div>
+</script>
+
+<script id="editPassenger" type="text/ng-template">
+  <div class="mytabs compact" ng-init="$root.fix();">
+    <div class="tabs-switchers  f space2" ng-init="currentTab='ab'">
+      <div class="flex1 tac f vcen hcen" ng-class="{'active' : $parent.currentTab==tab.id}" ng-click="$parent.currentTab=tab.id" ng-repeat="tab in ::[{name: 'Для путешествий за пределы РФ', id: 'ab'}, {name: 'Для путешествий внутри РФ', id: 'in'}]">
+        <div class="tab-end left"></div>
+        <div ng-bind="tab.name" class="p10">Мой профиль</div>
+        <div class="tab-end right"></div>
+      </div>
+    </div>
+
+    <div class="tab-contents" ng-show="currentTab=='ab'">
+      <div class="f d space2">
+        <label ng-if="true" class="f vbot input-pholder flex60 ws-flex1" ng-class="buyer ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+          <span class="pholder">Фамилия (латиницей)</span>
+        </label>
+        <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+          <span class="pholder">Имя (латиницей)</span>
+        </label>
+      </div>
+
+      <div class="mt10 f d ss-space10 ws-space40">
+        <div class="f ws-space6 vcen">
+          <div class="mozfix ss-nd">Пол</div>
+          <div class="f d stretch input-pholder p0 gender gender-my gender{{gender}}" ng-init="gender='1'">
+            <div class="gender-slider"></div>
+            <input id="g1{{pass}}" type="radio" ng-model="gender" class="no-display" value="1">
+            <label for="g1{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">М</div></label>
+            <input id="g2{{pass}}" type="radio" ng-model="gender" class="no-display" value="2">
+            <label for="g2{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">Ж</div></label>
+          </div>
+        </div>
+        <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
+          <span class="pholder">Дата рождения</span>
+        </label>
+      </div>
+
+      <div class="mt10 f ws-r ss-c ws-space2 ss-space10">
+        <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+          <select class="selectric citizenship" ng-model="buyer">
+            <option></option>
+            <option value="Georgia" data-flag="i/flag.png">Албания</option>
+            <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+            <option value="Georgia" data-flag="i/flag.png">Россия</option>
+            <option value="Georgia" data-flag="i/greece.png">Украина</option>
+            <option value="Georgia" data-flag="i/flag.png">США</option>
+            <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+          </select>
+          <span class="pholder">Гражданство</span>
+        </label>
+
+        <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+          <select class="selectric doctype" ng-model="buyer">
+            <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+            <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+            <option value="Passport is not Russia">Passport is not Russia</option>
+            <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+          </select>
+          <span class="pholder">Документ</span>
+        </label>
+      </div>
+
+      <div class="mt10 f ss-c ss-space10 ws-r ws-space2">
+        <div class="f d space2 ws-flex1">
+          <label ng-if="true" class="f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+            <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholders='00'" ng-blur="placeholders=''" placeholder="{{placeholders}}">
+            <span class="pholder">Серия</span>
+          </label>
+          <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+            <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholdern='0000000'" ng-blur="placeholdern=''" placeholder="{{placeholdern}}">
+            <span class="pholder">Номер</span>
+          </label>
+        </div>
+
+        <label ng-if="true" class="f vbot input-pholder flex0050" ng-class="buyer ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
+          <span class="pholder">Срок действия</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="tab-contents" ng-show="currentTab=='in'">
+      <div class="f d space2">
+        <label ng-if="true" class="f vbot input-pholder flex60 ws-flex1" ng-class="buyer ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+          <span class="pholder">Фамилия</span>
+        </label>
+        <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+          <span class="pholder">Имя</span>
+        </label>
+        <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+          <span class="pholder">Отчество</span>
+        </label>
+      </div>
+
+      <div class="mt10 f d ss-space10 ws-space40">
+        <div class="f ws-space6 vcen">
+          <div class="mozfix ss-nd">Пол</div>
+          <div class="f d stretch input-pholder p0 gender gender-my gender{{gender}}" ng-init="gender='1'">
+            <div class="gender-slider"></div>
+            <input id="g1{{pass}}" type="radio" ng-model="gender" class="no-display" value="1">
+            <label for="g1{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">М</div></label>
+            <input id="g2{{pass}}" type="radio" ng-model="gender" class="no-display" value="2">
+            <label for="g2{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">Ж</div></label>
+          </div>
+        </div>
+        <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
+          <span class="pholder">Дата рождения</span>
+        </label>
+      </div>
+
+      <div class="mt10 f ws-r ss-c ws-space2 ss-space10">
+        <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+          <select class="selectric citizenship" ng-model="buyer">
+            <option></option>
+            <option value="Georgia" data-flag="i/flag.png">Албания</option>
+            <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+            <option value="Georgia" data-flag="i/flag.png">Россия</option>
+            <option value="Georgia" data-flag="i/greece.png">Украина</option>
+            <option value="Georgia" data-flag="i/flag.png">США</option>
+            <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+          </select>
+          <span class="pholder">Гражданство</span>
+        </label>
+
+        <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+          <select class="selectric doctype" ng-model="buyer">
+            <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+            <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+            <option value="Passport is not Russia">Passport is not Russia</option>
+            <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+          </select>
+          <span class="pholder">Документ</span>
+        </label>
+      </div>
+
+      <div class="mt10 f ss-c ss-space10 ws-r ws-space2">
+        <div class="f d space2 ws-flex1">
+          <label ng-if="true" class="f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+            <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholders='00'" ng-blur="placeholders=''" placeholder="{{placeholders}}">
+            <span class="pholder">Серия</span>
+          </label>
+          <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+            <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholdern='0000000'" ng-blur="placeholdern=''" placeholder="{{placeholdern}}">
+            <span class="pholder">Номер</span>
+          </label>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="mt10 f hcen">
+    <input type="submit" value="Сохранить" class="blue-button">
   </div>
 </script>
 

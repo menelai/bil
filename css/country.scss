@@ -1012,8 +1012,10 @@
 }
 
 .mytabs {
-  margin-left:-20px;
-  margin-right:-20px;
+  &:not(.compact) {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
 .tab-end {

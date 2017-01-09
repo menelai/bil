@@ -13,6 +13,12 @@
   }
 }
 
+.compact .tabs-switchers {
+  >div {
+    color: $blue;
+  }
+}
+
 .white-table {
   width:100%;
   th {
@@ -55,6 +61,8 @@
   bottom:0;
   background: rgba(white, 0.9);
   z-index: 999;
+  overflow: auto;
+
 }
 
 .modal {
