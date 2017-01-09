@@ -12,3 +12,93 @@
     color: $blue;
   }
 }
+
+.white-table {
+  width:100%;
+  th {
+    font-weight: normal;
+    color:$grey;
+    padding:10px 5px;
+  }
+
+  tbody {
+    tr {
+      background: white;
+      +tr {
+        border-top:solid 5px #f3f3f3;
+      }
+    }
+
+    td {
+      padding:10px 5px;
+    }
+  }
+
+  &.vam {
+    td {
+      vertical-align: middle;
+    }
+  }
+}
+
+.profile-mw {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.modalwin {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: rgba(white, 0.9);
+  z-index: 999;
+}
+
+.modal {
+  min-width: 600px;
+  border:solid 1px $blue;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #FFFFFF;
+}
+
+.modalheader {
+  height:30px;
+  line-height: 30px;
+  background: #eeeeee;
+  padding-left:10px;
+}
+
+.modalclose {
+  width:30px;
+  height:30px;
+  background: #d1d1d1;
+  display: block;
+  &:after {
+    position: absolute;
+    content: '';
+    width:1px;
+    top:5px;
+    bottom:5px;
+    left:15px;
+    background: white;
+    @include transform(rotate(45deg));
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    width:1px;
+    top:5px;
+    bottom:5px;
+    left:15px;
+    background: white;
+    @include transform(rotate(-45deg));
+  }
+}
+
+.modalcontents {
+
+}

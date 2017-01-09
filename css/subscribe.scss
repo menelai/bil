@@ -128,7 +128,11 @@
     background: $green;
     border-radius: 50%;
   }
+}
 
+.tooltip {
+  position: relative;
+  display: inline-block;
   .ttip {
     position: absolute;
     width:180px;

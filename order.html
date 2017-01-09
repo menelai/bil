@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.selectric.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+  <script src="https://rawgit.com/srfrnk/re-tree/master/re-tree.js" type="text/javascript"></script>
+  <script src="https://rawgit.com/srfrnk/ng-device-detector/master/ng-device-detector.js" type="text/javascript"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
+  <link rel="stylesheet" type="text/css" href="css/selectric.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css?2"/>
+  <script src="js/script.js"></script>
+  <style>
+    .max-width {
+      max-width: {{width}}px;
+    }
+  </style>
+</head>
+<body class="bron" ng-class="showMenu ? 'mobile-menu' : ''" device-detector>
+<div id="top">
+  <div class="max-width d f space20">
+    <div id="logo" class="">
+      <a href="/">
+        <div>
+          <div><img src="i/Loro.svg"></div>
+          <div class="afut" id="sitename-and-slogan">
+            <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
+            <div id="slogan" class="blue">
+              Лучшие цены на авиабилеты<br>
+              Европейское качество обслуживания
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="sep"></div>
+    <div id="partners" class="f hcen space30">
+      <div class="f d c">
+        <h4>Наши партнеры:</h4>
+        <div class="f c vcen">
+          <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
+          <div class="swap mt5"><img src="i/ingos.png"><img src="i/ingos-color.png"></div>
+        </div>
+      </div>
+      <div class="f d c">
+        <h4>Нас рекомендуют:</h4>
+        <div class="f c vcen">
+          <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
+          <div class="swap mt5"><img src="i/national.png"><img src="i/national-color.png"></div>
+        </div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div id="phones" class="f hcen vcen">
+      <div class="tar fz20 wsn">
+        <div class="blue" style="margin-left: -1em;">+7 495 150-11-82</div>
+        <div class="blue ss-nd">8 800 234 5 99 5</div>
+      </div>
+      <div class="ss-nd f working-time">
+        <div class="f vcen">
+          <div class="working-days f">
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+          </div>
+          <div class="blue">08-22</div>
+        </div>
+        <div class="f vcen">
+          <div class="working-days f">
+            <div class="bg-green"></div>
+            <div class="bg-green"></div>
+          </div>
+          <div class="green-text">08-21</div>
+        </div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div id="personal" class="f">
+      <div>
+        <div id="call-variants">
+          <div id="call-icons">
+            <img src="i/viber.png">
+            <img src="i/skype.png">
+            <img src="i/whatsapp.png">
+            <img src="i/envelope.svg">
+          </div>
+          <div id="call-helpers">
+            <span>Позвонить онлайн</span>
+            <span>Email</span>
+          </div>
+        </div>
+        <div class="mt9 f d">
+          <div><a href="/" id="lk">Личный кабинет</a></div>
+          <div class="blue top-selector"><img src="i/flag.png" class="b-1 border-grey ibm" style="vertical-align: -2px;"> / ₽ <i class="fa fa-angle-down grey ml3"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="buter" class="ws-nd vcen hcen" ng-click="showMenu=!showMenu" ng-init="showMenu=false"><i class="fa fa-bars"></i></div>
+<div id="menu-line" ng-show="showMenu || (device!='iphone'&&device!='android'&&device!='windows-phone'&&device!='blackberry')">
+  <div class="max-width">
+    <ul>
+      <li><a href="/">Авиабилеты</a></li>
+      <li><a href="/">Бронирование отелей</a></li>
+      <li><a href="/">Бронирование авто</a></li>
+      <li><a href="/">Ж\д билеты</a></li>
+      <li><a href="/">Билеты на автобус on-line</a></li>
+      <li><a href="/">О компании</a></li>
+      <li><a href="/">Контакты</a></li>
+      <li><a href="/">Отзывы о нас</a></li>
+    </ul>
+    <div class="ws-nd  mt20">
+      <div class="f around">
+        <a href="/" class="f hcen vcen lnk lnk-facebook"><i class="fa fa-facebook"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-vk"><i class="fa fa-vk"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-instagram"><i class="fa fa-instagram"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-twitter"><i class="fa fa-twitter"></i></a>
+      </div>
+      <div class="mt10 fz18">
+        <a href="mailto:info@biletideshevo.ru" class="tdn"><i class="fa fa-envelope-o grey"></i> info@biletideshevo.ru</a>
+      </div>
+      <div class="f vcen hcen mt20">
+        <a class="cancel-button" ng-click="showMenu=false">Закрыть</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="order-form" ng-class="showMenu ? 'blur' : ''">
+  <div id="order-cols" class="max-width mt15">
+    <div id="ocl">
+      <div data-rel="leftcol" data-title="Информация о рейсе" data-color="#000000" class="scrollingcontent">
+        <div id="flight-info">
+          <div id="flight-info-title" class="col-title ss-revealer " ng-class="showI ? 'shown' : ''" ng-click="showI=!showI">
+            Информация о рейсе
+          </div>
+          <div ng-include="'ticket.html'" ng-show="showI || isDesktop" ng-init="likeMobile=true;"></div>
+        </div>
+
+
+
+      </div>
+
+      <div class="mt10">
+      <div class="ws-sticky">
+        <div class="col-title">
+          Способ оплаты
+        </div>
+        <div class="rounded5 b-1 border-grey p10" style="background: #FFFFFF;">
+          <div class="form-group ws-mb15" data-rel="rightcol" data-title="ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ" data-color="#000000">
+            <div class="tac">
+              <p>Комиссия 0%</p>
+            </div>
+            <div class="f d vtop space8 tac" ng-init="payment='euroset'">
+              <label class="flex1">
+                <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Банковской картой" data-color="#ff6700" ng-click="payment='cards';"><span></span></div>
+                <div class="f vbot hcen payment-image"><img src="i/payment/cards-icon.png" class=""></div>
+                <div>Банковской картой</div>
+              </label>
+              <label class="flex1">
+                <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Наличными в&nbsp;офисе" data-color="#000000" ng-click="payment='cash';"><span></span></div>
+                <div class="f vbot hcen payment-image"><img src="i/payment/wallet%20icon.png" class=""></div>
+                <div>Наличными в&nbsp;офисе</div>
+              </label>
+              <label class="flex1 ss-nd">
+                <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Apple Touch&nbsp;ID" data-color="#ff6700" ng-click="payment='cards';"><span></span></div>
+                <div class="f vbot hcen payment-image"><img src="i/payment/touch.png" class=""></div>
+                <div>Apple Touch&nbsp;ID</div>
+              </label>
+              <label class="flex1">
+                <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ в Связном" data-color="#000000" ng-click="payment='svyaznoy';"><span></span></div>
+                <div class="f vbot hcen payment-image"><img src="i/payment-svyaznoy.png" class=""></div>
+                <div>Салон связи Связной</div>
+              </label>
+              <label class="flex1">
+                <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ в Евросети" data-color="#ff6700" ng-click="payment='euroset';"><span></span></div>
+                <div class="f vbot hcen payment-image"><img src="i/payment-euroset.png" class=""></div>
+                <div>Салон связи Евросеть</div>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="form-group1">
+            <div class="f d slide" ng-show="payment=='euroset'">
+              <div class="w135 tac"><img src="i/euroset-l.png"></div>
+              <div class="flex1 tac">
+                <p>Ваш заказ сформирован и готов к оплате
+                  в салоне связи Евросеть<br><br>Оплату заказа необходимо произвести:<br>
+                  <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
+              </div>
+            </div>
+            <div class="f d slide" ng-show="payment=='svyaznoy'">
+              <div class="w135 tac"><img src="i/svyaznoy-big.png"></div>
+              <div class="flex1 tac">
+                <p>Ваш заказ сформирован и готов к оплате
+                  в салоне связи Связной<br><br>Оплату заказа необходимо произвести:<br>
+                  <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
+              </div>
+            </div>
+            <div ng-show="payment=='cards'" class="slide">
+              <p class="tac">Абсолютная гарантия платежей. Оплата происходит через
+                авторизизационный сервер Процессингового цетра
+                ПАО&nbsp;«Сбербанк&nbsp;России».</p>
+              <p class="tac">К оплате принимаются банковские карты следующих платёжных систем</p>
+              <div class="f d cards-logos vcen">
+                <img src="i/visa-grey.png">
+                <img src="i/mastercard-grey.png">
+                <img src="i/visaelectron-grey.png">
+                <img src="i/maestro-grey.png">
+              </div>
+            </div>
+          </div>
+
+          <div class="f hcen vcen space20 ss-space10 flex1 ss-p10 mt20">
+            <div class="fz12">
+              Окончательная цена:
+            </div>
+            <div class="finalprice green-text"><b>212&thinsp;338</b> ₽</div>
+            <div class="fz12">
+              с учётом<br>
+              всех сборов и налогов
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div data-title="НАМ МОЖНО ДОВЕРЯТЬ — БОЛЕЕ 60&thinsp;000 КЛИЕНТОВ ЗА 3 ГОДА" data-rel="leftcol" data-color="#ff6700" class="scrollingcontent">&nbsp;</div>
+    </div>
+
+    <div id="ocr">
+      <div id="passengers-data">
+        <div class="col-title ws-sticky scrollingtitle scrollingcontent" data-rel="rightcol" data-title="Бронирование рейса" data-color="#000000">Бронирование рейса</div>
+
+        <div class="form-group ws-mt10 scrollingcontent" data-rel="rightcol" data-title="ДЛЯ БРОНИРОВАНИЯ ВВЕДИТЕ ДАННЫЕ ПОКУПАТЕЛЯ" data-color="#ff6700">
+          <div class="ttu blue">Покупатель</div>
+
+          <div class="f ws-r ss-c ss-space10 ws-space2 mt10">
+            <label class="flex1 f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer">
+              <span class="pholder">Ваше имя</span>
+            </label>
+
+            <div class="flex1 f vbot input-pholder not-empty">
+              <div class="f ss-space10 d flex1">
+
+                <!--div class="mobile-select"-->
+                  <select class="selectric countrycode">
+                    <option value="+7" data-flag="i/flag.png">Россия</option>
+                    <option value="+90" data-flag="i/greece.png">Грузия</option>
+                    <option value="+383" data-flag="i/flag.png">Россия</option>
+                    <option value="+900" data-flag="i/greece.png">Украина</option>
+                    <option value="+1" data-flag="i/flag.png">США</option>
+                    <option value="+800" data-flag="i/greece.png">Зимбабве</option>
+                  </select>
+                <!--/div-->
+                <input type="text" class="flex1 fz15 phone-input" value="+7">
+              </div>
+              <span class="pholder">Мобильный телефон</span>
+            </div>
+          </div>
+
+          <div class="f ws-r ss-c ss-space10 ws-space2 mt10">
+            <div class="flex1">
+              <label ng-if="true" class="f vbot input-pholder" ng-class="m ? 'not-empty' : ''">
+                <input type="text" name="fio" class="flex1 fz15" ng-model="m">
+                <span class="pholder">Ваш email</span>
+              </label>
+            </div>
+
+            <div class="flex1" id="" tw-click-outside="showPass=false" ignore-if="showPass==false">
+              <div class="revealer revealer-white" ng-class="showPass ? 'shown' : ''" ng-click="showPass=!showPass">
+                <div class="f d vcen space8 flex1 blue fwn">
+                  <div id="numberofpass" class="f vcen space8">
+                    <div class="f vcen space">
+                      <img src="i/icons/Adult.svg">
+                      <div><span class="mozfix">×1</span></div>
+                    </div>
+
+                    <div class="f vcen space2">
+                      <img src="i/icons/Child.svg">
+                      <div><span class="mozfix">×0</span></div>
+                    </div>
+
+                    <div class="f vcen space2">
+                      <img src="i/icons/Infant.svg">
+                      <div><span class="mozfix">×0</span></div>
+                    </div>
+                  </div>
+
+                  <div class=" ellipsis"><span class="mozfix">эконом</span></div>
+                </div>
+              </div>
+              <div class="slide passinp-popup b-1 rounded2 border-blue" ng-show="showPass" id="passengers-popup">
+                <div class="p10">
+                  <div class="border-split bs15">
+                    <div class="f d vcen space10">
+                      <div class="tac passenger-pic"><img src="i/adult.png"></div>
+                      <div class="flex1">Взрослые</div>
+                      <div>
+                        <div class="number-with-spinners ss-h35"><span class="minus">−</span><input type="number" name="adults" step="1" value="1"><span class="plus">+</span></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="f d vcen space10">
+                        <div class="tac passenger-pic"><img src="i/child.png"></div>
+                        <div class="flex1">Дети до 14 лет</div>
+                        <div>
+                          <div class="number-with-spinners ss-h35"><span class="removechild minus">−</span><input type="number" name="childs" step="1" value="0"><span class="addchild plus">+</span></div>
+                        </div>
+                      </div>
+                      <div class="listofchilds">
+                      </div>
+                    </div>
+                    <div class="f d vcen space10">
+                      <div class="tac passenger-pic"><img src="i/baby.png"></div>
+                      <div class="flex1">
+                        Дети до 2 лет
+                        <div class="grey fz11">без места</div>
+                      </div>
+                      <div>
+                        <div class="number-with-spinners ss-h35"><span class="minus">−</span><input type="number" name="infants" step="1" value="0"><span class="plus">+</span></div>
+                      </div>
+                    </div>
+                    <div>
+                      <label class="f d vcen space4">
+                        <input type="checkbox">
+                        <div class="flex1">Бизнес-класс</div>
+                      </label>
+                    </div>
+
+                  </div>
+                  <div class="mt20 f">
+                    <input type="button" id="close-pass" class="cancel-button flex1 tac" value="Закрыть">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group passenger-data scrollingcontent" data-rel="rightcol" data-title="ВВЕДИТЕ ДАННЫЕ ПАССАЖИРА: {{pass.name}}" data-color="{{pass.color}}" id="passeng{{$index}}" ng-repeat="pass in [{name: 'Взрослый 1', color: '#aadf11', tpl: 'i/icons/Adult.svg'}, {name: 'Взрослый 2', color: '#ff6801', tpl: 'i/icons/Adult.svg'}, {name: 'Ребенок 1', color: '#764ca2', tpl: 'i/icons/Child.svg'}, {name: 'Ребенок младше 2 лет 1', color: '#f2b101', tpl: 'i/icons/Infant.svg'}]">
+          <style>
+            #id{{$index}} .mainpath {
+              fill: {{pass.color}};
+            }
+            #passeng{{$index}}:after {
+              background-color: {{pass.color}};
+            }
+          </style>
+          <div class="f d vcen">
+            <div class="ttu f vcen space6" ng-init="id='id'+$index">
+              <div class="passenger-pic">
+                <div id="id{{$index}}" ng-include="pass.tpl" class="f vcen"></div>
+              </div>
+              <div class="mozfix" style="color:{{pass.color}};">{{pass.name}}</div>
+            </div>
+
+          </div>
+
+          <div class="f d space2">
+            <label ng-if="true" class="f vbot input-pholder flex60 ws-flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+              <span class="pholder">Фамилия</span>
+            </label>
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+              <span class="pholder">Имя</span>
+            </label>
+          </div>
+
+          <div class="f d ss-space10 ws-space40">
+            <div class="f ws-space6 vcen">
+              <div class="mozfix ss-nd">Пол</div>
+              <div class="f d stretch input-pholder p0 gender gender-my gender{{gender}}" ng-init="gender='1'">
+                <div class="gender-slider"></div>
+                <input id="g1{{pass}}" type="radio" ng-model="gender" class="no-display" value="1">
+                <label for="g1{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">М</div></label>
+                <input id="g2{{pass}}" type="radio" ng-model="gender" class="no-display" value="2">
+                <label for="g2{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">Ж</div></label>
+              </div>
+            </div>
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
+              <span class="pholder">Дата рождения</span>
+            </label>
+          </div>
+
+          <div class="f ws-r ss-c ws-space2 ss-space10">
+            <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+              <select class="selectric citizenship" ng-model="buyer">
+                <option></option>
+                <option value="Georgia" data-flag="i/flag.png">Албания</option>
+                <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+                <option value="Georgia" data-flag="i/flag.png">Россия</option>
+                <option value="Georgia" data-flag="i/greece.png">Украина</option>
+                <option value="Georgia" data-flag="i/flag.png">США</option>
+                <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+              </select>
+              <span class="pholder">Гражданство</span>
+            </label>
+
+            <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+              <select class="selectric doctype" ng-model="buyer">
+                <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+                <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+                <option value="Passport is not Russia">Passport is not Russia</option>
+                <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+              </select>
+              <span class="pholder">Документ</span>
+            </label>
+          </div>
+
+          <div class="mt10 f ss-c ss-space10 ws-r ws-space2">
+            <div class="f d space2 ws-flex1">
+              <label ng-if="true" class="f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+                <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholders='00'" ng-blur="placeholders=''" placeholder="{{placeholders}}">
+                <span class="pholder">Серия</span>
+              </label>
+              <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+                <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholdern='0000000'" ng-blur="placeholdern=''" placeholder="{{placeholdern}}">
+                <span class="pholder">Номер</span>
+              </label>
+            </div>
+
+            <label ng-if="true" class="f vbot input-pholder flex0050" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
+              <span class="pholder">Срок действия</span>
+            </label>
+          </div>
+
+
+          <div ng-include="'insurance.html'"></div>
+        </div>
+
+      </div>
+
+      <div class="form-group client-service scrollingcontent" ng-init="show=''; chosen='sta'" ng-if="true" data-rel="rightcol" data-title="ОБРАТИТЕ ВНИМАНИЕ НА УСЛУГИ СЕРВИСА" data-color="#ff6700">
+        <div class="tac blue ttu">Услуги сервиса для вас, уважаемые&nbsp;клиенты</div>
+
+        <div>
+          <div class="revealer" ng-class="show=='sta' ? 'shown' : ''" ng-click="show = show=='sta' ? '' : 'sta'">
+            <div class="f d vcen mozfix">
+              <div class="flex1 blue">
+                <span class="fa fa-check green fz20 ibm lh9" ng-show="chosen=='sta'"></span> Тариф Стандарт
+              </div>
+              <div class="fz18 fw600">0 ₽</div>
+            </div>
+          </div>
+          <div class="ebebeb slide" ng-show="show=='sta'">
+            <div class="ss-p10 ws-p20">
+              <div class="border-split bs10">
+                <div class="f d vtop space20">
+                  <div>Оповещение в случае                  смены полётной информации</div>
+                  <div class="blue tar flex00auto">SMS,<br class="iphone"> email</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Срок обработки заявки на возрат
+                    или обмен авиабилета</div>
+                  <div class="blue tar flex00auto">4 раб.<br class="iphone"> дня</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Возврат чартерного или
+                    блочного авиабилета</div>
+                  <div class="blue tar flex00auto">Нет</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Комиссия агентства за возрат
+                    или обмен авиабилета</div>
+                  <div class="blue tar flex00auto">980&nbsp;₽</div>
+                </div>
+              </div>
+              <div class="mt20 f vcen hcen p10">
+                <div><img src="i/1000r.svg"></div>
+              </div>
+              <div class="mt20 f" ng-hide="chosen=='sta'">
+                <a class="blue-button flex1 tac" ng-click="show=''; chosen='sta';" >Выбрать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="revealer" ng-class="show=='pre' ? 'shown' : ''" ng-click="show = show=='pre' ? '' : 'pre'">
+            <div class="f d vcen mozfix">
+              <div class="flex1 blue">
+                <span class="fa fa-check green fz20 ibm lh9" ng-show="chosen=='pre'"></span> Тариф Premium
+              </div>
+              <div class="fz18 fw600">290&nbsp;₽</div>
+            </div>
+          </div>
+          <div class="ebebeb slide" ng-show="show=='pre'">
+            <div class="ss-p10 ws-p20">
+              <div class="border-split bs10">
+                <div class="f d vtop space20">
+                  <div>Оповещение в случае                  смены полётной информации</div>
+                  <div class="blue tar flex00auto">SMS,<br class="iphone"> email</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Срок обработки заявки на возрат
+                    или обмен авиабилета</div>
+                  <div class="blue tar flex00auto">2 раб.<br class="iphone"> дня</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Возврат чартерного или
+                    блочного авиабилета</div>
+                  <div class="blue tar flex00auto">Да</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Комиссия агентства за возрат
+                    или обмен авиабилета</div>
+                  <div class="blue tar flex00auto">480&nbsp;₽</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Персональный менеджер</div>
+                  <div class="blue tar flex00auto">Нет</div>
+                </div>
+              </div>
+              <div class="mt20 f vcen hcen p10">
+                <div><img src="i/1000r.svg"></div>
+              </div>
+              <div class="mt20 f" ng-hide="chosen=='pre'">
+                <a class="blue-button flex1 tac" ng-click="show=''; chosen='pre';" >Выбрать</a>
+              </div>
+              <div class="mt20 f" ng-show="chosen=='pre'">
+                <a class="cancel-button flex1 tac" ng-click="show=''; chosen='sta';" >Отменить</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="revealer" ng-class="show=='exc' ? 'shown' : ''" ng-click="show = show=='exc' ? '' : 'exc'">
+            <div class="f d vcen mozfix">
+              <div class="flex1 blue">
+                <span class="fa fa-check green fz20 ibm lh9" ng-show="chosen=='exc'"></span> Тариф Exclusive
+              </div>
+              <div class="fz18 fw600">790&nbsp;₽</div>
+            </div>
+          </div>
+          <div class="ebebeb slide" ng-show="show=='exc'">
+            <div class="ss-p10 ws-p20">
+              <div class="border-split bs10">
+                <div class="f d vtop space20">
+                  <div>Оповещение в случае                  смены полётной информации</div>
+                  <div class="blue tar flex00auto">SMS, email,<br class="iphone"> звонок</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Срок обработки заявки на возрат
+                    или обмен авиабилета</div>
+                  <div class="blue tar flex00auto">1 раб.<br class="iphone"> день</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Возврат чартерного или
+                    блочного авиабилета</div>
+                  <div class="blue tar flex00auto">Да</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Комиссия агентства за возрат
+                    или обмен авиабилета</div>
+                  <div class="blue tar flex00auto">480&nbsp;₽</div>
+                </div>
+                <div class="f d vtop space20">
+                  <div>Персональный менеджер</div>
+                  <div class="blue tar flex00auto">Да</div>
+                </div>
+              </div>
+              <div class="mt20 f vcen hcen p10">
+                <div><img src="i/1000r.svg"></div>
+              </div>
+              <div class="mt20 f" ng-hide="chosen=='exc'">
+                <a class="blue-button flex1 tac" ng-click="show=''; chosen='exc';" >Выбрать</a>
+              </div>
+              <div class="mt20 f" ng-show="chosen=='exc'">
+                <a class="cancel-button flex1 tac" ng-click="show=''; chosen='sta';" >Отменить</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="aeroexpress" class="mt20 scrollingcontent" data-title="Добавьте к покупке билеты на Аэроэкспресс" data-color="#000000" data-rel="leftcol">
+        <div class="f d vcen space4">
+          <div class="flex1 ttu">В&nbsp;аэропорт без&nbsp;пробок и&nbsp;очередей</div>
+          <div id="aeroexpress-logo" class="ws-nd"><img src="i/aeroexpress.png"></div>
+          <div class="ss-nd"><img style="margin-top: -15px;" src="i/aeroexpress-full.png"></div>
+        </div>
+
+        <div class="bg-lightgrey d f tac lh1 stretch mt10">
+          <div class="flex1 p8"><span class="aeroexpress-train ws-ib ss-nd">&nbsp;</span> Белорусский вокзал</div>
+          <div class="white-direction"></div>
+          <div class="flex1 p8"><span class="aeroexpress-plane ws-ib ss-nd">&nbsp;</span> Шереметьево</div>
+        </div>
+
+        <div class="mt10 f d space12">
+          <div class="flex1 tac">21января 2016</div>
+          <div class="blue flex1 tac">с 05:30 по 00:30</div>
+        </div>
+
+        <div class="mt10 revealer revealer-grey {{showAero ? 'shown' : ''}}" ng-click="showAero=!showAero">
+          <div class="">Расписание аэроэкспрессов</div>
+        </div>
+        <div class="ebebeb slide" ng-show="showAero">
+          <div class="p10">
+            <div class="f d tac blue">
+              <div class="flex1">
+                <div class="fz16">Белорусский</div>
+                <div>отправление</div>
+              </div>
+              <div class="fa fa-chevron-right" style="color:#ebebeb;"></div>
+              <div class="flex1">
+                <div class="fz16">Шереметьево</div>
+                <div>прибытие</div>
+              </div>
+            </div>
+            <div class="aeroexpress-timetable-wrapper">
+              <div class="mt10 aeroexpress-timetable">
+                <div class="border-split">
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                  <div class="f d tac">
+                    <div class="flex1">05:30</div>
+                    <div class="fa fa-chevron-right lightgrey"></div>
+                    <div class="flex1">05:30</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="aeroexpress-ticket mt10 ss-p10 f ss-c ws-r ws-d ws-split16 ws-p16">
+          <div class="ws-flex1"><div class="mt6 mozfix">Пассажиры от&nbsp;5&nbsp;лет</div></div>
+
+          <div class="f d ss-mt5 ws-rr ws-split16 wsn">
+            <div>
+              <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+              <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
+            </div>
+            <div class="tac ss-flex1 ws-f ws-d ws-c">
+              <div class="fz22 fw600">470 ₽</div>
+              <div class="grey fz11">Цена за билет</div>
+            </div>
+          </div>
+
+          <div class="f d ss-vcen ss-mt5 space20">
+            <input type="button" value="Добавить к покупке" class="green-button aib flex1">
+          </div>
+        </div>
+
+        <div class="aeroexpress-ticket mt10 ss-p10 f ss-c ws-r ws-d ws-split16 ws-p16 ss-nd">
+          <div class="ws-flex1"><div class="mt6 mozfix">Пассажиры до&nbsp;5&nbsp;лет</div></div>
+
+          <div class="f d ss-mt5 ws-rr ws-split16 wsn">
+            <div>
+              <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+              <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
+            </div>
+            <div class="tac ss-flex1 ws-f ws-d ws-c">
+              <div class="fz22 fw600">0 ₽</div>
+              <div class="grey fz11">Цена за билет</div>
+            </div>
+          </div>
+
+          <div class="f d ss-vcen ss-mt5 space20">
+            <input type="button" value="Добавить к покупке" class="green-button aib flex1">
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="form-group1 mt20">
+        <div class="ss-fixed-final-price f d stretch ws-nd">
+          <div class="f hcen vcen space20 ss-space10 flex1 ss-p10">
+            <div class="ss-fz10 lh1">
+              Окончательная цена с учётом<br>
+              всех сборов и налогов:</div>
+            <div class="finalprice ss-fz24 lh1"><b>212&thinsp;338</b> ₽</div>
+          </div>
+          <div class="ws-nd f hcen vcen ss-p10 lh1" style="border-left:solid 1px #959595;"><div class="fa fa-chevron-up fz20" style="color:#959595;"></div></div>
+        </div>
+        <div class="tac">
+          <input type="submit" value="Сохранить" class="green-button ibm ttu ws-h40 ws-payticket">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="footer" class="ss-nd">
+  <div class="max-width">
+    <div class="f d ws-r ss-c vcen fz12">
+      <div class="flex1 f d space6">
+        <div class="flex1 f space6">
+          <div class="bigdigflexb f ttu mt4">
+            <div>
+              <div>Забронировано</div>
+              <div class="">сегодня:</div>
+            </div>
+          </div>
+          <div class="bigdigflex">
+            <div class="fz35 bigdig lh31">{{tickets}}</div>
+            <div class="lh12"><span ng-bind="tickets | rusPlural:'авиабилет':'авиабилета':'авиабилетов':'авиабилетов'"></span></div>
+          </div>
+          <div class="bigdigflex">
+            <div class="fz35 bigdig lh31">{{tours}}</div>
+            <div class="lh12"><span ng-bind="tours | rusPlural:'тур':'тура':'туров':'туров'"></span></div>
+          </div>
+        </div>
+        <div class="sep"></div>
+        <div class="flex1 f vcen hcen">
+          <div>
+            <div><a href="/">Абсолютная безопасность платежей</a></div>
+            <div class="mt1"><a href="/">Публичная оферта</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <div class="flex1">
+        <div class="f hcen vcen space20 ss-space10 flex1 ss-p10">
+          <div class="">
+            Окончательная цена:
+          </div>
+          <div class="finalprice green-text"><b>212&thinsp;338</b> ₽</div>
+          <div>
+            с учётом<br>
+            всех сборов и налогов
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

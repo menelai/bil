@@ -58,7 +58,7 @@
   }
 
   input, select {
-    &[type=text], &[type=number] {
+    &[type=text], &[type=number], &[type=password], &[type=email] {
       background: none;
       border:none;
       border-radius: 0;

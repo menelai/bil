@@ -31,150 +31,366 @@
 
 <div id="personalcabinet" class="max-width">
   <div class="mytabs mt20">
-    <div class="tabs-switchers cabinet f space2" ng-init="currentTab='profile'">
-      <div class="flex1 tac f vcen hcen" ng-class="{'active' : $parent.currentTab==tab.id}" ng-click="$parent.currentTab=tab.id" ng-repeat="tab in ::[{name: 'Мой профиль', id: 'profile'}, {name: 'Мои заказы', id: 'orders'}, {name: 'Записная книжка', id: 'notebook'}, {name: 'Аннулировать билеты', id: 'cancel'}, {name: 'Изменить даты вылета', id: 'dates'}, {name: 'Изменить данные пассажира', id: 'passenger'}, {name: 'Распечатать документы', id: 'docs'}]">
+    <div class="tabs-switchers cabinet f space2" ng-init="currentTab='notebook'">
+      <div class="flex1 tac f vcen hcen" ng-class="{'active' : $parent.currentTab==tab.id}" ng-click="$parent.currentTab=tab.id" ng-repeat="tab in ::[{name: 'Мой профиль', id: 'profile'}, {name: 'Мои заказы', id: 'orders'}, {name: 'Мои пассажиры', id: 'notebook'}, {name: 'Аннулировать билеты', id: 'cancel'}, {name: 'Изменить даты вылета', id: 'dates'}, {name: 'Изменить данные пассажира', id: 'passenger'}, {name: 'Распечатать документы', id: 'docs'}]">
         <div class="tab-end left"></div>
         <div ng-bind="tab.name" class="p10">Мой профиль</div>
         <div class="tab-end right"></div>
       </div>
     </div>
     <div class="tab-contents" ng-show="currentTab=='profile'">
-      <div class="f d space3 country-form">
-        <div class="flex1">
-          <!--input type="text" placeholder="Все равно откуда" class="autocomplete border-blue b-1 rounded3 flex1"-->
-          <select class="selectric grey h40">
-            <option value="">не важно откуда</option>
-            <option value="Монастир">в январе</option>
-          </select>
+      <div class="tac">
+        <a class="tdn fz20" ng-click="enableProfileEdit=true">Мой профиль <i class="fa fa-pencil"></i></a>
+      </div>
+
+      <div ng-include="'modalWindow'" ng-if="enableProfileEdit" ng-init="tpl='editMyProfile'; what='enableProfileEdit';"></div>
+      <div ng-include="'modalWindow'" ng-if="enableChangePassword" ng-init="tpl='changePassword'; what='enableChangePassword';"></div>
+
+      <div class="f d space20 profile-mw mt20">
+        <div class=" f c d space20">
+          <div>Александр Терехов</div>
+          <div class="f space20">
+            <div>
+              <div class="grey fz11">Контактный телефон</div>
+              <div><img src="i/flag.png"> +7 903 789-56-34</div>
+            </div>
+            <div>
+              <div class="grey fz11">Email</div>
+              <div>aleksander@terekhov.ru</div>
+            </div>
+          </div>
         </div>
-        <div class="flex1">
-          <select class="selectric grey h40">
-            <option value="">не важно когда</option>
-            <option value="Монастир">в январе</option>
-          </select>
-        </div>
-        <div class="flex1">
-          <select class="selectric grey h40">
-            <option value="">не важно когда</option>
-            <option value="Монастир">в январе</option>
-          </select>
-        </div>
-        <div class="flex1">
-          <select class="selectric grey h40">
-            <option value="">на любое вермя</option>
-            <option value="Монастир">на 3 дня</option>
-          </select>
-        </div>
-        <div>
-          <input type="submit" class="green-button ttu" value="Подобрать">
+        <div class=" f c d space20">
+          <div class="tac">Пожалуйста, ознакомьтесь с нашей<br><a>политикой конфиденциальности</a></div>
+          <div class="f"><a class="flex1 button-grey tac" ng-click="enableChangePassword=true;"><div class="mozfix">Изменить пароль</div></a></div>
         </div>
       </div>
-      <div class="mt20">
-        <div class="results-wrapper">
-          <div class="result-wrapper f c" ng-repeat="row in ::[{num: 1, color: 'green'}, {num: 2, color: 'blue'}, {num: 3, color: 'orange'}, {num: 4, color: 'green'}, {num: 5, color: 'blue'}, {num: 6, color: 'orange'}]">
-            <div class="country-photo f d c flex1" ng-class="'cp-'+row.color" style="background-image: url(i/country/{{::row.num}}.jpg);">
-              <div>
-                <div class="place-name ttu">Крит</div>
-                <div>Греция</div>
-                <div class="mt15">26 декабря — 5 января</div>
-                <div class="mt5">туда и обратно,<br> прямой рейс</div>
+
+      <div class="f d space20 mt40 profile-mw vcen">
+        <div class="blue">Ваш персональный менеджер:</div>
+        <div class="flex1">Нет менеджера</div>
+        <div class="f space2">
+          <a class="button-grey aib"><span class="mozfix">Подробнее</span></a>
+          <a class="blue-button aib"><span class="mozfix">Добавить</span></a>
+        </div>
+      </div>
+
+      <div class="mt40">
+        <div class="tac blue fz20">Ваши банковские карты <a class="blue fa fa-plus-square tdn"></a></div>
+
+        <div class="mt20 fz16 tac">У вас нет привязанных карт.</div>
+
+        <div class="mt10 tac">Для ускорения процесса покупки при оформленеии заказа вам будет <br> необходимо только выбрать карту и ввести секретный код (CVC/CVV).</div>
+
+        <div>
+          <div class="f space20 vcen mt10 hcen" ng-repeat="row in [1,2,3]">
+            <div>5213 **** 2346</div>
+            <div class="f space2">
+              <a class="button-grey aib"><span class="mozfix">Редактировать данные</span></a>
+              <a class="cancel-button aib"><span class="mozfix"><i class="fa fa-times"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="tab-contents" ng-show="currentTab=='orders'">
+      <table class="white-table">
+        <thead>
+        <tr>
+          <th>Номер заказа</th>
+          <th>Статус</th>
+          <th>Направление</th>
+          <th>Пассажиры</th>
+          <th align="right">Стоимость</th>
+          <th>Примечание</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td align="center">12345</td>
+          <td align="center"><span class="orange">Не оплачен</span></td>
+          <td align="center">
+            <span class="blue">Москва</span> <span class="grey fz11">12.01.2017</span> <i class="fa fa-exchange grey777"></i> <span class="orange">Бургас</span> <span class="grey fz11">02.04.2017</span>
+          </td>
+          <td align="center">
+            <span class="tooltip">
+              3
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
               </div>
-              <div class="f mt20">
-                <div class="orange-arrow">
-                  <div class="fontfix fz24 lh1 fw600">62&thinsp;338 ₽</div>
-                  <div class="arrow-top"></div>
-                  <div class="arrow-bottom"></div>
+            </span>
+          </td>
+          <td align="right" class="fwb">
+            125&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+            <span class="grey">Оплатить до:</span> 12:30, 21.07.2016
+          </td>
+        </tr>
+        <tr>
+          <td align="center">12345</td>
+          <td align="center"><span class="orange">Не оплачен</span></td>
+          <td align="center">
+            <span class="blue">Москва</span> <span class="grey fz11">12.01.2017</span> <i class="fa fa-long-arrow-right grey777"></i> <span class="orange">Бургас</span>
+          </td>
+          <td align="center">
+            <span class="tooltip">
+              3
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+            <span class="grey">Оплатить до:</span> 12:30, 21.07.2016
+          </td>
+        </tr>
+        <tr>
+          <td align="center">12345</td>
+          <td align="center"><span class="green-text">Оплачен</span></td>
+          <td align="center">
+            <span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span> <i class="fa fa-long-arrow-right grey777"></i> <span class="orange">Варшава</span>
+          </td>
+          <td align="center">
+            <div class="tooltip db">
+              <div class="tac">3</div>
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+            <span class="grey">Документы:</span>
+
+            <span class="tooltip ml10">
+              <i class="fa fa-print"></i>
+              <div class="ttip">Распечатать документы</div>
+            </span>
+            <span class="tooltip ml10">
+              <i class="fa fa-envelope-o"></i>
+              <div class="ttip">Отправить документы на&nbsp;почту</div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">12345</td>
+          <td align="center"><span class="grey">Отменен</span></td>
+          <td align="center">
+            <span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span> <i class="fa fa-exchange grey777"></i> <span class="orange">Варшава</span> <span class="grey fz11">13.01.2017</span>
+          </td>
+          <td align="center">
+            <div class="tooltip db">
+              <div class="tac">3</div>
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="tab-contents" ng-show="tab==2">
 
-      <div class="mt20">
-        <div class="results-wrapper">
-          <div class="result-wrapper f c">
-            <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b1.jpg);">
-              <div style="background-image: url(i/country/p1.png);" class="bst"></div>
-              <div><img src="i/country/sber.png" style="margin-left: -55px;"></div>
-              <div class="fz17 mt10">
-                <div class="ttu fw600">Минимальные комиссии</div>
-                за&nbsp;проведение интенет-эквайринга
-                благодаря долгосрочному
-                и&nbsp;продуктивному сотрудничеству
-                с&nbsp;ПАО&nbsp;«Сбербанк России»
-              </div>
+    <div class="tab-contents" ng-show="currentTab=='notebook'">
+      <div class="tac blue fz20">Мои пассажиры <a class="blue fa fa-plus-square tdn"></a></div>
+
+      <table class="white-table vam">
+        <colgroup>
+          <col>
+          <col style="width:150px;">
+          <col style="width:200px;">
+        </colgroup>
+        <thead>
+        <tr>
+          <th align="left">ФИО</th>
+          <th>Документ</th>
+          <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Терехов Александр Сергеевич</td>
+          <td align="center">Паспорт РФ</td>
+          <td align="right">
+            <div class="f space2 hrig">
+              <a class="button-grey aib flex1 tac"><span class="mozfix">Редактировать <i class="fa fa-pencil"></i></span></a>
+              <a class="cancel-button aib"><span class="mozfix"><i class="fa fa-times"></i></span></a>
             </div>
-          </div>
-          <div class="result-wrapper f c fz17">
-            <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b2.jpg);">
-              <div style="background-image: url(i/country/p2.png);" class="bst"></div>
-              <div class="ttu fw600">За три года</div>
-              присутствия на рынке россии
-              клиенатми biletideshevo.ru стали более<br>
-              <span class="fz42">60&thinsp;000</span> человек
+          </td>
+        </tr>
+        <tr>
+          <td>Терехов Александр Сергеевич</td>
+          <td align="center">Загранпаспорт</td>
+          <td align="right">
+            <div class="f space2 hrig">
+              <a class="button-grey aib flex1 tac"><span class="mozfix">Нет данных <i class="fa fa-pencil"></i></span></a>
+              <a class="cancel-button aib"><span class="mozfix"><i class="fa fa-times"></i></span></a>
             </div>
-          </div>
-          <div class="result-wrapper f c fz17">
-            <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b3.jpg);">
-              <div style="background-image: url(i/country/p3.png);" class="bst"></div>
-              Мы уполномоченное<br>
-              туристическое агентство<br>
-              международного туроператора
-
-              <div class="mt20"><img src="i/country/mouz.png"></div>
-            </div>
-          </div>
-
-          <div class="result-wrapper f c">
-            <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b4.jpg);">
-              <div style="background-image: url(i/country/p4.png);" class="bst"></div>
-              <div style="position: absolute; left: 20px; top: 20px;"><img src="i/country/metro.png"></div>
-              <div class="fz17">
-                <div class="ttu fw600">Офис в центре Москвы</div>
-                <div class="fw600">Китай-город</div>
-
-                <div class="mt10">Мы работаем без выходных<br>
-                  с 8:00 до 22:00 часов</div>
-
-                <div class="mt10">Клиентоориетированный
-                  квалифицированный
-                  персонал</div>
-              </div>
-            </div>
-          </div>
-          <div class="result-wrapper f c fz17">
-            <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b5.jpg);">
-              <div style="background-image: url(i/country/p5.png);" class="bst"></div>
-              <div>Уникальная система поиска
-                авиабилетов</div>
-
-              <div class="mt10">Выписка регулярных авиабилетов
-                через все возможные GDS</div>
-
-              <div class="mt10">Прямые контракты и эксклюзивные
-                условия с крупнейшими
-                консолидаторами чартерных рейсов</div>
-
-            </div>
-          </div>
-          <div class="result-wrapper f c fz17">
-            <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b6.jpg);">
-              <div style="background-image: url(i/country/p6.png);" class="bst"></div>
-              <div class="ttu fw600">уникальная система<br>
-                бронирования отелей </div>
-              <div class="mt10">Эсклюзивные прдложения с лучшими
-                ценами на туристических направлениях</div>
-              <div class="mt10 ttu">Это есть только у нас!</div>
-            </div>
-          </div>
-        </div>
-      </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
+
+<script id="modalWindow" type="text/ng-template">
+  <div class="modalwin f hcen vcen">
+    <div class="modal">
+      <div class="modalheader f">
+        <div class="flex1 ellipsis">Мой профиль</div>
+        <div>
+          <a class="modalclose" ng-click="$parent.$parent[what]=false;"></a>
+        </div>
+      </div>
+      <div class="modalcontents p10" ng-include="tpl">
+
+      </div>
+    </div>
+  </div>
+</script>
+
+<script id="editMyProfile" type="text/ng-template">
+  <div>
+    <div class="f ws-r ss-c ss-space10 ws-space2 mt10">
+      <label class="flex1 f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+        <input type="text" name="fio" class="flex1 fz15" ng-model="buyer">
+        <span class="pholder">Имя</span>
+      </label>
+
+      <label class="flex1 f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+        <input type="text" name="fio" class="flex1 fz15" ng-model="buyer">
+        <span class="pholder">Фамилия</span>
+      </label>
+    </div>
+    <div class="f ws-r ss-c ss-space10 ws-space2 mt10">
+      <div class="flex0050 f vbot input-pholder not-empty">
+        <div class="f ss-space10 d flex1">
+
+          <!--div class="mobile-select"-->
+          <select class="selectric countrycode">
+            <option value="+7" data-flag="i/flag.png">Россия</option>
+            <option value="+90" data-flag="i/greece.png">Грузия</option>
+            <option value="+383" data-flag="i/flag.png">Россия</option>
+            <option value="+900" data-flag="i/greece.png">Украина</option>
+            <option value="+1" data-flag="i/flag.png">США</option>
+            <option value="+800" data-flag="i/greece.png">Зимбабве</option>
+          </select>
+          <!--/div-->
+          <input type="text" class="flex1 fz15 phone-input" value="+7">
+        </div>
+        <span class="pholder">Мобильный телефон</span>
+      </div>
+      <div class="flex1">
+        <label ng-if="true" class="f vbot input-pholder" ng-class="m ? 'not-empty' : ''">
+          <input type="text" name="fio" class="flex1 fz15" ng-model="m">
+          <span class="pholder">Ваш email</span>
+        </label>
+      </div>
+    </div>
+    <div class="mt10 f hcen">
+      <input type="submit" value="Сохранить" class="blue-button">
+    </div>
+  </div>
+</script>
+
+<script id="changePassword" type="text/ng-template">
+  <div>
+    <label ng-if="true" class="f vbot input-pholder" ng-class="m ? 'not-empty' : ''">
+      <input type="password" name="fio" class="flex1 fz15" ng-model="m">
+      <span class="pholder">Текущий пароль</span>
+    </label>
+
+    <label ng-if="true" class="f vbot input-pholder mt10" ng-class="m ? 'not-empty' : ''">
+      <input type="password" name="fio" class="flex1 fz15" ng-model="m">
+      <span class="pholder">Новый пароль</span>
+    </label>
+
+    <label ng-if="true" class="f vbot input-pholder mt10" ng-class="m ? 'not-empty' : ''">
+      <input type="password" name="fio" class="flex1 fz15" ng-model="m">
+      <span class="pholder">Новый пароль ещё раз</span>
+    </label>
+
+    <div class="mt10 f hcen">
+      <input type="submit" value="Сохранить" class="blue-button">
+    </div>
+  </div>
+</script>
 
 </body>
 </html>
