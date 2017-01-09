@@ -10,7 +10,7 @@
     max-width: 900px;
     margin:0 auto;
     padding-bottom: 20px;
-    &:before {
+    /*&:before {
       content: '';
       position: absolute;
       top:57px;
@@ -18,7 +18,7 @@
       right:0;
       height:1px;
       border-top:dashed 1px white;
-    }
+    }*/
 
     &:after {
       position: absolute;
@@ -38,7 +38,26 @@
     }
   }
   a {
-    @include flex(0 1 260px);
+    @include flex(1);
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top:57px;
+      left:0;
+      @include experimental-value(right, calc(50% + 57px));
+      height:1px;
+      border-top:dashed 1px white;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top:57px;
+      right:0;
+      @include experimental-value(left, calc(50% + 57px));
+      height:1px;
+      border-top:dashed 1px white;
+    }
   }
 
   .sign {
@@ -51,7 +70,7 @@
   height:115px;
   border-radius: 50%;
   border:solid 4px white;
-  background: #025ab3;
+  //background: #025ab3;
 }
 
 .bb-list {
