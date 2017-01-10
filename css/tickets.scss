@@ -263,6 +263,8 @@ body .ui-tooltip {
     display: none;
   }
   .ticket-ac-and-comfort {
+    height: auto;
+    max-height: none;
     max-width: none;
     >* {
       &:not(:last-child) {
@@ -274,7 +276,7 @@ body .ui-tooltip {
 
       }
     }
-    @include flex(1 0 auto);
+    @include flex(auto);
     @include align-items(center);
   }
   .ticket-aircompany {
@@ -296,7 +298,7 @@ body .ui-tooltip {
     @include flex-direction(column-reverse);
     @include align-items(stretch);
     padding:10px;
-    @include flex(none);
+    @include flex(auto);
 
     >* {
       &:not(:last-child) {
@@ -311,6 +313,8 @@ body .ui-tooltip {
   }
 
   .ticket-luggage {
+    height:auto;
+    max-height: none;
     @include justify-content(flex-end);
     @include flex-direction(row);
     @include flex(1);
@@ -332,13 +336,15 @@ body .ui-tooltip {
   }
 
   .ticket-data {
-    @include flex(none);
+    @include flex(auto);
     margin-bottom: 10px;
+    height:auto;
+    max-height: none;
   }
 
   .ticket-info {
     margin-top:-5px;
-    @include flex(none);
+    @include flex(auto);
   }
 }
 

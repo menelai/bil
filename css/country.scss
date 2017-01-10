@@ -972,7 +972,7 @@
   background-position: right center;
   background-size: cover;
   color:white;
-  padding:10px 30px;
+  padding:10px 0px;
   min-height:220px;
   z-index: -1;
 
@@ -1075,6 +1075,7 @@
     border-top-right-radius: 10px;
     cursor: pointer;
     //@include background-image(linear-gradient(top,  #f3f3f3 0%, #dedede 80%, #dedede 100%));
+    background: rgba(black, 0.5);
     color: white;
     &.active {
       color: $blue;
