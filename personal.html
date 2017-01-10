@@ -31,7 +31,7 @@
 
 <div id="personalcabinet" class="max-width">
   <div class="mytabs mt20">
-    <div class="tabs-switchers cabinet f space2" ng-init="currentTab='notebook'">
+    <div class="tabs-switchers cabinet f space2" ng-init="currentTab='orders'">
       <div class="flex1 tac f vcen hcen" ng-class="{'active' : $parent.currentTab==tab.id}" ng-click="$parent.currentTab=tab.id" ng-repeat="tab in ::[{name: 'Мой профиль', id: 'profile'}, {name: 'Мои заказы', id: 'orders'}, {name: 'Мои пассажиры', id: 'notebook'}, {name: 'Аннулировать билеты', id: 'cancel'}, {name: 'Изменить даты вылета', id: 'dates'}, {name: 'Изменить данные пассажира', id: 'passenger'}, {name: 'Распечатать документы', id: 'docs'}]">
         <div class="tab-end left"></div>
         <div ng-bind="tab.name" class="p10">Мой профиль</div>
@@ -118,8 +118,15 @@
         <tr>
           <td align="center">12345</td>
           <td align="center"><span class="orange">Не оплачен</span></td>
-          <td align="center">
-            <span class="blue">Москва</span> <span class="grey fz11">12.01.2017</span> <i class="fa fa-exchange grey777"></i> <span class="orange">Бургас</span> <span class="grey fz11">02.04.2017</span>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Москва</span> <span class="grey fz11">12.01.2017</span></div>
+              <div>
+                <i class="fa fa-angle-right grey777 fa-fw" style="position: relative; left:3px; top:2px;"></i>
+                <i class="fa fa-angle-left grey777 fa-fw" style="position: absolute; top:0; left:-3px;"></i>
+              </div>
+              <div class="flex1"><span class="orange">Бургас</span> <span class="grey fz11">02.04.2017</span></div>
+            </div>
           </td>
           <td align="center">
             <span class="tooltip">
@@ -154,8 +161,12 @@
         <tr>
           <td align="center">12345</td>
           <td align="center"><span class="orange">Не оплачен</span></td>
-          <td align="center">
-            <span class="blue">Москва</span> <span class="grey fz11">12.01.2017</span> <i class="fa fa-long-arrow-right grey777"></i> <span class="orange">Бургас</span>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Москва</span> <span class="grey fz11">12.01.2017</span></div>
+              <div><i class="fa fa-angle-right grey777 fa-fw"></i></div>
+              <div class="flex1"><span class="orange">Бургас</span></div>
+            </div>
           </td>
           <td align="center">
             <span class="tooltip">
@@ -190,8 +201,12 @@
         <tr>
           <td align="center">12345</td>
           <td align="center"><span class="green-text">Оплачен</span></td>
-          <td align="center">
-            <span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span> <i class="fa fa-long-arrow-right grey777"></i> <span class="orange">Варшава</span>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span></div>
+              <div><i class="fa fa-angle-right grey777 fa-fw"></i></div>
+              <div class="flex1"><span class="orange">Варшава</span></div>
+            </div>
           </td>
           <td align="center">
             <div class="tooltip db">
@@ -235,8 +250,15 @@
         <tr>
           <td align="center">12345</td>
           <td align="center"><span class="grey">Отменен</span></td>
-          <td align="center">
-            <span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span> <i class="fa fa-exchange grey777"></i> <span class="orange">Варшава</span> <span class="grey fz11">13.01.2017</span>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span></div>
+              <div>
+                <i class="fa fa-angle-right grey777 fa-fw" style="position: relative; left:3px; top:2px;"></i>
+                <i class="fa fa-angle-left grey777 fa-fw" style="position: absolute; top:0; left:-3px;"></i>
+              </div>
+              <div class="flex1"><span class="orange">Варшава</span> <span class="grey fz11">13.01.2017</span></div>
+            </div>
           </td>
           <td align="center">
             <div class="tooltip db">
