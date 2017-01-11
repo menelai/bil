@@ -1319,12 +1319,20 @@
   }
 
   .selected {
-    background: rgba($orange, 0.1);
+    background: rgba($grey, 0.1);
     &.selected-start, &.selected-end {
-      background: $orange;
+      border-radius: 3px;
+
       .ui-state-active {
         color: white;
       }
+    }
+
+    &.selected-start {
+      background: $blue;
+    }
+    &.selected-end {
+      background: $orange;
     }
   }
 }

@@ -21,6 +21,16 @@
   }
 }
 
+.tr-hover {
+  position: absolute;
+  width:100%;
+  margin-top:-10px;
+  margin-left:-10px;
+  background: rgba(white, 0.9);
+  padding:10px;
+  z-index: 20;
+}
+
 .white-table {
   width:100%;
   th {
@@ -32,13 +42,25 @@
   tbody {
     tr {
       background: white;
-      +tr {
+      +tr:not(.tr-extra) {
         border-top:solid 5px #f3f3f3;
+      }
+
+      &.tr-extra {
+        td {
+          padding-top:0;
+        }
       }
     }
 
     td {
       padding:10px 5px;
+      &:first-child {
+        padding-left:10px;
+      }
+      &:last-child {
+        padding-right: 10px;
+      }
     }
   }
 

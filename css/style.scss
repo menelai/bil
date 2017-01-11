@@ -814,15 +814,20 @@ a, .pseudolink {
   }
 
   &.ui-datepicker-multi {
-    &.ui-datepicker-inline {
+    &:not([style*='display: none']) {
       @include display-flex(flex !important);
-      @include justify-content(space-around);
-
-      &.ui-helper-clearfix {
-        &:before, &:after {
-          display: none;
-        }
+    }
+    @include justify-content(space-around);
+    @include flex-wrap(wrap);
+    &.ui-helper-clearfix {
+      &:before, &:after {
+        display: none;
       }
+    }
+    &.ui-datepicker-inline {
+
+
+
     }
     >.ui-datepicker-group {
       max-width: 270px;
@@ -832,6 +837,10 @@ a, .pseudolink {
       display: none;
     }
   }
+}
+
+.datepick-append {
+  @include flex(1);
 }
 
 .number-with-spinners {

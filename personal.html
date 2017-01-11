@@ -103,6 +103,7 @@
           <label class="bluelabel" for="mo{{$index}}"><span class="mozfix" ng-bind="row"></span></label>
         </div>
       </div>
+      <div>
       <table class="white-table">
         <thead>
         <tr>
@@ -247,6 +248,198 @@
             </span>
           </td>
         </tr>
+        <tr class="tr-extra">
+          <td colspan="6">
+            <div class="f space20">
+              <div class="flex1 tac">
+                <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-user tdn"></i> <span class="tdu">Изменить данные пассажира</span></a>
+              </div>
+              <div class="flex1 tac">
+                <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-calendar tdn"></i> <span class="tdu">Изменить даты вылета</span></a>
+              </div>
+              <div class="flex1 tac">
+                <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-times tdn"></i> <span class="tdu">Аннулировать авиабилет</span></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center">12345</td>
+          <td align="center"><span class="green-text">Оплачен</span></td>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span></div>
+              <div><i class="fa fa-angle-right grey777 fa-fw"></i></div>
+              <div class="flex1"><span class="orange">Варшава</span></div>
+            </div>
+          </td>
+          <td align="center">
+            <div class="tooltip db">
+              <div class="tac">3</div>
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+            <a class="tdn" ng-click="changeDate=true"><i class="fa fa-calendar tdn"></i> <span class="tdu">Изменить даты вылета</span></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center">
+            <div class="tr-hover" ng-show="cancel">
+              Заявка на аннулирование авиабилета принята. <a class="" ng-click="cancel=false">Отменить завявку</a>
+            </div>
+            12345
+          </td>
+          <td align="center"><span class="green-text">Оплачен</span></td>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span></div>
+              <div><i class="fa fa-angle-right grey777 fa-fw"></i></div>
+              <div class="flex1"><span class="orange">Варшава</span></div>
+            </div>
+          </td>
+          <td align="center">
+            <div class="tooltip db">
+              <div class="tac">3</div>
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+            <a class="tdn" ng-click="cancel=true"><i class="fa fa-times tdn"></i> <span class="tdu">Аннулировать заказ</span></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center">
+            12345
+          </td>
+          <td align="center"><span class="green-text">Оплачен</span></td>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span></div>
+              <div><i class="fa fa-angle-right grey777 fa-fw"></i></div>
+              <div class="flex1"><span class="orange">Варшава</span></div>
+            </div>
+          </td>
+          <td align="center">
+            <div class="tooltip db">
+              <div class="tac">3</div>
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+            <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-user tdn"></i> <span class="tdu">Изменить данные пассажира</span></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center">
+            <div class="tr-hover">
+              Заявка на изменение даты вылета принята. <a class="">Отменить завявку</a>
+            </div>
+            12345
+          </td>
+          <td align="center"><span class="green-text">Оплачен</span></td>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span></div>
+              <div><i class="fa fa-angle-right grey777 fa-fw"></i></div>
+              <div class="flex1"><span class="orange">Варшава</span></div>
+            </div>
+          </td>
+          <td align="center">
+            <div class="tooltip db">
+              <div class="tac">3</div>
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+
+          </td>
+        </tr>
+
         <tr>
           <td align="center">12345</td>
           <td align="center"><span class="grey">Отменен</span></td>
@@ -290,8 +483,70 @@
 
           </td>
         </tr>
+        <tr>
+          <td align="center">12345</td>
+          <td align="center"><span class="grey">Архив</span></td>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Санкт-Петербург</span> <span class="grey fz11">12.01.2017</span></div>
+              <div>
+                <i class="fa fa-angle-right grey777 fa-fw" style="position: relative; left:3px; top:2px;"></i>
+                <i class="fa fa-angle-left grey777 fa-fw" style="position: absolute; top:0; left:-3px;"></i>
+              </div>
+              <div class="flex1"><span class="orange">Варшава</span> <span class="grey fz11">13.01.2017</span></div>
+            </div>
+          </td>
+          <td align="center">
+            <div class="tooltip db">
+              <div class="tac">3</div>
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+
+          </td>
+        </tr>
+        <tr class="tr-extra">
+          <td colspan="6">
+            <div class="f space20">
+              <div class="flex1 tac">
+                <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-user tdn"></i> <span class="tdu">Изменить данные пассажира</span></a>
+              </div>
+              <div class="flex1 tac">
+                <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-calendar tdn"></i> <span class="tdu">Изменить даты вылета</span></a>
+              </div>
+              <div class="flex1 tac">
+                <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-times tdn"></i> <span class="tdu">Аннулировать авиабилет</span></a>
+              </div>
+            </div>
+          </td>
+        </tr>
         </tbody>
       </table>
+      </div>
+
+      <div ng-include="'modalWindow'" ng-if="changeDate" ng-init="tpl='changeDate'; what='changeDate';"></div>
+      <div ng-include="'modalWindow'" ng-if="changePassenger" ng-init="tpl='changePassenger'; what='changePassenger';"></div>
     </div>
 
     <div class="tab-contents" ng-show="currentTab=='notebook'">
@@ -590,6 +845,131 @@
 
 
       </div>
+    </div>
+  </div>
+  <div class="mt10 f hcen">
+    <input type="submit" value="Сохранить" class="blue-button">
+  </div>
+</script>
+
+<script type="text/ng-template" id="changeDate">
+  <div class="f d space3">
+    <div class="flex1 f" id="date-input-1">
+      <input type="text" class="flex1 lh33 b-1 border-blue rounded3 pl10">
+    </div>
+    <div class="flex1 f" id="date-input-2">
+      <input type="text" class="flex1 lh33 b-1 border-blue rounded3">
+    </div>
+  </div>
+  <div class="mt10 f hcen">
+    <input type="submit" value="Отправить" class="blue-button">
+  </div>
+</script>
+
+<script type="text/ng-template" id="changePassenger">
+  <div class="f d vcen" ng-init="cur=0; passengers = [{name: 'Взрослый 1', color: '#aadf11', tpl: 'i/icons/Adult.svg'}, {name: 'Взрослый 2', color: '#ff6801', tpl: 'i/icons/Adult.svg'}, {name: 'Ребенок 1', color: '#764ca2', tpl: 'i/icons/Child.svg'}, {name: 'Ребенок младше 2 лет 1', color: '#f2b101', tpl: 'i/icons/Infant.svg'}];">
+    <div style="width:150px;" class="tac">
+      <a ng-show="cur>0" ng-click="cur=cur-1;">
+        <div><i class="fa fa-angle-left fz20"></i></div>
+        <div ng-bind="passengers[cur-1].name">Взрослый 1</div>
+      </a>
+    </div>
+    <div class="flex1" style="width:500px;">
+      <div ng-repeat="pass in passengers">
+        <div ng-show="$index==cur" class="form-group passenger-data" data-rel="rightcol" data-title="ВВЕДИТЕ ДАННЫЕ ПАССАЖИРА: {{pass.name}}" data-color="{{pass.color}}" id="passeng{{$index}}">
+          <style>
+            #id{{$index}} .mainpath {
+            fill: {{pass.color}};
+            }
+          </style>
+          <div class="f d vcen">
+            <div class="ttu f vcen space6" ng-init="id='id'+$index">
+              <div class="passenger-pic">
+                <div id="id{{$index}}" ng-include="pass.tpl" class="f vcen"></div>
+              </div>
+              <div class="mozfix" style="color:{{pass.color}};">{{pass.name}}</div>
+            </div>
+
+          </div>
+
+          <div class="f d space2">
+            <label ng-if="true" class="f vbot input-pholder flex60 ws-flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+              <span class="pholder">Фамилия</span>
+            </label>
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5">
+              <span class="pholder">Имя</span>
+            </label>
+          </div>
+
+          <div class="f d ss-space10 ws-space40">
+            <div class="f ws-space6 vcen">
+              <div class="mozfix ss-nd">Пол</div>
+              <div class="f d stretch input-pholder p0 gender gender-my gender{{gender}}" ng-init="gender='1'">
+                <div class="gender-slider"></div>
+                <input id="g1{{pass}}" type="radio" ng-model="gender" class="no-display" value="1">
+                <label for="g1{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">М</div></label>
+                <input id="g2{{pass}}" type="radio" ng-model="gender" class="no-display" value="2">
+                <label for="g2{{pass}}" class="flex1 f vcen hcen"><div class="mozfix">Ж</div></label>
+              </div>
+            </div>
+            <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
+              <span class="pholder">Дата рождения</span>
+            </label>
+          </div>
+
+          <div class="f ws-r ss-c ws-space2 ss-space10">
+            <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+              <select class="selectric citizenship" ng-model="buyer">
+                <option></option>
+                <option value="Georgia" data-flag="i/flag.png">Албания</option>
+                <option value="Georgia" data-flag="i/greece.png">Грузия</option>
+                <option value="Georgia" data-flag="i/flag.png">Россия</option>
+                <option value="Georgia" data-flag="i/greece.png">Украина</option>
+                <option value="Georgia" data-flag="i/flag.png">США</option>
+                <option value="Georgia" data-flag="i/greece.png">Зимбабве</option>
+              </select>
+              <span class="pholder">Гражданство</span>
+            </label>
+
+            <label ng-if="true" class="f vbot input-pholder flex1 mobile-select" ng-class="buyer ? 'not-empty' : ''">
+              <select class="selectric doctype" ng-model="buyer">
+                <option value="Загранпаспорт гражданина РФ">Загранпаспорт гражданина РФ</option>
+                <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+                <option value="Passport is not Russia">Passport is not Russia</option>
+                <option value="Паспорт гражданина не РФ">Паспорт гражданина не РФ</option>
+              </select>
+              <span class="pholder">Документ</span>
+            </label>
+          </div>
+
+          <div class="mt10 f ss-c ss-space10 ws-r ws-space2">
+            <div class="f d space2 ws-flex1">
+              <label ng-if="true" class="f vbot input-pholder" ng-class="buyer ? 'not-empty' : ''">
+                <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholders='00'" ng-blur="placeholders=''" placeholder="{{placeholders}}">
+                <span class="pholder">Серия</span>
+              </label>
+              <label ng-if="true" class="f vbot input-pholder flex1" ng-class="buyer ? 'not-empty' : ''">
+                <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholdern='0000000'" ng-blur="placeholdern=''" placeholder="{{placeholdern}}">
+                <span class="pholder">Номер</span>
+              </label>
+            </div>
+
+            <label ng-if="true" class="f vbot input-pholder flex0050" ng-class="buyer ? 'not-empty' : ''">
+              <input type="text" name="fio" class="flex1 fz15" ng-model="buyer" size="5" ng-focus="placeholder='ДД.ММ.ГГГГ'" ng-blur="placeholder=''" placeholder="{{placeholder}}">
+              <span class="pholder">Срок действия</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width:150px;" class="tac">
+      <a ng-show="cur<passengers.length-1" ng-click="cur=cur+1;">
+        <div><i class="fa fa-angle-right fz20"></i></div>
+        <div ng-bind="passengers[cur+1].name">Взрослый 1</div>
+      </a>
     </div>
   </div>
   <div class="mt10 f hcen">
