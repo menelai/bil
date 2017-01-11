@@ -32,7 +32,7 @@
 <div id="personalcabinet" class="max-width">
   <div class="mytabs mt20">
     <div class="tabs-switchers cabinet f space2" ng-init="currentTab='orders'">
-      <div class="flex1 tac f vcen hcen" ng-class="{'active' : $parent.currentTab==tab.id}" ng-click="$parent.currentTab=tab.id" ng-repeat="tab in ::[{name: 'Мой профиль', id: 'profile'}, {name: 'Мои заказы', id: 'orders'}, {name: 'Мои пассажиры', id: 'notebook'}, {name: 'Аннулировать билеты', id: 'cancel'}, {name: 'Изменить даты вылета', id: 'dates'}, {name: 'Изменить данные пассажира', id: 'passenger'}, {name: 'Распечатать документы', id: 'docs'}]">
+      <div class="flex1 tac f vcen hcen" ng-class="{'active' : $parent.currentTab==tab.id}" ng-click="$parent.currentTab=tab.id" ng-repeat="tab in ::[{name: 'Мои заказы', id: 'orders'}, {name: 'Мои пассажиры', id: 'notebook'}, {name: 'Мой профиль', id: 'profile'}]">
         <div class="tab-end left"></div>
         <div ng-bind="tab.name" class="p10">Мой профиль</div>
         <div class="tab-end right"></div>
@@ -199,7 +199,7 @@
             <span class="grey">Оплатить до:</span> 12:30, 21.07.2016
           </td>
         </tr>
-        <tr>
+        <tr ng-click="order=!order">
           <td align="center">12345</td>
           <td align="center"><span class="green-text">Оплачен</span></td>
           <td>
@@ -236,21 +236,23 @@
             25&thinsp;338&nbsp;₽
           </td>
           <td align="center">
-            <span class="grey">Документы:</span>
 
-            <span class="tooltip ml10">
-              <i class="fa fa-print blue"></i>
-              <div class="ttip">Распечатать документы</div>
-            </span>
-            <span class="tooltip ml10 ">
-              <i class="fa fa-envelope-o blue"></i>
-              <div class="ttip">Отправить документы на&nbsp;email</div>
-            </span>
           </td>
         </tr>
         <tr class="tr-extra">
           <td colspan="6">
             <div class="f space20">
+              <div class="flex1 tac">
+                <span class="grey">Документы:</span>
+                <span class="tooltip ml10">
+                  <i class="fa fa-print blue"></i>
+                  <div class="ttip">Распечатать документы</div>
+                </span>
+                <span class="tooltip ml10 ">
+                  <i class="fa fa-envelope-o blue"></i>
+                  <div class="ttip">Отправить документы на&nbsp;email</div>
+                </span>
+              </div>
               <div class="flex1 tac">
                 <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-user tdn"></i> <span class="tdu">Изменить данные пассажира</span></a>
               </div>
@@ -263,8 +265,54 @@
             </div>
           </td>
         </tr>
+        <tr class="tr-extra" ng-show="order">
+          <td colspan="6">
+            <div class="slide" ng-show="order" ng-include="'order-form.html'"></div>
+          </td>
+        </tr>
 
         <tr>
+          <td align="center">12345</td>
+          <td align="center"><span class="orange">Не оплачен</span></td>
+          <td>
+            <div class="f space6">
+              <div class="flex1 tar"><span class="blue">Москва</span> <span class="grey fz11">12.01.2017</span></div>
+              <div><i class="fa fa-angle-right grey777 fa-fw"></i></div>
+              <div class="flex1"><span class="orange">Бургас</span></div>
+            </div>
+          </td>
+          <td align="center">
+            <span class="tooltip">
+              3
+              <div class="ttip f hcen">
+                <div id="numberofpass" class="f vcen space8">
+                  <div class="f vcen space">
+                    <img src="i/icons/Adult-white.svg">
+                    <div><span class="mozfix">×1</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Child-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+
+                  <div class="f vcen space2">
+                    <img src="i/icons/Infant-white.svg">
+                    <div><span class="mozfix">×0</span></div>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </td>
+          <td align="right" class="fwb">
+            25&thinsp;338&nbsp;₽
+          </td>
+          <td align="center">
+            <span class="grey">Оплатить до:</span> 12:30, 21.07.2016
+          </td>
+        </tr>
+
+        <!--tr>
           <td align="center">12345</td>
           <td align="center"><span class="green-text">Оплачен</span></td>
           <td>
@@ -540,7 +588,7 @@
               </div>
             </div>
           </td>
-        </tr>
+        </tr-->
         </tbody>
       </table>
       </div>
