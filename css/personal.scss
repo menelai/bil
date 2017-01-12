@@ -31,6 +31,17 @@
   z-index: 20;
 }
 
+.o-cancel {
+  position: absolute;
+  background: rgba(white, 0.9);
+  padding:10px;
+  z-index: 20;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
 .white-table {
   width:100%;
   th {
@@ -133,4 +144,20 @@
 
 .modalcontents {
 
+}
+
+.o-table {
+  .o-row {
+    background: white;
+    +.o-row {
+      margin-top: 10px;
+    }
+
+    &.o-active {
+      box-shadow: 0 0 7px rgba(black, 0.2), inset 0 0 0 1px $blue;
+    }
+  }
+  .o-cols {
+    padding:10px;
+  }
 }
