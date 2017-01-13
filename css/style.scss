@@ -3182,6 +3182,64 @@ input, textarea, button {
   }
 }
 
+.modalwin {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: rgba(white, 0.9);
+  z-index: 999;
+  overflow: auto;
+
+}
+
+.modal {
+  min-width: 600px;
+  border:solid 1px $blue;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #FFFFFF;
+}
+
+.modalheader {
+  height:30px;
+  line-height: 30px;
+  background: #eeeeee;
+  padding-left:10px;
+}
+
+.modalclose {
+  width:30px;
+  height:30px;
+  background: #d1d1d1;
+  display: block;
+  &:after {
+    position: absolute;
+    content: '';
+    width:1px;
+    top:5px;
+    bottom:5px;
+    left:15px;
+    background: white;
+    @include transform(rotate(45deg));
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    width:1px;
+    top:5px;
+    bottom:5px;
+    left:15px;
+    background: white;
+    @include transform(rotate(-45deg));
+  }
+}
+
+.modalcontents {
+
+}
+
 @media all and (min-width:1101px) {
   .working-time {
 
