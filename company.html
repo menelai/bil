@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>country</title>
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="js/jquery.datepicker.extension.range.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.selectric.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+  <script src="https://rawgit.com/srfrnk/re-tree/master/re-tree.js" type="text/javascript"></script>
+  <script src="https://rawgit.com/srfrnk/ng-device-detector/master/ng-device-detector.js" type="text/javascript"></script>
+  <script src="https://unpkg.com/masonry-layout@4.1.1/dist/masonry.pkgd.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
+  <link rel="stylesheet" type="text/css" href="css/selectric.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <script src="js/script.js"></script>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+</head>
+<body>
+
+<div ng-include="'top.html'" ng-init="hideSeach=true"></div>
+
+<div id="country">
+    <div id="country-info" class="">
+    <div id="country-cols" class="max-width f d r">
+      <div id="nav-col">
+        <div id="nav-col-bg">
+          <ul class="ul">
+            <li>
+              <a href="#company" class="space10">
+                <div class="mimg" ng-include="'i/company/plane.svg'"></div>
+                <span class="mozfix">О компании</span>
+              </a>
+            </li>
+            <li>
+              <a href="#cpartners" class="space10">
+                <div class="mimg" ng-include="'i/company/handshake.svg'"></div>
+                <span class="mozfix">Наши партнеры</span>
+              </a>
+            </li>
+            <li>
+              <a href="#license" class="space10">
+                <div class="mimg" ng-include="'i/company/lyc.svg'"></div>
+                <span class="mozfix">Лицензии, свидетельства, дипломы</span>
+              </a>
+            </li>
+            <li>
+              <a href="#employees" class="space10">
+                <div class="mimg" ng-include="'i/company/bestemployee.svg'"></div>
+                <span class="mozfix">Лучшие сотрудники компании</span>
+              </a>
+            </li>
+            <li>
+              <a href="#whywe" class="space10">
+                <div class="mimg" ng-include="'i/company/whywe.svg'"></div>
+                <span class="mozfix">Почему именно мы</span>
+              </a>
+            </li>
+            <li>
+              <a href="#payment" class="space10">
+                <div class="mimg" ng-include="'i/company/payment.svg'"></div>
+                <span class="mozfix">Способы оплаты и&nbsp;кредитование</span>
+              </a>
+            </li>
+            <li>
+              <a href="#cresponses" class="space10">
+                <div class="mimg" ng-include="'i/company/responses.svg'"></div>
+                <span class="mozfix">Отзывы о нас</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="space10">
+                <div class="mimg" ng-include="'i/company/contact.svg'"></div>
+                <span class="mozfix">Контакты</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="content-col" class="flex1">
+        <div id="company">
+          <h1 class="tac ttu fz20 mb30">О компании</h1>
+          <div class="tac">
+            <p>Деятельность нашей компании началась в апрле 2014 года с реализации чартерных авиабилетов.</p>
+            <p class="fz18">Уважаемые клиенты, мы благодарим вас за проявленный интерес к нашей компании!</p>
+            <p>На текущий этап времени мы</p>
+          </div>
+
+          <div class="blue">
+            <div class="f vcen hcen">
+              <div class="no1 fwl"><div class="fontfix">№1</div></div>
+              <div class="fz18">на рынке России<br>по продаже чартерных<br>авиабилетов</div>
+            </div>
+            <div class="f hcen tac company-benefits space20">
+              <div>
+                <div class="companycircle bg-blue f hcen vcen mb20"><img src="i/company/medal.svg"></div>
+                <div class="fz15">Самое большое количество<br>авиабилетов</div>
+              </div>
+              <div>
+                <div class="companycircle bg-green f hcen vcen mb20"><img src="i/company/medal.svg"></div>
+                <div class="fz15">Лучшие цены</div>
+              </div>
+              <div>
+                <div class="companycircle bg-orange f hcen vcen mb20"><img src="i/company/clock.svg"></div>
+                <div class="fz15">Обработка информации<br>в режиме реального<br>времени онлайн</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="f d space40 mt30">
+            <div class="flex1 f space10">
+              <div class="fz60 fwl blue lh50">2016</div>
+              <div>
+                <p>К чартерным авиабилетам мы
+                <span class="blue ttu fwb">добавили авиабилеты
+                на регулярные рейсы.</span></p>
+
+                <p class="mt10">Мы стали
+                <span class="blue ttu fwb">уполномоченным агентством</span>
+                крупнейшего туроператора по Греции
+                <span class="blue ttu fwb">Музенидис Трэвел</span> и открыли
+                продажу пакетных туров по всем
+                возможным направлениям только
+                от луших туроператоров России.</p>
+              </div>
+            </div>
+            <div class="flex1 f space10">
+              <div class="fz60 fwl blue lh50">2017</div>
+              <div>
+                <p>Мы продаём
+                  <span class="blue ttu fwb">авиабилеты на лоукостеры
+                  всего мира.</span>
+                  Благодаря уникальной системе поиска
+                  <span class="blue ttu fwb">авиабилеты на нашем сайте
+                  чаше дешевле</span> стоимости авиабилетов
+                  в системах бронирования авиакомпаний
+                  и других агентств.</p>
+
+                <p class="mt10">Мы запустили
+                  <span class="blue ttu fwb">уникальную систему
+                  бронирования отелей</span>
+                  по курортным и экскурсионным направлениям,
+                  аналога которой не существует в мире,
+                  это уникальное предложение, рекомендуем
+                  Вам бронировать отели именно у нас, если
+                  Вы планируете Свой отпуск или командировку
+                  в крупном туристическом городе или курорте.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="cpartners" class="company-section">
+          <div class="f d space20 company-partners tac">
+            <div>
+              <div class="partner-logo f hcen vcen"><img src="i/company/sber.png"></div>
+              <div class="partner-name">
+                Безопасное проведение
+                онлайн-платежей,
+                партнёр с 2014 года
+              </div>
+            </div>
+            <div>
+              <div class="partner-logo f hcen vcen"><img src="i/company/alfa.png"></div>
+              <div class="partner-name">
+                Расчётно-кассовое
+                обслуживание,
+                кредитование наших клиентов,
+                партнёр с 2016 года
+              </div>
+            </div>
+            <div>
+              <div class="partner-logo f hcen vcen"><img src="i/company/mouz.png"></div>
+              <div class="partner-name">
+                Мы уполномоченное агентство
+                туроператора с июня 2016 года
+              </div>
+            </div>
+            <div>
+              <div class="partner-logo f hcen vcen"><img src="i/company/alfains.png"></div>
+              <div class="partner-name">
+                Бренд №1 для страхования
+                путешествий,
+                партнёр с 2015 года
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="license" class="company-section">
+          <h2 class="tac fz20 mb20 ttu">Наши лицензии, свидетельства, дипломы</h2>
+          <div class="f hcen space20 tac">
+            <div>
+              <img src="i/company/ogrn.png"><br>
+              Свидетельство ОГРН
+            </div>
+            <div>
+              <img src="i/company/inn.png"><br>
+              Свидетельство ИНН
+            </div>
+            <div>
+              <img src="i/company/reestr.png"><br>
+              Свидетельство<br>о внесении
+              сведений<br>в реестр турагентств
+            </div>
+          </div>
+          <div class="tac">
+            <img src="i/company/diplom.png"><br>
+            Диплом уполномоченного агентства<br>
+            туроператора Музенидис Трэвел
+          </div>
+        </div>
+
+        <div id="employees" class="company-section">
+          <h2 class="fz20 ttu tac mb20 white">Лучшие сотрудники компании</h2>
+          <div class="f w employee-list hcen">
+            <div class="{{row}} f d space16" ng-repeat="row in ['emp-blue','emp-green','emp-orange','emp-blue','emp-green','emp-orange','emp-blue','emp-green','emp-orange'] track by $index">
+              <div class="employee-photo"><img src="i/company/employee.jpg"></div>
+              <div>
+                <div class="fz18 ttu">Александр Терехов</div>
+                <div class="mt10">Менеджер колл-центра</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="whywe" class="company-section">
+          <div class="whywebg"></div>
+          <h2 class="tac fz20 mb20 ttu white">Почему именно мы</h2>
+
+          <div class="white">
+            <div class="fz35 fwl tac ttu">БРОНИРУЙТЕ ВСЁ                  в одном месте</div>
+
+            <div style="max-width: 870px; margin:0 auto; padding:0 15px;">
+              <div class="f mb20">
+                <div class="lh1 wsn f d c">
+                  <div class="mt30 mb3 fz31 bestpriceguarantee ibm fwl"><div><div style="top:-5px;">гарантия лучших цен</div></div></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="fz17">
+                  <ul class="rect ul">
+
+                    <li>Авиабилеты в любую точку мира со скидкой до 40%</li>
+                    <li class="mt10">Туры от всех туроперторов со скидкой до 30%</li>
+
+                    <li class="mt10">Ж/Д билеты по России и странам Европы</li>
+
+                    <li class="mt10">Гостиницы в любом городе мира —
+                      уникальное предложение</li>
+
+                    <li class="mt10">Трансферы из 500 аэропортов мира</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt20">
+            <div class="results-wrapper">
+              <div class="result-wrapper f c">
+                <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b1.jpg);">
+                  <div><img src="i/country/sber.png"></div>
+                  <div class="fz17 mt10">
+                    <div class="ttu fw600">Минимальные комиссии</div>
+                    за&nbsp;проведение интенет-эквайринга
+                    благодаря долгосрочному
+                    и&nbsp;продуктивному сотрудничеству
+                    с&nbsp;ПАО&nbsp;«Сбербанк России»
+                  </div>
+                </div>
+              </div>
+              <div class="result-wrapper f c fz17">
+                <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b2.jpg);">
+                  <div class="ttu fw600">За три года</div>
+                  присутствия на рынке россии
+                  клиенатми biletideshevo.ru стали более<br>
+                  <span class="fz42">60&thinsp;000</span> человек
+                </div>
+              </div>
+              <div class="result-wrapper f c fz17">
+                <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b3.jpg);">
+                  Мы уполномоченное<br>
+                  туристическое агентство<br>
+                  международного туроператора
+
+                  <div class="mt20"><img src="i/country/mouz.png"></div>
+                </div>
+              </div>
+
+              <div class="result-wrapper f c">
+                <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b4.jpg);">
+                  <div class="fz17">
+                    <div class="ttu fw600">Офис в центре Москвы</div>
+                    <div class="fw600">Китай-город</div>
+
+                    <div class="mt10">Мы работаем без выходных<br>
+                      с 8:00 до 22:00 часов</div>
+
+                    <div class="mt10">Клиентоориетированный
+                      квалифицированный
+                      персонал</div>
+                  </div>
+                </div>
+              </div>
+              <div class="result-wrapper f c fz17">
+                <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b5.jpg);">
+                  <div>Уникальная система поиска
+                    авиабилетов</div>
+
+                  <div class="mt10">Выписка регулярных авиабилетов
+                    через все возможные GDS</div>
+
+                  <div class="mt10">Прямые контракты и эксклюзивные
+                    условия с крупнейшими
+                    консолидаторами чартерных рейсов</div>
+
+                </div>
+              </div>
+              <div class="result-wrapper f c fz17">
+                <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b6.jpg);">
+                  <div class="ttu fw600">уникальная система<br>
+                    бронирования отелей </div>
+                  <div class="mt10">Эсклюзивные прдложения с лучшими
+                    ценами на туристических направлениях</div>
+                  <div class="mt10 ttu">Это есть только у нас!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="payment" class="company-section">
+          <h2 class="fz20 ttu tac mb20">Способы оплаты и кредитование</h2>
+          <h3 class="tac blue mb20 fz18">Способы оплаты</h3>
+
+          <div class="f d tac space30">
+            <div>
+              <img src="i/payment/cards-icon.png">
+              <div class="ttu blue mt10 mb10">Банковская карта</div>
+              <div>Экономьте время<br>
+              •<br>
+              Платите онлайн откуда<br>
+              удобно и когда хочется<br>
+              •<br>
+              Документы на email</div>
+            </div>
+
+            <div>
+              <img src="i/payment/wallet%20icon.png">
+              <div class="ttu blue mt10 mb10">наличными в офисе</div>
+              <div>Экономьте деньги<br>
+                •<br>
+                Пейте хороший кофе<br>
+                •<br>
+                Детская площадка<br>
+                •<br>
+                Документы на руки</div>
+            </div>
+
+            <div>
+              <img src="i/payment/touch.png">
+              <div class="ttu blue mt10 mb10">Apple Pay</div>
+              <div>Удобно<br>
+                •<br>
+                Безопасно<br>
+                •<br>
+                Конфиденциально</div>
+            </div>
+
+            <div>
+              <img src="i/payment-svyaznoy.png"> <img src="i/payment-euroset.png">
+              <div class="ttu blue mt10 mb10">Салоны связи связной и евросеть</div>
+              <div>Оплачивайте в любом, удобном для Вас<br>
+                салоне связи в любом городе России</div>
+            </div>
+          </div>
+
+          <div class="white credit-section mt30">
+            <h3 class="tac mb20 fz18">Доверительный платеж, кредит</h3>
+            <div class="f around tac credit-items">
+              <div>
+                <div class="credit-img f hcen vcen mb10">
+                  <img src="i/company/50.svg">
+                </div>
+                Оплачивайте&nbsp;50%
+                при&nbsp;бронировании,
+                оставшиеся&nbsp;50%
+                за&nbsp;несколько дней
+                до&nbsp;вылета
+              </div>
+
+              <div>
+                <div class="credit-img f hcen vcen mb10">
+                  <img src="i/company/alfa-white.png">
+                </div>
+                Предоставление кредита
+                в&nbsp;течение 20&nbsp;минутот&nbsp;нашего партнёра:
+                Альфа-Банк
+              </div>
+
+              <div>
+                <div class="credit-img f hcen vcen mb10">
+                  <img src="i/company/perc.svg">
+                </div>
+                Фактическая
+                переплата&nbsp;—&nbsp;11,8%
+              </div>
+
+              <div>
+                <div class="credit-img f hcen vcen mb10">
+                  <img src="i/company/eye.svg">
+                </div>
+                Первоначальный
+                взнос&nbsp;—&nbsp;0%.
+                Срок кредитования&nbsp;—
+                6&nbsp;месяцев.
+                Нет скрытых платежей
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="cresponses" class="company-section">
+          <div class="company-responses rounded5">
+            <h2 class="fz20 ttu tac mb20">Отзывы о нас</h2>
+            <div class="f d vcen space30">
+              <div class="flex1 fz15">С 15 апреля 2014 года нашими Клиентами стало более 60000 человек,
+                за всё время Мы получили 7 честных отрицательных отзывов.</div>
+              <div>
+                <a class="blue-button aib"><span class="mozfix">Оставить отзыв</span></a>
+              </div>
+            </div>
+
+            <div class="responses-masonry">
+              <div class="response">
+                <div class="p15 rounded10 bg-white response-text fsi fwl">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</div>
+                <div class="blue mt5 ml20">
+                  <div class="fz18">Сергей</div>
+                  <div>Перелет: Москва-Прага, 03.01.2017</div>
+                </div>
+              </div>
+              <div class="response">
+                <div class="p15 rounded10 bg-white response-text fsi">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </div>
+                <div class="blue mt5 ml20">
+                  <div class="fz18">Сергей</div>
+                  <div>Перелет: Москва-Прага, 03.01.2017</div>
+                </div>
+              </div>
+              <div class="response">
+                <div class="p15 rounded10 bg-white response-text fsi">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+                <div class="blue mt5 ml20">
+                  <div class="fz18">Сергей</div>
+                  <div>Перелет: Москва-Прага, 03.01.2017</div>
+                </div>
+              </div>
+              <div class="response">
+                <div class="p15 rounded10 bg-white response-text fsi">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+                <div class="blue mt5 ml20">
+                  <div class="fz18">Сергей</div>
+                  <div>Перелет: Москва-Прага, 03.01.2017</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="show-all-tickets show-all f hcen vcen rounded5" ng-class="{'shown' : showAllTickets1}" ng-click="showAllTickets1=!showAllTickets1">
+            <div class="ttu" ng-bind="showAllTickets1 ? 'Свернуть' : 'Показать все'">Показать все</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
