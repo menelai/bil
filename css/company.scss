@@ -95,7 +95,7 @@
   >div {
     border-radius: 10px;
     border:solid 1px #c9c9c9;
-    @include flex(1);
+    @include flex(1 0 210px);
     max-width: 260px;
     min-width: 210px;
     margin:15px;
@@ -148,7 +148,8 @@
 }
 
 .employee-photo {
-  @include flex(0 1 100px);
+  @include flex(1 0 70px);
+  max-width: 100px;
   img {
     display: block;
   }
