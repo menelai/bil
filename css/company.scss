@@ -88,6 +88,7 @@
 }
 
 .employee-list {
+
   max-width: 950px;
   margin-left:auto;
   margin-right: auto;
@@ -147,7 +148,7 @@
 }
 
 .employee-photo {
-  @include flex(0 0 100px);
+  @include flex(0 1 100px);
   img {
     display: block;
   }
@@ -235,5 +236,105 @@
     width:43px;
     height:21px;
     background: url(../i/company/tail.png) left top no-repeat;
+  }
+}
+
+.company-contacts {
+  @include experimental-value(height, calc(100vh + 1px));
+}
+
+.about-company {
+  z-index: 1;
+}
+
+#map {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.about-padder {
+  @include flex(0 1 290px);
+}
+
+.about-contacts-plate {
+  padding-left:40px;
+  min-width: 760px;
+}
+
+.contact-pdz {
+  @include flex(0 0 210px);
+  position: static;
+}
+
+.building-column {
+  @include flex(0 1 250px);
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.contact-tab {
+  background: rgba(#f3f3f3, 0.9);
+}
+
+.contact-tab-menu {
+  position: absolute;
+  top:0;
+  left:100%;
+}
+
+.cmi {
+  cursor:pointer;
+  /*&:hover {
+    @include background-image(linear-gradient(left,  #f3f3f3 0%,#f3f3f3 22%, #e8e8e8 100%));
+  }*/
+  width:50px;
+  height:70px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: rgba(black, 0.5);
+  &.active, &:hover {
+    z-index: 3;
+    background: rgba(#f3f3f3, 0.9);
+
+    .tab-end {
+      z-index: 3;
+      &:after {
+        border: solid 20px rgba(#f3f3f3, 0.9);
+      }
+    }
+  }
+  +.cmi {
+    margin-top:3px;
+  }
+
+  .tab-end {
+    display: block;
+    left:0;
+    &:after {
+      left: -20px;
+      top: -20px;
+      border: solid 20px rgba(black, 0.5);
+    }
+
+    &.bottom {
+      top:100%;
+    }
+    &.top {
+      bottom:100%;
+      &:after {
+        top: -40px;
+      }
+    }
+  }
+
+  &:first-child {
+    .tab-end.top {
+      display: none;
+    }
   }
 }

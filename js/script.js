@@ -9,6 +9,69 @@
       columnWidth: '.response',
       percentPosition: true
     });
+
+    if($("#map").length) {
+      console.log('dsfasdf');
+      var n = {
+        zoom: 15,
+        disableDefaultUI: !1,
+        scrollwheel: !1,
+        center: new google.maps.LatLng(55.7594416, 37.6171829),
+        styles: [
+          {
+            "featureType": "administrative",
+            "elementType": "labels.text",
+            "stylers": [
+              {"visibility": "off"}
+            ]
+          },
+          {
+            "featureType": "poi",
+            "stylers": [
+              {"visibility": "off"}
+            ]
+          }
+        ]
+      }, s = new google.maps.Map(document.getElementById("map"), n);
+
+      var pos = new google.maps.LatLng(55.7594416, 37.6371829);
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: s,
+        icon: new google.maps.MarkerImage('i/marker.png', null, null, null, new google.maps.Size(19, 28)),
+        title: 'lol',
+        zIndex: 1
+      });
+
+      /*var infowindow = new google.maps.InfoWindow({
+        content: 'ТЦ ДАНИЭЛЬ<br>' +
+        'г. Москва, ул. Соколово-Мещерская,<br>' +
+        'д. 25, торговый центр Даниэль'
+      });*/
+
+      var directionsDisplay = new google.maps.DirectionsRenderer({preserveViewport: true, suppressMarkers: true});
+      var directionsService = new google.maps.DirectionsService();
+
+      var request = {
+        origin: new google.maps.LatLng(55.757205, 37.631649), //точка старта
+        destination: new google.maps.LatLng(55.7594416, 37.6371829), //точка финиша
+        waypoints: [
+          {
+            location: new google.maps.LatLng(55.758183, 37.638515),
+            stopover:false
+          }
+        ],
+        travelMode: google.maps.DirectionsTravelMode.WALKING  //режим прокладки маршрута
+      };
+
+      directionsService.route(request, function(response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+        }
+      });
+
+      directionsDisplay.setMap(s);
+    }
   });
     $(function() {
 
