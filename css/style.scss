@@ -2,7 +2,6 @@
 @import "font-awesome.css";
 @import "compass";
 @import "reset";
-
 @import "define";
 
 @font-face{
@@ -2858,6 +2857,7 @@ input, textarea, button {
 @import 'bron';
 @import 'tickets';
 @import 'subscribe';
+@import 'company';
 
 #buter {
   display: none;
@@ -2988,6 +2988,14 @@ input, textarea, button {
   background: $green;
 }
 
+.bg-orange {
+  background: $orange;
+}
+
+.bg-white {
+  background: white;
+}
+
 .white-direction {
   width:30px;
   background: url(../i/white-direction.png) right center no-repeat;
@@ -2996,7 +3004,7 @@ input, textarea, button {
 
 .blur {
   -webkit-backface-visibility:hidden;
-  filter:url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="4" /></filter></svg>#blur');
+  filter:url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="//www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="4" /></filter></svg>#blur');
   -webkit-filter:blur(4px);
   filter:blur(4px);
 }

@@ -1,0 +1,239 @@
+.companycircle {
+  width:81px;
+  height:81px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+#company {
+  padding: 30px 0;
+  &:before {
+    content: '';
+    top:0;
+    bottom:0;
+    left:-2000px;
+    right:-2000px;
+    position: absolute;
+    background: #aee3ff url(../i/company/background1.jpg) center center repeat-x;
+    background-size: auto 100%;
+    z-index: -1;
+    border-bottom: solid 3px $blue;
+  }
+}
+
+.company-benefits {
+  >div {
+    @include flex(0 1 220px);
+    padding-bottom:20px;
+    border-bottom: solid 2px $blue;
+
+  }
+}
+
+.no1 {
+  font-size: 90px;
+
+  &:after {
+    width:150px;
+    height:150px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin:-75px 0 0 -75px;
+    background: white;
+    border-radius: 100px;
+    content: '';
+    z-index: -1;
+  }
+}
+
+.company-partners {
+  >div {
+    @include flex(0 1 200px);
+  }
+}
+
+.partner-logo {
+  height:50px;
+}
+
+.company-section {
+  padding:30px 0;
+}
+
+.partner-name {
+  margin-top:15px;
+  padding-top:5px;
+  border-top:solid 1px $grey;
+}
+
+#cpartners {
+  border-bottom: solid 9px $blue;
+}
+
+#employees {
+  &:before {
+    border-top: solid 3px $blue;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:800px;
+    content: '';
+    z-index: -1;
+    background: url(../i/company/building.jpg);
+    background-size: 100% auto;
+  }
+}
+
+.employee-list {
+  max-width: 950px;
+  margin-left:auto;
+  margin-right: auto;
+  >div {
+    border-radius: 10px;
+    border:solid 1px #c9c9c9;
+    @include flex(1);
+    max-width: 260px;
+    min-width: 210px;
+    margin:15px;
+    background: #f6f6f6;
+    box-shadow: 0 0 10px rgba(black, 0.1);
+    padding:30px 16px 25px;
+
+    &:after {
+      position: absolute;
+      bottom:0;
+      height:9px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      content: '';
+      left:0;
+      right:0;
+    }
+    &:before {
+      width:46px;
+      height:8px;
+      border-radius: 10px;
+      border:solid 1px #c9c9c9;
+      background: white;
+      content: '';
+      z-index: 10;
+      top:11px;
+      left:50%;
+      margin-left:-23px;
+      position: absolute;
+    }
+  }
+}
+
+.emp-blue {
+  &:after {
+    background-color: $blue;
+  }
+}
+
+.emp-green {
+  &:after {
+    background-color: $green;
+  }
+}
+
+.emp-orange {
+  &:after {
+    background-color: $orange;
+  }
+}
+
+.employee-photo {
+  @include flex(0 0 100px);
+  img {
+    display: block;
+  }
+}
+
+#whywe {
+  border-top: solid 9px $blue;
+  padding-left:15px;
+  padding-right: 15px;
+
+  .country-photo.whywe {
+    padding-left: 20px;
+  }
+}
+
+.whywebg {
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  overflow: hidden;
+  z-index: -1;
+  background: #2084ab;
+  &:after {
+    position: absolute;
+    content: '';
+    top:0;
+    left:0;
+    bottom:0;
+    right:-330px;
+    background: url(../i/country/island.jpg) right top no-repeat;
+  }
+}
+
+.credit-img {
+  width:150px;
+  height:150px;
+  border-radius: 75px;
+  border: solid 1px white;
+  img {
+    display: block;
+  }
+}
+
+.credit-section {
+  padding:15px;
+  background: $blue url(../i/country-blue.jpg) right center;
+  background-size: 100% 100%;
+
+}
+
+.credit-items {
+  >div {
+    @include flex(0 1 170px);
+  }
+}
+
+#cresponses {
+  border-top: solid 9px $blue;
+}
+
+.company-responses {
+  padding:15px;
+  background: #f3f3f3;
+}
+
+.responses-masonry {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.response {
+  padding:15px;
+  width:50%;
+}
+
+.response-text {
+  margin-bottom: 25px;
+  &:after {
+    position: absolute;
+    left:20px;
+    top:100%;
+    content: '';
+    width:43px;
+    height:21px;
+    background: url(../i/company/tail.png) left top no-repeat;
+  }
+}

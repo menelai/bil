@@ -3,7 +3,16 @@
  */
 
 (function($){
+  $(window).load(function() {
+    $(".responses-masonry").masonry({
+      itemSelector: '.response',
+      columnWidth: '.response',
+      percentPosition: true
+    });
+  });
     $(function() {
+
+
 
       $("[name=payment]").click(function() {
         $("#paymenttitle").attr('data-title', $(this).attr('data-title'));
