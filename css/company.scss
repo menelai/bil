@@ -1,8 +1,8 @@
 .companycircle {
   width:81px;
   height:81px;
-  margin-left: auto;
-  margin-right: auto;
+  //margin-left: auto;
+  //margin-right: auto;
   border-radius: 50%;
 }
 
@@ -99,7 +99,7 @@
     max-width: 260px;
     min-width: 210px;
     margin:15px;
-    background: #f6f6f6;
+    background: url(../i/company/Badge-bg.png) center top no-repeat;
     box-shadow: 0 0 10px rgba(black, 0.1);
     padding:30px 16px 25px;
 
@@ -113,7 +113,7 @@
       left:0;
       right:0;
     }
-    &:before {
+    /*&:before {
       width:46px;
       height:8px;
       border-radius: 10px;
@@ -125,7 +125,7 @@
       left:50%;
       margin-left:-23px;
       position: absolute;
-    }
+    }*/
   }
 }
 
@@ -162,6 +162,9 @@
 
   .country-photo.whywe {
     padding-left: 20px;
+    min-height: 210px;
+    border:none;
+    text-align: center;
   }
 }
 
@@ -190,6 +193,8 @@
   height:150px;
   border-radius: 75px;
   border: solid 1px white;
+  margin-left: auto;
+  margin-right: auto;
   img {
     display: block;
   }
@@ -197,7 +202,7 @@
 
 .credit-section {
   padding:15px;
-  background: $blue url(../i/country-blue.jpg) right center;
+  background: $blue url(../i/company/bg.jpg) right center;
   background-size: 100% 100%;
 
 }
@@ -336,6 +341,44 @@
   &:first-child {
     .tab-end.top {
       display: none;
+    }
+  }
+}
+
+.contact-title {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  background: #eee4d6;
+}
+
+.no1c {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pu {
+  border-top: dashed 1px $blue;
+}
+
+.vpu {
+  &:before {
+    position: absolute;
+    bottom:100%;
+    height:100px;
+    border-left: dashed 1px $blue;
+    content: '';
+  }
+  &:first-child {
+    &:before {
+      left:0;
+    }
+  }
+  &:last-child {
+    &:before {
+      right:0;
     }
   }
 }
