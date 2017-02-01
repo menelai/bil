@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>country</title>
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="js/jquery.datepicker.extension.range.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.selectric.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+  <script src="https://rawgit.com/srfrnk/re-tree/master/re-tree.js" type="text/javascript"></script>
+  <script src="https://rawgit.com/srfrnk/ng-device-detector/master/ng-device-detector.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
+  <link rel="stylesheet" type="text/css" href="css/selectric.css"/>
+  <link rel="stylesheet" type="text/css" href="css/weather-icons.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <script src="js/script.js"></script>
+  <style>
+    .max-width {
+      max-width: {{width}}px;
+    }
+  </style>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+</head>
+<body>
+
+<div ng-include="'top.html'"></div>
+
+<div class="max-width">
+  <div class="visa b-1 border-grey rounded5 f d">
+    <div class="visa-passport"></div>
+    <div class="flex1 f visa-rows">
+      <div class="visa-stuff f">
+        <div>
+          <div class="b-flag wide-b-flag"></div>
+          <div class="visa-slogan fwl ttu">Виза в&nbsp;Болгарию</div>
+          <div class="tac bg-green visa7">за 7 дней без вашего присутствия</div>
+        </div>
+        <div class="visa-sep"></div>
+        <div class="f vcen space6 visa-office">
+          <div><img src="i/visa/marker.png" class="db"></div>
+          <div class="flex1 grey777 fz16">Офис в центре Москвы у метро Китай-Город</div>
+        </div>
+      </div>
+      <div class="visa-form f">
+        <div class="tac vis1">
+          <div class="fz18 grey777">7&thinsp;500 ₽</div>
+          <div class="fz12">3 пассажира</div>
+        </div>
+        <div class="tac vis2">
+          <div class="fz18 green-text">2&thinsp;500 ₽</div>
+          <div class="fz12">1 пассажир</div>
+        </div>
+        <div class="break"></div>
+        <div class="f hcen">
+          <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+        </div>
+        <div class="subm">
+          <input type="submit" class="green-button ttu h35" value="Добавить к покупке">
+        </div>
+      </div>
+    </div>
+    <div class="b-flag narrow-b-flag"></div>
+  </div>
+</div>
+
+</body>
+</html>

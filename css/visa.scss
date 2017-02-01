@@ -1,0 +1,197 @@
+.visa {
+  min-height: 200px;
+}
+
+.visa7 {
+  padding:3px;
+}
+
+.visa-slogan {
+  line-height: 1.1;
+  margin-top:-0.25em;
+}
+
+.visa-passport {
+  @include flex(0 1 200px);
+  background: url(../i/visa/passport.jpg) center center no-repeat;
+  background-size: cover;
+  min-width: 140px;
+}
+
+@mixin visa-lowres() {
+  .visa {
+    min-height: 230px;
+  }
+  .visa-rows {
+    @include flex-direction(column);
+    margin-left:30px;
+    padding:10px 0;
+    @include justify-content(space-between);
+    >.visa-passport {
+      display: none;
+    }
+  }
+
+  .visa-passport {
+    min-width: 60px;
+  }
+
+  .visa-stuff {
+    @include flex-direction(column);
+  }
+
+  .visa-slogan {
+    font-size: 33px;
+    margin-bottom: 5px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .visa-office {
+    @include justify-content(center);
+    margin:10px 0;
+    .flex1 {
+      @include flex(auto);
+    }
+  }
+
+  .visa-form {
+    @include align-self(center);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    min-width: 300px;
+  }
+  .break {
+    @include flex(0 0 100%);
+    margin:5px 0;
+  }
+  .vis1 {
+    width:94px;
+    margin-left:10px;
+  }
+  .vis2 {
+    width: 190px;
+  }
+
+  .subm {
+    margin-left:10px;
+    input {
+      width:190px;
+    }
+  }
+
+  .narrow-b-flag {
+    margin-left:30px;
+    @include flex(0 0 13px);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: solid 1px #c9c9c9;
+    &:before {
+      border-top-right-radius: 5px;
+    }
+    &:after {
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
+.visa-like-mobile {
+  &:before {
+    position: absolute;
+    width: 3000px;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    background: #ffffff;
+    content: '';
+    display: block;
+  }
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  @include visa-lowres();
+}
+
+@media all and (max-width: 1200px) {
+  @include visa-lowres();
+}
+
+@media all and (min-width: 1201px) {
+  .result {
+    .visa {
+      > .visa-passport {
+        display: none;
+      }
+    }
+    .visa-slogan {
+      font-size: 52px;
+    }
+
+    .visa-stuff {
+      @include flex(1);
+      padding: 20px 30px;
+      @include align-items(center);
+      > div:first-child {
+        padding-left: 30px;
+      }
+    }
+
+    .visa-form {
+      @include flex-direction(column);
+      @include justify-content(space-between);
+      padding: 10px 20px;
+      border-left: solid 1px #c9c9c9;
+      min-width: 190px;
+      @include flex(0 0 20%);
+    }
+
+    .visa-sep {
+      width: 1px;
+      @include flex(0 0 1px);
+      background: $grey;
+      @include align-self(stretch);
+      margin: 0 30px;
+    }
+
+    .visa-office {
+      min-width: 150px;
+    }
+
+    .wide-b-flag {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 13px;
+      border: solid 1px #c9c9c9;
+
+    }
+    .subm {
+      @include display-flex();
+      input {
+        @include flex(1);
+      }
+    }
+  }
+}
+
+.b-flag {
+  background: #00a453;
+  &:before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 33%;
+    content: '';
+    background: white;
+  }
+  &:after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 33%;
+    content: '';
+    background: red;
+  }
+}

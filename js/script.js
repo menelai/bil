@@ -4,6 +4,7 @@
 
 (function($){
   $(window).load(function() {
+    if($.fn.masonry)
     $(".responses-masonry").masonry({
       itemSelector: '.response',
       columnWidth: '.response',
