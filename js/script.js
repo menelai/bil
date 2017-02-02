@@ -11,7 +11,7 @@
       percentPosition: true
     });
 
-    if($("#map").length) {
+    if(false && $("#map").length) {
       console.log('dsfasdf');
       var n = {
         zoom: 15,
