@@ -233,11 +233,11 @@
 }
 
 .response-text {
-  margin-bottom: 25px;
+  margin-top: 25px;
   &:after {
     position: absolute;
-    left:20px;
-    top:100%;
+    left:86px;
+    bottom:100%;
     content: '';
     width:43px;
     height:21px;
@@ -260,7 +260,7 @@
   right:0;
   bottom:0;
   background: url(../i/company/map.jpg) right center no-repeat;
-  
+
 }
 
 .about-padder {
@@ -383,4 +383,91 @@
       right:0;
     }
   }
+}
+
+.contact-slider {
+  .flex-control-paging {
+    display: none;
+  }
+
+  .flex-direction-nav {
+    a {
+      opacity:1;
+      text-indent: -9999px;
+      text-align: left;
+    }
+    .flex-prev {
+      left:10px;
+      background: rgba(white, 0.8) url(../i/slider-left.png) 10px center no-repeat;
+      border-radius: 20px;
+      &:before {
+        display: none;
+      }
+    }
+    .flex-next {
+      right:10px;
+      background: rgba(white, 0.8) url(../i/slider-right.png) 15px center no-repeat;
+      border-radius: 20px;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.enlarge {
+  position: relative;
+  display: block;
+  img {
+    display: block;
+  }
+  i {
+    position: absolute;
+    display: block;
+    width:40px;
+    height:30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color:$blue;
+    background: rgba(white, 0.4);
+    bottom:0;
+    left:50%;
+    margin-left:-20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
+
+.docs {
+  position: relative;
+  display: inline-block;
+  img {
+    display: block;
+  }
+  i {
+    position: absolute;
+    display: block;
+    width:40px;
+    height:30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color:$blue;
+    background: rgba(white, 0.4);
+    bottom:27px;
+    left:50%;
+    margin-left:-20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
+
+.resp-disclaimer {
+  background: #24c2e7;
+  border-radius: 5px;
+  margin-right:-15px;
+  margin-left: -15px;
+  padding:15px;
+  color:white;
 }

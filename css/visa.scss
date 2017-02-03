@@ -19,6 +19,13 @@
 }
 
 @mixin visa-lowres() {
+  .number-with-spinners {
+    .minus, .plus, input {
+      width:30px;
+      height:30px;
+    }
+  }
+
   .visa {
     min-height: 230px;
   }
@@ -67,15 +74,15 @@
   }
   .vis1 {
     width:94px;
-    margin-left:10px;
   }
   .vis2 {
     width: 190px;
+    margin-left:10px;
   }
 
   .subm {
     margin-left:10px;
-    input {
+    button {
       width:190px;
     }
   }
@@ -138,7 +145,7 @@
     .visa-form {
       @include flex-direction(column);
       @include justify-content(space-between);
-      padding: 10px 20px;
+      padding: 10px 15px;
       border-left: solid 1px #c9c9c9;
       min-width: 190px;
       @include flex(0 0 20%);

@@ -4,6 +4,16 @@
 
 (function($){
   $(window).load(function() {
+    if($.fn.flexslider) {
+      $('.contact-slider').flexslider({
+        animation: 'slide'
+      });
+    }
+
+    if($.fn.fancybox) {
+      $('.fancy').fancybox();
+    }
+
     if($.fn.masonry)
     $(".responses-masonry").masonry({
       itemSelector: '.response',
@@ -161,6 +171,7 @@
             }, 800);
             return false;
         });
+
 
       $("#responses").flexslider({
         animation: "slide"

@@ -113,7 +113,7 @@
             .o-cols>div:nth-child(3) {flex:1;}
             .o-cols>div:nth-child(4) {flex:0 0 80px; text-align: center;}
             .o-cols>div:nth-child(5) {flex:0 0 80px;}
-            .o-cols>div:nth-child(6) {flex:0 0 200px;}
+            .o-cols>div:nth-child(6) {flex:0 0 220px;}
           </style>
 
           <div class="o-cols o-header tac f d space20 grey777">
@@ -161,7 +161,10 @@
                 </div>
               </div>
               <div class="tar fwb">125&thinsp;338&nbsp;₽</div>
-              <div><span class="grey">Оплатить до:</span> 12:30, 21.07.2016</div>
+              <div class="f space4 vcen">
+                <div><a href="/" class="green-button aib ibm ptbut"><span class="mozfix">Оплатить</span></a></div>
+                <div><span class="grey">до:</span> 12:30, 21.07.2016</div>
+              </div>
             </div>
           </div>
 
@@ -198,7 +201,10 @@
                 </div>
               </div>
               <div class="tar fwb">65&thinsp;338&nbsp;₽</div>
-              <div><span class="grey">Оплатить до:</span> 12:30, 21.07.2016</div>
+              <div class="f space4 vcen">
+                <div><a href="/" class="green-button aib ibm ptbut"><span class="mozfix">Оплатить</span></a></div>
+                <div><span class="grey">до:</span> 12:30, 21.07.2016</div>
+              </div>
             </div>
           </div>
 
@@ -238,9 +244,12 @@
                 </div>
               </div>
               <div class="tar fwb">65&thinsp;338&nbsp;₽</div>
-              <div><span class="grey">Оплатить до:</span> 12:30, 21.07.2016</div>
+              <div class="f space4 vcen">
+                <div><a href="/" class="green-button aib ibm ptbut"><span class="mozfix">Оплатить</span></a></div>
+                <div><span class="grey">до:</span> 12:30, 21.07.2016</div>
+              </div>
             </div>
-            <div class="f space20 p10">
+            <div class="f space20 p10 ptact">
               <div class="flex1 tac">
                 <span class="grey">Документы:</span>
                 <span class="tooltip ml10">
@@ -256,14 +265,53 @@
                 <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-user tdn"></i> <span class="tdu">Изменить данные пассажира</span></a>
               </div>
               <div class="flex1 tac">
-                <a class="tdn" ng-click="changeDate=true"><i class="fa fa-calendar tdn"></i> <span class="tdu">Изменить даты вылета</span></a>
+                <a class="tdn" ng-click="cancel=true"><i class="fa fa-times tdn"></i> <span class="tdu">Аннулировать авиабилет</span></a>
               </div>
               <div class="flex1 tac">
-                <a class="tdn" ng-click="cancel=true"><i class="fa fa-times tdn"></i> <span class="tdu">Аннулировать авиабилет</span></a>
+                <a class="tdn" ng-click="changeDate=true"><i class="fa fa-calendar tdn"></i> <span class="tdu">Изменить даты вылета</span></a>
               </div>
             </div>
 
             <div class="slide p10" ng-show="order" ng-include="'order-form.html'"></div>
+          </div>
+          <div class="o-row">
+            <div class="f d space20 o-cols">
+              <div>12345</div>
+              <div><span class="orange">Не оплачен</span></div>
+              <div class="f space6">
+                <div class="flex1 tar"><span class="blue">Москва</span> <span class="grey fz11">12.01.2017</span></div>
+                <div><i class="fa fa-angle-right grey777 fa-fw"></i></div>
+                <div class="flex1"><span class="orange">Бургас</span></div>
+              </div>
+              <div>
+                <div class="tooltip db">
+                  <div class="tac">3</div>
+                  <div class="ttip f hcen">
+                    <div id="numberofpass" class="f vcen space8">
+                      <div class="f vcen space">
+                        <img src="i/icons/Adult-white.svg">
+                        <div><span class="mozfix">×1</span></div>
+                      </div>
+
+                      <div class="f vcen space2">
+                        <img src="i/icons/Child-white.svg">
+                        <div><span class="mozfix">×0</span></div>
+                      </div>
+
+                      <div class="f vcen space2">
+                        <img src="i/icons/Infant-white.svg">
+                        <div><span class="mozfix">×0</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tar fwb">65&thinsp;338&nbsp;₽</div>
+              <div class="f space4 vcen">
+                <div><a href="/" class="green-button aib ibm ptbut"><span class="mozfix">Оплатить</span></a></div>
+                <div><span class="grey">до:</span> 12:30, 21.07.2016</div>
+              </div>
+            </div>
           </div>
         </div>
       <!--table class="white-table">
