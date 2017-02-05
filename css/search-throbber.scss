@@ -100,6 +100,7 @@
 }
 
 #throbber-slider {
+  @include transform(translateY(-50px));
   width:180px;
 
   .flex-control-paging {
@@ -141,31 +142,32 @@
 }
 
 #magnifscale {
+  margin-top:-50px;
   position: absolute;
   left:50%;
   top:50%;
-  width:216px;
-  height:216px;
+  width:150px;
+  height:150px;
   @include transform(translateX(-50%) translateY(-50%));
   svg {
     display: block;
   }
   &:before {
-    content:url(../i/magnifier2.png);
-    width:289px;
-    height:385px;
+    content:url(../i/mag.svg);
+    width:201px;
+    height:269px;
     position: absolute;
-    left: -25px;
-    top: -33px;
+    left: -18px;
+    top: -24px;
   }
 }
 
 .thsign {
   position: absolute;
   top:100%;
-  left:-130px;
-  min-width: 290px;
-  margin-top:60px;
+  left:-180px;
+  min-width: 600px;
+  margin-top:20px;
 }
 
 #eye {
@@ -193,7 +195,7 @@
 }
 
 .arc {
-   fill: $blue;
+   fill: $orange;
  }
 
 .arc1 {

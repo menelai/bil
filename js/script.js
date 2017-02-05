@@ -2,6 +2,52 @@
  * Created by atrey on 16.01.2016.
  */
 
+(function($) {
+  $(function() {
+    $("#throbber-slider").flexslider({
+      //animation: "slide"
+    });
+    var svg = d3.select("#magnifscale")
+      .append("svg")
+      .attr("width", 150)
+      .attr("height", 150)
+      .append("g")
+      .attr("transform", "translate(75,75)");
+
+    var arc = d3.svg.arc()
+      .innerRadius(64)
+      .outerRadius(73)
+      .startAngle(0)
+      .endAngle(2);
+
+    var path = svg.append("path")
+      .attr("class", "arc")
+      .attr("d", arc);
+
+    var arc1 = d3.svg.arc()
+      .innerRadius(72)
+      .outerRadius(74)
+      .startAngle(0)
+      .endAngle(2 * Math.PI);
+
+    var path1 = svg.append("path")
+      .attr("class", "arc1")
+      .attr("d", arc1);
+
+    var arc2 = d3.svg.arc()
+      .innerRadius(62)
+      .outerRadius(64)
+      .startAngle(0)
+      .endAngle(2 * Math.PI);
+
+    var path2 = svg.append("path")
+      .attr("class", "arc1")
+      .attr("d", arc2);
+
+
+  });
+})(jQuery);
+
 (function($){
   $(window).load(function() {
     if($.fn.flexslider) {

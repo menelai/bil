@@ -277,7 +277,7 @@
         >li {
           &:not(.submenu) {
             @include display-flex();
-            @include flex(0 1 71px);
+            @include flex(0 1 69px);
 
             @include align-items(center);
 
