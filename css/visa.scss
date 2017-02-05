@@ -73,11 +73,12 @@
     margin:5px 0;
   }
   .vis1 {
-    width:94px;
+    width: 190px;
   }
   .vis2 {
-    width: 190px;
-    margin-left:10px;
+    width:94px;
+    margin-right:10px;
+    @include order(-1);
   }
 
   .subm {
@@ -144,7 +145,7 @@
 
     .visa-form {
       @include flex-direction(column);
-      @include justify-content(space-between);
+      @include justify-content(center);
       padding: 10px 15px;
       border-left: solid 1px #c9c9c9;
       min-width: 190px;
@@ -172,7 +173,16 @@
       border: solid 1px #c9c9c9;
 
     }
+
+    .vis1 {
+      margin-bottom: 15px;
+    }
+    .vis2 {
+      margin-bottom: 5px;
+    }
+
     .subm {
+      margin-top:10px;
       @include display-flex();
       input {
         @include flex(1);

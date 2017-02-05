@@ -21,13 +21,13 @@
       percentPosition: true
     });
 
-    if(false && $("#map").length) {
+    if($("#map").length) {
       console.log('dsfasdf');
       var n = {
         zoom: 15,
         disableDefaultUI: !1,
         scrollwheel: !1,
-        center: new google.maps.LatLng(55.7594416, 37.6171829),
+        center: new google.maps.LatLng(55.7594416, 37.6371829),
         styles: [
           {
             "featureType": "administrative",
@@ -81,7 +81,7 @@
         }
       });
 
-      directionsDisplay.setMap(s);
+      //directionsDisplay.setMap(s);
     }
   });
     $(function() {
