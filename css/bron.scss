@@ -616,3 +616,16 @@ label:focus {
     z-index: 199;
   }
 }
+
+.required {
+  &:before {
+    position: absolute;
+    left:100%;
+    top:0;
+    content: '';
+    background: red;
+    width:10px;
+    height: 10px;
+    background: url(../i/mandatory.png) left center no-repeat;
+  }
+}

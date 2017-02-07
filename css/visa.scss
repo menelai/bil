@@ -104,6 +104,7 @@
 }
 
 .visa-like-mobile {
+
   &:before {
     position: absolute;
     width: 3000px;
@@ -116,6 +117,9 @@
   }
   margin-bottom: 30px;
   padding-bottom: 10px;
+  .visa-added {
+    display: none;
+  }
   @include visa-lowres();
 }
 
@@ -124,6 +128,16 @@
 }
 
 @media all and (min-width: 1201px) {
+  .visa-added {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: #ffffff;
+    border-radius: 4px;
+  }
+
   .result {
     .visa {
       > .visa-passport {
