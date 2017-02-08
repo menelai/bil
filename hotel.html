@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>hotel</title>
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="js/jquery.datepicker.extension.range.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.selectric.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+  <script src="https://rawgit.com/srfrnk/re-tree/master/re-tree.js" type="text/javascript"></script>
+  <script src="https://rawgit.com/srfrnk/ng-device-detector/master/ng-device-detector.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
+  <link rel="stylesheet" type="text/css" href="css/selectric.css"/>
+  <link rel="stylesheet" type="text/css" href="css/weather-icons.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <script src="js/script.js"></script>
+  <style>
+    .max-width {
+    max-width: {{width}}px;
+    }
+  </style>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+</head>
+<body>
+
+<div id="top">
+  <div class="max-width d f space10">
+    <div id="logo" class="">
+      <a href="/">
+        <div>
+          <div><img src="i/Loro.svg"></div>
+          <div class="afut" id="sitename-and-slogan">
+            <div id="sitename"><span class="green">biletideshevo</span><span class="blue">.ru</span></div>
+            <div id="slogan" class="blue">
+              Лучшие цены на авиабилеты<br>
+              Европейское качество обслуживания
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="sep"></div>
+    <div id="partners" class="f hcen space20">
+      <div class="f d c">
+        <h4>Наши партнеры:</h4>
+        <div class="f c vcen">
+          <div class="swap"><img src="i/sber.png"><img src="i/sber-color.png"></div>
+          <div class="swap mt5"><img src="i/alfabank-grey.png"><img src="i/alfabank.png"></div>
+        </div>
+      </div>
+      <div class="f d c">
+        <h4>Нас рекомендуют:</h4>
+        <div class="f c vcen">
+          <div class="swap"><img src="i/rbc.png"><img src="i/rbc-color.png"></div>
+          <div class="swap mt5"><img src="i/national.png"><img src="i/national-color.png"></div>
+        </div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div id="phones" class="f hcen vcen">
+      <div class="tar fz20 wsn">
+        <div class="blue" style="margin-left: -1em;">+7 495 150-11-82</div>
+        <div class="blue ss-nd">8 800 234 5 99 5</div>
+      </div>
+      <div class="ss-nd f working-time">
+        <div class="f vcen">
+          <div class="working-days f">
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+            <div class="bg-blue"></div>
+          </div>
+          <div class="blue">08-22</div>
+        </div>
+        <div class="f vcen">
+          <div class="working-days f">
+            <div class="bg-green"></div>
+            <div class="bg-green"></div>
+          </div>
+          <div class="green-text">08-21</div>
+        </div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div class="f d c">
+      <div class="f d space20 vcen">
+        <div class="f vcen space12">
+          <div class="grey fz10 tar lh1">Позвонить<br>онлайн</div>
+          <div class="f space10">
+            <a href="/"><img src="i/viber.png" class="db" style="margin-bottom:-4px;"></a>
+            <a href="/"><img src="i/skype.png" class="db"></a>
+            <a href="/"><img src="i/whatsapp.png" class="db"></a>
+          </div>
+        </div>
+        <div class="f vcen space12">
+          <div class="grey fz10 tar lh1">Обратная<br>свзязь</div>
+          <a href="/"><img src="i/envelope.svg" class="db"></a>
+        </div>
+      </div>
+
+      <div class="mt9 f d">
+        <div ng-show="login" class="flex1 f space6 mr20">
+          <div class="flex1 ellipsis">konstantin@konstantinov.ru</div> <div><a class="fa fa-sign-out tdn" aria-hidden="true" ng-click="login=false"></a></div>
+        </div>
+        <div ng-show="!login">
+          <a id="lk" ng-click="lk=!lk" ng-init="lk=false;" ng-class="{'revealed': lk}">Личный кабинет</a>
+          <div class="login-block slide" ng-show="lk">
+            <div class="blue mb5 tac mt20">Войти с помощью:</div>
+            <div>
+              <script src="//ulogin.ru/js/ulogin.js"></script>
+              <div id="uLogin" data-ulogin="display=panel;theme=flat;fields=first_name,last_name;providers=google,yandex,mailru,vkontakte,odnoklassniki,facebook;hidden=;redirect_uri=http%3A%2F%2F;mobilebuttons=0;"></div>
+            </div>
+
+            <div class="mt30">
+              <div class="mb5 blue tac">Войти, используя email</div>
+              <form ng-submit="login=true">
+                <div class="f"><input type="text" name="login" class="flex1 rounded3 b-1 border-blue lh26" placeholder="Email"></div>
+                <div class="f mt10"><input type="password" name="pass" class="flex1 rounded3 b-1 border-blue lh26" placeholder="Пароль"></div>
+                <div class="f mt10"><input type="submit" value="Войти"class="blue-button flex1"></div>
+              </form>
+              <div class="mt5 mb20 tac"><a href="/" class="black">Восстановить пароль</a></div>
+              <div class="fz16 tac"><a href="/">Регистрация</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="blue top-selector"><img src="i/flag.png" class="b-1 border-grey ibm" style="vertical-align: -2px;"> / ₽ <i class="fa fa-angle-down grey ml3"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="buter" class="ws-nd vcen hcen" ng-click="showMenu=!showMenu" ng-init="showMenu=false"><i class="fa fa-bars"></i></div>
+<div id="menu-line" ng-show="showMenu || (device!='iphone'&&device!='android'&&device!='windows-phone'&&device!='blackberry')">
+  <div class="max-width">
+    <ul>
+      <li><a href="/">Авиабилеты</a></li>
+      <li><a href="/">Бронирование отелей</a></li>
+      <li><a href="/">Бронирование авто</a></li>
+      <li><a href="/">Ж\д билеты</a></li>
+      <li><a href="/">Билеты на автобус on-line</a></li>
+      <li><a href="/">О компании</a></li>
+      <li><a href="/">Контакты</a></li>
+      <li><a href="/">Отзывы о нас</a></li>
+    </ul>
+    <div class="ws-nd  mt20">
+      <div class="f around">
+        <a href="/" class="f hcen vcen lnk lnk-facebook"><i class="fa fa-facebook"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-vk"><i class="fa fa-vk"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-instagram"><i class="fa fa-instagram"></i></a>
+        <a href="/" class="f hcen vcen lnk lnk-twitter"><i class="fa fa-twitter"></i></a>
+      </div>
+      <div class="mt10 fz18">
+        <a href="mailto:info@biletideshevo.ru" class="tdn"><i class="fa fa-envelope-o grey"></i> info@biletideshevo.ru</a>
+      </div>
+      <div class="f vcen hcen mt20">
+        <a class="cancel-button" ng-click="showMenu=false">Закрыть</a>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 class="ttu fz20 tac mt15 white"><span ng-show="$root.tab==1">Лучшие отели бронирую здесь!</span><span ng-show="$root.tab==2">&nbsp;</span></h1>
+<div id="top-search-form" ng-if="!hideSeach">
+  <div class="max-width">
+    <form class="f d space3">
+      <!--div id="new-search" class="flex1 f">
+        <div class="green-button aib tac flex1 fi hcen vcen ttu multiline"><div class="fwl fz13"><span class="mozfix">Новый поиск</span></div></div>
+      </div-->
+      <div id="hotel-or-city" class="f">
+        <input type="text" name="from" placeholder="Город вылета" class="autocomplete city-input flex1 b-1 border-blue rounded2" autocomplete="off" value="{$_SESSION['searchdata']['from']}">
+        <!--div id="change-from-to"></div-->
+      </div>
+      <!--div id="to-input" class="f">
+        <input type="text" name="to" placeholder="Город прилета" class="autocomplete city-input flex1 b-1 border-blue rounded2" autocomplete="off" value="{$_SESSION['searchdata']['to']}">
+      </div-->
+      <div id="date-input-1" class="f">
+        <input type="text" name="date-from" class="datepicker date-from flex1 b-1 border-blue rounded2" placeholder="Туда" autocomplete="off" value="{$_SESSION['searchdata']['outDate']}">
+      </div>
+      <div id="date-input-2" class="f">
+        <input type="text" name="date-to" id="date-to" class="datepicker date-to flex1 b-1 border-blue rounded2" placeholder="Обратно" autocomplete="off" value="{$_SESSION['searchdata']['dateReturn']}">
+        <div id="ticket-ne-nujen" class="no-display">
+          <div class="f hcen p10">
+            <a id="clear-back-date" class="button-grey aib" href="/" style="padding-left:20px; padding-right:20px;"><span class="blue fwn">Обратный билет не нужен</span></a>
+          </div>
+        </div>
+        <div class="close"></div>
+      </div>
+      <div id="passengers-input" tw-click-outside="showPass=false" ignore-if="showPass==false">
+        <div class="revealer revealer-white" ng-class="showPass ? 'shown' : ''" ng-click="showPass=!showPass">
+          <div class="f d vcen space8 flex1 blue fwn">
+            <div id="numberofpass" class="f vcen space8">
+              <div class="f vcen space">
+                <img src="i/icons/Adult.svg">
+                <div><span class="mozfix">×1</span></div>
+              </div>
+
+              <div class="f vcen space2">
+                <img src="i/icons/Child.svg">
+                <div><span class="mozfix">×0</span></div>
+              </div>
+
+              <div class="f vcen space2">
+                <img src="i/icons/Infant.svg">
+                <div><span class="mozfix">×0</span></div>
+              </div>
+            </div>
+
+            <div class=" ellipsis"><span class="mozfix">эконом</span></div>
+          </div>
+        </div>
+        <div class="slide passinp-popup b-1 rounded2 border-blue" ng-show="showPass" id="passengers-popup">
+          <div class="p10">
+            <div class="border-split bs15">
+              <div class="f d vcen space10">
+                <div class="tac passenger-pic"><img src="i/adult.png"></div>
+                <div class="flex1">Взрослые</div>
+                <div>
+                  <div class="number-with-spinners ss-h35"><span class="minus">−</span><input type="number" name="adults" step="1" value="1"><span class="plus">+</span></div>
+                </div>
+              </div>
+              <div>
+                <div class="f d vcen space10">
+                  <div class="tac passenger-pic"><img src="i/child.png"></div>
+                  <div class="flex1">Дети до 14 лет</div>
+                  <div>
+                    <div class="number-with-spinners ss-h35"><span class="removechild minus">−</span><input type="number" name="childs" step="1" value="0"><span class="addchild plus">+</span></div>
+                  </div>
+                </div>
+                <div class="listofchilds">
+                </div>
+              </div>
+              <div class="f d vcen space10">
+                <div class="tac passenger-pic"><img src="i/baby.png"></div>
+                <div class="flex1">
+                  Дети до 2 лет
+                  <div class="grey fz11">без места</div>
+                </div>
+                <div>
+                  <div class="number-with-spinners ss-h35"><span class="minus">−</span><input type="number" name="infants" step="1" value="0"><span class="plus">+</span></div>
+                </div>
+              </div>
+              <div>
+                <label class="f d vcen space4">
+                  <input type="checkbox">
+                  <div class="flex1">Бизнес-класс</div>
+                </label>
+              </div>
+
+            </div>
+            <div class="mt20 f">
+              <input type="button" id="close-pass" class="cancel-button flex1 tac" value="Закрыть">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="search-submit">
+        <input type="submit" value="Найти лучшую цену" class="orange-button aib ttu">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="b-container">
+  <div style="background-color:#aca592; background-image: url(i/country/sea.jpg);" class="bnrbg" ng-show="$root.tab==1"></div>
+  <div style="background-color:#2084ab; background-image: url(i/country/island.jpg);" class="bnrbg" ng-show="$root.tab==2"></div>
+
+  <div class="max-width">
+    <a href="/" class="tdn f toptour rounded5 oh" ng-show="$root.tab==1">
+      <div>
+        <div class="bg-black70 p20 white">
+          <div>Отель</div>
+          <div class="ttu fz30">Green Palm inn</div>
+          <div>Тенерифе, Испания <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <div class="fz18 f space10 mt30">
+            <div class="blue">24 сентября 2017</div>
+            <div>|</div>
+            <div class="orange">30 сентября 2017</div>
+          </div>
+          <div class="f space30 d mt30" style="margin-right:-30px;">
+            <div class="flex1" style="max-width: 220px;">Номер на двоих, для некурящих,
+              с&nbsp;видом на&nbsp;море, завтрак
+            </div>
+            <div>
+            <div class="orange-arrow">
+              <div class="fontfix fz30 lh1 fw600">62&thinsp;338 ₽</div>
+              <div class="arrow-top"></div>
+              <div class="arrow-bottom"></div>
+            </div>
+              за ночь
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <div class="tdn topwhy db" ng-show="$root.tab==2">
+
+      <div class="f space20 mt10">
+        <div class="lh1 wsn f d c">
+          <div class="fz44 fwl">БРОНИРУЙТЕ ВСЁ<br>
+            в одном месте</div>
+          <div class="mt30 mb3 fz31 bestpriceguarantee ibm fwl"><div><div style="top:-5px;">гарантия лучших цен</div></div></div>
+        </div>
+        <div class="fz17">
+          <div class="ttu fz20 mb10">Вы выбрали нас, потому что мы выбрали для вас лучшее</div>
+
+          <ul class="rect ul">
+
+            <li>Авиабилеты в любую точку мира со скидкой до 40%</li>
+            <li class="mt10">Туры от всех туроперторов со скидкой до 30%</li>
+
+            <li class="mt10">Ж/Д билеты по России и странам Европы</li>
+
+            <li class="mt10">Гостиницы в любом городе мира —
+              уникальное предложение</li>
+
+            <li class="mt10">Трансферы из 500 аэропортов мира</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mytabs mt20">
+      <div class="tabs-switchers cntr fz16 ttu f space2" ng-init="$root.tab=1">
+        <div class="flex2 tac wsn" ng-class="{'active' : $root.tab==1}" ng-click="$root.tab=1"><div class="tab-end left"></div>спецпредложения НА ЧАРТЕНЫЕ АВИАБИЛЕТЫ С МОМЕНТАЛЬНЫМ ПОДТВЕРЖДЕНИЕМ<div class="tab-end right"></div></div>
+        <div class="flex1 tac wsn" ng-class="{'active' : $root.tab==2}" ng-click="$root.tab=2"><div class="tab-end left"></div>Почему именно мы?<div class="tab-end right"></div></div>
+      </div>
+      <div class="tab-contents" ng-show="$root.tab==1">
+        <div class="f d space3 country-form">
+          <div class="flex1">
+            <!--input type="text" placeholder="Все равно откуда" class="autocomplete border-blue b-1 rounded3 flex1"-->
+            <select class="selectric grey h40">
+              <option value="">не важно откуда</option>
+              <option value="Монастир">в январе</option>
+            </select>
+          </div>
+          <div class="flex1">
+            <select class="selectric grey h40">
+              <option value="">не важно когда</option>
+              <option value="Монастир">в январе</option>
+            </select>
+          </div>
+          <div class="flex1">
+            <select class="selectric grey h40">
+              <option value="">не важно когда</option>
+              <option value="Монастир">в январе</option>
+            </select>
+          </div>
+          <div class="flex1">
+            <select class="selectric grey h40">
+              <option value="">на любое вермя</option>
+              <option value="Монастир">на 3 дня</option>
+            </select>
+          </div>
+          <div>
+            <input type="submit" class="green-button ttu" value="Подобрать">
+          </div>
+        </div>
+        <div class="mt20">
+          <div class="results-wrapper">
+            <div class="result-wrapper f c" ng-repeat="row in ::[{num: 1, color: 'green'}, {num: 2, color: 'blue'}, {num: 3, color: 'orange'}, {num: 4, color: 'green'}, {num: 5, color: 'blue'}, {num: 6, color: 'orange'}]">
+              <div class="country-photo f d c flex1" ng-class="'cp-'+row.color" style="background-image: url(i/country/{{::row.num}}.jpg);">
+                <div>
+                  <div class="place-name ttu">Red Carpet Inn</div>
+                  <div>Отель <i ng-repeat="ro in ::[1,2,3,4,5]" class="fa fa-star"></i></div>
+                  <div class="mt15">26 декабря — 5 января</div>
+                  <div class="mt5">туда и обратно,<br> прямой рейс</div>
+                </div>
+                <div class="f mt20 vbot space20">
+                  <div class="orange-arrow">
+                    <div class="fontfix fz24 lh1 fw600">62&thinsp;338 ₽</div>
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                  </div>
+                  <div>за ночь</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-contents" ng-show="$root.tab==2">
+
+        <div class="mt20">
+          <div class="results-wrapper">
+            <div class="result-wrapper f c">
+              <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b1.jpg);">
+                <div style="background-image: url(i/country/p1.png);" class="bst"></div>
+                <div><img src="i/country/sber.png" style="margin-left: -55px;"></div>
+                <div class="fz17 mt10">
+                  <div class="ttu fw600">Минимальные комиссии</div>
+                  за&nbsp;проведение интенет-эквайринга
+                  благодаря долгосрочному
+                  и&nbsp;продуктивному сотрудничеству
+                  с&nbsp;ПАО&nbsp;«Сбербанк России»
+                </div>
+              </div>
+            </div>
+            <div class="result-wrapper f c fz17">
+              <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b2.jpg);">
+                <div style="background-image: url(i/country/p2.png);" class="bst"></div>
+                <div class="ttu fw600">За три года</div>
+                присутствия на рынке россии
+                клиенатми biletideshevo.ru стали более<br>
+                <span class="fz42">60&thinsp;000</span> человек
+              </div>
+            </div>
+            <div class="result-wrapper f c fz17">
+              <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b3.jpg);">
+                <div style="background-image: url(i/country/p3.png);" class="bst"></div>
+                Мы уполномоченное<br>
+                туристическое агентство<br>
+                международного туроператора
+
+                <div class="mt20"><img src="i/country/mouz.png"></div>
+              </div>
+            </div>
+
+            <div class="result-wrapper f c">
+              <div class="country-photo whywe flex1 cp-green" style="background-image: url(i/country/b4.jpg);">
+                <div style="background-image: url(i/country/p4.png);" class="bst"></div>
+                <div style="position: absolute; left: 20px; top: 20px;"><img src="i/country/metro.png"></div>
+                <div class="fz17">
+                  <div class="ttu fw600">Офис в центре Москвы</div>
+                  <div class="fw600">Китай-город</div>
+
+                  <div class="mt10">Мы работаем без выходных<br>
+                    с 8:00 до 22:00 часов</div>
+
+                  <div class="mt10">Клиентоориетированный
+                    квалифицированный
+                    персонал</div>
+                </div>
+              </div>
+            </div>
+            <div class="result-wrapper f c fz17">
+              <div class="country-photo whywe flex1 cp-blue" style="background-image: url(i/country/b5.jpg);">
+                <div style="background-image: url(i/country/p5.png);" class="bst"></div>
+                <div>Уникальная система поиска
+                  авиабилетов</div>
+
+                <div class="mt10">Выписка регулярных авиабилетов
+                  через все возможные GDS</div>
+
+                <div class="mt10">Прямые контракты и эксклюзивные
+                  условия с крупнейшими
+                  консолидаторами чартерных рейсов</div>
+
+              </div>
+            </div>
+            <div class="result-wrapper f c fz17">
+              <div class="country-photo whywe flex1 cp-orange" style="background-image: url(i/country/b6.jpg);">
+                <div style="background-image: url(i/country/p6.png);" class="bst"></div>
+                <div class="ttu fw600">уникальная система<br>
+                  бронирования отелей </div>
+                <div class="mt10">Эсклюзивные прдложения с лучшими
+                  ценами на туристических направлениях</div>
+                <div class="mt10 ttu">Это есть только у нас!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="country">
+
+  <div class="section-blue-bg">
+    <div class="max-width">
+      <div class="ttu tac fz20 mb20">Полезно знать при бронировании отелей</div>
+
+      <div class="usefullist fz16">
+        <div class="f d ">
+          <a href="/" class="white tdn tac f c vcen">
+            <div class="uimg f hcen vcen"><img src="i/hotel/lock.svg"></div>
+            <div class="tac mt20">Бронирование отелей онлайн -<br>
+              это дёшево, быстро, безопасно.</div>
+          </a>
+          <a href="/" class="white tdn tac f c vcen">
+            <div class="uimg f hcen vcen"><img src="i/hotel/bell.svg"></div>
+            <div class="tac sign p20">Все гостиницы мира<br>
+              на нашем сайте</div>
+          </a>
+          <a href="/" class="white tdn tac f c vcen">
+            <div class="uimg f hcen vcen"><img src="i/hotel/dnd.svg"></div>
+            <div class="tac p20 sign">Отель, хостел, гостевой дом<br>
+              или апартаменты?</div>
+          </a>
+        </div>
+        <div class="f d ">
+          <a href="/" class="white tdn tac f c vcen">
+            <div class="uimg f hcen vcen"><img src="i/hotel/marker.svg"></div>
+            <div class="tac p20 sign">Что нужно знать при<br>
+              бронировании жилья</div>
+          </a>
+          <a href="/" class="white tdn tac f c vcen">
+            <div class="uimg f hcen vcen"><img src="i/hotel/pig.svg"></div>
+            <div class="tac p20 sign">Как сэкономить <br>
+              на бронировании проживания</div>
+          </a>
+          <a href="/" class="white tdn tac f c vcen">
+            <div class="uimg f hcen vcen"><img src="i/hotel/dish.svg"></div>
+            <div class="tac p20 sign">Дополнительные услуги<br>
+              нашей компании</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="country-info" class="mt15">
+    <div id="country-cols" class="max-width f d r">
+      <div id="nav-col">
+        <div id="nav-col-bg">
+          <ul class="ul">
+            <li>
+              <a href="#common" style="background-image: url(i/nav-plane.png);"><span class="mozfix">Общая информация о&nbsp;рейсах в&nbsp;Грецию из&nbsp;России</span></a>
+            </li>
+            <li>
+              <a href="#airports" style="background-image: url(i/nav-wind.png); background-position-x:15px;"><span class="mozfix">Крупнейшие аэропорты Греции</span></a>
+            </li>
+            <li>
+              <a href="#time" style="background-image: url(i/nav-cloud.png);"><span class="mozfix">Время и&nbsp;погода в&nbsp;городах Греции</span></a>
+            </li>
+            <li>
+              <a href="#sight" style="background-image: url(i/nav-camera.png);"><span class="mozfix">Экскурсии и&nbsp;дос&shy;то&shy;при&shy;ме&shy;ча&shy;тель&shy;нос&shy;ти в&nbsp;Греции</span></a>
+            </li>
+            <li>
+              <a href="#schedule" style="background-image: url(i/nav-calendar.png);"><span class="mozfix">Расписание рейсов в&nbsp;Грецию</span></a>
+            </li>
+            <li>
+              <a href="#price" style="background-image: url(i/nav-ticket.png);"><span class="mozfix">Цена авиабилетов в&nbsp;Грецию</span></a>
+            </li>
+            <li>
+              <a href="#why" style="background-image: url(i/nav-pig.png);"><span class="mozfix">Почему на&nbsp;biletideshevo.ru билеты в&nbsp;Грецию дешёвые?</span></a>
+            </li>
+            <li>
+              <a href="#extra" style="background-image: url(i/nav-dish.png);"><span class="mozfix">Дополнительные услуги нашей компании</span></a>
+            </li>
+            <li>
+              <a href="#when" style="background-image: url(i/nav-payment.png);"><span class="mozfix">Когда можно купить и&nbsp;как оплатить билеты в&nbsp;Грецию</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div id="content-col" class="flex1 lh1_6 for-front">
+      <div class="country-section" id="common">
+        <h2 class="ttu ">Что такое электронный авиабилет</h2>
+
+        <div class="bb-list">
+          <div class="ttu blue fz15">Преимущества</div>
+          <p>Электронный билет отличается от обычного тем, что его не печатают на бумаге. Вся информация о путешествии хранится в электронном виде в базе данных авиакомпании. Сейчас уже почти невозможно купить билет на бланке — практически все авиабилеты электронные. Электронный билет отличается от обычного тем, что его. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        </div>
+        <div class="bb-list">
+          <div class="ttu blue fz15">Маршрут-квитанция</div>
+          <p>Электронный билет отличается от обычного тем, что его не печатают на бумаге. Вся информация о путешествии хранится в электронном виде в базе данных авиакомпании. Сейчас уже почти невозможно купить билет на бланке — практически все авиабилеты электронные. Электронный билет отличается от обычного тем, что его. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="bb-list">
+          <div class="ttu blue fz15">Документы для бухгалтерии</div>
+          <p>Электронный билет отличается от обычного тем, что его не печатают на бумаге. Вся информация о путешествии хранится в электронном виде в базе данных авиакомпании. Сейчас уже почти невозможно купить билет на бланке — практически все авиабилеты электронные. Электронный билет отличается от обычного тем, что его. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="bb-list">
+          <div class="ttu blue fz15">Время на авиабилетах</div>
+          <p>Электронный билет отличается от обычного тем, что его не печатают на бумаге. Вся информация о путешествии хранится в электронном виде в базе данных авиакомпании. Сейчас уже почти невозможно купить билет на бланке — практически все авиабилеты электронные. Электронный билет отличается от обычного тем, что его. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="country-section" id="airports">
+        <h2 class="ttu ">Что такое электронный авиабилет</h2>
+
+        <div class="bb-list">
+          <div class="ttu blue fz15">Преимущества</div>
+          <p>Электронный билет отличается от обычного тем, что его не печатают на бумаге. Вся информация о путешествии хранится в электронном виде в базе данных авиакомпании. Сейчас уже почти невозможно купить билет на бланке — практически все авиабилеты электронные. Электронный билет отличается от обычного тем, что его. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        </div>
+        <div class="bb-list">
+          <div class="ttu blue fz15">Маршрут-квитанция</div>
+          <p>Электронный билет отличается от обычного тем, что его не печатают на бумаге. Вся информация о путешествии хранится в электронном виде в базе данных авиакомпании. Сейчас уже почти невозможно купить билет на бланке — практически все авиабилеты электронные. Электронный билет отличается от обычного тем, что его. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="bb-list">
+          <div class="ttu blue fz15">Документы для бухгалтерии</div>
+          <p>Электронный билет отличается от обычного тем, что его не печатают на бумаге. Вся информация о путешествии хранится в электронном виде в базе данных авиакомпании. Сейчас уже почти невозможно купить билет на бланке — практически все авиабилеты электронные. Электронный билет отличается от обычного тем, что его. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="bb-list">
+          <div class="ttu blue fz15">Время на авиабилетах</div>
+          <p>Электронный билет отличается от обычного тем, что его не печатают на бумаге. Вся информация о путешествии хранится в электронном виде в базе данных авиакомпании. Сейчас уже почти невозможно купить билет на бланке — практически все авиабилеты электронные. Электронный билет отличается от обычного тем, что его. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="country-section" id="extra">
+        <h2 class="ttu">Дополнительные улуги нашей компании</h2>
+        <p class="lh1_6">Мы не останавливаемся на достигнутом, нам это не интересно, Мы продолжим и далее делать работу, благодаря которой, цена на авиабилеты будет ещё ниже, более того Мы уже достаточно давно предлагаем Вам не только авиабилеты, уже есть сейчас или появятся в краткосрочной перспективе следующие виды услуг:</p>
+
+        <!--div class="extra-services mt30 fwl f w">
+          <div><a style="background-image: url(i/pic1.jpg);" href="/"><div><div class="ttu">Бронирование отелей</div>уникальная система</div></a></div>
+          <div><a style="background-image: url(i/pic2.jpg);" href="/"><div><div class="ttu">Ж/Д БИЛЕТЫ ОнЛАЙН</div>по лучшим ценам в России</div></a></div>
+          <div><a style="background-image: url(i/pic3.jpg);" href="/">
+            <img src="i/tl-baloon.png" style="position: absolute; top:-20px; left:30px;">
+            <div><img src="i/lt.png"></div>
+          </a></div>
+          <div><a style="background-image: url(i/pic4.jpg);" href="/"><div><div class="ttu">БИЛЕТЫ НА АВТОБУСЫ</div>по России оналйн</div></a></div>
+
+          <div><a style="background-image: url(i/pic5.jpg);" href="/"><div><div class="ttu">СПОРТИВНЫЕ МЕРОПРИЯТИЯ</div>билеты на лучшие места</div></a></div>
+          <div><a style="background-image: url(i/pic6.jpg);" href="/"><div><div class="ttu">прокат авто</div>в любом городе мира</div></a></div>
+          <div><a style="background-image: url(i/pic7.jpg);" href="/"><div>билеты: <div class="ttu">театры, концерты,              мьюзиклы</div></div></a></div>
+          <div><a style="background-image: url(i/pic8.jpg);" href="/"><div><div class="ttu">СТРАХОВАНИЕ</div>путешественников</div></a></div>
+        </div-->
+
+        <div class="extra-services mt30 f w d">
+          <a class="s-blue f c tdn white" href="/" style="background-image: url(i/country/s1.jpg);">
+            <div class="flex1 f hcen vcen tac detail">
+              <div>
+                РОССИЯ, ЕВРОПА, СНГ
+                Бронируйте онлайн,
+                экономьте время и деньги
+              </div>
+            </div>
+            <div class="ttu tac lh40 alw fz16">Железнодорожные билеты</div>
+          </a>
+
+          <a class="s-green f c tdn white" href="/" style="background-image: url(i/country/s2.jpg);">
+            <div class="flex1 f hcen vcen tac detail">
+              <div>
+                РОССИЯ, ЕВРОПА, СНГ
+                Бронируйте онлайн,
+                экономьте время и деньги
+              </div>
+            </div>
+            <div class="ttu tac lh40 alw fz16">бронирование отелей</div>
+          </a>
+
+          <a class="s-orange f c tdn white" href="/" style="background-image: url(i/country/s3.jpg);">
+            <img src="i/country/bal.png" style="position: absolute; top:20px; left:10px;">
+            <div class="flex1 f hcen vcen tac detail">
+              <div>
+                РОССИЯ, ЕВРОПА, СНГ
+                Бронируйте онлайн,
+                экономьте время и деньги
+              </div>
+            </div>
+            <div class="ttu tac lh40 alw"><img src="i/country/lt.png" class="ibm"></div>
+          </a>
+        </div>
+
+        <div class="extra-services mt30 f w d">
+          <a class="s-blue f c tdn white bkw" href="/" style="background-image: url(i/country/s4.jpg);">
+            <div class="ttu tac lh40 alw fz16">трансфер из аэропорта</div>
+            <div class="flex1 f hcen vcen tac detail">
+              <div>
+                РОССИЯ, ЕВРОПА, СНГ
+                Бронируйте онлайн,
+                экономьте время и деньги
+              </div>
+            </div>
+          </a>
+
+          <a class="s-green f c tdn white bkw" href="/" style="background-image: url(i/country/s5.jpg);">
+            <div class="ttu tac lh40 alw fz16">бронирование автомобиля</div>
+            <div class="flex1 f hcen vcen tac detail">
+              <div>
+                РОССИЯ, ЕВРОПА, СНГ
+                Бронируйте онлайн,
+                экономьте время и деньги
+              </div>
+            </div>
+          </a>
+
+          <a class="s-orange f c tdn white bkw" href="/" style="background-image: url(i/country/s6.jpg);">
+            <div class="ttu tac lh40 alw fz16">Билеты на автобусы онлайн</div>
+            <div class="flex1 f hcen vcen tac detail">
+              <div>
+                РОССИЯ, ЕВРОПА, СНГ
+                Бронируйте онлайн,
+                экономьте время и деньги
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
