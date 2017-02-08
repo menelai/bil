@@ -207,9 +207,13 @@
 
 }
 
+.dov {
+  @include flex(0 1 190px);
+}
+
 .credit-items {
   >div {
-    @include flex(0 1 170px);
+    @include flex(0 1 190px);
   }
 }
 
@@ -261,7 +265,7 @@
   right:0;
   bottom:0;
   overflow: hidden;
-  padding-top:400px;
+  padding-top:360px;
 }
 #map-padder {
   position: absolute;
