@@ -2,3 +2,150 @@
   @include flex(1 0 28em);
   @include from-input();
 }
+
+.hotel-photos {
+  .flex-direction-nav {
+    a {
+      opacity:1;
+      text-indent: -9999px;
+      text-align: left;
+    }
+    .flex-prev {
+      left:10px;
+      background: url(../i/slider-left.png) left center no-repeat;
+      &:before {
+        display: none;
+      }
+    }
+    .flex-next {
+      text-align: left;
+      right:10px;
+      background: url(../i/slider-right.png) right center no-repeat;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .flex-direction-nav {
+    .flex-prev {
+      background: url(../i/hotel/white-slider-left.png) left center no-repeat;
+    }
+    .flex-next {
+      background: url(../i/hotel/white-slider-right.png) right center no-repeat;
+    }
+  }
+}
+
+.slider {
+  .slides {
+    >li {
+      >img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.flex-control-nav {
+  display: none;
+}
+
+.bgcover {
+  background-size: cover;
+}
+
+.hotelbgw {
+  padding:20px 0;
+  &:before {
+    position: absolute;
+    width:3000px;
+    right:-10px;
+    top:0;
+    bottom:0;
+    background: #ffffff;
+    content:'';
+    display: block;
+  }
+}
+
+.turoperators-table {
+  white-space: nowrap;
+  padding:0 0 5px 0;
+  &:not(.header) {
+    padding-top:5px;
+    > div {
+      &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+        line-height: 28px;
+        text-align: center;
+      }
+
+      &:nth-child(4), &:nth-child(5) {
+        padding: 0 6px;
+      }
+    }
+  }
+
+  >div {
+    &:nth-child(1) {
+      @include flex(0 0 12px);
+      margin:-5px 0;
+    }
+    &:nth-child(2) {
+      margin-left:10px;
+      @include flex(0 1 30%);
+    }
+    &:nth-child(3) {
+      @include flex(0 0 70px);
+    }
+    &:nth-child(4) {
+      @include flex(0 0 70px);
+    }
+    &:nth-child(5) {
+      @include flex(0 0 80px);
+    }
+    &:nth-child(6) {
+      @include flex(0 0 80px);
+    }
+  }
+
+  input.grey-button {
+    height:30px;
+    line-height: 20px;
+  }
+}
+
+.green-itogo {
+  color:#65b510;
+}
+.border-green-itogo {
+  border-color:#65b510;
+}
+
+$cyan2: #24c2e6;
+
+.cyan2 {
+  color: $cyan2;
+}
+
+.bg-cyan2 {
+  background-color: $cyan2;
+}
+
+.starter {
+  width:10px;
+  @include align-self(stretch);
+}
+
+.tour-total {
+  >.sep {
+    @include align-self(stretch);
+    background: $grey;
+  }
+}
+
+.bb6 {
+  border-bottom-width: 6px;
+  border-bottom-style: solid;
+}

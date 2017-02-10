@@ -52,6 +52,9 @@
 (function($){
   $(window).load(function() {
     if($.fn.flexslider) {
+      $(".slider").flexslider({
+        animation: "slide"
+      });
       $('.contact-slider').flexslider({
         animation: 'slide'
       });
