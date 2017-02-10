@@ -204,7 +204,10 @@
   padding:15px;
   background: $blue url(../i/company/bg.jpg) right center;
   background-size: 100% 100%;
-
+  >div {
+    max-width: 850px;
+    margin:0 auto;
+  }
 }
 
 .dov {

@@ -54,49 +54,49 @@
      inkscape:label="Векторный смарт-объект"
      transform="matrix(1.25,0,0,-1.25,-19.192359,91.914055)"><g
        id="g24"
-       transform="matrix(0.53055487,0,0,0.53055487,44.799682,60.400011)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,44.799682,60.400011)"><path class="mystroke"
          d="m 0,0 c -26.095,0 -47.25,-21.154 -47.25,-47.25 l 94.5,0 C 47.25,-21.154 26.096,0 0,0 Z"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path26"
          inkscape:connector-curvature="0" /></g><g
        id="g28"
-       transform="matrix(0.53055487,0,0,0.53055487,68.80729,23.128532)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,68.80729,23.128532)"><path class="mystroke"
          d="m 0,0 -90.5,0 c -4.537,0 -8.25,3.712 -8.25,8.25 0,4.538 3.713,8.25 8.25,8.25 L 0,16.5 C 4.538,16.5 8.25,12.788 8.25,8.25 8.25,3.712 4.538,0 0,0 Z"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path30"
          inkscape:connector-curvature="0" /></g><g
        id="g32"
-       transform="matrix(0.53055487,0,0,0.53055487,51.105751,67.960418)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,51.105751,67.960418)"><path class="mystroke"
          d="m 0,0 -23.771,0 c -2.337,0 -4.25,1.913 -4.25,4.25 0,2.337 1.913,4.25 4.25,4.25 L 0,8.5 C 2.338,8.5 4.25,6.587 4.25,4.25 4.25,1.913 2.338,0 0,0 Z"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path34"
          inkscape:connector-curvature="0" /></g><g
        id="g36"
-       transform="matrix(0.53055487,0,0,0.53055487,41.989439,60.171766)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,41.989439,60.171766)"><path class="mystroke"
          d="m 0,0 0,14.68 10.59,0 0,-14.68"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path38"
          inkscape:connector-curvature="0" /></g><g
        id="g40"
-       transform="matrix(0.53055487,0,0,0.53055487,56.947531,64.066198)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,56.947531,64.066198)"><path class="mystroke"
          d="M 0,0 C 0,0 19.5,-4.91 26.25,-25.16"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path42"
          inkscape:connector-curvature="0" /></g><g
        id="g44"
-       transform="matrix(0.53055487,0,0,0.53055487,63.911064,66.274951)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,63.911064,66.274951)"><path class="mystroke"
          d="M 0,0 C 0,0 12.083,-2.573 16.625,-16.743"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path46"
          inkscape:connector-curvature="0" /></g><g
        id="g48"
-       transform="matrix(0.53055487,0,0,0.53055487,32.652363,64.066198)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,32.652363,64.066198)"><path class="mystroke"
          d="M 0,0 C 0,0 -19.5,-4.91 -26.25,-25.16"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path50"
          inkscape:connector-curvature="0" /></g><g
        id="g52"
-       transform="matrix(0.53055487,0,0,0.53055487,25.68883,66.274951)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,25.68883,66.274951)"><path class="mystroke"
          d="M 0,0 C 0,0 -12.083,-2.573 -16.625,-16.743"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path54"

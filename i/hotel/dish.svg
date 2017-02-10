@@ -54,23 +54,23 @@
      inkscape:label="Векторный смарт-объект21"
      transform="matrix(1.25,0,0,-1.25,-13.15131,102.85668)"><g
        id="g24"
-       transform="matrix(0.53055487,0,0,0.53055487,44.023056,34.209011)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,44.023056,34.209011)"><path class="mystroke"
          d="m 0,0 13.705,0 8.894,0 11.091,8.095 c 4.56,5.775 16.567,2.397 16.567,2.397 C 48.233,0.71 27.995,-17.841 27.995,-17.841 l -48.907,0 c -6.409,-1.349 -23.948,-17.8 -23.948,-17.8 0,0 -20.125,15.756 -15.633,25.756 4.707,10.479 42.737,20.943 42.737,20.943 l 42.024,0 c 0,0 1.292,-8.475 -7.448,-11.058"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path26"
-         inkscape:connector-curvature="0" /></g><path
+         inkscape:connector-curvature="0" /></g><path class="mystroke"
        d="m 77.053545,40.296173 -63.931862,0 0,4.319247 63.931862,0 0,-4.319247 z"
        style="fill:none;stroke:#ffffff;stroke-width:2.12221956;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        id="path28"
        inkscape:connector-curvature="0" /><g
        id="g30"
-       transform="matrix(0.53055487,0,0,0.53055487,45.398625,78.355473)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,45.398625,78.355473)"><path class="mystroke"
          d="m 0,0 c -31.847,0 -57.664,-25.817 -57.664,-57.664 l 115.328,0 C 57.664,-25.817 31.847,0 0,0 Z"
          style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path32"
          inkscape:connector-curvature="0" /></g><g
        id="g34"
-       transform="matrix(0.53055487,0,0,0.53055487,47.429695,79.943477)"><path
+       transform="matrix(0.53055487,0,0,0.53055487,47.429695,79.943477)"><path class="myfill"
          d="m 0,0 c 0,2.438 -1.977,4.414 -4.414,4.414 -2.438,0 -4.414,-1.976 -4.414,-4.414 0,-2.438 1.976,-4.414 4.414,-4.414 C -1.977,-4.414 0,-2.438 0,0"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path36"
