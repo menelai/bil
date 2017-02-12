@@ -149,3 +149,7 @@ $cyan2: #24c2e6;
   border-bottom-width: 6px;
   border-bottom-style: solid;
 }
+
+.fl130 {
+  @include flex(0 0 150px);
+}
