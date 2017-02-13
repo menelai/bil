@@ -682,3 +682,30 @@ label:focus {
     height:50px;
   }
 }
+
+@mixin scrollingcontent{
+  position: absolute;
+  top:-5px;
+  bottom:-5px;
+  left:-5px;
+  right:-5px;
+  content: '';
+  border:solid 1px;
+  border-color: inherit;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.scrollingcontent.current {
+  &.passenger-data {
+    &:before {
+      @include scrollingcontent();
+//      top:5px;
+    }
+  }
+  &:not(.passenger-data) {
+    &:after {
+      @include scrollingcontent();
+    }
+  }
+}

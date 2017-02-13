@@ -999,6 +999,7 @@
 .toptour {
   background-position: right center;
   background-size: cover;
+  min-height: 260px;
 }
 
 .topwhy {
@@ -1006,7 +1007,7 @@
   background-size: cover;
   color:white;
   padding:10px 0px;
-  min-height:220px;
+  min-height:260px;
   z-index: -1;
 
   /*&:before {
