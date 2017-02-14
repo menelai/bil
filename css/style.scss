@@ -2165,6 +2165,33 @@ a, .pseudolink {
   }
 }
 
+.col-title {
+  &:before, &:after {
+    @include transition(width 0.3s);
+    width:0;
+    content:'';
+    top:0;
+    bottom:0;
+    position: absolute;
+    background: inherit;
+  }
+  &:before {
+    right:100%;
+  }
+  &:after {
+    left:100%;
+  }
+}
+
+.is-sticky {
+  .col-title {
+    &:before, &:after {
+      width:5px;
+
+    }
+  }
+}
+
 .without-price {
   .result-cols .col-trip-info.rounded {
     margin-right:0;
@@ -2287,6 +2314,7 @@ a, .pseudolink {
       text-align: left;
     }
     .flex-prev {
+      top:85px;
       left:0;
       background: url(../i/slider-left.png) left center no-repeat;
       &:before {
@@ -2294,6 +2322,7 @@ a, .pseudolink {
       }
     }
     .flex-next {
+      top:85px;
       right:0;
       background: url(../i/slider-right.png) right center no-repeat;
       &:before {
@@ -3235,7 +3264,7 @@ input, textarea, button {
   height:30px;
   line-height: 30px;
   background: #eeeeee;
-  padding-left:10px;
+  padding-left:20px;
 }
 
 .modalclose {

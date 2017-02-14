@@ -74,9 +74,43 @@
         </div>
       </div>
 
-      <div class="mt9 f d">
-        <div ng-show="login" class="flex1 f space6 mr20">
-          <div class="flex1 ellipsis">konstantin@konstantinov.ru</div> <div><a class="fa fa-sign-out tdn" aria-hidden="true" ng-click="login=false"></a></div>
+      <div class="mt9 f d" ng-init="login=true;">
+        <div ng-show="login" class="flex1">
+        <div class="f space6 mr20">
+          <a id="lk" class="flex1 ellipsis tdn" ng-class="{'revealed': lkr}" ng-click="lkr=!lkr" ng-init="lkr=true;">konstantin@konstantinov.ru</a> <div><a class="fa fa-sign-out tdn" aria-hidden="true" ng-click="login=false"></a></div>
+        </div>
+          <div class="login-block slide" ng-show="lkr">
+            <div class="mt20">
+              <div class="f space10 c b-1 border-grey rounded5 p10">
+                <div class="tac fwb"><a>Заказ 12345</a></div>
+                <div class="">
+                  <span class="grey">Документы:</span>
+                <span class="tooltip ml10">
+                  <i class="fa fa-print blue"></i>
+                  <div class="ttip">Распечатать документы</div>
+                </span>
+                <span class="tooltip ml10 ">
+                  <i class="fa fa-envelope-o blue"></i>
+                  <div class="ttip">Отправить документы на&nbsp;email</div>
+                </span>
+                </div>
+                <div class=" ">
+                  <a class="tdn" ng-click="changePassenger=true"><i class="fa fa-user tdn"></i> <span class="tdu">Изменить данные пассажира</span></a>
+                </div>
+                <div class=" ">
+                  <a class="tdn" ng-click="cancel=true"><i class="fa fa-times tdn"></i> <span class="tdu">Аннулировать авиабилет</span></a>
+                </div>
+                <div class=" ">
+                  <a class="tdn" ng-click="changeDate=true"><i class="fa fa-calendar tdn"></i> <span class="tdu">Изменить даты вылета</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="mt20">
+              <div><a>Мои заказы</a></div>
+              <div class="mt10"><a>Мои пассажиры</a></div>
+              <div class="mt10"><a>Мой профиль</a></div>
+            </div>
+          </div>
         </div>
         <div ng-show="!login">
           <a id="lk" ng-click="lk=!lk" ng-init="lk=false;" ng-class="{'revealed': lk}">Личный кабинет</a>

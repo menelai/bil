@@ -646,6 +646,11 @@ label:focus {
   }
 }
 
+.feedback_text {
+  height:3.7em;
+  overflow: hidden;
+}
+
 .glow {
   box-shadow: 0 0 10px 1px rgba($blue,0.7);
 }
@@ -663,11 +668,17 @@ label:focus {
   padding-bottom: 40px;
   overflow-x: auto;
 
-  .max-width {
+  #whywe {
+    border-top:none;
     padding-top:20px;
     padding-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
+
+  }
+
+  .max-width {
+    max-width: 950px;
   }
 }
 

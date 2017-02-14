@@ -94,23 +94,29 @@
     }
     &:nth-child(2) {
       margin-left:10px;
-      @include flex(1);
+      @include flex(0 1 150px);
+      min-width: 120px;
     }
     &:nth-child(3) {
-      @include flex(0 0 70px);
+      @include flex(1 0 70px);
+      max-width: 90px;
     }
     &:nth-child(4) {
-      @include flex(0 0 70px);
+      @include flex(1 0 70px);
+      max-width: 100px;
     }
     &:nth-child(5) {
-      @include flex(0 0 80px);
+      @include flex(1 0 80px);
+      max-width: 120px;
     }
     &:nth-child(6) {
-      @include flex(0 0 80px);
+      @include flex(1 0 80px);
+      max-width: 120px;
     }
 
     &.no-offer {
-      @include flex(0 0 330px);
+      @include flex(1 0 330px);
+      max-width: 450px;
     }
   }
 

@@ -4,7 +4,7 @@
 
   var gulp = require('gulp');
 
-  var dest = 'R:/bd.siteperfect.ru/www/';
+  var dest = 'Y:/biletideshevo.ru/templates/tickets_new_site/';
   var site = './../git/templates/tickets_new_site/';
 
   gulp.task('watch', function(){
