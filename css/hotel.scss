@@ -163,3 +163,15 @@ $cyan2: #24c2e6;
 .fl130 {
   @include flex(0 0 150px);
 }
+
+.hotel-pi {
+  margin-right:30px;
+  border-right:solid 6px $orange;
+  padding-right:10px;
+}
+
+.hotel-payment {
+  .bigradio {
+    margin-top:-28px;
+  }
+}
