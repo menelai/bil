@@ -471,12 +471,14 @@
       <div id="passengers-data">
         <div class="col-title ws-sticky scrollingtitle scrollingcontent" data-rel="rightcol" data-title="Бронирование рейса" data-color="#000000">Бронирование отеля</div>
 
-        <div class="f d stretch ws-r mt14 space10">
+        <div class="f d stretch ws-r space10">
           <div class="flex1 tac fz18 f hcen vcen border-orange bb6 p5">
-            <div>25 сентября — 2 сентября</div>
+            <div class="mt10 mb10">25 сентября — 2 сентября</div>
           </div>
-          <div class="flex1 tac fz13 grey777 border-green f hcen vcen bb6 p5 space10">
-            <div class="f hcen vcen space4"><img src="i/hotel/adult-grey.png"> <span>Взрослых×2</span></div> <div class="f hcen vcen space4"><img src="i/hotel/child-grey.png"> <span>Детей×2</span></div>
+          <div class="flex1 tac grey777 border-green f hcen vcen bb6 p5 space10">
+            <div class="f hcen vcen space4 fz13"><img src="i/hotel/adult-grey.png"> <span>Взрослых×2</span></div>
+            <div class="f hcen vcen space4 fz13"><img src="i/hotel/child-grey.png"> <span>Детей×2</span></div>
+            <i class="fa fa-caret-down green fz18"></i>
           </div>
         </div>
 
@@ -821,12 +823,12 @@
       </div>
 
 
-      <div class="form-group ws-mb15 scrollingcontent" data-rel="rightcol" data-title="ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ" data-color="#000000">
+      <div class="mt15 ws-mb15 scrollingcontent" data-rel="rightcol" data-title="ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ" data-color="#000000">
         <div class="tac">
           <h2 class="blue ttu fwn fz16">Способ оплаты</h2>
-          <p>Комиссия 0%</p>
+          <p class="mt10">Комиссия 0%</p>
         </div>
-        <div class="f d vtop space20 hotel-payment">
+        <div class="mt10 f d space10 hotel-payment">
           <label class="flex1 b-1 rounded5 border-blue p20">
             <div class="bigradio"><input type="radio" name="payment" data-title="ОПЛАТИТЕ ДЕШЁВЫЙ АВИАБИЛЕТ Банковской картой" data-color="#ff6700" ng-click="payment='cards';"><span></span></div>
             <div class="tac fz15 blue mb10">Банковской картой</div>
@@ -861,32 +863,51 @@
 
 
       <div class="form-group1">
-        <div class="bysides becomecol slide" ng-show="payment=='euroset'">
-          <div class="w135 tac"><img src="i/euroset-l.png"></div>
-          <div class="flex1 tac">
-            <p>Ваш заказ сформирован и готов к оплате
-            в салоне связи Евросеть<br><br>Оплату заказа необходимо произвести:<br>
-            <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
-          </div>
-        </div>
-        <div class="bysides becomecol slide" ng-show="payment=='svyaznoy'">
-          <div class="w135 tac"><img src="i/svyaznoy-big.png"></div>
-          <div class="flex1 tac">
-            <p>Ваш заказ сформирован и готов к оплате
-              в салоне связи Связной<br><br>Оплату заказа необходимо произвести:<br>
-              <span class="blue tm">05.01.2016</span> до <span class="blue tm">22:30</span></p>
-          </div>
-        </div>
+
         <div ng-show="payment=='cards'" class="slide">
           <p class="tac">Абсолютная гарантия платежей. Оплата происходит через
           авторизизационный сервер Процессингового цетра
           ПАО&nbsp;«Сбербанк&nbsp;России».</p>
           <p class="tac">К оплате принимаются банковские карты следующих платёжных систем</p>
-          <div class="bysides cards-logos">
+          <div class="f d vcen cards-logos">
             <img src="i/visa-grey.png">
             <img src="i/mastercard-grey.png">
             <img src="i/visaelectron-grey.png">
             <img src="i/maestro-grey.png">
+          </div>
+        </div>
+        <div ng-show="payment=='cash'">
+          <div class="mt20 border-orange b-1 p10">
+            <div class="tac" >
+              Уважаемые Клиенты!<br>
+              Мы ценим Ваше время, при желании Вы можете выбрать удобное для Вас время посещения офиса
+            </div>
+            <div class="f hcen vcen mt20">
+              <div class="f space10 datepicker-width">
+                <div>
+                  <input type="text" class="b-1 rounded3 border-blue datepicker lh26 calendar dpw" placeholder="Дата">
+                </div>
+                <div>
+                  <select class="selectric grey h30">
+                    <option>09:00—11:00</option>
+                    <option>09:00—11:00</option>
+                    <option>09:00—11:00</option>
+                    <option>09:00—11:00</option>
+                    <option>09:00—11:00</option>
+                    <option>09:00—11:00</option>
+                    <option>09:00—11:00</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt20">
+              <label class="f vtop space8">
+                <span class="bigcheckbox"><input type="checkbox" checked><span></span></span>
+                <div class="fz13" style="max-width:430px;">Спасибо, на данный этап времени я не имею возможности
+                  спланировать время визита. Я приду, когда мне будет удобно</div>
+              </label>
+            </div>
           </div>
         </div>
         <div class="grey tac fz12 mt15 mb15">Для продолжения бронирования нажмите: ОПЛАТИТЬ ДЕШЁВЫЙ АВИАБИЛЕТ</div>
@@ -989,6 +1010,21 @@
           <a href="/"><i class="fa fa-twitter"></i></a>
         </div>
       </div-->
+    </div>
+  </div>
+</div>
+
+<div class="f vcen hcen modalwin" style="display: none;">
+  <div class="tac">
+    <div><img src="i/magnif-sad.png"></div>
+    <div class="ttu fz20 blue mt20">Данные устарели</div>
+    <div class="mt20 fz16">Этих билетов уже может не быть.<br>
+      Обновите данные</div>
+    <div class="mt20 f">
+      <a class="flex1 aib blue-button ttu"><span class="mozfix">Обновить данные</span></a>
+    </div>
+    <div class="mt10 f">
+      <a class="flex1 aib cancel-button"><span class="mozfix">Продолжить без обновления</span></a>
     </div>
   </div>
 </div>

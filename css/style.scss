@@ -3184,6 +3184,8 @@ input, textarea, button {
   background: #ffffff;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  max-height: 200px;
+  overflow-y: auto;
 
   .aiit {
     padding:10px 10px;

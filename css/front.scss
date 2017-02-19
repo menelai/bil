@@ -9,7 +9,6 @@
   >* {
     max-width: 900px;
     margin:0 auto;
-    padding-bottom: 20px;
     /*&:before {
       content: '';
       position: absolute;
@@ -20,6 +19,7 @@
       border-top:dashed 1px white;
     }*/
 
+
     &:after {
       position: absolute;
       left:0;
@@ -29,7 +29,12 @@
       pointer-events: none;
     }
 
+    &:last-child {
+      margin-bottom:-30px;
+    }
+
     &:not(:last-child) {
+      padding-bottom: 20px;
       &:after {
         content: '';
         top:57px;

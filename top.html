@@ -74,10 +74,10 @@
         </div>
       </div>
 
-      <div class="mt9 f d" ng-init="login=true;">
+      <div class="mt9 f d" ng-init="login=false;">
         <div ng-show="login" class="flex1">
-        <div class="f space6 mr20">
-          <a id="lk" class="flex1 ellipsis tdn" ng-class="{'revealed': lkr}" ng-click="lkr=!lkr" ng-init="lkr=true;">konstantin@konstantinov.ru</a> <div><a class="fa fa-sign-out tdn" aria-hidden="true" ng-click="login=false"></a></div>
+        <div class="f space6 mr20" id="lk" ng-class="{'revealed': lkr}">
+          <a class="flex1 ellipsis tdn" ng-click="lkr=!lkr" ng-init="lk=true;">konstantin@konstantinov.ru</a> <div><a class="fa fa-sign-out tdn" aria-hidden="true" ng-click="login=false"></a></div>
         </div>
           <div class="login-block slide" ng-show="lkr">
             <div class="mt20">
@@ -129,7 +129,7 @@
                 <div class="f mt10"><input type="submit" value="Войти"class="blue-button flex1"></div>
               </form>
               <div class="mt5 mb20 tac"><a href="/" class="black">Восстановить пароль</a></div>
-              <div class="fz16 tac"><a href="/">Регистрация</a></div>
+              <div class="fz16 tac"><a ng-click="register=true;">Регистрация</a></div>
             </div>
           </div>
         </div>
@@ -138,6 +138,68 @@
     </div>
   </div>
 </div>
+
+<div id="register" class="modalwin f hcen vcen ng-scope" ng-show="register">
+  <div class="modal">
+    <div class="modalheader f">
+      <div class="flex1 ellipsis">Регистрация</div>
+      <div>
+        <a class="modalclose"></a>
+      </div>
+    </div>
+    <div class="modalcontents p20 ng-scope">
+
+      <label class="flex1 f vbot input-pholder required">
+        <input type="text" name="name" class="flex1 fz15" value="{$_SESSION['buyer']['name']}">
+        <span class="pholder">Ваше имя</span>
+      </label>
+
+      <label class="mt10 flex1 f vbot input-pholder required">
+        <input type="text" name="name" class="flex1 fz15" value="{$_SESSION['buyer']['name']}">
+        <span class="pholder">Ваша фамилия</span>
+      </label>
+
+      <label class="mt10 flex1 f vbot input-pholder required">
+        <input type="text" name="name" class="flex1 fz15" value="{$_SESSION['buyer']['name']}">
+        <span class="pholder">Ваш email</span>
+      </label>
+
+      <div class="mt10 f vbot input-pholder not-empty">
+        <div class="f ss-space10 d flex1">
+
+          <select class="selectric countrycode">
+            <option value="+7" data-flag="{$THEME}i/flag.png">Россия</option>
+            <option value="+90" data-flag="{$THEME}i/greece.png">Грузия</option>
+            <option value="+383" data-flag="{$THEME}i/flag.png">Россия</option>
+            <option value="+900" data-flag="{$THEME}i/greece.png">Украина</option>
+            <option value="+1" data-flag="{$THEME}i/flag.png">США</option>
+            <option value="+800" data-flag="{$THEME}i/greece.png">Зимбабве</option>
+          </select>
+          <input type="text" name="phone" class="flex1 fz15 phone-input" value="+7">
+        </div>
+        <span class="pholder">Ваш телефон</span>
+      </div>
+
+      <label class="mt10 flex1 f vbot input-pholder required">
+        <input type="password" name="name2" class="flex1 fz15" value="{$_SESSION['buyer']['name']}">
+        <span class="pholder">Пароль</span>
+      </label>
+      <label class="mt10 flex1 f vbot input-pholder required">
+        <input type="password" name="name111" class="flex1 fz15" value="{$_SESSION['buyer']['name']}">
+        <span class="pholder">Пароль повторно</span>
+      </label>
+
+      <div class="mt10 f hcen ng-scope">
+        <input type="submit" value="Отправить" class="blue-button">
+      </div>
+
+      <div class="mt10 grey777 fz12">
+        <img src="{$THEME}i/mandatory.png"> — поля, обязательные к заполнению.
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="buter" class="ws-nd vcen hcen" ng-click="showMenu=!showMenu" ng-init="showMenu=false"><i class="fa fa-bars"></i></div>
 <div id="menu-line" ng-show="showMenu || (device!='iphone'&&device!='android'&&device!='windows-phone'&&device!='blackberry')">
   <div class="max-width">

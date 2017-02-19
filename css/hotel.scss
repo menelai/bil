@@ -173,5 +173,14 @@ $cyan2: #24c2e6;
 .hotel-payment {
   .bigradio {
     margin-top:-28px;
+    input[type=radio]+span {
+      &:after {
+        background-color: $blue;
+      }
+    }
   }
+}
+
+.forhotel {
+  max-height: 260px;
 }

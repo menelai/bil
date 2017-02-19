@@ -535,7 +535,7 @@ label:focus {
 }
 
 .bigradio {
-  height:17px;
+  height:16px;
   input[type=radio] {
     display: none;
 
@@ -555,16 +555,18 @@ label:focus {
         display: block;
         width:0px;
         height:0px;
-        @include transform(translateX(-50%) translateY(-50%));
+        //@include transform(translateX(-50%) translateY(-50%));
+        margin:0;
         border-radius: 10px;
         background: black;
-        @include transition(width 0.2s, height 0.2s);
+        @include transition(width 0.2s, height 0.2s, margin 0.2s);
       }
     }
 
     &:checked {
       +span {
         &:after {
+          margin:-4px 0 0 -4px;
           width: 8px;
           height: 8px;
         }

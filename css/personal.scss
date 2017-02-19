@@ -56,7 +56,7 @@
     tr {
       background: white;
       +tr:not(.tr-extra) {
-        border-top:solid 5px #f3f3f3;
+        border-top:solid 10px #f3f3f3;
       }
 
       &.tr-extra {
