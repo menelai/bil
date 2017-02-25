@@ -54,6 +54,10 @@ a {
   @include justify-content(space-between);
 }
 
+.s {
+  @include align-self(stretch);
+}
+
 .around {
   @include justify-content(space-around);
 }

@@ -242,7 +242,7 @@
 
 <div id="order-form" ng-class="showMenu ? 'blur' : ''">
   <div id="order-cols" class="max-width">
-    <div id="ocl">
+    <div id="ocl" class="for-hotel">
       <div data-rel="leftcol" data-title="Информация о рейсе" data-color="#000000" class="scrollingcontent">
         <div id="flight-info">
           <div id="flight-info-title" class="col-title ss-revealer ws-sticky scrollingtitle" data-rel="leftcol" ng-class="showI ? 'shown' : ''" ng-click="showI=!showI">
@@ -454,7 +454,210 @@
         </div>
       </div>
 
-      <div class="bg-blue white tac p10 rounded5 mt20 mb20">
+      <div class="tour-contents tac mt20">
+        <div class="">
+          <div class="tac ttu fz16">Состав тура</div>
+        </div>
+        <div class="space10 f d ws-r mt5">
+          <div class="flex1 mt10 mb20">
+            <img src="i/hotel/c-plane.png">
+          </div>
+          <div class="sep bg-grey"></div>
+          <div class="flex1 mt10 mb20">
+            <img src="i/hotel/c-bus.png">
+          </div>
+          <div class="sep bg-grey"></div>
+          <div class="flex1 mt10 mb20">
+            <img src="i/hotel/c-compass.png">
+          </div>
+          <div class="sep bg-grey"></div>
+          <div class="flex1 mt10 mb20">
+            <img src="i/hotel/c-doctor.png">
+          </div>
+        </div>
+        <div class="space10 f d ws-r vtop fz12">
+          <div class="flex1">
+            Авиаперелет
+          </div>
+          <div class="sep"></div>
+          <div class="flex1">
+            Групповой<br>трансфер
+          </div>
+          <div class="sep"></div>
+          <div class="flex1">
+            Услуги<br>гида
+          </div>
+          <div class="sep"></div>
+          <div class="flex1">
+            Медицинская<br>страховка
+          </div>
+        </div>
+      </div>
+
+      <div class="mt20">
+        <div class="ttu mb10 tac">Дополнительные услуги</div>
+        <div class="aeroexpress-ticket mt10 f d vcen p10 space10">
+          <div class="hotel-dop-icon tac">
+            <img src="i/hotel/c-doctor.png">
+          </div>
+          <div class="sep s"></div>
+          <div class="tac fz16 flex1">
+            Виза<br>
+            в Болгарию
+          </div>
+          <div class="f d space8 tac">
+            <div class="f c d space10">
+              <div class="grey777">
+                <div class="lh21 fz18">2&thinsp;170&nbsp;₽</div>
+                <div class="fz12">1 турист</div>
+              </div>
+              <div>
+                <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+              </div>
+            </div>
+
+            <div class="f c d space10">
+              <div>
+                <div class="lh21 fz21 green-text">2&thinsp;170&nbsp;₽</div>
+                <div class="grey777 fz12">1 турист</div>
+              </div>
+              <div class="f">
+                <input type="button" value="Добавить к покупке" class="green-button aib flex1">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="aeroexpress-ticket mt10 f d vcen p10 space10">
+          <div class="hotel-dop-icon tac">
+            <img src="i/hotel/c-doctor.png">
+          </div>
+          <div class="sep s"></div>
+          <div class="tac fz16 flex1">
+            Аэроэкспресс<br>
+            в Шереметьево
+          </div>
+          <div class="f d space8 tac">
+            <div class="f c d space10">
+              <div class="grey777">
+                <div class="lh21 fz18">2&thinsp;170&nbsp;₽</div>
+                <div class="fz12">1 турист</div>
+              </div>
+              <div>
+                <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+              </div>
+            </div>
+
+            <div class="f c d space10">
+              <div>
+                <div class="lh21 fz21 green-text">2&thinsp;170&nbsp;₽</div>
+                <div class="grey777 fz12">1 турист</div>
+              </div>
+              <div class="f">
+                <input type="button" value="Добавить к покупке" class="green-button aib flex1">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="aeroexpress-ticket mt10 f d vcen p10 space10">
+          <div class="hotel-dop-icon tac">
+            <img src="i/hotel/c-doctor.png">
+          </div>
+          <div class="sep s"></div>
+          <div class="tac fz16 flex1">
+            Аренда<br>
+            автомобиля
+          </div>
+          <div class="f d space8 tac">
+            <div class="f c d space10">
+              <div class="grey777">
+                <div class="lh21 fz18">2&thinsp;170&nbsp;₽</div>
+                <div class="fz12">1 сутки</div>
+              </div>
+              <div>
+                <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+              </div>
+            </div>
+
+            <div class="f c d space10">
+              <div>
+                <div class="lh21 fz21 green-text">2&thinsp;170&nbsp;₽</div>
+                <div class="grey777 fz12">1 сутки</div>
+              </div>
+              <div class="f">
+                <input type="button" value="Добавить к покупке" class="green-button aib flex1">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt20 mb30">
+        <div class="ttu mb10 responses-title tac">Экскурсии</div>
+        <div class="hotelexslider">
+          <ul class="slides">
+            <li class="bybounds">
+              <div>
+                <img src="i/country/e1.jpg">
+                <div class="excmaxh">Экскурсия на остров Skirathos Skirathos</div>
+              </div>
+              <div class="mt10"><a href="/" class="blue-button aib"><span class="mozfix">Забронировать</span></a></div>
+            </li>
+            <li class="bybounds">
+              <div>
+                <img src="i/country/e3.jpg">
+                <div class="excmaxh">Экскурсия на остров Skirathos Skirathos на остров Skirathos Skirathos</div>
+              </div>
+              <div class="mt10"><a href="/" class="blue-button aib"><span class="mozfix">Забронировать</span></a></div>
+            </li>
+            <li class="bybounds">
+              <div>
+                <img src="i/country/e5.jpg">
+                <div class="excmaxh">Экскурсия на остров Skirathos Skirathos</div>
+              </div>
+              <div class="mt10"><a href="/" class="blue-button aib"><span class="mozfix">Забронировать</span></a></div>
+            </li>
+            <li class="bybounds">
+              <div>
+                <img src="i/country/e1.jpg">
+                <div class="excmaxh">Экскурсия на остров Skirathos</div>
+              </div>
+              <div class="mt10"><a href="/" class="blue-button aib"><span class="mozfix">Забронировать</span></a></div>
+            </li>
+            <li class="bybounds">
+              <div>
+                <img src="i/country/e2.jpg">
+                <div class="excmaxh">Экскурсия на остров Skirathos Skirathos</div>
+              </div>
+              <div class="mt10"><a href="/" class="blue-button aib"><span class="mozfix">Забронировать</span></a></div>
+            </li>
+            <li class="bybounds">
+              <div>
+                <img src="i/country/e3.jpg">
+                <div class="excmaxh">Экскурсия на остров Skirathos</div>
+              </div>
+              <div class="mt10"><a href="/" class="blue-button aib"><span class="mozfix">Забронировать</span></a></div>
+            </li>
+            <li class="bybounds">
+              <div>
+                <img src="i/country/e4.jpg">
+                <div class="excmaxh">Экскурсия на остров Skirathos Skirathos</div>
+              </div>
+              <div class="mt10"><a href="/" class="blue-button aib"><span class="mozfix">Забронировать</span></a></div>
+            </li>
+            <li class="bybounds">
+              <div>
+                <img src="i/country/e5.jpg">
+                <div class="excmaxh">Экскурсия на остров Skirathos</div>
+              </div>
+              <div class="mt10"><a href="/" class="blue-button aib"><span class="mozfix">Забронировать</span></a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-blue white tac p10 rounded5 mt20 mb10">
         <p class="ttu">Авиабилет Москва - Сочи - Москва</p>
         <p>3 пассажира 08.07.2016 -12.07.2016</p>
       </div>

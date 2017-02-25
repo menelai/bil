@@ -184,3 +184,62 @@ $cyan2: #24c2e6;
 .forhotel {
   max-height: 260px;
 }
+
+#order-cols #ocl.for-hotel {
+  &:before {
+    background-image: url(../i/hotel/Bacground_Foto_Hotel.jpg);
+  }
+}
+
+.hotel-dop-icon {
+  @include flex(0 0 70px);
+}
+
+.hotelexslider {
+  padding:0 30px;
+  width:100%;
+  .flex-control-nav {
+    display: none;
+  }
+  .flex-direction-nav {
+    a {
+      opacity:1;
+      text-indent: -9999px;
+      text-align: left;
+    }
+    .flex-prev {
+      top:60px;
+      left:0;
+      background: url(../i/slider-left.png) left center no-repeat;
+      &:before {
+        display: none;
+      }
+    }
+    .flex-next {
+      top:60px;
+      right:0;
+      background: url(../i/slider-right.png) right center no-repeat;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  .slides {
+    @include display-flex();
+    @include flex-wrap(wrap);
+    >li {
+      text-align: center;
+      float:none !important;
+      @include display-flex(flex !important);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .aib {
+      display: inline-block;
+      width:100%;
+    }
+  }
+}

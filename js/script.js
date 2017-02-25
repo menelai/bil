@@ -247,6 +247,16 @@
             maxItems: 5,
             move: 1
           });
+
+          $(".hotelexslider").flexslider({
+            animation: "slide",
+            animationLoop: false,
+            itemWidth: 120,
+            itemMargin: 35,
+            minItems: 3,
+            maxItems: 4,
+            move: 1
+          });
         }
       });
 
