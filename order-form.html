@@ -8,12 +8,141 @@
       </div>
       <div ng-include="'ticket.html'" ng-show="showI || isDesktop" ng-init="likeMobile=true;"></div>
     </div>
+  </div>
+
+  <div id="aeroexpress" class="mt20 scrollingcontent" data-title="Добавьте к покупке билеты на Аэроэкспресс" data-color="#000000" data-rel="leftcol">
+    <div class="f d vcen space4">
+      <div class="flex1 ttu">В&nbsp;аэропорт без&nbsp;пробок и&nbsp;очередей</div>
+      <div id="aeroexpress-logo" class="ws-nd"><img src="i/aeroexpress.png"></div>
+      <div class="ss-nd"><img style="margin-top: -15px;" src="i/aeroexpress-full.png"></div>
+    </div>
+
+    <div class="bg-lightgrey d f tac lh1 stretch mt10">
+      <div class="flex1 p8"><span class="aeroexpress-train ws-ib ss-nd">&nbsp;</span> Белорусский вокзал</div>
+      <div class="white-direction"></div>
+      <div class="flex1 p8"><span class="aeroexpress-plane ws-ib ss-nd">&nbsp;</span> Шереметьево</div>
+    </div>
+
+    <div class="mt10 f d space12">
+      <div class="flex1 tac">21января 2016</div>
+      <div class="blue flex1 tac">с 05:30 по 00:30</div>
+    </div>
+
+    <div class="mt10 revealer revealer-grey {{showAero ? 'shown' : ''}}" ng-click="showAero=!showAero">
+      <div class="">Расписание аэроэкспрессов</div>
+    </div>
+    <div class="ebebeb slide" ng-show="showAero">
+      <div class="p10">
+        <div class="f d tac blue">
+          <div class="flex1">
+            <div class="fz16">Белорусский</div>
+            <div>отправление</div>
+          </div>
+          <div class="fa fa-chevron-right" style="color:#ebebeb;"></div>
+          <div class="flex1">
+            <div class="fz16">Шереметьево</div>
+            <div>прибытие</div>
+          </div>
+        </div>
+        <div class="aeroexpress-timetable-wrapper">
+          <div class="mt10 aeroexpress-timetable">
+            <div class="border-split">
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+              <div class="f d tac">
+                <div class="flex1">05:30</div>
+                <div class="fa fa-chevron-right lightgrey"></div>
+                <div class="flex1">05:30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="aeroexpress-ticket mt10 ss-p10 f ss-c ws-r ws-d ws-split16 ws-p16">
+      <div class="ws-flex1"><div class="mt6 mozfix">Пассажиры от&nbsp;5&nbsp;лет</div></div>
+
+      <div class="f d ss-mt5 ws-rr ws-split16 wsn">
+        <div>
+          <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
+          <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
+        </div>
+        <div class="tac ss-flex1 ws-f ws-d ws-c">
+          <div class="fz22 fw600">470 ₽</div>
+          <div class="grey fz11">Цена за билет</div>
+        </div>
+      </div>
+
+      <div class="f d ss-vcen ss-mt5 space20">
+        <input type="button" value="Добавить к покупке" class="green-button aib flex1">
+      </div>
+    </div>
+
 
 
 
   </div>
-
-  <div class="mt10">
+  <!--div class="mt10">
     <div class="ws-sticky">
       <div class="col-title">
         Способ оплаты
@@ -96,16 +225,15 @@
         </div>
       </div>
     </div>
-  </div>
+  </div-->
 
-  <div data-title="НАМ МОЖНО ДОВЕРЯТЬ — БОЛЕЕ 60&thinsp;000 КЛИЕНТОВ ЗА 3 ГОДА" data-rel="leftcol" data-color="#ff6700" class="scrollingcontent">&nbsp;</div>
 </div>
 
 <div class="flex1">
 <div id="passengers-data">
-<div class="col-title ws-sticky scrollingtitle scrollingcontent" data-rel="rightcol" data-title="Бронирование рейса" data-color="#000000">Бронирование рейса</div>
+<div class="col-title ws-sticky scrollingtitle scrollingcontent" data-rel="rightcol" data-title="Бронирование рейса" data-color="#000000">Пассажиры</div>
 
-<div class="form-group ws-mt10 scrollingcontent" data-rel="rightcol" data-title="ДЛЯ БРОНИРОВАНИЯ ВВЕДИТЕ ДАННЫЕ ПОКУПАТЕЛЯ" data-color="#ff6700">
+<div ng-if="::false" class="form-group ws-mt10 scrollingcontent" data-rel="rightcol" data-title="ДЛЯ БРОНИРОВАНИЯ ВВЕДИТЕ ДАННЫЕ ПОКУПАТЕЛЯ" data-color="#ff6700">
   <div class="ttu blue">Покупатель</div>
 
   <div class="f ws-r ss-c ss-space10 ws-space2 mt10">
@@ -228,14 +356,13 @@
   </div>
 </div>
 
-<div class="ttu blue mt20">Пассажиры</div>
-<div class="mt10" ng-repeat="pass in [{name: 'Петр Петров', color: '#aadf11', tpl: 'i/icons/Adult.svg'}, {name: 'Иван Иванов', color: '#ff6801', tpl: 'i/icons/Adult.svg'}, {name: 'Петя Васечкин', color: '#764ca2', tpl: 'i/icons/Child.svg'}, {name: 'Володя Путин', color: '#f2b101', tpl: 'i/icons/Infant.svg'}]">
+<div class="mt10" style="border-bottom: solid 6px {{pass.color}};" ng-repeat="pass in [{name: 'Петр Петров', color: '#aadf11', tpl: 'i/icons/Adult.svg'}, {name: 'Иван Иванов', color: '#ff6801', tpl: 'i/icons/Adult.svg'}, {name: 'Петя Васечкин', color: '#764ca2', tpl: 'i/icons/Child.svg'}, {name: 'Володя Путин', color: '#f2b101', tpl: 'i/icons/Infant.svg'}]">
   <style>
     #id{{$index}} .mainpath {
     fill: {{pass.color}};
     }
   </style>
-  <div class="revealer revealer-white" ng-class="show ? 'shown' : ''" ng-click="show=!show">
+  <div class="revealer revealer-personal" ng-class="show ? 'shown' : ''" ng-click="show=!show">
     <div class="f d vcen space8 flex1 blue fwn">
       <div class="flex1 f vcen space6" ng-init="id='id'+$index">
         <div class="passenger-pic">
@@ -245,7 +372,7 @@
       </div>
     </div>
   </div>
-  <div ng-show="show" class="ebebeb slide form-group scrollingcontent p10" data-rel="rightcol" data-title="ВВЕДИТЕ ДАННЫЕ ПАССАЖИРА: {{pass.name}}" data-color="{{pass.color}}" id="passeng{{$index}}">
+  <div ng-show="show" class="slide form-group scrollingcontent mb20" data-rel="rightcol" data-title="ВВЕДИТЕ ДАННЫЕ ПАССАЖИРА: {{pass.name}}" data-color="{{pass.color}}" id="passeng{{$index}}">
 
     <!--div class="f d vcen">
       <div class="ttu f vcen space6" ng-init="id='id'+$index">
@@ -336,7 +463,7 @@
 </div>
 
 <div class="form-group client-service scrollingcontent" ng-init="show=''; chosen='sta'" ng-if="true" data-rel="rightcol" data-title="ОБРАТИТЕ ВНИМАНИЕ НА УСЛУГИ СЕРВИСА" data-color="#ff6700">
-  <div class="tac blue ttu">Услуги сервиса для вас, уважаемые&nbsp;клиенты</div>
+  <div class="tac blue ttu">Услуги сервиса для вас, уважаемый&nbsp;клиент</div>
 
   <div>
     <div class="revealer" ng-class="show=='sta' ? 'shown' : ''" ng-click="show = show=='sta' ? '' : 'sta'">
@@ -477,141 +604,6 @@
       </div>
     </div>
   </div>
-</div>
-
-
-
-<div id="aeroexpress" class="mt20 scrollingcontent" data-title="Добавьте к покупке билеты на Аэроэкспресс" data-color="#000000" data-rel="leftcol">
-  <div class="f d vcen space4">
-    <div class="flex1 ttu">В&nbsp;аэропорт без&nbsp;пробок и&nbsp;очередей</div>
-    <div id="aeroexpress-logo" class="ws-nd"><img src="i/aeroexpress.png"></div>
-    <div class="ss-nd"><img style="margin-top: -15px;" src="i/aeroexpress-full.png"></div>
-  </div>
-
-  <div class="bg-lightgrey d f tac lh1 stretch mt10">
-    <div class="flex1 p8"><span class="aeroexpress-train ws-ib ss-nd">&nbsp;</span> Белорусский вокзал</div>
-    <div class="white-direction"></div>
-    <div class="flex1 p8"><span class="aeroexpress-plane ws-ib ss-nd">&nbsp;</span> Шереметьево</div>
-  </div>
-
-  <div class="mt10 f d space12">
-    <div class="flex1 tac">21января 2016</div>
-    <div class="blue flex1 tac">с 05:30 по 00:30</div>
-  </div>
-
-  <div class="mt10 revealer revealer-grey {{showAero ? 'shown' : ''}}" ng-click="showAero=!showAero">
-    <div class="">Расписание аэроэкспрессов</div>
-  </div>
-  <div class="ebebeb slide" ng-show="showAero">
-    <div class="p10">
-      <div class="f d tac blue">
-        <div class="flex1">
-          <div class="fz16">Белорусский</div>
-          <div>отправление</div>
-        </div>
-        <div class="fa fa-chevron-right" style="color:#ebebeb;"></div>
-        <div class="flex1">
-          <div class="fz16">Шереметьево</div>
-          <div>прибытие</div>
-        </div>
-      </div>
-      <div class="aeroexpress-timetable-wrapper">
-        <div class="mt10 aeroexpress-timetable">
-          <div class="border-split">
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-            <div class="f d tac">
-              <div class="flex1">05:30</div>
-              <div class="fa fa-chevron-right lightgrey"></div>
-              <div class="flex1">05:30</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="aeroexpress-ticket mt10 ss-p10 f ss-c ws-r ws-d ws-split16 ws-p16">
-    <div class="ws-flex1"><div class="mt6 mozfix">Пассажиры от&nbsp;5&nbsp;лет</div></div>
-
-    <div class="f d ss-mt5 ws-rr ws-split16 wsn">
-      <div>
-        <div class="number-with-spinners ss-h35 ws-h30"><span class="minus" ng-click="ad=ad-1;">−</span><input type="number" ng-model="ad" ng-init="ad=1;" step="1" min="1"><span class="plus" ng-click="ad=ad+1;">+</span></div>
-        <div class="grey fz11 tac mt2">Кол-во пассажиров</div>
-      </div>
-      <div class="tac ss-flex1 ws-f ws-d ws-c">
-        <div class="fz22 fw600">470 ₽</div>
-        <div class="grey fz11">Цена за билет</div>
-      </div>
-    </div>
-
-    <div class="f d ss-vcen ss-mt5 space20">
-      <input type="button" value="Добавить к покупке" class="green-button aib flex1">
-    </div>
-  </div>
-
-
-
-
 </div>
 
 

@@ -114,3 +114,19 @@
 .ptact {
   border-top:solid 1px #dddddd;
 }
+
+.revealer {
+  &.revealer-personal {
+    height: 37px;
+    line-height: 37px;
+    &:not(.shown) {
+      border-radius: 3px;
+      background: #ffffff;
+      box-shadow: none;
+    }
+    &.shown {
+      box-shadow: none;
+      background: #ffffff;
+    }
+  }
+}

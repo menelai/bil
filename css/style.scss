@@ -1895,8 +1895,8 @@ a, .pseudolink {
 }
 
 #totop {
-  position: absolute;
-  bottom:100%;
+  position: fixed;
+  bottom:5px;
   right:5px;
   display: none;
   a {
@@ -2154,15 +2154,16 @@ a, .pseudolink {
     background: #ffffff;
   }
 
-  .col-title {
-    text-transform: uppercase;
-    color:white;
-    background: #3e3e3e;
-    text-align: center;
-    font-size: 14px;
-    margin-bottom:10px;
-    padding:6px;
-  }
+}
+
+.col-title {
+  text-transform: uppercase;
+  color:white;
+  background: #3e3e3e;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom:10px;
+  padding:6px;
 }
 
 .col-title {

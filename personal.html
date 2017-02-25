@@ -208,7 +208,7 @@
             </div>
           </div>
 
-          <div class="o-row" ng-class="{'o-active': order}">
+          <div class="o-row" ng-class="{'o-active': order}" ng-init="order=true">
             <div ng-show="cancel" class="o-cancel f hcen vcen">
               <div>Заявка на аннулирование принята. <a ng-click="cancel=false">Отменить заявку</a></div>
             </div>
