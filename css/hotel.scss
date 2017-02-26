@@ -243,3 +243,14 @@ $cyan2: #24c2e6;
     }
   }
 }
+
+.results-header {
+  background: #3e3e3e;
+  z-index: 200;
+  color:white;
+}
+
+.filtercol {
+  @include flex(0 0 200px);
+  @include experimental-value(height, calc(100vh - 28px - 50px));
+}

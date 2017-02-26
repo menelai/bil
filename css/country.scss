@@ -120,7 +120,7 @@
 @mixin cp-color($color, $color2) {
   &:before {
     @include filter-gradient($color, $color, horizontal); // IE6-9
-    @include background-image(linear-gradient(left,  rgba($color,0.85) 0%,rgba($color,0.85) 1%,rgba($color,0.85) 35%,rgba($color,0) 75%,rgba($color,0) 100%));
+    @include background-image(linear-gradient(left,  rgba($color,0.80) 0%,rgba($color,0.80) 1%,rgba($color,0.80) 35%,rgba($color,0) 75%,rgba($color,0) 100%));
   }
 
   &:after {
