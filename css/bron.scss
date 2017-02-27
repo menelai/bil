@@ -192,6 +192,23 @@ div.input-pholder {
     }
   }
 
+  &.revealer-clean {
+    border-bottom: solid 3px $blue;
+    &:not(.shown) {
+      border-radius: 0px;
+      background: #ffffff;
+      box-shadow: none;
+      padding-right:0;
+      padding-left: 0;
+    }
+    &.shown {
+      box-shadow: none;
+    }
+    &:after {
+      right:0;
+    }
+  }
+
   &:after {
     content: '';
     background: url(../i/arrow-down.png);
