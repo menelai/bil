@@ -274,13 +274,17 @@ $cyan2: #24c2e6;
 }
 
 .h-photo {
-  @include flex(0 1 25%);
+  @include flex(0 1 250px);
   min-width: 100px;
   background-size: cover;
   background-position: center center;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
   border-right: solid 1px $lightgrey;
+}
+
+.h-all {
+  min-width: 460px;
 }
 
 .h-bef {
@@ -311,4 +315,9 @@ $cyan2: #24c2e6;
 .h-inner {
   border: solid 1px $lightgrey;
   border-radius: 5px;
+}
+
+.h-desc {
+  height:5.1em;
+  overflow: hidden;
 }
