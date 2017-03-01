@@ -100,8 +100,9 @@
 }
 
 #throbber-slider {
-  @include transform(translateY(-50px));
-  width:180px;
+  //@include transform(translateY(-50px));
+  width:94px;
+  @include transition(width 0.1s);
 
   .flex-control-paging {
     display: none;
@@ -137,37 +138,50 @@
 }
 
 .thpic {
-
-  height:180px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  height:94px;
+  @include transition(width 0.1s, height 0.1s, margin 0.1s);
+  img {
+    max-height: 50px;
+    @include transition(max-height 0.1s);
+  }
 }
 
 #magnifscale {
-  margin-top:-50px;
+  animation-name: eye;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  width:146px;
+  height:195px;
   position: absolute;
+  top:0;
   left:50%;
-  top:50%;
-  width:150px;
-  height:150px;
-  @include transform(translateX(-50%) translateY(-50%));
+  margin-left: -67px;
+  @include transition(width 0.1s, height 0.1s, margin-left 0.1s);
   svg {
     display: block;
   }
   &:before {
-    content:url(../i/mag.svg);
-    width:201px;
-    height:269px;
+    content:'';
+    background: url(../i/Static_Search.svg);
+    width:146px;
+    height:195px;
     position: absolute;
-    left: -18px;
-    top: -24px;
+    left: 0;
+    top: 0;
+    -webkit-background-size: cover; background-size: cover;
+    @include transition(width 0.1s, height 0.1s, margin-left 0.1s);
   }
 }
 
 .thsign {
   position: absolute;
-  top:100%;
-  left:-180px;
-  min-width: 600px;
-  margin-top:20px;
+  top:25px;
+  bottom:25px;
+  left:50%;
+  margin-left:-450px;
+  width: 900px;
 }
 
 #eye {
@@ -178,20 +192,13 @@
   height:75px;
   background: url(../i/eye-phase.png);
   margin:-37px 0 0 -66px;
-  animation-name: eye;
-  animation-duration: 2.15s;
-  animation-iteration-count: infinite;
+
 }
 
 @keyframes eye {
-  0%   {background-position: 0 0;}
-  93.02%  {background-position: 0 0;}
-  93.03%   {background-position: 0 -75px;}
-  95.36%  {background-position: 0 -75px;}
-  95.37%   {background-position: 0 -150px;}
-  97.69%  {background-position: 0 -150px;}
-  97.7%   {background-position: 0 -75px;}
-  100%  {background-position: 0 -75px;}
+  0%   {@include transform(scale(1));}
+  90% {@include transform(scale(1.1));}
+  100%  {@include transform(scale(1));}
 }
 
 .arc {
@@ -203,14 +210,46 @@
 }
 
 #search-pending {
-  position: fixed;
+  height:195px;
+  @include transition(height 0.1s);
+  /*position: fixed;
 
   top:0;
   left:0;
   right:0;
   bottom:0;
   z-index: 100;
-  //background: rgba(229, 241, 244, 0.9);
   background: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
+  font-weight: 500;*/
+}
+
+
+.throbber-small {
+  #search-pending {
+    height:156px;
+  }
+
+  #throbber-slider {
+    width:80px;
+  }
+
+  .thpic {
+    height: 80px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+
+  img {
+    max-height: 40px;
+  }
+
+  #magnifscale {
+    height:156px;
+    width:116px;
+    margin-left: -53px;
+    &:before {
+      height:156px;
+      width:116px;
+    }
+  }
 }
