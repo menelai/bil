@@ -8,6 +8,14 @@ a {
   }
 }
 
+label {
+  display: initial;
+  max-width: initial;
+  margin-bottom: initial;
+  font-weight: initial;
+}
+
+
 .f {
   @include display-flex();
 }

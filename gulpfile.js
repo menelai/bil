@@ -23,6 +23,16 @@
         //.pipe(gulp.dest(dest+'css/'))
         .pipe(gulp.dest(site+'css/'))
     });
+
+    gulp.watch(['./css/select.css'], function(event, cb) {
+      var currentdate = new Date();
+      console.log(currentdate.getHours() + ":"
+      + currentdate.getMinutes() + ":"
+      + currentdate.getSeconds());
+      gulp.src('./css/select.css')
+        //.pipe(gulp.dest(dest+'css/'))
+        .pipe(gulp.dest(site+'css/'))
+    });
   });
 
 
